@@ -1,0 +1,23 @@
+@import "./colors";
+$themes: (
+  light: (
+    "text": $primary-color,
+    "subtext": $secondary-color,
+    "highlight": $light-color,
+    "background": $dark-color,
+  ),
+  dark: (
+    "text": white,
+    "subtext": $secondary-color,
+    "highlight": darkviolet,
+    "background": $dark-color,
+  ),
+);
+
+@each $name, $map in $themes {
+  .theme-#{$name} {
+    @each $key, $value in $map {
+      --#{$key}: #{$value};
+    }
+  }
+}

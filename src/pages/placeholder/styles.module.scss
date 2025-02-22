@@ -1,0 +1,38 @@
+@import "../../styles/styles";
+
+.content {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .title {
+    font-family: "MyCustomFont";
+    font-size: 10vw;
+    line-height: 10rem;
+    color: var(--text);
+    width: 60vw;
+    :first-child {
+      text-align: justify;
+    }
+    :last-child {
+      text-align: right;
+    }
+    p {
+      @for $i from 1 through 30 {
+        :nth-child(#{$i}) {
+          opacity: 1;
+          animation-name: fadeInOpacity;
+          animation-iteration-count: 1;
+          animation-timing-function: ease-in;
+          animation-duration: #{$i * 300}ms;
+        }
+      }
+    }
+  }
+}

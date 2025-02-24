@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import styles from "./styles.module.scss";
 interface PlaceholderProps {}
 export const Placeholder: React.FunctionComponent<PlaceholderProps> = (
-  props
+  _props
 ) => {
   const onRefChange = useCallback((node: HTMLCanvasElement) => {
     if (node != null) {

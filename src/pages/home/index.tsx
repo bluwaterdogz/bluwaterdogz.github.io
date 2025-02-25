@@ -1,5 +1,18 @@
+import { useCallback, useEffect } from "react";
+import { useServiceContext } from "../../service";
 import styles from "./styles.module.scss";
 export const Home = () => {
+  const { jobService } = useServiceContext();
+
+  const getData = useCallback(async () => {
+    const data = await jobService.list();
+    // console.log(data);
+  }, [jobService]);
+
+  useEffect(() => {
+    getData();
+  }, [getData]);
+
   return (
     <div>
       <section className="bg-white dark:bg-gray-900">

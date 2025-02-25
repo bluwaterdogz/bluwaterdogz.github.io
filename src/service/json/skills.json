@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Development",
+    "icon": "fa-code",
+    "skills": [
+      {
+        "skill": "Python",
+        "likes": 0,
+        "level": 8,
+        "classes": "none"
+      },
+      {
+        "skill": "Javascript/Typescript",
+        "likes": 0,
+        "level": 10,
+        "classes": "none"
+      },
+      {
+        "skill": "PostgreSQL",
+        "likes": 0,
+        "level": 5,
+        "classes": "none"
+      },
+      {
+        "skill": "PHP",
+        "likes": 0,
+        "level": 7,
+        "classes": "none"
+      },
+      {
+        "skill": "HTML5/CSS3",
+        "likes": 0,
+        "level": 10,
+        "classes": "none"
+      }
+    ]
+  },
+  {
+    "name": "Frameworks",
+    "icon": "fa-gears",
+    "skills": [
+      {
+        "skill": "React",
+        "likes": 0,
+        "level": 10,
+        "classes": "none"
+      },
+      {
+        "skill": "Angular",
+        "likes": 0,
+        "level": 9,
+        "classes": "none"
+      },
+      {
+        "skill": "Express",
+        "likes": 0,
+        "level": 8,
+        "classes": "none"
+      },
+      {
+        "skill": "Flask",
+        "likes": 0,
+        "level": 8,
+        "classes": "none"
+      },
+      {
+        "skill": "Vue",
+        "likes": 0,
+        "level": 6,
+        "classes": "none"
+      }
+    ]
+  },
+  {
+    "name": "Dev Tools",
+    "icon": "fa-gears",
+    "skills": [
+      {
+        "skill": "Storybook",
+        "likes": 0,
+        "level": 8,
+        "classes": "none"
+      },
+      {
+        "skill": "Vite",
+        "likes": 0,
+        "level": 8,
+        "classes": "none"
+      },
+      {
+        "skill": "Git",
+        "likes": 0,
+        "level": 9,
+        "classes": "none"
+      },
+      {
+        "skill": "Webpack",
+        "likes": 0,
+        "level": 8,
+        "classes": "none"
+      }
+    ]
+  },
+  {
+    "name": "Dev ops",
+    "icon": "fa-gears",
+    "skills": [
+      {
+        "skill": "Azure",
+        "likes": 0,
+        "level": 6,
+        "classes": "none"
+      },
+      {
+        "skill": "Github Actions",
+        "likes": 0,
+        "level": 7,
+        "classes": "none"
+      }
+    ]
+  },
+  {
+    "name": "Design",
+    "icon": "fa-pencil",
+    "skills": [
+      {
+        "skill": "Photoshop",
+        "likes": 0,
+        "level": 8,
+        "classes": "none"
+      },
+      {
+        "skill": "Illustrator",
+        "likes": 0,
+        "level": 7,
+        "classes": "none"
+      },
+      {
+        "skill": "Bootstrap",
+        "likes": 0,
+        "level": 9,
+        "classes": "none"
+      },
+      {
+        "skill": "Figma",
+        "likes": 0,
+        "level": 7,
+        "classes": "none"
+      }
+    ]
+  }
+]

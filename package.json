@@ -15,6 +15,7 @@
   "dependencies": {
     "@react-three/fiber": "^9.0.4",
     "@types/three": "^0.173.0",
+    "font-awesome": "^4.7.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router": "^7.2.0",

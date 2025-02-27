@@ -1,6 +1,7 @@
 import { useCallback, useEffect } from "react";
 import { useServiceContext } from "../../service";
 import styles from "./styles.module.scss";
+import Nav from "../../components/nav";
 export const Home = () => {
   const { jobService } = useServiceContext();
 
@@ -15,6 +16,7 @@ export const Home = () => {
 
   return (
     <div>
+      <Nav />
       <section className="bg-white dark:bg-gray-900">
         <div
           style={{
@@ -29,18 +31,25 @@ export const Home = () => {
       </section>
       <section className={styles.textSection}>
         <div className={styles.content}>
-          <h2>Section 2</h2>
+          <h2>Expreienced</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. A nisi
-            repellendus qui error iste. Possimus voluptatem iste quibusdam nulla
-            animi blanditiis deleniti unde fuga, odio fugit modi. Natus, sint
-            nesciunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Ad sed at quis eveniet aliquid dicta dignissimos impedit saepe,
-            magnam ut praesentium rem quas corporis, atque modi. Facere non enim
-            veritatis. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Eum nostrum iusto provident doloribus placeat impedit veniam
-            cupiditate necessitatibus atque modi, aliquam praesentium dolorum
-            sapiente obcaecati ea officiis. Earum, autem nisi.
+            In my most recent role as a Senior Full Stack Developer at
+            pharmaceutical tech startup Faro Health I worked on REST and CQRS
+            based microservices and UI modules implemented in Typescript, Node,
+            PostgreSQL, Jest and React. My work involved developing feature
+            slices and POCs, creating and executing technical designs, writing
+            Unit and Integration Tests, optimizing application performance, and
+            building deployment pipelines using Github Actions.
+          </p>
+          <hr />
+          <p>
+            Prior to this, I led an international remote Front End team at
+            Various Inc. where we worked hand in hand with the design team to
+            reskin and migrate legacy Javascript and Perl based video streaming
+            apps to a modern UI built in React, TypeScript and Python. A more
+            scalable codebase utilizing Next.js, MOBX and WebSockets and backed
+            by REST APIs and a CI/CD development pipeline to streamline
+            deployment.
           </p>
         </div>
       </section>
@@ -58,18 +67,15 @@ export const Home = () => {
       </section>
       <section className={`${styles.textSection} ${styles.right}`}>
         <div className={styles.content}>
-          <h2>Section 2</h2>
+          <h2>Leadership</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. A nisi
-            repellendus qui error iste. Possimus voluptatem iste quibusdam nulla
-            animi blanditiis deleniti unde fuga, odio fugit modi. Natus, sint
-            nesciunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Ad sed at quis eveniet aliquid dicta dignissimos impedit saepe,
-            magnam ut praesentium rem quas corporis, atque modi. Facere non enim
-            veritatis. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Eum nostrum iusto provident doloribus placeat impedit veniam
-            cupiditate necessitatibus atque modi, aliquam praesentium dolorum
-            sapiente obcaecati ea officiis. Earum, autem nisi.
+            Having led a large international team of developers and engineers in
+            the US, Europe, Taiwan and China I'm positive that my expertise in
+            technologies like Typescript, Node, PostgreSQL, Jest and React will
+            help to push your organization forward. In addition to my technical
+            design and development skills, my leadership abilities will help to
+            align and focus team efforts towards specific milestones, and
+            company defined goals.
           </p>
         </div>
       </section>

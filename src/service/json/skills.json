@@ -6,30 +6,42 @@
       {
         "skill": "Python",
         "likes": 0,
+        "icon": "devicon-python-plain",
         "level": 8,
         "classes": "none"
       },
       {
         "skill": "Javascript/Typescript",
         "likes": 0,
+        "icon": "devicon-typescript-plain",
         "level": 10,
+        "classes": "none"
+      },
+      {
+        "skill": "Node",
+        "likes": 0,
+        "icon": "devicon-nodejs-plain-wordmark",
+        "level": 7,
         "classes": "none"
       },
       {
         "skill": "PostgreSQL",
         "likes": 0,
+        "icon": "devicon-postgresql-plain",
         "level": 5,
         "classes": "none"
       },
       {
         "skill": "PHP",
         "likes": 0,
+        "icon": "devicon-php-plain",
         "level": 7,
         "classes": "none"
       },
       {
         "skill": "HTML5/CSS3",
         "likes": 0,
+        "icon": "devicon-html5-plain",
         "level": 10,
         "classes": "none"
       }
@@ -42,30 +54,42 @@
       {
         "skill": "React",
         "likes": 0,
+        "icon": "devicon-react-original",
         "level": 10,
         "classes": "none"
       },
       {
         "skill": "Angular",
         "likes": 0,
+        "icon": "devicon-angular-plain",
         "level": 9,
         "classes": "none"
       },
       {
         "skill": "Express",
         "likes": 0,
+        "icon": "devicon-express-original",
         "level": 8,
         "classes": "none"
       },
       {
         "skill": "Flask",
         "likes": 0,
+        "icon": "devicon-flask-original",
         "level": 8,
+        "classes": "none"
+      },
+      {
+        "skill": "RXJS",
+        "likes": 0,
+        "icon": "devicon-rxjs-plain",
+        "level": 6,
         "classes": "none"
       },
       {
         "skill": "Vue",
         "likes": 0,
+        "icon": "devicon-vuejs-plain",
         "level": 6,
         "classes": "none"
       }
@@ -78,24 +102,28 @@
       {
         "skill": "Storybook",
         "likes": 0,
+        "icon": "devicon-storybook-plain",
         "level": 8,
         "classes": "none"
       },
       {
         "skill": "Vite",
         "likes": 0,
+        "icon": "devicon-vite-original",
         "level": 8,
         "classes": "none"
       },
       {
         "skill": "Git",
         "likes": 0,
+        "icon": "devicon-git-plain",
         "level": 9,
         "classes": "none"
       },
       {
         "skill": "Webpack",
         "likes": 0,
+        "icon": "devicon-webpack-plain",
         "level": 8,
         "classes": "none"
       }
@@ -108,12 +136,14 @@
       {
         "skill": "Azure",
         "likes": 0,
+        "icon": "devicon-azure-plain",
         "level": 6,
         "classes": "none"
       },
       {
         "skill": "Github Actions",
         "likes": 0,
+        "icon": "devicon-githubactions-plain",
         "level": 7,
         "classes": "none"
       }
@@ -126,24 +156,28 @@
       {
         "skill": "Photoshop",
         "likes": 0,
+        "icon": "devicon-photoshop-plain",
         "level": 8,
         "classes": "none"
       },
       {
         "skill": "Illustrator",
         "likes": 0,
+        "icon": "devicon-illustrator-plain",
         "level": 7,
         "classes": "none"
       },
       {
         "skill": "Bootstrap",
         "likes": 0,
+        "icon": "devicon-bootstrap-plain",
         "level": 9,
         "classes": "none"
       },
       {
         "skill": "Figma",
         "likes": 0,
+        "icon": "devicon-figma-plain",
         "level": 7,
         "classes": "none"
       }

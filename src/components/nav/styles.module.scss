@@ -1,0 +1,34 @@
+@import "../../styles/variables";
+@import "../../styles/colors";
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.nav {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: $space;
+  text-align: left;
+  @for $i from 1 through 10 {
+    a {
+      color: $primary-color;
+      display: block;
+      text-decoration: none;
+      font-size: 40px;
+      &:nth-child(#{$i}) {
+        opacity: 0;
+        animation: 1.5s fadeInUp;
+        animation-delay: #{$i * 0.2}s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}

@@ -2,12 +2,11 @@ import { useCallback, useEffect } from "react";
 import { useServiceContext } from "../../service";
 import styles from "./styles.module.scss";
 import Nav from "../../components/nav";
-export const Home = () => {
+export const HomePage = () => {
   const { jobService } = useServiceContext();
 
   const getData = useCallback(async () => {
     const data = await jobService.list();
-    // console.log(data);
   }, [jobService]);
 
   useEffect(() => {
@@ -16,8 +15,8 @@ export const Home = () => {
 
   return (
     <div>
-      <Nav />
-      <section className="bg-white dark:bg-gray-900">
+      <Nav vertical={true} />
+      <section>
         <div
           style={{
             backgroundImage: "url(./dog.jpg)",
@@ -26,6 +25,7 @@ export const Home = () => {
         >
           <div className={styles.content}>
             <h1>Brian Velasquez</h1>
+            <p className={styles.headerSubtext}>Full Stack Web Developer</p>
           </div>
         </div>
       </section>

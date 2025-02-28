@@ -1,0 +1,39 @@
+@import "../../styles/colors";
+@import "../../styles/variables";
+.content {
+}
+.project {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  text-decoration: none;
+}
+.projectList {
+  .project:nth-child(2n) {
+    flex-direction: row-reverse;
+  }
+}
+.projectDetails {
+  width: 50%;
+  height: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: $transition;
+  h3 {
+    transition: $transition;
+    color: $primary-color;
+    font-size: 30px;
+  }
+  &:hover {
+    background-color: $dark-color;
+    h3 {
+      color: white;
+    }
+  }
+}
+.projectImage {
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+}

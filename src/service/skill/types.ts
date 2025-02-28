@@ -5,16 +5,24 @@ export interface Job {
   logoImg: string;
 }
 
-export interface SkillSection {
+export interface SkillType {
   name: string;
   icon: string;
-  skills: Skill[];
+  id: string;
 }
 
 export interface Skill {
   name: string;
   likes: number;
+  id: string;
+  type: string;
   icon: string;
   level: number;
   classes: string;
+  projects: ProjectRef[];
+}
+
+export interface ProjectRef {
+  name: string;
+  id: number;
 }

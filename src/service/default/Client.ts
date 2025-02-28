@@ -5,12 +5,16 @@ interface ClientConfig<T> {
 export default class Client<T> {
   data?: T;
   listData?: T[];
+
   constructor(config: ClientConfig<T>) {
     this.listData = config.listData;
+    this.data = config.data;
   }
-  async get(): Promise<T | undefined> {
-    return await this.data;
+
+  async get(id: string): Promise<T | undefined> {
+    return await (this.data || this.listData?.find((x: any) => x.id === id));
   }
+
   async list(): Promise<T[] | undefined> {
     return await this.listData;
   }

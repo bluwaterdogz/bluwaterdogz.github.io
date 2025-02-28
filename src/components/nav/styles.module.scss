@@ -12,15 +12,27 @@
 }
 
 .nav {
-  position: fixed;
-  right: 0;
-  bottom: 0;
+  position: relative;
+  top: 0;
+  left: 0;
   padding: $space;
   text-align: left;
+  &.vertical {
+    text-align: right;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    top: unset;
+    left: unset;
+    a {
+      display: block;
+    }
+  }
   @for $i from 1 through 10 {
     a {
       color: $primary-color;
-      display: block;
+      display: inline-block;
+      padding-right: $space-sm * 4;
       text-decoration: none;
       font-size: 40px;
       &:nth-child(#{$i}) {

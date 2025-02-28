@@ -1,0 +1,64 @@
+@import "../../styles/variables";
+@import "../../styles/colors";
+
+.content {
+  background-color: $dark-color;
+}
+.divider {
+  max-width: 500px;
+  margin: auto;
+  border: $primary-color 1px solid;
+}
+.skillSection {
+  h2 {
+    font-size: 40px;
+  }
+
+  padding: $space * 3;
+  display: flex;
+  flex-direction: column;
+  color: $primary-color;
+  align-items: center;
+  justify-content: center;
+  min-height: $space-large;
+  max-width: $content-width;
+  margin: auto;
+}
+.skillList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.skill {
+  width: 150px;
+  flex-wrap: wrap;
+  padding: $space;
+  color: $primary-color;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  transition: $transition;
+  &:hover {
+    transform: scale(1.2);
+  }
+  .icon {
+    font-size: 70px;
+  }
+  .name {
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    white-space: pre;
+    font-size: 30px;
+  }
+  .projectLink {
+    text-decoration: none;
+    color: $primary-color;
+    text-align: center;
+    padding: $space-sm;
+    transition: $transition;
+    &:hover {
+      color: white;
+    }
+  }
+}

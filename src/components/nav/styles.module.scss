@@ -17,6 +17,8 @@
   left: 0;
   padding: $space;
   text-align: left;
+  color: black;
+  background-color: white;
   &.vertical {
     text-align: right;
     position: fixed;
@@ -24,17 +26,27 @@
     bottom: 0;
     top: unset;
     left: unset;
+    background-color: transparent;
     a {
       display: block;
+      color: white;
+      mix-blend-mode: difference;
     }
+  }
+  a {
+    color: black;
+    display: inline-block;
+    padding-right: $space-sm * 4;
+    text-decoration: none;
+    font-size: 30px;
+    transition: $transition;
+    &:hover {
+      color: $primary-color;
+    }
+    mix-blend-mode: difference;
   }
   @for $i from 1 through 10 {
     a {
-      color: $primary-color;
-      display: inline-block;
-      padding-right: $space-sm * 4;
-      text-decoration: none;
-      font-size: 40px;
       &:nth-child(#{$i}) {
         opacity: 0;
         animation: 1.5s fadeInUp;

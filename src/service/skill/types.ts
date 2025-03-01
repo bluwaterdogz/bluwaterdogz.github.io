@@ -24,5 +24,5 @@ export interface Skill {
 
 export interface ProjectRef {
   name: string;
-  id: number;
+  id: string;
 }

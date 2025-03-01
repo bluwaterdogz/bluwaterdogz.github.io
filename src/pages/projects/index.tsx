@@ -17,12 +17,15 @@ export const ProjectsPage = () => {
           projects?.map((p) => (
             <Link to={`/project/${p.id}`} className={styles.project} key={p.id}>
               <div className={styles.projectDetails}>
-                <h3>{p.name}</h3>
+                <h2>{p.name}</h2>
+                <p>{p.description}</p>
               </div>
               <div
                 className={styles.projectImage}
                 style={{
-                  backgroundImage: 'url("https://placedog.net/500")',
+                  backgroundImage: `url("${
+                    p.img || "https://placedog.net/500"
+                  }")`,
                   backgroundOrigin: "center",
                   backgroundSize: "cover",
                 }}

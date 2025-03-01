@@ -8,7 +8,7 @@ interface SkillsState {
   skillTypes: SkillType[];
   loading: boolean;
   error?: string;
-  fetchSkills: () => {};
+  fetchSkills: (ids?: string[]) => {};
 }
 
 export const useSkillsStore = create<SkillsState>((set) => ({
@@ -16,10 +16,10 @@ export const useSkillsStore = create<SkillsState>((set) => ({
   loading: false,
   skillTypes,
   error: undefined,
-  fetchSkills: async () => {
+  fetchSkills: async (ids?: string[]) => {
     set({ loading: true });
     try {
-      const skills = await skillService.list();
+      const skills = await skillService.list(ids);
       set({ skills, loading: false });
     } catch (e: any) {
       set({ error: e, loading: false });

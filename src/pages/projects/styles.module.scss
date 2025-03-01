@@ -7,6 +7,35 @@
   height: 600px;
   display: flex;
   text-decoration: none;
+  h2 {
+    color: white;
+    transition: $transition;
+    font-size: 40px;
+    font-weight: 400;
+  }
+  p {
+    padding-left: $space;
+    color: white;
+    transition: $transition;
+    font-size: 20px;
+  }
+  .projectImage {
+    transition: $transition;
+    filter: grayscale(60%) brightness(80%);
+    transition: filter ease 1s;
+  }
+  &:hover {
+    .projectDetails {
+      background-color: $secondary-color;
+      h2,
+      p {
+        color: white;
+      }
+    }
+    .projectImage {
+      filter: grayscale(0%) brightness(110%);
+    }
+  }
 }
 .projectList {
   .project:nth-child(2n) {
@@ -20,17 +49,11 @@
   justify-content: center;
   align-items: center;
   transition: $transition;
-  h3 {
-    transition: $transition;
-    color: $primary-color;
-    font-size: 30px;
-  }
-  &:hover {
-    background-color: $dark-color;
-    h3 {
-      color: white;
-    }
-  }
+  background-color: $dark-color;
+  padding: 0 $space * 2;
+  filter: gray;
+  /* IE6-9 */
+  filter: grayscale(100%);
 }
 .projectImage {
   width: 50%;

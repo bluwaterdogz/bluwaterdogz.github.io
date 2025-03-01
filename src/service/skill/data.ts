@@ -37,7 +37,7 @@ export const skills: Skill[] = [
     icon: "devicon-python-plain",
     level: 8,
     classes: "none",
-    projects: [{ name: "Faro Data Analytics Dashboard POC", id: 5 }],
+    projects: [{ name: "Faro Data Analytics Dashboard POC", id: "5" }],
   },
   {
     name: "Javascript",
@@ -48,8 +48,8 @@ export const skills: Skill[] = [
     level: 10,
     classes: "none",
     projects: [
-      { name: "Faro Study Designer ", id: 1 },
-      { name: "Various Inc Viewer", id: 2 },
+      { name: "Faro Study Designer ", id: "1" },
+      { name: "Various Inc Viewer", id: "2" },
     ],
   },
   {
@@ -61,9 +61,9 @@ export const skills: Skill[] = [
     level: 10,
     classes: "none",
     projects: [
-      { name: "Faro Study Designer ", id: 1 },
-      { name: "Various Inc Viewer", id: 2 },
-      { name: "Metafold 3D MVP", id: 8 },
+      { name: "Faro Study Designer ", id: "1" },
+      { name: "Various Inc Viewer", id: "2" },
+      { name: "Metafold 3D MVP", id: "8" },
     ],
   },
   {
@@ -74,7 +74,7 @@ export const skills: Skill[] = [
     icon: "devicon-nodejs-plain-wordmark",
     level: 7,
     classes: "none",
-    projects: [{ name: "Faro Study Designer ", id: 1 }],
+    projects: [{ name: "Faro Study Designer ", id: "1" }],
   },
   {
     name: "PostgreSQL",
@@ -84,7 +84,7 @@ export const skills: Skill[] = [
     icon: "devicon-postgresql-plain",
     level: 5,
     classes: "none",
-    projects: [{ name: "Faro Study Designer ", id: 1 }],
+    projects: [{ name: "Faro Study Designer ", id: "1" }],
   },
   {
     name: "PHP",
@@ -95,9 +95,9 @@ export const skills: Skill[] = [
     level: 7,
     classes: "none",
     projects: [
-      { name: "Launch Brigade Website", id: 4 },
-      { name: "San Anselmo City Plan Website", id: 3 },
-      { name: "LotLinx Website", id: 7 },
+      { name: "Launch Brigade Website", id: "4" },
+      { name: "San Anselmo City Plan Website", id: "3" },
+      { name: "LotLinx Website", id: "7" },
     ],
   },
   {
@@ -109,12 +109,12 @@ export const skills: Skill[] = [
     level: 10,
     classes: "none",
     projects: [
-      { name: "Faro Study Designer ", id: 1 },
-      { name: "Various Inc Viewer", id: 2 },
-      { name: "San Anselmo City Plan Website", id: 3 },
-      { name: "Launch Brigade Website", id: 4 },
-      { name: "LotLinx Website", id: 7 },
-      { name: "Metafold 3D MVP", id: 8 },
+      { name: "Faro Study Designer ", id: "1" },
+      { name: "Various Inc Viewer", id: "2" },
+      { name: "San Anselmo City Plan Website", id: "3" },
+      { name: "Launch Brigade Website", id: "4" },
+      { name: "LotLinx Website", id: "7" },
+      { name: "Metafold 3D MVP", id: "8" },
     ],
   },
   {
@@ -126,12 +126,12 @@ export const skills: Skill[] = [
     level: 10,
     classes: "none",
     projects: [
-      { name: "Faro Study Designer ", id: 1 },
-      { name: "Various Inc Viewer", id: 2 },
-      { name: "San Anselmo City Plan Website", id: 3 },
-      { name: "Launch Brigade Website", id: 4 },
-      { name: "LotLinx Website", id: 7 },
-      { name: "Metafold 3D MVP", id: 8 },
+      { name: "Faro Study Designer ", id: "1" },
+      { name: "Various Inc Viewer", id: "2" },
+      { name: "San Anselmo City Plan Website", id: "3" },
+      { name: "Launch Brigade Website", id: "4" },
+      { name: "LotLinx Website", id: "7" },
+      { name: "Metafold 3D MVP", id: "8" },
     ],
   },
 
@@ -144,9 +144,9 @@ export const skills: Skill[] = [
     level: 10,
     classes: "none",
     projects: [
-      { name: "Faro Study Designer ", id: 1 },
-      { name: "Various Inc Viewer", id: 2 },
-      { name: "Metafold 3D MVP", id: 8 },
+      { name: "Faro Study Designer ", id: "1" },
+      { name: "Various Inc Viewer", id: "2" },
+      { name: "Metafold 3D MVP", id: "8" },
     ],
   },
   {
@@ -157,7 +157,7 @@ export const skills: Skill[] = [
     icon: "devicon-angular-plain",
     level: 9,
     classes: "none",
-    projects: [{ name: "Various Inc Viewer", id: 2 }],
+    projects: [{ name: "Various Inc Viewer", id: "2" }],
   },
   {
     name: "Express",
@@ -167,7 +167,7 @@ export const skills: Skill[] = [
     icon: "devicon-express-original",
     level: 8,
     classes: "none",
-    projects: [{ name: "Faro Study Designer ", id: 1 }],
+    projects: [{ name: "Faro Study Designer ", id: "1" }],
   },
   {
     name: "Flask",
@@ -177,7 +177,7 @@ export const skills: Skill[] = [
     icon: "devicon-flask-original",
     level: 8,
     classes: "none",
-    projects: [{ name: "Faro Data Analytics Dashboard POC", id: 5 }],
+    projects: [{ name: "Faro Data Analytics Dashboard POC", id: "5" }],
   },
   {
     name: "RXJS",
@@ -188,8 +188,8 @@ export const skills: Skill[] = [
     level: 6,
     classes: "none",
     projects: [
-      { name: "Faro Study Designer ", id: 1 },
-      { name: "Various Inc Viewer", id: 2 },
+      { name: "Faro Study Designer ", id: "1" },
+      { name: "Various Inc Viewer", id: "2" },
     ],
   },
   {
@@ -211,7 +211,7 @@ export const skills: Skill[] = [
     icon: "devicon-storybook-plain",
     level: 8,
     classes: "none",
-    projects: [{ name: "Faro Study Designer ", id: 1 }],
+    projects: [{ name: "Faro Study Designer ", id: "1" }],
   },
   {
     name: "Vite",
@@ -221,7 +221,7 @@ export const skills: Skill[] = [
     icon: "devicon-vite-original",
     level: 8,
     classes: "none",
-    projects: [{ name: "Faro Study Designer ", id: 1 }],
+    projects: [{ name: "Faro Study Designer ", id: "1" }],
   },
   {
     name: "Git",
@@ -232,11 +232,11 @@ export const skills: Skill[] = [
     level: 9,
     classes: "none",
     projects: [
-      { name: "Faro Study Designer ", id: 1 },
-      { name: "Various Inc Viewer", id: 2 },
-      { name: "San Anselmo City Plan Website", id: 3 },
-      { name: "Launch Brigade Website", id: 4 },
-      { name: "Faro Data Analytics Dashboard POC", id: 5 },
+      { name: "Faro Study Designer ", id: "1" },
+      { name: "Various Inc Viewer", id: "2" },
+      { name: "San Anselmo City Plan Website", id: "3" },
+      { name: "Launch Brigade Website", id: "4" },
+      { name: "Faro Data Analytics Dashboard POC", id: "5" },
     ],
   },
   {
@@ -248,9 +248,9 @@ export const skills: Skill[] = [
     level: 8,
     classes: "none",
     projects: [
-      { name: "Various Inc Viewer", id: 2 },
-      { name: "San Anselmo City Plan Website", id: 3 },
-      { name: "Launch Brigade Website", id: 4 },
+      { name: "Various Inc Viewer", id: "2" },
+      { name: "San Anselmo City Plan Website", id: "3" },
+      { name: "Launch Brigade Website", id: "4" },
     ],
   },
   {
@@ -261,7 +261,7 @@ export const skills: Skill[] = [
     icon: "devicon-azure-plain",
     level: 6,
     classes: "none",
-    projects: [{ name: "Faro B2C SSO Implementation", id: 6 }],
+    projects: [{ name: "Faro B2C SSO Implementation", id: "6" }],
   },
   {
     name: "Github Actions",
@@ -272,8 +272,8 @@ export const skills: Skill[] = [
     level: 7,
     classes: "none",
     projects: [
-      { name: "Faro Study Designer ", id: 1 },
-      { name: "Faro B2C SSO Implementation", id: 6 },
+      { name: "Faro Study Designer ", id: "1" },
+      { name: "Faro B2C SSO Implementation", id: "6" },
     ],
   },
   {
@@ -285,8 +285,8 @@ export const skills: Skill[] = [
     level: 8,
     classes: "none",
     projects: [
-      { name: "Various Inc Viewer", id: 2 },
-      { name: "Launch Brigade Website", id: 4 },
+      { name: "Various Inc Viewer", id: "2" },
+      { name: "Launch Brigade Website", id: "4" },
     ],
   },
   {
@@ -297,7 +297,7 @@ export const skills: Skill[] = [
     icon: "devicon-bootstrap-plain",
     level: 9,
     classes: "none",
-    projects: [{ name: "Launch Brigade Website", id: 4 }],
+    projects: [{ name: "Launch Brigade Website", id: "4" }],
   },
   {
     name: "Figma",
@@ -308,9 +308,9 @@ export const skills: Skill[] = [
     level: 7,
     classes: "none",
     projects: [
-      { name: "Faro Study Designer ", id: 1 },
-      { name: "San Anselmo City Plan Website", id: 3 },
-      { name: "Launch Brigade Website", id: 4 },
+      { name: "Faro Study Designer ", id: "1" },
+      { name: "San Anselmo City Plan Website", id: "3" },
+      { name: "Launch Brigade Website", id: "4" },
     ],
   },
 ];

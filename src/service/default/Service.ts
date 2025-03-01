@@ -7,7 +7,7 @@ export default class Service<T, C extends Client<T>> {
     return await this.client.get(id);
   }
 
-  async list() {
-    return await this.client.list();
+  async list(ids?: string[]) {
+    return await this.client.list(ids);
   }
 }

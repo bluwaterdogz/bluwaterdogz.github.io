@@ -15,7 +15,9 @@ export default class Client<T> {
     return await (this.data || this.listData?.find((x: any) => x.id === id));
   }
 
-  async list(): Promise<T[] | undefined> {
-    return await this.listData;
+  async list(ids?: string[]): Promise<T[] | undefined> {
+    return await this.listData?.filter((item: any) =>
+      ids != null ? ids?.includes(item.id) : true
+    );
   }
 }

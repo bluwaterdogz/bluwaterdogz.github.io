@@ -56,18 +56,14 @@ export const HomePage = () => {
       <section className={styles.imageSection}>
         <div
           style={{
-            backgroundImage: "url(./dog.jpg)",
+            backgroundImage: "url(./imgs/theme1.jpg)",
           }}
           className={styles.hero}
-        >
-          <div className={styles.content}>
-            <h1>Brian Velasquez</h1>
-          </div>
-        </div>
+        ></div>
       </section>
       <section className={`${styles.textSection} ${styles.right}`}>
         <div className={styles.content}>
-          <h2>Leadership</h2>
+          <h2>Technical Leader</h2>
           <p>
             Having led a large international team of developers and engineers in
             the US, Europe, Taiwan and China I'm positive that my expertise in
@@ -78,6 +74,14 @@ export const HomePage = () => {
             company defined goals.
           </p>
         </div>
+      </section>
+      <section className={styles.imageSection}>
+        <div
+          style={{
+            backgroundImage: "url(./imgs/theme2.jpg)",
+          }}
+          className={styles.hero}
+        ></div>
       </section>
     </div>
   );

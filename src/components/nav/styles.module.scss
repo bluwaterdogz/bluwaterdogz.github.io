@@ -15,10 +15,12 @@
   position: relative;
   top: 0;
   left: 0;
-  padding: $space;
+  padding: 0 $space;
   text-align: left;
-  color: black;
   background-color: white;
+  height: $nav-height;
+  display: flex;
+  align-items: center;
   &.vertical {
     text-align: right;
     position: fixed;
@@ -29,12 +31,21 @@
     background-color: transparent;
     a {
       display: block;
-      color: white;
-      mix-blend-mode: difference;
+      font-size: 40px;
+    }
+    &.dark {
+      a {
+        color: black;
+      }
+    }
+    &.light {
+      a {
+        color: white;
+      }
     }
   }
   a {
-    color: black;
+    color: $dark-color;
     display: inline-block;
     padding-right: $space-sm * 4;
     text-decoration: none;
@@ -43,7 +54,6 @@
     &:hover {
       color: $primary-color;
     }
-    mix-blend-mode: difference;
   }
   @for $i from 1 through 10 {
     a {

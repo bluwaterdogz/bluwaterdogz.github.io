@@ -1,0 +1,26 @@
+@import "../../styles/variables";
+@import "../../styles/colors";
+
+.headShot {
+  border-radius: 100%;
+  width: 300px;
+  height: 300px;
+  box-shadow: -3px 4px 10px rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  margin: $space;
+}
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: calc(100vh - $nav-height);
+  width: 50vw;
+  margin: auto;
+  p {
+    text-align: center;
+  }
+}

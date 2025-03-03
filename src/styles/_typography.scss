@@ -1,0 +1,14 @@
+@import "variables";
+h1 {
+  margin: 0;
+  font-size: 60px;
+}
+h2 {
+  transition: $transition;
+  font-size: 40px;
+  font-weight: 400;
+}
+h3 {
+  font-size: 2rem;
+  font-weight: 600;
+}

@@ -1,14 +1,17 @@
+import { useTranslation } from "react-i18next";
+import styles from "./styles.module.scss";
 export const AboutPage = () => {
+  const { t } = useTranslation();
   return (
     <div>
-      <p>
-        I'm an experienced Full Stack Developer with a passion for elegant
-        scalable code, and minimal intuitive UX.
-      </p>
-      <p>
-        In my spare time I love to climb, travel to eat and learn new languages
-        (reviewed ), play chess, explore on my dirtbike, and practice Muay Thai.
-      </p>
+      <div className={styles.content}>
+        <div
+          className={styles.headShot}
+          style={{ backgroundImage: 'url("/imgs/brian.jpg")' }}
+        ></div>
+        <p>{t("about.section1")}</p>
+        <p>{t("about.section2")}</p>
+      </div>
     </div>
   );
 };

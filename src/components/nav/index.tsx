@@ -2,10 +2,15 @@ import { Link } from "react-router";
 import styles from "./styles.module.scss";
 interface NavProps {
   vertical: boolean;
+  dark?: boolean;
 }
-const Nav = ({ vertical }: NavProps) => {
+const Nav = ({ vertical, dark = false }: NavProps) => {
   return (
-    <div className={`${styles.nav} ${vertical ? styles.vertical : ""}`}>
+    <div
+      className={`${styles.nav} ${dark ? styles.dark : styles.light} ${
+        vertical ? styles.vertical : ""
+      }`}
+    >
       <Link to={"/home"}>Home</Link>
       <Link to={"/skills"}>Skills</Link>
       <Link to={"/projects"}>Projects</Link>

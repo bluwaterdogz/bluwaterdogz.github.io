@@ -1,0 +1,16 @@
+{
+  "translation": {
+    "home": {
+      "sub": "Full Stack Web Developer",
+      "section1Title": "Expreienced",
+      "section1Content1": "In my most recent role as a Senior Full Stack Developer at pharmaceutical tech startup Faro Health I worked on REST and CQRS based microservices and UI modules implemented in Typescript, Node, PostgreSQL, Jest and React. My work involved developing feature slices and POCs, creating and executing technical designs, writing Unit and Integration Tests, optimizing application performance, and building deployment pipelines using Github Actions.",
+      "section1Content2": "Prior to this, I led an international remote Front End team at Various Inc. where we worked hand in hand with the design team to reskin and migrate legacy Javascript and Perl based video streaming apps to a modern UI built in React, TypeScript and Python. A more scalable codebase utilizing Next.js, MOBX and WebSockets and backed by REST APIs and a CI/CD development pipeline to streamline deployment.",
+      "section2Title": "Technical Leader",
+      "section2Content1": "Having led a large international team of developers and engineers in the US, Europe, Taiwan and China I'm positive that my expertise in technologies like Typescript, Node, PostgreSQL, Jest and React will help to push your organization forward. In addition to my technical design and development skills, my leadership abilities will help to align and focus team efforts towards specific milestones, and company defined goals."
+    },
+    "about": {
+      "section1": "Brian is an experienced Senior Developer with a passion for elegant scalable code, and minimal intuitive UX.",
+      "section2": "In his spare time he loves to climb, play chess, explore on his dirtbike, and practice Muay Thai."
+    }
+  }
+}

@@ -2,6 +2,8 @@ import { useCallback, useEffect } from "react";
 import { useServiceContext } from "../../service";
 import styles from "./styles.module.scss";
 import Nav from "../../components/nav";
+import { useTranslation } from "react-i18next";
+
 export const HomePage = () => {
   const { jobService } = useServiceContext();
 
@@ -13,75 +15,66 @@ export const HomePage = () => {
     getData();
   }, [getData]);
 
+  const { t } = useTranslation();
   return (
     <div>
-      <Nav vertical={true} />
-      <section>
-        <div
-          style={{
-            backgroundImage: "url(./dog.jpg)",
-          }}
-          className={styles.hero}
-        >
+      <section
+        className={styles.hero}
+        style={{
+          backgroundImage: "url(./dog.jpg)",
+        }}
+      >
+        <div className={styles.container}>
+          <Nav vertical={true} />
+
           <div className={styles.content}>
             <h1>Brian Velasquez</h1>
-            <p className={styles.headerSubtext}>Full Stack Web Developer</p>
+            <p className={styles.headerSubtext}>{t("home.sub")}</p>
           </div>
         </div>
       </section>
       <section className={styles.textSection}>
-        <div className={styles.content}>
-          <h2>Expreienced</h2>
-          <p>
-            In my most recent role as a Senior Full Stack Developer at
-            pharmaceutical tech startup Faro Health I worked on REST and CQRS
-            based microservices and UI modules implemented in Typescript, Node,
-            PostgreSQL, Jest and React. My work involved developing feature
-            slices and POCs, creating and executing technical designs, writing
-            Unit and Integration Tests, optimizing application performance, and
-            building deployment pipelines using Github Actions.
-          </p>
-          <hr />
-          <p>
-            Prior to this, I led an international remote Front End team at
-            Various Inc. where we worked hand in hand with the design team to
-            reskin and migrate legacy Javascript and Perl based video streaming
-            apps to a modern UI built in React, TypeScript and Python. A more
-            scalable codebase utilizing Next.js, MOBX and WebSockets and backed
-            by REST APIs and a CI/CD development pipeline to streamline
-            deployment.
-          </p>
+        <div className={styles.container}>
+          <Nav vertical={true} dark={true} />
+          <div className={styles.content}>
+            <h2>{t("home.section1Title")}</h2>
+            <p>{t("home.section1Content1")}</p>
+            <hr />
+            <p>{t("home.section1Content2")}</p>
+          </div>
         </div>
       </section>
       <section className={styles.imageSection}>
-        <div
-          style={{
-            backgroundImage: "url(./imgs/theme1.jpg)",
-          }}
-          className={styles.hero}
-        ></div>
+        <div className={styles.container}>
+          <div
+            style={{
+              backgroundImage: "url(./imgs/theme1.jpg)",
+            }}
+            className={styles.img}
+          ></div>
+          <Nav vertical={true} />
+        </div>
       </section>
       <section className={`${styles.textSection} ${styles.right}`}>
-        <div className={styles.content}>
-          <h2>Technical Leader</h2>
-          <p>
-            Having led a large international team of developers and engineers in
-            the US, Europe, Taiwan and China I'm positive that my expertise in
-            technologies like Typescript, Node, PostgreSQL, Jest and React will
-            help to push your organization forward. In addition to my technical
-            design and development skills, my leadership abilities will help to
-            align and focus team efforts towards specific milestones, and
-            company defined goals.
-          </p>
+        <div className={styles.container}>
+          <Nav vertical={true} dark={true} />
+          <div className={styles.content}>
+            <h2>{t("home.section2Title")}</h2>
+            <p>{t("home.section2Content1")}</p>
+          </div>
         </div>
       </section>
+
       <section className={styles.imageSection}>
-        <div
-          style={{
-            backgroundImage: "url(./imgs/theme2.jpg)",
-          }}
-          className={styles.hero}
-        ></div>
+        <div className={styles.container}>
+          <div
+            style={{
+              backgroundImage: "url(./imgs/theme2.jpg)",
+            }}
+            className={styles.img}
+          ></div>
+          <Nav vertical={true} />
+        </div>
       </section>
     </div>
   );

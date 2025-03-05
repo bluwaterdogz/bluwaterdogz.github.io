@@ -31,12 +31,44 @@
     clip: rect(auto, auto, auto, auto);
   }
 }
-
+@media (max-width: 1200px) {
+  .textSection,
+  .imageSection {
+    .nav {
+      display: none;
+    }
+  }
+  .textSection {
+    height: auto;
+    .container {
+      padding: $space;
+      min-height: auto;
+    }
+    &.right {
+      h2 {
+        float: none;
+        padding: $space / 2 0 $space / 2 $space;
+      }
+      p {
+      }
+    }
+  }
+  .hero {
+    // .nav {
+    //   width: 100%;
+    //   position: fixed;
+    //   z-index: 1000;
+    //   top: 0;
+    // }
+  }
+}
 .textSection {
-  // color: $primary-color;
+  height: auto;
   min-height: 100vh;
   width: 100%;
   .container {
+    padding: $space;
+    min-height: auto;
     display: inline-flex;
     justify-content: center;
     align-items: center;

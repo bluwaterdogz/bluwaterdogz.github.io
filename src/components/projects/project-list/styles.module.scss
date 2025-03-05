@@ -1,0 +1,25 @@
+.projectList {
+  .projectItem {
+    display: flex;
+  }
+  .projectItem:nth-child(2n) {
+    flex-direction: row-reverse;
+  }
+}
+
+@media (max-width: 768px) {
+  .projectList {
+    .projectItem {
+      flex-direction: column-reverse;
+      display: flex;
+      border-bottom: 10px solid black;
+      &:last-child {
+        border-bottom: none;
+      }
+      .projectDetails,
+      .projectImage {
+        width: 100%;
+      }
+    }
+  }
+}

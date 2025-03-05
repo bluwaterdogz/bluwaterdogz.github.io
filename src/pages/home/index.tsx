@@ -3,6 +3,7 @@ import { useServiceContext } from "../../service";
 import styles from "./styles.module.scss";
 import Nav from "../../components/nav";
 import { useTranslation } from "react-i18next";
+import { DarkOverlay } from "../../components/common/dark-overlay";
 
 export const HomePage = () => {
   const { jobService } = useServiceContext();
@@ -24,8 +25,11 @@ export const HomePage = () => {
           backgroundImage: "url(./dog.jpg)",
         }}
       >
+        <DarkOverlay />
         <div className={styles.container}>
-          <Nav vertical={true} />
+          <div className={styles.nav}>
+            <Nav vertical={true} />
+          </div>
 
           <div className={styles.content}>
             <h1>Brian Velasquez</h1>
@@ -35,7 +39,9 @@ export const HomePage = () => {
       </section>
       <section className={styles.textSection}>
         <div className={styles.container}>
-          <Nav vertical={true} dark={true} />
+          <div className={styles.nav}>
+            <Nav vertical={true} dark={true} />
+          </div>
           <div className={styles.content}>
             <h2>{t("home.section1Title")}</h2>
             <p>{t("home.section1Content1")}</p>
@@ -52,12 +58,16 @@ export const HomePage = () => {
             }}
             className={styles.img}
           ></div>
-          <Nav vertical={true} />
+          <div className={styles.nav}>
+            <Nav vertical={true} />
+          </div>
         </div>
       </section>
       <section className={`${styles.textSection} ${styles.right}`}>
         <div className={styles.container}>
-          <Nav vertical={true} dark={true} />
+          <div className={styles.nav}>
+            <Nav vertical={true} dark={true} />
+          </div>
           <div className={styles.content}>
             <h2>{t("home.section2Title")}</h2>
             <p>{t("home.section2Content1")}</p>
@@ -73,7 +83,9 @@ export const HomePage = () => {
             }}
             className={styles.img}
           ></div>
-          <Nav vertical={true} />
+          <div className={styles.nav}>
+            <Nav vertical={true} />
+          </div>
         </div>
       </section>
     </div>

@@ -1,5 +1,5 @@
+import { BackgroundAnimation } from "../../components/common/background-animation";
 import styles from "./styles.module.scss";
-import { BackgroundAnimation } from "../../components/background-animation";
 
 interface PlaceholderProps {}
 export const PlaceholderPage: React.FunctionComponent<PlaceholderProps> = (

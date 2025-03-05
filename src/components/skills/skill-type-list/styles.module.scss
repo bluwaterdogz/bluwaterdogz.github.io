@@ -1,0 +1,19 @@
+@import "../../../styles/variables";
+@import "../../../styles/colors";
+
+.divider {
+  max-width: $content-width;
+  margin: auto;
+  border: white 1px solid;
+}
+.skillSection {
+  padding: $space * 3 0;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  min-height: $space-large;
+  max-width: $content-width;
+  margin: auto;
+}

@@ -1,0 +1,66 @@
+@import "../../../styles/colors";
+@import "../../../styles/variables";
+.project {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  text-decoration: none;
+  h2 {
+    color: white;
+  }
+  p {
+    padding-left: $space;
+    color: white;
+    transition: $transition;
+    font-size: 20px;
+  }
+
+  &:hover {
+    .projectDetails {
+      background-color: $secondary-color;
+      h2,
+      p {
+        color: white;
+      }
+    }
+    .projectImage {
+      filter: grayscale(0%) brightness(110%);
+    }
+  }
+}
+
+.projectDetails {
+  width: 50%;
+  height: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: $transition;
+  background-color: $dark-color;
+  padding: 0 $space * 2;
+  filter: gray;
+  filter: grayscale(100%);
+}
+.projectImage {
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+  background-position: center;
+  filter: grayscale(60%) brightness(80%);
+  transition: $transition;
+}
+
+@media (max-width: 768px) {
+  .project {
+    flex-direction: column-reverse;
+    display: flex;
+    border-bottom: 10px solid black;
+    &:last-child {
+      border-bottom: none;
+    }
+    .projectDetails,
+    .projectImage {
+      width: 100%;
+    }
+  }
+}

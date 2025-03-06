@@ -18,6 +18,7 @@
       height: auto;
       text-align: right;
       position: fixed;
+      align-items: end;
       right: 0;
       bottom: 0;
       top: unset;
@@ -55,6 +56,9 @@
   height: $nav-height;
   display: flex;
   align-items: center;
+  .navChildren {
+    margin-left: auto;
+  }
   a {
     color: $dark-color;
     display: inline-block;

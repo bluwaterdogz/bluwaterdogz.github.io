@@ -1,11 +1,13 @@
-import styles from "./styles.module.scss";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import { Project } from "../../../service/project/types";
+import styles from "./styles.module.scss";
+
 interface ProjectItemProps {
   project: Project;
   className?: string;
 }
+
 export const ProjectItem = ({ project, className = "" }: ProjectItemProps) => {
   const { t } = useTranslation();
   return (

@@ -1,0 +1,20 @@
+@import "../../../styles/colors";
+@import "../../../styles/variables";
+.headShot {
+  border-radius: 100%;
+  box-shadow: -3px 4px 10px rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  //   margin: $space;
+  &.small {
+    width: 30px;
+    height: 30px;
+  }
+  &.medium {
+    width: 200px;
+    height: 200px;
+  }
+  &.large {
+    width: 300px;
+    height: 300px;
+  }
+}

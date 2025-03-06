@@ -1,4 +1,12 @@
 @import "../../styles/colors";
+@import "../../styles/variables";
 .header {
-  background-color: $dark-color;
+  background-color: white;
+  padding-right: $space/2;
+  overflow: visible;
+  display: flex;
+}
+.languageDropdown {
+  margin-left: auto;
+  // float: right;
 }

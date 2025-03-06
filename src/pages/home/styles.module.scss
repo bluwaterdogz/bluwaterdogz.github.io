@@ -19,8 +19,23 @@
     }
   }
 }
+.languageDropdown {
+  position: absolute;
+  top: 0;
+  right: $space;
+  z-index: 100;
+}
+.lang {
+  position: absolute;
+  overflow: visible;
+
+  top: 0;
+  right: $space/2;
+  z-index: 1000;
+}
 .textSection,
 .imageSection,
+.profileSection,
 .hero {
   position: relative;
   .container {
@@ -33,7 +48,8 @@
 }
 @media (max-width: 1200px) {
   .textSection,
-  .imageSection {
+  .imageSection,
+  .profileSection {
     .nav {
       display: none;
     }
@@ -49,17 +65,35 @@
         float: none;
         padding: $space / 2 0 $space / 2 $space;
       }
-      p {
-      }
     }
   }
-  .hero {
-    // .nav {
-    //   width: 100%;
-    //   position: fixed;
-    //   z-index: 1000;
-    //   top: 0;
-    // }
+}
+.profileSection {
+  height: auto;
+  min-height: 500px;
+  width: 100%;
+  .container {
+    padding: $space;
+    min-height: auto;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .content {
+    width: $content-width;
+    margin: auto;
+    display: flex;
+    overflow: visible;
+  }
+  .contentImage {
+    padding: $space / 2 $space $space / 2 0;
+    overflow: visible;
+    width: fit-content;
+  }
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 .textSection {
@@ -77,11 +111,15 @@
     width: $content-width;
     margin: auto;
   }
+
+  h2 {
+    float: left;
+    padding: $space / 2 $space $space / 2 0;
+  }
+
   h2 {
     font-size: 70px;
     display: inline;
-    float: left;
-    padding: $space / 2 $space $space / 2 0;
     margin: 0;
   }
   hr {
@@ -91,8 +129,9 @@
     margin: $space auto;
   }
   &.right {
+    .contentImage,
     h2 {
-      float: right;
+      float: left;
       padding: $space / 2 0 $space / 2 $space;
     }
     p {

@@ -1,0 +1,54 @@
+{
+  "translation": {
+    "home": {
+      "sub": "Desarrollador web de pila completa",
+      "section1Title": "Exprimiado",
+      "section1Content1": "En mi papel más reciente como desarrollador senior de pila completa en la startup de tecnología farmacéutica Faro Health, trabajé en microservicios basados ​​en REST y CQRS y módulos de interfaz de usuario implementados en TypeScript, Node, PostgreSQL, Jest y React. ",
+      "section1Content2": "Antes de esto, dirigí un equipo internacional de front -end remotos en Varios Inc., donde trabajamos de la mano con el equipo de diseño para reskin y migrará aplicaciones de transmisión de video Legacy JavaScript y Perl a una IU moderna integrada en React, TypeScript y Python. ",
+      "section2Title": "Líder técnico",
+      "section2Content1": "Después de haber dirigido un gran equipo internacional de desarrolladores e ingenieros en los Estados Unidos, Europa, Taiwán y China, estoy seguro de que mi experiencia en tecnologías como TypeScript, Node, Postgresql, Jest y React ayudará a impulsar su organización. "
+    },
+    "about": {
+      "section1": "Brian es un desarrollador senior experimentado con pasión por el código escalable elegante y UX intuitivo mínimo.",
+      "section2": "En su tiempo libre le encanta escalar, jugar al ajedrez, explorar en su moto de tierra y practicar Muay Thai."
+    },
+    "nav": {
+      "home": "Página principal",
+      "skills": "Habilidades",
+      "projects": "Proyectos",
+      "about": "Acerca de",
+      "jobs": "Trabajos"
+    },
+    "data": {
+      "projects": {
+        "description": {
+          "1": "Una herramienta de software de ensayo clínico que ayuda a los investigadores a diseñar y optimizar sus estudios clínicos al proporcionar análisis en tiempo real y racionalizar el proceso de planificación.",
+          "2": "Una aplicación de transmisión y chat de video en tiempo real",
+          "3": "Una encuesta y un sitio web informativo sobre los próximos cambios en la ciudad de San Anselmo",
+          "4": "Sitio web para una agencia de diseño y desarrollo web",
+          "5": "Aplicación de micro-servicio de análisis de datos de concepto de concepto integrada en pandas",
+          "6": "Un IDP Agnóstico único de inicio de sesión en la implementación para la aplicación de diseñador de estudio.",
+          "7": "Sitio web para una aplicación de automóvil usada de IA.",
+          "8": "Front End para una aplicación de exhibición para una aplicación geométrica para combinar estructuras de celosía."
+        },
+        "content": {
+          "1": "<div><h3>Utilización de IA para el desarrollo del estudio clínico.</h3><p>El producto emblemático de la compañía, el diseñador de estudio FARO, está diseñado para mejorar la eficiencia y la amigable para el paciente de los protocolos clínicos.</p><p>Faro Health ha recibido una inversión significativa, asegurando un total de $ 38.3 millones en fondos, con los más recientes $ 20 millones recaudados hace aproximadamente dos años.</p><p>Las características clave incluyen:</p><div><p>Colaboración en tiempo real: facilita procesos de documentación precisos y eficientes.</p><p>Análisis de factibilidad: evalúa el impacto de las decisiones de diseño en las tasas de éxito del estudio.</p><p>Benchmarking: compara protocolos con datos históricos y variaciones de diseño.</p></div></div>",
+          "2": "<div><p>El espectador es una plataforma interactiva de cámara web donde los usuarios pueden participar en chats de video en vivo con los artistas, ofreciendo una experiencia personalizada en tiempo real.  </p> </div>",
+          "4": "<div><p>Launch Brigade es una agencia de diseño y desarrollo web con sede en el Área de la Bahía de San Francisco, especializada en la creación de experiencias digitales que elevan las marcas e impulsan el crecimiento empresarial. </p></div>",
+          "5": "<div><p>El panel de datos de Data Analytics fue una aplicación de prueba de concepto incorporada en pandas que utilizaban datos de diseño de estudio almacenados en un esquema de estrellas para crear un microservicio de análisis de datos y frontend. </p></div>",
+          "7": "<div><p>Lotlinx es una plataforma de gestión de inventario automotriz impulsada por AI que aprovecha el aprendizaje automático y el análisis de datos extensos para ayudar a los concesionarios a optimizar la facturación y la rentabilidad del inventario. </p></div>",
+          "8": "<div><p>MetaFold 3D es una plataforma basada en la nube que permite el diseño e ingeniería de modelos 3D altamente complejos, específicamente optimizado para la fabricación aditiva. </p></div>"
+        }
+      },
+      "jobs": {
+        "title": {
+          "1": "Desarrollador senior de pila completa",
+          "2": "Desarrollador de front-end principal",
+          "3": "Desarrollador frontal",
+          "4": "Pasante de desarrollador front-end",
+          "5": "Pasante de diseño"
+        }
+      }
+    }
+  }
+}

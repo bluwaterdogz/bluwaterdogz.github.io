@@ -12,6 +12,14 @@
       "section1": "Brian is an experienced Senior Developer with a passion for elegant scalable code, and minimal intuitive UX.",
       "section2": "In his spare time he loves to climb, play chess, explore on his dirtbike, and practice Muay Thai."
     },
+    "lang": {
+      "english": "English",
+      "chinese": "Chinese",
+      "espanol": "Espanol",
+      "thai": "Thai",
+      "german": "German",
+      "korean": "Korean"
+    },
     "nav": {
       "home": "Home",
       "skills": "Skills",
@@ -38,6 +46,15 @@
           "5": "<div><p>The Data Analytics Dashboard was a proof of concept application built in Pandas which utilized Study Design data stored in a star schema to create a data analytics microservice and frontend. This app allowed users to slice and dice their study data according to whatever data dimensions they chose.</p></div>",
           "7": "<div><p>Lotlinx is an AI-driven automotive inventory management platform that leverages machine learning and extensive data analytics to help dealerships optimize inventory turnover and profitability. By providing real-time insights into market demand, pricing strategies, and consumer behavior, Lotlinx enables use car dealers to make data-driven decisions, reduce holding costs, and enhance overall operational efficiency.</p></div>",
           "8": "<div><p>​Metafold 3D is a cloud-based platform that enables the design and engineering of highly complex 3D models, specifically optimized for additive manufacturing. Founded in 2020 by experts in mathematics, geometry, and architecture, Metafold addresses the challenges traditional CAD tools face when handling intricate geometries, such as lattice structures, which are essential for lightweight and efficient designs​Metafold 3D is a cloud-based platform that enables the design and engineering of highly complex 3D models, specifically optimized for additive manufacturing. Metafold addresses the challenges traditional CAD tools face when handling merging intricate geometries, such as lattice structures.</p></div>"
+        }
+      },
+      "jobs": {
+        "title": {
+          "1": "Senior Full-Stack Developer",
+          "2": "Senior Lead Front-end Developer",
+          "3": "Front-end Developer",
+          "4": "Front-end Developer Intern",
+          "5": "Designer Intern"
         }
       }
     }

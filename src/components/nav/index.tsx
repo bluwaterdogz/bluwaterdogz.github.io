@@ -1,11 +1,13 @@
 import { useTranslation } from "react-i18next";
 import styles from "./styles.module.scss";
 import { NavLink } from "./nav-link";
+import { ReactNode } from "react";
 interface NavProps {
   vertical: boolean;
   dark?: boolean;
+  children?: ReactNode;
 }
-const Nav = ({ vertical, dark = false }: NavProps) => {
+const Nav = ({ vertical, dark = false, children = null }: NavProps) => {
   const { t } = useTranslation();
   return (
     <div
@@ -18,6 +20,9 @@ const Nav = ({ vertical, dark = false }: NavProps) => {
       <NavLink to={"/projects"}>{t("nav.projects")}</NavLink>
       <NavLink to={"/about"}>{t("nav.about")}</NavLink>
       <NavLink to={"/jobs"}>{t("nav.jobs")}</NavLink>
+      {children != null ? (
+        <div className={styles.navChildren}>{children}</div>
+      ) : null}
     </div>
   );
 };

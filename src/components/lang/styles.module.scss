@@ -1,0 +1,46 @@
+@import "../../styles/variables";
+@import "../../styles/colors";
+
+.languageDropdown {
+  // text-align: right;
+  display: inline-block;
+  overflow: visible;
+  position: relative;
+  z-index: 1000;
+  p {
+    cursor: pointer;
+    color: $primary-color;
+  }
+}
+.languageList {
+  height: 0;
+  text-align: right;
+  transition: $transition;
+  position: absolute;
+  top: $nav-height;
+  right: 0px;
+
+  &.open {
+    height: 200px;
+    display: block;
+  }
+  &:hover {
+    .language {
+      color: white;
+    }
+  }
+  .language {
+    font-size: 20px;
+    color: white;
+    transition: $transition;
+    cursor: pointer;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+.language {
+  &.active {
+    color: $primary-color;
+  }
+}

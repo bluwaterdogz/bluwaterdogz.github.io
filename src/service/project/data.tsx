@@ -49,6 +49,7 @@ export const projects: Project[] = [
   {
     name: "Launch Brigade Website",
     id: "4",
+    img: "/imgs/rocket.jpg",
     skills: ["6", "7", "8", "17", "18", "21", "22", "23"],
   },
   {

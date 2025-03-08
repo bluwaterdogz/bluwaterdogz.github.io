@@ -39,12 +39,7 @@ export const HomePage = () => {
             <div className={styles.contentImage}>
               <ProfilePicture size={"medium"} />
             </div>
-            <p>
-              Senior full-stack Web Developer with expertise in Typescript,
-              React, Angular, Node and Python. Experienced in leading and
-              collaborating with international teams, modernizing legacy
-              applications, and developing CI/CD pipelines.
-            </p>
+            <p>{t("home.about")}</p>
             {/* <hr />
             <p>{t("home.section1Content2")}</p> */}
           </div>

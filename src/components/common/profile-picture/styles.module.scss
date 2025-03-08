@@ -2,7 +2,7 @@
 @import "../../../styles/variables";
 .headShot {
   border-radius: 100%;
-  box-shadow: -3px 4px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: $box-shadow;
   background-size: cover;
   //   margin: $space;
   &.small {

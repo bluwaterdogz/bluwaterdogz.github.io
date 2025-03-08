@@ -5,36 +5,5 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-.skill {
-  width: 230px;
-  flex-wrap: wrap;
-  padding: $space;
-  color: white;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  transition: $transition;
-  .icon {
-    font-size: 70px;
-  }
-  .detail {
-    color: white;
-  }
-  .name {
-    color: white;
-    white-space: pre;
-    font-size: 20px;
-  }
-  .projectLink {
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    padding: $space-sm;
-    transition: $transition;
-    &:hover {
-      transform: scale(1.1);
-      color: $primary-color;
-    }
-  }
+  overflow: visible;
 }

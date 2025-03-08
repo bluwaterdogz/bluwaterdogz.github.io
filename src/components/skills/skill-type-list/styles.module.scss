@@ -11,9 +11,16 @@
   display: flex;
   flex-direction: column;
   color: white;
+  overflow: visible;
   align-items: center;
   justify-content: center;
   min-height: $space-large;
   max-width: $content-width;
   margin: auto;
+}
+.skillSectionContainer {
+  overflow: visible;
+}
+.skilLTypeList {
+  padding-bottom: 200px;
 }

@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import styles from "./styles.module.scss";
 import { NavLink } from "./nav-link";
-import { ReactNode } from "react";
+import { ReactNode, useMemo } from "react";
 interface NavProps {
   vertical: boolean;
   dark?: boolean;
@@ -9,17 +9,31 @@ interface NavProps {
 }
 const Nav = ({ vertical, dark = false, children = null }: NavProps) => {
   const { t } = useTranslation();
+
+  const navMap = useMemo(
+    () => ({
+      home: "/",
+      skills: "/skills",
+      projects: "/projects",
+      about: "/about",
+      // jobs: "/jobs",
+    }),
+    []
+  );
+
+  const navList = useMemo(() => Object.keys(navMap), []);
+
   return (
     <div
       className={`${styles.nav} ${dark ? styles.dark : styles.light} ${
         vertical ? styles.vertical : ""
       }`}
     >
-      <NavLink to={"/home"}>{t("nav.home")}</NavLink>
-      <NavLink to={"/skills"}>{t("nav.skills")}</NavLink>
-      <NavLink to={"/projects"}>{t("nav.projects")}</NavLink>
-      <NavLink to={"/about"}>{t("nav.about")}</NavLink>
-      <NavLink to={"/jobs"}>{t("nav.jobs")}</NavLink>
+      {navList.map((k) => (
+        <NavLink key={k} to={(navMap as any)[k]}>
+          {t(`nav.${k}`)}
+        </NavLink>
+      ))}
       {children != null ? (
         <div className={styles.navChildren}>{children}</div>
       ) : null}

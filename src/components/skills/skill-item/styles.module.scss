@@ -1,0 +1,127 @@
+@import "../../../styles/variables";
+@import "../../../styles/colors";
+
+@mixin showTooltip() {
+  pointer-events: all;
+  .skillDetails {
+    min-height: auto;
+    height: auto;
+    display: flex;
+    opacity: 1;
+    &::after {
+      min-height: auto;
+      height: auto;
+      display: flex;
+      opacity: 1;
+    }
+  }
+}
+
+.skill {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 230px;
+  color: white;
+  flex-wrap: wrap;
+  transition: $transition;
+  overflow: visible;
+  position: relative;
+
+  .iconContainer {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $space;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+
+    .icon {
+      font-size: 70px;
+    }
+    .name {
+      color: white;
+      white-space: pre;
+      font-size: 20px;
+    }
+    &:hover {
+      .icon,
+      .name {
+        color: $primary-color;
+      }
+      & + .skillDetailsContainer {
+        @include showTooltip();
+      }
+    }
+  }
+
+  .skillDetailsContainer {
+    position: absolute;
+    top: 70%;
+    padding: $space;
+    z-index: 10;
+    pointer-events: none;
+    &:hover {
+      @include showTooltip();
+    }
+  }
+
+  .skillDetails {
+    overflow: visible;
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 0;
+    height: 0;
+    opacity: 0;
+
+    background-color: white;
+    box-shadow: $box-shadow;
+
+    transition: $transition;
+    &::after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      bottom: 100%;
+      left: 50%;
+      min-height: 0;
+      height: 0;
+      opacity: 0;
+      margin-left: -5px;
+      border-width: 10px;
+      border-style: solid;
+      border-color: transparent transparent white transparent;
+    }
+  }
+
+  .detail {
+    color: white;
+  }
+  h4 {
+    color: $dark-color;
+    padding: $space / 2;
+    margin: 0;
+    font-size: 20px;
+  }
+  hr {
+    border: 1px solid $primary-color;
+    width: 80%;
+    margin-top: 0;
+  }
+  .projectLink {
+    padding: $space/2 $space;
+    text-decoration: none;
+    color: $dark-color;
+    text-align: center;
+    transition: $transition;
+    width: 100%;
+    &:hover {
+      transform: scale(1.1);
+      color: $primary-color;
+      background-color: $dark-color;
+    }
+  }
+}

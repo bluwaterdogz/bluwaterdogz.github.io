@@ -7,17 +7,10 @@ import { NotFoundPage } from "../pages/404";
 import { ProjectPage } from "../pages/project";
 import { DefaultLayout } from "../layouts/default";
 import { AboutPage } from "../pages/about";
-import { JobsPage } from "../pages/jobs";
-import { JobPage } from "../pages/job";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    index: true,
-    element: <PlaceholderPage />,
-  },
-  {
-    path: "/home",
     element: <HomePage />,
   },
   {
@@ -38,14 +31,6 @@ export const router = createBrowserRouter([
       {
         path: "/project/:id",
         element: <ProjectPage />,
-      },
-      {
-        path: "/Jobs",
-        element: <JobsPage />,
-      },
-      {
-        path: "/Jobs/:id",
-        element: <JobPage />,
       },
 
       {

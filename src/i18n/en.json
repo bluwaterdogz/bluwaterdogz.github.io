@@ -2,6 +2,7 @@
   "translation": {
     "home": {
       "sub": "Full Stack Web Developer",
+      "about": "Senior full-stack Web Developer with expertise in Typescript, React, Angular, Node and Python. Experienced in leading and collaborating with international teams, modernizing legacy applications, and developing CI/CD pipelines.",
       "section1Title": "Expreienced",
       "section1Content1": "In my most recent role as a Senior Full Stack Developer at pharmaceutical tech startup Faro Health I worked on REST and CQRS based microservices and UI modules implemented in Typescript, Node, PostgreSQL, Jest and React. My work involved developing feature slices and POCs, creating and executing technical designs, writing Unit and Integration Tests, optimizing application performance, and building deployment pipelines using Github Actions.",
       "section1Content2": "Prior to this, I led an international remote Front End team at Various Inc. where we worked hand in hand with the design team to reskin and migrate legacy Javascript and Perl based video streaming apps to a modern UI built in React, TypeScript and Python. A more scalable codebase utilizing Next.js, MOBX and WebSockets and backed by REST APIs and a CI/CD development pipeline to streamline deployment.",
@@ -26,6 +27,15 @@
       "projects": "Projects",
       "about": "About",
       "jobs": "Jobs"
+    },
+    "jobs": {
+      "content": {
+        "5": "",
+        "4": "",
+        "3": "",
+        "2": "",
+        "1": ""
+      }
     },
     "data": {
       "projects": {

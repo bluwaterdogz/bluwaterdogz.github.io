@@ -3,6 +3,7 @@ import { Project } from "../../../service/project/types";
 import styles from "./styles.module.scss";
 import { useEffect } from "react";
 import { useSkillsStore } from "../../../service/skill/SkillStore";
+import { Link } from "react-router";
 
 interface ProjectContentProps {
   project: Project;
@@ -30,10 +31,12 @@ export const ProjectContent = ({ project }: ProjectContentProps) => {
         </div>
         <div className={styles.textBlock}>
           {skills?.map((skill) => (
-            <div className={styles.skill} key={skill.name}>
-              <i className={`${skill.icon} ${styles.icon}`}></i>
-              <p className={styles.name}>{skill.name}</p>
-            </div>
+            <Link key={skill.name} to={`/skills?skillType=${skill.type}`}>
+              <div className={styles.skill}>
+                <i className={`${skill.icon} ${styles.icon}`}></i>
+                <p className={styles.name}>{skill.name}</p>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

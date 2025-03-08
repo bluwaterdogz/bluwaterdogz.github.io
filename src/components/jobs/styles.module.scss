@@ -1,0 +1,19 @@
+@import "../../styles/variables";
+@import "../../styles/colors";
+.jobList {
+  position: relative;
+  height: calc(100vh - $nav-height);
+  .video {
+    position: absolute;
+    width: 100vw;
+    height: calc(100vh - $nav-height);
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: -11;
+  }
+  .listContainer {
+    position: relative;
+    z-index: 2;
+  }
+}

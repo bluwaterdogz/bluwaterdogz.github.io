@@ -1,10 +1,3 @@
-export interface Job {
-  companyName: string;
-  companyUrl: string;
-  professionalTitle: string;
-  logoImg: string;
-}
-
 export interface SkillType {
   name: string;
   icon: string;

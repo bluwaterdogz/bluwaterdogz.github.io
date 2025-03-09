@@ -17,14 +17,15 @@ export const MobileNav = (props: MobileNavProps) => {
   const { navOpen, setNavOpen } = useNaveStore();
 
   useOutsideClick(ref, () => {
-    () => {
-      setNavOpen(false);
-    };
+    setNavOpen(false);
   });
 
   return (
-    <div className={`${styles.container} ${className}`} ref={ref} {...rest}>
-      <div className={`${styles.mobileNav} ${navOpen ? styles.open : ""}`}>
+    <div className={`${styles.container} ${className}`} {...rest}>
+      <div
+        className={`${styles.mobileNav} ${navOpen ? styles.open : ""}`}
+        ref={ref}
+      >
         <div className={styles.iconContainer}>
           <MenuIcon
             {...({

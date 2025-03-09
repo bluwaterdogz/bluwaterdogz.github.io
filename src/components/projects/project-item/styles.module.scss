@@ -51,7 +51,7 @@
   transition: $transition;
 }
 
-@media (max-width: 768px) {
+@media (max-width: $small-screen) {
   .project {
     flex-direction: column-reverse;
     display: flex;

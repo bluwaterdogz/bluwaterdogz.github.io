@@ -17,9 +17,10 @@ export const HomePage = () => {
     window?.scrollTo({ top: 0, left: 0, behavior: "instant" });
     setNavOpen(false);
   }, [location.pathname]);
-  console.log("here");
+
   return (
     <div className={styles.homePage}>
+      {/* // TODO: switch to NavMenuIcon which memoizes state */}
       <MenuIcon
         open={navOpen}
         setOpen={setNavOpen}

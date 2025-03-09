@@ -16,7 +16,7 @@ export const DefaultLayout = () => {
   }, [location.pathname]);
 
   return (
-    <div className={styles.defaultLayout}>
+    <div className={`${styles.defaultLayout}`}>
       <MenuIcon
         open={navOpen}
         setOpen={setNavOpen}

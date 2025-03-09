@@ -1,30 +1,35 @@
 import { useTranslation } from "react-i18next";
 import styles from "./styles.module.scss";
-import { useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
+import { langMap } from "./consts";
 
 interface LangProps {
   className?: string;
+  dark?: boolean;
+  alignRight?: boolean;
 }
 
-export const Lang = ({ className = "" }: LangProps) => {
+export const Lang = (props: LangProps) => {
+  const { className = "", alignRight = false, dark = false } = props;
   const [open, setOpen] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
   const { t, i18n } = useTranslation();
-  const langMap = {
-    en: "english",
-    zh: "chinese",
-    es: "espanol",
-    th: "thai",
-    de: "german",
-    ko: "korean",
-  };
+  const langList = useMemo(() => Object.keys(langMap), [langMap]);
   useOutsideClick(ref, () => setOpen(false));
   return (
-    <div className={`${className} ${styles.languageDropdown}`} ref={ref}>
+    <div
+      className={`
+        ${className} 
+        ${styles.languageDropdown} 
+        ${dark ? styles.dark : ""} 
+        ${alignRight ? styles.right : ""}
+      `}
+      ref={ref}
+    >
       <p onClick={() => setOpen(!open)}>{i18n.language}</p>
       <div className={`${styles.languageList} ${open ? styles.open : ""}`}>
-        {Object.keys(langMap).map((code) => {
+        {langList.map((code) => {
           const language = (langMap as any)[code];
           return (
             <div

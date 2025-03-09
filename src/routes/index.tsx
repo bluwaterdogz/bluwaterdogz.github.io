@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import { HomePage } from "../pages/home";
-import { PlaceholderPage } from "../pages/placeholder";
 import { SkillsPage } from "../pages/skills";
 import { ProjectsPage } from "../pages/projects";
 import { NotFoundPage } from "../pages/404";

@@ -1,0 +1,68 @@
+@import "../../../styles/variables";
+@import "../../../styles/colors";
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+.outsideIcon {
+  position: fixed;
+  right: calc($space/4);
+  top: calc($space/4);
+  color: white;
+  transition: $transition;
+  z-index: 10;
+  &.open {
+    right: -100%;
+  }
+}
+.mobileNav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: $transition;
+  padding: 0 $space;
+  text-align: left;
+  height: 100vh;
+  z-index: 10;
+  width: 70vw;
+  background-color: white;
+  align-items: center;
+  .navChildren {
+    margin-left: auto;
+  }
+  .iconContainer {
+    position: absolute;
+    right: $space;
+    z-index: 10;
+  }
+  a {
+    color: $dark-color;
+    display: block;
+    padding-right: $space-sm * 4;
+    text-decoration: none;
+    font-size: 60px;
+    transition: $transition;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  &.open {
+    left: 0;
+  }
+  @for $i from 1 through 10 {
+    a {
+      &:nth-child(#{$i}) {
+        opacity: 0;
+        animation: 1.5s fadeInUp;
+        animation-delay: #{$i * 0.2}s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}

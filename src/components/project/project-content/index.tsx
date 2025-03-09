@@ -25,7 +25,7 @@ export const ProjectContent = ({ project }: ProjectContentProps) => {
           <div
             className={styles.textContent}
             dangerouslySetInnerHTML={{
-              __html: t(`data.projects.content.${project.id}`),
+              __html: t(`data.projects.content.${project.id}`, ""),
             }}
           ></div>
         </div>

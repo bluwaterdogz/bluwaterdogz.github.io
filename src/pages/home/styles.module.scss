@@ -1,156 +1,47 @@
 @import "../../styles/variables";
 @import "../../styles/colors";
-.hero {
-  height: 100vh;
-  width: 100vw;
-  background-size: cover;
-  background-position: center;
-  .content {
-    margin: 0;
-    padding: $space;
-    h1 {
-      color: white;
-      font-family: "leaguecursive";
-    }
-    .headerSubtext {
-      font-size: 20px;
-      color: white;
-      font-family: "leaguecursive";
-    }
+// Note: there is a nav menu in the individual sections
+.homePage {
+  .defautlNav {
+    display: none;
   }
-}
-.languageDropdown {
-  position: absolute;
-  top: 0;
-  right: $space;
-  z-index: 100;
-}
-.lang {
-  position: absolute;
-  overflow: visible;
+  .mobileNav {
+    display: none;
+  }
 
-  top: 0;
-  right: $space/2;
-  z-index: 1000;
-}
-.textSection,
-.imageSection,
-.profileSection,
-.hero {
-  position: relative;
-  .container {
-    position: absolute;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    clip: rect(auto, auto, auto, auto);
+  .navIcon {
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    color: white;
+    -webkit-filter: drop-shadow(-5px 3px 3px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(-5px 3px 3px rgba(0, 0, 0, 0.8));
+    transition: $transition;
+
+    &.open {
+      right: -100%;
+    }
   }
-}
-@media (max-width: 1200px) {
-  .textSection,
-  .imageSection,
-  .profileSection {
-    .nav {
+  @media (max-width: $medium-screen) {
+    .defautlNav {
+      display: flex;
+    }
+    .mobileNav {
       display: none;
     }
   }
-  .textSection {
-    height: auto;
-    .container {
-      padding: $space;
-      min-height: auto;
-    }
-    &.right {
-      h2 {
-        float: none;
-        padding: $space / 2 0 $space / 2 $space;
-      }
-    }
-  }
-}
-.profileSection {
-  height: auto;
-  min-height: 500px;
-  width: 100%;
-  .container {
-    padding: $space;
-    min-height: auto;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .content {
-    width: $content-width;
-    margin: auto;
-    display: flex;
-    overflow: visible;
-  }
-  .contentImage {
-    padding: $space / 2 $space $space / 2 0;
-    overflow: visible;
-    width: fit-content;
-  }
-  p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-.textSection {
-  height: auto;
-  min-height: 100vh;
-  width: 100%;
-  .container {
-    padding: $space;
-    min-height: auto;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .content {
-    width: $content-width;
-    margin: auto;
-  }
 
-  h2 {
-    float: left;
-    padding: $space / 2 $space $space / 2 0;
-  }
-
-  h2 {
-    font-size: 70px;
-    display: inline;
-    margin: 0;
-  }
-  hr {
-    // border-color: $primary-color;
-    border: 1px solid $primary-color;
-    width: 80%;
-    margin: $space auto;
-  }
-  &.right {
-    .contentImage,
-    h2 {
-      float: left;
-      padding: $space / 2 0 $space / 2 $space;
-    }
-    p {
-      text-align: right;
+  @media (min-width: $small-screen) {
+    .navIcon {
+      display: none;
     }
   }
-  p {
-    font-size: 20px;
-    margin: 0;
-  }
-}
-
-.imageSection {
-  height: 50vh;
-  width: 100vw;
-  .img {
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-    width: 100%;
+  @media (max-width: $small-screen) {
+    .defautlNav {
+      display: none;
+    }
+    .mobileNav {
+      display: block;
+    }
   }
 }

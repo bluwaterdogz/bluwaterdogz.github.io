@@ -1,0 +1,82 @@
+@import "../../styles/variables";
+@import "../../styles/colors";
+
+.textSection {
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container {
+    padding: $space;
+    min-height: auto;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    clip: rect(auto, auto, auto, auto);
+  }
+  .content {
+    width: $content-width;
+    margin: auto;
+    overflow: visible;
+  }
+
+  h2 {
+    float: left;
+    padding: $space / 2 $space $space / 2 0;
+    font-size: 70px;
+    margin: 0;
+  }
+  hr {
+    border: 1px solid $primary-color;
+    width: 80%;
+    margin: $space auto;
+  }
+  &.right {
+    h2 {
+      float: right;
+      padding: $space / 2 0 $space / 2 $space;
+    }
+    p {
+      text-align: right;
+    }
+  }
+  p {
+    font-size: 20px;
+    margin: 0;
+  }
+}
+
+@media (max-width: $medium-screen) {
+  .textSection {
+    display: flex;
+    .content {
+      padding: $space * 5 calc($space/2);
+    }
+    h2 {
+      text-align: center;
+      display: block;
+      float: none;
+      padding: 0 0 $space 0;
+    }
+    p {
+      text-align: center;
+    }
+    .nav {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $small-screen) {
+  .textSection {
+    .content {
+      padding: $space * 3 $space * 2;
+    }
+  }
+}

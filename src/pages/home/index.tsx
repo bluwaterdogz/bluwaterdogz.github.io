@@ -1,113 +1,53 @@
 import styles from "./styles.module.scss";
-import Nav from "../../components/nav";
 import { useTranslation } from "react-i18next";
-import { DarkOverlay } from "../../components/common/dark-overlay";
-import { Lang } from "../../components/lang";
-import { ProfilePicture } from "../../components/common/profile-picture";
+import { HeroSection } from "../../home/hero-section";
+import { TextSection } from "../../home/text-section";
+import { ImageSection } from "../../home/image-section";
+import { ProfileSection } from "../../home/profile-section";
+import Nav from "../../components/nav";
+import { MobileNav } from "../../components/nav/mobile-nav";
+import { MenuIcon } from "../../components/nav/menu-icon.tsx/menu-icon";
+import { useNaveStore } from "../../stores/NavStore";
+import { useLayoutEffect } from "react";
 
 export const HomePage = () => {
   const { t } = useTranslation();
+  const { navOpen, setNavOpen } = useNaveStore();
+  useLayoutEffect(() => {
+    window?.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    setNavOpen(false);
+  }, [location.pathname]);
+  console.log("here");
   return (
-    <div>
-      <section
-        className={styles.hero}
-        style={{
-          backgroundImage: "url(./dog.jpg)",
-        }}
-      >
-        <DarkOverlay />
-        <div className={styles.container}>
-          <div className={styles.nav}>
-            <Nav vertical={true} />
-          </div>
-          <div className={styles.lang}>
-            <Lang className={styles.languageDropdown} />
-          </div>
-
-          <div className={styles.content}>
-            <h1>Brian Velasquez</h1>
-            <p className={styles.headerSubtext}>{t("home.sub")}</p>
-          </div>
-        </div>
-      </section>
-      <section className={styles.profileSection}>
-        <div className={styles.container}>
-          <div className={styles.nav}>
-            <Nav vertical={true} dark={true} />
-          </div>
-          <div className={styles.content}>
-            <div className={styles.contentImage}>
-              <ProfilePicture size={"medium"} />
-            </div>
-            <p>{t("home.about")}</p>
-            {/* <hr />
-            <p>{t("home.section1Content2")}</p> */}
-          </div>
-        </div>
-      </section>
-      <section className={styles.imageSection}>
-        <div className={styles.container}>
-          <div
-            style={{
-              backgroundImage: "url(./imgs/theme1.jpg)",
-            }}
-            className={styles.img}
-          ></div>
-          <div className={styles.nav}>
-            <Nav vertical={true} />
-          </div>
-        </div>
-      </section>
-      <section className={styles.textSection}>
-        <div className={styles.container}>
-          <div className={styles.nav}>
-            <Nav vertical={true} dark={true} />
-          </div>
-          <div className={styles.content}>
-            <h2>{t("home.section1Title")}</h2>
+    <div className={styles.homePage}>
+      <MenuIcon
+        open={navOpen}
+        setOpen={setNavOpen}
+        className={`${styles.navIcon} ${navOpen ? styles.open : ""}`}
+      />
+      <Nav className={styles.defautlNav} />
+      <MobileNav className={styles.mobileNav} />
+      <HeroSection />
+      <ProfileSection />
+      <ImageSection imgUrl="./imgs/theme1.jpg" />
+      <TextSection
+        right={false}
+        header={t("home.section1Title")}
+        content={
+          <>
             <p>{t("home.section1Content1")}</p>
             <hr />
             <p>{t("home.section1Content2")}</p>
-          </div>
-        </div>
-      </section>
-      <section className={styles.imageSection}>
-        <div className={styles.container}>
-          <div
-            style={{
-              backgroundImage: "url(./imgs/theme2.jpg)",
-            }}
-            className={styles.img}
-          ></div>
-          <div className={styles.nav}>
-            <Nav vertical={true} />
-          </div>
-        </div>
-      </section>
-      <section className={`${styles.textSection} ${styles.right}`}>
-        <div className={styles.container}>
-          <div className={styles.nav}>
-            <Nav vertical={true} dark={true} />
-          </div>
-          <div className={styles.content}>
-            <h2>{t("home.section2Title")}</h2>
-            <p>{t("home.section2Content1")}</p>
-          </div>
-        </div>
-      </section>
-      <section className={styles.imageSection}>
-        <div className={styles.container}>
-          <div
-            style={{
-              backgroundImage: "url(./imgs/theme3.jpg)",
-            }}
-            className={styles.img}
-          ></div>
-          <div className={styles.nav}>
-            <Nav vertical={true} />
-          </div>
-        </div>
-      </section>
+          </>
+        }
+      />
+      <ImageSection imgUrl="./imgs/theme2.jpg" />
+      <TextSection
+        right={true}
+        header={t("home.section2Title")}
+        content={<p>{t("home.section2Content1")}</p>}
+      />
+      <ImageSection imgUrl="./imgs/theme3.jpg" />
     </div>
   );
 };

@@ -7,6 +7,8 @@
   border: white 1px solid;
 }
 .skillSection {
+  z-index: 2;
+  position: relative;
   padding: $space * 3 0;
   display: flex;
   flex-direction: column;
@@ -19,7 +21,12 @@
   margin: auto;
 }
 .skillSectionContainer {
+  position: relative;
   overflow: visible;
+  background-color: $dark-color;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 .skilLTypeList {
   padding-bottom: 200px;

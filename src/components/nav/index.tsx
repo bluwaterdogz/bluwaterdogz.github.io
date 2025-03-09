@@ -1,39 +1,19 @@
-import { useTranslation } from "react-i18next";
 import styles from "./styles.module.scss";
-import { NavLink } from "./nav-link";
-import { ReactNode, useMemo } from "react";
-interface NavProps {
-  vertical: boolean;
-  dark?: boolean;
+import { HTMLProps, ReactNode } from "react";
+import { navItems } from "./consts";
+import { NavList } from "./nav-list";
+import { Lang } from "../lang";
+
+interface NavProps extends HTMLProps<HTMLDivElement> {
   children?: ReactNode;
 }
-const Nav = ({ vertical, dark = false, children = null }: NavProps) => {
-  const { t } = useTranslation();
 
-  const navMap = useMemo(
-    () => ({
-      home: "/",
-      skills: "/skills",
-      projects: "/projects",
-      about: "/about",
-      // jobs: "/jobs",
-    }),
-    []
-  );
-
-  const navList = useMemo(() => Object.keys(navMap), []);
-
+const Nav = (props: NavProps) => {
+  const { children = null, className } = props;
   return (
-    <div
-      className={`${styles.nav} ${dark ? styles.dark : styles.light} ${
-        vertical ? styles.vertical : ""
-      }`}
-    >
-      {navList.map((k) => (
-        <NavLink key={k} to={(navMap as any)[k]}>
-          {t(`nav.${k}`)}
-        </NavLink>
-      ))}
+    <div className={`${styles.nav} ${className}`}>
+      <NavList navItems={navItems} />
+      <Lang className={styles.languageDropdown} dark={false} />
       {children != null ? (
         <div className={styles.navChildren}>{children}</div>
       ) : null}

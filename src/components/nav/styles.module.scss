@@ -11,44 +11,14 @@
   }
 }
 
-@media (min-width: 1200px) {
-  .nav {
-    &.vertical {
-      padding: $space;
-      height: auto;
-      text-align: right;
-      position: fixed;
-      align-items: end;
-      right: 0;
-      bottom: 0;
-      top: unset;
-      left: unset;
-      background-color: transparent;
-      flex-direction: column;
-      a {
-        display: block;
-        font-size: 40px;
-      }
-      &.dark {
-        a {
-          color: black;
-        }
-      }
-      &.light {
-        a {
-          color: white;
-          &:hover {
-            color: $primary-color;
-          }
-        }
-      }
-    }
-  }
+.languageDropdown {
+  margin-left: auto;
+  overflow: visible;
 }
-
 .nav {
   position: relative;
   top: 0;
+  overflow: visible;
   left: 0;
   padding: 0 $space;
   text-align: left;

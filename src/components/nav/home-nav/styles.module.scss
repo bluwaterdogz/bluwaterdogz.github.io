@@ -1,0 +1,66 @@
+@import "../../../styles/variables";
+@import "../../../styles/colors";
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.homeNav {
+  height: $nav-height;
+  display: flex;
+
+  padding: $space;
+  height: auto;
+  text-align: right;
+  position: fixed;
+  align-items: end;
+  right: 0;
+  bottom: 0;
+
+  flex-direction: column;
+  position: fixed;
+
+  .navChildren {
+    margin-left: auto;
+  }
+  a {
+    color: $dark-color;
+    display: block;
+    font-size: 40px;
+    padding-right: $space-sm * 4;
+    text-decoration: none;
+    transition: $transition;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  @for $i from 1 through 10 {
+    a {
+      &:nth-child(#{$i}) {
+        opacity: 0;
+        animation: 1.5s fadeInUp;
+        animation-delay: #{$i * 0.2}s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+  &.dark {
+    a {
+      color: black;
+    }
+  }
+  &.light {
+    a {
+      color: white;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}

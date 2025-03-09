@@ -2,7 +2,6 @@
 @import "../../styles/colors";
 
 .languageDropdown {
-  // text-align: right;
   display: inline-block;
   overflow: visible;
   position: relative;
@@ -10,6 +9,14 @@
   p {
     cursor: pointer;
     color: $primary-color;
+  }
+  &.dark {
+    .languageList {
+      .language {
+        cursor: pointer;
+        color: $dark-color;
+      }
+    }
   }
 }
 .languageList {
@@ -29,6 +36,7 @@
       color: white;
     }
   }
+
   .language {
     font-size: 20px;
     color: white;
@@ -39,8 +47,30 @@
     }
   }
 }
+
 .language {
   &.active {
     color: $primary-color;
+  }
+}
+
+.right {
+  p {
+    font-size: 50px;
+    margin: 0;
+  }
+  .languageList {
+    position: relative;
+    right: unset;
+    left: 0;
+    top: 0;
+    text-align: left;
+    &.open {
+      height: auto;
+    }
+    .language {
+      font-size: 40px;
+      padding-bottom: calc($space / 2);
+    }
   }
 }

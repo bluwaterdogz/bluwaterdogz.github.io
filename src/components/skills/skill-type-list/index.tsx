@@ -4,6 +4,7 @@ import styles from "./styles.module.scss";
 import { groupBy } from "lodash";
 import { useSkillsStore } from "../../../service/skill/SkillStore";
 import { useSearchParams } from "react-router";
+import { DarkOverlay } from "../../common/dark-overlay";
 
 export const SkillTypeList = () => {
   const { fetchSkills, skills, skillTypes } = useSkillsStore();
@@ -36,19 +37,21 @@ export const SkillTypeList = () => {
 
   return (
     <div className={styles.skilLTypeList}>
-      {skillSections.map((section: any, i) => (
+      {skillSections.map((section: any, _i) => (
         <div
+          style={{ backgroundImage: `url(${section.img})` }}
           className={styles.skillSectionContainer}
           key={section.id}
           ref={section.id === activeSkillType ? ref : null}
         >
+          <DarkOverlay opacity={0.7} />
           <div className={styles.skillSection}>
             <h2>{section.name}</h2>
             <SkillList skills={section.skills} />
           </div>
-          {i !== skillSections.length - 1 ? (
+          {/* {i !== skillSections.length - 1 ? (
             <hr className={styles.divider} />
-          ) : null}
+          ) : null} */}
         </div>
       ))}
     </div>

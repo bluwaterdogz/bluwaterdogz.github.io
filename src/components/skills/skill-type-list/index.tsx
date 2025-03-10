@@ -49,9 +49,6 @@ export const SkillTypeList = () => {
             <h2>{section.name}</h2>
             <SkillList skills={section.skills} />
           </div>
-          {/* {i !== skillSections.length - 1 ? (
-            <hr className={styles.divider} />
-          ) : null} */}
         </div>
       ))}
     </div>

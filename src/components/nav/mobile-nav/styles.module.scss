@@ -1,5 +1,5 @@
-@import "../../../styles/variables";
-@import "../../../styles/colors";
+@use "../../../styles/variables" as *;
+@use "../../../styles/colors" as *;
 @keyframes fadeInUp {
   0% {
     transform: translateY(100%);
@@ -30,7 +30,7 @@
   text-align: left;
   height: 100vh;
   z-index: 10;
-  width: 70vw;
+  width: 80vw;
   background-color: white;
   align-items: center;
   .navChildren {
@@ -38,15 +38,18 @@
   }
   .iconContainer {
     position: absolute;
-    right: $space;
+    right: -10px;
+    top: -10px;
+    transform: scale(0.6);
     z-index: 10;
+    color: black;
   }
   a {
     color: $dark-color;
     display: block;
     padding-right: $space-sm * 4;
     text-decoration: none;
-    font-size: 60px;
+    font-size: 50px;
     transition: $transition;
     &:hover {
       color: $primary-color;

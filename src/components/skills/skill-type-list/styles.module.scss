@@ -1,5 +1,5 @@
-@import "../../../styles/variables";
-@import "../../../styles/colors";
+@use "../../../styles/variables" as *;
+@use "../../../styles/colors" as *;
 
 .divider {
   max-width: $content-width;
@@ -8,10 +8,12 @@
 }
 .skillSection {
   position: relative;
+  width: auto;
   padding: $space * 3 0;
   display: flex;
   flex-direction: column;
   color: white;
+  max-width: 100vw;
   overflow: visible;
   align-items: center;
   justify-content: center;

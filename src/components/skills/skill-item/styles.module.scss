@@ -1,5 +1,5 @@
-@import "../../../styles/variables";
-@import "../../../styles/colors";
+@use "../../../styles/variables" as *;
+@use "../../../styles/colors" as *;
 
 @mixin showTooltip() {
   pointer-events: all;
@@ -27,7 +27,6 @@
   transition: $transition;
   overflow: visible;
   position: relative;
-
   .iconContainer {
     display: inline-flex;
     flex-direction: column;
@@ -75,10 +74,10 @@
     min-height: 0;
     height: 0;
     opacity: 0;
-    min-width: 300px;
+    min-width: 100px;
     background-color: white;
     box-shadow: $box-shadow;
-
+    padding: $space * 2;
     transition: $transition;
     &::after {
       content: "";
@@ -101,7 +100,7 @@
   }
   h4 {
     color: $dark-color;
-    padding: $space / 2;
+    padding: calc($space / 2);
     margin: 0;
     font-size: 20px;
   }
@@ -111,7 +110,7 @@
     margin-top: 0;
   }
   .projectLink {
-    padding: $space/2 $space;
+    padding: calc($space / 2) $space;
     text-decoration: none;
     color: $dark-color;
     text-align: center;
@@ -121,6 +120,20 @@
     &:hover {
       color: $primary-color;
       background-color: $dark-color;
+    }
+  }
+}
+
+@media (max-width: $small-screen) {
+  .skill {
+    min-width: 180px;
+    flex-wrap: wrap;
+    display: block;
+    height: fit-content;
+    .skillDetailsContainer {
+      display: inline-block;
+      width: 100%;
+      position: relative;
     }
   }
 }

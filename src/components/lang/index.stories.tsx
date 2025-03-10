@@ -1,4 +1,3 @@
-import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import { Lang } from "./";
 import "./styles.module.scss";

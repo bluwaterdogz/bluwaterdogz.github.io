@@ -1,5 +1,5 @@
-@import "../../styles/variables";
-@import "../../styles/colors";
+@use "../../styles/variables" as *;
+@use "../../styles/colors" as *;
 
 .textSection {
   height: auto;
@@ -23,6 +23,7 @@
   .content {
     width: $content-width;
     margin: auto;
+    display: inline-block;
     overflow: visible;
   }
 
@@ -53,11 +54,9 @@
 }
 
 @media (max-width: $medium-screen) {
-  .textSection {
+  .textSection,
+  .textSection.right {
     display: flex;
-    .content {
-      padding: $space * 5 calc($space/2);
-    }
     h2 {
       text-align: center;
       display: block;
@@ -72,11 +71,24 @@
     }
   }
 }
+@media (min-width: $small-screen) and (max-width: $medium-screen) {
+  .textSection {
+    .content {
+      overflow: auto;
+      padding: $space * 5 calc($space/2);
+    }
+  }
+}
 
 @media (max-width: $small-screen) {
   .textSection {
     .content {
-      padding: $space * 3 $space * 2;
+      overflow: auto;
+      padding: $space * 3 $space * 3;
+    }
+    h2 {
+      font-size: 50px;
+      margin-bottom: $space * 4;
     }
   }
 }

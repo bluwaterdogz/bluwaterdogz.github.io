@@ -1,10 +1,11 @@
-@import "../../../styles/colors";
-@import "../../../styles/variables";
+@use "../../../styles/colors" as *;
+@use "../../../styles/variables" as *;
 .project {
   width: 100%;
   height: 600px;
   display: flex;
   text-decoration: none;
+
   h2 {
     color: white;
     text-align: right;
@@ -55,13 +56,40 @@
   .project {
     flex-direction: column-reverse;
     display: flex;
-    border-bottom: 10px solid black;
-    &:last-child {
-      border-bottom: none;
-    }
-    .projectDetails,
+    height: auto;
+    border-bottom: $space solid white;
+
     .projectImage {
+      filter: unset;
       width: 100%;
+      min-height: 400px;
+    }
+
+    .projectDetails {
+      width: 100%;
+      padding: $space * 4;
+      display: flex;
+      flex-direction: column;
+      h2 {
+        margin-top: 0;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        padding-left: 0;
+      }
+    }
+    &:hover {
+      .projectDetails {
+        background-color: $dark-color;
+        h2,
+        p {
+          color: white;
+        }
+      }
+      .projectImage {
+        filter: unset;
+      }
     }
   }
 }

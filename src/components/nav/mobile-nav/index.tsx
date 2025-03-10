@@ -6,11 +6,13 @@ import { useOutsideClick } from "../../../hooks/useOutsideClick";
 import { NavList } from "../nav-list";
 import { Lang } from "../../lang";
 import { useNaveStore } from "../../../stores/NavStore";
+
 interface MobileNavProps extends HTMLProps<HTMLDivElement> {
   children?: ReactNode;
   open?: boolean;
   setOpen?: (v: boolean) => void;
 }
+
 export const MobileNav = (props: MobileNavProps) => {
   const { children = null, open, setOpen, className, ...rest } = props;
   const ref = useRef(null);

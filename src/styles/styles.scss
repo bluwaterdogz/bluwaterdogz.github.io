@@ -1,5 +1,5 @@
 @forward "fonts";
-@import "typography";
+@use "typography" as *;
 
 body {
   margin: 0;

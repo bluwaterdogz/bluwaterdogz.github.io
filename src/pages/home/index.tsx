@@ -1,9 +1,9 @@
 import styles from "./styles.module.scss";
 import { useTranslation } from "react-i18next";
-import { HeroSection } from "../../home/hero-section";
-import { TextSection } from "../../home/text-section";
-import { ImageSection } from "../../home/image-section";
-import { ProfileSection } from "../../home/profile-section";
+import { HeroSection } from "../../components/home/hero-section";
+import { TextSection } from "../../components/home/text-section";
+import { ImageSection } from "../../components/home/image-section";
+import { ProfileSection } from "../../components/home/profile-section";
 import Nav from "../../components/nav";
 import { MobileNav } from "../../components/nav/mobile-nav";
 import { useLayoutEffect } from "react";

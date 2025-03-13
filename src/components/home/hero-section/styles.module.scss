@@ -1,0 +1,98 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/colors" as *;
+
+.hero {
+  height: 100vh;
+  width: 100vw;
+  background-color: #b3b4c4;
+  position: relative;
+  .container {
+    position: absolute;
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 100%;
+    clip: rect(auto, auto, auto, auto);
+  }
+  .background {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    left: 20vw;
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+      background-image: linear-gradient(to left, transparent 0, #b3b4c4 100%);
+      width: 10em;
+      height: 100%;
+    }
+  }
+  .content {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    padding: $space;
+    h1 {
+      width: $content-width;
+      color: white;
+      font-family: Helvetica;
+      font-weight: 100;
+      text-transform: uppercase;
+      em {
+        font-style: normal;
+        color: $primary-color;
+      }
+    }
+    .headerSubtext {
+      font-size: 20px;
+      color: white;
+      font-family: "leaguecursive";
+    }
+  }
+  .languageDropdown {
+    position: absolute;
+    right: $space;
+    top: $space;
+  }
+}
+
+@media (max-width: $medium-screen) {
+  .hero {
+    h1 {
+      width: 70%;
+    }
+    .languageDropdown {
+      display: none;
+    }
+    .nav {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $small-screen) {
+  .hero {
+    .content {
+      height: 100%;
+      display: flex;
+      align-items: end;
+    }
+    .background {
+      background-position-x: 40%;
+      left: 0;
+      &:after {
+        display: none;
+      }
+    }
+    h1 {
+      max-width: 100%;
+    }
+  }
+}

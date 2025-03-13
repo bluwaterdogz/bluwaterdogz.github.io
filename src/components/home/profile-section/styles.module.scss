@@ -1,0 +1,54 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/colors" as *;
+.profileSection {
+  height: auto;
+  min-height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  .container {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    clip: rect(auto, auto, auto, auto);
+    padding: $space;
+    min-height: auto;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .content {
+    width: $content-width;
+    margin: auto;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .contentImage {
+    padding: calc($space / 2) $space calc($space / 2) 0;
+    overflow: visible;
+    width: fit-content;
+  }
+}
+
+@media (max-width: $medium-screen) {
+  .profileSection {
+    .nav {
+      display: none;
+    }
+  }
+  .profileSection {
+    .content {
+      padding: $space calc($space/2);
+      flex-direction: column;
+      p {
+        text-align: center;
+      }
+    }
+  }
+}

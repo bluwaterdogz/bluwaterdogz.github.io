@@ -1,52 +1,72 @@
 {
   "translation": {
     "home": {
-      "sub": "Desarrollador web de pila completa",
-      "section1Title": "Exprimiado",
-      "section1Content1": "En mi papel más reciente como desarrollador senior de pila completa en la startup de tecnología farmacéutica Faro Health, trabajé en microservicios basados ​​en REST y CQRS y módulos de interfaz de usuario implementados en TypeScript, Node, PostgreSQL, Jest y React. ",
-      "section1Content2": "Antes de esto, dirigí un equipo internacional de front -end remotos en Varios Inc., donde trabajamos de la mano con el equipo de diseño para reskin y migrará aplicaciones de transmisión de video Legacy JavaScript y Perl a una IU moderna integrada en React, TypeScript y Python. ",
-      "section2Title": "Líder técnico",
-      "section2Content1": "Después de haber dirigido un gran equipo internacional de desarrolladores e ingenieros en los Estados Unidos, Europa, Taiwán y China, estoy seguro de que mi experiencia en tecnologías como TypeScript, Node, Postgresql, Jest y React ayudará a impulsar su organización. "
+      "header": "<span>¡Hola!<br /> Soy Brian Velasquez,<br /><em>Desarrollador Full Stack <br />.</em></span>",
+      "aboutHeader": "¿Quién soy?",
+      "about": "Desarrollador web senior full-stack con experiencia en Typescript, React, Angular, Node y Python. Experto en liderar y colaborar con equipos internacionales, modernizar aplicaciones heredadas y desarrollar pipelines CI/CD.",
+      "section1Title": "Experimentado",
+      "section1Content1": "En mi puesto más reciente como Senior Full Stack Developer en la startup de tecnología farmacéutica Faro Health, trabajé en microservicios y módulos de UI basados en REST y CQRS implementados en Typescript, Node, PostgreSQL, Jest y React. Mi trabajo consistió en desarrollar slices de funcionalidades y POCs, crear y ejecutar diseños técnicos, escribir pruebas unitarias e integradas, optimizar el rendimiento de la aplicación y construir pipelines de despliegue utilizando Github Actions.",
+      "section1Content2": "Antes de esto, lideré un equipo internacional remoto de Front End en Various Inc. donde trabajamos codo a codo con el equipo de diseño para rediseñar y migrar aplicaciones de transmisión de video basadas en Javascript y Perl a una interfaz moderna construida en React, TypeScript y Python. Una base de código más escalable utilizando Next.js, MOBX y WebSockets y respaldada por APIs REST y una pipeline de desarrollo CI/CD para agilizar el despliegue.",
+      "section2Title": "Líder Técnico",
+      "section2Content1": "Habiendo liderado un gran equipo internacional de desarrolladores e ingenieros en los EE.UU., Europa, Taiwán y China, estoy seguro de que mi experiencia en tecnologías como Typescript, Node, PostgreSQL, Jest y React ayudará a impulsar su organización. Además de mis habilidades en diseño técnico y desarrollo, mis habilidades de liderazgo ayudarán a alinear y enfocar los esfuerzos del equipo hacia hitos específicos y los objetivos definidos por la empresa."
     },
     "about": {
-      "section1": "Brian es un desarrollador senior experimentado con pasión por el código escalable elegante y UX intuitivo mínimo.",
+      "section1": "Brian es un desarrollador senior experimentado con pasión por el código elegante y escalable, y una experiencia de usuario intuitiva y mínima.",
       "section2": "En su tiempo libre le encanta escalar, jugar al ajedrez, explorar en su moto de tierra y practicar Muay Thai."
     },
+    "lang": {
+      "english": "Inglés",
+      "chinese": "Chino",
+      "espanol": "Español",
+      "thai": "Tailandés",
+      "german": "Alemán",
+      "korean": "Coreano"
+    },
     "nav": {
-      "home": "Página principal",
+      "home": "Inicio",
       "skills": "Habilidades",
       "projects": "Proyectos",
-      "about": "Acerca de",
+      "about": "Sobre mí",
       "jobs": "Trabajos"
+    },
+    "jobs": {
+      "content": {
+        "5": "",
+        "4": "",
+        "3": "",
+        "2": "",
+        "1": ""
+      }
     },
     "data": {
       "projects": {
         "description": {
-          "1": "Una herramienta de software de ensayo clínico que ayuda a los investigadores a diseñar y optimizar sus estudios clínicos al proporcionar análisis en tiempo real y racionalizar el proceso de planificación.",
-          "2": "Una aplicación de transmisión y chat de video en tiempo real",
-          "3": "Una encuesta y un sitio web informativo sobre los próximos cambios en la ciudad de San Anselmo",
-          "4": "Sitio web para una agencia de diseño y desarrollo web",
-          "5": "Aplicación de micro-servicio de análisis de datos de concepto de concepto integrada en pandas",
-          "6": "Un IDP Agnóstico único de inicio de sesión en la implementación para la aplicación de diseñador de estudio.",
-          "7": "Sitio web para una aplicación de automóvil usada de IA.",
-          "8": "Front End para una aplicación de exhibición para una aplicación geométrica para combinar estructuras de celosía."
+          "1": "Una herramienta de software para ensayos clínicos para planificar, diseñar y optimizar estudios con análisis en tiempo real",
+          "2": "Una aplicación de transmisión de video en tiempo real y chat",
+          "3": "Un sitio web de encuestas e información sobre los próximos cambios para la ciudad de San Anselmo",
+          "4": "Sitio web para una agencia de diseño web y desarrollo",
+          "5": "Aplicación de prueba de concepto de microservicio de análisis de datos construida en Python y Pandas",
+          "6": "Una implementación de inicio de sesión único independiente del IDP para la aplicación de diseño de estudios",
+          "7": "Sitio web para una aplicación de coches de segunda mano con IA",
+          "8": "Frontend para una aplicación de demostración para una aplicación geométrica para combinar estructuras de celosía"
         },
         "content": {
-          "1": "<div><h3>Utilización de IA para el desarrollo del estudio clínico.</h3><p>El producto emblemático de la compañía, el diseñador de estudio FARO, está diseñado para mejorar la eficiencia y la amigable para el paciente de los protocolos clínicos.</p><p>Faro Health ha recibido una inversión significativa, asegurando un total de $ 38.3 millones en fondos, con los más recientes $ 20 millones recaudados hace aproximadamente dos años.</p><p>Las características clave incluyen:</p><div><p>Colaboración en tiempo real: facilita procesos de documentación precisos y eficientes.</p><p>Análisis de factibilidad: evalúa el impacto de las decisiones de diseño en las tasas de éxito del estudio.</p><p>Benchmarking: compara protocolos con datos históricos y variaciones de diseño.</p></div></div>",
-          "2": "<div><p>El espectador es una plataforma interactiva de cámara web donde los usuarios pueden participar en chats de video en vivo con los artistas, ofreciendo una experiencia personalizada en tiempo real.  </p> </div>",
-          "4": "<div><p>Launch Brigade es una agencia de diseño y desarrollo web con sede en el Área de la Bahía de San Francisco, especializada en la creación de experiencias digitales que elevan las marcas e impulsan el crecimiento empresarial. </p></div>",
-          "5": "<div><p>El panel de datos de Data Analytics fue una aplicación de prueba de concepto incorporada en pandas que utilizaban datos de diseño de estudio almacenados en un esquema de estrellas para crear un microservicio de análisis de datos y frontend. </p></div>",
-          "7": "<div><p>Lotlinx es una plataforma de gestión de inventario automotriz impulsada por AI que aprovecha el aprendizaje automático y el análisis de datos extensos para ayudar a los concesionarios a optimizar la facturación y la rentabilidad del inventario. </p></div>",
-          "8": "<div><p>MetaFold 3D es una plataforma basada en la nube que permite el diseño e ingeniería de modelos 3D altamente complejos, específicamente optimizado para la fabricación aditiva. </p></div>"
+          "1": "<div><h3>Utilizando IA para el desarrollo de estudios clínicos.</h3><p>El producto insignia de la empresa, el Faro Study Designer, está diseñado para mejorar la eficiencia y la facilidad para los pacientes de los protocolos clínicos.</p><p>Faro Health ha recibido una inversión significativa, asegurando un total de 38,3 millones de dólares en financiación, con los 20 millones de dólares más recientes recaudados hace aproximadamente dos años.</p><p>Las características clave incluyen:</p><ul><li>Colaboración en tiempo real: Facilita procesos de documentación precisos y eficientes.</li><li>Análisis de viabilidad: Evalúa el impacto de las decisiones de diseño en las tasas de éxito del estudio.</li><li>Comparación de referencia: Compara protocolos con datos históricos y variaciones de diseño.</li></ul></div>",
+          "2": "<p>The Viewer es una plataforma interactiva de cámara web donde los usuarios pueden participar en chats en vivo con los artistas, ofreciendo una experiencia personalizada en tiempo real. La plataforma permite a los usuarios ver transmisiones en vivo, participar en sesiones privadas y conectarse con los artistas a través de video, audio y funciones de chat.</p>",
+          "4": "<p>Launch Brigade es una agencia de diseño web y desarrollo con sede en el Área de la Bahía de San Francisco, especializada en crear experiencias digitales que mejoren las marcas y fomenten el crecimiento empresarial. Su sitio web, launchbrigade.com, refleja su compromiso de ofrecer soluciones digitales completas.</p>",
+          "5": "<p>El tablero de análisis de datos fue una aplicación de prueba de concepto construida en Pandas que utilizaba datos de diseño de estudios almacenados en un esquema estelar para crear un microservicio de análisis de datos y un frontend. Esta aplicación permitió a los usuarios segmentar y analizar los datos del estudio según las dimensiones de datos que eligieran.</p>",
+          "6": "<p>Una implementación de inicio de sesión único independiente del IDP para la aplicación de diseño de estudios. Construida para permitir que organizaciones intercambiables utilicen sus propios servicios de proveedor de identidad SAML y Oauth para proporcionar tokens para interactuar con nuestra API.</p>",
+          "7": "<p>Lotlinx es una plataforma de gestión de inventarios automotrices impulsada por IA que utiliza aprendizaje automático y análisis de datos extensos para ayudar a los concesionarios a optimizar el giro de inventarios y la rentabilidad. Al proporcionar información en tiempo real sobre la demanda del mercado, estrategias de precios y el comportamiento del consumidor, Lotlinx permite a los concesionarios de autos usados tomar decisiones basadas en datos, reducir los costos de almacenamiento y mejorar la eficiencia operativa general.</p>",
+          "8": "<p>Metafold 3D es una plataforma basada en la nube que permite el diseño y la ingeniería de modelos 3D altamente complejos, específicamente optimizados para fabricación aditiva. Fundada en 2020 por expertos en matemáticas, geometría y arquitectura, Metafold aborda los desafíos que enfrentan las herramientas CAD tradicionales al manejar geometrías intrincadas, como estructuras de celosía, que son esenciales para diseños ligeros y eficientes.</p>"
         }
       },
       "jobs": {
         "title": {
-          "1": "Desarrollador senior de pila completa",
-          "2": "Desarrollador de front-end principal",
-          "3": "Desarrollador frontal",
-          "4": "Pasante de desarrollador front-end",
-          "5": "Pasante de diseño"
+          "1": "Desarrollador Full-Stack Senior",
+          "2": "Líder Front-End Senior",
+          "3": "Desarrollador Front-End",
+          "4": "Practicante Desarrollador Front-End",
+          "5": "Practicante Diseñador"
         }
       }
     }

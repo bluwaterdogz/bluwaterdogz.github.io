@@ -1,52 +1,72 @@
 {
   "translation": {
     "home": {
-      "sub": "Voller Stack -Webentwickler",
-      "section1Title": "Extremen",
-      "section1Content1": "In meiner jüngsten Rolle als Senior Full Stack Developer bei Pharmaceutical Tech Startup Faro Health habe ich an REST- und CQRS -basierten Microservices und UI -Modulen gearbeitet, die in TypeScript, Knode, PostgreSQL, Jest und React implementiert sind. ",
-      "section1Content2": "Zuvor leitete ich ein internationales Remote -Front -End -Team bei verschiedenen Inc., in dem wir mit dem Designteam von Hand mit dem Designteam zusammengearbeitet haben, um Legacy JavaScript und Perl -basierte Video -Streaming -Apps zu einem modernen in React, TypeScript und Python integrierten UI zu migrieren. ",
-      "section2Title": "Technischer Anführer",
-      "section2Content1": "Nachdem ich ein großes internationales Team von Entwicklern und Ingenieuren in den USA, Europa, Taiwan und China geführt habe, bin ich mir sicher, dass mein Know -how in Technologien wie Typecript, Node, PostgreSQL, Scherz und React dazu beitragen wird, Ihre Organisation voranzutreiben. "
+      "header": "<span>Hallo!<br /> Ich bin Brian Velasquez,<br /><em>Full Stack <br />Entwickler.</em></span>",
+      "aboutHeader": "Wer bin ich?",
+      "about": "Senior Full-Stack Web-Entwickler mit Expertise in Typescript, React, Angular, Node und Python. Erfahren in der Leitung und Zusammenarbeit mit internationalen Teams, der Modernisierung von Legacy-Anwendungen und der Entwicklung von CI/CD-Pipelines.",
+      "section1Title": "Erfahren",
+      "section1Content1": "In meiner letzten Position als Senior Full Stack Developer bei dem Pharma-Tech-Startup Faro Health habe ich an REST- und CQRS-basierten Microservices und UI-Modulen gearbeitet, die in Typescript, Node, PostgreSQL, Jest und React implementiert wurden. Meine Arbeit umfasste die Entwicklung von Feature-Slices und POCs, das Erstellen und Ausführen technischer Designs, das Schreiben von Unit- und Integrationstests, die Optimierung der Anwendungsleistung und den Aufbau von Deployment-Pipelines mit Github Actions.",
+      "section1Content2": "Zuvor leitete ich ein internationales Remote-Front-End-Team bei Various Inc., wo wir eng mit dem Design-Team zusammenarbeiteten, um Legacy-Javascript- und Perl-basierte Video-Streaming-Apps auf eine moderne UI in React, TypeScript und Python zu migrieren. Eine skalierbarere Codebasis unter Verwendung von Next.js, MOBX und WebSockets, unterstützt durch REST-APIs und eine CI/CD-Entwicklungspipeline zur Vereinfachung der Bereitstellung.",
+      "section2Title": "Technischer Leiter",
+      "section2Content1": "Nachdem ich ein großes internationales Team von Entwicklern und Ingenieuren in den USA, Europa, Taiwan und China geleitet habe, bin ich überzeugt, dass meine Expertise in Technologien wie Typescript, Node, PostgreSQL, Jest und React dazu beitragen wird, Ihre Organisation voranzutreiben. Neben meinen technischen Design- und Entwicklungsfähigkeiten werden meine Führungskompetenzen dazu beitragen, die Teamarbeit auf bestimmte Meilensteine und vom Unternehmen definierte Ziele auszurichten und zu fokussieren."
     },
     "about": {
-      "section1": "Brian ist ein erfahrener Senior -Entwickler mit einer Leidenschaft für elegantes skalierbares Code und minimaler intuitiver UX.",
-      "section2": "In seiner Freizeit liebt er es zu klettern, Schach zu spielen, auf seinem Dirtbike zu erkunden und Muay Thai zu üben."
+      "section1": "Brian ist ein erfahrener Senior Developer mit einer Leidenschaft für eleganten, skalierbaren Code und minimalistische, intuitive UX.",
+      "section2": "In seiner Freizeit liebt er es zu klettern, Schach zu spielen, mit seinem Dirtbike zu fahren und Muay Thai zu üben."
+    },
+    "lang": {
+      "english": "Englisch",
+      "chinese": "Chinesisch",
+      "espanol": "Spanisch",
+      "thai": "Thailändisch",
+      "german": "Deutsch",
+      "korean": "Koreanisch"
     },
     "nav": {
-      "home": "Heim",
+      "home": "Startseite",
       "skills": "Fähigkeiten",
       "projects": "Projekte",
-      "about": "Um",
+      "about": "Über mich",
       "jobs": "Jobs"
+    },
+    "jobs": {
+      "content": {
+        "5": "",
+        "4": "",
+        "3": "",
+        "2": "",
+        "1": ""
+      }
     },
     "data": {
       "projects": {
         "description": {
-          "1": "Ein Software-Tool für klinische Studien, mit dem Ermittler ihre klinischen Studien entwickelt und optimiert werden, indem sie Echtzeitanalysen bereitstellen und den Planungsprozess optimieren.",
-          "2": "Eine Echtzeit -Video -Streaming und Chat -Anwendung",
-          "3": "Eine Umfrage und eine Informationswebsite zu bevorstehenden Änderungen für die Stadt San Anselmo",
+          "1": "Ein Software-Tool für klinische Studien zur Planung, Gestaltung und Optimierung von Studien mit Echtzeit-Analysen",
+          "2": "Eine Echtzeit-Video-Streaming- und Chat-Anwendung",
+          "3": "Eine Umfrage- und Informationswebsite über bevorstehende Änderungen für die Stadt San Anselmo",
           "4": "Website für eine Webdesign- und Entwicklungsagentur",
-          "5": "Proof of Concept Data Analytics Micro-Service-App in Pandas integriert",
-          "6": "Ein IDP Agnostic Single Sign für die Implementierung für die Studiendesigneranwendung.",
-          "7": "Website für eine KI -Gebrauchtwagenanwendung.",
-          "8": "Frontend für eine Showcase -Anwendung für eine geometrische Anwendung zur Kombination von Gitterstrukturen."
+          "5": "Proof-of-Concept-Datenanalyse-Microservice-App, gebaut in Python und Pandas",
+          "6": "Ein IDP-agnostische Single-Sign-On-Implementierung für die Studiendesigner-Anwendung",
+          "7": "Website für eine KI-basierte Gebrauchtwagen-App",
+          "8": "Frontend für eine Demo-Anwendung für eine geometrische Anwendung zum Kombinieren von Gitterstrukturen"
         },
         "content": {
-          "1": "<div><h3>Nutzung von KI für die Entwicklung der klinischen Studien.</h3><p>Das Flaggschiff des Unternehmens, der Faro Study Designer, soll die Effizienz und Patientenfreundlichkeit klinischer Protokolle verbessern.</p><p>Faro Health hat erhebliche Investitionen erhalten und sich in Höhe von insgesamt 38,3 Millionen US -Dollar an Finanzmitteln gewonnen, wobei die jüngsten 20 Millionen US -Dollar vor ungefähr zwei Jahren aufgebracht wurden.</p><p>Zu den wichtigsten Funktionen gehören:</p><div><p>Zusammenarbeit in Echtzeit: Erleichtert genaue und effiziente Dokumentationsprozesse.</p><p>Machbarkeitsanalyse: Bewertet die Auswirkungen von Entwurfsentscheidungen auf die Erfolgsraten der Studien.</p><p>Benchmarking: Vergleicht Protokolle mit historischen Daten und Entwurfsschwankungen.</p></div></div>",
-          "2": "<div><p>Der Viewer ist eine interaktive Webcam-Plattform, auf der Benutzer mit Darstellern Live-Video-Chats betreiben können und eine echtzeit personalisierte Erfahrung bieten.  </p> </div>",
-          "4": "<div><p>Launch Brigade ist eine Webdesign- und Entwicklungsagentur mit Sitz in der San Francisco Bay Area, die sich auf die Schaffung digitaler Erlebnisse spezialisiert hat, die Marken erhöhen und das Geschäftswachstum fördern. </p></div>",
-          "5": "<div><p>Das Data Analytics Dashboard war ein in Pandas eingebauter Proof -of -Concept -Applikationsanwalt, in dem in einem Sternschema gespeicherte Studiendesigndaten verwendet wurden, um einen Datenanalyse -Microservice und Frontend zu erstellen. </p></div>",
-          "7": "<div><p>Lotlinx ist eine KI-gesteuerte Plattform für Inventarverwaltung, die maschinelles Lernen und umfangreiche Datenanalysen nutzt, um Händlern zu unterstützen, die den Inventarumsatz und die Rentabilität zu optimieren. </p></div>",
-          "8": "<div><p>Metafold 3D ist eine Cloud-basierte Plattform, die das Design und das Engineering von hochkomplexen 3D-Modellen ermöglicht, die speziell für die additive Herstellung optimiert wurden. </p></div>"
+          "1": "<div><h3>KI für die Entwicklung klinischer Studien nutzen.</h3><p>Das Flaggschiffprodukt des Unternehmens, der Faro Study Designer, wurde entwickelt, um die Effizienz und Patientenfreundlichkeit von klinischen Protokollen zu verbessern.</p><p>Faro Health hat bedeutende Investitionen erhalten und insgesamt 38,3 Millionen Dollar an Finanzmitteln gesichert, wobei die jüngste Investition von 20 Millionen Dollar vor etwa zwei Jahren aufgebracht wurde.</p><p>Schlüsselmerkmale sind:</p><ul><li>Echtzeit-Kollaboration: Ermöglicht präzise und effiziente Dokumentationsprozesse.</li><li>Machbarkeitsanalyse: Bewertet den Einfluss von Designentscheidungen auf den Erfolg der Studie.</li><li>Benchmarking: Vergleicht Protokolle mit historischen Daten und Designvariationen.</li></ul></div>",
+          "2": "<p>Der Viewer ist eine interaktive Webcam-Plattform, bei der Benutzer in Echtzeit mit Darstellern per Video-Chat interagieren können, um ein personalisiertes Erlebnis zu bieten. Die Plattform ermöglicht es den Benutzern, Live-Übertragungen zu sehen, an privaten Sitzungen teilzunehmen und mit Darstellern über Video, Audio und Chat zu kommunizieren.</p>",
+          "4": "<p>Launch Brigade ist eine Webdesign- und Entwicklungsagentur mit Sitz im San Francisco Bay Area, die sich auf die Erstellung digitaler Erlebnisse spezialisiert hat, die Marken stärken und das Unternehmenswachstum vorantreiben. Ihre Website, launchbrigade.com, spiegelt ihr Engagement wider, umfassende digitale Lösungen anzubieten.</p>",
+          "5": "<p>Das Data Analytics Dashboard war eine Proof-of-Concept-Anwendung, die in Pandas erstellt wurde und Studiendesign-Daten, die in einem Sternschema gespeichert sind, nutzte, um einen Microservice für Datenanalyse und ein Frontend zu erstellen. Diese App ermöglichte es den Benutzern, ihre Studiendaten nach den von ihnen gewählten Daten-Dimensionen zu segmentieren und zu analysieren.</p>",
+          "6": "<p>Eine IDP-agnostische Single-Sign-On-Implementierung für die Studiendesigner-Anwendung. Entwickelt, um es austauschbaren Organisationen zu ermöglichen, ihre eigenen SAML- und Oauth-Identitätsanbieter-Dienste zu verwenden, um Tokens für die Interaktion mit unserer API bereitzustellen.</p>",
+          "7": "<p>Lotlinx ist eine KI-gesteuerte Plattform für das Management von Fahrzeugbeständen, die maschinelles Lernen und umfassende Datenanalyse nutzt, um Autohändlern zu helfen, den Fahrzeugumschlag und die Rentabilität zu optimieren. Durch die Bereitstellung von Echtzeit-Einblicken in Marktnachfrage, Preisstrategien und Verbrauchertrends ermöglicht Lotlinx Gebrauchtwagenhändlern, datenbasierte Entscheidungen zu treffen, die Lagerkosten zu senken und die betriebliche Effizienz zu verbessern.</p>",
+          "8": "<p>Metafold 3D ist eine cloudbasierte Plattform, die den Entwurf und die Konstruktion hochkomplexer 3D-Modelle ermöglicht, die speziell für die additive Fertigung optimiert sind. Gegründet im Jahr 2020 von Experten in Mathematik, Geometrie und Architektur, adressiert Metafold die Herausforderungen, denen traditionelle CAD-Tools bei der Handhabung komplexer Geometrien, wie z. B. Gitterstrukturen, gegenüberstehen, die für leichte und effiziente Designs erforderlich sind.</p>"
         }
       },
       "jobs": {
         "title": {
-          "1": "Senior Full-Stack-Entwickler",
-          "2": "Senior Lead Front-End-Entwickler",
-          "3": "Front-End-Entwickler",
-          "4": "Front-End-Entwicklerpraktikant",
-          "5": "Designer -Praktikant"
+          "1": "Senior Full-Stack Entwickler",
+          "2": "Senior Lead Front-End Entwickler",
+          "3": "Front-End Entwickler",
+          "4": "Front-End Entwickler Praktikant",
+          "5": "Design Praktikant"
         }
       }
     }

@@ -70,7 +70,7 @@
     }
     .language {
       font-size: 40px;
-      padding-bottom: calc($space / 2);
+      padding-bottom: calc(calc($space / 2));
     }
   }
 }

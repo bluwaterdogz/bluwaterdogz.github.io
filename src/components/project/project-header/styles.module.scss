@@ -4,24 +4,6 @@
   color: $primary-color;
 }
 
-.content {
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-  margin-top: 50px;
-  flex-wrap: wrap;
-  padding: 40px;
-  max-width: $content-width;
-  margin: auto;
-}
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-  overflow: visible;
-}
-
 /* Hero Section */
 .hero {
   background-repeat: no-repeat;
@@ -35,52 +17,67 @@
   justify-content: center;
   text-align: center;
   position: relative;
+  h1 {
+    color: white;
+    padding-bottom: 30px;
+  }
   .content {
-    padding: 0 $space;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: $content-width;
+    margin: auto;
+    padding: 0 $space * 4;
     position: relative;
     z-index: 1;
-    display: flex;
     align-items: center;
-    justify-content: center;
   }
-}
 
-.heroHeader {
-  font-size: 4rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-  letter-spacing: -0.5px;
-}
+  .container {
+    width: 100%;
+    max-width: $content-width;
+    margin: 0 auto;
+    text-align: center;
+    overflow: visible;
+  }
 
-.heroSubheader {
-  font-size: 1.5rem;
-  font-weight: 300;
-  margin-bottom: 30px;
-  color: white;
-  max-width: $content-width;
-  margin: auto;
-}
-
-.heroButton {
-  font-size: 1.2rem;
-  padding: 15px 30px;
-  background-color: $primary-color;
-  color: white;
-  text-decoration: none;
-  border-radius: 50px;
-  transition: background-color 0.3s ease;
-}
-
-.heroButton:hover {
-  background-color: $primary-color;
-}
-
-@media (max-width: 768px) {
   .heroHeader {
-    font-size: 2.8rem;
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
   }
 
   .heroSubheader {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    color: white;
+    max-width: $content-width;
+    margin: auto;
+  }
+
+  .heroButton {
     font-size: 1.2rem;
+    padding: 15px 30px;
+    background-color: $primary-color;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+  }
+
+  .heroButton:hover {
+    background-color: $primary-color;
+  }
+
+  @media (max-width: 768px) {
+    .heroHeader {
+      font-size: 2.8rem;
+    }
+
+    .heroSubheader {
+      font-size: 1.2rem;
+    }
   }
 }

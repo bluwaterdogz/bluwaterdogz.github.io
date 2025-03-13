@@ -27,11 +27,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
   }
   .contentImage {
-    padding: $space / 2 $space $space / 2 0;
+    padding: calc($space / 2) $space calc($space / 2) 0;
     overflow: visible;
-    // float: left;
     width: fit-content;
   }
 }

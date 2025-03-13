@@ -11,10 +11,18 @@ export const ProfilePicture = ({
 }: ProfilePictureProps) => {
   return (
     <div
-      className={`${styles.headShot} ${className} ${
+      className={`${styles.headShotContainer} ${className} ${
         size != null ? styles[size] : ""
       }`}
-      style={{ backgroundImage: 'url("/imgs/brian.jpg")' }}
-    ></div>
+    >
+      <div
+        className={`${styles.headShot} `}
+        style={{ backgroundImage: 'url("/imgs/prof2.png")' }}
+      ></div>
+      <div
+        className={`${styles.headShot} ${styles.main}`}
+        style={{ backgroundImage: 'url("/imgs/prof1.png")' }}
+      ></div>
+    </div>
   );
 };

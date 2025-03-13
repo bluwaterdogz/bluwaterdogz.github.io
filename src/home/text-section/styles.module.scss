@@ -25,12 +25,12 @@
     margin: auto;
     display: inline-block;
     overflow: visible;
+    max-width: $readable-width;
   }
 
   h2 {
     float: left;
-    padding: $space / 2 $space $space / 2 0;
-    font-size: 70px;
+    padding: $space $space * 3 $space 0;
     margin: 0;
   }
   hr {
@@ -38,18 +38,18 @@
     width: 80%;
     margin: $space auto;
   }
+  p {
+    font-size: 20px;
+    margin: 0;
+  }
   &.right {
     h2 {
       float: right;
-      padding: $space / 2 0 $space / 2 $space;
+      padding: $space 0 $space $space * 3;
     }
     p {
       text-align: right;
     }
-  }
-  p {
-    font-size: 20px;
-    margin: 0;
   }
 }
 
@@ -61,7 +61,7 @@
       text-align: center;
       display: block;
       float: none;
-      padding: 0 0 $space 0;
+      padding: 0 0 $space * 2 0;
     }
     p {
       text-align: center;
@@ -74,7 +74,6 @@
 @media (min-width: $small-screen) and (max-width: $medium-screen) {
   .textSection {
     .content {
-      overflow: auto;
       padding: $space * 5 calc($space/2);
     }
   }
@@ -83,11 +82,10 @@
 @media (max-width: $small-screen) {
   .textSection {
     .content {
-      overflow: auto;
       padding: $space * 3 $space * 3;
     }
     h2 {
-      font-size: 50px;
+      font-size: 60px;
       margin-bottom: $space * 4;
     }
   }

@@ -1,11 +1,11 @@
 import styles from "./styles.module.scss";
 import { HTMLProps, ReactNode, useRef } from "react";
 import { navItems } from "../consts";
-import { MenuIcon } from "../menu-icon.tsx/menu-icon";
 import { useOutsideClick } from "../../../hooks/useOutsideClick";
 import { NavList } from "../nav-list";
 import { Lang } from "../../lang";
 import { useNaveStore } from "../../../stores/NavStore";
+import { NavMenuIcon } from "../nav-menu-icon";
 
 interface MobileNavProps extends HTMLProps<HTMLDivElement> {
   children?: ReactNode;
@@ -29,15 +29,7 @@ export const MobileNav = (props: MobileNavProps) => {
         ref={ref}
       >
         <div className={styles.iconContainer}>
-          <MenuIcon
-            {...({
-              onClick: () => {
-                setNavOpen(true);
-              },
-              open: navOpen,
-              setOpen: setNavOpen,
-            } as any)}
-          />
+          <NavMenuIcon className={styles.navButton} />
         </div>
         <NavList navItems={navItems} />
         <Lang

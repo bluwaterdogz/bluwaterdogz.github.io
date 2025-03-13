@@ -6,26 +6,18 @@ import { ImageSection } from "../../home/image-section";
 import { ProfileSection } from "../../home/profile-section";
 import Nav from "../../components/nav";
 import { MobileNav } from "../../components/nav/mobile-nav";
-import { MenuIcon } from "../../components/nav/menu-icon.tsx/menu-icon";
-import { useNaveStore } from "../../stores/NavStore";
 import { useLayoutEffect } from "react";
+import { NavMenuIcon } from "../../components/nav/nav-menu-icon";
 
 export const HomePage = () => {
   const { t } = useTranslation();
-  const { navOpen, setNavOpen } = useNaveStore();
   useLayoutEffect(() => {
     window?.scrollTo({ top: 0, left: 0, behavior: "instant" });
-    setNavOpen(false);
   }, [location.pathname]);
 
   return (
     <div className={styles.homePage}>
-      {/* // TODO: switch to NavMenuIcon which memoizes state */}
-      <MenuIcon
-        open={navOpen}
-        setOpen={setNavOpen}
-        className={`${styles.navIcon} ${navOpen ? styles.open : ""}`}
-      />
+      <NavMenuIcon className={`${styles.navIcon}`} />
       <Nav className={styles.defautlNav} />
       <MobileNav className={styles.mobileNav} />
       <HeroSection />

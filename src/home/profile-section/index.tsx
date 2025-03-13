@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
-import { ProfilePicture } from "../../components/common/profile-picture";
 import { useTranslation } from "react-i18next";
 import HomeNav from "../../components/nav/home-nav";
+import { AnimationOnScroll } from "react-animation-on-scroll";
 
 interface ProfileSectionProps {}
 export const ProfileSection = (_props: ProfileSectionProps) => {
@@ -12,10 +12,14 @@ export const ProfileSection = (_props: ProfileSectionProps) => {
         <HomeNav dark={true} className={styles.nav} />
       </div>
       <div className={styles.content}>
-        <div className={styles.contentImage}>
-          <ProfilePicture size={"medium"} />
-        </div>
-        <p>{t("home.about")}</p>
+        <AnimationOnScroll
+          animateOnce={true}
+          duration={2}
+          animateIn={`animate__fadeIn`}
+        >
+          <h2>Who am I?</h2>
+          <p>{t("home.about")}</p>
+        </AnimationOnScroll>
       </div>
     </section>
   );

@@ -2,11 +2,14 @@ import { useTranslation } from "react-i18next";
 import { Project } from "../../../service/project/types";
 import { DarkOverlay } from "../../common/dark-overlay";
 import styles from "./styles.module.scss";
-interface ProjectHeaderProps {
+import { HTMLProps } from "react";
+import { AnimationOnScroll } from "react-animation-on-scroll";
+interface ProjectHeaderProps extends HTMLProps<HTMLDivElement> {
   project: Project;
 }
 
-export const ProjectHeader = ({ project }: ProjectHeaderProps) => {
+export const ProjectHeader = (props: ProjectHeaderProps) => {
+  const { project, className = "" } = props;
   const { t } = useTranslation();
   return (
     <header
@@ -19,11 +22,17 @@ export const ProjectHeader = ({ project }: ProjectHeaderProps) => {
       }}
     >
       <DarkOverlay />
-      <div className={`${styles.container} ${styles.content}`}>
-        <h1 className={styles.heroHeader}>{project?.name}</h1>
-        <p className={styles.heroSubheader}>
-          {t(`data.projects.description.${project.id}`)}
-        </p>
+      <div className={`${className} ${styles.container} ${styles.content}`}>
+        <AnimationOnScroll
+          duration={2}
+          animateOnce={true}
+          animateIn={`animate__fadeInUp`}
+        >
+          <h1 className={styles.heroHeader}>{project?.name}</h1>
+          <p className={styles.heroSubheader}>
+            {t(`data.projects.description.${project.id}`)}
+          </p>
+        </AnimationOnScroll>
       </div>
     </header>
   );

@@ -1,6 +1,7 @@
 import styles from "./styles.module.scss";
 import { ReactNode } from "react";
 import HomeNav from "../../components/nav/home-nav";
+import { AnimationOnScroll } from "react-animation-on-scroll";
 
 interface TextSectionProps {
   right?: boolean;
@@ -18,8 +19,14 @@ export const TextSection = (props: TextSectionProps) => {
         <HomeNav dark={true} className={styles.nav} />
       </div>
       <div className={styles.content}>
-        <h2>{header}</h2>
-        {content}
+        <AnimationOnScroll
+          duration={2}
+          animateOnce={true}
+          animateIn={`animate__fadeIn${right ? "Left" : "Right"}`}
+        >
+          <h2>{header}</h2>
+          <span>{content}</span>
+        </AnimationOnScroll>
       </div>
     </section>
   );

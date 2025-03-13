@@ -1,15 +1,16 @@
 import { useTranslation } from "react-i18next";
 import { Project } from "../../../service/project/types";
 import styles from "./styles.module.scss";
-import { useEffect } from "react";
+import { HTMLProps, useEffect } from "react";
 import { useSkillsStore } from "../../../service/skill/SkillStore";
 import { Link } from "react-router";
 
-interface ProjectContentProps {
+interface ProjectContentProps extends HTMLProps<HTMLDivElement> {
   project: Project;
 }
 
-export const ProjectContent = ({ project }: ProjectContentProps) => {
+export const ProjectContent = (props: ProjectContentProps) => {
+  const { project, className = "" } = props;
   const { t } = useTranslation();
 
   const { skills, fetchSkills } = useSkillsStore();
@@ -19,7 +20,7 @@ export const ProjectContent = ({ project }: ProjectContentProps) => {
   }, [project]);
 
   return (
-    <section id="explore" className={styles.content}>
+    <section className={`${className} ${styles.projectContent}`}>
       <div className={styles.container}>
         <div className={styles.textBlock}>
           <div

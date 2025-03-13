@@ -1,0 +1,7 @@
+@use "../../../styles/variables" as *;
+.navIcon {
+  transition: $transition;
+  &.open {
+    right: -100%;
+  }
+}

@@ -8,9 +8,5 @@ export const ProjectPage = () => {
     navigate("/404");
     return <></>;
   }
-  return (
-    <div>
-      <Project id={id} />
-    </div>
-  );
+  return <Project id={id} />;
 };

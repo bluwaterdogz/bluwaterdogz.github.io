@@ -36,7 +36,7 @@
   hr {
     border: 1px solid $primary-color;
     width: 80%;
-    margin: $space auto;
+    margin: $space * 4 auto;
   }
   p {
     font-size: 20px;
@@ -86,7 +86,6 @@
     }
     h2 {
       font-size: 60px;
-      margin-bottom: $space * 4;
     }
   }
 }

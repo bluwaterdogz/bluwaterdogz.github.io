@@ -14,7 +14,7 @@ interface MobileNavProps extends HTMLProps<HTMLDivElement> {
 }
 
 export const MobileNav = (props: MobileNavProps) => {
-  const { children = null, open, setOpen, className, ...rest } = props;
+  const { children = "", open, setOpen, className, ...rest } = props;
   const ref = useRef(null);
   const { navOpen, setNavOpen } = useNaveStore();
 
@@ -23,7 +23,7 @@ export const MobileNav = (props: MobileNavProps) => {
   });
 
   return (
-    <div className={`${styles.container} ${className}`} {...rest}>
+    <div {...rest} className={`${className}`}>
       <div
         className={`${styles.mobileNav} ${navOpen ? styles.open : ""}`}
         ref={ref}

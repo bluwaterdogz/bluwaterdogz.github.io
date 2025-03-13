@@ -1,37 +1,38 @@
 @use "../../styles/colors" as *;
 @use "../../styles/variables" as *;
-
-.defautlNav {
-  display: flex;
-}
-.mobileNav {
-  display: none;
-}
-
-.navIcon {
-  position: fixed;
-  z-index: 100;
-  right: 0;
-  color: white;
-  -webkit-filter: drop-shadow(-5px 3px 3px rgba(0, 0, 0, 0.8));
-  filter: drop-shadow(-5px 3px 3px rgba(0, 0, 0, 0.8));
-  transition: $transition;
-
-  &.open {
-    right: -100%;
-  }
-}
-
-@media (min-width: $small-screen) {
-  .navIcon {
-    display: none;
-  }
-}
-@media (max-width: $small-screen) {
+.defaultLayout {
   .defautlNav {
-    display: none;
+    display: flex;
   }
   .mobileNav {
-    display: block;
+    display: none;
+  }
+
+  .navIcon {
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    color: white;
+    -webkit-filter: drop-shadow(-5px 3px 3px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(-5px 3px 3px rgba(0, 0, 0, 0.8));
+    transition: $transition;
+
+    &.open {
+      right: -100%;
+    }
+  }
+
+  @media (min-width: $small-screen) {
+    .navIcon {
+      display: none;
+    }
+  }
+  @media (max-width: $small-screen) {
+    .defautlNav {
+      display: none;
+    }
+    .mobileNav {
+      display: block;
+    }
   }
 }

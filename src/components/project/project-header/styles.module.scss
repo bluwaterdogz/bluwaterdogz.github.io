@@ -71,7 +71,7 @@
     background-color: $primary-color;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: $small-screen) {
     height: 100vh;
     .heroHeader {
       font-size: 2.8rem;

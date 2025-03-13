@@ -1,6 +1,7 @@
 import { Lang } from "../../components/lang";
 import styles from "./styles.module.scss";
 import HomeNav from "../../components/nav/home-nav";
+import { useTranslation } from "react-i18next";
 
 interface HeroSectionProps {
   imgUrl?: string;
@@ -8,7 +9,7 @@ interface HeroSectionProps {
 
 export const HeroSection = (props: HeroSectionProps) => {
   const { imgUrl = "./imgs/head_shot.png" } = props;
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <section className={styles.hero}>
@@ -22,16 +23,11 @@ export const HeroSection = (props: HeroSectionProps) => {
         <HomeNav className={styles.nav} />
         <Lang className={styles.languageDropdown} />
         <div className={styles.content}>
-          <h1>
-            Hi!
-            <br /> I'm Brian Velasquez,
-            <br />
-            <span className={styles.emphasis}>
-              Full Stack <br />
-              Developer.
-            </span>
-            {/* <p className={styles.headerSubtext}>{t("home.sub")}</p> */}
-          </h1>
+          <h1
+            dangerouslySetInnerHTML={{
+              __html: t(`home.header`, ""),
+            }}
+          ></h1>
         </div>
       </div>
     </section>

@@ -8,7 +8,7 @@ import { NavMenuIcon } from "../../components/nav/nav-menu-icon";
 
 export const DefaultLayout = () => {
   const location = useLocation();
-  const { setNavOpen } = useNaveStore();
+  const setNavOpen = useNaveStore((state) => state.setNavOpen);
 
   useLayoutEffect(() => {
     window?.scrollTo({ top: 0, left: 0, behavior: "instant" });

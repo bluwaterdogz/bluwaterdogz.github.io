@@ -1,6 +1,7 @@
 @use "../../styles/colors" as *;
 @use "../../styles/variables" as *;
 .defaultLayout {
+  position: relative;
   .defautlNav {
     display: flex;
   }
@@ -16,9 +17,14 @@
     -webkit-filter: drop-shadow(-5px 3px 3px rgba(0, 0, 0, 0.8));
     filter: drop-shadow(-5px 3px 3px rgba(0, 0, 0, 0.8));
     transition: $transition;
+  }
 
-    &.open {
-      right: -100%;
+  @media (max-width: $medium-screen) {
+    .defautlNav {
+      display: flex;
+    }
+    .mobileNav {
+      display: none;
     }
   }
 

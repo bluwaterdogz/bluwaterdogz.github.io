@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     name: "Faro Study Designer ",
     id: "1",
-    img: "/dark_spiral.jpg",
+    img: "/imgs/dark_spiral.jpg",
     skills: [
       "2",
       "3",

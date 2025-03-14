@@ -1,22 +1,6 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/colors" as *;
 
-@mixin showTooltip() {
-  pointer-events: all;
-  .skillDetails {
-    min-height: auto;
-    height: auto;
-    display: flex;
-    opacity: 1;
-    &::after {
-      min-height: auto;
-      height: auto;
-      display: flex;
-      opacity: 1;
-    }
-  }
-}
-
 .skill {
   display: inline-flex;
   flex-direction: column;
@@ -57,17 +41,23 @@
 
   .skillDetailsContainer {
     position: absolute;
-    top: 70%;
+    top: 80%;
     padding: $space;
     z-index: 10;
     pointer-events: none;
     &.open {
-      @include showTooltip();
+      pointer-events: all;
+      .skillDetails,
+      .skillDetails::after {
+        min-height: auto;
+        height: auto;
+        display: flex;
+        opacity: 1;
+      }
     }
   }
 
   .skillDetails {
-    overflow: visible;
     position: relative;
     display: inline-flex;
     flex-direction: column;
@@ -80,16 +70,18 @@
     box-shadow: $box-shadow;
 
     transition: $transition;
+    overflow: visible;
     &::after {
       content: "";
       position: absolute;
-      display: inline-block;
-      bottom: 100%;
+      display: block;
+      bottom: 99%;
       left: 50%;
+      margin-left: -5px;
       min-height: 0;
       height: 0;
       opacity: 0;
-      margin-left: -5px;
+
       border-width: 10px;
       border-style: solid;
       border-color: transparent transparent white transparent;
@@ -110,18 +102,12 @@
   }
 
   .projectLink {
-    padding: $space $space;
+    padding: $space * 2 $space;
     text-decoration: none;
     color: $dark-color;
     text-align: center;
     transition: $transition;
     width: 100%;
-    // &:first-of-type {
-    //   padding-top: $space * 2;
-    // }
-    // &:last-of-type {
-    //   padding-bottom: $space * 2;
-    // }
 
     &:hover {
       color: $primary-color;
@@ -137,6 +123,7 @@
     display: block;
     height: fit-content;
     .skillDetailsContainer {
+      top: unset;
       display: inline-block;
       width: 100%;
       position: relative;

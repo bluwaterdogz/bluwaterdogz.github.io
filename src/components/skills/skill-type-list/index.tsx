@@ -6,10 +6,16 @@ import { useSkillsStore } from "../../../service/skill/SkillStore";
 import { useSearchParams } from "react-router";
 import { DarkOverlay } from "../../common/dark-overlay";
 import { useSkillTypeStore } from "../../../service/skillType/SkillTypeStore";
+import { SkillType } from "../../../service/skillType/types";
+import { Loader } from "../../common/loader";
 
 export const SkillTypeList = () => {
-  const { fetchSkills, skills } = useSkillsStore();
-  const { fetchSkillTypes, skillTypes } = useSkillTypeStore();
+  const { fetchSkills, skills, loading } = useSkillsStore();
+  let {
+    fetchSkillTypes,
+    skillTypes,
+    loading: loadingTypes,
+  } = useSkillTypeStore();
   const [searchParams] = useSearchParams();
   const activeSkillType = searchParams.get("skillType");
   const ref = useRef<HTMLDivElement | null>(null);
@@ -29,33 +35,28 @@ export const SkillTypeList = () => {
     }
   }, [ref]);
 
-  const skillSections = useMemo(() => {
-    const skillGroups = groupBy(skills, "type");
-    console.log(skillTypes);
-    return (
-      skillTypes?.map((type) => ({
-        ...type,
-        skills: skillGroups[type.id],
-      })) || []
-    );
-  }, [skills, skillTypes]);
+  const skillsByType = useMemo(() => groupBy(skills, "type"), [skills]);
 
   return (
     <div className={styles.skilLTypeList}>
-      {skillSections.map((section: any, _i) => (
-        <div
-          style={{ backgroundImage: `url(${section.img})` }}
-          className={styles.skillSectionContainer}
-          key={section.id}
-          ref={section.id === activeSkillType ? ref : null}
-        >
-          <DarkOverlay opacity={0.7} />
-          <div className={styles.skillSection}>
-            <h2>{section.name}</h2>
-            <SkillList skills={section.skills} />
+      {loadingTypes ? (
+        <Loader />
+      ) : (
+        skillTypes.map((section: SkillType) => (
+          <div
+            style={{ backgroundImage: `url(${section.img})` }}
+            className={styles.skillSectionContainer}
+            key={section.id}
+            ref={section.id === activeSkillType ? ref : null}
+          >
+            <DarkOverlay opacity={0.7} />
+            <div className={styles.skillSection}>
+              <h2>{section.name}</h2>
+              <SkillList skills={skillsByType[section.id]} loading={loading} />
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      )}
     </div>
   );
 };

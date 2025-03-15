@@ -1,7 +1,15 @@
 import styles from "./styles.module.scss";
+interface LoaderProps {
+  fullscreen?: boolean;
+}
+export const Loader = (props: LoaderProps) => {
+  const { fullscreen = false } = props;
 
-export const Loader = () => (
-  <div className={styles.container}>
-    <div className={styles.loader}></div>
-  </div>
-);
+  return (
+    <div
+      className={`${styles.container} ${fullscreen ? styles.fullscreen : ""} `}
+    >
+      <div className={styles.loader}></div>
+    </div>
+  );
+};

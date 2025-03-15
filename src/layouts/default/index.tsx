@@ -5,6 +5,7 @@ import { useLayoutEffect } from "react";
 import { MobileNav } from "../../components/nav/mobile-nav";
 import { useNaveStore } from "../../stores/NavStore";
 import { NavMenuIcon } from "../../components/nav/nav-menu-icon";
+import { Footer } from "../../components/footer";
 
 export const DefaultLayout = () => {
   const location = useLocation();
@@ -21,6 +22,7 @@ export const DefaultLayout = () => {
       <Nav className={styles.defautlNav} />
       <MobileNav className={styles.mobileNav} />
       <Outlet />
+      <Footer />
     </div>
   );
 };

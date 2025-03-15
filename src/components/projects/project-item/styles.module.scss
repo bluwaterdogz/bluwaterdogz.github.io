@@ -61,11 +61,11 @@
     display: flex;
     height: auto;
     border-bottom: $space solid white;
-
+    min-height: 100vh;
     .projectImage {
+      min-height: 50vh;
       filter: unset;
       width: 100%;
-      min-height: 400px;
     }
 
     .projectDetails {
@@ -73,6 +73,7 @@
       padding: $space * 4;
       display: flex;
       flex-direction: column;
+      min-height: 50vh;
       h2 {
         margin-top: 0;
         text-align: center;

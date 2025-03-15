@@ -8,6 +8,7 @@ import Nav from "../../components/nav";
 import { MobileNav } from "../../components/nav/mobile-nav";
 import { useLayoutEffect } from "react";
 import { NavMenuIcon } from "../../components/nav/nav-menu-icon";
+import { Footer } from "../../components/footer";
 
 export const HomePage = () => {
   const { t } = useTranslation();
@@ -41,6 +42,7 @@ export const HomePage = () => {
         content={<p>{t("home.section2Content1")}</p>}
       />
       <ImageSection imgUrl="./imgs/theme3.jpg" />
+      <Footer />
     </div>
   );
 };

@@ -1,11 +1,9 @@
 import { create } from "zustand";
-import { Skill, SkillType } from "./types";
+import { Skill } from "./types";
 import skillService from "./SkillService";
-import { skillTypes } from "./data";
 
 interface SkillsState {
   skills: Skill[];
-  skillTypes: SkillType[];
   loading: boolean;
   error?: string;
   fetchSkills: (ids?: string[]) => {};
@@ -14,7 +12,6 @@ interface SkillsState {
 export const useSkillsStore = create<SkillsState>((set) => ({
   skills: [],
   loading: false,
-  skillTypes,
   error: undefined,
   fetchSkills: async (ids?: string[]) => {
     set({ loading: true });

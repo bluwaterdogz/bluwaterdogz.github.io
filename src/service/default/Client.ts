@@ -1,23 +1,36 @@
+import { axios } from "../axios";
+
 interface ClientConfig<T> {
-  data?: T;
-  listData?: T[];
+  fallbackData?: T[];
+  path: string;
 }
 export default class Client<T> {
-  data?: T;
-  listData?: T[];
-
-  constructor(config: ClientConfig<T>) {
-    this.listData = config.listData;
-    this.data = config.data;
-  }
+  constructor(private config: ClientConfig<T>) {}
 
   async get(id: string): Promise<T | undefined> {
-    return await (this.data || this.listData?.find((x: any) => x.id === id));
+    try {
+      const res = await axios.get(`${this.config.path}/${id}`);
+      return res.data || undefined;
+    } catch (e) {
+      console.warn(`Using Fallback GET Data for ${this.config.path}`);
+      return (
+        (await this.config.fallbackData?.find((x: any) => x.id === id)) ||
+        undefined
+      );
+    }
   }
 
   async list(ids?: string[]): Promise<T[] | undefined> {
-    return await this.listData?.filter((item: any) =>
-      ids != null ? ids?.includes(item.id) : true
-    );
+    try {
+      const res = await axios.get(`${this.config.path}`);
+      return res.data || undefined;
+    } catch (e) {
+      console.warn(`Using Fallback LIST Data for ${this.config.path}`);
+      return (
+        (await this.config.fallbackData?.filter((item: any) =>
+          ids != null ? ids?.includes(item.id) : true
+        )) || []
+      );
+    }
   }
 }

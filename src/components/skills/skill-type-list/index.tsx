@@ -5,15 +5,17 @@ import { groupBy } from "lodash";
 import { useSkillsStore } from "../../../service/skill/SkillStore";
 import { useSearchParams } from "react-router";
 import { DarkOverlay } from "../../common/dark-overlay";
+import { useSkillTypeStore } from "../../../service/skillType/SkillTypeStore";
 
 export const SkillTypeList = () => {
-  const { fetchSkills, skills, skillTypes } = useSkillsStore();
+  const { fetchSkills, skills } = useSkillsStore();
+  const { fetchSkillTypes, skillTypes } = useSkillTypeStore();
   const [searchParams] = useSearchParams();
   const activeSkillType = searchParams.get("skillType");
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    fetchSkills();
+    Promise.all([fetchSkills(), fetchSkillTypes()]);
   }, []);
 
   useEffect(() => {
@@ -29,11 +31,14 @@ export const SkillTypeList = () => {
 
   const skillSections = useMemo(() => {
     const skillGroups = groupBy(skills, "type");
-    return skillTypes.map((type) => ({
-      ...type,
-      skills: skillGroups[type.id],
-    }));
-  }, [skills]);
+    console.log(skillTypes);
+    return (
+      skillTypes?.map((type) => ({
+        ...type,
+        skills: skillGroups[type.id],
+      })) || []
+    );
+  }, [skills, skillTypes]);
 
   return (
     <div className={styles.skilLTypeList}>

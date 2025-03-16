@@ -1,1 +1,1 @@
-export const baseApiURL = "http://bluwaterdogz.pythonanywhere.com";
+export const baseApiURL = "https://bluwaterdogz.pythonanywhere.com";

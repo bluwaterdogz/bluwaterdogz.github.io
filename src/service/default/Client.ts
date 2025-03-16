@@ -12,33 +12,42 @@ export default class Client<
   constructor(private config: ClientConfig<Entity>) {}
 
   async get(id: string): Promise<Entity | undefined> {
-    try {
-      const res = await axios.get(`${this.config.path}/${id}`);
-      return res.data || undefined;
-    } catch (e) {
-      console.warn(`Using Fallback GET Data for ${this.config.path}`);
-      return (
-        (await this.config.fallbackData?.find((x: any) => x.id === id)) ||
-        undefined
-      );
-    }
+    return (
+      (await this.config.fallbackData?.find((x: any) => x.id === id)) ||
+      undefined
+    );
+    // try {
+    //   const res = await axios.get(`${this.config.path}/${id}`);
+    //   return res.data || undefined;
+    // } catch (e) {
+    //   console.warn(`Using Fallback GET Data for ${this.config.path}`);
+    //   return (
+    //     (await this.config.fallbackData?.find((x: any) => x.id === id)) ||
+    //     undefined
+    //   );
+    // }
   }
 
   async list(params?: Parameters): Promise<Entity[] | undefined> {
-    try {
-      const res = await axios.post(`${this.config.path}`, params, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      return res.data || undefined;
-    } catch (e) {
-      console.warn(`Using Fallback LIST Data for ${this.config.path}`);
-      return (
-        (await this.config.fallbackData?.filter((item: any) =>
-          params?.ids != null ? params?.ids?.includes(item.id) : true
-        )) || []
-      );
-    }
+    return (
+      (await this.config.fallbackData?.filter((item: any) =>
+        params?.ids != null ? params?.ids?.includes(item.id) : true
+      )) || []
+    );
+    //   try {
+    //     const res = await axios.post(`${this.config.path}`, params, {
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //     });
+    //     return res.data || undefined;
+    //   } catch (e) {
+    //     console.warn(`Using Fallback LIST Data for ${this.config.path}`);
+    //     return (
+    //       (await this.config.fallbackData?.filter((item: any) =>
+    //         params?.ids != null ? params?.ids?.includes(item.id) : true
+    //       )) || []
+    //     );
+    //   }
   }
 }

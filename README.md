@@ -2,4 +2,4 @@ Hi and welcome to my website! It's currently a work in progress, but coming alon
 
 Note: Some things may appear a bit bloated as I wanted to use this as an example of how I would structure a basic scalable app. Enjoy!
 
-Also Note: Accompanying server in progress.
+Also Note: Accompanying server in progress, and TODOs includes moving the media assets to a dedicated cdn.

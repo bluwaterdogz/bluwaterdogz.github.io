@@ -8,7 +8,7 @@ interface ProjectProps {
   id: string;
 }
 export const Project = ({ id }: ProjectProps) => {
-  const { project, fetchProject } = useProjectStore();
+  const { project, fetchProject, loading } = useProjectStore();
 
   useEffect(() => {
     fetchProject(id!);
@@ -16,7 +16,7 @@ export const Project = ({ id }: ProjectProps) => {
 
   return (
     <>
-      {project == null ? (
+      {loading || project == null ? (
         <Loader />
       ) : (
         <>

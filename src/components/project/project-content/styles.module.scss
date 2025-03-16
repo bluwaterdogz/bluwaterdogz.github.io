@@ -12,24 +12,35 @@
   flex-wrap: wrap;
   max-width: $content-width;
   margin: auto;
+  .previews {
+    overflow: visible;
+  }
+  .previewVideo {
+    width: 100%;
+    margin: $space * 10 0;
+    box-shadow: $box-shadow;
+  }
+  .previewImg {
+    width: 100%;
+    margin: $space * 10 0;
+    box-shadow: $box-shadow;
+  }
   .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
-    overflow: visible;
   }
   .textBlock {
     border-radius: 10px;
     padding: 30px;
+    overflow: visible;
   }
-
   h3 {
     margin-bottom: $space * 2;
   }
   p {
   }
-
   li {
     text-align: left;
     padding-bottom: $space;

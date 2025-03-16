@@ -1,13 +1,17 @@
 import { axios } from "../axios";
+import { DefaultParameters } from "./types";
 
-interface ClientConfig<T> {
-  fallbackData?: T[];
+interface ClientConfig<Entity> {
+  fallbackData?: Entity[];
   path: string;
 }
-export default class Client<T> {
-  constructor(private config: ClientConfig<T>) {}
+export default class Client<
+  Entity,
+  Parameters extends DefaultParameters = DefaultParameters
+> {
+  constructor(private config: ClientConfig<Entity>) {}
 
-  async get(id: string): Promise<T | undefined> {
+  async get(id: string): Promise<Entity | undefined> {
     try {
       const res = await axios.get(`${this.config.path}/${id}`);
       return res.data || undefined;
@@ -20,15 +24,19 @@ export default class Client<T> {
     }
   }
 
-  async list(ids?: string[]): Promise<T[] | undefined> {
+  async list(params?: Parameters): Promise<Entity[] | undefined> {
     try {
-      const res = await axios.get(`${this.config.path}`);
+      const res = await axios.post(`${this.config.path}`, params, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       return res.data || undefined;
     } catch (e) {
       console.warn(`Using Fallback LIST Data for ${this.config.path}`);
       return (
         (await this.config.fallbackData?.filter((item: any) =>
-          ids != null ? ids?.includes(item.id) : true
+          params?.ids != null ? params?.ids?.includes(item.id) : true
         )) || []
       );
     }

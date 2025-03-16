@@ -29,6 +29,24 @@ export const ProjectContent = (props: ProjectContentProps) => {
               __html: t(`data.projects.content.${project.id}`, ""),
             }}
           ></div>
+          {/* <div className={styles.previews}>
+            {project.previewVideos?.map((url) => {
+              return (
+                <video
+                  loop
+                  muted
+                  controls={false}
+                  autoPlay
+                  src={url}
+                  className={styles.previewVideo}
+                  key={url + project.id}
+                ></video>
+              );
+            })}
+            {project.previewImgs?.map((imgSrc) => (
+              <img src={imgSrc} width="100%" className={styles.previewImg} />
+            ))}
+          </div> */}
         </div>
         <div className={styles.textBlock}>
           {skills?.map((skill) => (

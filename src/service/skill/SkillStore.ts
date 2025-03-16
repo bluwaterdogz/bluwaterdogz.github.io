@@ -16,7 +16,7 @@ export const useSkillsStore = create<SkillsState>((set) => ({
   fetchSkills: async (ids?: string[]) => {
     set({ loading: true });
     try {
-      const skills = await skillService.list(ids);
+      const skills = await skillService.list({ ids });
       set({ skills, loading: false });
     } catch (e: any) {
       set({ error: e, loading: false });

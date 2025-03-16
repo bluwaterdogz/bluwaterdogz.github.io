@@ -21,18 +21,14 @@
     align-items: center;
   }
   .content {
-    width: $content-width;
     margin: auto;
     overflow: visible;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-  }
-  .contentImage {
-    padding: calc($space / 2) $space calc($space / 2) 0;
-    overflow: visible;
-    width: fit-content;
+    max-width: $readable-width;
+    padding: $space * 10 0;
   }
 }
 

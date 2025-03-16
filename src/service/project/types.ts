@@ -3,4 +3,6 @@ export interface Project {
   id: string;
   img?: string;
   skills: string[];
+  previewImgs?: string[];
+  previewVideos?: string[];
 }

@@ -42,6 +42,7 @@ export const projects: Project[] = [
   },
   {
     name: "San Anselmo City Plan Website",
+    previewImgs: ["/imgs/san_anselmo_preview.png"],
     id: "3",
     img: "/imgs/downtown.jpg",
     skills: ["6", "7", "8", "17", "18", "23"],
@@ -56,6 +57,7 @@ export const projects: Project[] = [
     name: "LotLinx Website",
     id: "7",
     img: "/imgs/car.jpg",
+    previewVideos: ["/imgs/lotlinx_preview.mov", "/imgs/lotlinx_preview2.mov"],
     skills: ["6", "7", "8"],
   },
   {

@@ -21,6 +21,11 @@ export const Footer = () => {
             <i className="devicon-linkedin-plain"></i> LinkedIn
           </a>
         </div>
+        <div className={styles.footerLink}>
+          <a href="mailto:bveedy@gmail.com">
+            <i className="fa fa-envelope"></i> Email
+          </a>
+        </div>
         {/* <div>
           <a href="">Link3</a>
         </div> */}

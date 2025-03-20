@@ -1,4 +1,4 @@
-import { axios } from "../axios";
+// import { axios } from "../axios";
 import { DefaultParameters } from "./types";
 
 interface ClientConfig<Entity> {

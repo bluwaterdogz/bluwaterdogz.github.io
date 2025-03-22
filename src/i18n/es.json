@@ -1,33 +1,33 @@
 {
   "translation": {
     "home": {
-      "header": "<span>Hallo!<br /> Ich bin Brian Velasquez,<br /><em>Senior Full Stack <br />Engineer + Freelancer.</em></span>",
-      "aboutHeader": "Wer bin ich?",
-      "about": "Senior Full-Stack Web-Entwickler mit Expertise in TypeScript, React, Angular, Node.js und Python. Erfahren in der Führung internationaler Teams, der Modernisierung von Altsystemen, der Optimierung von Architekturen und der Implementierung von CI/CD-Pipelines für eine effiziente Bereitstellung. Leidenschaftlich darin, skalierbare, benutzerzentrierte Lösungen zu bauen, die das Geschäftswachstum vorantreiben.",
-      "section1Title": "Erfahren",
-      "section1Content1": "In meiner letzten Rolle als Senior Full-Stack Developer bei dem Pharma-Tech-Startup Faro Health habe ich REST- und CQRS-basierte Microservices und UI-Module mit TypeScript, Node.js, PostgreSQL, Jest und React entwickelt und optimiert. Ich habe Feature-Slices und POCs entwickelt, technische Lösungen entworfen und ausgeführt, Unit- und Integrationstests geschrieben, die Anwendungsleistung optimiert und Deployment-Pipelines mit GitHub Actions aufgebaut.",
-      "section1Content2": "Zuvor habe ich ein internationales Remote-Front-End-Team bei Various Inc. geleitet und eng mit Designern zusammengearbeitet, um eine alte JavaScript- und Perl-basierte Video-Streaming-App zu modernisieren. Wir migrierten sie auf einen skalierbaren, leistungsstarken React- und TypeScript-Stack mit Next.js, MOBX, WebSockets und Python, unterstützt von REST-APIs und einer CI/CD-Pipeline für eine nahtlose Bereitstellung.",
-      "section2Title": "Technischer Leiter",
-      "section2Content1": "Nachdem ich ein großes internationales Team in den USA, Europa, Taiwan und China geleitet habe, bringe ich tiefgehende Expertise in TypeScript, Node.js, PostgreSQL, Jest und React mit, um Innovationen voranzutreiben. Neben technischer Gestaltung und Entwicklung sorgen meine Führungsfähigkeiten dafür, dass Teams fokussiert bleiben und auf wichtige Meilensteine und Unternehmensziele hinarbeiten."
+      "header": "<span>¡Hola!<br /> Soy Brian Velasquez,<br /><em>Ingeniero Senior Full Stack</em></span>",
+      "aboutHeader": "¿Quién soy?",
+      "about": "Desarrollador web Full-Stack Senior con experiencia en TypeScript, React, Angular, Node.js y Python. Experiencia liderando equipos internacionales, modernizando sistemas heredados, optimizando arquitecturas e implementando pipelines de CI/CD para despliegues eficientes. Apasionado por construir soluciones escalables y centradas en el usuario que impulsen el crecimiento empresarial.",
+      "section1Title": "Experimentado",
+      "section1Content1": "En mi rol más reciente como Desarrollador Full-Stack Senior en la startup farmacéutica Faro Health, construí y optimicé microservicios basados en REST y CQRS, así como módulos de interfaz de usuario utilizando TypeScript, Node.js, PostgreSQL, Jest y React. Desarrollé fragmentos de características y pruebas de concepto, diseñé y ejecuté soluciones técnicas, escribí pruebas unitarias y de integración, optimicé el rendimiento de la aplicación y construí pipelines de despliegue con GitHub Actions.",
+      "section1Content2": "Anteriormente, lideré un equipo remoto internacional de front-end en Various Inc., colaborando estrechamente con diseñadores para modernizar aplicaciones de transmisión de video basadas en JavaScript y Perl. Migramos estas aplicaciones a una pila escalable y de alto rendimiento con React, TypeScript, Next.js, MOBX, WebSockets y Python, respaldada por APIs REST y un pipeline de CI/CD para despliegues sin problemas.",
+      "section2Title": "Líder Técnico",
+      "section2Content1": "Habiendo liderado un equipo internacional extenso en EE.UU., Europa, Taiwán y China, aporto una profunda experiencia en TypeScript, Node.js, PostgreSQL, Jest y React para impulsar la innovación. Más allá del diseño y desarrollo técnico, mis habilidades de liderazgo aseguran que los equipos se mantengan alineados, enfocados y trabajando hacia los hitos clave y los objetivos de la empresa."
     },
     "about": {
-      "section1": "Brian ist ein erfahrener Senior Developer mit einer Leidenschaft für eleganten, skalierbaren Code und minimalistische, intuitive UX.",
-      "section2": "In seiner Freizeit liebt er es, zu klettern, Schach zu spielen, mit seinem Dirtbike zu fahren und Muay Thai zu üben."
+      "section1": "Brian es un desarrollador senior experimentado con pasión por el código escalable y elegante y las experiencias de usuario mínimas e intuitivas.",
+      "section2": "En su tiempo libre le encanta escalar, jugar al ajedrez, explorar en su moto de cross y practicar Muay Thai."
     },
     "lang": {
-      "english": "Englisch",
-      "chinese": "Chinesisch",
-      "espanol": "Spanisch",
-      "thai": "Thailändisch",
-      "german": "Deutsch",
-      "korean": "Koreanisch"
+      "english": "Inglés",
+      "chinese": "Chino",
+      "espanol": "Español",
+      "thai": "Tailandés",
+      "german": "Alemán",
+      "korean": "Coreano"
     },
     "nav": {
-      "home": "Startseite",
-      "skills": "Fähigkeiten",
-      "projects": "Projekte",
-      "about": "Über mich",
-      "jobs": "Jobs"
+      "home": "Inicio",
+      "skills": "Habilidades",
+      "projects": "Proyectos",
+      "about": "Acerca de",
+      "jobs": "Trabajos"
     },
     "jobs": {
       "content": {
@@ -41,33 +41,21 @@
     "data": {
       "projects": {
         "description": {
-          "1": "Ein Softwaretool für klinische Studien zur Planung, Gestaltung und Optimierung von Studien mit Echtzeit-Analysen",
-          "2": "Eine Echtzeit-Video-Streaming- und Chat-Anwendung",
-          "3": "Eine Umfrage- und Informationswebsite zu bevorstehenden Änderungen in der Stadt San Anselmo",
-          "4": "Website für eine Webdesign- und Entwicklungsagentur",
-          "5": "Proof of Concept Data Analytics Micro-Service-App, erstellt in Python und Pandas",
-          "6": "Eine IDP-unabhängige Single Sign-On-Implementierung für die Study Designer-Anwendung",
-          "7": "Website für eine KI-basierte Gebrauchtwagen-App",
-          "8": "Frontend für eine Showcase-Anwendung einer geometrischen Anwendung zur Kombination von Gitterstrukturen"
+          "1": "Una herramienta de software para ensayos clínicos para planificar, diseñar y optimizar estudios con análisis en tiempo real.",
+          "2": "Una aplicación de transmisión de video en tiempo real y chat.",
+          "3": "Un sitio web de encuestas e información sobre los próximos cambios para la ciudad de San Anselmo.",
+          "4": "Sitio web para una agencia de diseño y desarrollo web.",
+          "5": "Prueba de concepto de una aplicación microservicio de análisis de datos construida en Python y Pandas.",
+          "6": "Una implementación de inicio de sesión único (SSO) independiente del proveedor de identidad (IDP) para la aplicación de diseño de estudios.",
+          "7": "Sitio web para una aplicación de autos usados basada en IA.",
+          "8": "Interfaz de usuario para una aplicación de demostración de una aplicación geométrica para combinar estructuras de celosía."
         },
         "content": {
-          "1": "<div><h3>AI für die klinische Studienentwicklung nutzen</h3><p>Das Hauptprodukt des Unternehmens, der Faro Study Designer, wurde entwickelt, um die Effizienz und Benutzerfreundlichkeit klinischer Protokolle zu verbessern.</p><p>Faro Health hat erhebliche Investitionen erhalten und insgesamt 38,3 Millionen Dollar an Finanzmitteln gesichert, wobei die letzte Finanzierungsrunde von 20 Millionen Dollar vor etwa zwei Jahren abgeschlossen wurde.</p><p>Zu den wichtigsten Funktionen gehören:</p><ul><li>Echtzeit-Zusammenarbeit: Erleichtert präzise und effiziente Dokumentationsprozesse.</li><li>Machbarkeitsanalyse: Bewertet die Auswirkungen von Designentscheidungen auf die Erfolgsraten von Studien.</li><li>Benchmarking: Vergleicht Protokolle mit historischen Daten und Designvariationen.</li></ul></div>",
-          "2": "<p>The Viewer ist eine interaktive Webcam-Plattform, auf der Benutzer in Echtzeit mit Darstellern in Video-Chats interagieren können. Die Plattform ermöglicht es den Nutzern, Live-Übertragungen zu sehen, an privaten Sitzungen teilzunehmen und mit den Darstellern über Video, Audio und Chat-Funktionen zu kommunizieren.</p>",
-          "3": "<p>Eine WordPress-Website für das San Anselmo General Plan Update 2025, die den Anwohnern umfassende Informationen zu den vorgeschlagenen Änderungen an der städtischen Infrastruktur, Zoneneinteilung und öffentlichen Räumen bietet. Sie enthält detaillierte Projektupdates, Nachhaltigkeitsinitiativen und Verbesserungen im Bereich Transport. Die Seite umfasst auch interaktive öffentliche Umfragen, die es den Bürgern ermöglichen, Feedback zu geben und sich am Entscheidungsprozess zu beteiligen.</p>",
-          "4": "<p>Launch Brigade ist eine Webdesign- und Entwicklungsagentur mit Sitz im San Francisco Bay Area, die sich darauf spezialisiert hat, digitale Erlebnisse zu schaffen, die Marken stärken und das Geschäftswachstum fördern. Ihre Website, launchbrigade.com, spiegelt ihr Engagement wider, umfassende digitale Lösungen anzubieten.</p>",
-          "5": "<p>Das Data Analytics Dashboard war eine Proof-of-Concept-Anwendung, die in Pandas entwickelt wurde und Studiendaten im Star-Schema verwendete, um einen Data Analytics Micro-Service und Frontend zu erstellen. Diese App ermöglichte es den Nutzern, ihre Studiendaten nach beliebigen Daten-Dimensionen zu analysieren.</p>",
-          "6": "<p>Eine IDP-unabhängige Single Sign-On-Implementierung für die Study Designer-Anwendung. Diese wurde entwickelt, um es verschiedenen Organisationen zu ermöglichen, ihre eigenen SAML- und OAuth-Identity-Provider-Dienste zu nutzen, um Tokens für die Interaktion mit unserer API bereitzustellen.</p>",
-          "7": "<p>Lotlinx ist eine KI-gesteuerte Plattform zur Verwaltung von Auto-Inventar, die maschinelles Lernen und umfangreiche Datenanalyse nutzt, um Autohändlern zu helfen, den Lagerumschlag und die Rentabilität zu optimieren. Durch Echtzeit-Einblicke in Marktnachfrage, Preisstrategien und Verbraucherverhalten ermöglicht Lotlinx Gebrauchtwagenhändlern, datengestützte Entscheidungen zu treffen, die Lagerkosten zu senken und die Betriebseffizienz zu steigern.</p>",
-          "8": "<p>Metafold 3D ist eine cloudbasierte Plattform, die das Design und Engineering von hochkomplexen 3D-Modellen ermöglicht, die speziell für die additive Fertigung optimiert sind. Metafold wurde 2020 von Experten in Mathematik, Geometrie und Architektur gegründet und adressiert die Herausforderungen, die traditionelle CAD-Tools bei der Handhabung komplexer Geometrien wie Gitterstrukturen haben, die für leichte und effiziente Designs unerlässlich sind.</p>"
-        }
-      },
-      "jobs": {
-        "title": {
-          "1": "Senior Full-Stack Developer",
-          "2": "Senior Lead Front-End Developer",
-          "3": "Front-End Developer",
-          "4": "Front-End Developer Praktikant",
-          "5": "Design Praktikant"
+          "1": "<div><h3>Utilización de IA para el desarrollo de estudios clínicos.</h3><p>El producto insignia de la compañía, Faro Study Designer, está diseñado para mejorar la eficiencia y la experiencia del paciente en los protocolos clínicos.</p><p>Faro Health ha recibido una inversión significativa, asegurando un total de $38.3 millones, con $20 millones recaudados hace aproximadamente dos años.</p><p>Características clave incluyen:</p><ul><li>Colaboración en tiempo real: Facilita procesos de documentación precisos y eficientes.</li><li>Análisis de factibilidad: Evalúa el impacto de las decisiones de diseño en las tasas de éxito del estudio.</li><li>Benchmarking: Compara protocolos con datos históricos y variaciones de diseño.</li></ul></div>",
+          "2": "<p>El Viewer es una plataforma interactiva de cámaras web donde los usuarios pueden participar en chats de video en vivo con los presentadores, ofreciendo una experiencia personalizada y en tiempo real. La plataforma permite ver transmisiones en vivo, participar en sesiones privadas y conectarse a través de video, audio y chat.</p>",
+          "3": "<p>Un sitio web en WordPress para la Actualización del Plan General 2025 de San Anselmo, que brinda a los residentes información detallada sobre los cambios propuestos en la infraestructura, la zonificación y los espacios públicos de la ciudad. También incluye encuestas interactivas para recopilar opiniones de la comunidad.</p>",
+          "4": "<p>Launch Brigade es una agencia de diseño y desarrollo web con sede en el Área de la Bahía de San Francisco, especializada en crear experiencias digitales que mejoran las marcas y fomentan el crecimiento empresarial. Su sitio web, launchbrigade.com, refleja su compromiso con soluciones digitales integrales.</p>",
+          "5": "<p>El Panel de Análisis de Datos fue una prueba de concepto construida en Pandas que utilizaba datos de diseño de estudios almacenados en un esquema estrella para crear un microservicio de análisis de datos y frontend. Este app permitía a los usuarios segmentar y analizar sus datos de estudio según las dimensiones elegidas.</p>"
         }
       }
     }

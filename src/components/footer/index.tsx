@@ -22,8 +22,8 @@ export const Footer = () => {
           </a>
         </div>
         <div className={styles.footerLink}>
-          <a href="mailto:bveedy@gmail.com">
-            <i className="fa fa-envelope"></i> Email
+          <a href="bveedy@gmail.com">
+            <i className="fa fa-envelope"></i> bveedy@gmail.com
           </a>
         </div>
         {/* <div>

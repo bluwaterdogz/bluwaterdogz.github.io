@@ -19,27 +19,31 @@
     }
   }
 }
+
 .languageList {
   height: 0;
   text-align: right;
   transition: $transition;
   position: absolute;
+  // top: calc($nav-height - 2px);
   top: $nav-height;
-  right: 0px;
+  right: -10px;
+  right: 0;
+
+  color: $dark-color;
+  // padding: 0 $space * 2;
+  overflow: hidden;
 
   &.open {
-    height: 200px;
+    // padding: $space $space * 2;
+    height: fit-content;
     display: block;
-  }
-  &:hover {
-    .language {
-      color: white;
-    }
   }
 
   .language {
     font-size: 20px;
-    color: white;
+    // color: white;
+    color: $dark-color;
     transition: $transition;
     cursor: pointer;
     &:hover {

@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { Project } from "./types";
+import { Project, ProjectFilters } from "./types";
 import projectService from "./ProjectService";
 
 interface ProjectState {
@@ -7,10 +7,14 @@ interface ProjectState {
   project?: Project;
   loading: boolean;
   loadingList: boolean;
+  filters: ProjectFilters;
   error?: string;
   errorList?: string;
+  searchTerm?: string;
   fetchProjectList: () => {};
   fetchProject: (id: string) => {};
+  setSearchTerm: (searchTerm: string) => void;
+  setFilters: (filters: ProjectFilters) => void;
 }
 
 export const useProjectStore = create<ProjectState>((set) => ({
@@ -19,6 +23,10 @@ export const useProjectStore = create<ProjectState>((set) => ({
   loading: false,
   loadingList: false,
   error: undefined,
+  searchTerm: undefined,
+  filters: {
+    skills: [],
+  },
   fetchProjectList: async () => {
     set({ loadingList: true });
     try {
@@ -36,5 +44,11 @@ export const useProjectStore = create<ProjectState>((set) => ({
     } catch (e: any) {
       set({ error: e, loading: false });
     }
+  },
+  setSearchTerm: (searchTerm: string) => {
+    set({ searchTerm });
+  },
+  setFilters: (filters: ProjectFilters) => {
+    set({ filters });
   },
 }));

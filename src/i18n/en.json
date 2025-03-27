@@ -4,7 +4,7 @@
       "header": "<span>Hello.<br /> I'm Brian Velasquez,<br /><em>Senior Full Stack <br />Engineer.</em></span>",
       "aboutHeader": "Who am I?",
       "about": "Senior Full-Stack Web Developer with expertise in TypeScript, React, Angular, Node.js, and Python. Experienced in leading international teams, modernizing legacy systems, optimizing architectures, and implementing CI/CD pipelines for efficient deployment. Passionate about building scalable, user-centric solutions that drive business growth.",
-      "section1Title": "Expreienced",
+      "section1Title": "Experienced",
       "section1Content1": "In my most recent role as a Senior Full-Stack Developer at pharmaceutical tech startup Faro Health, I built and optimized REST and CQRS-based microservices and UI modules using TypeScript, Node.js, PostgreSQL, Jest, and React. I developed feature slices and POCs, designed and executed technical solutions, wrote unit and integration tests, optimized application performance, and built deployment pipelines with GitHub Actions.",
       "section1Content2": "Previously, I led an international remote front-end team at Various Inc., collaborating closely with designers to modernize legacy JavaScript and Perl-based video streaming apps. We migrated them to a scalable, high-performance React and TypeScript stack with Next.js, MOBX, WebSockets, and Python, backed by REST APIs and a CI/CD pipeline for seamless deployment.",
       "section2Title": "Technical Leader",

@@ -4,6 +4,7 @@ import styles from "./styles.module.scss";
 import { HTMLProps, useEffect } from "react";
 import { useSkillsStore } from "../../../service/skill/SkillStore";
 import { Link } from "react-router";
+import { Loader } from "../../common/loader";
 
 interface ProjectContentProps extends HTMLProps<HTMLDivElement> {
   project: Project;
@@ -13,7 +14,7 @@ export const ProjectContent = (props: ProjectContentProps) => {
   const { project, className = "" } = props;
   const { t } = useTranslation();
 
-  const { skills, fetchSkills } = useSkillsStore();
+  const { skills, fetchSkills, loading } = useSkillsStore();
 
   useEffect(() => {
     fetchSkills(project?.skills);
@@ -29,7 +30,33 @@ export const ProjectContent = (props: ProjectContentProps) => {
               __html: t(`data.projects.content.${project.id}`, ""),
             }}
           ></div>
-          {/* <div className={styles.previews}>
+          <div className={styles.textBlock}>
+            {loading ? (
+              <Loader />
+            ) : (
+              skills?.map((skill) => (
+                <Link key={skill.name} to={`/skills?skillType=${skill.type}`}>
+                  <div className={styles.skill}>
+                    <i className={`${skill.icon} ${styles.icon}`}></i>
+                    <p className={styles.name}>{skill.name}</p>
+                  </div>
+                </Link>
+              ))
+            )}
+          </div>
+          {project.quotes.length > 0 && (
+            <div className={styles.quotes}>
+              {project.quotes.map((q) => (
+                <div className={styles.quote}>
+                  <p className={styles.text}>{q.text}</p>
+                  {q.author != null && (
+                    <p className={styles.author}>{q.author}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+          <div className={styles.previews}>
             {project.previewVideos?.map((url) => {
               return (
                 <video
@@ -46,17 +73,7 @@ export const ProjectContent = (props: ProjectContentProps) => {
             {project.previewImgs?.map((imgSrc) => (
               <img src={imgSrc} width="100%" className={styles.previewImg} />
             ))}
-          </div> */}
-        </div>
-        <div className={styles.textBlock}>
-          {skills?.map((skill) => (
-            <Link key={skill.name} to={`/skills?skillType=${skill.type}`}>
-              <div className={styles.skill}>
-                <i className={`${skill.icon} ${styles.icon}`}></i>
-                <p className={styles.name}>{skill.name}</p>
-              </div>
-            </Link>
-          ))}
+          </div>
         </div>
       </div>
     </section>

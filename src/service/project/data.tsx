@@ -5,6 +5,7 @@ export const projects: Project[] = [
     name: "Faro Study Designer ",
     id: "1",
     img: "/imgs/dark_spiral.jpg",
+    quotes: [],
     skills: [
       "2",
       "3",
@@ -26,18 +27,21 @@ export const projects: Project[] = [
     name: "Various Inc Viewer",
     id: "2",
     img: "/imgs/streamer.jpg",
+    quotes: [],
     skills: ["2", "3", "7", "8", "9", "10", "13", "17", "18", "21"],
   },
   {
     name: "Faro Data Analytics Dashboard POC",
     id: "5",
     img: "/imgs/clinical-data.jpg",
+    quotes: [],
     skills: ["1", "12", "17"],
   },
   {
     name: "Faro B2C SSO Implementation",
     id: "6",
     img: "/imgs/lock.jpg",
+    quotes: [],
     skills: ["19", "20"],
   },
   {
@@ -45,25 +49,37 @@ export const projects: Project[] = [
     previewImgs: ["/imgs/san_anselmo_preview.png"],
     id: "3",
     img: "/imgs/downtown.jpg",
+    quotes: [],
     skills: ["6", "7", "8", "17", "18", "23"],
   },
   {
     name: "Launch Brigade Website",
     id: "4",
     img: "/imgs/rocket.jpg",
+    quotes: [],
     skills: ["6", "7", "8", "17", "18", "21", "22", "23"],
   },
   {
     name: "LotLinx Website",
     id: "7",
     img: "/imgs/car.jpg",
-    previewVideos: ["/imgs/lotlinx_preview.mov", "/imgs/lotlinx_preview2.mov"],
+    quotes: [
+      // {
+      //   text: "A real good time all around.",
+      //   author: "Cole Short",
+      // },
+    ],
+    previewVideos: [
+      "/videos/lotlinx_preview.mov",
+      "/videos/lotlinx_preview2.mov",
+    ],
     skills: ["6", "7", "8"],
   },
   {
     name: "Metafold 3D MVP",
     id: "8",
     img: "/imgs/3dshapes.jpg",
+    quotes: [],
     skills: ["3", "7", "8", "9"],
   },
 ];

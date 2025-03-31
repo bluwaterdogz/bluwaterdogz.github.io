@@ -12,6 +12,42 @@
   flex-wrap: wrap;
   max-width: $content-width;
   margin: auto;
+
+  .quote {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    // border-left: 5px solid $primary-color;
+
+    background: #fdfaf6;
+
+    // box-shadow: $box-shadow;
+    border-radius: 8px;
+    .text {
+      &:before,
+      &:after {
+        content: '"';
+      }
+      font-family: "Georgia", serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: $dark-color;
+      color: $primary-color;
+      text-align: center;
+    }
+
+    .author {
+      &:before {
+        content: "- ";
+      }
+      display: block;
+      margin-top: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: $primary-color;
+    }
+  }
+
   .previews {
     overflow: visible;
   }

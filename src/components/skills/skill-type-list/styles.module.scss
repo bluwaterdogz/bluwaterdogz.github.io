@@ -9,28 +9,6 @@
     margin: auto;
     border: white 1px solid;
   }
-  .skillSection {
-    position: relative;
-    width: auto;
-    padding: $space * 3 0;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    max-width: 100vw;
-    overflow: visible;
-    align-items: center;
-    justify-content: center;
-    min-height: $space-large;
-    max-width: $content-width;
-    margin: auto;
-  }
-  .skillSectionContainer {
-    position: relative;
-    overflow: visible;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
   .skilLTypeList {
     padding-bottom: 200px;
   }

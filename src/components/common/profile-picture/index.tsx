@@ -19,10 +19,10 @@ export const ProfilePicture = ({
         className={`${styles.headShot} `}
         style={{ backgroundImage: 'url("/imgs/prof2.png")' }}
       ></div>
-      <div
+      {/* <div
         className={`${styles.headShot} ${styles.main}`}
         style={{ backgroundImage: 'url("/imgs/prof1.png")' }}
-      ></div>
+      ></div> */}
     </div>
   );
 };

@@ -1,0 +1,25 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/colors" as *;
+
+.skillSectionContainer {
+  position: relative;
+  overflow: visible;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  .skillSection {
+    position: relative;
+    width: auto;
+    padding: $space * 3 0;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    max-width: 100vw;
+    overflow: visible;
+    align-items: center;
+    justify-content: center;
+    min-height: $space-large;
+    max-width: $content-width;
+    margin: auto;
+  }
+}

@@ -7,6 +7,7 @@ import Fuse from "fuse.js";
 import { Project } from "../../../service/project/types";
 import { TopBar } from "../top-bar";
 import { useTranslation } from "react-i18next";
+import { DynamicList } from "../../common/dynamic-list";
 
 export const ProjectList = () => {
   const { projects, fetchProjectList, loadingList, searchTerm, filters } =
@@ -30,7 +31,8 @@ export const ProjectList = () => {
       }
 
       return (
-        project.skills.filter((skill) => skillFilterMap.get(skill)).length > 0
+        project.skills.filter((skill) => skillFilterMap.has(skill)).length ===
+        filters.skills.length
       );
     },
     [projects, skillFilterMap]
@@ -72,17 +74,17 @@ export const ProjectList = () => {
     <>
       <TopBar />
       <div className={styles.projectList}>
-        {loadingList ? (
-          <Loader />
-        ) : (
-          searchedProjectList.map((project) => (
+        <DynamicList<Project>
+          loading={loadingList}
+          data={searchedProjectList}
+          renderListItem={(project: Project) => (
             <ProjectItem
               project={project}
               className={styles.projectItem}
               key={project.id}
             />
-          ))
-        )}
+          )}
+        />
       </div>
     </>
   );

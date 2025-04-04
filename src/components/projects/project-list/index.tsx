@@ -19,8 +19,8 @@ export const ProjectList = () => {
   const { t } = useTranslation();
 
   const skillFilterMap = useMemo(
-    () => new Map(filters?.skills?.map((x) => [x.value, true])),
-    [filters?.skills]
+    () => new Map(filters.skills.map((x) => [x.value, true])),
+    [filters.skills]
   );
 
   const filterProjects = useCallback(
@@ -35,6 +35,7 @@ export const ProjectList = () => {
     },
     [projects, skillFilterMap]
   );
+
   const formatProjects = useCallback(
     (project: Project) => ({
       ...project,
@@ -74,7 +75,7 @@ export const ProjectList = () => {
         {loadingList ? (
           <Loader />
         ) : (
-          searchedProjectList?.map((project) => (
+          searchedProjectList.map((project) => (
             <ProjectItem
               project={project}
               className={styles.projectItem}

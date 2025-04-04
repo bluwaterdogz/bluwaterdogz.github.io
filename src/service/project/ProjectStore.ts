@@ -33,6 +33,7 @@ export const useProjectStore = create<ProjectState>((set) => ({
       const projects = await projectService.list();
       set({ projects, loadingList: false });
     } catch (e: any) {
+      console.log("wat");
       set({ errorList: e, loadingList: false });
     }
   },

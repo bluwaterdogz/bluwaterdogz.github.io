@@ -1,7 +1,6 @@
 import styles from "./styles.module.scss";
 import { useCallback, useEffect, useMemo } from "react";
 import { useProjectStore } from "../../../service/project/ProjectStore";
-import { Loader } from "../../common/loader";
 import { ProjectItem } from "../project-item";
 import Fuse from "fuse.js";
 import { Project } from "../../../service/project/types";

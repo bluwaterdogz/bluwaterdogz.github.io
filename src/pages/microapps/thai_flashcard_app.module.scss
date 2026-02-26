@@ -1,0 +1,452 @@
+@use "../../styles/colors" as *;
+@use "../../styles/variables" as *;
+
+.page {
+  min-height: calc(100vh - $nav-height);
+  background: linear-gradient(180deg, #f6f8fb 0%, #eceff5 100%);
+  color: #0f172a;
+  padding: $space * 2;
+}
+
+.inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: $space * 2;
+  padding-bottom: $space * 3;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: $space;
+}
+
+.title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: $dark-color;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: $space;
+}
+
+.statCard {
+  border: 1px solid #d6d9e0;
+  background: white;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.statLabel {
+  color: #64748b;
+  font-size: 0.75rem;
+}
+
+.statValue {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.tabContainer {
+  background: white;
+  border: 1px solid #d6d9e0;
+  border-radius: 14px;
+  padding: 4px;
+  display: flex;
+  gap: 4px;
+}
+
+.tabButton {
+  flex: 1;
+  border: 0;
+  border-radius: 10px;
+  background: white;
+  color: #334155;
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tabButtonActive {
+  background: $dark-color;
+  color: white;
+}
+
+.panel {
+  background: white;
+  border: 1px solid #d6d9e0;
+  border-radius: 16px;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08);
+  padding: $space * 1.5;
+}
+
+.sectionHeading {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.groupButtonRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.groupButton {
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: white;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.groupButtonActive {
+  background: $dark-color;
+  color: white;
+  border-color: $dark-color;
+}
+
+.controlsGrid {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.controlButton {
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: white;
+  color: #0f172a;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+}
+
+.checkControl {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.controlButtonActive {
+  background: $dark-color;
+  color: white;
+  border-color: $dark-color;
+}
+
+.warningButton {
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+
+.dangerButton {
+  background: #fff1f2;
+  border-color: #fecdd3;
+}
+
+.studyLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: $space * 2;
+  align-items: start;
+}
+
+.cardPanel {
+  @extend .panel;
+  border-radius: 20px;
+}
+
+.emptyQueue {
+  min-height: 320px;
+  border-radius: 16px;
+  border: 2px dashed #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: $space * 2;
+}
+
+.emptyTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.emptyCopy {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.flashcardButton {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.flashcard {
+  min-height: 360px;
+  border-radius: 16px;
+  border: 1px solid #d4d8e0;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f7fb 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space * 2;
+}
+
+.cardFront,
+.cardBack {
+  text-align: center;
+}
+
+.cardChar {
+  font-size: clamp(4rem, 14vw, 8rem);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.cardHint {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.cardBack {
+  max-width: 580px;
+}
+
+.cardBackChar {
+  font-size: clamp(3rem, 10vw, 6rem);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.cardSound {
+  margin-top: 10px;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.cardName {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: #334155;
+}
+
+.cardPronunciation {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.cardMeta {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.cardType {
+  margin-top: 8px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+}
+
+.actionGrid {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.actionButton {
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  background: white;
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.requeueButton {
+  background: #dc2626;
+  border-color: #dc2626;
+  color: white;
+}
+
+.memorizeButton {
+  background: #059669;
+  border-color: #059669;
+  color: white;
+}
+
+.tipsPanel {
+  @extend .panel;
+  position: sticky;
+  top: 12px;
+}
+
+.tipsHeading {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.tipsList {
+  margin: 10px 0 0;
+  padding-left: 20px;
+  color: #475569;
+  font-size: 0.9rem;
+
+  li + li {
+    margin-top: 4px;
+  }
+}
+
+.customHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.customTitle {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.customCopy {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.customActions {
+  display: flex;
+  gap: 8px;
+}
+
+.customControlsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.customList {
+  max-height: 65vh;
+  overflow: auto;
+  border: 1px solid #d6d9e0;
+  border-radius: 12px;
+}
+
+.customListInner {
+  display: flex;
+  flex-direction: column;
+}
+
+.customItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+  border-top: 1px solid #e2e8f0;
+
+  &:first-child {
+    border-top: 0;
+  }
+
+  &:hover {
+    background: #f8fafc;
+  }
+}
+
+.customChar {
+  width: 32px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.customInfo {
+  min-width: 0;
+  flex: 1;
+}
+
+.customName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.customMeta {
+  color: #64748b;
+  font-size: 0.75rem;
+}
+
+.customSpeakButton {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: white;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.customIndex {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+@media (max-width: $small-screen) {
+  .studyLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .tipsPanel {
+    position: static;
+  }
+
+  .customHeader {
+    flex-direction: column;
+  }
+
+  .controlsGrid,
+  .customControlsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .actionGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .statsGrid {
+    gap: 8px;
+  }
+}

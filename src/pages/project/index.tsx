@@ -1,12 +1,10 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { Project } from "../../components/project";
 
 export const ProjectPage = () => {
   const { id } = useParams();
   if (id == null) {
-    const navigate = useNavigate();
-    navigate("/404");
-    return <></>;
+    return <Navigate replace to="/404" />;
   }
   return <Project id={id} />;
 };

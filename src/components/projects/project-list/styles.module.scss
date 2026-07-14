@@ -1,24 +1,36 @@
+@use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
-.projectItem {
-  display: flex;
+
+.header {
+  display: grid;
+  gap: clamp($space * 5, 8vw, $space * 12);
+  grid-template-columns: minmax(0, 1fr) minmax($space * 38, 0.9fr);
 }
 
-.projectItem:nth-child(2n) {
-  flex-direction: row-reverse;
+.introduction {
+  max-width: none;
+}
+
+.projectList {
+  display: grid;
+  gap: $collection-gap;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: $space * 7;
+}
+
+@media (max-width: $medium-screen) {
+  .projectList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: $small-screen) {
-  .projectList {
-    .projectItem {
-      flex-direction: column-reverse;
-      display: flex;
-      &:last-child {
-        border-bottom: none;
-      }
-      .projectDetails,
-      .projectImage {
-        width: 100%;
-      }
-    }
+  .header {
+    grid-template-columns: 1fr;
   }
+
+  .projectList {
+    grid-template-columns: 1fr;
+  }
+
 }

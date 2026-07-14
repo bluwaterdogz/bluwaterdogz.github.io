@@ -1,17 +1,8 @@
 @use "./colors" as *;
+@use "./variables" as *;
 $themes: (
-  light: (
-    "text": $primary-color,
-    "subtext": $secondary-color,
-    "highlight": $light-color,
-    "background": $dark-color,
-  ),
-  dark: (
-    "text": white,
-    "subtext": $secondary-color,
-    "highlight": darkviolet,
-    "background": $dark-color,
-  ),
+  light: ("text": $dark-color, "subtext": $neutral-color, "highlight": $primary-color, "background": $surface-color, "border": rgba($dark-color, 0.16)),
+  dark: ("text": #f6f2ed, "subtext": #c7c2bd, "highlight": #c45178, "background": $raisin-black, "border": rgba(white, 0.22)),
 );
 
 @each $name, $map in $themes {
@@ -20,4 +11,27 @@ $themes: (
       --#{$key}: #{$value};
     }
   }
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  transition: background $transition ease, color $transition ease;
+}
+
+.theme-dark {
+  color-scheme: dark;
+
+  main,
+  section:not([class*="footer"]) {
+    background-color: var(--background) !important;
+    color: var(--text);
+  }
+
+  input,
+  button {
+    background-color: transparent;
+    border-color: rgba(white, 0.25) !important;
+  }
+
 }

@@ -1,62 +1,83 @@
 import styles from "./styles.module.scss";
-import { useCallback, useEffect, useMemo } from "react";
-import { useProjectStore } from "../../../service/project/ProjectStore";
-import Select from "react-select";
-import { useSkillsStore } from "../../../service/skill/SkillStore";
-import { debounce } from "lodash";
-import { getColor } from "./consts";
-import { SkillOption } from "../../../service/project/types";
-import { Input } from "../../common/input";
+import { useTranslation } from "react-i18next";
+import { ProjectEmployer } from "../../../service/project/types";
+import {
+  projectEmployers,
+  ProjectCategory,
+} from "../../../service/project/selectors";
 
-export const TopBar = () => {
-  const { skills, fetchSkills } = useSkillsStore();
-  const { filters, setSearchTerm, setFilters } = useProjectStore();
 
-  useEffect(() => {
-    fetchSkills();
-  }, []);
+interface TopBarProps {
+  activeCategory: ProjectCategory;
+  activeEmployer: ProjectEmployer | "all";
+  onCategoryChange: (category: ProjectCategory) => void;
+  onEmployerChange: (employer: ProjectEmployer | "all") => void;
+  onSearchChange: (value: string) => void;
+  searchTerm: string;
+}
 
-  const onInputChange = useCallback(
-    debounce((e) => {
-      setSearchTerm(e.target.value);
-    }, 500),
-    []
-  );
-
-  const skillOptions: SkillOption[] = useMemo(() => {
-    return skills.map((skill) => ({
-      label: skill.name,
-      value: skill.id,
-      color: getColor(),
-    }));
-  }, [skills]);
-
-  const onSelectSkillsChange = useCallback(
-    (selectedSkills: SkillOption[]) => {
-      setFilters({
-        ...filters,
-        skills: selectedSkills,
-      });
-    },
-    [filters, skills]
-  );
-
+const categories: ProjectCategory[] = ["all", "web", "mobile", "backend", "data"];
+export const TopBar = ({
+  activeCategory,
+  activeEmployer,
+  onCategoryChange,
+  onEmployerChange,
+  onSearchChange,
+  searchTerm,
+}: TopBarProps) => {
+  const { t } = useTranslation();
   return (
     <div className={styles.topBar}>
-      <div className={styles.searchContainer}>
-        <Input type="text" onChange={onInputChange} placeholder="Search" />
-      </div>
-      <div className={styles.filtersContainer}>
-        <Select
-          className={styles.searchInput}
-          closeMenuOnSelect={false}
-          defaultValue={[] as SkillOption[]}
-          onChange={onSelectSkillsChange as any}
-          isMulti
-          options={skillOptions}
-          placeholder={"Filter by Skills"}
+      <label className={styles.search}>
+        <i className="fa fa-search" aria-hidden="true" />
+        <span className={styles.srOnly}>{t("projects.search")}</span>
+        <input
+          onChange={(event) => onSearchChange(event.target.value)}
+          placeholder={t("projects.search")}
+          type="search"
+          value={searchTerm}
         />
+      </label>
+      <div className={styles.categories} aria-label={t("projects.categories.label")}>
+        {categories.map((category) => (
+          <button
+            aria-pressed={activeCategory === category}
+            className={
+              activeCategory === category ? styles.active : undefined
+            }
+            key={category}
+            onClick={() => onCategoryChange(category)}
+            type="button"
+          >
+            {t(`projects.categories.${category}`)}
+          </button>
+        ))}
       </div>
+      <label className={styles.jobFilter}>
+        <span>{t("projects.jobs.label")}</span>
+        <select
+          onChange={(event) =>
+            onEmployerChange(event.target.value as ProjectEmployer | "all")
+          }
+          value={activeEmployer}
+        >
+          {projectEmployers.map((employer) => (
+            <option key={employer} value={employer}>
+              {t(`projects.jobs.${employer}`)}
+            </option>
+          ))}
+        </select>
+      </label>
+      <a
+        className={styles.githubLink}
+        href="https://github.com/bluwaterdogz"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <i className="devicon-github-original" aria-hidden="true" />
+        {t("projects.github")}
+        <span aria-hidden="true">&#8594;</span>
+      </a>
     </div>
   );
 };

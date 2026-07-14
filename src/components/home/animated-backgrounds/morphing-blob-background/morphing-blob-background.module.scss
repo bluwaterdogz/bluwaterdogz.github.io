@@ -1,0 +1,29 @@
+.container {
+  --blob-color-1: #ff72ce;
+  --blob-color-2: #a88cff;
+  --blob-color-3: #68efff;
+  --blob-color-4: #ddff68;
+  --blob-opacity: 0.62;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #fff9ff 0%, #f7f4ff 55%, #effcff 100%);
+}
+.background { position: absolute; inset: -20%; z-index: -1; overflow: hidden; pointer-events: none; }
+.blob { position: absolute; width: clamp(28rem, 55vw, 70rem); aspect-ratio: 1; opacity: var(--blob-opacity); filter: blur(clamp(55px, 8vw, 130px)); will-change: transform, border-radius; border-radius: 42% 58% 65% 35% / 38% 42% 58% 62%; transform-origin: center; mix-blend-mode: multiply; }
+.blobOne { top: -10%; left: -8%; background: var(--blob-color-1); animation: moveOne 18s ease-in-out infinite alternate, morphOne 11s ease-in-out infinite alternate; }
+.blobTwo { top: 5%; right: -12%; background: var(--blob-color-2); animation: moveTwo 22s ease-in-out infinite alternate, morphTwo 14s ease-in-out infinite alternate-reverse; }
+.blobThree { bottom: -20%; left: 15%; background: var(--blob-color-3); animation: moveThree 25s ease-in-out infinite alternate, morphOne 16s ease-in-out infinite alternate-reverse; }
+.blobFour { right: 12%; bottom: -10%; width: clamp(22rem, 42vw, 58rem); background: var(--blob-color-4); animation: moveFour 20s ease-in-out infinite alternate-reverse, morphTwo 13s ease-in-out infinite alternate; }
+.colorWash { position: absolute; inset: 10%; opacity: .35; filter: blur(80px); background: conic-gradient(from 80deg at 50% 50%, var(--blob-color-1), var(--blob-color-2), var(--blob-color-3), var(--blob-color-4), var(--blob-color-1)); animation: rotateWash 40s linear infinite; }
+.noise { position: absolute; inset: 0; opacity: .025; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.7'/%3E%3C/svg%3E"); }
+.content { position: relative; z-index: 1; min-height: inherit; }
+@keyframes moveOne { 0%{transform:translate3d(-4%,-8%,0) rotate(-8deg) scale(.92)} 45%{transform:translate3d(28%,15%,0) rotate(20deg) scale(1.14)} 100%{transform:translate3d(10%,38%,0) rotate(5deg) scale(1)} }
+@keyframes moveTwo { 0%{transform:translate3d(8%,-5%,0) rotate(12deg) scale(1.05)} 50%{transform:translate3d(-35%,20%,0) rotate(-18deg) scale(.9)} 100%{transform:translate3d(-12%,45%,0) rotate(10deg) scale(1.18)} }
+@keyframes moveThree { 0%{transform:translate3d(-12%,10%,0) rotate(-12deg) scale(1)} 50%{transform:translate3d(30%,-32%,0) rotate(24deg) scale(1.2)} 100%{transform:translate3d(58%,-5%,0) rotate(-4deg) scale(.88)} }
+@keyframes moveFour { 0%{transform:translate3d(15%,12%,0) rotate(8deg) scale(.9)} 50%{transform:translate3d(-38%,-25%,0) rotate(-26deg) scale(1.22)} 100%{transform:translate3d(-10%,-52%,0) rotate(14deg) scale(1)} }
+@keyframes morphOne { 0%{border-radius:42% 58% 65% 35% / 38% 42% 58% 62%} 50%{border-radius:67% 33% 44% 56% / 55% 61% 39% 45%} 100%{border-radius:38% 62% 34% 66% / 63% 36% 64% 37%} }
+@keyframes morphTwo { 0%{border-radius:61% 39% 52% 48% / 44% 66% 34% 56%} 50%{border-radius:35% 65% 68% 32% / 62% 40% 60% 38%} 100%{border-radius:53% 47% 37% 63% / 36% 58% 42% 64%} }
+@keyframes rotateWash { from{transform:rotate(0deg) scale(1.15)} to{transform:rotate(360deg) scale(1.15)} }
+@media (prefers-reduced-motion: reduce) { .blob, .colorWash { animation: none; } }

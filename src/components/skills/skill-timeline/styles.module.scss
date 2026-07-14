@@ -1,0 +1,30 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/variables" as *;
+
+$timeline-rail-offset: $space * 3;
+
+.timeline {
+  padding-left: $timeline-rail-offset;
+  position: relative;
+
+  &::before {
+    background: $theme-border-color;
+    bottom: $space * 7;
+    content: "";
+    left: 0;
+    position: absolute;
+    top: $space * 3;
+    width: 1px;
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .timeline {
+    padding-left: $space * 2;
+
+    &::before {
+      bottom: $space * 6;
+    }
+  }
+
+}

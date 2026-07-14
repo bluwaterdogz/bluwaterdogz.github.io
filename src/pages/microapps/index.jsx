@@ -16,6 +16,13 @@ const microapps = [
       "Organize tasks with categories, subtasks, drag-and-drop ordering, and local storage persistence.",
     href: "/microapps/todo",
   },
+  {
+    id: "golf-stroke-counter",
+    title: "Golf Stroke Counter",
+    description:
+      "Track strokes while you play, start new holes, and view per-hole + total scoring after completion.",
+    href: "/microapps/golf-stroke-counter",
+  },
 ];
 
 export const MicroappsPage = () => {

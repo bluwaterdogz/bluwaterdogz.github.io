@@ -1,4 +1,124 @@
-@use "../../styles/variables" as *;
 @use "../../styles/colors" as *;
-.content {
+@use "../../styles/variables" as *;
+
+.skillsPage {
+  padding-bottom: $space * 10;
+}
+
+.layout {
+  display: grid;
+  gap: clamp($space * 3, 5vw, $space * 6);
+  grid-template-columns: minmax($space * 32, $space * 36) minmax(0, 1fr);
+}
+
+.introduction {
+  min-width: 0;
+}
+
+.introduction h1 {
+  min-height: 1em;
+  white-space: nowrap;
+}
+
+.copy {
+  margin: $space * 4 0 !important;
+  max-width: $space * 24;
+  min-height: $space * 15;
+}
+
+.viewSwitcher {
+  align-items: center;
+  display: flex;
+  gap: $space;
+  margin: 0 0 $space * 3;
+
+  a {
+    align-items: center;
+    background: transparent;
+    border: 1px solid $theme-border-color;
+    color: $primary-color;
+    cursor: pointer;
+    display: inline-flex;
+    height: $space * 4;
+    justify-content: center;
+    text-decoration: none;
+    transition: background $transition ease, color $transition ease;
+    width: $space * 4;
+
+    &:hover,
+    &:focus-visible {
+      background: $primary-color;
+      color: white;
+    }
+  }
+
+  span {
+    color: $theme-subtext-color;
+    font-size: 13px;
+    min-width: $space * 4;
+    text-align: center;
+  }
+}
+
+.link {
+  align-items: center;
+  color: $primary-color;
+  display: inline-flex;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+
+  span {
+    font-size: 26px;
+    line-height: 0.5;
+    margin-left: $space * 2;
+    transition: transform $transition ease;
+  }
+
+  &:hover span {
+    transform: translateX($space-sm);
+  }
+}
+
+@media (max-width: $medium-screen) {
+  .skillsPage {
+    padding-bottom: $space * 8;
+  }
+
+  .layout {
+    gap: $space * 4;
+    grid-template-columns: $space * 28 minmax(0, 1fr);
+
+    .introduction h1 {
+      font-size: 46px;
+    }
+  }
+}
+
+@media (max-width: $small-screen) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .introduction {
+    max-width: none;
+    padding-top: 0;
+    width: 100%;
+  }
+
+  .introduction h1 {
+    white-space: normal;
+  }
+
+  .copy {
+    max-width: none;
+    min-height: 0;
+  }
+
+  .copy {
+    margin: $space * 3 0;
+  }
+}
+
+@media (max-width: $mobile-screen) {
 }

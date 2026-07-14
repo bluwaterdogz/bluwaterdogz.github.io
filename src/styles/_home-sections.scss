@@ -1,0 +1,142 @@
+@use "variables" as *;
+@use "colors" as *;
+
+@mixin shell {
+  background: $theme-surface-color;
+  overflow-x: clip;
+  padding: $space * 10;
+  position: relative;
+
+  @media (max-width: $medium-screen) {
+    padding: $space * 8 $space * 6;
+  }
+
+  @media (max-width: $small-screen) {
+    padding: $space * 7 $space * 4;
+  }
+
+  @media (max-width: $mobile-screen) {
+    padding: $space * 6 $space * 3;
+  }
+}
+
+@mixin nav-container {
+  clip: rect(auto, auto, auto, auto);
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+}
+
+@mixin content-grid {
+  align-items: start;
+  display: grid;
+  gap: clamp($space * 4, 6vw, $space * 8);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: $content-width-readable;
+  width: 100%;
+
+  > * {
+    min-width: 0;
+  }
+}
+
+@mixin eyebrow {
+  align-items: center;
+  color: $primary-color;
+  display: flex;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 1;
+  margin: 0 0 $space * 3;
+  text-transform: uppercase;
+
+  &::after {
+    background: $primary-color;
+    content: "";
+    height: 2px;
+    margin-left: $space * 2;
+    width: $space * 4;
+  }
+}
+
+@mixin heading {
+  color: $theme-text-color;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 0.95;
+  margin: 0;
+
+  &::after {
+    color: $primary-color;
+    content: ".";
+  }
+}
+
+@mixin copy {
+  margin: $space * 4 auto;
+  max-width: $content-width-readable;
+
+  p {
+    color: $theme-subtext-color;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 $space * 3;
+  }
+}
+
+@mixin link {
+  align-items: center;
+  color: $primary-color;
+  display: inline-flex;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  span {
+    font-size: 28px;
+    line-height: 0.5;
+    margin-left: $space * 2;
+  }
+}
+
+@mixin responsive-layout {
+  @media (max-width: $medium-screen) {
+    .content {
+      gap: $space * 6;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .nav {
+      display: none;
+    }
+
+    .introduction h2 {
+      font-size: 54px;
+    }
+  }
+
+  @media (max-width: $small-screen) {
+    .content {
+      grid-template-columns: 1fr;
+    }
+
+    .introduction h2 {
+      font-size: 46px;
+    }
+  }
+
+  @media (max-width: $mobile-screen) {
+    .introduction h2 {
+      font-size: 40px;
+    }
+
+    .copy p {
+      font-size: 15px;
+    }
+  }
+}

@@ -1,7 +1,12 @@
-export const navItems = {
-  home: "/",
-  skills: "/skills",
-  projects: "/projects",
-  microapps: "/microapps",
-  about: "/about",
-};
+import { NavItem } from "./types";
+
+export const navItems: NavItem[] = [
+  { key: "home", to: "/" },
+  { key: "skills", to: "/skills" },
+  {
+    activePathPrefixes: ["/projects", "/project/"],
+    key: "projects",
+    to: "/projects",
+  },
+  { key: "about", to: "/about" },
+];

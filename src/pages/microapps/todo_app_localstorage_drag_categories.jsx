@@ -44,6 +44,16 @@ function createSubtask(text) {
   };
 }
 
+function createTodoList(name) {
+  return {
+    id: uid(),
+    name: String(name || "My List").trim() || "My List",
+    tasks: [],
+    categories: [],
+    createdAt: Date.now(),
+  };
+}
+
 function sortTasksForDisplay(tasks) {
   return [...tasks].sort((a, b) => {
     if (a.completed !== b.completed) return a.completed ? 1 : -1;
@@ -106,6 +116,32 @@ function parseInput(inputText, existingCategories = []) {
 }
 
 function normalizeLoaded(data) {
+  if (Array.isArray(data?.lists)) {
+    const normalizedLists = data.lists
+      .map((list) => {
+        const normalized = normalizeLoaded({
+          tasks: Array.isArray(list?.tasks) ? list.tasks : [],
+          categories: Array.isArray(list?.categories) ? list.categories : [],
+        });
+        return {
+          id: list?.id || uid(),
+          name: String(list?.name || "My List").trim() || "My List",
+          tasks: normalized.tasks,
+          categories: normalized.categories,
+          createdAt: typeof list?.createdAt === "number" ? list.createdAt : Date.now(),
+        };
+      })
+      .filter((list) => list.name.length > 0);
+
+    const fallback = normalizedLists[0]?.id || null;
+    return {
+      lists: normalizedLists.length ? normalizedLists : [createTodoList("My List")],
+      activeListId: normalizedLists.some((list) => list.id === data?.activeListId)
+        ? data.activeListId
+        : fallback || normalizedLists[0]?.id,
+    };
+  }
+
   const rawTasks = Array.isArray(data) ? data : Array.isArray(data?.tasks) ? data.tasks : [];
   const loadedCategories = Array.isArray(data?.categories) ? data.categories : null;
 
@@ -154,14 +190,17 @@ function normalizeLoaded(data) {
 
 export default function TodoApp() {
   const [input, setInput] = useState("");
-  const [tasks, setTasks] = useState([]);
-  const [categories, setCategories] = useState([]);
+  const [todoLists, setTodoLists] = useState([createTodoList("My List")]);
+  const [activeListId, setActiveListId] = useState(null);
   const [newCategoryInput, setNewCategoryInput] = useState("");
+  const [newListInput, setNewListInput] = useState("");
   const [expandedIds, setExpandedIds] = useState({});
   const [editingTaskId, setEditingTaskId] = useState(null);
   const [editingTaskText, setEditingTaskText] = useState("");
   const [editingCategoryName, setEditingCategoryName] = useState(null);
   const [editingCategoryText, setEditingCategoryText] = useState("");
+  const [editingListName, setEditingListName] = useState(false);
+  const [editingListText, setEditingListText] = useState("");
   const [showControls, setShowControls] = useState(false);
   const [showSubtaskInputIds, setShowSubtaskInputIds] = useState({});
   const [dragHover, setDragHover] = useState({ category: null, taskId: null, subtask: null });
@@ -173,20 +212,69 @@ export default function TodoApp() {
       if (!raw) return;
       const parsed = JSON.parse(raw);
       const normalized = normalizeLoaded(parsed);
-      setTasks(normalized.tasks);
-      setCategories(normalized.categories);
+      if (Array.isArray(normalized.lists)) {
+        setTodoLists(normalized.lists);
+        setActiveListId(normalized.activeListId || normalized.lists[0]?.id || null);
+      } else {
+        const migrated = {
+          id: uid(),
+          name: "My List",
+          tasks: normalized.tasks || [],
+          categories: normalized.categories || [],
+          createdAt: Date.now(),
+        };
+        setTodoLists([migrated]);
+        setActiveListId(migrated.id);
+      }
     } catch (e) {
       console.error("Failed to load todos", e);
     }
   }, []);
 
+  const activeList = useMemo(
+    () => todoLists.find((list) => list.id === activeListId) || todoLists[0] || null,
+    [todoLists, activeListId]
+  );
+  const tasks = activeList?.tasks || [];
+  const categories = activeList?.categories || [];
+
+  useEffect(() => {
+    if (!activeList && todoLists.length > 0) {
+      setActiveListId(todoLists[0].id);
+      return;
+    }
+    if (activeList && !editingListName) {
+      setEditingListText(activeList.name);
+    }
+  }, [todoLists, activeListId, editingListName]);
+
+  const setTasks = (updater) => {
+    setTodoLists((prev) =>
+      prev.map((list) => {
+        if (!activeList || list.id !== activeList.id) return list;
+        const nextTasks = typeof updater === "function" ? updater(list.tasks) : updater;
+        return { ...list, tasks: nextTasks };
+      })
+    );
+  };
+
+  const setCategories = (updater) => {
+    setTodoLists((prev) =>
+      prev.map((list) => {
+        if (!activeList || list.id !== activeList.id) return list;
+        const nextCategories = typeof updater === "function" ? updater(list.categories) : updater;
+        return { ...list, categories: nextCategories };
+      })
+    );
+  };
+
   useEffect(() => {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ tasks, categories }));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ lists: todoLists, activeListId }));
     } catch (e) {
       console.error("Failed to save todos", e);
     }
-  }, [tasks, categories]);
+  }, [todoLists, activeListId]);
 
   const grouped = useMemo(() => {
     const out = Object.fromEntries(categories.map((c) => [c, []]));
@@ -579,6 +667,60 @@ export default function TodoApp() {
 
   const clearCompleted = () => setTasks((prev) => prev.filter((t) => !t.completed));
 
+  const addTaskToCategory = (category, text) => {
+    const clean = String(text || "").trim();
+    if (!clean) return;
+    const effectiveCategory = category === DEFAULT_LIST_LABEL ? "" : category;
+    setTasks((prev) => {
+      const maxOrder = prev
+        .filter((t) => categoryKey(t.category) === categoryKey(effectiveCategory) && !t.completed)
+        .reduce((m, t) => Math.max(m, t.order ?? 0), 0);
+      return [
+        ...prev,
+        {
+          ...createMainTask(clean, effectiveCategory),
+          order: maxOrder + 1,
+        },
+      ];
+    });
+  };
+
+  const createList = () => {
+    const clean = String(newListInput || "").trim();
+    if (!clean) return;
+    const next = createTodoList(clean);
+    setTodoLists((prev) => [...prev, next]);
+    setActiveListId(next.id);
+    setNewListInput("");
+    setEditingListName(false);
+    setEditingListText(next.name);
+  };
+
+  const renameActiveList = () => {
+    if (!activeList) return;
+    const clean = String(editingListText || "").trim();
+    if (!clean) return;
+    setTodoLists((prev) =>
+      prev.map((list) => (list.id === activeList.id ? { ...list, name: clean } : list))
+    );
+    setEditingListName(false);
+  };
+
+  const deleteActiveList = () => {
+    if (!activeList) return;
+    if (todoLists.length <= 1) {
+      window.alert("At least one todo list is required.");
+      return;
+    }
+    try {
+      const ok = window.confirm(`Delete todo list "${activeList.name}" and all its categories/tasks?`);
+      if (!ok) return;
+    } catch (e) {}
+
+    setTodoLists((prev) => prev.filter((list) => list.id !== activeList.id));
+    setEditingListName(false);
+  };
+
   const resetAll = () => {
     try {
       if (typeof window !== "undefined" && typeof window.confirm === "function") {
@@ -590,11 +732,6 @@ export default function TodoApp() {
     setTasks([]);
     setCategories([]);
     setExpandedIds({});
-    try {
-      localStorage.removeItem(STORAGE_KEY);
-    } catch (e) {
-      console.error("Failed to clear localStorage", e);
-    }
   };
 
   const counts = useMemo(() => {
@@ -613,6 +750,76 @@ export default function TodoApp() {
           <p className={styles.subtitle}>
             Starts with one default list. Use <code>+</code> for category headers and <code>-</code> for subtasks.
           </p>
+          <div className={styles.listManager}>
+            <select
+              className={styles.input}
+              value={activeList?.id || ""}
+              onChange={(e) => {
+                setActiveListId(e.target.value);
+                setExpandedIds({});
+                setEditingTaskId(null);
+                setEditingCategoryName(null);
+                setEditingListName(false);
+              }}
+            >
+              {todoLists.map((list) => (
+                <option key={list.id} value={list.id}>
+                  {list.name}
+                </option>
+              ))}
+            </select>
+            {editingListName ? (
+              <>
+                <input
+                  className={styles.input}
+                  value={editingListText}
+                  onChange={(e) => setEditingListText(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault();
+                      renameActiveList();
+                    }
+                    if (e.key === "Escape") {
+                      e.preventDefault();
+                      setEditingListName(false);
+                      setEditingListText(activeList?.name || "");
+                    }
+                  }}
+                />
+                <button className={styles.secondaryButton} onClick={renameActiveList}>
+                  Save name
+                </button>
+              </>
+            ) : (
+              <button
+                className={styles.secondaryButton}
+                onClick={() => {
+                  setEditingListName(true);
+                  setEditingListText(activeList?.name || "");
+                }}
+              >
+                Rename list
+              </button>
+            )}
+            <button className={cx(styles.secondaryButton, styles.dangerButton)} onClick={deleteActiveList}>
+              Delete list
+            </button>
+            <input
+              className={styles.input}
+              value={newListInput}
+              onChange={(e) => setNewListInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  createList();
+                }
+              }}
+              placeholder="New list name"
+            />
+            <button className={styles.secondaryButton} onClick={createList}>
+              Add list
+            </button>
+          </div>
         </div>
 
         <div className={styles.controlsPanel}>
@@ -714,6 +921,7 @@ Call mom`}
               editingCategoryText={editingCategoryText}
               setEditingCategoryText={setEditingCategoryText}
               onAddSubtask={addSubtaskInline}
+              onAddTaskToCategory={addTaskToCategory}
               expandedIds={expandedIds}
               setExpandedIds={setExpandedIds}
               editingTaskId={editingTaskId}
@@ -761,6 +969,7 @@ function CategoryColumn({
   editingCategoryText,
   setEditingCategoryText,
   onAddSubtask,
+  onAddTaskToCategory,
   expandedIds,
   setExpandedIds,
   editingTaskId,
@@ -776,6 +985,7 @@ function CategoryColumn({
   setDragHover,
   onDragEndAny,
 }) {
+  const [quickTaskText, setQuickTaskText] = useState("");
   const incompleteCount = tasks.filter((t) => !t.completed).length;
   const completedCount = tasks.filter((t) => t.completed).length;
 
@@ -855,6 +1065,30 @@ function CategoryColumn({
       </div>
 
       <div className={styles.taskList}>
+        <div className={styles.quickAddRow}>
+          <input
+            className={styles.input}
+            value={quickTaskText}
+            onChange={(e) => setQuickTaskText(e.target.value)}
+            placeholder={`Add todo in ${category || "Uncategorized"}`}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                onAddTaskToCategory(category || DEFAULT_LIST_LABEL, quickTaskText);
+                setQuickTaskText("");
+              }
+            }}
+          />
+          <button
+            className={styles.secondaryButton}
+            onClick={() => {
+              onAddTaskToCategory(category || DEFAULT_LIST_LABEL, quickTaskText);
+              setQuickTaskText("");
+            }}
+          >
+            Add todo
+          </button>
+        </div>
         {tasks.map((task) => (
           <TaskCard
             key={task.id}

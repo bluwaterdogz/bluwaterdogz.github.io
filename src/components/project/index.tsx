@@ -11,11 +11,11 @@ export const Project = ({ id }: ProjectProps) => {
   const { project, fetchProject, loading } = useProjectStore();
 
   useEffect(() => {
-    fetchProject(id!);
-  }, [fetchProject]);
+    fetchProject(id);
+  }, [fetchProject, id]);
 
   return (
-    <>
+    <main>
       {loading || project == null ? (
         <Loader />
       ) : (
@@ -24,6 +24,6 @@ export const Project = ({ id }: ProjectProps) => {
           <ProjectContent project={project} />
         </>
       )}
-    </>
+    </main>
   );
 };

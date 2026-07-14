@@ -1,3 +1,5 @@
+@use "../../../styles/colors" as *;
+
 .canvas {
   background-color: $dark-color;
   position: fixed;

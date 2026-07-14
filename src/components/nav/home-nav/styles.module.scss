@@ -12,30 +12,41 @@
 }
 
 .homeNav {
-  height: $nav-height;
+  align-items: flex-end;
+  bottom: auto;
   display: flex;
-
-  padding: $space;
-  height: auto;
-  text-align: right;
-  position: fixed;
-  align-items: end;
-  right: 0;
-  bottom: 0;
-
   flex-direction: column;
+  height: auto;
+  padding: 0;
   position: fixed;
+  right: $section-nav-offset;
+  text-align: right;
+  top: 50%;
+  transform: translateY(-20%);
+  z-index: 3;
 
   .navChildren {
     margin-left: auto;
   }
   a {
-    color: $dark-color;
+    color: $theme-text-color;
     display: block;
-    font-size: 40px;
-    padding-right: $space-sm * 4;
+    font-size: 18px;
+    padding: $space 0;
+    position: relative;
     text-decoration: none;
     transition: $transition;
+
+    &[aria-current="page"]::before {
+      background: $primary-color;
+      content: "";
+      height: 2px;
+      left: -$space * 5;
+      position: absolute;
+      top: 50%;
+      width: $space * 3;
+    }
+
     &:hover {
       color: $primary-color;
     }
@@ -52,7 +63,7 @@
   }
   &.dark {
     a {
-      color: $dark-color;
+      color: $theme-text-color;
     }
   }
   &.light {

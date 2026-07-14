@@ -1,4 +1,12 @@
 @use "../../styles/colors" as *;
 @use "../../styles/variables" as *;
-.content {
+
+.projectsPage {
+  padding-bottom: $space * 8;
+}
+
+@media (max-width: $medium-screen) {
+  .projectsPage {
+    padding-bottom: $space * 8;
+  }
 }

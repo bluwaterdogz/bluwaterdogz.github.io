@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import { useMemo, useRef, useState } from "react";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
 import { langMap } from "./consts";
+import { DynamicList } from "../common/dynamic-list";
 
 interface LangProps {
   className?: string;
@@ -27,25 +28,39 @@ export const Lang = (props: LangProps) => {
       `}
       ref={ref}
     >
-      <p onClick={() => setOpen(!open)}>{i18n.language}</p>
-      <div className={`${styles.languageList} ${open ? styles.open : ""}`}>
-        {langList.map((code) => {
+      <button
+        aria-expanded={open}
+        className={styles.trigger}
+        onClick={() => setOpen(!open)}
+        type="button"
+      >
+        {i18n.language}
+      </button>
+      <ul className={`${styles.languageList} ${open ? styles.open : ""}`}>
+        <DynamicList<string>
+          data={langList}
+          loading={false}
+          renderListItem={(code) => {
           const language = (langMap as any)[code];
           return (
-            <div
-              key={code}
-              className={`${styles.language} ${
-                code === i18n.language ? styles.active : ""
-              }`}
-              onClick={() => {
-                i18n.changeLanguage(code), setOpen(false);
-              }}
-            >
-              {t(`lang.${language}`)}
-            </div>
+            <li key={code}>
+              <button
+                className={`${styles.language} ${
+                  code === i18n.language ? styles.active : ""
+                }`}
+                onClick={() => {
+                  i18n.changeLanguage(code);
+                  setOpen(false);
+                }}
+                type="button"
+              >
+                {t(`lang.${language}`)}
+              </button>
+            </li>
           );
-        })}
-      </div>
+        }}
+        />
+      </ul>
     </div>
   );
 };

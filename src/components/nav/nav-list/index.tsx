@@ -1,19 +1,21 @@
 import { useTranslation } from "react-i18next";
 import { NavLink } from "../nav-link";
-import { useMemo } from "react";
-import { NavItemMap } from "../types";
+import { NavItem } from "../types";
 interface NavListProps {
-  navItems: NavItemMap;
+  navItems: NavItem[];
 }
 export const NavList = ({ navItems }: NavListProps) => {
   const { t } = useTranslation();
-  const navList = useMemo(() => Object.keys(navItems), []);
 
   return (
     <>
-      {navList.map((k) => (
-        <NavLink key={k} to={(navItems as any)[k]}>
-          {t(`nav.${k}`)}
+      {navItems.map((item) => (
+        <NavLink
+          activePathPrefixes={item.activePathPrefixes}
+          key={item.key}
+          to={item.to}
+        >
+          {t(`nav.${item.key}`)}
         </NavLink>
       ))}
     </>

@@ -162,10 +162,7 @@
 }
 
 .studyLayout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 300px;
-  gap: $space * 2;
-  align-items: start;
+  display: block;
 }
 
 .cardPanel {
@@ -425,14 +422,6 @@
 }
 
 @media (max-width: $small-screen) {
-  .studyLayout {
-    grid-template-columns: 1fr;
-  }
-
-  .tipsPanel {
-    position: static;
-  }
-
   .customHeader {
     flex-direction: column;
   }

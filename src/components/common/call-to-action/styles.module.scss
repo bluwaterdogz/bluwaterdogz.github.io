@@ -1,0 +1,75 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/variables" as *;
+
+.callToAction {
+  align-items: center;
+  border: 1px solid $theme-border-color;
+  display: grid;
+  gap: $space * 3;
+  grid-template-columns: $space * 9 minmax(0, 1fr) auto;
+  margin-top: $space * 5;
+  padding: $space * 2 $space * 4;
+}
+
+.icon {
+  align-items: center;
+  border: 1px solid rgba($primary-color, 0.35);
+  border-radius: 50%;
+  color: $primary-color;
+  display: flex;
+  font-size: 28px;
+  height: $space * 7;
+  justify-content: center;
+  width: $space * 7;
+}
+
+.copy {
+  h2 {
+    color: $theme-text-color;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+    font-weight: 400;
+    margin: 0 0 $space-sm;
+  }
+
+  p {
+    color: $theme-subtext-color;
+    font-size: 14px;
+    margin: 0;
+  }
+}
+
+.link {
+  align-items: center;
+  color: $primary-color;
+  display: inline-flex;
+  font-size: 15px;
+  gap: $space * 2;
+  text-decoration: none;
+
+  span {
+    font-size: 24px;
+    transition: transform $transition ease;
+  }
+
+  &:hover span,
+  &:focus-visible span {
+    transform: translateX($space-sm);
+  }
+}
+
+@media (max-width: $small-screen) {
+  .callToAction {
+    grid-template-columns: $space * 7 minmax(0, 1fr);
+    padding: $space * 2;
+  }
+
+  .icon {
+    height: $space * 6;
+    width: $space * 6;
+  }
+
+  .link {
+    grid-column: 1 / -1;
+  }
+}

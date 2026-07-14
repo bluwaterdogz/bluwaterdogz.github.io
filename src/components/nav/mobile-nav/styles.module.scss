@@ -12,18 +12,21 @@
 }
 
 .mobileNav {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  transition: $transition;
-  padding: 0 $space;
-  text-align: left;
-  height: 100vh;
-  z-index: 10;
-  width: 80vw;
-  background-color: white;
-  align-items: center;
+  align-items: flex-start;
+  background-color: $theme-surface-color;
   box-shadow: $box-shadow;
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
+  left: -100%;
+  overflow-y: auto;
+  padding: $space * 10 $space * 4 $space * 5;
+  position: fixed;
+  text-align: left;
+  top: 0;
+  transition: left $transition ease;
+  width: min(100vw, $space * 48);
+  z-index: 10;
   .outsideIcon {
     position: fixed;
     right: calc($space/4);
@@ -39,20 +42,23 @@
     margin-left: auto;
   }
   .navButton {
-    color: $dark-color;
+    color: $primary-color;
   }
   .iconContainer {
     position: absolute;
-    right: -10px;
-    top: -10px;
-    transform: scale(0.6);
+    right: $space;
+    top: $space;
+    transform: scale(0.55);
     z-index: 10;
-    color: $dark-color;
+    color: $theme-text-color;
   }
   a {
-    color: $dark-color;
+    color: $theme-text-color;
     display: block;
-    padding-right: $space-sm * 4;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(38px, 12vw, 58px);
+    line-height: 1.05;
+    padding: $space 0;
     text-decoration: none;
     font-size: 50px;
     transition: $transition;
@@ -72,5 +78,20 @@
         animation-fill-mode: forwards;
       }
     }
+  }
+}
+
+.languageDropdown {
+  border-top: 1px solid $theme-border-color;
+  margin-top: auto;
+  padding-top: $space * 3;
+  width: 100%;
+}
+
+:global(.theme-dark) .mobileNav {
+  background: $theme-surface-color;
+
+  a {
+    color: $theme-text-color;
   }
 }

@@ -2,99 +2,236 @@
 @use "../../../styles/colors" as *;
 
 .hero {
-  height: 100vh;
-  width: 100vw;
-  background-color: #b3b4c4;
+  // background-color: $hero-background-color;
+  height: 100svh;
+  min-height: $hero-min-height;
+  overflow: hidden;
   position: relative;
-  .container {
-    position: absolute;
-    box-sizing: border-box;
+  width: 100%;
 
-    width: 100%;
-    height: 100%;
-    clip: rect(auto, auto, auto, auto);
-  }
-  .background {
-    width: 100%;
-    height: 100%;
+  box-shadow: inset 0 -50px 30px -50px $hero-background-color;
+}
 
-    position: absolute;
-    background-size: cover;
-    background-position: center;
-    left: 20vw;
-    &:after {
-      content: "";
-      position: absolute;
-      z-index: 1;
-      bottom: 0;
-      left: 0;
-      pointer-events: none;
-      background-image: linear-gradient(to left, transparent 0, #b3b4c4 100%);
-      width: 10em;
-      height: 100%;
-    }
+.flippity {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.background {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  left: 22vw;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+}
+
+.container {
+  clip: rect(auto, auto, auto, auto);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+}
+
+.content {
+  left: $space * 7;
+  max-width: $content-width-hero;
+  position: absolute;
+  top: 10%;
+
+  z-index: 2;
+}
+
+.eyebrow {
+  align-items: center;
+  color: $primary-color;
+  display: flex;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1;
+  margin: 0 0 $space * 4;
+  text-transform: uppercase;
+
+  &::after {
+    background: $primary-color;
+    content: "";
+    height: 2px;
+    margin-left: $space * 4;
+    width: $space * 8;
   }
-  .content {
-    position: relative;
-    z-index: 2;
+}
+
+.content h1 {
+  color: $theme-text-color;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(68px, 6.6vw, 104px);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 0.95;
+  margin: 0;
+  max-width: $content-width-heading;
+}
+
+.role {
+  color: $primary-color;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(50px, 5vw, 76px);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.08;
+  margin: $space * 2 0 0;
+  max-width: $content-width-role;
+}
+
+.divider {
+  background: $primary-color;
+  height: 2px;
+  margin: $space * 7 0 $space * 4;
+  width: $space * 8;
+}
+
+.introduction {
+  color: $theme-text-color;
+  font-size: 17px;
+  line-height: 1.65;
+  margin: 0;
+  max-width: $content-width-introduction;
+}
+
+.languageDropdown {
+  position: absolute;
+  right: $space * 7;
+  top: $space * 5;
+
+  > button {
+    border-bottom: 2px solid $primary-color;
+    font-size: 18px;
+    line-height: 1;
     margin: 0;
-    padding: $space;
-    h1 {
-      width: $content-width;
-      color: white;
-      font-family: Helvetica;
-      font-weight: 100;
-      text-transform: uppercase;
-      em {
-        font-style: normal;
-        color: $primary-color;
-      }
-    }
-    .headerSubtext {
-      font-size: 20px;
-      color: white;
-      font-family: "leaguecursive";
-    }
-  }
-  .languageDropdown {
-    position: absolute;
-    right: $space;
-    top: $space;
+    padding-bottom: $space;
+    text-transform: uppercase;
   }
 }
 
 @media (max-width: $medium-screen) {
-  .hero {
-    h1 {
-      width: 70%;
-    }
-    .languageDropdown {
-      display: none;
-    }
-    .nav {
-      display: none;
-    }
+  .background {
+    left: 16vw;
+  }
+
+  .content {
+    left: $space * 5;
+    max-width: $content-width-tablet;
+  }
+
+  .content h1 {
+    font-size: 72px;
+  }
+
+  .role {
+    font-size: 52px;
+  }
+
+  .languageDropdown {
+    display: none;
   }
 }
 
 @media (max-width: $small-screen) {
   .hero {
-    .content {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: end;
+    min-height: $hero-min-height-mobile;
+
+    &::after {
+      background: linear-gradient(
+        to bottom,
+        transparent 30%,
+        rgba($dark-color, 0.08) 48%,
+        rgba($dark-color, 0.86) 100%
+      );
+      content: "";
+      inset: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: 2;
     }
-    .background {
-      background-position-x: 40%;
-      left: 0;
-      &:after {
-        display: none;
-      }
+  }
+
+  .background {
+    background-position: 45% top;
+    left: 0;
+    width: 100%;
+  }
+
+  .content {
+    bottom: $space * 4;
+    left: $space * 3;
+    max-width: calc(100% - $space * 6);
+    top: auto;
+    transform: none;
+  }
+
+  .eyebrow {
+    font-size: 15px;
+    margin-bottom: $space * 2;
+
+    &::after {
+      margin-left: $space * 2;
+      width: $space * 5;
     }
-    h1 {
-      max-width: 100%;
-      font-size: 50px;
-    }
+  }
+
+  .content h1 {
+    color: white;
+    font-size: 50px;
+    line-height: 0.98;
+    max-width: $content-width-mobile;
+  }
+
+  .role {
+    font-size: 38px;
+    line-height: 1.05;
+    margin-top: $space;
+    max-width: $content-width-mobile;
+  }
+
+  .divider {
+    margin: $space * 2 0;
+    width: $space * 5;
+  }
+
+  .introduction {
+    color: white;
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: $content-width-mobile;
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .content {
+    bottom: $space * 3;
+    left: $space * 2;
+    max-width: calc(100% - $space * 4);
+  }
+
+  .content h1 {
+    font-size: 42px;
+  }
+
+  .role {
+    font-size: 32px;
+  }
+
+  .introduction {
+    font-size: 14px;
   }
 }

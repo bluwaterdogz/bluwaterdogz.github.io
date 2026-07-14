@@ -17,6 +17,14 @@
   margin-bottom: $space * 2;
 }
 
+.listManager {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
 .title {
   margin: 0;
   font-size: clamp(1.8rem, 4vw, 2.2rem);
@@ -202,6 +210,11 @@
   gap: 8px;
 }
 
+.quickAddRow {
+  display: flex;
+  gap: 8px;
+}
+
 .emptyCategory {
   border: 1px dashed #cbd5e1;
   border-radius: 12px;
@@ -353,5 +366,9 @@
 
   .page {
     padding: $space;
+  }
+
+  .quickAddRow {
+    flex-direction: column;
   }
 }

@@ -1,90 +1,114 @@
-import styles from "./styles.module.scss";
-import { useCallback, useEffect, useMemo } from "react";
-import { useProjectStore } from "../../../service/project/ProjectStore";
-import { ProjectItem } from "../project-item";
 import Fuse from "fuse.js";
-import { Project } from "../../../service/project/types";
-import { TopBar } from "../top-bar";
+import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { CallToAction } from "../../common/call-to-action";
 import { DynamicList } from "../../common/dynamic-list";
+import { useProjectStore } from "../../../service/project/ProjectStore";
+import { Project } from "../../../service/project/types";
+import { ProjectEmployer } from "../../../service/project/types";
+import {
+  filterProjectsByCategory,
+  ProjectCategory,
+} from "../../../service/project/selectors";
+import { ProjectItem } from "../project-item";
+import { TopBar } from "../top-bar";
+import styles from "./styles.module.scss";
+import { PageHeading } from "../../common/page-heading";
 
 export const ProjectList = () => {
-  const { projects, fetchProjectList, loadingList, searchTerm, filters } =
-    useProjectStore();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const { projects, fetchProjectList, loadingList } = useProjectStore();
+  const [activeCategory, setActiveCategory] =
+    useState<ProjectCategory>("all");
+  const [searchTerm, setSearchTerm] = useState("");
+  const requestedEmployer = searchParams.get("job") as ProjectEmployer | null;
+  const [activeEmployer, setActiveEmployer] = useState<
+    ProjectEmployer | "all"
+  >(requestedEmployer ?? "all");
+  const { t } = useTranslation();
 
   useEffect(() => {
     fetchProjectList();
-  }, []);
+  }, [fetchProjectList]);
 
-  const { t } = useTranslation();
+  useEffect(() => {
+    setActiveEmployer(requestedEmployer ?? "all");
+  }, [requestedEmployer]);
 
-  const skillFilterMap = useMemo(
-    () => new Map(filters.skills.map((x) => [x.value, true])),
-    [filters.skills]
+  const handleEmployerChange = (employer: ProjectEmployer | "all") => {
+    setActiveEmployer(employer);
+    const nextParams = new URLSearchParams(searchParams);
+    if (employer === "all") nextParams.delete("job");
+    else nextParams.set("job", employer);
+    setSearchParams(nextParams, { replace: true });
+  };
+
+  const formattedProjects = useMemo(
+    () =>
+      projects.map((project) => ({
+        ...project,
+        content: t(`data.projects.content.${project.id}`),
+        description: t(`data.projects.description.${project.id}`),
+      })),
+    [projects, t]
   );
 
-  const filterProjects = useCallback(
-    (project: Project) => {
-      if (filters.skills.length <= 0) {
-        return true;
-      }
+  const filteredProjects = useMemo(() => {
+    const categoryFiltered = filterProjectsByCategory(
+      formattedProjects,
+      activeCategory
+    );
 
-      return (
-        project.skills.filter((skill) => skillFilterMap.has(skill)).length ===
-        filters.skills.length
-      );
-    },
-    [projects, skillFilterMap]
-  );
+    const employerFiltered =
+      activeEmployer === "all"
+        ? categoryFiltered
+        : categoryFiltered.filter(
+            (project) => project.employer === activeEmployer
+          );
 
-  const formatProjects = useCallback(
-    (project: Project) => ({
-      ...project,
-      description: t(`data.projects.description.${project.id}`),
-      content: t(`data.projects.content.${project.id}`),
-    }),
-    []
-  );
+    if (searchTerm.trim() === "") return employerFiltered;
 
-  const formattedProjectList = useMemo(
-    () => projects.filter(filterProjects).map(formatProjects),
-    [projects, skillFilterMap]
-  );
-
-  const searchedProjectList: Project[] = useMemo(() => {
-    const hasSearchTerm = searchTerm != null && searchTerm != "";
-
-    if (!hasSearchTerm) {
-      return formattedProjectList;
-    }
-
-    const options = {
-      includeScore: true,
+    const fuse = new Fuse(employerFiltered, {
       keys: [{ name: "name", weight: 2 }, "description", "content"],
-    };
+    });
 
-    const fuse = new Fuse(formattedProjectList, options);
-    const results = fuse?.search(searchTerm!);
-
-    return results.map((result) => result.item) as any as Project[];
-  }, [formattedProjectList, searchTerm]);
+    return fuse.search(searchTerm).map((result) => result.item);
+  }, [activeCategory, activeEmployer, formattedProjects, searchTerm]);
 
   return (
     <>
-      <TopBar />
+      <div className={styles.header}>
+        <PageHeading
+          className={styles.introduction}
+          description={t("projects.introduction")}
+          eyebrow={t("projects.eyebrow")}
+          title={t("projects.title")}
+        />
+        <TopBar
+          activeCategory={activeCategory}
+          activeEmployer={activeEmployer}
+          onCategoryChange={setActiveCategory}
+          onEmployerChange={handleEmployerChange}
+          onSearchChange={setSearchTerm}
+          searchTerm={searchTerm}
+        />
+      </div>
       <div className={styles.projectList}>
         <DynamicList<Project>
+          data={filteredProjects}
           loading={loadingList}
-          data={searchedProjectList}
-          renderListItem={(project: Project) => (
-            <ProjectItem
-              project={project}
-              className={styles.projectItem}
-              key={project.id}
-            />
+          renderListItem={(project) => (
+            <ProjectItem key={project.id} project={project} />
           )}
         />
       </div>
+      <CallToAction
+        description={t("projects.cta.description")}
+        label={t("projects.cta.label")}
+        title={t("projects.cta.title")}
+        to="/about"
+      />
     </>
   );
 };

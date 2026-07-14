@@ -1,1 +1,5 @@
-export type NavItemMap = { [key: string]: string };
+export interface NavItem {
+  activePathPrefixes?: string[];
+  key: string;
+  to: string;
+}

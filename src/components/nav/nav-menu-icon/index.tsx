@@ -2,6 +2,7 @@ import { useLayoutEffect } from "react";
 import { useNaveStore } from "../../../stores/NavStore";
 import { MenuIcon } from "../menu-icon.tsx/menu-icon";
 import styles from "./styles.module.scss";
+import { useLocation } from "react-router-dom";
 
 interface NavMenuIconProps {
   className?: string;
@@ -10,10 +11,11 @@ interface NavMenuIconProps {
 export const NavMenuIcon = (props: NavMenuIconProps) => {
   const { className = "" } = props;
   const { navOpen, setNavOpen } = useNaveStore();
+  const location = useLocation();
 
   useLayoutEffect(() => {
     setNavOpen(false);
-  }, [location.pathname]);
+  }, [location.pathname, setNavOpen]);
 
   return (
     <div className={styles.menuIconContainer}>

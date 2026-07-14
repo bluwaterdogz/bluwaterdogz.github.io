@@ -1,44 +1,55 @@
-@use "../../styles/colors" as *;
 @use "../../styles/variables" as *;
+@use "../../styles/colors" as *;
+
 .defaultLayout {
   position: relative;
-  .defautlNav {
+}
+
+.mobileNav {
+  display: none;
+}
+
+.defaultLayout .navIcon {
+  color: $primary-color;
+  display: none;
+  filter: drop-shadow(-$space-sm $space-sm $space-sm rgba($raisin-black, 0.8));
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: $transition;
+  z-index: 100;
+}
+
+.pageRegion {
+  min-height: 100svh;
+  position: relative;
+}
+
+.sideNavRegion {
+  clip: rect(auto, auto, auto, auto);
+  height: 100%;
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  z-index: 20;
+
+  .sideNav {
+    pointer-events: auto;
+    z-index: 21;
+  }
+}
+
+@media (max-width: $medium-screen) {
+  .defaultLayout .navIcon {
     display: flex;
   }
+
   .mobileNav {
+    display: block;
+  }
+
+  .sideNavRegion {
     display: none;
-  }
-
-  .navIcon {
-    position: fixed;
-    z-index: 100;
-    right: 0;
-    color: white;
-    -webkit-filter: drop-shadow(-5px 3px 3px rgba(0, 0, 0, 0.8));
-    filter: drop-shadow(-5px 3px 3px rgba(0, 0, 0, 0.8));
-    transition: $transition;
-  }
-
-  @media (max-width: $medium-screen) {
-    .defautlNav {
-      display: flex;
-    }
-    .mobileNav {
-      display: none;
-    }
-  }
-
-  @media (min-width: $small-screen) {
-    .navIcon {
-      display: none;
-    }
-  }
-  @media (max-width: $small-screen) {
-    .defautlNav {
-      display: none;
-    }
-    .mobileNav {
-      display: block;
-    }
   }
 }

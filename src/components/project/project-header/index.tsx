@@ -1,38 +1,36 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { Project } from "../../../service/project/types";
-import { DarkOverlay } from "../../common/dark-overlay";
 import styles from "./styles.module.scss";
-import { HTMLProps } from "react";
-import { AnimationOnScroll } from "react-animation-on-scroll";
-interface ProjectHeaderProps extends HTMLProps<HTMLDivElement> {
+import { PageHeading } from "../../common/page-heading";
+
+interface ProjectHeaderProps {
   project: Project;
 }
 
-export const ProjectHeader = (props: ProjectHeaderProps) => {
-  const { project, className = "" } = props;
+export const ProjectHeader = ({ project }: ProjectHeaderProps) => {
   const { t } = useTranslation();
+
   return (
-    <header
-      className={styles.hero}
-      style={{
-        backgroundImage:
-          project != null
-            ? `url(${project.img})`
-            : 'url("https://picsum.photos/1500/800")',
-      }}
-    >
-      <DarkOverlay />
-      <div className={`${className} ${styles.container} ${styles.content}`}>
-        <AnimationOnScroll
-          duration={2}
-          animateOnce={true}
-          animateIn={`animate__fadeInUp`}
+    <header className={styles.hero}>
+      <div className={styles.container}>
+        <PageHeading
+          className={styles.copy}
+          description={t(`data.projects.description.${project.id}`)}
+          descriptionClassName={styles.description}
+          eyebrow={t("projects.detail.eyebrow")}
+          title={project.name.trim()}
         >
-          <h1 className={styles.heroHeader}>{project?.name}</h1>
-          <p className={styles.heroSubheader}>
-            {t(`data.projects.description.${project.id}`)}
-          </p>
-        </AnimationOnScroll>
+          <Link className={styles.backLink} to="/projects">
+            <span aria-hidden="true">&#8592;</span>
+            {t("projects.detail.back")}
+          </Link>
+        </PageHeading>
+        <img
+          alt=""
+          className={styles.image}
+          src={project.img ?? "/images/projects/faro/dark_spiral.jpg"}
+        />
       </div>
     </header>
   );

@@ -2,6 +2,10 @@
   "translation": {
     "home": {
       "header": "<span>¡Hola!<br /> Soy Brian Velasquez,<br /><em>Ingeniero Senior Full Stack</em></span>",
+      "heroEyebrow": "¡Hola!",
+      "heroName": "Soy Brian Velasquez,",
+      "heroRole": "Ingeniero Senior Full Stack.",
+      "heroIntroduction": "Creo aplicaciones web escalables y modernizo sistemas que impulsan el crecimiento empresarial. Me apasionan el código limpio, la arquitectura bien pensada y las experiencias de usuario excepcionales.",
       "aboutHeader": "¿Quién soy?",
       "about": "Desarrollador web Full-Stack Senior con experiencia en TypeScript, React, Angular, Node.js y Python. Experiencia liderando equipos internacionales, modernizando sistemas heredados, optimizando arquitecturas e implementando pipelines de CI/CD para despliegues eficientes. Apasionado por construir soluciones escalables y centradas en el usuario que impulsen el crecimiento empresarial.",
       "section1Title": "Experimentado",

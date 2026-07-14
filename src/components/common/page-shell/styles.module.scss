@@ -1,0 +1,27 @@
+@use "../../../styles/variables" as *;
+
+.page {
+  background: $theme-surface-color;
+  min-height: 100svh;
+  padding: $page-padding-block-start $page-padding-inline-desktop
+    $page-padding-block-end $page-padding-inline-start;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: $content-width-wide;
+}
+
+@media (max-width: $medium-screen) {
+  .page {
+    padding: $page-padding-block-start $page-padding-inline-tablet
+      $page-padding-block-end;
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .page {
+    padding: $page-padding-inline-mobile $page-padding-inline-mobile
+      $space * 6;
+  }
+}

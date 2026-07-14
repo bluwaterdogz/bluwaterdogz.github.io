@@ -1,87 +1,64 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
-.title {
-  color: $primary-color;
+
+.hero {
+  background: $theme-surface-color;
+  padding: $page-padding-block-start $page-padding-inline-desktop $space * 6
+    $page-padding-inline-start;
 }
 
-/* Hero Section */
-.hero {
-  background-repeat: no-repeat;
-  background-position: center center;
+.container {
+  display: grid;
+  gap: clamp($space * 3, 5vw, $space * 6);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  margin: 0 auto;
+  max-width: $content-width-readable;
+}
 
-  background-size: cover;
-  color: white;
-  height: calc(100vh - $nav-height);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  h1 {
-    color: white;
-    padding-bottom: 30px;
-  }
-  .content {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: $content-width;
-    margin: auto;
-    padding: 0 $space * 4;
-    position: relative;
-    z-index: 1;
-    align-items: center;
-  }
+.copy {
+  align-self: center;
+  
+}
 
+.description {
+  font-size: 17px !important;
+  margin: $space * 3 0 !important;
+  max-width: $readable-width;
+}
+
+.backLink {
+  align-items: center;
+  color: $primary-color;
+  display: inline-flex;
+  gap: $space;
+  text-decoration: none;
+}
+
+.image {
+  aspect-ratio: 16 / 11;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+@media (max-width: $medium-screen) {
+  .hero {
+    padding: $page-padding-block-start $page-padding-inline-tablet $space * 6;
+  }
+}
+
+@media (max-width: $small-screen) {
   .container {
-    width: 100%;
-    max-width: $content-width;
-    margin: 0 auto;
-    text-align: center;
-    overflow: visible;
+    grid-template-columns: 1fr;
   }
 
-  .heroHeader {
-    font-size: 4rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    letter-spacing: -0.5px;
+}
+
+@media (max-width: $mobile-screen) {
+  .hero {
+    padding: $page-padding-inline-mobile $page-padding-inline-mobile
+      $space * 5;
   }
 
-  .heroSubheader {
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin-bottom: 30px;
-    color: white;
-    max-width: $content-width;
-    margin: auto;
-  }
-
-  .heroButton {
-    font-size: 1.2rem;
-    padding: 15px 30px;
-    background-color: $primary-color;
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    transition: background-color 0.3s ease;
-  }
-
-  .heroButton:hover {
-    background-color: $primary-color;
-  }
-
-  @media (max-width: $small-screen) {
-    height: 100vh;
-    .heroHeader {
-      font-size: 2.8rem;
-    }
-    .content {
-      justify-content: center;
-    }
-
-    .heroSubheader {
-      font-size: 1.2rem;
-    }
-  }
 }

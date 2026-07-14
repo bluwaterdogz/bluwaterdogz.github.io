@@ -1,0 +1,110 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/variables" as *;
+
+.item {
+  align-items: flex-start;
+  color: $theme-text-color;
+  display: flex;
+  flex-direction: column;
+  gap: $space;
+  justify-content: flex-start;
+  min-height: $space * 8;
+  min-width: 0;
+  outline: none;
+  position: relative;
+  text-align: left;
+
+  &:hover .summary i,
+  &:focus-within .summary i {
+    transform: translateY(-$space-sm) scale(1.08);
+  }
+
+  &:hover .projectMenu,
+  &:focus-within .projectMenu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+.summary {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: $space * 1.5;
+  min-width: 0;
+  text-align: left;
+  width: 100%;
+
+  i {
+    color: $primary-color;
+    font-size: $space * 5;
+    line-height: 1;
+    transition: transform $transition ease;
+  }
+
+  span {
+    font-size: 14px;
+    line-height: 1.25;
+  }
+}
+
+.projectMenu {
+  background: $theme-surface-color;
+  border: 1px solid $theme-border-color;
+  box-shadow: $box-shadow;
+  left: 0;
+  max-width: calc(100vw - #{$page-padding-inline-mobile * 2});
+  min-width: $popover-width;
+  opacity: 0;
+  padding: $space;
+  pointer-events: none;
+  position: absolute;
+  top: calc(100% + $space);
+  transform: translateY(-$space-sm);
+  transition: opacity $transition ease, transform $transition ease,
+    visibility $transition ease;
+  visibility: hidden;
+  z-index: 5;
+
+  p {
+    color: $primary-color;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0 0 $space;
+    text-transform: uppercase;
+  }
+
+  a {
+    align-items: center;
+    border-top: 1px solid $theme-border-color;
+    color: $theme-text-color;
+    display: flex;
+    font-size: 13px;
+    gap: $space;
+    justify-content: space-between;
+    line-height: 1.35;
+    padding: $space 0;
+    text-decoration: none;
+    transition: color $transition ease;
+
+    span {
+      color: $primary-color;
+      font-size: 18px;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: $primary-color;
+    }
+  }
+}
+
+@media (max-width: $small-screen) {
+  .alignRight .projectMenu {
+    left: auto;
+    right: 0;
+  }
+}

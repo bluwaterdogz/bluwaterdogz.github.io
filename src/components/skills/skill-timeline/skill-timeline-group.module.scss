@@ -1,0 +1,86 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/variables" as *;
+
+$timeline-label-width: $space * 12;
+$timeline-rail-offset: $space * 3;
+
+.group {
+  display: grid;
+  gap: $space * 2;
+  grid-template-columns: $timeline-label-width minmax(0, 1fr);
+  min-height: $space * 15;
+  padding: $space * 3 0 $space * 4;
+  position: relative;
+
+  &::before {
+    background: $primary-color;
+    border-radius: 50%;
+    box-shadow: 0 0 0 $space-sm $theme-surface-color;
+    content: "";
+    height: $space-sm * 2;
+    left: -$timeline-rail-offset - $space-sm;
+    position: absolute;
+    top: $space * 3;
+    width: $space-sm * 2;
+    z-index: 1;
+  }
+
+  &:not(.last)::after {
+    background: $theme-border-color;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: -$timeline-rail-offset;
+    position: absolute;
+    right: 0;
+  }
+
+  h2 {
+    color: $primary-color;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: $space 0 0;
+    white-space: nowrap;
+  }
+
+  ul {
+    column-gap: $space * 2;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    justify-items: start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    row-gap: $space * 3;
+  }
+}
+
+@media (max-width: $small-screen) {
+  .group {
+    grid-template-columns: 1fr;
+    padding-left: $space;
+
+    &::before {
+      left: -$space * 2 - $space-sm;
+    }
+
+    &:not(.last)::after {
+      left: -$space * 2;
+    }
+
+    h2 {
+      margin-top: $space;
+    }
+
+    ul {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .group {
+    padding-left: $space-sm;
+  }
+}

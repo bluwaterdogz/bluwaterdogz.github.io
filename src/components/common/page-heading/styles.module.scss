@@ -1,0 +1,58 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/variables" as *;
+
+.heading {
+  min-width: 0;
+
+  h1 {
+    color: $theme-text-color;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: $page-title-size;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0;
+
+    &::after {
+      color: $primary-color;
+      content: ".";
+    }
+  }
+}
+
+.eyebrow {
+  align-items: center;
+  color: $primary-color;
+  display: flex;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0 0 $space * 3;
+  text-transform: uppercase;
+
+  &::after {
+    background: $primary-color;
+    content: "";
+    height: 2px;
+    margin-left: $space * 2;
+    width: $space * 5;
+  }
+}
+
+.description {
+  color: $theme-subtext-color;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: $space * 2 0 0;
+}
+
+@media (max-width: $small-screen) {
+  .heading h1 {
+    font-size: $page-title-size-tablet;
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .heading h1 {
+    font-size: $page-title-size-mobile;
+  }
+}

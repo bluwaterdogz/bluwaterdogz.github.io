@@ -1,6 +1,7 @@
 import "./styles/styles.scss";
 import "./styles/theme.scss";
 import "animate.css/animate.min.css";
+import "font-awesome/css/font-awesome.min.css";
 
 import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router";

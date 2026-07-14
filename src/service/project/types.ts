@@ -1,4 +1,5 @@
 export interface Project {
+  employer: ProjectEmployer;
   name: string;
   id: string;
   img?: string;
@@ -7,6 +8,13 @@ export interface Project {
   previewImgs?: string[];
   previewVideos?: string[];
 }
+
+export type ProjectEmployer =
+  | "faro"
+  | "independent"
+  | "launchBrigade"
+  | "mobian"
+  | "various";
 export interface Quote {
   text: string;
   author?: string;

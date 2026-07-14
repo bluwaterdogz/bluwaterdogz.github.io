@@ -2,6 +2,10 @@
   "translation": {
     "home": {
       "header": "<span>你好！<br /> 我是 Brian Velasquez,<br /><em>高级全栈工程师 <br />+ 自由职业者。</em></span>",
+      "heroEyebrow": "你好！",
+      "heroName": "我是 Brian Velasquez，",
+      "heroRole": "高级全栈工程师。",
+      "heroIntroduction": "我构建可扩展的 Web 应用并实现系统现代化，以推动业务增长。我热衷于整洁代码、周密架构和卓越的用户体验。",
       "aboutHeader": "我是谁？",
       "about": "高级全栈 Web 开发人员，精通 TypeScript、React、Angular、Node.js 和 Python。具有领导国际团队、现代化遗留系统、优化架构以及实现 CI/CD 流水线以提高部署效率的经验。热衷于构建可扩展的、以用户为中心的解决方案，推动业务增长。",
       "section1Title": "经验丰富",

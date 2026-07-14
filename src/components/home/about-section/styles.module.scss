@@ -1,0 +1,38 @@
+@use "../../../styles/home-sections" as section;
+@use "../../../styles/variables" as *;
+
+.aboutSection {
+  @include section.shell;
+}
+
+.content {
+  @include section.content-grid;
+}
+
+.introduction {
+  margin: 0 auto;
+  max-width: $content-width-readable;
+  width: 100%;
+}
+
+.eyebrow {
+  @include section.eyebrow;
+}
+
+.introduction h2 {
+  @include section.heading;
+}
+
+.copy {
+  @include section.copy;
+}
+
+.link {
+  @include section.link;
+}
+
+.content > :last-child {
+  align-self: center;
+}
+
+@include section.responsive-layout;

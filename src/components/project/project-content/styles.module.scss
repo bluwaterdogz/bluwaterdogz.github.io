@@ -1,123 +1,119 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
-.title {
-  color: $primary-color;
-}
 
 .projectContent {
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-  margin-top: 50px;
-  flex-wrap: wrap;
-  max-width: $content-width;
-  margin: auto;
+  background: $theme-surface-color;
+  padding: $space * 6 $page-padding-inline-desktop $page-padding-block-end
+    $page-padding-inline-start;
+}
 
-  .quote {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 20px;
-    // border-left: 5px solid $primary-color;
+.container {
+  margin: 0 auto;
+  max-width: $content-width-readable;
+  
+}
 
-    background: #fdfaf6;
+.textContent {
+  color: $theme-subtext-color;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: none;
 
-    // box-shadow: $box-shadow;
-    border-radius: 8px;
-    .text {
-      &:before,
-      &:after {
-        content: '"';
-      }
-      font-family: "Georgia", serif;
-      font-size: 1.5rem;
-      font-style: italic;
-      color: $dark-color;
-      color: $primary-color;
-      text-align: center;
-    }
-
-    .author {
-      &:before {
-        content: "- ";
-      }
-      display: block;
-      margin-top: 10px;
-      font-size: 1rem;
-      font-weight: bold;
-      color: $primary-color;
-    }
-  }
-
-  .previews {
-    overflow: visible;
-  }
-  .previewVideo {
-    width: 100%;
-    margin: $space * 10 0;
-    box-shadow: $box-shadow;
-  }
-  .previewImg {
-    width: 100%;
-    margin: $space * 10 0;
-    box-shadow: $box-shadow;
-  }
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .textBlock {
-    border-radius: 10px;
-    padding: 30px;
-    overflow: visible;
-  }
+  h2,
   h3 {
-    margin-bottom: $space * 2;
-  }
-  p {
-  }
-  li {
-    text-align: left;
-    padding-bottom: $space;
+    color: $theme-text-color;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
   }
 
-  .skillList {
-    display: flex;
+  li {
+    margin-bottom: $space;
   }
-  .skill {
-    width: 160px;
+}
+
+.skills {
+  border-bottom: 1px solid $theme-border-color;
+  border-top: 1px solid $theme-border-color;
+  margin: $space * 5 0;
+  padding: $space * 3 0;
+
+  h2 {
+    color: $theme-text-color;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+    font-weight: 400;
+    margin: 0 0 $space * 2;
+  }
+}
+
+.skillList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space;
+
+  a {
+    align-items: center;
+    border: 1px solid $theme-border-color;
+    color: $theme-subtext-color;
     display: inline-flex;
-    flex-direction: column;
+    gap: $space;
     padding: $space;
-    &:hover {
-      .icon,
-      p,
-      a {
-        color: $primary-color;
-      }
+    text-decoration: none;
+    transition: border-color $transition ease, color $transition ease;
+
+    i {
+      color: $primary-color;
+      font-size: 22px;
     }
-    p,
-    .icon {
-      transition: $transition;
-    }
-    .icon {
-      font-size: 40px;
-      color: $neutral-color;
-    }
-    p {
-      font-size: 20px;
+
+    &:hover,
+    &:focus-visible {
+      border-color: $primary-color;
+      color: $primary-color;
     }
   }
 }
-@media (max-width: $small-screen) {
-  .content {
-    flex-direction: column;
-    align-items: center;
+
+.quote {
+  border-left: 2px solid $primary-color;
+  margin: $space * 5 0;
+  max-width: none;
+  padding: 0 0 0 $space * 3;
+
+  p {
+    color: $primary-color;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    font-style: italic;
   }
 
-  .textBlock {
-    width: 100%;
-    margin-bottom: 20px;
+  cite {
+    color: $theme-subtext-color;
+  }
+}
+
+.previews {
+  display: grid;
+  gap: $space * 3;
+  margin: $space * 5 0;
+}
+
+.previewImg,
+.previewVideo {
+  box-shadow: $box-shadow;
+  display: block;
+  max-width: none;
+  width: 100%;
+}
+
+@media (max-width: $medium-screen) {
+  .projectContent {
+    padding: $space * 5 $page-padding-inline-tablet $page-padding-block-end;
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .projectContent {
+    padding: $space * 4 $page-padding-inline-mobile $space * 6;
   }
 }

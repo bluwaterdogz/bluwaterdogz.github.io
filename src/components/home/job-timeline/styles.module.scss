@@ -1,0 +1,148 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/colors" as *;
+
+.timeline {
+  max-width: $content-width-introduction;
+
+  h3 {
+    color: $theme-text-color;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0 0 $space * 4;
+    text-transform: uppercase;
+  }
+
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 $space * 4;
+    position: relative;
+  }
+
+  ol.numbered {
+    margin-left: $space * 8;
+  }
+
+  li {
+    padding: 0 0 $space * 4;
+    position: relative;
+
+    &::after {
+      background: rgba($primary-color, 0.72);
+      content: "";
+      height: 100%;
+      left: -$space * 3;
+      position: absolute;
+      top: $space;
+      width: 1px;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &:hover {
+      .marker {
+        background: $primary-color;
+        transform: scale(1.25);
+      }
+
+      .entryContent {
+        transform: translateX($space-sm);
+      }
+    }
+  }
+}
+
+.light {
+  max-width: none;
+
+  h3,
+  .entryContent h4 {
+    color: $dark-color;
+  }
+
+  .marker {
+    background: white;
+  }
+
+  .summary {
+    color: $neutral-color;
+  }
+}
+
+.marker {
+  background: $theme-surface-color;
+  border: 2px solid $primary-color;
+  border-radius: 50%;
+  height: $space;
+  left: -$space * 3.5;
+  position: absolute;
+  top: $space-sm;
+  transition: background $transition ease, transform $transition ease;
+  width: $space;
+}
+
+.entryContent {
+  color: inherit;
+  display: block;
+  min-height: $space * 8;
+  padding-right: $space * 6;
+  position: relative;
+  text-decoration: none;
+  transition: transform $transition ease;
+}
+
+.number {
+  color: $primary-color;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  left: -$space * 11;
+  line-height: 1;
+  position: absolute;
+  top: 0;
+}
+
+.itemIcon {
+  color: $primary-color;
+  font-size: 34px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.period {
+  color: $primary-color;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 $space;
+}
+
+.timeline h4 {
+  color: $theme-text-color;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0 0 $space-sm;
+  padding: 0;
+}
+
+.summary {
+  color: $theme-subtext-color;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+@media (max-width: $small-screen) {
+  .timeline {
+    max-width: $content-width-copy;
+  }
+}

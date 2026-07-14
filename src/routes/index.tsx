@@ -9,15 +9,17 @@ import { AboutPage } from "../pages/about";
 import { MicroappsPage } from "../pages/microapps";
 import ThaiFlashcardApp from "../pages/microapps/thai_flashcard_app";
 import TodoApp from "../pages/microapps/todo_app_localstorage_drag_categories";
+import GolfStrokeCounterApp from "../pages/microapps/golf_stroke_counter";
+import { PlaceholderPage } from "../pages/placeholder";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
-    element: <HomePage />,
-  },
-  {
     element: <DefaultLayout />,
     children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
       {
         path: "/about",
         element: <AboutPage />,
@@ -41,6 +43,14 @@ export const router = createBrowserRouter([
       {
         path: "/microapps/todo",
         element: <TodoApp />,
+      },
+      {
+        path: "/microapps/golf-stroke-counter",
+        element: <GolfStrokeCounterApp />,
+      },
+      {
+        path: "/background-animation",
+        element: <PlaceholderPage />,
       },
       {
         path: "/project/:id",

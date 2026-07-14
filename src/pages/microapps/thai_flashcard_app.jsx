@@ -75,6 +75,16 @@ function cx() {
   return Array.prototype.slice.call(arguments).filter(Boolean).join(" ");
 }
 
+function containsThai(text) {
+  return /[\u0E00-\u0E7F]/.test(String(text || ""));
+}
+
+function isCombiningOnly(text) {
+  var value = String(text || "");
+  if (!value) return false;
+  return /^[\u0E30-\u0E3A\u0E47-\u0E4E]+$/.test(value);
+}
+
 function App() {
   var groups = useMemo(function () { return chunkIntoGroups(THAI_ITEMS, 10); }, []);
   var _a = useState("study"), activeTab = _a[0], setActiveTab = _a[1];
@@ -145,13 +155,29 @@ function App() {
 
   function getChar(item) { return item ? (item.char || item.id || "") : ""; }
 
-  function speak(text, fallbackEnglish) {
+  function getSpeakText(item) {
+    if (!item) return "";
+    var char = getChar(item);
+    if (char.indexOf("-") !== -1 || isCombiningOnly(char)) {
+      return item.example || item.name || char;
+    }
+    return char || item.example || item.name || "";
+  }
+
+  function speak(text, fallbackText) {
     if (typeof window === "undefined") return;
     if (!("speechSynthesis" in window)) return;
     try {
+      var phrase = String(text || fallbackText || "").trim();
+      if (!phrase) return;
       window.speechSynthesis.cancel();
-      var utter = new SpeechSynthesisUtterance(text || fallbackEnglish || "");
-      utter.lang = "th-TH";
+      var utter = new SpeechSynthesisUtterance(phrase);
+      var voices = window.speechSynthesis.getVoices();
+      var thaiVoice = voices.find(function (v) { return String(v.lang || "").toLowerCase().indexOf("th") === 0; });
+      utter.lang = containsThai(phrase) ? "th-TH" : "en-US";
+      if (thaiVoice && containsThai(phrase)) {
+        utter.voice = thaiVoice;
+      }
       utter.rate = 0.85;
       utter.pitch = 1;
       utterRef.current = utter;
@@ -175,8 +201,7 @@ function App() {
   function handleCardClick() {
     if (!current) return;
     setFlipped(function (v) { return !v; });
-    var char = getChar(current);
-    speak(char.length <= 2 ? char : current.name, current.sound);
+    speak(getSpeakText(current), current.sound);
   }
 
   function markMemorized() {
@@ -241,7 +266,7 @@ function App() {
     if (!autoplaySound) return;
     if (!allowAutoSpeakRef.current) return;
     allowAutoSpeakRef.current = false;
-    speak(getChar(current), current.sound);
+    speak(getSpeakText(current), current.sound);
   }, [current && current.id, autoplaySound]);
 
   return (
@@ -347,7 +372,7 @@ function App() {
                       <button onClick={rotateQueue} className={cx(styles.actionButton, styles.requeueButton)}>✕ Requeue</button>
                       <button onClick={markMemorized} className={cx(styles.actionButton, styles.memorizeButton)}>✓ Memorized</button>
                       <button onClick={rotateQueue} className={styles.actionButton}>Next ↻</button>
-                      <button onClick={function () { if (current) speak(getChar(current), current.sound); }} className={styles.actionButton}>🔊 Speak</button>
+                      <button onClick={function () { if (current) speak(getSpeakText(current), current.sound); }} className={styles.actionButton}>🔊 Speak</button>
                     </div>
                   </>
                 )}
@@ -396,7 +421,7 @@ function App() {
                       </div>
                       <button
                         type="button"
-                        onClick={function (e) { e.preventDefault(); e.stopPropagation(); speak(getChar(item), item.sound); }}
+                        onClick={function (e) { e.preventDefault(); e.stopPropagation(); speak(getSpeakText(item), item.sound); }}
                         className={styles.customSpeakButton}
                       >
                         🔊

@@ -1,18 +1,210 @@
 {
   "translation": {
     "home": {
-      "header": "<span>Hello.<br /> I'm Brian Velasquez,<br /><em>Senior Full Stack <br />Engineer.</em></span>",
+      "header": "<span>Hello<br /> I'm Brian Velasquez,<br /><em>Senior Full Stack <br />Engineer.</em></span>",
+      "heroEyebrow": "Hello",
+      "heroName": "I'm Brian Velasquez,",
+      "heroRole": "Senior Full Stack Engineer.",
+      "heroIntroduction": "I build scalable web applications and modernize systems that drive business growth. Passionate about clean code, thoughtful architecture, and creating exceptional user experiences.",
+      "switchBackground": "Switch hero background",
+      "backgrounds": {
+        "type1": "Type 1",
+        "type2": "Type 2"
+      },
       "aboutHeader": "Who am I?",
       "about": "Senior Full-Stack Web Developer with expertise in TypeScript, React, Angular, Node.js, and Python. Experienced in leading international teams, modernizing legacy systems, optimizing architectures, and implementing CI/CD pipelines for efficient deployment. Passionate about building scalable, user-centric solutions that drive business growth.",
+      "aboutEyebrow": "About me",
+      "aboutTitle": "Building solutions. Leading teams",
+      "aboutLink": "More about me",
+      "features": {
+        "experience": "Years of experience",
+        "projects": "Projects completed",
+        "international": "International",
+        "collaboration": "Team collaboration",
+        "focus": "Focus",
+        "performance": "Performance, scalability, UX"
+      },
       "section1Title": "Experienced",
       "section1Content1": "In my most recent role as a Senior Full-Stack Developer at pharmaceutical tech startup Faro Health, I built and optimized REST and CQRS-based microservices and UI modules using TypeScript, Node.js, PostgreSQL, Jest, and React. I developed feature slices and POCs, designed and executed technical solutions, wrote unit and integration tests, optimized application performance, and built deployment pipelines with GitHub Actions.",
       "section1Content2": "Previously, I led an international remote front-end team at Various Inc., collaborating closely with designers to modernize legacy JavaScript and Perl-based video streaming apps. We migrated them to a scalable, high-performance React and TypeScript stack with Next.js, MOBX, WebSockets, and Python, backed by REST APIs and a CI/CD pipeline for seamless deployment.",
+      "experience": {
+        "eyebrow": "02 Experienced",
+        "title": "Experienced",
+        "copy1": "Most recently at Mobian, I worked across a large multi-repository platform spanning campaign controls, advertiser and segment galleries, persona search, channel intelligence, brand-safety metadata, reporting integrations, and data pipelines.",
+        "copy2": "I built and refined search, filtering, pagination, autocomplete, CSV exports, statistics, cache behavior, ingestion tooling, and reporting workflows across Next.js, React, TypeScript, FastAPI, PostgreSQL, OpenSearch, Snowflake, Dagster, Redis, and AWS.",
+        "copy3": "The work regularly crossed frontend, backend, ETL, search, and infrastructure boundaries. I also handled production fixes, test coverage, release coordination, brand reconciliation, and integrations across the frontend, Persona API, Content API, Video Brand Safety, ETL, and end-to-end testing repositories.",
+        "copy4": "Previously at Faro Health, I built and optimized TypeScript and React applications backed by REST and CQRS-based microservices, PostgreSQL, automated testing, and GitHub Actions deployment pipelines.",
+        "copy5": "Earlier at Various Inc., I led an international front-end team modernizing legacy JavaScript and Perl applications into a scalable React, TypeScript, Next.js, WebSocket, and Python platform.",
+        "link": "View my experience",
+        "timelineHeading": "Career highlights",
+        "timeline": {
+          "mobianPeriod": "2025 - Present",
+          "mobianCompany": "Mobian",
+          "mobianSummary": "Full-stack engineer across a multi-repo platform powering campaign controls, search, analytics, brand safety, and data pipelines.",
+          "contractorPeriod": "2024 - 2025",
+          "contractorCompany": "Independent Contractor",
+          "contractorSummary": "Delivered focused web application, product, and technical consulting engagements for independent clients.",
+          "faroPeriod": "2022 - 2024",
+          "faroCompany": "Faro Health",
+          "faroSummary": "Built and optimized TypeScript and React applications with microservices, PostgreSQL, automated testing, and GitHub Actions.",
+          "variousPeriod": "2018 - 2021",
+          "variousCompany": "Various Inc.",
+          "variousSummary": "Led an international front-end team modernizing legacy platforms into a scalable React, TypeScript, and Next.js stack.",
+          "launchPeriod": "2015 - 2018",
+          "launchCompany": "Launch Brigade",
+          "launchSummary": "Built and maintained responsive client websites and digital products for a Bay Area design and development agency."
+        }
+      },
+      "leadership": {
+        "eyebrow": "03 Technical Leader",
+        "title": "Technical Leader",
+        "copy1": "I've led and collaborated with distributed teams across the US, Europe, Taiwan, and China, working across product, design, engineering, data, and infrastructure.",
+        "copy2": "My approach is practical: establish clear technical direction, reduce unnecessary complexity, surface risks early, and keep teams focused on shipping reliable work. At Mobian, that often meant coordinating changes across several services and repositories while preserving data contracts, search behavior, release stability, and the user experience.",
+        "copy3": "I'm comfortable moving between architecture and implementation, designing systems, debugging production issues, reviewing tradeoffs, improving development workflows, and helping teams turn broad requirements into concrete, maintainable solutions.",
+        "link": "Read about my approach",
+        "regionsHeading": "Where I collaborate",
+        "regions": {
+          "northAmerica": "North America",
+          "southAmerica": "South America",
+          "europe": "Europe",
+          "asia": "Asia"
+        },
+        "summary": "Cross-functional leadership across product, design, engineering, data, and infrastructure.",
+        "stats": {
+          "regions": "4 regions",
+          "timeZones": "Multiple time zones"
+        }
+      },
       "section2Title": "Technical Leader",
       "section2Content1": "Having led a large international team across the US, Europe, Taiwan, and China, I bring deep expertise in TypeScript, Node.js, PostgreSQL, Jest, and React to drive innovation. Beyond technical design and development, my leadership skills ensure teams stay aligned, focused, and working toward key milestones and company goals."
     },
     "about": {
-      "section1": "Brian is an experienced Senior Developer with a passion for elegant scalable code, and minimal intuitive UX.",
-      "section2": "In his spare time he loves to climb, play chess, explore on his dirtbike, and practice Muay Thai."
+      "eyebrow": "About me",
+      "portraitAlt": "Brian Velasquez",
+      "title": "Hi, I'm Brian",
+      "role": "Senior Software Engineer",
+      "section1": "Brian is an experienced Senior Software Engineer with a passion for elegant, scalable code and minimal, intuitive UX.",
+      "section2": "In his spare time he loves to climb, play chess, explore on his dirtbike, and practice Muay Thai.",
+      "location": "Currently based in Chiang Mai, Thailand",
+      "cta": "Let's build something great",
+      "outsideCode": "Outside of code",
+      "buildWith": "I build with",
+      "interests": {
+        "climbing": {
+          "title": "Climbing",
+          "description": "I love the challenge and focus that climbing brings. It keeps me grounded and always learning."
+        },
+        "chess": {
+          "title": "Chess",
+          "description": "Chess teaches patience, strategy, and seeing problems from different angles."
+        },
+        "dirtbike": {
+          "title": "Dirtbike",
+          "description": "Exploring new trails and riding off-road is my way to disconnect and recharge."
+        },
+        "muayThai": {
+          "title": "Muay Thai",
+          "description": "Training Muay Thai builds discipline, resilience, and mental clarity."
+        }
+      },
+      "quote": "I believe in writing code that's clean, maintainable, and built to last. I care about thoughtful user experiences and products that make a real impact.",
+      "process": {
+        "eyebrow": "My process",
+        "title": "From problem to production",
+        "description": "A collaborative, iterative approach that keeps goals, technical decisions, and quality clear from discovery through release.",
+        "aiTitle": "Generative engineering, with accountability and experience",
+        "aiDescription": "I use AI to accelerate research, planning, review, testing, and documentation, while verifying every output against the codebase and real system behavior.",
+        "steps": {
+          "align": { "title": "Align", "description": "Clarify the problem, constraints, dependencies, and definition of success." },
+          "map": { "title": "Map", "description": "Trace the relevant UI, services, data flows, and operational risks." },
+          "shape": { "title": "Shape", "description": "Compare approaches, prototype uncertain ideas, and break the work into focused increments." },
+          "build": { "title": "Build", "description": "Implement collaboratively across the necessary layers using clear, reusable patterns." },
+          "verify": { "title": "Verify", "description": "Test continuously with unit, integration, end-to-end, and manual validation." },
+          "improve": { "title": "Improve", "description": "Release carefully, review production behavior, and refine based on data and feedback." }
+        }
+      }
+    },
+    "skills": {
+      "eyebrow": "Skills",
+      "previous": "Previous skill type",
+      "next": "Next skill type",
+      "projectsLink": "View projects",
+      "projectsMenu": "Projects",
+      "groups": {
+        "Languages": "Languages",
+        "BackendData": "Backend & Data",
+        "Frontend": "Frontend",
+        "CloudTools": "Cloud & Tools",
+        "Frameworks": "Frameworks",
+        "DevTools": "Dev Tools",
+        "IT": "IT",
+        "Design": "Design"
+      },
+      "views": {
+        "development": {
+          "title": "Development",
+          "description": "Technologies and tools I use to build, ship, and scale reliable products."
+        },
+        "infrastructure": {
+          "title": "Infrastructure",
+          "description": "Development tooling, cloud platforms, delivery systems, and operational practices I use to run dependable software."
+        },
+        "frameworks": {
+          "title": "Frameworks",
+          "description": "Application frameworks I use to turn product ideas into maintainable interfaces and services."
+        },
+        "devTools": {
+          "title": "Dev Tools",
+          "description": "Tooling I use to develop, test, document, and ship dependable software."
+        },
+        "it": {
+          "title": "IT",
+          "description": "Cloud and delivery platforms I use to operate applications safely."
+        },
+        "design": {
+          "title": "Design",
+          "description": "Design tools and systems I use to shape clear, considered experiences."
+        }
+      }
+    },
+    "projects": {
+      "eyebrow": "Projects",
+      "title": "Things I've Built",
+      "introduction": "A selection of projects across web, mobile, backend, and data. Each one solved a real problem and taught me something new.",
+      "search": "Search projects",
+      "github": "View code on GitHub",
+      "jobs": {
+        "label": "Filter by job",
+        "all": "All jobs",
+        "mobian": "Mobian",
+        "faro": "Faro Health",
+        "independent": "Independent Contractor",
+        "various": "Various Inc.",
+        "launchBrigade": "Launch Brigade"
+      },
+      "technologies": "{{name}} technologies",
+      "viewProject": "View {{name}}",
+      "detail": {
+        "eyebrow": "Project",
+        "back": "All projects"
+      },
+      "categories": {
+        "label": "Project categories",
+        "all": "All",
+        "web": "Web",
+        "mobile": "Mobile",
+        "backend": "Backend",
+        "data": "Data"
+      },
+      "cta": {
+        "title": "Have an idea in mind?",
+        "description": "I'm always open to interesting projects and collaborations.",
+        "label": "Let's build something"
+      }
+    },
+    "theme": {
+      "dark": "Dark theme",
+      "light": "Light theme"
     },
     "lang": {
       "english": "English",
@@ -43,23 +235,33 @@
       "projects": {
         "description": {
           "1": "A clinical trial software tool for planning, designing and optimizing studies with real-time analytics",
-          "2": "A realtime video streaming and chat application",
+          "2": "A high-traffic, real-time video streaming and chat platform with live discovery, presence, public broadcasts, and private interactive sessions",
           "3": "A survey and informational website about upcoming changes to for the city of San Anselmo",
           "4": "Website for a web design and development agency",
           "5": "Proof of concept Data Analytics micro-service app built in Python and Pandas",
           "6": "An IDP agnostic Single Sign On implementation for the study designer application",
           "7": "Website for a AI used car application",
-          "8": "Front end for a showcase application for a Geometric application for combining lattice structures"
+          "8": "Front end for a showcase application for a Geometric application for combining lattice structures",
+          "9": "Full-stack search, analytics, filtering, and export capabilities for an audience-intelligence platform",
+          "10": "Data-quality, metadata, recovery, and lookup features for high-throughput contextual processing systems",
+          "11": "Entity search, reporting data, campaign control, and export workflows across advertising systems",
+          "12": "Cross-cutting frontend, testing, cloud, observability, security, and release improvements",
+          "13": "Frontend UI, design-system, search, filtering, dashboard, and interaction improvements across an audience-intelligence platform"
         },
         "content": {
           "1": "<div><h3>Utilizing AI for clinical study development.</h3><p>The company's flagship product, the Faro Study Designer, is designed to enhance the efficiency and patient-friendliness of clinical protocols.</p><p>Faro Health has received significant investment, securing a total of $38.3 million in funding, with the most recent $20 million raised approximately two years ago.</p><p>Key features include:</p><ul><li>Real-time Collaboration: Facilitates accurate and efficient documentation processes.</li><li>Feasibility Analysis: Assesses the impact of design decisions on study success rates.</li><li>Benchmarking: Compares protocols with historical data and design variations.</li></ul></div>",
-          "2": "<p>The Viewer is an interactive webcam platform where users can engage in live video chats with performers, offering a real-time, personalized experience. The platform allows users to view live broadcasts, participate in private sessions, and connect with performers through video, audio, and chat features. </p> ",
+          "2": "<div><h3>Real-time video, chat, and live discovery</h3><p>The Viewer is an interactive live-streaming platform where users can discover currently available broadcasters, join public rooms, communicate through real-time messaging, and transition into private video sessions. The experience combines continuous video and audio delivery with rapidly changing presence, availability, profile, and session data.</p><h3>Who’s Online Now</h3><p>The Who’s Online Now experience provides a continuously updated view of active broadcasters. Users can browse profiles, search and filter available rooms, review live status information, and move directly from discovery into an active broadcast or private session.</p><h3>Product capabilities</h3><ul><li>Real-time video and audio streaming across public and private sessions</li><li>Live text chat, presence indicators, availability changes, and session-state updates</li><li>Search, filtering, categorization, and responsive broadcaster discovery</li><li>High-frequency UI updates without interrupting active media playback</li><li>Responsive interfaces designed for long-running, interaction-heavy sessions</li><li>Integration with established APIs, account systems, messaging services, and legacy application workflows</li></ul><h3>Engineering work</h3><p>I worked on an international frontend team modernizing established JavaScript and Perl applications into a more scalable React, TypeScript, Next.js, and WebSocket-based platform. The work involved coordinating streaming media, chat events, user presence, private-session transitions, legacy APIs, and frequently changing interface state across a mature production system.</p><h3>Estimated production scale</h3><p>Internal production metrics are not available, but based on the platform’s longevity, product breadth, public visibility, and the scale of comparable live-streaming services, I estimate the system supported approximately 1–5 million visits per month, 30,000–170,000 visits on a typical day, hundreds of simultaneously available live rooms, and several thousand concurrent connected users during peak periods. At that scale, the application could reasonably process millions of presence, chat, session, and interface events per day while serving many terabytes of monthly streaming-media traffic. These figures are directional estimates rather than company-reported analytics.</p><div class='project-stats'><div><strong>1–5M</strong><span>Estimated monthly visits</span></div><div><strong>30K–170K</strong><span>Estimated daily visits</span></div><div><strong>100s</strong><span>Concurrent live rooms</span></div><div><strong>1K–10K</strong><span>Estimated peak connected users</span></div><div><strong>Millions</strong><span>Real-time events per day</span></div><div><strong>Multi-terabyte</strong><span>Estimated monthly media delivery</span></div></div></div>",
           "3": "<p>A wordpress website for the The 2025 San Anselmo General Plan Update which provides residents with comprehensive information on proposed changes to the town's infrastructure, zoning, and public spaces. It features detailed project updates, sustainability initiatives, and transportation improvements. The site also includes interactive public surveys, allowing community members to provide feedback and participate in the decision-making process.</p>",
           "4": "<p>Launch Brigade is a web design and development agency based in the San Francisco Bay Area, specializing in creating digital experiences that elevate brands and drive business growth. Their website, launchbrigade.com, reflects their commitment to delivering comprehensive digital solutions.</p>",
           "5": "<p>The Data Analytics Dashboard was a proof of concept application built in Pandas which utilized Study Design data stored in a star schema to create a data analytics microservice and frontend. This app allowed users to slice and dice their study data according to whatever data dimensions they chose.</p>",
           "6": "<p>An IDP agnostic Single Sign On implementation for the study designer application. Built to allow interchangeable organizations to use their own SAML and Oauth identity provider services to provide tokens for interacting with our api.<p>",
           "7": "<p>Lotlinx is an AI-driven automotive inventory management platform that leverages machine learning and extensive data analytics to help dealerships optimize inventory turnover and profitability. By providing real-time insights into market demand, pricing strategies, and consumer behavior, Lotlinx enables use car dealers to make data-driven decisions, reduce holding costs, and enhance overall operational efficiency.</p>",
-          "8": "<p>​Metafold 3D is a cloud-based platform that enables the design and engineering of highly complex 3D models, specifically optimized for additive manufacturing. Founded in 2020 by experts in mathematics, geometry, and architecture, Metafold addresses the challenges traditional CAD tools face when handling intricate geometries, such as lattice structures, which are essential for lightweight and efficient designs​Metafold 3D is a cloud-based platform that enables the design and engineering of highly complex 3D models, specifically optimized for additive manufacturing. Metafold addresses the challenges traditional CAD tools face when handling merging intricate geometries, such as lattice structures.</p>"
+          "8": "<p>​Metafold 3D is a cloud-based platform that enables the design and engineering of highly complex 3D models, specifically optimized for additive manufacturing. Founded in 2020 by experts in mathematics, geometry, and architecture, Metafold addresses the challenges traditional CAD tools face when handling intricate geometries, such as lattice structures, which are essential for lightweight and efficient designs​Metafold 3D is a cloud-based platform that enables the design and engineering of highly complex 3D models, specifically optimized for additive manufacturing. Metafold addresses the challenges traditional CAD tools face when handling merging intricate geometries, such as lattice structures.</p>",
+          "9": "<div><h3>Persona & Channel Intelligence</h3><p>Contributed to an established audience-intelligence platform used to discover personas, evaluate content channels, review performance data, and export filtered results.</p><h3>What I built</h3><ul><li>Persona and channel search with server-side autocomplete, pagination, and infinite scrolling</li><li>Date-range and joined-date filtering, channel statistics, and history</li><li>Frontend proxy routes, search limits, logging, and reliable loading states</li><li>Streamed CSV downloads preserving active filters and search parameters</li></ul><h3>Process and production context</h3><p>Traced behavior across React, Next.js, FastAPI, PostgreSQL, OpenSearch, Redis, caches, and scheduled processing. Delivered within a high-volume production platform supporting large search, aggregation, metadata, and export workloads.</p></div>",
+          "10": "<div><h3>Context Ingestion & Brand-Safety Tooling</h3><p>Built operational tooling and ingestion improvements for contextual-intelligence and brand-safety systems processing webpage, URL, video, channel, and classification metadata.</p><h3>What I built</h3><ul><li>Full-context schema fields and metadata persistence</li><li>Bounded cleanup, URL-prefix, alias, and batch-processing tools</li><li>Checkpoint stabilization and retry behavior preserving promoted aliases</li><li>Channel discovery through URL parsing, ID scanning, HTML fallback, caching, and pruning</li><li>Structured cloud diagnostics for lookup and processing failures</li></ul><p>Worked across Python, FastAPI, PostgreSQL, Redis, AWS Lambda, CloudWatch, SAM, CloudFormation, Terraform, asynchronous workers, and high-throughput metadata pipelines.</p></div>",
+          "11": "<div><h3>Advertising Operations & Reporting Integrations</h3><p>Connected advertiser, audience-segment, targeting, reporting, and export workflows across an established advertising analytics platform.</p><h3>What I built</h3><ul><li>Advertiser and reporting-entity support across multiple advertising platforms</li><li>Server-side search, sorting, duplicate-name disambiguation, and source-qualified labels</li><li>Placement-to-line-item mapping and reporting-cache improvements</li><li>Segment and advertiser-gallery CSV exports preserving active filters and pagination</li><li>Frontend fixes across advertiser, campaign-control, and segment workflows</li></ul><p>Worked across Next.js, React, TypeScript, Material UI, FastAPI, Python, Snowflake, Dagster, PostgreSQL, external integrations, and ETL-managed caches.</p></div>",
+          "12": "<div><h3>Platform Engineering, Testing & Product Infrastructure</h3><p>Built reusable foundations and release safeguards spanning product areas, services, cloud infrastructure, and developer workflows.</p><h3>What I improved</h3><ul><li>Semantic design tokens, Material UI variants, palette bridging, and migration examples</li><li>Modern Cypress configuration, authenticated smoke tests, Playwright coverage, and reusable fixtures</li><li>Scheduled serverless jobs, cloud diagnostics, observability, container fixes, and infrastructure configuration</li><li>Framework security updates, authentication handling, release coordination, and technical documentation</li></ul><p>Coordinated compatible changes across React, Next.js, TypeScript, Python, AWS Lambda, ECS, CloudWatch, Terraform, OpenSearch, frontend, backend, ETL, search, and deployment systems.</p></div>",
+          "13": "<div><h3>Frontend UI & Design System</h3><p>Built and refined reusable frontend experiences across an established audience-intelligence and advertising analytics platform, with a focus on clarity, consistency, responsiveness, and reliable interaction behavior.</p><h3>What I built</h3><ul><li>Search, autocomplete, filtering, pagination, infinite scrolling, loading states, and empty-state behavior</li><li>Reusable Material UI components, semantic design tokens, palette bridging, variants, and migration patterns</li><li>Responsive dashboard, gallery, table, drawer, dropdown, and export interfaces</li><li>Frontend API proxying, URL-state synchronization, query handling, and error-state improvements</li><li>Automated coverage with Jest, Cypress, Playwright, authenticated fixtures, and smoke tests</li></ul><h3>Frontend architecture</h3><p>Worked primarily with React, Next.js, TypeScript, JavaScript, HTML5, CSS/SCSS, Material UI, Storybook, GitHub Actions, and frontend testing tools. Coordinated UI changes with FastAPI services, search endpoints, reporting data, and export workflows to ensure consistent behavior across the full product experience.</p></div>"
         }
       },
       "jobs": {

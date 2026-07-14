@@ -1,40 +1,128 @@
-@use "../../../styles/variables" as *;
 @use "../../../styles/colors" as *;
+@use "../../../styles/variables" as *;
+
 .topBar {
   display: flex;
-  background-color: $dark-color;
-  overflow: visible;
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  box-shadow: $box-shadow;
-  .searchContainer {
-    width: 100%;
-    padding: $space * 2 $space * 2;
+  flex-direction: column;
+  gap: $space * 2;
+}
+
+.search {
+  align-items: center;
+  border: 1px solid $theme-border-color;
+  display: flex;
+  gap: $space;
+  padding: 0 $space * 2;
+
+  i {
+    color: $theme-text-color;
   }
-  .filtersContainer {
-    padding: $space;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    overflow: visible;
-    .searchInput {
-      width: 100%;
-      overflow: visible;
+
+  input {
+    background: transparent;
+    border: 0;
+    color: $theme-text-color;
+    font: inherit;
+    outline: 0;
+    padding: $space * 2 0;
+    width: 100%;
+
+    &::placeholder {
+      color: $theme-subtext-color;
+    }
+  }
+
+  &:focus-within {
+    border-color: $primary-color;
+  }
+}
+
+.srOnly {
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.categories {
+  display: grid;
+  gap: $space;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  button {
+    background: transparent;
+    border: 1px solid $theme-border-color;
+    color: $theme-text-color;
+    cursor: pointer;
+    font: inherit;
+    padding: $space * 1.5 $space;
+    transition: background $transition ease, border-color $transition ease,
+      color $transition ease;
+
+    &:hover,
+    &:focus-visible,
+    &.active {
+      background: $primary-color;
+      border-color: $primary-color;
+      color: white;
     }
   }
 }
 
-@media (max-width: $small-screen) {
-  .topBar {
-    flex-direction: column;
-    .filtersContainer {
-      width: 100%;
-    }
-    .searchContainer {
-      width: 80%;
-    }
+.githubLink {
+  align-items: center;
+  align-self: flex-end;
+  color: $primary-color;
+  display: inline-flex;
+  gap: $space * 2;
+  text-decoration: none;
+
+  i {
+    color: $theme-text-color;
+    font-size: 22px;
+  }
+
+  span {
+    font-size: 24px;
+    transition: transform $transition ease;
+  }
+
+  &:hover span,
+  &:focus-visible span {
+    transform: translateX($space-sm);
+  }
+}
+
+.jobFilter {
+  align-items: center;
+  display: grid;
+  gap: $space;
+  grid-template-columns: auto minmax(0, 1fr);
+
+  span {
+    color: $theme-subtext-color;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  select {
+    background: transparent;
+    border: 1px solid $theme-border-color;
+    color: $theme-text-color;
+    font: inherit;
+    padding: $space * 1.5;
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .categories {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .githubLink {
+    align-self: flex-start;
   }
 }

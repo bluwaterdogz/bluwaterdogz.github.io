@@ -2,6 +2,10 @@
   "translation": {
     "home": {
       "header": "<span>สวัสดี!<br /> ฉันคือ Brian Velasquez,<br /><em>Senior Full Stack <br />Engineer.</em></span>",
+      "heroEyebrow": "สวัสดี!",
+      "heroName": "ฉันคือ Brian Velasquez,",
+      "heroRole": "Senior Full Stack Engineer.",
+      "heroIntroduction": "ฉันสร้างเว็บแอปพลิเคชันที่ปรับขนาดได้และปรับปรุงระบบให้ทันสมัยเพื่อขับเคลื่อนการเติบโตของธุรกิจ โดยใส่ใจในโค้ดที่สะอาด สถาปัตยกรรมที่รอบคอบ และประสบการณ์ผู้ใช้ที่ยอดเยี่ยม",
       "aboutHeader": "ฉันคือใคร?",
       "about": "Senior Full-Stack Web Developer ที่มีความเชี่ยวชาญใน TypeScript, React, Angular, Node.js และ Python มีประสบการณ์ในการเป็นผู้นำทีมระหว่างประเทศ การพัฒนาระบบเก่าให้ทันสมัย การปรับปรุงสถาปัตยกรรม และการนำเสนอ CI/CD pipelines สำหรับการปรับใช้ที่มีประสิทธิภาพ มีความหลงใหลในการสร้างโซลูชันที่สามารถขยายได้และเน้นผู้ใช้ ซึ่งช่วยผลักดันการเติบโตของธุรกิจ",
       "section1Title": "มีประสบการณ์",

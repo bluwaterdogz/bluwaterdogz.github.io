@@ -1,0 +1,154 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/colors" as *;
+
+.regions {
+  max-width: $content-width-copy;
+
+  h3 {
+    color: $theme-text-color;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: uppercase;
+  }
+}
+
+.headingRule {
+  background: $primary-color;
+  height: 2px;
+  margin: $space * 2 0 $space * 4;
+  width: $space * 3;
+}
+
+.regions ul {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.regions li {
+  align-items: center;
+  border-left: 1px solid $theme-border-color;
+  display: flex;
+  flex-direction: column;
+  gap: $space * 2;
+  min-height: $space * 16;
+  justify-content: center;
+  padding: $space * 2;
+  transition: background $transition ease, transform $transition ease;
+
+  &:first-child {
+    border-left: 0;
+  }
+
+  &:hover {
+    // background: rgba($primary-color, 0.06);
+    transform: translateY(-$space-sm);
+
+    .regionIcon::before {
+      // opacity: 0.18;
+      // transform: scale(1.04);
+    }
+  }
+
+  &:focus-within .regionIcon::before {
+    opacity: 0.18;
+    transform: scale(1.04);
+  }
+
+  span {
+    color: $theme-text-color;
+    font-size: 14px;
+    line-height: 1.25;
+    text-align: center;
+  }
+}
+
+.regionIcon {
+  display: grid;
+  height: $space * 9;
+  place-items: center;
+  position: relative;
+  width: $space * 11;
+
+  &::before {
+    background: $primary-color;
+    content: "";
+    inset: 0;
+    mask: var(--region-icon) center / contain no-repeat;
+    opacity: 0;
+    position: absolute;
+    transform: scale(0.9);
+    transition: opacity $transition ease, transform $transition ease;
+    -webkit-mask: var(--region-icon) center / contain no-repeat;
+  }
+
+  img {
+    color: $primary-color;
+    height: 100%;
+    position: relative;
+    width: 100%;
+  }
+}
+
+.summary {
+  align-items: center;
+  border-bottom: 1px solid $theme-border-color;
+  border-top: 1px solid $theme-border-color;
+  display: grid;
+  gap: $space * 3;
+  grid-template-columns: $space * 6 minmax(0, 1fr);
+  margin-top: $space * 4;
+  padding: $space * 3 0;
+
+  i {
+    color: $primary-color;
+    font-size: 32px;
+    text-align: center;
+  }
+
+  p {
+    color: $theme-subtext-color;
+    font-size: 16px;
+    line-height: 1.45;
+    margin: 0;
+  }
+}
+
+.stats {
+  color: $theme-text-color;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 15px;
+  gap: $space * 2;
+  margin-top: $space * 3;
+
+  span + span::before {
+    color: $primary-color;
+    content: "•";
+    margin-right: $space * 2;
+  }
+}
+
+@media (max-width: $small-screen) {
+  .regions li {
+    min-height: $space * 14;
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .regions ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .regions li:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .regions li:nth-child(n + 3) {
+    border-top: 1px solid $theme-border-color;
+  }
+}

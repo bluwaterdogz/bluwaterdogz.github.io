@@ -184,22 +184,12 @@
 }
 
 .process {
-  color: $dark-color;
+  color: $theme-text-color;
   display: grid;
   gap: clamp($space * 5, 8vw, $space * 12);
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
   margin-top: $space * 10;
   padding: $space * 6 0;
-
-}
-
-:global(.theme-dark) main.aboutPage section.process {
-  background-color: white !important;
-  color: $dark-color !important;
-}
-
-:global(.theme-dark) main.aboutPage section.process {
-  color: $dark-color !important;
 }
 
 .processIntroduction {
@@ -207,7 +197,7 @@
 
   h2,
   h3 {
-    color: $dark-color;
+    color: $theme-text-color;
     font-family: Georgia, "Times New Roman", serif;
     font-weight: 400;
     margin: 0;
@@ -225,7 +215,7 @@
 
   > p,
   .aiNote p {
-    color: $neutral-color;
+    color: $theme-subtext-color;
     font-size: 16px;
     line-height: 1.65;
     margin: 0;
@@ -233,7 +223,7 @@
 }
 
 .aiNote {
-  border-top: 1px solid rgba($dark-color, 0.16);
+  border-top: 1px solid $theme-border-color;
   margin-top: $space * 5;
   padding-top: $space * 4;
 

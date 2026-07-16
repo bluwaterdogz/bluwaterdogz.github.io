@@ -107,7 +107,6 @@ export const ProjectList = () => {
         description={t("projects.cta.description")}
         label={t("projects.cta.label")}
         title={t("projects.cta.title")}
-        to="/about"
       />
     </>
   );

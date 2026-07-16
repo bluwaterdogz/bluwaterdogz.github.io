@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { linkedinProfileUrl } from "../../../service/consts";
 import styles from "./styles.module.scss";
 
 interface CallToActionProps {
@@ -6,7 +6,6 @@ interface CallToActionProps {
   icon?: string;
   label: string;
   title: string;
-  to: string;
 }
 
 export const CallToAction = ({
@@ -14,7 +13,6 @@ export const CallToAction = ({
   icon = "fa fa-magic",
   label,
   title,
-  to,
 }: CallToActionProps) => {
   return (
     <aside className={styles.callToAction}>
@@ -25,10 +23,15 @@ export const CallToAction = ({
         <h2>{title}</h2>
         <p>{description}</p>
       </div>
-      <Link className={styles.link} to={to}>
+      <a
+        className={styles.link}
+        href={linkedinProfileUrl}
+        rel="noreferrer"
+        target="_blank"
+      >
         {label}
         <span aria-hidden="true">&#8594;</span>
-      </Link>
+      </a>
     </aside>
   );
 };

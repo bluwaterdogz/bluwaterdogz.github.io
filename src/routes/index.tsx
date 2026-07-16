@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import { HomePage } from "../pages/home";
 import { SkillsPage } from "../pages/skills";
@@ -7,10 +8,15 @@ import { ProjectPage } from "../pages/project";
 import { DefaultLayout } from "../layouts/default";
 import { AboutPage } from "../pages/about";
 import { MicroappsPage } from "../pages/microapps";
-import ThaiFlashcardApp from "../pages/microapps/thai_flashcard_app";
-import TodoApp from "../pages/microapps/todo_app_localstorage_drag_categories";
-import GolfStrokeCounterApp from "../pages/microapps/golf_stroke_counter";
+import { microapps } from "../pages/microapps/registry";
 import { PlaceholderPage } from "../pages/placeholder";
+import { Loader } from "../components/common/loader";
+
+const renderLazyMicroapp = (Component: (typeof microapps)[number]["Component"]) => (
+  <Suspense fallback={<Loader />}>
+    <Component />
+  </Suspense>
+);
 
 export const router = createBrowserRouter([
   {
@@ -36,18 +42,10 @@ export const router = createBrowserRouter([
         path: "/microapps",
         element: <MicroappsPage />,
       },
-      {
-        path: "/microapps/thai-flashcards",
-        element: <ThaiFlashcardApp />,
-      },
-      {
-        path: "/microapps/todo",
-        element: <TodoApp />,
-      },
-      {
-        path: "/microapps/golf-stroke-counter",
-        element: <GolfStrokeCounterApp />,
-      },
+      ...microapps.map((app) => ({
+        path: app.href,
+        element: renderLazyMicroapp(app.Component),
+      })),
       {
         path: "/background-animation",
         element: <PlaceholderPage />,

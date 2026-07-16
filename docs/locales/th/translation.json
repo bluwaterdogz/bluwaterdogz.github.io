@@ -1,0 +1,198 @@
+{
+  "translation": {
+    "home": {
+      "header": "<span>สวัสดี<br /> ผมคือ Brian Velasquez<br /><em>วิศวกรฟูลสแตก<br />อาวุโส</em></span>",
+      "heroEyebrow": "สวัสดี",
+      "heroName": "ผมคือ Brian Velasquez",
+      "heroRole": "วิศวกรฟูลสแตกอาวุโส",
+      "heroIntroduction": "ผมสร้างเว็บแอปพลิเคชันที่ขยายระบบได้ และปรับปรุงระบบเดิมให้ทันสมัยเพื่อช่วยขับเคลื่อนการเติบโตของธุรกิจ ผมให้ความสำคัญกับโค้ดที่สะอาด สถาปัตยกรรมที่รอบคอบ และประสบการณ์ผู้ใช้ที่ยอดเยี่ยม",
+      "switchBackground": "เปลี่ยนพื้นหลังส่วนฮีโร่",
+      "backgrounds": { "type1": "แบบที่ 1", "type2": "แบบที่ 2" },
+      "aboutHeader": "ผมคือใคร?",
+      "about": "นักพัฒนาเว็บฟูลสแตกอาวุโสที่มีประสบการณ์ด้าน TypeScript, React, Angular, Node.js และ Python เคยนำทีมต่างประเทศ ปรับปรุงระบบเก่า เพิ่มประสิทธิภาพสถาปัตยกรรม และสร้าง CI/CD เพื่อการดีพลอยที่มีประสิทธิภาพ ผมชอบสร้างโซลูชันที่ขยายได้และเน้นผู้ใช้เป็นศูนย์กลาง",
+      "aboutEyebrow": "เกี่ยวกับผม",
+      "aboutTitle": "สร้างโซลูชัน นำทีม",
+      "aboutLink": "รู้จักผมเพิ่มเติม",
+      "features": {
+        "experience": "ปีแห่งประสบการณ์",
+        "projects": "โครงการที่เสร็จสมบูรณ์",
+        "international": "การทำงานระดับนานาชาติ",
+        "collaboration": "การทำงานร่วมกันในทีม",
+        "focus": "จุดเน้น",
+        "performance": "ประสิทธิภาพ การขยายระบบ UX"
+      },
+      "section1Title": "มีประสบการณ์",
+      "section1Content1": "ในบทบาทล่าสุดที่ Faro Health ผมสร้างและปรับปรุงไมโครเซอร์วิสแบบ REST และ CQRS รวมถึงโมดูล UI ด้วย TypeScript, Node.js, PostgreSQL, Jest และ React ผมพัฒนาฟีเจอร์และ POC ออกแบบโซลูชันทางเทคนิค เขียน unit และ integration tests ปรับปรุงประสิทธิภาพ และสร้าง deployment pipelines ด้วย GitHub Actions",
+      "section1Content2": "ก่อนหน้านั้นผมนำทีมฟรอนต์เอนด์ระยะไกลระดับนานาชาติที่ Various Inc. ทำงานร่วมกับนักออกแบบเพื่อปรับปรุงแอปวิดีโอสตรีมมิงเดิมที่ใช้ JavaScript และ Perl ไปสู่แพลตฟอร์ม React, TypeScript, Next.js, MobX, WebSockets และ Python ที่ขยายได้ พร้อม REST APIs และ CI/CD",
+      "experience": {
+        "eyebrow": "02 ประสบการณ์",
+        "title": "ประสบการณ์",
+        "copy1": "ล่าสุดที่ Mobian ผมทำงานกับแพลตฟอร์มขนาดใหญ่แบบหลายรีโพซิทอรี ครอบคลุมการควบคุมแคมเปญ แกลเลอรีผู้ลงโฆษณาและเซกเมนต์ การค้นหาเพอร์โซนา ข้อมูลเชิงลึกของช่อง เมทาดาทาด้านความปลอดภัยของแบรนด์ การเชื่อมต่อรายงาน และ data pipelines",
+        "copy2": "ผมสร้างและปรับปรุงระบบค้นหา ตัวกรอง การแบ่งหน้า autocomplete การส่งออก CSV สถิติ พฤติกรรมแคช เครื่องมือนำเข้าข้อมูล และเวิร์กโฟลว์รายงาน ด้วย Next.js, React, TypeScript, FastAPI, PostgreSQL, OpenSearch, Snowflake, Dagster, Redis และ AWS",
+        "copy3": "งานครอบคลุมฟรอนต์เอนด์ แบ็กเอนด์ ETL ระบบค้นหา และโครงสร้างพื้นฐาน รวมถึงการแก้ปัญหาโปรดักชัน เพิ่มความครอบคลุมของการทดสอบ ประสานงานรีลีส ตรวจสอบความสอดคล้องของข้อมูลแบรนด์ และเชื่อมต่อระหว่าง frontend, Persona API, Content API, Video Brand Safety, ETL และ E2E tests",
+        "copy4": "ก่อนหน้านี้ที่ Faro Health ผมสร้างและปรับปรุงแอป TypeScript และ React ที่รองรับด้วย REST และ CQRS microservices, PostgreSQL, automated testing และ GitHub Actions deployment pipelines",
+        "copy5": "ที่ Various Inc. ผมนำทีมฟรอนต์เอนด์นานาชาติในการปรับปรุงแอป JavaScript และ Perl เดิมให้เป็นแพลตฟอร์ม React, TypeScript, Next.js, WebSocket และ Python ที่ขยายได้",
+        "link": "ดูประสบการณ์ของผม",
+        "timelineHeading": "ไฮไลต์เส้นทางอาชีพ",
+        "timeline": {
+          "mobianPeriod": "2025 - ปัจจุบัน",
+          "mobianCompany": "Mobian",
+          "mobianSummary": "วิศวกรฟูลสแตกบนแพลตฟอร์มหลายรีโพที่รองรับการควบคุมแคมเปญ การค้นหา การวิเคราะห์ ความปลอดภัยของแบรนด์ และ data pipelines",
+          "contractorPeriod": "2024 - 2025",
+          "contractorCompany": "ผู้รับเหมาอิสระ",
+          "contractorSummary": "ส่งมอบงานเว็บแอป ผลิตภัณฑ์ และที่ปรึกษาด้านเทคนิคให้ลูกค้าอิสระ",
+          "faroPeriod": "2022 - 2024",
+          "faroCompany": "Faro Health",
+          "faroSummary": "สร้างและปรับปรุงแอป TypeScript และ React ด้วย microservices, PostgreSQL, automated testing และ GitHub Actions",
+          "variousPeriod": "2018 - 2021",
+          "variousCompany": "Various Inc.",
+          "variousSummary": "นำทีมฟรอนต์เอนด์นานาชาติในการย้ายแพลตฟอร์มเดิมไปยัง React, TypeScript และ Next.js",
+          "launchPeriod": "2015 - 2018",
+          "launchCompany": "Launch Brigade",
+          "launchSummary": "สร้างและดูแลเว็บไซต์ responsive และผลิตภัณฑ์ดิจิทัลให้เอเจนซีออกแบบและพัฒนาในซานฟรานซิสโกเบย์แอเรีย"
+        }
+      },
+      "leadership": {
+        "eyebrow": "03 ผู้นำทางเทคนิค",
+        "title": "ผู้นำทางเทคนิค",
+        "copy1": "ผมเคยนำและทำงานร่วมกับทีมกระจายตัวในสหรัฐฯ ยุโรป ไต้หวัน และจีน ครอบคลุมผลิตภัณฑ์ การออกแบบ วิศวกรรม ข้อมูล และโครงสร้างพื้นฐาน",
+        "copy2": "แนวทางของผมเน้นการปฏิบัติจริง: กำหนดทิศทางเทคนิคให้ชัด ลดความซับซ้อนที่ไม่จำเป็น เปิดเผยความเสี่ยงตั้งแต่เนิ่น ๆ และช่วยให้ทีมส่งมอบงานที่เชื่อถือได้ ที่ Mobian งานนี้มักหมายถึงการประสานการเปลี่ยนแปลงข้ามหลายบริการและรีโพ พร้อมรักษา data contracts พฤติกรรมการค้นหา ความเสถียรของรีลีส และประสบการณ์ผู้ใช้",
+        "copy3": "ผมทำงานได้ทั้งระดับสถาปัตยกรรมและการลงมือพัฒนา ออกแบบระบบ แก้ปัญหาโปรดักชัน ทบทวนทางเลือก ปรับปรุงเวิร์กโฟลว์ และช่วยแปลงความต้องการกว้าง ๆ ให้เป็นโซลูชันที่ชัดเจนและดูแลต่อได้",
+        "link": "อ่านแนวทางการทำงานของผม",
+        "regionsHeading": "พื้นที่ที่ผมทำงานร่วมกัน",
+        "regions": { "northAmerica": "อเมริกาเหนือ", "southAmerica": "อเมริกาใต้", "europe": "ยุโรป", "asia": "เอเชีย" },
+        "summary": "ภาวะผู้นำข้ามสายงานในผลิตภัณฑ์ การออกแบบ วิศวกรรม ข้อมูล และโครงสร้างพื้นฐาน",
+        "stats": { "regions": "4 ภูมิภาค", "timeZones": "หลายเขตเวลา" }
+      },
+      "section2Title": "ผู้นำทางเทคนิค",
+      "section2Content1": "จากการนำทีมระดับนานาชาติในสหรัฐฯ ยุโรป ไต้หวัน และจีน ผมนำประสบการณ์ด้าน TypeScript, Node.js, PostgreSQL, Jest และ React มาผสานกับภาวะผู้นำที่ช่วยให้ทีมสอดคล้องและส่งมอบงานได้อย่างมั่นคง"
+    },
+    "about": {
+      "eyebrow": "เกี่ยวกับผม",
+      "portraitAlt": "Brian Velasquez",
+      "title": "สวัสดี ผมคือ Brian",
+      "role": "วิศวกรซอฟต์แวร์อาวุโส",
+      "section1": "Brian เป็นวิศวกรซอฟต์แวร์อาวุโสที่มีประสบการณ์ และชื่นชอบโค้ดที่สวยงาม ขยายได้ รวมถึง UX ที่เรียบง่ายและใช้งานง่าย",
+      "section2": "เวลาว่างเขาชอบปีนผา เล่นหมากรุก ขี่มอเตอร์ไซค์วิบาก และฝึกมวยไทย",
+      "location": "ปัจจุบันอยู่ที่เชียงใหม่ ประเทศไทย",
+      "cta": "มาสร้างสิ่งที่ยอดเยี่ยมด้วยกัน",
+      "outsideCode": "นอกเหนือจากโค้ด",
+      "buildWith": "เทคโนโลยีที่ผมใช้",
+      "interests": {
+        "climbing": { "title": "ปีนผา", "description": "ผมชอบความท้าทายและสมาธิจากการปีนผา มันช่วยให้ผมมีสติและเรียนรู้อยู่เสมอ" },
+        "chess": { "title": "หมากรุก", "description": "หมากรุกสอนเรื่องความอดทน กลยุทธ์ และการมองปัญหาจากหลายมุม" },
+        "dirtbike": { "title": "มอเตอร์ไซค์วิบาก", "description": "การออกสำรวจเส้นทางใหม่และขี่ออฟโรดคือวิธีพักสมองและเติมพลังของผม" },
+        "muayThai": { "title": "มวยไทย", "description": "การฝึกมวยไทยช่วยสร้างวินัย ความยืดหยุ่น และความชัดเจนทางความคิด" }
+      },
+      "quote": "ผมเชื่อในโค้ดที่สะอาด ดูแลรักษาง่าย และใช้งานได้ยาวนาน ผมให้ความสำคัญกับประสบการณ์ผู้ใช้ที่ผ่านการคิดมาอย่างดีและผลิตภัณฑ์ที่สร้างผลกระทบจริง",
+      "process": {
+        "eyebrow": "กระบวนการของผม",
+        "title": "จากปัญหาสู่โปรดักชัน",
+        "description": "แนวทางแบบร่วมมือและทำซ้ำที่ทำให้เป้าหมาย การตัดสินใจทางเทคนิค และคุณภาพชัดเจนตั้งแต่การค้นพบจนถึงการรีลีส",
+        "aiTitle": "Generative engineering ที่มีความรับผิดชอบและประสบการณ์",
+        "aiDescription": "ผมใช้ AI เพื่อเร่งการวิจัย การวางแผน การรีวิว การทดสอบ และเอกสาร พร้อมตรวจสอบทุกผลลัพธ์เทียบกับโค้ดเบสและพฤติกรรมจริงของระบบ",
+        "steps": {
+          "align": { "title": "Align", "description": "ทำความเข้าใจปัญหา ข้อจำกัด การพึ่งพา และเกณฑ์ความสำเร็จ" },
+          "map": { "title": "Map", "description": "ติดตาม UI บริการ data flows และความเสี่ยงด้านการปฏิบัติการที่เกี่ยวข้อง" },
+          "shape": { "title": "Shape", "description": "เปรียบเทียบแนวทาง ทำต้นแบบแนวคิดที่ยังไม่แน่นอน และแบ่งงานเป็นส่วนที่ชัดเจน" },
+          "build": { "title": "Build", "description": "พัฒนาร่วมกันในเลเยอร์ที่จำเป็นด้วยรูปแบบที่ชัดเจนและนำกลับมาใช้ซ้ำได้" },
+          "verify": { "title": "Verify", "description": "ทดสอบต่อเนื่องด้วย unit, integration, end-to-end และการตรวจสอบด้วยตนเอง" },
+          "improve": { "title": "Improve", "description": "รีลีสอย่างระมัดระวัง ตรวจสอบพฤติกรรมในโปรดักชัน และปรับปรุงจากข้อมูลกับความคิดเห็น" }
+        }
+      }
+    },
+    "skills": {
+      "eyebrow": "ทักษะ",
+      "previous": "ประเภททักษะก่อนหน้า",
+      "next": "ประเภททักษะถัดไป",
+      "projectsLink": "ดูโครงการ",
+      "projectsMenu": "โครงการ",
+      "groups": {
+        "Languages": "ภาษา",
+        "BackendData": "แบ็กเอนด์และข้อมูล",
+        "Frontend": "ฟรอนต์เอนด์",
+        "CloudTools": "คลาวด์และเครื่องมือ",
+        "Frameworks": "เฟรมเวิร์ก",
+        "DevTools": "เครื่องมือพัฒนา",
+        "IT": "ไอที",
+        "Design": "การออกแบบ"
+      },
+      "views": {
+        "development": { "title": "การพัฒนา", "description": "เทคโนโลยีและเครื่องมือที่ผมใช้เพื่อสร้าง ส่งมอบ และขยายผลิตภัณฑ์ที่เชื่อถือได้" },
+        "infrastructure": { "title": "โครงสร้างพื้นฐาน", "description": "เครื่องมือพัฒนา แพลตฟอร์มคลาวด์ ระบบส่งมอบ และแนวทางปฏิบัติการสำหรับซอฟต์แวร์ที่เชื่อถือได้" },
+        "frameworks": { "title": "เฟรมเวิร์ก", "description": "เฟรมเวิร์กที่ผมใช้เปลี่ยนแนวคิดผลิตภัณฑ์เป็นอินเทอร์เฟซและบริการที่ดูแลต่อได้" },
+        "devTools": { "title": "เครื่องมือพัฒนา", "description": "เครื่องมือที่ผมใช้พัฒนา ทดสอบ จัดทำเอกสาร และส่งมอบซอฟต์แวร์" },
+        "it": { "title": "ไอที", "description": "แพลตฟอร์มคลาวด์และระบบส่งมอบที่ผมใช้ดูแลแอปพลิเคชันอย่างปลอดภัย" },
+        "design": { "title": "การออกแบบ", "description": "เครื่องมือและระบบออกแบบที่ผมใช้สร้างประสบการณ์ที่ชัดเจนและรอบคอบ" }
+      }
+    },
+    "projects": {
+      "eyebrow": "โครงการ",
+      "title": "สิ่งที่ผมสร้าง",
+      "introduction": "ตัวอย่างโครงการด้านเว็บ โมบาย แบ็กเอนด์ และข้อมูล แต่ละโครงการแก้ปัญหาจริงและสอนสิ่งใหม่ให้ผม",
+      "search": "ค้นหาโครงการ",
+      "github": "ดูโค้ดบน GitHub",
+      "jobs": {
+        "label": "กรองตามงาน",
+        "all": "งานทั้งหมด",
+        "mobian": "Mobian",
+        "faro": "Faro Health",
+        "independent": "ผู้รับเหมาอิสระ",
+        "various": "Various Inc.",
+        "launchBrigade": "Launch Brigade"
+      },
+      "technologies": "เทคโนโลยีของ {{name}}",
+      "viewProject": "ดู {{name}}",
+      "detail": { "eyebrow": "โครงการ", "back": "โครงการทั้งหมด" },
+      "categories": { "label": "หมวดหมู่โครงการ", "all": "ทั้งหมด", "web": "เว็บ", "mobile": "โมบาย", "backend": "แบ็กเอนด์", "data": "ข้อมูล" },
+      "cta": { "title": "มีไอเดียอยู่หรือไม่?", "description": "ผมเปิดรับโครงการและความร่วมมือที่น่าสนใจเสมอ", "label": "มาสร้างด้วยกัน" }
+    },
+    "theme": { "dark": "ธีมมืด", "light": "ธีมสว่าง" },
+    "lang": { "english": "อังกฤษ", "chinese": "จีน", "espanol": "สเปน", "thai": "ไทย", "german": "เยอรมัน", "korean": "เกาหลี" },
+    "nav": { "home": "หน้าแรก", "skills": "ทักษะ", "projects": "โครงการ", "microapps": "ไมโครแอป", "about": "เกี่ยวกับ", "jobs": "งาน" },
+    "jobs": { "content": { "5": "", "4": "", "3": "", "2": "", "1": "" } },
+    "data": {
+      "projects": {
+        "description": {
+          "1": "เครื่องมือซอฟต์แวร์สำหรับวางแผน ออกแบบ และปรับปรุงการศึกษาทางคลินิกด้วยการวิเคราะห์แบบเรียลไทม์",
+          "2": "แพลตฟอร์มวิดีโอสตรีมมิงและแชตแบบเรียลไทม์ที่มีทราฟฟิกสูง พร้อมการค้นหาไลฟ์ สถานะออนไลน์ การถ่ายทอดสาธารณะ และเซสชันส่วนตัว",
+          "3": "เว็บไซต์ข้อมูลและแบบสำรวจเกี่ยวกับการเปลี่ยนแปลงในเมือง San Anselmo",
+          "4": "เว็บไซต์สำหรับเอเจนซีออกแบบและพัฒนาเว็บ",
+          "5": "แอป POC สำหรับ microservice ด้านการวิเคราะห์ข้อมูลที่สร้างด้วย Python และ Pandas",
+          "6": "ระบบ Single Sign On ที่ไม่ผูกกับ IDP สำหรับแอป Study Designer",
+          "7": "เว็บไซต์สำหรับแอปรถมือสองที่ใช้ AI",
+          "8": "ฟรอนต์เอนด์ของแอปสาธิตเรขาคณิตสำหรับการรวมโครงสร้าง lattice",
+          "9": "การค้นหาแบบฟูลสแตก การวิเคราะห์ การกรอง และการส่งออกสำหรับแพลตฟอร์ม audience intelligence",
+          "10": "ฟีเจอร์ด้านคุณภาพข้อมูล เมทาดาทา การกู้คืน และ lookup สำหรับระบบประมวลผล contextual ปริมาณสูง",
+          "11": "การค้นหา entity ข้อมูลรายงาน การควบคุมแคมเปญ และการส่งออกข้ามระบบโฆษณา",
+          "12": "การปรับปรุงข้ามฟรอนต์เอนด์ การทดสอบ คลาวด์ observability ความปลอดภัย และรีลีส",
+          "13": "การปรับปรุง UI ฟรอนต์เอนด์ design system การค้นหา การกรอง dashboard และ interaction สำหรับแพลตฟอร์ม audience intelligence"
+        },
+        "content": {
+          "1": "<div><h3>ใช้ AI เพื่อพัฒนาการศึกษาทางคลินิก</h3><p>Faro Study Designer ถูกออกแบบมาเพื่อเพิ่มประสิทธิภาพและทำให้โปรโตคอลทางคลินิกเป็นมิตรกับผู้ป่วยมากขึ้น</p><p>Faro Health ระดมทุนรวม 38.3 ล้านดอลลาร์ โดยรอบล่าสุดประมาณ 20 ล้านดอลลาร์</p><p>ฟีเจอร์หลัก:</p><ul><li>การทำงานร่วมกันแบบเรียลไทม์</li><li>การวิเคราะห์ความเป็นไปได้ของการออกแบบ</li><li>การเปรียบเทียบกับข้อมูลในอดีต</li></ul></div>",
+          "2": "<div><h3>วิดีโอ แชต และการค้นหาไลฟ์แบบเรียลไทม์</h3><p>The Viewer เป็นแพลตฟอร์มไลฟ์สตรีมแบบโต้ตอบที่ผู้ใช้สามารถค้นหาผู้ถ่ายทอดที่ออนไลน์ เข้าห้องสาธารณะ ส่งข้อความแบบเรียลไทม์ และเปลี่ยนไปยังเซสชันวิดีโอส่วนตัว ระบบผสานการส่งวิดีโอและเสียงอย่างต่อเนื่องกับข้อมูลสถานะ ความพร้อม โปรไฟล์ และเซสชันที่เปลี่ยนแปลงรวดเร็ว</p><h3>ใครออนไลน์อยู่ตอนนี้</h3><p>หน้าดังกล่าวอัปเดตรายชื่อผู้ถ่ายทอดที่ใช้งานอยู่ตลอดเวลา พร้อมการค้นหา ตัวกรอง สถานะสด และการเข้าสู่ห้องสาธารณะหรือส่วนตัวโดยตรง</p><h3>ความสามารถของผลิตภัณฑ์</h3><ul><li>วิดีโอและเสียงแบบเรียลไทม์ในเซสชันสาธารณะและส่วนตัว</li><li>แชตสด สถานะออนไลน์ และการเปลี่ยนสถานะ</li><li>การค้นหา ตัวกรอง หมวดหมู่ และ responsive discovery</li><li>อัปเดต UI ความถี่สูงโดยไม่รบกวนการเล่นสื่อ</li><li>เชื่อมต่อกับ APIs ระบบบัญชี ข้อความ และเวิร์กโฟลว์เดิม</li></ul><h3>งานวิศวกรรม</h3><p>ผมทำงานในทีมฟรอนต์เอนด์นานาชาติเพื่อปรับปรุงแอป JavaScript และ Perl เดิมให้เป็นแพลตฟอร์ม React, TypeScript, Next.js และ WebSockets ที่ขยายได้</p><h3>ขนาดระบบโดยประมาณ</h3><p>จากอายุและการมองเห็นของแพลตฟอร์ม ผมประเมินว่ารองรับ 1–5 ล้านครั้งต่อเดือน 30,000–170,000 ครั้งต่อวัน ห้องไลฟ์พร้อมกันหลายร้อยห้อง และผู้ใช้เชื่อมต่อหลายพันคนในช่วงพีค ตัวเลขเหล่านี้เป็นการประมาณ ไม่ใช่ข้อมูลภายในบริษัท</p><div class='project-stats'><div><strong>1–5M</strong><span>จำนวนเข้าชมต่อเดือนโดยประมาณ</span></div><div><strong>30K–170K</strong><span>จำนวนเข้าชมต่อวันโดยประมาณ</span></div><div><strong>100s</strong><span>ห้องไลฟ์พร้อมกัน</span></div><div><strong>1K–10K</strong><span>ผู้ใช้เชื่อมต่อช่วงพีคโดยประมาณ</span></div><div><strong>หลายล้าน</strong><span>อีเวนต์เรียลไทม์ต่อวัน</span></div><div><strong>หลาย TB</strong><span>การส่งสื่อรายเดือนโดยประมาณ</span></div></div></div>",
+          "3": "<p>เว็บไซต์ WordPress สำหรับ San Anselmo General Plan Update 2025 ที่ให้ข้อมูลเรื่องโครงสร้างพื้นฐาน การแบ่งเขต พื้นที่สาธารณะ ความยั่งยืน การคมนาคม และแบบสำรวจเพื่อให้ชุมชนมีส่วนร่วม</p>",
+          "4": "<p>Launch Brigade เป็นเอเจนซีออกแบบและพัฒนาเว็บในซานฟรานซิสโกเบย์แอเรีย เชี่ยวชาญด้านประสบการณ์ดิจิทัลที่ช่วยยกระดับแบรนด์และการเติบโตของธุรกิจ</p>",
+          "5": "<p>Data Analytics Dashboard เป็น POC ที่สร้างด้วย Pandas โดยใช้ข้อมูล Study Design ใน star schema เพื่อสร้าง analytics microservice และ frontend ให้ผู้ใช้วิเคราะห์ข้อมูลตามมิติที่ต้องการ</p>",
+          "6": "<p>ระบบ SSO ที่ไม่ผูกกับ IDP สำหรับ Study Designer ทำให้องค์กรต่าง ๆ ใช้ผู้ให้บริการ SAML และ OAuth ของตนเองเพื่อรับ token สำหรับ API ได้</p>",
+          "7": "<p>LotLinx เป็นแพลตฟอร์มจัดการสต็อกรถยนต์ด้วย AI ใช้ machine learning และ data analytics เพื่อช่วยดีลเลอร์เพิ่มการหมุนเวียนสต็อก ปรับราคา และเพิ่มกำไร</p>",
+          "8": "<p>Metafold 3D เป็นแพลตฟอร์มคลาวด์สำหรับออกแบบโมเดล 3D ซับซ้อนและงาน additive manufacturing โดยจัดการเรขาคณิตและโครงสร้าง lattice ที่เครื่องมือ CAD แบบเดิมทำได้ยาก</p>",
+          "9": "<div><h3>Persona & Channel Intelligence</h3><p>มีส่วนร่วมในแพลตฟอร์ม audience intelligence สำหรับค้นหา persona ประเมินช่องเนื้อหา ดูข้อมูลประสิทธิภาพ และส่งออกผลลัพธ์ที่กรองแล้ว</p><h3>สิ่งที่ผมสร้าง</h3><ul><li>การค้นหา autocomplete ฝั่งเซิร์ฟเวอร์ pagination และ infinite scroll</li><li>ตัวกรองวันที่ สถิติช่อง และประวัติ</li><li>frontend proxy ข้อจำกัดการค้นหา logging และ loading states</li><li>ดาวน์โหลด CSV แบบ streaming ที่รักษาตัวกรอง</li></ul><p>ทำงานข้าม React, Next.js, FastAPI, PostgreSQL, OpenSearch, Redis, caches และ scheduled processing</p></div>",
+          "10": "<div><h3>Context Ingestion & Brand-Safety Tooling</h3><p>สร้างเครื่องมือปฏิบัติการและปรับปรุง ingestion สำหรับระบบที่ประมวลผล metadata ของเว็บ URL วิดีโอ ช่อง และการจัดประเภท</p><h3>สิ่งที่ผมสร้าง</h3><ul><li>ฟิลด์ full-context และการจัดเก็บ metadata</li><li>เครื่องมือ cleanup alias URL prefix และ batch แบบมีขอบเขต</li><li>checkpoint ที่เสถียรและ retry ที่ปลอดภัย</li><li>ค้นหาช่องผ่าน URL, ID scan, HTML fallback และ cache</li><li>cloud diagnostics แบบมีโครงสร้าง</li></ul><p>ใช้ Python, FastAPI, PostgreSQL, Redis, AWS Lambda, CloudWatch, SAM, CloudFormation และ Terraform</p></div>",
+          "11": "<div><h3>Advertising Operations & Reporting Integrations</h3><p>เชื่อมเวิร์กโฟลว์ผู้ลงโฆษณา เซกเมนต์ การ targeting รายงาน และการส่งออกในแพลตฟอร์มวิเคราะห์โฆษณา</p><h3>สิ่งที่ผมสร้าง</h3><ul><li>รองรับ entity ข้ามหลายแพลตฟอร์มโฆษณา</li><li>server-side search, sorting และแก้ชื่อซ้ำ</li><li>mapping placement-to-line-item และปรับปรุง report cache</li><li>CSV exports ที่รักษาตัวกรองและ pagination</li><li>แก้ไข frontend ของ advertiser, campaign และ segment flows</li></ul><p>ใช้ Next.js, React, TypeScript, Material UI, FastAPI, Python, Snowflake, Dagster และ PostgreSQL</p></div>",
+          "12": "<div><h3>Platform Engineering, Testing & Product Infrastructure</h3><p>สร้างพื้นฐานที่นำกลับมาใช้ซ้ำได้และ safeguards สำหรับรีลีสข้ามผลิตภัณฑ์ บริการ คลาวด์ และเวิร์กโฟลว์พัฒนา</p><h3>สิ่งที่ปรับปรุง</h3><ul><li>semantic design tokens และ Material UI variants</li><li>Cypress, Playwright และ authenticated smoke tests</li><li>scheduled serverless jobs, cloud diagnostics, observability และ infrastructure</li><li>security updates, authentication, release coordination และเอกสาร</li></ul><p>ประสานการเปลี่ยนแปลงข้าม React, Next.js, TypeScript, Python, AWS, Terraform, OpenSearch, ETL และ deployment</p></div>",
+          "13": "<div><h3>Frontend UI & Design System</h3><p>สร้างและปรับปรุงประสบการณ์ฟรอนต์เอนด์ที่นำกลับมาใช้ซ้ำได้ในแพลตฟอร์ม audience intelligence และ advertising analytics โดยเน้นความชัดเจน สอดคล้อง responsive และ interaction ที่เชื่อถือได้</p><h3>สิ่งที่ผมสร้าง</h3><ul><li>search, autocomplete, filtering, pagination, infinite scroll และ states</li><li>Material UI components, design tokens, variants และ migration patterns</li><li>responsive dashboards, galleries, tables, drawers และ exports</li><li>frontend API proxy, URL state, query และ error handling</li><li>automated tests ด้วย Jest, Cypress และ Playwright</li></ul><p>ใช้ React, Next.js, TypeScript, JavaScript, HTML5, CSS/SCSS, Material UI, Storybook และ GitHub Actions</p></div>"
+        }
+      },
+      "jobs": {
+        "title": {
+          "1": "นักพัฒนาฟูลสแตกอาวุโส",
+          "2": "หัวหน้านักพัฒนาฟรอนต์เอนด์อาวุโส",
+          "3": "นักพัฒนาฟรอนต์เอนด์",
+          "4": "นักศึกษาฝึกงานพัฒนาฟรอนต์เอนด์",
+          "5": "นักศึกษาฝึกงานออกแบบ"
+        }
+      }
+    }
+  }
+}

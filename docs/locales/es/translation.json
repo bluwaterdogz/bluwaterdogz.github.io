@@ -1,0 +1,203 @@
+{
+  "translation": {
+    "home": {
+      "header": "<span>Hola<br /> Soy Brian Velasquez,<br /><em>Ingeniero Full Stack <br />Senior.</em></span>",
+      "heroEyebrow": "Hola",
+      "heroName": "Soy Brian Velasquez,",
+      "heroRole": "Ingeniero Full Stack Senior.",
+      "heroIntroduction": "Creo aplicaciones web escalables y modernizo sistemas que impulsan el crecimiento del negocio. Me apasionan el código limpio, la arquitectura bien pensada y las experiencias de usuario excepcionales.",
+      "switchBackground": "Cambiar fondo principal",
+      "backgrounds": { "type1": "Tipo 1", "type2": "Tipo 2" },
+      "aboutHeader": "¿Quién soy?",
+      "about": "Desarrollador web full stack senior con experiencia en TypeScript, React, Angular, Node.js y Python. He liderado equipos internacionales, modernizado sistemas heredados, optimizado arquitecturas e implementado canalizaciones CI/CD para despliegues eficientes. Me apasiona crear soluciones escalables y centradas en el usuario que impulsen el crecimiento del negocio.",
+      "aboutEyebrow": "Sobre mí",
+      "aboutTitle": "Creando soluciones. Liderando equipos",
+      "aboutLink": "Más sobre mí",
+      "features": {
+        "experience": "Años de experiencia",
+        "projects": "Proyectos completados",
+        "international": "Internacional",
+        "collaboration": "Colaboración en equipo",
+        "focus": "Enfoque",
+        "performance": "Rendimiento, escalabilidad, UX"
+      },
+      "section1Title": "Experiencia",
+      "section1Content1": "En mi puesto más reciente como desarrollador full stack senior en la startup farmacéutica Faro Health, construí y optimicé microservicios REST y CQRS, además de módulos de interfaz, con TypeScript, Node.js, PostgreSQL, Jest y React. Desarrollé funcionalidades verticales y pruebas de concepto, diseñé y ejecuté soluciones técnicas, escribí pruebas unitarias y de integración, optimicé el rendimiento y construí canalizaciones de despliegue con GitHub Actions.",
+      "section1Content2": "Anteriormente dirigí un equipo frontend remoto e internacional en Various Inc., colaborando estrechamente con diseñadores para modernizar aplicaciones heredadas de streaming de video basadas en JavaScript y Perl. Las migramos a una plataforma escalable y de alto rendimiento con React, TypeScript, Next.js, MobX, WebSockets y Python, respaldada por APIs REST y una canalización CI/CD.",
+      "experience": {
+        "eyebrow": "02 Experiencia",
+        "title": "Experiencia",
+        "copy1": "Más recientemente, en Mobian, trabajé en una gran plataforma con múltiples repositorios que abarcaba controles de campañas, galerías de anunciantes y segmentos, búsqueda de personas, inteligencia de canales, metadatos de seguridad de marca, integraciones de informes y canalizaciones de datos.",
+        "copy2": "Construí y perfeccioné búsquedas, filtros, paginación, autocompletado, exportaciones CSV, estadísticas, comportamiento de caché, herramientas de ingesta y flujos de informes con Next.js, React, TypeScript, FastAPI, PostgreSQL, OpenSearch, Snowflake, Dagster, Redis y AWS.",
+        "copy3": "El trabajo cruzaba habitualmente frontend, backend, ETL, búsqueda e infraestructura. También gestioné correcciones de producción, cobertura de pruebas, coordinación de lanzamientos, reconciliación de marcas e integraciones entre frontend, Persona API, Content API, Video Brand Safety, ETL y repositorios de pruebas end-to-end.",
+        "copy4": "Anteriormente, en Faro Health, construí y optimicé aplicaciones TypeScript y React respaldadas por microservicios REST y CQRS, PostgreSQL, pruebas automatizadas y canalizaciones de despliegue con GitHub Actions.",
+        "copy5": "Antes, en Various Inc., dirigí un equipo frontend internacional modernizando aplicaciones heredadas de JavaScript y Perl hacia una plataforma escalable con React, TypeScript, Next.js, WebSockets y Python.",
+        "link": "Ver mi experiencia",
+        "timelineHeading": "Trayectoria profesional",
+        "timeline": {
+          "mobianPeriod": "2025 - Actualidad",
+          "mobianCompany": "Mobian",
+          "mobianSummary": "Ingeniero full stack en una plataforma multi-repositorio para controles de campañas, búsqueda, analítica, seguridad de marca y canalizaciones de datos.",
+          "contractorPeriod": "2024 - 2025",
+          "contractorCompany": "Contratista independiente",
+          "contractorSummary": "Realicé proyectos específicos de aplicaciones web, producto y consultoría técnica para clientes independientes.",
+          "faroPeriod": "2022 - 2024",
+          "faroCompany": "Faro Health",
+          "faroSummary": "Construí y optimicé aplicaciones TypeScript y React con microservicios, PostgreSQL, pruebas automatizadas y GitHub Actions.",
+          "variousPeriod": "2018 - 2021",
+          "variousCompany": "Various Inc.",
+          "variousSummary": "Dirigí un equipo frontend internacional modernizando plataformas heredadas hacia una arquitectura escalable con React, TypeScript y Next.js.",
+          "launchPeriod": "2015 - 2018",
+          "launchCompany": "Launch Brigade",
+          "launchSummary": "Construí y mantuve sitios web responsivos y productos digitales para una agencia de diseño y desarrollo del Área de la Bahía."
+        }
+      },
+      "leadership": {
+        "eyebrow": "03 Líder técnico",
+        "title": "Líder técnico",
+        "copy1": "He liderado y colaborado con equipos distribuidos en Estados Unidos, Europa, Taiwán y China, trabajando con producto, diseño, ingeniería, datos e infraestructura.",
+        "copy2": "Mi enfoque es práctico: establecer una dirección técnica clara, reducir la complejidad innecesaria, detectar riesgos pronto y mantener al equipo centrado en entregar trabajo fiable. En Mobian, esto implicaba coordinar cambios entre varios servicios y repositorios preservando contratos de datos, comportamiento de búsqueda, estabilidad de lanzamientos y experiencia de usuario.",
+        "copy3": "Me muevo con soltura entre arquitectura e implementación: diseño sistemas, depuro problemas de producción, reviso alternativas, mejoro flujos de desarrollo y ayudo a convertir requisitos amplios en soluciones concretas y mantenibles.",
+        "link": "Leer sobre mi enfoque",
+        "regionsHeading": "Dónde colaboro",
+        "regions": {
+          "northAmerica": "Norteamérica",
+          "southAmerica": "Sudamérica",
+          "europe": "Europa",
+          "asia": "Asia"
+        },
+        "summary": "Liderazgo multidisciplinar en producto, diseño, ingeniería, datos e infraestructura.",
+        "stats": { "regions": "4 regiones", "timeZones": "Varias zonas horarias" }
+      },
+      "section2Title": "Líder técnico",
+      "section2Content1": "Tras liderar un gran equipo internacional en Estados Unidos, Europa, Taiwán y China, aporto una sólida experiencia en TypeScript, Node.js, PostgreSQL, Jest y React. Además del diseño y desarrollo técnico, mis habilidades de liderazgo mantienen a los equipos alineados, enfocados y avanzando hacia los hitos y objetivos de la empresa."
+    },
+    "about": {
+      "eyebrow": "Sobre mí",
+      "portraitAlt": "Brian Velasquez",
+      "title": "Hola, soy Brian",
+      "role": "Ingeniero de software senior",
+      "section1": "Brian es un ingeniero de software senior con experiencia y pasión por el código elegante y escalable, y por una UX mínima e intuitiva.",
+      "section2": "En su tiempo libre le gusta escalar, jugar al ajedrez, explorar en moto de tierra y practicar Muay Thai.",
+      "location": "Actualmente en Chiang Mai, Tailandia",
+      "cta": "Construyamos algo excelente",
+      "outsideCode": "Fuera del código",
+      "buildWith": "Tecnologías que uso",
+      "interests": {
+        "climbing": { "title": "Escalada", "description": "Me encanta el reto y la concentración que aporta la escalada. Me mantiene con los pies en la tierra y aprendiendo siempre." },
+        "chess": { "title": "Ajedrez", "description": "El ajedrez enseña paciencia, estrategia y a observar los problemas desde distintos ángulos." },
+        "dirtbike": { "title": "Moto de tierra", "description": "Explorar nuevos caminos y conducir fuera de carretera es mi forma de desconectar y recargar energías." },
+        "muayThai": { "title": "Muay Thai", "description": "Entrenar Muay Thai desarrolla disciplina, resiliencia y claridad mental." }
+      },
+      "quote": "Creo en escribir código limpio, mantenible y preparado para durar. Me importan las experiencias de usuario bien pensadas y los productos que generan un impacto real.",
+      "process": {
+        "eyebrow": "Mi proceso",
+        "title": "Del problema a producción",
+        "description": "Un enfoque colaborativo e iterativo que mantiene claros los objetivos, las decisiones técnicas y la calidad desde el descubrimiento hasta el lanzamiento.",
+        "aiTitle": "Ingeniería generativa, con responsabilidad y experiencia",
+        "aiDescription": "Uso IA para acelerar la investigación, planificación, revisión, pruebas y documentación, verificando cada resultado contra el código y el comportamiento real del sistema.",
+        "steps": {
+          "align": { "title": "Alinear", "description": "Aclarar el problema, las restricciones, las dependencias y la definición de éxito." },
+          "map": { "title": "Mapear", "description": "Trazar la interfaz, los servicios, los flujos de datos y los riesgos operativos relevantes." },
+          "shape": { "title": "Dar forma", "description": "Comparar enfoques, prototipar ideas inciertas y dividir el trabajo en incrementos enfocados." },
+          "build": { "title": "Construir", "description": "Implementar de forma colaborativa en las capas necesarias utilizando patrones claros y reutilizables." },
+          "verify": { "title": "Verificar", "description": "Probar continuamente con validación unitaria, de integración, end-to-end y manual." },
+          "improve": { "title": "Mejorar", "description": "Publicar con cuidado, revisar el comportamiento en producción y refinar según datos y comentarios." }
+        }
+      }
+    },
+    "skills": {
+      "eyebrow": "Habilidades",
+      "previous": "Tipo de habilidad anterior",
+      "next": "Siguiente tipo de habilidad",
+      "projectsLink": "Ver proyectos",
+      "projectsMenu": "Proyectos",
+      "groups": {
+        "Languages": "Lenguajes",
+        "BackendData": "Backend y datos",
+        "Frontend": "Frontend",
+        "CloudTools": "Nube y herramientas",
+        "Frameworks": "Frameworks",
+        "DevTools": "Herramientas de desarrollo",
+        "IT": "TI",
+        "Design": "Diseño"
+      },
+      "views": {
+        "development": { "title": "Desarrollo", "description": "Tecnologías y herramientas que uso para construir, publicar y escalar productos fiables." },
+        "infrastructure": { "title": "Infraestructura", "description": "Herramientas de desarrollo, plataformas cloud, sistemas de entrega y prácticas operativas que uso para ejecutar software fiable." },
+        "frameworks": { "title": "Frameworks", "description": "Frameworks de aplicación que uso para convertir ideas de producto en interfaces y servicios mantenibles." },
+        "devTools": { "title": "Herramientas de desarrollo", "description": "Herramientas que uso para desarrollar, probar, documentar y publicar software fiable." },
+        "it": { "title": "TI", "description": "Plataformas cloud y de entrega que uso para operar aplicaciones de forma segura." },
+        "design": { "title": "Diseño", "description": "Herramientas y sistemas de diseño que uso para crear experiencias claras y cuidadas." }
+      }
+    },
+    "projects": {
+      "eyebrow": "Proyectos",
+      "title": "Cosas que he creado",
+      "introduction": "Una selección de proyectos de web, móvil, backend y datos. Cada uno resolvió un problema real y me enseñó algo nuevo.",
+      "search": "Buscar proyectos",
+      "github": "Ver código en GitHub",
+      "jobs": {
+        "label": "Filtrar por empleo",
+        "all": "Todos los empleos",
+        "mobian": "Mobian",
+        "faro": "Faro Health",
+        "independent": "Contratista independiente",
+        "various": "Various Inc.",
+        "launchBrigade": "Launch Brigade"
+      },
+      "technologies": "Tecnologías de {{name}}",
+      "viewProject": "Ver {{name}}",
+      "detail": { "eyebrow": "Proyecto", "back": "Todos los proyectos" },
+      "categories": { "label": "Categorías de proyectos", "all": "Todos", "web": "Web", "mobile": "Móvil", "backend": "Backend", "data": "Datos" },
+      "cta": { "title": "¿Tienes una idea?", "description": "Siempre estoy abierto a proyectos y colaboraciones interesantes.", "label": "Construyamos algo" }
+    },
+    "theme": { "dark": "Tema oscuro", "light": "Tema claro" },
+    "lang": { "english": "Inglés", "chinese": "Chino", "espanol": "Español", "thai": "Tailandés", "german": "Alemán", "korean": "Coreano" },
+    "nav": { "home": "Inicio", "skills": "Habilidades", "projects": "Proyectos", "microapps": "Microaplicaciones", "about": "Sobre mí", "jobs": "Empleos" },
+    "jobs": { "content": { "5": "", "4": "", "3": "", "2": "", "1": "" } },
+    "data": {
+      "projects": {
+        "description": {
+          "1": "Una herramienta de software para planificar, diseñar y optimizar estudios clínicos con analítica en tiempo real",
+          "2": "Una plataforma de streaming de video y chat en tiempo real y de alto tráfico, con descubrimiento en vivo, presencia, emisiones públicas y sesiones privadas interactivas",
+          "3": "Un sitio informativo y de encuestas sobre próximos cambios en la ciudad de San Anselmo",
+          "4": "Sitio web para una agencia de diseño y desarrollo web",
+          "5": "Aplicación de prueba de concepto de un microservicio de analítica de datos creado con Python y Pandas",
+          "6": "Implementación de inicio de sesión único independiente del proveedor de identidad para la aplicación de diseño de estudios",
+          "7": "Sitio web para una aplicación de vehículos usados impulsada por IA",
+          "8": "Frontend de una aplicación de demostración geométrica para combinar estructuras reticulares",
+          "9": "Búsqueda full stack, analítica, filtrado y exportación para una plataforma de inteligencia de audiencias",
+          "10": "Funciones de calidad de datos, metadatos, recuperación y consulta para sistemas contextuales de alto rendimiento",
+          "11": "Búsqueda de entidades, datos de informes, control de campañas y exportaciones entre sistemas publicitarios",
+          "12": "Mejoras transversales de frontend, pruebas, nube, observabilidad, seguridad y lanzamientos",
+          "13": "Mejoras de interfaz, sistema de diseño, búsqueda, filtros, paneles e interacciones para una plataforma de inteligencia de audiencias"
+        },
+        "content": {
+          "1": "<div><h3>Uso de IA para el desarrollo de estudios clínicos.</h3><p>El producto principal de la empresa, Faro Study Designer, está diseñado para mejorar la eficiencia y hacer que los protocolos clínicos sean más favorables para los pacientes.</p><p>Faro Health ha recibido una inversión significativa, con un total de 38,3 millones de dólares, incluidos 20 millones recaudados aproximadamente dos años atrás.</p><p>Funciones principales:</p><ul><li>Colaboración en tiempo real: facilita procesos de documentación precisos y eficientes.</li><li>Análisis de viabilidad: evalúa el impacto de las decisiones de diseño en la probabilidad de éxito del estudio.</li><li>Comparación: contrasta protocolos con datos históricos y variaciones de diseño.</li></ul></div>",
+          "2": "<div><h3>Video, chat y descubrimiento en vivo</h3><p>The Viewer es una plataforma interactiva de streaming en vivo donde los usuarios pueden descubrir emisores disponibles, entrar en salas públicas, comunicarse mediante mensajería en tiempo real y pasar a sesiones privadas de video. La experiencia combina entrega continua de video y audio con datos de presencia, disponibilidad, perfil y sesión que cambian rápidamente.</p><h3>Quién está en línea ahora</h3><p>La experiencia Quién está en línea ahora ofrece una vista actualizada continuamente de los emisores activos. Los usuarios pueden explorar perfiles, buscar y filtrar salas, revisar información de estado en vivo y pasar directamente del descubrimiento a una emisión activa o sesión privada.</p><h3>Capacidades del producto</h3><ul><li>Streaming de video y audio en tiempo real en sesiones públicas y privadas</li><li>Chat de texto en vivo, indicadores de presencia, cambios de disponibilidad y actualizaciones de estado</li><li>Búsqueda, filtros, categorías y descubrimiento responsivo de emisores</li><li>Actualizaciones frecuentes de la interfaz sin interrumpir la reproducción multimedia</li><li>Interfaces responsivas para sesiones largas e intensivas en interacción</li><li>Integración con APIs, sistemas de cuentas, servicios de mensajería y flujos heredados</li></ul><h3>Trabajo de ingeniería</h3><p>Trabajé en un equipo frontend internacional modernizando aplicaciones existentes de JavaScript y Perl hacia una plataforma más escalable con React, TypeScript, Next.js y WebSockets. El trabajo implicó coordinar streaming, eventos de chat, presencia, transiciones a sesiones privadas, APIs heredadas y estado de interfaz de alta frecuencia.</p><h3>Escala de producción estimada</h3><p>No hay métricas internas disponibles, pero según la antigüedad, amplitud y visibilidad pública de la plataforma, estimo entre 1 y 5 millones de visitas mensuales, entre 30.000 y 170.000 visitas diarias, cientos de salas en vivo simultáneas y varios miles de usuarios conectados en horas punta. A esa escala, la aplicación podría procesar millones de eventos diarios y entregar varios terabytes de contenido multimedia al mes. Son estimaciones orientativas, no cifras oficiales.</p><div class='project-stats'><div><strong>1–5M</strong><span>Visitas mensuales estimadas</span></div><div><strong>30K–170K</strong><span>Visitas diarias estimadas</span></div><div><strong>100s</strong><span>Salas en vivo simultáneas</span></div><div><strong>1K–10K</strong><span>Usuarios conectados estimados en hora punta</span></div><div><strong>Millones</strong><span>Eventos en tiempo real por día</span></div><div><strong>Varios terabytes</strong><span>Entrega multimedia mensual estimada</span></div></div></div>",
+          "3": "<p>Un sitio WordPress para la actualización del Plan General 2025 de San Anselmo que ofrece a los residentes información completa sobre cambios propuestos en infraestructura, zonificación y espacios públicos. Incluye actualizaciones detalladas, iniciativas de sostenibilidad, mejoras de transporte y encuestas interactivas para participar en la toma de decisiones.</p>",
+          "4": "<p>Launch Brigade es una agencia de diseño y desarrollo web del Área de la Bahía de San Francisco especializada en crear experiencias digitales que elevan marcas e impulsan el crecimiento empresarial. Su sitio refleja su compromiso con soluciones digitales integrales.</p>",
+          "5": "<p>Data Analytics Dashboard fue una prueba de concepto creada con Pandas que utilizaba datos de diseño de estudios almacenados en un esquema estrella para crear un microservicio de analítica y un frontend. Permitía a los usuarios analizar sus estudios según cualquier dimensión de datos elegida.</p>",
+          "6": "<p>Implementación de inicio de sesión único independiente del proveedor de identidad para Study Designer. Permitía que distintas organizaciones utilizaran sus propios proveedores SAML y OAuth para obtener tokens con los que interactuar con la API.</p>",
+          "7": "<p>LotLinx es una plataforma de gestión de inventario automotriz impulsada por IA que utiliza aprendizaje automático y analítica de datos para ayudar a concesionarios a optimizar la rotación y rentabilidad del inventario. Proporciona información en tiempo real sobre demanda, precios y comportamiento del consumidor para reducir costes y mejorar la eficiencia.</p>",
+          "8": "<p>Metafold 3D es una plataforma cloud para diseñar modelos 3D altamente complejos y optimizados para fabricación aditiva. Resuelve las limitaciones de las herramientas CAD tradicionales al manejar geometrías intrincadas, como estructuras reticulares, y permite combinar diseños ligeros y eficientes.</p>",
+          "9": "<div><h3>Inteligencia de personas y canales</h3><p>Contribuí a una plataforma consolidada de inteligencia de audiencias para descubrir personas, evaluar canales de contenido, revisar datos de rendimiento y exportar resultados filtrados.</p><h3>Lo que construí</h3><ul><li>Búsqueda de personas y canales con autocompletado del servidor, paginación y desplazamiento infinito</li><li>Filtros por fechas, estadísticas de canales e historial</li><li>Rutas proxy frontend, límites de búsqueda, registro y estados de carga fiables</li><li>Descargas CSV por streaming que conservan filtros y parámetros</li></ul><h3>Proceso y contexto de producción</h3><p>Rastreé el comportamiento entre React, Next.js, FastAPI, PostgreSQL, OpenSearch, Redis, cachés y procesamiento programado dentro de una plataforma de alto volumen.</p></div>",
+          "10": "<div><h3>Ingesta contextual y herramientas de seguridad de marca</h3><p>Construí herramientas operativas y mejoras de ingesta para sistemas de inteligencia contextual y seguridad de marca que procesan metadatos de páginas, URLs, videos, canales y clasificaciones.</p><h3>Lo que construí</h3><ul><li>Campos de contexto completo y persistencia de metadatos</li><li>Herramientas acotadas de limpieza, prefijos URL, alias y procesamiento por lotes</li><li>Estabilización de checkpoints y reintentos que preservan alias promovidos</li><li>Descubrimiento de canales mediante análisis de URL, escaneo de IDs, fallback HTML, caché y poda</li><li>Diagnósticos cloud estructurados para fallos de consulta y procesamiento</li></ul><p>Trabajé con Python, FastAPI, PostgreSQL, Redis, AWS Lambda, CloudWatch, SAM, CloudFormation, Terraform, workers asíncronos y canalizaciones de metadatos de alto rendimiento.</p></div>",
+          "11": "<div><h3>Operaciones publicitarias e integraciones de informes</h3><p>Conecté flujos de anunciantes, segmentos de audiencia, segmentación, informes y exportaciones en una plataforma consolidada de analítica publicitaria.</p><h3>Lo que construí</h3><ul><li>Soporte de anunciantes y entidades de informes en varias plataformas publicitarias</li><li>Búsqueda y ordenación del servidor, desambiguación de nombres duplicados y etiquetas por fuente</li><li>Mapeo de placements a line items y mejoras de caché de informes</li><li>Exportaciones CSV de segmentos y galerías que conservan filtros y paginación</li><li>Correcciones frontend en flujos de anunciantes, campañas y segmentos</li></ul><p>Trabajé con Next.js, React, TypeScript, Material UI, FastAPI, Python, Snowflake, Dagster, PostgreSQL, integraciones externas y cachés gestionadas por ETL.</p></div>",
+          "12": "<div><h3>Ingeniería de plataforma, pruebas e infraestructura de producto</h3><p>Construí bases reutilizables y salvaguardas de lanzamiento para áreas de producto, servicios, infraestructura cloud y flujos de desarrollo.</p><h3>Lo que mejoré</h3><ul><li>Tokens de diseño semánticos, variantes de Material UI, integración de paletas y ejemplos de migración</li><li>Configuración moderna de Cypress, smoke tests autenticados, cobertura Playwright y fixtures reutilizables</li><li>Tareas serverless programadas, diagnósticos cloud, observabilidad, correcciones de contenedores y configuración de infraestructura</li><li>Actualizaciones de seguridad, autenticación, coordinación de lanzamientos y documentación técnica</li></ul><p>Coordiné cambios compatibles entre React, Next.js, TypeScript, Python, AWS Lambda, ECS, CloudWatch, Terraform, OpenSearch, frontend, backend, ETL, búsqueda y despliegue.</p></div>",
+          "13": "<div><h3>Interfaz frontend y sistema de diseño</h3><p>Construí y perfeccioné experiencias frontend reutilizables en una plataforma consolidada de inteligencia de audiencias y analítica publicitaria, con foco en claridad, coherencia, adaptación y comportamiento fiable.</p><h3>Lo que construí</h3><ul><li>Búsqueda, autocompletado, filtros, paginación, desplazamiento infinito, estados de carga y vacíos</li><li>Componentes Material UI reutilizables, tokens semánticos, integración de paletas, variantes y patrones de migración</li><li>Paneles, galerías, tablas, cajones, menús y exportaciones responsivas</li><li>Proxying de APIs frontend, sincronización con URL, consultas y mejoras de errores</li><li>Cobertura automatizada con Jest, Cypress, Playwright, fixtures autenticados y smoke tests</li></ul><h3>Arquitectura frontend</h3><p>Trabajé principalmente con React, Next.js, TypeScript, JavaScript, HTML5, CSS/SCSS, Material UI, Storybook, GitHub Actions y herramientas de pruebas frontend, coordinando la interfaz con servicios FastAPI, búsqueda, informes y exportaciones.</p></div>"
+        }
+      },
+      "jobs": {
+        "title": {
+          "1": "Desarrollador full stack senior",
+          "2": "Desarrollador frontend principal senior",
+          "3": "Desarrollador frontend",
+          "4": "Practicante de desarrollo frontend",
+          "5": "Practicante de diseño"
+        }
+      }
+    }
+  }
+}

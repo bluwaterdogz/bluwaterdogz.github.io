@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 import { JobTimeline, JobTimelineItem } from "../../components/home/job-timeline";
 import { SkillTimeline } from "../../components/skills/skill-timeline";
 import { skillGroupings } from "../../service/skill/data";
+import { linkedinProfileUrl } from "../../service/consts";
 import styles from "./styles.module.scss";
 
 const interests = [
@@ -73,9 +73,14 @@ export const AboutPage = () => {
               <i className="fa fa-map-marker" aria-hidden="true" />
               {t("about.location")}
             </p>
-            <Link className={styles.link} to="/projects">
+            <a
+              className={styles.link}
+              href={linkedinProfileUrl}
+              rel="noreferrer"
+              target="_blank"
+            >
               {t("about.cta")} <span aria-hidden="true">&#8594;</span>
-            </Link>
+            </a>
           </div>
         </section>
 
@@ -93,7 +98,6 @@ export const AboutPage = () => {
           <JobTimeline
             className={styles.processTimeline}
             items={processSteps}
-            variant="light"
           />
         </section>
 

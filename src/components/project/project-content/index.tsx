@@ -60,7 +60,6 @@ export const ProjectContent = ({ project }: ProjectContentProps) => {
           description="I'm always open to interesting projects and collaborations."
           label="Let's build something"
           title="Have an idea in mind?"
-          to="/about"
         />
       </div>
     </section>

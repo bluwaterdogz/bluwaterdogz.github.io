@@ -1,6 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useThemeStore } from "../../stores/ThemeStore";
+import { linkedinProfileUrl } from "../../service/consts";
 import styles from "./styles.module.scss";
 
 interface FooterProps {
@@ -38,7 +39,7 @@ export const Footer = ({
           </div>
           <div className={styles.footerLink}>
             <a
-              href="https://linkedin.com/in/brian-velasquez-developer"
+              href={linkedinProfileUrl}
               target={"_blank"}
             >
               <i className="devicon-linkedin-plain"></i> LinkedIn

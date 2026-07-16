@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 import { ContentSection } from "../../content-section";
 import {
   CollaborationRegion,
@@ -9,6 +8,7 @@ import asia from "../../../assets/svgs/asia.svg";
 import europe from "../../../assets/svgs/europe.svg";
 import northAmerica from "../../../assets/svgs/north-america.svg";
 import southAmerica from "../../../assets/svgs/south-america.svg";
+import { linkedinProfileUrl } from "../../../service/consts";
 import styles from "./styles.module.scss";
 
 export const LeadershipSection = () => {
@@ -40,10 +40,15 @@ export const LeadershipSection = () => {
           <p>{t("home.leadership.copy2")}</p>
           <p>{t("home.leadership.copy3")}</p>
         </div>
-        <Link className={styles.link} to="/about">
+        <a
+          className={styles.link}
+          href={linkedinProfileUrl}
+          rel="noreferrer"
+          target="_blank"
+        >
           {t("home.leadership.link")}
           <span aria-hidden="true">&#8594;</span>
-        </Link>
+        </a>
       </div>
       <CollaborationRegions
         heading={t("home.leadership.regionsHeading")}

@@ -8,6 +8,7 @@ import styles from "./styles.module.scss";
 import { useTranslation } from "react-i18next";
 import { PageHeading } from "../../components/common/page-heading";
 import { PageShell } from "../../components/common/page-shell";
+import { linkedinProfileUrl } from "../../service/consts";
 
 export const SkillsPage = () => {
   const { t } = useTranslation();
@@ -53,10 +54,15 @@ export const SkillsPage = () => {
                 <i className="fa fa-arrow-right" aria-hidden="true" />
               </Link>
             </div>
-            <Link className={styles.link} to="/projects">
+            <a
+              className={styles.link}
+              href={linkedinProfileUrl}
+              rel="noreferrer"
+              target="_blank"
+            >
               {t("skills.projectsLink")}
               <span aria-hidden="true">&#8594;</span>
-            </Link>
+            </a>
           </PageHeading>
           <SkillTimeline groups={getSkillGroupingsForSection(activeView)} />
         </div>

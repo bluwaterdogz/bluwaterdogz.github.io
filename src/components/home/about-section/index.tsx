@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 import { FeatureList, FeatureListItem } from "../feature-list";
 import { ContentSection } from "../../content-section";
+import { linkedinProfileUrl } from "../../../service/consts";
 import styles from "./styles.module.scss";
 
 export const AboutSection = () => {
@@ -33,10 +33,15 @@ export const AboutSection = () => {
         <div className={styles.copy}>
           <p>{t("home.about")}</p>
         </div>
-        <Link className={styles.link} to="/about">
+        <a
+          className={styles.link}
+          href={linkedinProfileUrl}
+          rel="noreferrer"
+          target="_blank"
+        >
           {t("home.aboutLink")}
           <span aria-hidden="true">&#8594;</span>
-        </Link>
+        </a>
       </div>
       <FeatureList items={features} />
     </ContentSection>

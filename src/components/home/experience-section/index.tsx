@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 import { ContentSection } from "../../content-section";
 import { JobTimeline, JobTimelineItem } from "../job-timeline";
+import { linkedinProfileUrl } from "../../../service/consts";
 import styles from "./styles.module.scss";
 
 export const ExperienceSection = () => {
@@ -55,10 +55,15 @@ export const ExperienceSection = () => {
           <p>{t("home.experience.copy4")}</p>
           <p>{t("home.experience.copy5")}</p>
         </div>
-        <Link className={styles.link} to="/about">
+        <a
+          className={styles.link}
+          href={linkedinProfileUrl}
+          rel="noreferrer"
+          target="_blank"
+        >
           {t("home.experience.link")}
           <span aria-hidden="true">&#8594;</span>
-        </Link>
+        </a>
       </div>
       <JobTimeline heading={t("home.experience.timelineHeading")} items={jobs} />
     </ContentSection>

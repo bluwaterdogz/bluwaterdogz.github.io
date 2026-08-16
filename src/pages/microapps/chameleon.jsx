@@ -110,12 +110,25 @@ export default function Chameleon() {
       isHost
     } = session
 
-    const room = joinRoom(
-      {
-        appId: APP_ID
-      },
-      roomId
-    )
+const room = joinRoom(
+  {
+    appId: APP_ID
+  },
+  roomId,
+  {
+    onJoinError: details => {
+      console.error('TRYSTERO JOIN ERROR', details)
+
+      setError(
+        `Connection failed: ${
+          details?.error?.message ||
+          details?.error ||
+          'unknown error'
+        }`
+      )
+    }
+  }
+)
 
     const action = room.makeAction('game')
 
@@ -1002,6 +1015,9 @@ export default function Chameleon() {
     }
 
     room.onPeerJoin = peerId => {
+      console.log('PEER JOINED', peerId)
+      console.log('CURRENT PEERS', room.getPeers())
+
       if (isHost) {
         publish(peerId)
       } else {
@@ -1010,12 +1026,13 @@ export default function Chameleon() {
     }
 
     room.onPeerLeave = peerId => {
+      console.log('PEER LEFT', peerId)
+
       if (!isHost) return
 
-      const player =
-        hostState.players.find(
-          p => p.peerId === peerId
-        )
+      const player = hostState.players.find(
+        p => p.peerId === peerId
+      )
 
       if (!player) return
 

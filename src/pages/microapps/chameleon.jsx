@@ -112,7 +112,10 @@ export default function Chameleon() {
 
 const room = joinRoom(
   {
-    appId: APP_ID
+    appId: APP_ID,
+    relayConfig: {
+      redundancy: 5
+    }
   },
   roomId,
   {

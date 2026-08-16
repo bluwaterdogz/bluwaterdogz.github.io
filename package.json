@@ -36,6 +36,7 @@
     "react-select": "^5.10.1",
     "storybook": "^8.6.4",
     "three": "^0.173.0",
+    "trystero": "^0.25.3",
     "typescript-plugin-css-modules": "^5.1.0",
     "zustand": "^5.0.3"
   },

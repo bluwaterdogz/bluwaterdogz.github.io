@@ -92,7 +92,7 @@
   color: inherit;
   display: block;
   min-height: $space * 8;
-  padding-right: $space * 6;
+  padding-right: $space * 8;
   position: relative;
   text-decoration: none;
   transition: transform $transition ease;
@@ -132,6 +132,7 @@
   line-height: 1.1;
   margin: 0 0 $space-sm;
   padding: 0;
+  overflow-wrap: anywhere;
 }
 
 .summary {
@@ -139,6 +140,7 @@
   font-size: 14px;
   line-height: 1.4;
   margin: 0;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: $small-screen) {

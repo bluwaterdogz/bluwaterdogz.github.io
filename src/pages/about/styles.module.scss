@@ -132,6 +132,7 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
 
   article {
+    min-width: 0;
     padding: $space * 3;
     text-align: center;
 
@@ -155,6 +156,7 @@
     font-size: 28px;
     font-weight: 400;
     margin: $space * 2 0;
+    overflow-wrap: anywhere;
   }
 
   p {
@@ -162,6 +164,7 @@
     line-height: 1.7;
     margin: 0 auto;
     max-width: $space * 22;
+    overflow-wrap: anywhere;
   }
 }
 
@@ -194,6 +197,7 @@
 
 .processIntroduction {
   max-width: $content-width-copy;
+  min-width: 0;
 
   h2,
   h3 {
@@ -219,6 +223,7 @@
     font-size: 16px;
     line-height: 1.65;
     margin: 0;
+    overflow-wrap: anywhere;
   }
 }
 
@@ -234,6 +239,7 @@
 
 .processTimeline {
   max-width: none;
+  min-width: 0;
 }
 
 @media (max-width: $small-screen) {

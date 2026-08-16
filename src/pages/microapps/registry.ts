@@ -51,4 +51,12 @@ export const microapps = [
     href: "/microapps/golf-stroke-counter",
     load: () => import("./golf_stroke_counter"),
   }),
+    defineMicroapp({
+    id: "chameleon",
+    title: "Chameleon",
+    description:
+      "Chameleon",
+    href: "/microapps/chameleon",
+    load: () => import("./chameleon"),
+  }),
 ] satisfies MicroappDefinition[];

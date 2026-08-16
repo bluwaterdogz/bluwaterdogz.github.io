@@ -2,6 +2,46 @@ import { Project } from "./types";
 
 export const projects: Project[] = [
   {
+    employer: "mobian",
+    id: "9",
+    img: "/images/projects/mobian/mobian1.png",
+    name: "Persona & Channel Intelligence",
+    quotes: [],
+    skills: ["1", "2", "3", "5", "9", "17", "24", "25", "26", "27", "28", "29", "33"],
+  },
+  {
+    employer: "mobian",
+    id: "10",
+    img: "/images/projects/mobian/mobian2.png",
+    name: "Context Ingestion & Brand-Safety Tooling",
+    quotes: [],
+    skills: ["1", "5", "17", "26", "28", "29", "32", "35", "37"],
+  },
+  {
+    employer: "mobian",
+    id: "11",
+    img: "/images/projects/mobian/mobian3.png",
+    name: "Advertising Operations & Reporting Integrations",
+    quotes: [],
+    skills: ["1", "2", "3", "5", "9", "17", "24", "25", "26", "28", "30", "31"],
+  },
+  {
+    employer: "mobian",
+    id: "12",
+    img: "/images/projects/mobian/mobian4.png",
+    name: "Platform Engineering, Testing & Product Infrastructure",
+    quotes: [],
+    skills: [ "1", "2", "3", "9", "15", "17", "20", "24", "25", "26", "27", "28", "29", "32", "33", "34", "35", "36", "37",],
+  },
+  {
+    employer: "mobian",
+    id: "13",
+    img: "/images/projects/mobian/mobian5.png",
+    name: "Frontend UI & Design System",
+    quotes: [],
+    skills: ["2","3","7","8","9","15","17","20","23","24","25","33","34","36",]
+  },
+  {
     employer: "faro",
     name: "Faro Study Designer ",
     id: "1",
@@ -85,45 +125,5 @@ export const projects: Project[] = [
     img: "/images/projects/independent/3dshapes.jpg",
     quotes: [],
     skills: ["3", "7", "8", "9"],
-  },
-  {
-    employer: "mobian",
-    id: "9",
-    img: "/images/projects/mobian/mobian1.png",
-    name: "Persona & Channel Intelligence",
-    quotes: [],
-    skills: ["1", "2", "3", "5", "9", "17", "24", "25", "26", "27", "28", "29", "33"],
-  },
-  {
-    employer: "mobian",
-    id: "10",
-    img: "/images/projects/mobian/mobian2.png",
-    name: "Context Ingestion & Brand-Safety Tooling",
-    quotes: [],
-    skills: ["1", "5", "17", "26", "28", "29", "32", "35", "37"],
-  },
-  {
-    employer: "mobian",
-    id: "11",
-    img: "/images/projects/mobian/mobian3.png",
-    name: "Advertising Operations & Reporting Integrations",
-    quotes: [],
-    skills: ["1", "2", "3", "5", "9", "17", "24", "25", "26", "28", "30", "31"],
-  },
-  {
-    employer: "mobian",
-    id: "12",
-    img: "/images/projects/mobian/mobian4.png",
-    name: "Platform Engineering, Testing & Product Infrastructure",
-    quotes: [],
-    skills: [ "1", "2", "3", "9", "15", "17", "20", "24", "25", "26", "27", "28", "29", "32", "33", "34", "35", "36", "37",],
-  },
-  {
-    employer: "mobian",
-    id: "13",
-    img: "/images/projects/mobian/mobian5.png",
-    name: "Frontend UI & Design System",
-    quotes: [],
-    skills: ["2","3","7","8","9","15","17","20","23","24","25","33","34","36",]
   },
 ];

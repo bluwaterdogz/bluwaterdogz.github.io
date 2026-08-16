@@ -1,197 +1,293 @@
 {
-  "translation": {
-    "home": {
-      "header": "<span>你好<br /> 我是 Brian Velasquez，<br /><em>資深全端<br />工程師。</em></span>",
-      "heroEyebrow": "你好",
-      "heroName": "我是 Brian Velasquez，",
-      "heroRole": "資深全端工程師。",
-      "heroIntroduction": "我打造可擴充的網路應用程式，並現代化能推動業務成長的系統。我重視乾淨的程式碼、周全的架構，以及出色的使用者體驗。",
-      "switchBackground": "切換主視覺背景",
-      "backgrounds": { "type1": "類型 1", "type2": "類型 2" },
-      "aboutHeader": "我是誰？",
-      "about": "具備 TypeScript、React、Angular、Node.js 與 Python 經驗的資深全端網路開發者。曾帶領國際團隊、現代化舊有系統、優化架構，並導入 CI/CD 流程以提升部署效率。我熱衷於打造可擴充、以使用者為核心並能推動業務成長的解決方案。",
-      "aboutEyebrow": "關於我",
-      "aboutTitle": "打造解決方案。帶領團隊",
-      "aboutLink": "深入了解我",
-      "features": {
-        "experience": "年資",
-        "projects": "完成專案",
-        "international": "國際協作",
-        "collaboration": "團隊合作",
-        "focus": "專注方向",
-        "performance": "效能、可擴充性、使用者體驗"
-      },
-      "section1Title": "經驗豐富",
-      "section1Content1": "在最近擔任 Faro Health 資深全端開發者期間，我使用 TypeScript、Node.js、PostgreSQL、Jest 與 React 建置並優化 REST 與 CQRS 微服務及介面模組。我開發功能切片與概念驗證、設計技術方案、撰寫單元與整合測試、改善效能，並以 GitHub Actions 建立部署流程。",
-      "section1Content2": "此前我在 Various Inc. 帶領國際遠端前端團隊，與設計師密切合作，將既有的 JavaScript 與 Perl 影音串流應用程式現代化，遷移至使用 React、TypeScript、Next.js、MobX、WebSockets 與 Python 的高效能可擴充平台，並搭配 REST API 與 CI/CD。",
-      "experience": {
-        "eyebrow": "02 經歷",
-        "title": "經歷",
-        "copy1": "最近在 Mobian，我參與大型多儲存庫平台，涵蓋活動控制、廣告主與受眾區隔圖庫、人物搜尋、頻道情報、品牌安全中繼資料、報表整合與資料管線。",
-        "copy2": "我使用 Next.js、React、TypeScript、FastAPI、PostgreSQL、OpenSearch、Snowflake、Dagster、Redis 與 AWS，建置並改善搜尋、篩選、分頁、自動完成、CSV 匯出、統計、快取行為、資料匯入工具與報表流程。",
-        "copy3": "工作經常跨越前端、後端、ETL、搜尋與基礎設施。我也處理正式環境修正、測試覆蓋率、版本協調、品牌資料對應，以及前端、Persona API、Content API、Video Brand Safety、ETL 與端對端測試儲存庫之間的整合。",
-        "copy4": "此前在 Faro Health，我建置並優化以 REST 與 CQRS 微服務、PostgreSQL、自動化測試及 GitHub Actions 部署流程支援的 TypeScript 與 React 應用程式。",
-        "copy5": "更早在 Various Inc.，我帶領國際前端團隊，將舊有 JavaScript 與 Perl 應用程式現代化為可擴充的 React、TypeScript、Next.js、WebSocket 與 Python 平台。",
-        "link": "查看我的經歷",
-        "timelineHeading": "職涯重點",
-        "timeline": {
-          "mobianPeriod": "2025 - 至今",
-          "mobianCompany": "Mobian",
-          "mobianSummary": "在多儲存庫平台上負責全端工程，支援活動控制、搜尋、分析、品牌安全與資料管線。",
-          "contractorPeriod": "2024 - 2025",
-          "contractorCompany": "獨立承包人",
-          "contractorSummary": "為獨立客戶提供聚焦的網路應用、產品與技術顧問服務。",
-          "faroPeriod": "2022 - 2024",
-          "faroCompany": "Faro Health",
-          "faroSummary": "以微服務、PostgreSQL、自動化測試與 GitHub Actions 建置並優化 TypeScript 與 React 應用程式。",
-          "variousPeriod": "2018 - 2021",
-          "variousCompany": "Various Inc.",
-          "variousSummary": "帶領國際前端團隊，將舊有平台遷移至可擴充的 React、TypeScript 與 Next.js 架構。",
-          "launchPeriod": "2015 - 2018",
-          "launchCompany": "Launch Brigade",
-          "launchSummary": "為舊金山灣區設計與開發公司建置並維護響應式網站及數位產品。"
-        }
-      },
-      "leadership": {
-        "eyebrow": "03 技術領導",
-        "title": "技術領導",
-        "copy1": "我曾帶領並與分布於美國、歐洲、台灣與中國的團隊合作，橫跨產品、設計、工程、資料與基礎設施。",
-        "copy2": "我的做法務實：建立清楚的技術方向、減少不必要的複雜度、及早揭露風險，並讓團隊專注於可靠交付。在 Mobian，這通常代表協調多個服務與儲存庫的變更，同時維持資料契約、搜尋行為、版本穩定性與使用者體驗。",
-        "copy3": "我能自在地在架構與實作之間切換，設計系統、除錯正式環境問題、評估取捨、改善開發流程，並協助團隊將廣泛需求轉化為具體且可維護的方案。",
-        "link": "了解我的工作方式",
-        "regionsHeading": "協作地區",
-        "regions": { "northAmerica": "北美洲", "southAmerica": "南美洲", "europe": "歐洲", "asia": "亞洲" },
-        "summary": "橫跨產品、設計、工程、資料與基礎設施的跨職能領導。",
-        "stats": { "regions": "4 個地區", "timeZones": "多個時區" }
-      },
-      "section2Title": "技術領導",
-      "section2Content1": "我曾帶領分布於美國、歐洲、台灣與中國的大型國際團隊，並以 TypeScript、Node.js、PostgreSQL、Jest 與 React 的深厚經驗推動創新。除了技術設計與開發，我也能讓團隊保持一致、聚焦並朝關鍵里程碑前進。"
+  "home": {
+    "header": "<span>你好<br /> 我是 Brian Velasquez，<br /><em>資深全端<br />工程師。</em></span>",
+    "heroEyebrow": "你好",
+    "heroName": "我是 Brian Velasquez，",
+    "heroRole": "資深全端工程師。",
+    "heroIntroduction": "我打造可擴充的網路應用程式，並現代化能推動業務成長的系統。我重視乾淨的程式碼、周全的架構，以及出色的使用者體驗。",
+    "switchBackground": "切換主視覺背景",
+    "backgrounds": {
+      "type1": "類型 1",
+      "type2": "類型 2"
     },
-    "about": {
-      "eyebrow": "關於我",
-      "portraitAlt": "Brian Velasquez",
-      "title": "嗨，我是 Brian",
-      "role": "資深軟體工程師",
-      "section1": "Brian 是一位資深軟體工程師，熱衷於優雅、可擴充的程式碼，以及簡潔直覺的使用者體驗。",
-      "section2": "閒暇時他喜歡攀岩、下棋、騎越野機車探索，並練習泰拳。",
-      "location": "目前居住於泰國清邁",
-      "cta": "一起打造出色的產品",
-      "outsideCode": "程式之外",
-      "buildWith": "我使用的技術",
-      "interests": {
-        "climbing": { "title": "攀岩", "description": "我喜歡攀岩帶來的挑戰與專注。它讓我保持踏實，也持續學習。" },
-        "chess": { "title": "西洋棋", "description": "西洋棋教會我耐心、策略，以及從不同角度看待問題。" },
-        "dirtbike": { "title": "越野機車", "description": "探索新路線與越野騎乘，是我放鬆並重新充電的方式。" },
-        "muayThai": { "title": "泰拳", "description": "泰拳訓練培養紀律、韌性與思緒清晰。" }
-      },
-      "quote": "我相信程式碼應該乾淨、易維護並經得起時間考驗。我重視周全的使用者體驗，以及能產生真正影響的產品。",
-      "process": {
-        "eyebrow": "我的流程",
-        "title": "從問題走向正式環境",
-        "description": "以協作與迭代的方式，從探索到發布都讓目標、技術決策與品質保持清晰。",
-        "aiTitle": "以責任與經驗為基礎的生成式工程",
-        "aiDescription": "我使用 AI 加速研究、規劃、審查、測試與文件撰寫，同時以程式碼庫與真實系統行為驗證每項輸出。",
-        "steps": {
-          "align": { "title": "對齊", "description": "釐清問題、限制、相依關係與成功定義。" },
-          "map": { "title": "梳理", "description": "追蹤相關介面、服務、資料流與營運風險。" },
-          "shape": { "title": "成形", "description": "比較方案、為不確定的想法製作原型，並將工作拆分為聚焦的增量。" },
-          "build": { "title": "建置", "description": "在必要層級中協作實作，使用清楚且可重用的模式。" },
-          "verify": { "title": "驗證", "description": "持續進行單元、整合、端對端與人工驗證。" },
-          "improve": { "title": "改善", "description": "謹慎發布、檢視正式環境行為，並依資料與回饋持續優化。" }
-        }
+    "aboutHeader": "我是誰？",
+    "about": "具備 TypeScript、React、Angular、Node.js 與 Python 經驗的資深全端網路開發者。曾帶領國際團隊、現代化舊有系統、優化架構，並導入 CI/CD 流程以提升部署效率。我熱衷於打造可擴充、以使用者為核心並能推動業務成長的解決方案。",
+    "aboutEyebrow": "關於我",
+    "aboutTitle": "打造解決方案。帶領團隊",
+    "aboutLink": "深入了解我",
+    "features": {
+      "experience": "年資",
+      "projects": "完成專案",
+      "international": "國際協作",
+      "collaboration": "團隊合作",
+      "focus": "專注方向",
+      "performance": "效能、可擴充性、使用者體驗"
+    },
+    "section1Title": "經驗豐富",
+    "section1Content1": "在最近擔任 Faro Health 資深全端開發者期間，我使用 TypeScript、Node.js、PostgreSQL、Jest 與 React 建置並優化 REST 與 CQRS 微服務及介面模組。我開發功能切片與概念驗證、設計技術方案、撰寫單元與整合測試、改善效能，並以 GitHub Actions 建立部署流程。",
+    "section1Content2": "此前我在 Various Inc. 帶領國際遠端前端團隊，與設計師密切合作，將既有的 JavaScript 與 Perl 影音串流應用程式現代化，遷移至使用 React、TypeScript、Next.js、MobX、WebSockets 與 Python 的高效能可擴充平台，並搭配 REST API 與 CI/CD。",
+    "experience": {
+      "eyebrow": "02 經歷",
+      "title": "經歷",
+      "copy1": "最近在 Mobian，我參與大型多儲存庫平台，涵蓋活動控制、廣告主與受眾區隔圖庫、人物搜尋、頻道情報、品牌安全中繼資料、報表整合與資料管線。",
+      "copy2": "我使用 Next.js、React、TypeScript、FastAPI、PostgreSQL、OpenSearch、Snowflake、Dagster、Redis 與 AWS，建置並改善搜尋、篩選、分頁、自動完成、CSV 匯出、統計、快取行為、資料匯入工具與報表流程。",
+      "copy3": "工作經常跨越前端、後端、ETL、搜尋與基礎設施。我也處理正式環境修正、測試覆蓋率、版本協調、品牌資料對應，以及前端、Persona API、Content API、Video Brand Safety、ETL 與端對端測試儲存庫之間的整合。",
+      "copy4": "此前在 Faro Health，我建置並優化以 REST 與 CQRS 微服務、PostgreSQL、自動化測試及 GitHub Actions 部署流程支援的 TypeScript 與 React 應用程式。",
+      "copy5": "更早在 Various Inc.，我帶領國際前端團隊，將舊有 JavaScript 與 Perl 應用程式現代化為可擴充的 React、TypeScript、Next.js、WebSocket 與 Python 平台。",
+      "link": "查看我的經歷",
+      "timelineHeading": "職涯重點",
+      "timeline": {
+        "mobianPeriod": "2025 - 至今",
+        "mobianCompany": "Mobian",
+        "mobianSummary": "在多儲存庫平台上負責全端工程，支援活動控制、搜尋、分析、品牌安全與資料管線。",
+        "contractorPeriod": "2024 - 2025",
+        "contractorCompany": "獨立承包人",
+        "contractorSummary": "為獨立客戶提供聚焦的網路應用、產品與技術顧問服務。",
+        "faroPeriod": "2022 - 2024",
+        "faroCompany": "Faro Health",
+        "faroSummary": "以微服務、PostgreSQL、自動化測試與 GitHub Actions 建置並優化 TypeScript 與 React 應用程式。",
+        "variousPeriod": "2018 - 2021",
+        "variousCompany": "Various Inc.",
+        "variousSummary": "帶領國際前端團隊，將舊有平台遷移至可擴充的 React、TypeScript 與 Next.js 架構。",
+        "launchPeriod": "2015 - 2018",
+        "launchCompany": "Launch Brigade",
+        "launchSummary": "為舊金山灣區設計與開發公司建置並維護響應式網站及數位產品。"
       }
     },
-    "skills": {
-      "eyebrow": "技能",
-      "previous": "上一個技能類別",
-      "next": "下一個技能類別",
-      "projectsLink": "查看專案",
-      "projectsMenu": "專案",
-      "groups": {
-        "Languages": "程式語言",
-        "BackendData": "後端與資料",
-        "Frontend": "前端",
-        "CloudTools": "雲端與工具",
-        "Frameworks": "框架",
-        "DevTools": "開發工具",
-        "IT": "資訊技術",
-        "Design": "設計"
+    "leadership": {
+      "eyebrow": "03 技術領導",
+      "title": "技術領導",
+      "copy1": "我曾帶領並與分布於美國、歐洲、台灣與中國的團隊合作，橫跨產品、設計、工程、資料與基礎設施。",
+      "copy2": "我的做法務實：建立清楚的技術方向、減少不必要的複雜度、及早揭露風險，並讓團隊專注於可靠交付。在 Mobian，這通常代表協調多個服務與儲存庫的變更，同時維持資料契約、搜尋行為、版本穩定性與使用者體驗。",
+      "copy3": "我能自在地在架構與實作之間切換，設計系統、除錯正式環境問題、評估取捨、改善開發流程，並協助團隊將廣泛需求轉化為具體且可維護的方案。",
+      "link": "了解我的工作方式",
+      "regionsHeading": "協作地區",
+      "regions": {
+        "northAmerica": "北美洲",
+        "southAmerica": "南美洲",
+        "europe": "歐洲",
+        "asia": "亞洲"
       },
-      "views": {
-        "development": { "title": "開發", "description": "我用來建置、交付與擴充可靠產品的技術與工具。" },
-        "infrastructure": { "title": "基礎設施", "description": "用來維運可靠軟體的開發工具、雲端平台、交付系統與營運實務。" },
-        "frameworks": { "title": "框架", "description": "我用來將產品想法轉化為可維護介面與服務的應用框架。" },
-        "devTools": { "title": "開發工具", "description": "我用來開發、測試、撰寫文件與交付可靠軟體的工具。" },
-        "it": { "title": "資訊技術", "description": "我用來安全維運應用程式的雲端與交付平台。" },
-        "design": { "title": "設計", "description": "我用來打造清晰、經過思考的體驗之設計工具與系統。" }
+      "summary": "橫跨產品、設計、工程、資料與基礎設施的跨職能領導。",
+      "stats": {
+        "regions": "4 個地區",
+        "timeZones": "多個時區"
       }
     },
-    "projects": {
-      "eyebrow": "專案",
-      "title": "我打造的作品",
-      "introduction": "涵蓋網路、行動、後端與資料的專案精選。每個專案都解決真實問題，也讓我學到新的事物。",
-      "search": "搜尋專案",
-      "github": "在 GitHub 查看程式碼",
-      "jobs": {
-        "label": "依工作篩選",
-        "all": "所有工作",
-        "mobian": "Mobian",
-        "faro": "Faro Health",
-        "independent": "獨立承包人",
-        "various": "Various Inc.",
-        "launchBrigade": "Launch Brigade"
+    "section2Title": "技術領導",
+    "section2Content1": "我曾帶領分布於美國、歐洲、台灣與中國的大型國際團隊，並以 TypeScript、Node.js、PostgreSQL、Jest 與 React 的深厚經驗推動創新。除了技術設計與開發，我也能讓團隊保持一致、聚焦並朝關鍵里程碑前進。"
+  },
+  "about": {
+    "eyebrow": "關於我",
+    "portraitAlt": "Brian Velasquez",
+    "title": "嗨，我是 Brian",
+    "role": "資深軟體工程師",
+    "section1": "Brian 是一位資深軟體工程師，熱衷於優雅、可擴充的程式碼，以及簡潔直覺的使用者體驗。",
+    "section2": "閒暇時他喜歡攀岩、下棋、騎越野機車探索，並練習泰拳。",
+    "location": "目前居住於泰國清邁",
+    "cta": "一起打造出色的產品",
+    "outsideCode": "程式之外",
+    "buildWith": "我使用的技術",
+    "interests": {
+      "climbing": {
+        "title": "攀岩",
+        "description": "我喜歡攀岩帶來的挑戰與專注。它讓我保持踏實，也持續學習。"
       },
-      "technologies": "{{name}} 使用的技術",
-      "viewProject": "查看 {{name}}",
-      "detail": { "eyebrow": "專案", "back": "所有專案" },
-      "categories": { "label": "專案分類", "all": "全部", "web": "網路", "mobile": "行動", "backend": "後端", "data": "資料" },
-      "cta": { "title": "有想法嗎？", "description": "我一直樂於參與有趣的專案與合作。", "label": "一起打造" }
+      "chess": {
+        "title": "西洋棋",
+        "description": "西洋棋教會我耐心、策略，以及從不同角度看待問題。"
+      },
+      "dirtbike": {
+        "title": "越野機車",
+        "description": "探索新路線與越野騎乘，是我放鬆並重新充電的方式。"
+      },
+      "muayThai": {
+        "title": "泰拳",
+        "description": "泰拳訓練培養紀律、韌性與思緒清晰。"
+      }
     },
-    "theme": { "dark": "深色主題", "light": "淺色主題" },
-    "lang": { "english": "英文", "chinese": "中文", "espanol": "西班牙文", "thai": "泰文", "german": "德文", "korean": "韓文" },
-    "nav": { "home": "首頁", "skills": "技能", "projects": "專案", "microapps": "微型應用", "about": "關於", "jobs": "工作" },
-    "jobs": { "content": { "5": "", "4": "", "3": "", "2": "", "1": "" } },
-    "data": {
-      "projects": {
-        "description": {
-          "1": "用於規劃、設計與最佳化臨床研究，並提供即時分析的軟體工具",
-          "2": "高流量即時影音與聊天平台，具備線上探索、狀態顯示、公開直播與私人互動工作階段",
-          "3": "介紹 San Anselmo 城市即將變更內容並提供問卷的資訊網站",
-          "4": "網頁設計與開發公司的網站",
-          "5": "以 Python 與 Pandas 建立的資料分析微服務概念驗證應用",
-          "6": "供 Study Designer 使用、與身分提供者無關的單一登入實作",
-          "7": "人工智慧二手車應用程式的網站",
-          "8": "展示幾何晶格結構合併功能的應用程式前端",
-          "9": "為受眾情報平台提供全端搜尋、分析、篩選與匯出能力",
-          "10": "為高吞吐量情境處理系統提供資料品質、中繼資料、復原與查詢功能",
-          "11": "跨廣告系統的實體搜尋、報表資料、活動控制與匯出流程",
-          "12": "橫跨前端、測試、雲端、可觀測性、安全性與發布的改善",
-          "13": "為受眾情報平台改善前端介面、設計系統、搜尋、篩選、儀表板與互動"
+    "quote": "我相信程式碼應該乾淨、易維護並經得起時間考驗。我重視周全的使用者體驗，以及能產生真正影響的產品。",
+    "process": {
+      "eyebrow": "我的流程",
+      "title": "從問題走向正式環境",
+      "description": "以協作與迭代的方式，從探索到發布都讓目標、技術決策與品質保持清晰。",
+      "aiTitle": "以責任與經驗為基礎的生成式工程",
+      "aiDescription": "我使用 AI 加速研究、規劃、審查、測試與文件撰寫，同時以程式碼庫與真實系統行為驗證每項輸出。",
+      "steps": {
+        "align": {
+          "title": "對齊",
+          "description": "釐清問題、限制、相依關係與成功定義。"
         },
-        "content": {
-          "1": "<div><h3>使用 AI 推動臨床研究開發。</h3><p>Faro Study Designer 旨在提升臨床方案的效率與病患友善程度。</p><p>Faro Health 累計募得 3,830 萬美元，其中最近一輪約為 2,000 萬美元。</p><p>主要功能：</p><ul><li>即時協作：提升文件流程的準確性與效率</li><li>可行性分析：評估設計決策對研究成功率的影響</li><li>基準比較：將方案與歷史資料及設計變體比較</li></ul></div>",
-          "2": "<div><h3>即時影音、聊天與線上探索</h3><p>The Viewer 是互動式直播平台，使用者可探索目前上線的直播者、進入公開房間、即時傳訊，並切換至私人視訊工作階段。平台同時處理持續影音傳輸，以及快速變動的上線狀態、可用性、個人資料與工作階段資料。</p><h3>現在誰在線上</h3><p>此頁面持續更新目前活躍的直播者，並提供個人資料瀏覽、搜尋、篩選、即時狀態與直接進入公開或私人工作階段的流程。</p><h3>產品能力</h3><ul><li>公開與私人工作階段的即時影音串流</li><li>即時文字聊天、上線指示與狀態變更</li><li>搜尋、篩選、分類與響應式探索</li><li>不中斷媒體播放的高頻介面更新</li><li>與既有 API、帳戶、訊息服務及舊有流程整合</li></ul><h3>工程工作</h3><p>我在國際前端團隊中，將既有 JavaScript 與 Perl 應用程式現代化為使用 React、TypeScript、Next.js 與 WebSockets 的可擴充平台。</p><h3>估計正式環境規模</h3><p>依平台的歷史、產品廣度與公開能見度推估，每月約 100 萬至 500 萬次造訪、每日 3 萬至 17 萬次造訪、數百個同時直播房間，以及尖峰時段數千名連線使用者。這些為方向性估算，並非公司內部數據。</p><div class='project-stats'><div><strong>1–5M</strong><span>估計每月造訪</span></div><div><strong>30K–170K</strong><span>估計每日造訪</span></div><div><strong>100s</strong><span>同時直播房間</span></div><div><strong>1K–10K</strong><span>估計尖峰連線使用者</span></div><div><strong>數百萬</strong><span>每日即時事件</span></div><div><strong>數 TB</strong><span>估計每月媒體傳輸量</span></div></div></div>",
-          "3": "<p>為 San Anselmo 2025 年總體規劃更新建立的 WordPress 網站，提供基礎設施、分區、公共空間、永續發展與交通改善資訊，並透過互動問卷讓居民參與決策。</p>",
-          "4": "<p>Launch Brigade 是舊金山灣區的網頁設計與開發公司，專注於打造能提升品牌與推動業務成長的數位體驗。</p>",
-          "5": "<p>Data Analytics Dashboard 是以 Pandas 建立的概念驗證應用，使用星狀結構中的 Study Design 資料建立分析微服務與前端，讓使用者依任意資料維度切分與探索研究資料。</p>",
-          "6": "<p>Study Designer 的身分提供者無關單一登入實作，讓不同組織可使用自己的 SAML 與 OAuth 身分服務取得與 API 互動所需的權杖。</p>",
-          "7": "<p>LotLinx 是以 AI 驅動的汽車庫存管理平台，透過機器學習與大量資料分析協助經銷商改善庫存週轉、定價與獲利能力。</p>",
-          "8": "<p>Metafold 3D 是用於設計複雜 3D 模型與積層製造的雲端平台，能處理傳統 CAD 工具難以應付的晶格等複雜幾何。</p>",
-          "9": "<div><h3>人物與頻道情報</h3><p>參與既有受眾情報平台，用於探索人物、評估內容頻道、檢視效能資料並匯出篩選結果。</p><h3>我的工作</h3><ul><li>伺服器端自動完成、分頁與無限捲動搜尋</li><li>日期篩選、頻道統計與歷史記錄</li><li>前端代理路由、搜尋限制、記錄與可靠載入狀態</li><li>保留篩選條件的串流 CSV 下載</li></ul><p>工作橫跨 React、Next.js、FastAPI、PostgreSQL、OpenSearch、Redis、快取與排程處理。</p></div>",
-          "10": "<div><h3>情境資料匯入與品牌安全工具</h3><p>為處理網頁、URL、影片、頻道與分類中繼資料的情境情報與品牌安全系統打造營運工具與匯入改善。</p><h3>我的工作</h3><ul><li>完整情境欄位與中繼資料持久化</li><li>具範圍限制的清理、URL 前綴、別名與批次工具</li><li>檢查點穩定化與保留別名的重試邏輯</li><li>透過 URL、ID 掃描、HTML 備援與快取探索頻道</li><li>結構化雲端診斷</li></ul><p>使用 Python、FastAPI、PostgreSQL、Redis、AWS Lambda、CloudWatch、SAM、CloudFormation、Terraform 與非同步工作程序。</p></div>",
-          "11": "<div><h3>廣告營運與報表整合</h3><p>串接既有廣告分析平台中的廣告主、受眾區隔、定向、報表與匯出流程。</p><h3>我的工作</h3><ul><li>支援多個廣告平台的廣告主與報表實體</li><li>伺服器端搜尋、排序、重複名稱區分與來源標籤</li><li>版位與廣告項目對應及報表快取改善</li><li>保留篩選與分頁的 CSV 匯出</li><li>修正廣告主、活動控制與區隔流程的前端問題</li></ul><p>使用 Next.js、React、TypeScript、Material UI、FastAPI、Python、Snowflake、Dagster 與 PostgreSQL。</p></div>",
-          "12": "<div><h3>平台工程、測試與產品基礎設施</h3><p>建立跨產品、服務、雲端基礎設施與開發流程的可重用基礎與發布保障。</p><h3>改善內容</h3><ul><li>語意設計權杖、Material UI 變體與調色盤整合</li><li>Cypress、Playwright、登入 smoke tests 與可重用 fixtures</li><li>排程式 serverless 工作、雲端診斷、可觀測性與基礎設施</li><li>框架安全更新、驗證、發布協調與技術文件</li></ul><p>協調 React、Next.js、TypeScript、Python、AWS、Terraform、OpenSearch、ETL 與部署系統間的相容變更。</p></div>",
-          "13": "<div><h3>前端介面與設計系統</h3><p>在既有受眾情報與廣告分析平台上建立並改善可重用前端體驗，著重清晰度、一致性、響應式設計與可靠互動。</p><h3>我的工作</h3><ul><li>搜尋、自動完成、篩選、分頁、無限捲動與各種狀態</li><li>可重用 Material UI 元件、語意權杖、變體與遷移模式</li><li>響應式儀表板、圖庫、表格、抽屜與匯出介面</li><li>前端 API 代理、URL 狀態、查詢與錯誤處理</li><li>以 Jest、Cypress 與 Playwright 建立自動化測試</li></ul><p>主要使用 React、Next.js、TypeScript、JavaScript、HTML5、CSS/SCSS、Material UI、Storybook 與 GitHub Actions。</p></div>"
+        "map": {
+          "title": "梳理",
+          "description": "追蹤相關介面、服務、資料流與營運風險。"
+        },
+        "shape": {
+          "title": "成形",
+          "description": "比較方案、為不確定的想法製作原型，並將工作拆分為聚焦的增量。"
+        },
+        "build": {
+          "title": "建置",
+          "description": "在必要層級中協作實作，使用清楚且可重用的模式。"
+        },
+        "verify": {
+          "title": "驗證",
+          "description": "持續進行單元、整合、端對端與人工驗證。"
+        },
+        "improve": {
+          "title": "改善",
+          "description": "謹慎發布、檢視正式環境行為，並依資料與回饋持續優化。"
         }
+      }
+    }
+  },
+  "skills": {
+    "eyebrow": "技能",
+    "previous": "上一個技能類別",
+    "next": "下一個技能類別",
+    "projectsLink": "查看專案",
+    "projectsMenu": "專案",
+    "groups": {
+      "Languages": "程式語言",
+      "BackendData": "後端與資料",
+      "Frontend": "前端",
+      "CloudTools": "雲端與工具",
+      "Frameworks": "框架",
+      "DevTools": "開發工具",
+      "IT": "資訊技術",
+      "Design": "設計"
+    },
+    "views": {
+      "development": {
+        "title": "開發",
+        "description": "我用來建置、交付與擴充可靠產品的技術與工具。"
       },
-      "jobs": {
-        "title": {
-          "1": "資深全端開發者",
-          "2": "資深前端技術主管",
-          "3": "前端開發者",
-          "4": "前端開發實習生",
-          "5": "設計實習生"
-        }
+      "infrastructure": {
+        "title": "基礎設施",
+        "description": "用來維運可靠軟體的開發工具、雲端平台、交付系統與營運實務。"
+      },
+      "frameworks": {
+        "title": "框架",
+        "description": "我用來將產品想法轉化為可維護介面與服務的應用框架。"
+      },
+      "devTools": {
+        "title": "開發工具",
+        "description": "我用來開發、測試、撰寫文件與交付可靠軟體的工具。"
+      },
+      "it": {
+        "title": "資訊技術",
+        "description": "我用來安全維運應用程式的雲端與交付平台。"
+      },
+      "design": {
+        "title": "設計",
+        "description": "我用來打造清晰、經過思考的體驗之設計工具與系統。"
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "專案",
+    "title": "我打造的作品",
+    "introduction": "涵蓋網路、行動、後端與資料的專案精選。每個專案都解決真實問題，也讓我學到新的事物。",
+    "search": "搜尋專案",
+    "github": "在 GitHub 查看程式碼",
+    "jobs": {
+      "label": "依工作篩選",
+      "all": "所有工作",
+      "mobian": "Mobian",
+      "faro": "Faro Health",
+      "independent": "獨立承包人",
+      "various": "Various Inc.",
+      "launchBrigade": "Launch Brigade"
+    },
+    "technologies": "{{name}} 使用的技術",
+    "viewProject": "查看 {{name}}",
+    "detail": {
+      "eyebrow": "專案",
+      "back": "所有專案"
+    },
+    "categories": {
+      "label": "專案分類",
+      "all": "全部",
+      "web": "網路",
+      "mobile": "行動",
+      "backend": "後端",
+      "data": "資料"
+    },
+    "cta": {
+      "title": "有想法嗎？",
+      "description": "我一直樂於參與有趣的專案與合作。",
+      "label": "一起打造"
+    }
+  },
+  "theme": {
+    "dark": "深色主題",
+    "light": "淺色主題"
+  },
+  "lang": {
+    "english": "英文",
+    "chinese": "中文",
+    "espanol": "西班牙文",
+    "thai": "泰文",
+    "german": "德文",
+    "korean": "韓文"
+  },
+  "nav": {
+    "home": "首頁",
+    "skills": "技能",
+    "projects": "專案",
+    "microapps": "微型應用",
+    "about": "關於",
+    "jobs": "工作"
+  },
+  "jobs": {
+    "content": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": ""
+    }
+  },
+  "data": {
+    "projects": {
+      "description": {
+        "1": "用於規劃、設計與最佳化臨床研究，並提供即時分析的軟體工具",
+        "2": "高流量即時影音與聊天平台，具備線上探索、狀態顯示、公開直播與私人互動工作階段",
+        "3": "介紹 San Anselmo 城市即將變更內容並提供問卷的資訊網站",
+        "4": "網頁設計與開發公司的網站",
+        "5": "以 Python 與 Pandas 建立的資料分析微服務概念驗證應用",
+        "6": "供 Study Designer 使用、與身分提供者無關的單一登入實作",
+        "7": "人工智慧二手車應用程式的網站",
+        "8": "展示幾何晶格結構合併功能的應用程式前端",
+        "9": "為受眾情報平台提供全端搜尋、分析、篩選與匯出能力",
+        "10": "為高吞吐量情境處理系統提供資料品質、中繼資料、復原與查詢功能",
+        "11": "跨廣告系統的實體搜尋、報表資料、活動控制與匯出流程",
+        "12": "橫跨前端、測試、雲端、可觀測性、安全性與發布的改善",
+        "13": "為受眾情報平台改善前端介面、設計系統、搜尋、篩選、儀表板與互動"
+      },
+      "content": {
+        "1": "<div><h3>使用 AI 推動臨床研究開發。</h3><p>Faro Study Designer 旨在提升臨床方案的效率與病患友善程度。</p><p>Faro Health 累計募得 3,830 萬美元，其中最近一輪約為 2,000 萬美元。</p><p>主要功能：</p><ul><li>即時協作：提升文件流程的準確性與效率</li><li>可行性分析：評估設計決策對研究成功率的影響</li><li>基準比較：將方案與歷史資料及設計變體比較</li></ul></div>",
+        "2": "<div><h3>即時影音、聊天與線上探索</h3><p>The Viewer 是互動式直播平台，使用者可探索目前上線的直播者、進入公開房間、即時傳訊，並切換至私人視訊工作階段。平台同時處理持續影音傳輸，以及快速變動的上線狀態、可用性、個人資料與工作階段資料。</p><h3>現在誰在線上</h3><p>此頁面持續更新目前活躍的直播者，並提供個人資料瀏覽、搜尋、篩選、即時狀態與直接進入公開或私人工作階段的流程。</p><h3>產品能力</h3><ul><li>公開與私人工作階段的即時影音串流</li><li>即時文字聊天、上線指示與狀態變更</li><li>搜尋、篩選、分類與響應式探索</li><li>不中斷媒體播放的高頻介面更新</li><li>與既有 API、帳戶、訊息服務及舊有流程整合</li></ul><h3>工程工作</h3><p>我在國際前端團隊中，將既有 JavaScript 與 Perl 應用程式現代化為使用 React、TypeScript、Next.js 與 WebSockets 的可擴充平台。</p><h3>估計正式環境規模</h3><p>依平台的歷史、產品廣度與公開能見度推估，每月約 100 萬至 500 萬次造訪、每日 3 萬至 17 萬次造訪、數百個同時直播房間，以及尖峰時段數千名連線使用者。這些為方向性估算，並非公司內部數據。</p><div class='project-stats'><div><strong>1–5M</strong><span>估計每月造訪</span></div><div><strong>30K–170K</strong><span>估計每日造訪</span></div><div><strong>100s</strong><span>同時直播房間</span></div><div><strong>1K–10K</strong><span>估計尖峰連線使用者</span></div><div><strong>數百萬</strong><span>每日即時事件</span></div><div><strong>數 TB</strong><span>估計每月媒體傳輸量</span></div></div></div>",
+        "3": "<p>為 San Anselmo 2025 年總體規劃更新建立的 WordPress 網站，提供基礎設施、分區、公共空間、永續發展與交通改善資訊，並透過互動問卷讓居民參與決策。</p>",
+        "4": "<p>Launch Brigade 是舊金山灣區的網頁設計與開發公司，專注於打造能提升品牌與推動業務成長的數位體驗。</p>",
+        "5": "<p>Data Analytics Dashboard 是以 Pandas 建立的概念驗證應用，使用星狀結構中的 Study Design 資料建立分析微服務與前端，讓使用者依任意資料維度切分與探索研究資料。</p>",
+        "6": "<p>Study Designer 的身分提供者無關單一登入實作，讓不同組織可使用自己的 SAML 與 OAuth 身分服務取得與 API 互動所需的權杖。</p>",
+        "7": "<p>LotLinx 是以 AI 驅動的汽車庫存管理平台，透過機器學習與大量資料分析協助經銷商改善庫存週轉、定價與獲利能力。</p>",
+        "8": "<p>Metafold 3D 是用於設計複雜 3D 模型與積層製造的雲端平台，能處理傳統 CAD 工具難以應付的晶格等複雜幾何。</p>",
+        "9": "<div><h3>人物與頻道情報</h3><p>參與既有受眾情報平台，用於探索人物、評估內容頻道、檢視效能資料並匯出篩選結果。</p><h3>我的工作</h3><ul><li>伺服器端自動完成、分頁與無限捲動搜尋</li><li>日期篩選、頻道統計與歷史記錄</li><li>前端代理路由、搜尋限制、記錄與可靠載入狀態</li><li>保留篩選條件的串流 CSV 下載</li></ul><p>工作橫跨 React、Next.js、FastAPI、PostgreSQL、OpenSearch、Redis、快取與排程處理。</p></div>",
+        "10": "<div><h3>情境資料匯入與品牌安全工具</h3><p>為處理網頁、URL、影片、頻道與分類中繼資料的情境情報與品牌安全系統打造營運工具與匯入改善。</p><h3>我的工作</h3><ul><li>完整情境欄位與中繼資料持久化</li><li>具範圍限制的清理、URL 前綴、別名與批次工具</li><li>檢查點穩定化與保留別名的重試邏輯</li><li>透過 URL、ID 掃描、HTML 備援與快取探索頻道</li><li>結構化雲端診斷</li></ul><p>使用 Python、FastAPI、PostgreSQL、Redis、AWS Lambda、CloudWatch、SAM、CloudFormation、Terraform 與非同步工作程序。</p></div>",
+        "11": "<div><h3>廣告營運與報表整合</h3><p>串接既有廣告分析平台中的廣告主、受眾區隔、定向、報表與匯出流程。</p><h3>我的工作</h3><ul><li>支援多個廣告平台的廣告主與報表實體</li><li>伺服器端搜尋、排序、重複名稱區分與來源標籤</li><li>版位與廣告項目對應及報表快取改善</li><li>保留篩選與分頁的 CSV 匯出</li><li>修正廣告主、活動控制與區隔流程的前端問題</li></ul><p>使用 Next.js、React、TypeScript、Material UI、FastAPI、Python、Snowflake、Dagster 與 PostgreSQL。</p></div>",
+        "12": "<div><h3>平台工程、測試與產品基礎設施</h3><p>建立跨產品、服務、雲端基礎設施與開發流程的可重用基礎與發布保障。</p><h3>改善內容</h3><ul><li>語意設計權杖、Material UI 變體與調色盤整合</li><li>Cypress、Playwright、登入 smoke tests 與可重用 fixtures</li><li>排程式 serverless 工作、雲端診斷、可觀測性與基礎設施</li><li>框架安全更新、驗證、發布協調與技術文件</li></ul><p>協調 React、Next.js、TypeScript、Python、AWS、Terraform、OpenSearch、ETL 與部署系統間的相容變更。</p></div>",
+        "13": "<div><h3>前端介面與設計系統</h3><p>在既有受眾情報與廣告分析平台上建立並改善可重用前端體驗，著重清晰度、一致性、響應式設計與可靠互動。</p><h3>我的工作</h3><ul><li>搜尋、自動完成、篩選、分頁、無限捲動與各種狀態</li><li>可重用 Material UI 元件、語意權杖、變體與遷移模式</li><li>響應式儀表板、圖庫、表格、抽屜與匯出介面</li><li>前端 API 代理、URL 狀態、查詢與錯誤處理</li><li>以 Jest、Cypress 與 Playwright 建立自動化測試</li></ul><p>主要使用 React、Next.js、TypeScript、JavaScript、HTML5、CSS/SCSS、Material UI、Storybook 與 GitHub Actions。</p></div>"
+      }
+    },
+    "jobs": {
+      "title": {
+        "1": "資深全端開發者",
+        "2": "資深前端技術主管",
+        "3": "前端開發者",
+        "4": "前端開發實習生",
+        "5": "設計實習生"
       }
     }
   }

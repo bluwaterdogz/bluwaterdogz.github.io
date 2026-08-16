@@ -103,7 +103,7 @@ export default function Chameleon() {
 
   useEffect(() => {
     if (!session) return
-
+console.log("yo")
     const {
       roomId,
       name: playerName,

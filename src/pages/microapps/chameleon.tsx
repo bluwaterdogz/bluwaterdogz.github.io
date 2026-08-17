@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import TOPICS from "./chameleon-topics.json";
 import styles from "./chameleon.module.scss";
@@ -7,7 +6,6 @@ const API_URL =
   "https://script.google.com/macros/s/AKfycbxZrmDnPA3a9DLbkaOcPWsQ1vGRcZ9-zTxg1vkymUGZ9gFVTvzH0Cjk9VTSyunxysOz/exec";
 
 const REFRESH_TIME = 6000;
-
 const NONE = "__NONE__";
 
 const DEFAULT_SETTINGS = {
@@ -51,9 +49,10 @@ function createId() {
 }
 
 function getPlayerId() {
-  let id = localStorage.getItem(
-    "chameleon-player-id"
-  );
+  let id =
+    localStorage.getItem(
+      "chameleon-player-id"
+    );
 
   if (!id) {
     id = createId();
@@ -67,7 +66,9 @@ function getPlayerId() {
   return id;
 }
 
-function getRoomToken(roomId: string) {
+function getRoomToken(
+  roomId: string
+) {
   const key =
     `chameleon-token:${roomId}`;
 
@@ -103,7 +104,7 @@ function createRoomCode() {
 }
 
 // ============================================================
-// API
+// LOW-LEVEL HTTP API
 // ============================================================
 
 async function apiPost(
@@ -115,19 +116,14 @@ async function apiPost(
   const body =
     new URLSearchParams({
       payload:
-        JSON.stringify(
-          payload
-        ),
+        JSON.stringify(payload),
     });
 
-  await fetch(
-    API_URL,
-    {
-      method: "POST",
-      mode: "no-cors",
-      body,
-    }
-  );
+  await fetch(API_URL, {
+    method: "POST",
+    mode: "no-cors",
+    body,
+  });
 }
 
 function apiGet(
@@ -163,25 +159,22 @@ function apiGet(
         resolve(result);
       };
 
-      script.onerror =
-        () => {
-          cleanup();
+      script.onerror = () => {
+        cleanup();
 
-          reject(
-            new Error(
-              "Could not reach the game service."
-            )
-          );
-        };
+        reject(
+          new Error(
+            "Could not reach the game service."
+          )
+        );
+      };
 
       const params =
         new URLSearchParams({
           room,
           token,
           callback,
-          _: String(
-            Date.now()
-          ),
+          _: String(Date.now()),
         });
 
       script.src =
@@ -193,6 +186,152 @@ function apiGet(
     }
   );
 }
+
+// ============================================================
+// GAME TRANSPORT
+//
+// The React component does not care HOW state arrives.
+//
+// Polling today.
+// WebSocket / SSE / Firebase / whatever later.
+// ============================================================
+
+type GameTransport = {
+  start: () => void;
+
+  stop: () => void;
+
+  refresh: () =>
+    Promise<void>;
+
+  sendAction: (
+    action: string,
+    extra?: Record<
+      string,
+      unknown
+    >
+  ) => Promise<void>;
+};
+
+type GameTransportOptions = {
+  roomId: string;
+
+  token: string;
+
+  onState: (
+    result: any
+  ) => void;
+
+  onError: (
+    error: unknown
+  ) => void;
+};
+
+// ============================================================
+// CURRENT TRANSPORT — POLLING
+// ============================================================
+
+function createPollingGameTransport({
+  roomId,
+  token,
+  onState,
+  onError,
+}: GameTransportOptions): GameTransport {
+  let stopped = false;
+
+  let interval:
+    | number
+    | null = null;
+
+  async function refresh() {
+    if (stopped) {
+      return;
+    }
+
+    try {
+      const result =
+        await apiGet(
+          roomId,
+          token
+        );
+
+      if (!stopped) {
+        onState(result);
+      }
+    } catch (error) {
+      if (!stopped) {
+        onError(error);
+      }
+    }
+  }
+
+  async function sendAction(
+    action: string,
+    extra: Record<
+      string,
+      unknown
+    > = {}
+  ) {
+    await apiPost({
+      action,
+      room: roomId,
+      token,
+      ...extra,
+    });
+
+    // Preserve current behavior:
+    // every action causes an
+    // immediate state refresh.
+    await refresh();
+  }
+
+  function start() {
+    void refresh();
+
+    interval =
+      window.setInterval(
+        () => {
+          void refresh();
+        },
+        REFRESH_TIME
+      );
+  }
+
+  function stop() {
+    stopped = true;
+
+    if (interval !== null) {
+      window.clearInterval(
+        interval
+      );
+
+      interval = null;
+    }
+  }
+
+  return {
+    start,
+    stop,
+    refresh,
+    sendAction,
+  };
+}
+
+// ============================================================
+// TRANSPORT SELECTION
+//
+// This is the line you'd swap later:
+//
+// const createGameTransport =
+//   createWebSocketGameTransport;
+// ============================================================
+
+const createGameTransport =
+  createPollingGameTransport;
+
+// ============================================================
+// DISPLAY HELPERS
+// ============================================================
 
 function scoreText(
   value: number
@@ -252,16 +391,43 @@ export default function Chameleon() {
     setLoading,
   ] = useState(false);
 
-  const networkRef =
-    useRef<any>(null);
-
-  const gameRef =
-    useRef<any>(null);
-
-  gameRef.current = game;
+  const gameTransportRef =
+    useRef<
+      GameTransport | null
+    >(null);
 
   // ============================================================
-  // POLLING / API ACTIONS
+  // SINGLE SERVER-STATE ENTRY POINT
+  //
+  // Polling, WebSocket, SSE, etc. should ALL ultimately call this.
+  // ============================================================
+
+  function applyGameState(
+    result: any | null
+  ) {
+    if (result === null) {
+      setGame(null);
+      setCard(null);
+      return;
+    }
+
+    if (!result.ok) {
+      setError(
+        result.error ||
+          "Could not load game."
+      );
+
+      return;
+    }
+
+    setError("");
+
+    setGame(result.game);
+    setCard(result.me);
+  }
+
+  // ============================================================
+  // CONNECT TRANSPORT TO THIS SESSION
   // ============================================================
 
   useEffect(() => {
@@ -269,210 +435,203 @@ export default function Chameleon() {
       return;
     }
 
-    let stopped = false;
+    const transport =
+      createGameTransport({
+        roomId:
+          session.roomId,
 
-    async function refresh() {
-      try {
-        const result =
-          await apiGet(
-            session.roomId,
-            session.token
-          );
+        token:
+          session.token,
 
-        if (stopped) {
-          return;
-        }
+        onState:
+          applyGameState,
 
-        if (!result.ok) {
-          setError(
-            result.error ||
-              "Could not load game."
-          );
+        onError:
+          syncError => {
+            setError(
+              syncError instanceof
+                Error
+                ? syncError.message
+                : String(
+                    syncError
+                  )
+            );
+          },
+      });
 
-          return;
-        }
+    gameTransportRef.current =
+      transport;
 
-        setError("");
-
-        setGame(
-          result.game
-        );
-
-        setCard(
-          result.me
-        );
-      } catch (
-        err: any
-      ) {
-        if (!stopped) {
-          setError(
-            err?.message ||
-              String(err)
-          );
-        }
-      }
-    }
-
-    async function act(
-      action: string,
-      extra: Record<
-        string,
-        unknown
-      > = {}
-    ) {
-      try {
-        setLoading(true);
-
-        await apiPost({
-          action,
-          room:
-            session.roomId,
-          token:
-            session.token,
-          ...extra,
-        });
-
-        await refresh();
-      } catch (
-        err: any
-      ) {
-        setError(
-          err?.message ||
-            String(err)
-        );
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    networkRef.current = {
-      refresh,
-
-      updateSettings(
-        patch: any
-      ) {
-        return act(
-          "updateSettings",
-          {
-            patch,
-          }
-        );
-      },
-
-      startRound() {
-        const current =
-          gameRef.current;
-
-        if (!current) {
-          return;
-        }
-
-        const topic =
-          current.settings
-            .topic;
-
-        const options =
-          (
-            TOPICS as Record<
-              string,
-              string[]
-            >
-          )[topic];
-
-        if (!options) {
-          setError(
-            `Unknown topic: ${topic}`
-          );
-
-          return;
-        }
-
-        return act(
-          "startRound",
-          {
-            options,
-          }
-        );
-      },
-
-      openVoting() {
-        return act(
-          "openVoting"
-        );
-      },
-
-      submitVote(
-        choice: string
-      ) {
-        return act(
-          "vote",
-          {
-            choice,
-          }
-        );
-      },
-
-      submitGuess(
-        word: string
-      ) {
-        return act(
-          "guess",
-          {
-            word,
-          }
-        );
-      },
-
-      revealRound() {
-        return act(
-          "reveal"
-        );
-      },
-
-      newRound() {
-        return act(
-          "newRound"
-        );
-      },
-
-      restartGame() {
-        return act(
-          "restart"
-        );
-      },
-
-      kickPlayer(
-        targetPlayerId: string
-      ) {
-        return act(
-          "kick",
-          {
-            playerId:
-              targetPlayerId,
-          }
-        );
-      },
-    };
-
-    refresh();
-
-    const interval =
-      window.setInterval(
-        refresh,
-        REFRESH_TIME
-      );
+    transport.start();
 
     return () => {
-      stopped = true;
+      transport.stop();
 
-      clearInterval(
-        interval
-      );
-
-      networkRef.current =
-        null;
+      if (
+        gameTransportRef.current ===
+        transport
+      ) {
+        gameTransportRef.current =
+          null;
+      }
     };
   }, [session]);
+
+  // ============================================================
+  // TRANSPORT ACCESS
+  // ============================================================
+
+  function refresh() {
+    return (
+      gameTransportRef.current
+        ?.refresh() ??
+      Promise.resolve()
+    );
+  }
+
+  async function act(
+    action: string,
+    extra: Record<
+      string,
+      unknown
+    > = {}
+  ) {
+    if (!session) {
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const transport =
+        gameTransportRef.current;
+
+      if (!transport) {
+        throw new Error(
+          "Game connection is not ready."
+        );
+      }
+
+      await transport.sendAction(
+        action,
+        extra
+      );
+    } catch (
+      err: any
+    ) {
+      setError(
+        err?.message ||
+          String(err)
+      );
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  // ============================================================
+  // GAME ACTIONS
+  // ============================================================
+
+  function updateSettings(
+    patch: any
+  ) {
+    return act(
+      "updateSettings",
+      {
+        patch,
+      }
+    );
+  }
+
+  function startRound() {
+    if (!game) {
+      return;
+    }
+
+    const topic =
+      game.settings.topic;
+
+    const options =
+      (
+        TOPICS as Record<
+          string,
+          string[]
+        >
+      )[topic];
+
+    if (!options) {
+      setError(
+        `Unknown topic: ${topic}`
+      );
+
+      return;
+    }
+
+    return act(
+      "startRound",
+      {
+        options,
+      }
+    );
+  }
+
+  function openVoting() {
+    return act(
+      "openVoting"
+    );
+  }
+
+  function submitVote(
+    choice: string
+  ) {
+    return act(
+      "vote",
+      {
+        choice,
+      }
+    );
+  }
+
+  function submitGuess(
+    word: string
+  ) {
+    return act(
+      "guess",
+      {
+        word,
+      }
+    );
+  }
+
+  function revealRound() {
+    return act(
+      "reveal"
+    );
+  }
+
+  function newRound() {
+    return act(
+      "newRound"
+    );
+  }
+
+  function restartGame() {
+    return act(
+      "restart"
+    );
+  }
+
+  function kickPlayer(
+    targetPlayerId: string
+  ) {
+    return act(
+      "kick",
+      {
+        playerId:
+          targetPlayerId,
+      }
+    );
+  }
 
   // ============================================================
   // JOIN / CREATE
@@ -521,8 +680,7 @@ export default function Chameleon() {
         );
 
       await apiPost({
-        action:
-          "create",
+        action: "create",
 
         room:
           roomId,
@@ -598,8 +756,7 @@ export default function Chameleon() {
         );
 
       await apiPost({
-        action:
-          "join",
+        action: "join",
 
         room:
           roomId,
@@ -635,8 +792,11 @@ export default function Chameleon() {
 
   function leaveGame() {
     setSession(null);
-    setGame(null);
-    setCard(null);
+
+    applyGameState(
+      null
+    );
+
     setError("");
   }
 
@@ -646,7 +806,11 @@ export default function Chameleon() {
 
   if (!session) {
     return (
-      <div className={styles.chameleon}>
+      <div
+        className={
+          styles.chameleon
+        }
+      >
         <main
           className={`${styles.panel} ${styles["join-view"]}`}
         >
@@ -663,15 +827,16 @@ export default function Chameleon() {
               maxLength={30}
               onChange={e =>
                 setName(
-                  e.target
-                    .value
+                  e.target.value
                 )
               }
             />
           </label>
 
           <button
-            className={styles.primary}
+            className={
+              styles.primary
+            }
             disabled={loading}
             onClick={
               createGame
@@ -739,8 +904,16 @@ export default function Chameleon() {
 
   if (!game) {
     return (
-      <div className={styles.chameleon}>
-        <main className={styles.panel}>
+      <div
+        className={
+          styles.chameleon
+        }
+      >
+        <main
+          className={
+            styles.panel
+          }
+        >
           <small>
             ROOM
           </small>
@@ -758,8 +931,8 @@ export default function Chameleon() {
           </p>
 
           <button
-            onClick={() =>
-              networkRef.current?.refresh()
+            onClick={
+              refresh
             }
           >
             Refresh
@@ -793,7 +966,7 @@ export default function Chameleon() {
     );
 
   // ============================================================
-  // SHARED COMPONENT — PLAYERS
+  // SHARED — PLAYERS
   // ============================================================
 
   function Players({
@@ -816,8 +989,7 @@ export default function Chameleon() {
 
           <span>
             {
-              game.players
-                .length
+              game.players.length
             }{" "}
             joined
           </span>
@@ -896,7 +1068,7 @@ export default function Chameleon() {
                         loading
                       }
                       onClick={() =>
-                        networkRef.current?.kickPlayer(
+                        kickPlayer(
                           player.id
                         )
                       }
@@ -913,7 +1085,7 @@ export default function Chameleon() {
   }
 
   // ============================================================
-  // SHARED COMPONENT — SCORING RULES
+  // SHARED — SCORING RULES
   // ============================================================
 
   function ScoreRules() {
@@ -949,8 +1121,7 @@ export default function Chameleon() {
 
                 <strong>
                   {scoreText(
-                    game
-                      .settings
+                    game.settings
                       .scoring[
                       key
                     ]
@@ -973,7 +1144,11 @@ export default function Chameleon() {
     "lobby"
   ) {
     return (
-      <div className={styles.chameleon}>
+      <div
+        className={
+          styles.chameleon
+        }
+      >
         <main
           className={`${styles.panel} ${styles.wide}`}
         >
@@ -994,12 +1169,26 @@ export default function Chameleon() {
                   game.roomId
                 }
               </h2>
+
+              {card?.isHost && (
+                <button
+                  type="button"
+                  onClick={
+                    restartGame
+                  }
+                  disabled={
+                    loading
+                  }
+                >
+                  Restart game
+                </button>
+              )}
             </div>
 
             <div>
               <button
-                onClick={() =>
-                  networkRef.current?.refresh()
+                onClick={
+                  refresh
                 }
               >
                 Refresh
@@ -1040,14 +1229,11 @@ export default function Chameleon() {
                         .topic
                     }
                     onChange={e =>
-                      networkRef.current?.updateSettings(
-                        {
-                          topic:
-                            e
-                              .target
-                              .value,
-                        }
-                      )
+                      updateSettings({
+                        topic:
+                          e.target
+                            .value,
+                      })
                     }
                   >
                     {Object.keys(
@@ -1090,16 +1276,13 @@ export default function Chameleon() {
                         .chameleonCount
                     }
                     onChange={e =>
-                      networkRef.current?.updateSettings(
-                        {
-                          chameleonCount:
-                            Number(
-                              e
-                                .target
-                                .value
-                            ),
-                        }
-                      )
+                      updateSettings({
+                        chameleonCount:
+                          Number(
+                            e.target
+                              .value
+                          ),
+                      })
                     }
                   />
                 </label>
@@ -1117,14 +1300,11 @@ export default function Chameleon() {
                         .allowZeroChameleons
                     }
                     onChange={e =>
-                      networkRef.current?.updateSettings(
-                        {
-                          allowZeroChameleons:
-                            e
-                              .target
-                              .checked,
-                        }
-                      )
+                      updateSettings({
+                        allowZeroChameleons:
+                          e.target
+                            .checked,
+                      })
                     }
                   />
 
@@ -1171,19 +1351,16 @@ export default function Chameleon() {
                             ]
                           }
                           onChange={e =>
-                            networkRef.current?.updateSettings(
-                              {
-                                scoring:
-                                  {
-                                    [key]:
-                                      Number(
-                                        e
-                                          .target
-                                          .value
-                                      ),
-                                  },
-                              }
-                            )
+                            updateSettings({
+                              scoring: {
+                                [key]:
+                                  Number(
+                                    e
+                                      .target
+                                      .value
+                                  ),
+                              },
+                            })
                           }
                         />
                       </label>
@@ -1197,8 +1374,8 @@ export default function Chameleon() {
                 disabled={
                   loading
                 }
-                onClick={() =>
-                  networkRef.current?.startRound()
+                onClick={
+                  startRound
                 }
               >
                 Start game
@@ -1219,8 +1396,7 @@ export default function Chameleon() {
 
                 <h1>
                   {
-                    game
-                      .settings
+                    game.settings
                       .topic
                   }
                 </h1>
@@ -1253,7 +1429,11 @@ export default function Chameleon() {
     "playing"
   ) {
     return (
-      <div className={styles.chameleon}>
+      <div
+        className={
+          styles.chameleon
+        }
+      >
         <main
           className={`${styles.panel} ${styles.wide}`}
         >
@@ -1274,16 +1454,15 @@ export default function Chameleon() {
 
               <h2>
                 {
-                  game
-                    .settings
+                  game.settings
                     .topic
                 }
               </h2>
             </div>
 
             <button
-              onClick={() =>
-                networkRef.current?.refresh()
+              onClick={
+                refresh
               }
             >
               Refresh
@@ -1299,8 +1478,7 @@ export default function Chameleon() {
               }
             >
               <h2>
-                Loading your
-                role…
+                Loading your role…
               </h2>
             </section>
           ) : card.isChameleon ? (
@@ -1385,8 +1563,8 @@ export default function Chameleon() {
               disabled={
                 loading
               }
-              onClick={() =>
-                networkRef.current?.openVoting()
+              onClick={
+                openVoting
               }
             >
               Vote
@@ -1416,7 +1594,11 @@ export default function Chameleon() {
     "voting"
   ) {
     return (
-      <div className={styles.chameleon}>
+      <div
+        className={
+          styles.chameleon
+        }
+      >
         <main
           className={`${styles.panel} ${styles.wide}`}
         >
@@ -1497,7 +1679,7 @@ export default function Chameleon() {
                           loading
                         }
                         onClick={() =>
-                          networkRef.current?.submitVote(
+                          submitVote(
                             player.id
                           )
                         }
@@ -1517,7 +1699,7 @@ export default function Chameleon() {
                     loading
                   }
                   onClick={() =>
-                    networkRef.current?.submitVote(
+                    submitVote(
                       NONE
                     )
                   }
@@ -1588,7 +1770,7 @@ export default function Chameleon() {
                           loading
                         }
                         onClick={() =>
-                          networkRef.current?.submitGuess(
+                          submitGuess(
                             option
                           )
                         }
@@ -1608,15 +1790,17 @@ export default function Chameleon() {
 
           {session.isHost && (
             <button
-              className={`${styles.primary} ${styles.big}`}
-              disabled={
-                loading
+              onClick={
+                revealRound
               }
-              onClick={() =>
-                networkRef.current?.revealRound()
+              disabled={
+                loading ||
+                !game.allVotesSubmitted
               }
             >
-              Reveal
+              {game.allVotesSubmitted
+                ? "Reveal"
+                : `Waiting for votes (${game.votedPlayerIds.length}/${game.players.length})`}
             </button>
           )}
 
@@ -1650,13 +1834,18 @@ export default function Chameleon() {
         (
           player: any
         ) =>
-          reveal.chameleonIds.includes(
-            player.id
-          )
+          reveal.chameleonIds
+            .includes(
+              player.id
+            )
       );
 
     return (
-      <div className={styles.chameleon}>
+      <div
+        className={
+          styles.chameleon
+        }
+      >
         <main
           className={`${styles.panel} ${styles.wide}`}
         >
@@ -1718,9 +1907,7 @@ export default function Chameleon() {
                       ) =>
                         player.name
                     )
-                    .join(
-                      ", "
-                    )}
+                    .join(", ")}
                 </h1>
               </>
             )}
@@ -1757,13 +1944,14 @@ export default function Chameleon() {
                     ];
 
                   const target =
-                    game.players.find(
-                      (
-                        player: any
-                      ) =>
-                        player.id ===
-                        choice
-                    );
+                    game.players
+                      .find(
+                        (
+                          player: any
+                        ) =>
+                          player.id ===
+                          choice
+                      );
 
                   return (
                     <div
@@ -1947,8 +2135,8 @@ export default function Chameleon() {
                 disabled={
                   loading
                 }
-                onClick={() =>
-                  networkRef.current?.newRound()
+                onClick={
+                  newRound
                 }
               >
                 New round
@@ -1958,8 +2146,8 @@ export default function Chameleon() {
                 disabled={
                   loading
                 }
-                onClick={() =>
-                  networkRef.current?.restartGame()
+                onClick={
+                  restartGame
                 }
               >
                 Restart game
@@ -1987,8 +2175,16 @@ export default function Chameleon() {
   // ============================================================
 
   return (
-    <div className={styles.chameleon}>
-      <main className={styles.panel}>
+    <div
+      className={
+        styles.chameleon
+      }
+    >
+      <main
+        className={
+          styles.panel
+        }
+      >
         <h2>
           Unknown game state
         </h2>
@@ -1998,8 +2194,8 @@ export default function Chameleon() {
         </p>
 
         <button
-          onClick={() =>
-            networkRef.current?.refresh()
+          onClick={
+            refresh
           }
         >
           Refresh

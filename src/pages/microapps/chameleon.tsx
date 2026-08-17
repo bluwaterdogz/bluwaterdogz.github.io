@@ -1,7 +1,7 @@
 // AKfycbwStGXno5MnMpWiBItj4IpllhKhD0EQhBxL_rA4RYOwKcZNUcGqltGu-6W6DD_IKPyD
  
 import {useEffect, useRef, useState} from 'react'
-import './chameleon.module.scss'
+import styles from './chameleon.module.scss'
 import TOPICS from './chameleon-topics.json'
 
 const API_URL =

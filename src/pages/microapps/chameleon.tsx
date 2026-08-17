@@ -780,13 +780,6 @@ export default function Chameleon() {
     );
   }
 
-  const me =
-    game.players.find(
-      (player: any) =>
-        player.id ===
-        playerId
-    );
-
   const hasVoted =
     Boolean(
       card?.hasVoted

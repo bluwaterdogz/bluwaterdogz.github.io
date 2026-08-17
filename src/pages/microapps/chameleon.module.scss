@@ -5,8 +5,8 @@
   display: grid;
   place-items: center;
 
-  background: #0b1020;
-  color: #f8fafc;
+  background: #eef2f7;
+  color: #172033;
 
   font-family:
     Inter,
@@ -27,19 +27,29 @@
     margin-top: 0;
   }
 
+  h1,
+  h2,
+  h3 {
+    color: #111827;
+  }
+
   h1 {
     font-size: 2.5rem;
   }
 
   small {
-    color: #94a3b8;
+    color: #64748b;
     font-weight: 700;
     letter-spacing: 0.1em;
   }
 
   .muted {
-    color: #94a3b8;
+    color: #64748b;
   }
+
+  // ============================================================
+  // MAIN CONTAINERS
+  // ============================================================
 
   .panel {
     width: min(100%, 520px);
@@ -50,10 +60,15 @@
 
     padding: 24px;
 
-    background: #111827;
+    background: #ffffff;
+    color: #172033;
 
-    border: 1px solid #27344d;
+    border: 1px solid #d8e0ea;
     border-radius: 18px;
+
+    box-shadow:
+      0 12px 40px
+      rgba(15, 23, 42, 0.08);
 
     &.wide {
       width: min(100%, 700px);
@@ -73,9 +88,17 @@
   }
 
   .game-header {
+    padding-bottom: 14px;
+    border-bottom: 1px solid #e2e8f0;
+
     h2 {
       margin: 4px 0 0;
       letter-spacing: 0.08em;
+    }
+
+    > div:last-child {
+      display: flex;
+      gap: 8px;
     }
   }
 
@@ -85,12 +108,17 @@
     gap: 12px;
   }
 
+  // ============================================================
+  // FORM CONTROLS
+  // ============================================================
+
   label {
     display: flex;
     flex-direction: column;
     gap: 7px;
 
-    color: #cbd5e1;
+    color: #334155;
+    font-weight: 500;
   }
 
   input,
@@ -99,39 +127,69 @@
 
     padding: 12px 14px;
 
-    border: 1px solid #374151;
+    border: 1px solid #cbd5e1;
     border-radius: 10px;
 
-    background: #0f172a;
-    color: white;
+    background: #ffffff;
+    color: #111827;
 
     font: inherit;
+
+    outline: none;
+
+    transition:
+      border-color 120ms ease,
+      box-shadow 120ms ease;
+
+    &:focus {
+      border-color: #64748b;
+
+      box-shadow:
+        0 0 0 3px
+        rgba(100, 116, 139, 0.12);
+    }
   }
 
   button {
     padding: 11px 15px;
 
-    border: 1px solid #374151;
+    border: 1px solid #cbd5e1;
     border-radius: 10px;
 
-    background: #1f2937;
-    color: white;
+    background: #f8fafc;
+    color: #1e293b;
 
     font: inherit;
+    font-weight: 600;
+
     cursor: pointer;
 
-    &:hover {
-      background: #293548;
+    transition:
+      background 120ms ease,
+      border-color 120ms ease,
+      transform 80ms ease;
+
+    &:hover:not(:disabled) {
+      background: #eef2f7;
+      border-color: #94a3b8;
+    }
+
+    &:active:not(:disabled) {
+      transform: translateY(1px);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
     }
 
     &.primary {
-      background: #f8fafc;
-      color: #111827;
+      background: #1e293b;
+      color: #ffffff;
+      border-color: #1e293b;
 
-      font-weight: 700;
-
-      &:hover {
-        background: #dbe3ed;
+      &:hover:not(:disabled) {
+        background: #334155;
       }
     }
 
@@ -142,8 +200,19 @@
   }
 
   .divider {
-    text-align: center;
-    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #94a3b8;
+
+    &::before,
+    &::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #e2e8f0;
+    }
   }
 
   // ============================================================
@@ -162,13 +231,16 @@
     gap: 9px;
 
     min-height: 46px;
-    padding: 8px 11px;
+    padding: 9px 11px;
 
-    background: #182133;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
     border-radius: 9px;
 
+    color: #1e293b;
+
     &.offline {
-      opacity: 0.4;
+      opacity: 0.45;
     }
   }
 
@@ -179,39 +251,49 @@
     flex: 0 0 auto;
 
     border-radius: 50%;
-    background: #4ade80;
+    background: #22c55e;
   }
 
   .offline .dot {
-    background: #64748b;
+    background: #94a3b8;
   }
 
   .player-name {
     flex: 1;
+    font-weight: 500;
   }
 
   .player-score {
-    color: #cbd5e1;
+    color: #475569;
     font-size: 0.85rem;
+    white-space: nowrap;
   }
 
   .tag {
     padding: 3px 7px;
 
-    border: 1px solid #475569;
+    border: 1px solid #cbd5e1;
     border-radius: 999px;
 
-    color: #94a3b8;
+    background: #ffffff;
+
+    color: #64748b;
     font-size: 0.7rem;
+    text-transform: uppercase;
   }
 
   .kick {
     padding: 5px 8px;
 
-    color: #fecaca;
+    color: #b91c1c;
 
-    border-color: #7f1d1d;
-    background: #3b151b;
+    border-color: #fecaca;
+    background: #fff1f2;
+
+    &:hover:not(:disabled) {
+      background: #ffe4e6;
+      border-color: #fca5a5;
+    }
   }
 
   // ============================================================
@@ -221,7 +303,8 @@
   .settings {
     padding: 18px;
 
-    background: #151e2f;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
     border-radius: 12px;
   }
 
@@ -244,13 +327,21 @@
       grid-template-columns: 1fr 90px;
       align-items: center;
       gap: 12px;
+
+      padding: 7px 0;
+    }
+
+    input {
+      text-align: center;
     }
   }
 
   .score-rules {
     overflow: hidden;
 
-    border: 1px solid #28354a;
+    background: #ffffff;
+
+    border: 1px solid #dbe3ec;
     border-radius: 10px;
   }
 
@@ -259,12 +350,20 @@
     justify-content: space-between;
     gap: 20px;
 
-    padding: 9px 12px;
+    padding: 10px 12px;
 
-    border-bottom: 1px solid #28354a;
+    border-bottom: 1px solid #e8edf3;
+
+    &:nth-child(even) {
+      background: #f8fafc;
+    }
 
     &:last-child {
       border-bottom: 0;
+    }
+
+    strong {
+      color: #0f172a;
     }
   }
 
@@ -279,11 +378,18 @@
 
     text-align: center;
 
-    background: #151e2f;
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
     border-radius: 15px;
 
     h1 {
       margin: 0;
+      color: #1e3a8a;
+    }
+
+    small {
+      color: #3b82f6;
     }
   }
 
@@ -301,29 +407,52 @@
 
     text-align: center;
 
-    background: #151e2f;
+    background: #f8fafc;
 
-    border: 1px solid #334155;
+    border: 1px solid #cbd5e1;
     border-radius: 16px;
 
     h1 {
       margin: 0;
-      font-size: clamp(2.6rem, 9vw, 5rem);
+
+      font-size:
+        clamp(2.6rem, 9vw, 5rem);
     }
   }
 
   .word-card {
-    background: #122d2a;
-    border-color: #28665d;
+    background: #ecfdf5;
+    border-color: #86efac;
+
+    h1 {
+      color: #166534;
+    }
+
+    small {
+      color: #15803d;
+    }
   }
 
   .chameleon-card {
-    background: #391c26;
-    border-color: #894057;
+    background: #fff1f2;
+    border-color: #fda4af;
+
+    h1 {
+      color: #9f1239;
+    }
+
+    small {
+      color: #be123c;
+    }
+
+    p {
+      color: #881337;
+    }
   }
 
   .options {
     display: grid;
+
     grid-template-columns:
       repeat(
         auto-fit,
@@ -338,15 +467,20 @@
 
     text-align: center;
 
-    background: #182133;
-    border: 1px solid #28354a;
+    background: #ffffff;
+
+    border: 1px solid #dbe3ec;
     border-radius: 9px;
+
+    color: #334155;
+    font-weight: 500;
 
     &.selected {
       font-weight: 700;
 
-      background: #1c4540;
-      border-color: #428c82;
+      background: #dcfce7;
+      border-color: #4ade80;
+      color: #166534;
     }
   }
 
@@ -367,8 +501,19 @@
     gap: 8px;
   }
 
-  .vote-grid .none {
-    border-color: #64748b;
+  .vote-grid {
+    button {
+      background: #ffffff;
+
+      &:hover:not(:disabled) {
+        background: #f1f5f9;
+      }
+    }
+
+    .none {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
   }
 
   .submitted {
@@ -376,19 +521,24 @@
 
     text-align: center;
 
-    background: #163527;
-    border: 1px solid #286444;
+    background: #ecfdf5;
+    border: 1px solid #86efac;
     border-radius: 10px;
 
-    color: #bbf7d0;
+    color: #166534;
+    font-weight: 600;
   }
 
   .guess-box {
     padding: 18px;
 
-    background: #2d1820;
-    border: 1px solid #633044;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
     border-radius: 12px;
+
+    h3 {
+      color: #9a3412;
+    }
   }
 
   // ============================================================
@@ -402,12 +552,23 @@
 
     text-align: center;
 
-    background: #312817;
-    border: 1px solid #66522d;
+    background: #fefce8;
+
+    border: 1px solid #fde68a;
     border-radius: 15px;
 
     h1 {
       margin: 0;
+      color: #854d0e;
+    }
+
+    small {
+      color: #a16207;
+    }
+
+    p {
+      margin-bottom: 0;
+      color: #713f12;
     }
   }
 
@@ -415,7 +576,9 @@
   .scoreboard {
     overflow: hidden;
 
-    border: 1px solid #29364c;
+    background: #ffffff;
+
+    border: 1px solid #dbe3ec;
     border-radius: 10px;
   }
 
@@ -424,9 +587,13 @@
     justify-content: space-between;
     gap: 15px;
 
-    padding: 10px 12px;
+    padding: 11px 12px;
 
-    border-bottom: 1px solid #29364c;
+    border-bottom: 1px solid #e8edf3;
+
+    &:nth-child(even) {
+      background: #f8fafc;
+    }
 
     &:last-child {
       border-bottom: 0;
@@ -444,7 +611,11 @@
 
     padding: 12px;
 
-    border-bottom: 1px solid #29364c;
+    border-bottom: 1px solid #e8edf3;
+
+    &:nth-child(even) {
+      background: #f8fafc;
+    }
 
     &:last-child {
       border-bottom: 0;
@@ -452,7 +623,7 @@
   }
 
   .round-score {
-    color: #94a3b8;
+    color: #64748b;
   }
 
   .total-score {
@@ -460,6 +631,7 @@
 
     text-align: right;
     font-weight: 700;
+    color: #0f172a;
   }
 
   .end-controls {
@@ -469,18 +641,22 @@
   }
 
   // ============================================================
-  // MISC
+  // ERRORS
   // ============================================================
 
   .error {
     padding: 12px;
 
-    background: #3b151b;
-    color: #fecaca;
+    background: #fff1f2;
+    color: #9f1239;
 
-    border: 1px solid #7f1d1d;
+    border: 1px solid #fecdd3;
     border-radius: 9px;
   }
+
+  // ============================================================
+  // MOBILE
+  // ============================================================
 
   @media (max-width: 600px) {
     padding: 10px;
@@ -488,6 +664,22 @@
     .panel,
     .panel.wide {
       padding: 17px;
+    }
+
+    .game-header {
+      align-items: flex-start;
+
+      > div:last-child {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+    }
+
+    .score-inputs {
+      label {
+        grid-template-columns:
+          1fr 75px;
+      }
     }
 
     .scoreboard-row {

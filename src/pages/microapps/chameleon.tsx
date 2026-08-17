@@ -1,11 +1,10 @@
-// AKfycbwStGXno5MnMpWiBItj4IpllhKhD0EQhBxL_rA4RYOwKcZNUcGqltGu-6W6DD_IKPyD
- 
+
 import { useEffect, useRef, useState } from "react";
 import TOPICS from "./chameleon-topics.json";
 import styles from "./chameleon.module.scss";
 
 const API_URL =
-  "https://script.google.com/macros/s/AKfycbwStGXno5MnMpWiBItj4IpllhKhD0EQhBxL_rA4RYOwKcZNUcGqltGu-6W6DD_IKPyD/exec";
+  "https://script.google.com/macros/s/AKfycbxZrmDnPA3a9DLbkaOcPWsQ1vGRcZ9-zTxg1vkymUGZ9gFVTvzH0Cjk9VTSyunxysOz/exec";
 
 const NONE = "__NONE__";
 

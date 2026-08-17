@@ -1,14 +1,16 @@
+// AKfycbwStGXno5MnMpWiBItj4IpllhKhD0EQhBxL_rA4RYOwKcZNUcGqltGu-6W6DD_IKPyD
+ 
 import {useEffect, useRef, useState} from 'react'
-import {joinRoom} from 'trystero'
 import './chameleon.module.scss'
 import TOPICS from './chameleon-topics.json'
-const APP_ID = 'chameleon-party-game-v2'
-const NONE = '__NONE__'
-const ZERO_CHAMELEON_CHANCE = 0.25
+
+const API_URL =
+  "https://script.google.com/macros/s/AKfycbwStGXno5MnMpWiBItj4IpllhKhD0EQhBxL_rA4RYOwKcZNUcGqltGu-6W6DD_IKPyD/exec";
+
+const NONE = "__NONE__";
 
 const DEFAULT_SETTINGS = {
-  topic: 'Animals',
-
+  topic: "Animals",
   chameleonCount: 1,
   allowZeroChameleons: false,
 
@@ -17,1189 +19,649 @@ const DEFAULT_SETTINGS = {
     chameleonEscapes: 2,
     chameleonGuessesWord: 1,
     playersWhenChameleonGuesses: -1,
-
-    // Used when "0 chameleons" is NOT enabled.
     abstain: 0,
-
-    // Used when "0 chameleons" IS enabled.
     noneCorrect: 3,
-    noneIncorrect: -2
-  }
-}
+    noneIncorrect: -2,
+  },
+};
 
 const SCORE_FIELDS = [
-  ['correctVote', 'Player votes for a chameleon'],
-  ['chameleonEscapes', 'Chameleon escapes'],
-  ['chameleonGuessesWord', 'Chameleon guesses the word'],
+  ["correctVote", "Player votes correctly"],
+  ["chameleonEscapes", "Chameleon escapes"],
+  ["chameleonGuessesWord", "Chameleon guesses word"],
   [
-    'playersWhenChameleonGuesses',
-    'Other players when chameleon guesses word'
+    "playersWhenChameleonGuesses",
+    "Players when Chameleon guesses word",
   ],
-  ['abstain', 'Abstain / no one when zero is impossible'],
-  ['noneCorrect', 'Votes no one correctly'],
-  ['noneIncorrect', 'Votes no one incorrectly']
-]
+  ["abstain", "Abstain"],
+  ["noneCorrect", "Player votes no one correctly"],
+  ["noneIncorrect", "Player votes no one incorrectly"],
+];
 
-function randomItem(items) {
-  return items[Math.floor(Math.random() * items.length)]
-}
-
-function shuffled(items) {
-  return [...items].sort(() => Math.random() - 0.5)
-}
+// ============================================================
+// LOCAL IDENTITY
+// ============================================================
 
 function createId() {
-  return globalThis.crypto?.randomUUID?.() ??
+  return (
+    globalThis.crypto?.randomUUID?.() ??
     `${Date.now()}-${Math.random().toString(36).slice(2)}`
+  );
 }
 
 function getPlayerId() {
-  let id = localStorage.getItem('chameleon-player-id')
+  let id = localStorage.getItem(
+    "chameleon-player-id"
+  );
 
   if (!id) {
-    id = createId()
-    localStorage.setItem('chameleon-player-id', id)
+    id = createId();
+
+    localStorage.setItem(
+      "chameleon-player-id",
+      id
+    );
   }
 
-  return id
+  return id;
+}
+
+function getRoomToken(roomId: string) {
+  const key =
+    `chameleon-token:${roomId}`;
+
+  let token =
+    localStorage.getItem(key);
+
+  if (!token) {
+    token = createId();
+
+    localStorage.setItem(
+      key,
+      token
+    );
+  }
+
+  return token;
 }
 
 function createRoomCode() {
-  const alphabet = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'
+  const alphabet =
+    "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
   return Array.from(
-    {length: 6},
-    () => alphabet[Math.floor(Math.random() * alphabet.length)]
-  ).join('')
+    { length: 6 },
+    () =>
+      alphabet[
+        Math.floor(
+          Math.random() *
+            alphabet.length
+        )
+      ]
+  ).join("");
 }
 
-function scoreText(value) {
-  return value > 0 ? `+${value}` : String(value)
+// ============================================================
+// API
+// ============================================================
+
+async function apiPost(
+  payload: Record<
+    string,
+    unknown
+  >
+) {
+  const body =
+    new URLSearchParams({
+      payload:
+        JSON.stringify(
+          payload
+        ),
+    });
+
+  await fetch(
+    API_URL,
+    {
+      method: "POST",
+
+      // We don't care about reading the
+      // Apps Script POST response.
+      mode: "no-cors",
+
+      body,
+    }
+  );
 }
+
+function apiGet(
+  room: string,
+  token: string
+): Promise<any> {
+  return new Promise(
+    (resolve, reject) => {
+      const callback =
+        `__chameleon_${Date.now()}_${Math.random()
+          .toString(36)
+          .slice(2)}`;
+
+      const script =
+        document.createElement(
+          "script"
+        );
+
+      const cleanup = () => {
+        delete (
+          window as any
+        )[callback];
+
+        script.remove();
+      };
+
+      (
+        window as any
+      )[callback] = (
+        result: any
+      ) => {
+        cleanup();
+        resolve(result);
+      };
+
+      script.onerror =
+        () => {
+          cleanup();
+
+          reject(
+            new Error(
+              "Could not reach the game service."
+            )
+          );
+        };
+
+      const params =
+        new URLSearchParams({
+          room,
+          token,
+          callback,
+
+          // Cache busting
+          _: String(
+            Date.now()
+          ),
+        });
+
+      script.src =
+        `${API_URL}?${params.toString()}`;
+
+      document.body.appendChild(
+        script
+      );
+    }
+  );
+}
+
+function scoreText(
+  value: number
+) {
+  if (value > 0) {
+    return `+${value}`;
+  }
+
+  return String(value);
+}
+
+// ============================================================
+// COMPONENT
+// ============================================================
 
 export default function Chameleon() {
-  const playerId = useRef(getPlayerId()).current
+  const playerId =
+    useRef(
+      getPlayerId()
+    ).current;
 
-  const [name, setName] = useState(
-    () => localStorage.getItem('chameleon-name') || ''
-  )
+  const [name, setName] =
+    useState(
+      () =>
+        localStorage.getItem(
+          "chameleon-name"
+        ) || ""
+    );
 
-  const [roomInput, setRoomInput] = useState('')
-  const [session, setSession] = useState(null)
+  const [
+    roomInput,
+    setRoomInput,
+  ] = useState("");
 
-  const [game, setGame] = useState(null)
+  const [
+    session,
+    setSession,
+  ] = useState<any>(null);
 
-  // Private state received only by this player.
-  const [card, setCard] = useState(null)
+  const [
+    game,
+    setGame,
+  ] = useState<any>(null);
 
-  const [error, setError] = useState('')
-  const [guessSubmitted, setGuessSubmitted] = useState(false)
+  const [
+    card,
+    setCard,
+  ] = useState<any>(null);
 
-  const networkRef = useRef(null)
+  const [
+    error,
+    setError,
+  ] = useState("");
+
+  const [
+    loading,
+    setLoading,
+  ] = useState(false);
+
+  const networkRef =
+    useRef<any>(null);
+
+  // Lets methods inside the effect
+  // access current state without
+  // rebuilding the polling effect.
+  const gameRef =
+    useRef<any>(null);
+
+  gameRef.current = game;
 
   // ============================================================
-  // NETWORK / AUTHORITATIVE HOST
+  // POLLING / API ACTIONS
   // ============================================================
 
   useEffect(() => {
-    if (!session) return
-console.log("yo")
-    const {
-      roomId,
-      name: playerName,
-      isHost
-    } = session
-
-const room = joinRoom(
-  {
-    appId: APP_ID,
-    relayConfig: {
-      redundancy: 5
-    }
-  },
-  roomId,
-  {
-    onJoinError: details => {
-      console.error('TRYSTERO JOIN ERROR', details)
-
-      setError(
-        `Connection failed: ${
-          details?.error?.message ||
-          details?.error ||
-          'unknown error'
-        }`
-      )
-    }
-  }
-)
-
-    const action = room.makeAction('game')
-
-    let secretWord = null
-    let chameleonIds = []
-
-    // playerId -> selected playerId | NONE
-    let votes = {}
-
-    // chameleon playerId -> guessed word
-    let wordGuesses = {}
-
-    const kickedIds = new Set()
-
-    let hostState = isHost
-      ? {
-          roomId,
-
-          phase: 'lobby',
-          round: 0,
-
-          settings: structuredClone(DEFAULT_SETTINGS),
-
-          players: [
-            {
-              id: playerId,
-              peerId: null,
-              name: playerName,
-              connected: true,
-              isHost: true,
-              score: 0
-            }
-          ],
-
-          votedPlayerIds: [],
-
-          reveal: null
-        }
-      : null
-
-    // ------------------------------------------------------------
-    // BASIC SEND
-    // ------------------------------------------------------------
-
-    function send(message, target) {
-      const options = target
-        ? {target}
-        : undefined
-
-      action
-        .send(message, options)
-        .catch(console.error)
+    if (!session) {
+      return;
     }
 
-    // ------------------------------------------------------------
-    // PUBLIC STATE
-    //
-    // Deliberately strips peer IDs and secret information.
-    // ------------------------------------------------------------
+    let stopped = false;
 
-    function makePublicState() {
-      return {
-        roomId: hostState.roomId,
+    async function refresh() {
+      try {
+        const result =
+          await apiGet(
+            session.roomId,
+            session.token
+          );
 
-        phase: hostState.phase,
-        round: hostState.round,
-
-        settings: hostState.settings,
-
-        options:
-          TOPICS[hostState.settings.topic],
-
-        players: hostState.players.map(player => ({
-          id: player.id,
-          name: player.name,
-          connected: player.connected,
-          isHost: player.isHost,
-          score: player.score
-        })),
-
-        votedPlayerIds:
-          hostState.votedPlayerIds,
-
-        reveal:
-          hostState.reveal
-      }
-    }
-
-    function publish(target) {
-      if (!isHost) return
-
-      const state =
-        makePublicState()
-
-      // Host won't receive its own broadcast.
-      setGame(state)
-
-      send(
-        {
-          type: 'STATE',
-          state
-        },
-        target
-      )
-    }
-
-    // ------------------------------------------------------------
-    // PRIVATE CARD
-    // ------------------------------------------------------------
-
-    function makeCard(player) {
-      const isChameleon =
-        chameleonIds.includes(player.id)
-
-      return {
-        round: hostState.round,
-
-        isChameleon,
-
-        topic:
-          hostState.settings.topic,
-
-        options:
-          TOPICS[hostState.settings.topic],
-
-        // Never send the word to a chameleon.
-        word:
-          isChameleon
-            ? null
-            : secretWord,
-
-        guessSubmitted:
-          Boolean(wordGuesses[player.id])
-      }
-    }
-
-    function sendCard(player) {
-      const privateCard =
-        makeCard(player)
-
-      if (player.id === playerId) {
-        setCard(privateCard)
-        setGuessSubmitted(
-          privateCard.guessSubmitted
-        )
-        return
-      }
-
-      if (!player.peerId) return
-
-      send(
-        {
-          type: 'CARD',
-          card: privateCard
-        },
-        player.peerId
-      )
-    }
-
-    // ------------------------------------------------------------
-    // JOIN
-    // ------------------------------------------------------------
-
-    function handleJoin(message, peerId) {
-      const joiningId =
-        String(message.playerId || '')
-
-      const joiningName =
-        String(message.name || '')
-          .trim()
-          .slice(0, 30)
-
-      if (!joiningId || !joiningName) {
-        return
-      }
-
-      if (kickedIds.has(joiningId)) {
-        send(
-          {
-            type: 'KICK',
-            message:
-              'The host removed you from this game.'
-          },
-          peerId
-        )
-
-        return
-      }
-
-      let player =
-        hostState.players.find(
-          p => p.id === joiningId
-        )
-
-      // Don't allow brand-new players during a round.
-      if (
-        !player &&
-        hostState.phase !== 'lobby'
-      ) {
-        send(
-          {
-            type: 'ERROR',
-            message:
-              'This round has already started.'
-          },
-          peerId
-        )
-
-        return
-      }
-
-      if (player) {
-        player.peerId = peerId
-        player.connected = true
-        player.name = joiningName
-      } else {
-        player = {
-          id: joiningId,
-          peerId,
-          name: joiningName,
-          connected: true,
-          isHost: false,
-          score: 0
+        if (stopped) {
+          return;
         }
 
-        hostState.players.push(player)
-      }
+        if (!result.ok) {
+          setError(
+            result.error ||
+              "Could not load game."
+          );
 
-      publish()
+          return;
+        }
 
-      // Restore private state after a refresh.
-      if (
-        hostState.phase === 'playing' ||
-        hostState.phase === 'voting'
+        setError("");
+
+        setGame(
+          result.game
+        );
+
+        setCard(
+          result.me
+        );
+      } catch (
+        err: any
       ) {
-        sendCard(player)
-      }
-    }
-
-    // ------------------------------------------------------------
-    // SETTINGS
-    // ------------------------------------------------------------
-
-    function updateSettings(patch) {
-      if (!isHost) return
-
-      hostState.settings = {
-        ...hostState.settings,
-        ...patch,
-        scoring: {
-          ...hostState.settings.scoring,
-          ...(patch.scoring || {})
+        if (!stopped) {
+          setError(
+            err?.message ||
+              String(err)
+          );
         }
       }
-
-      publish()
     }
 
-    // ------------------------------------------------------------
-    // START ROUND
-    // ------------------------------------------------------------
-
-    function startRound() {
-      if (!isHost) return
-
-      const connectedPlayers =
-        hostState.players.filter(
-          player => player.connected
-        )
-
-      if (connectedPlayers.length < 3) {
-        setError(
-          'You need at least 3 connected players.'
-        )
-        return
-      }
-
-      const requestedCount =
-        Number(
-          hostState.settings.chameleonCount
-        )
-
-      if (
-        requestedCount < 1 ||
-        requestedCount >= connectedPlayers.length
-      ) {
-        setError(
-          `Choose between 1 and ${
-            connectedPlayers.length - 1
-          } chameleons.`
-        )
-        return
-      }
-
-      setError('')
-
-      const topic =
-        hostState.settings.topic
-
-      secretWord =
-        randomItem(TOPICS[topic])
-
-      let actualChameleonCount =
-        requestedCount
-
-      if (
-        hostState.settings.allowZeroChameleons &&
-        Math.random() <
-          ZERO_CHAMELEON_CHANCE
-      ) {
-        actualChameleonCount = 0
-      }
-
-      chameleonIds =
-        shuffled(
-          connectedPlayers.map(
-            player => player.id
-          )
-        ).slice(
-          0,
-          actualChameleonCount
-        )
-
-      votes = {}
-      wordGuesses = {}
-
-      hostState.round += 1
-      hostState.phase = 'playing'
-
-      hostState.votedPlayerIds = []
-      hostState.reveal = null
-
-      setCard(null)
-      setGuessSubmitted(false)
-
-      publish()
-
-      connectedPlayers.forEach(sendCard)
-    }
-
-    // ------------------------------------------------------------
-    // OPEN VOTING
-    // ------------------------------------------------------------
-
-    function openVoting() {
-      if (!isHost) return
-
-      if (hostState.phase !== 'playing') {
-        return
-      }
-
-      hostState.phase = 'voting'
-      publish()
-    }
-
-    // ------------------------------------------------------------
-    // VOTE
-    // ------------------------------------------------------------
-
-    function handleVote(voterId, choice) {
-      if (
-        !hostState ||
-        hostState.phase !== 'voting'
-      ) {
-        return
-      }
-
-      if (votes[voterId] !== undefined) {
-        return
-      }
-
-      const voter =
-        hostState.players.find(
-          player => player.id === voterId
-        )
-
-      if (!voter?.connected) return
-
-      // No self-voting.
-      if (choice === voterId) return
-
-      const validChoice =
-        choice === NONE ||
-        hostState.players.some(
-          player => player.id === choice
-        )
-
-      if (!validChoice) return
-
-      votes[voterId] = choice
-
-      hostState.votedPlayerIds =
-        Object.keys(votes)
-
-      publish()
-    }
-
-    function submitVote(choice) {
-      if (isHost) {
-        handleVote(
-          playerId,
-          choice
-        )
-        return
-      }
-
-      send({
-        type: 'VOTE',
-        playerId,
-        choice
-      })
-    }
-
-    // ------------------------------------------------------------
-    // CHAMELEON WORD GUESS
-    //
-    // Submitted privately before reveal.
-    // ------------------------------------------------------------
-
-    function handleGuess(
-      guessingPlayerId,
-      word
+    async function act(
+      action: string,
+      extra: Record<
+        string,
+        unknown
+      > = {}
     ) {
-      if (
-        hostState.phase !== 'voting'
+      try {
+        setLoading(true);
+
+        await apiPost({
+          action,
+
+          room:
+            session.roomId,
+
+          token:
+            session.token,
+
+          ...extra,
+        });
+
+        await refresh();
+      } catch (
+        err: any
       ) {
-        return
-      }
-
-      if (
-        !chameleonIds.includes(
-          guessingPlayerId
-        )
-      ) {
-        return
-      }
-
-      if (
-        wordGuesses[
-          guessingPlayerId
-        ]
-      ) {
-        return
-      }
-
-      if (
-        !TOPICS[
-          hostState.settings.topic
-        ].includes(word)
-      ) {
-        return
-      }
-
-      wordGuesses[
-        guessingPlayerId
-      ] = word
-
-      const player =
-        hostState.players.find(
-          p =>
-            p.id ===
-            guessingPlayerId
-        )
-
-      if (player) {
-        sendCard(player)
+        setError(
+          err?.message ||
+            String(err)
+        );
+      } finally {
+        setLoading(false);
       }
     }
-
-    function submitGuess(word) {
-      if (
-        !card?.isChameleon ||
-        guessSubmitted
-      ) {
-        return
-      }
-
-      setGuessSubmitted(true)
-
-      if (isHost) {
-        handleGuess(
-          playerId,
-          word
-        )
-        return
-      }
-
-      send({
-        type: 'GUESS',
-        playerId,
-        word
-      })
-    }
-
-    // ------------------------------------------------------------
-    // SCORE / REVEAL
-    // ------------------------------------------------------------
-
-    function revealRound() {
-      if (
-        !isHost ||
-        hostState.phase !== 'voting'
-      ) {
-        return
-      }
-
-      const scoring =
-        hostState.settings.scoring
-
-      const roundScores = {}
-
-      hostState.players.forEach(
-        player => {
-          roundScores[player.id] = 0
-        }
-      )
-
-      // ----------------------------------------------------------
-      // INDIVIDUAL VOTE SCORES
-      // ----------------------------------------------------------
-
-      hostState.players.forEach(
-        player => {
-          const vote =
-            votes[player.id]
-
-          // Didn't vote.
-          if (vote === undefined) {
-            return
-          }
-
-          if (vote === NONE) {
-            if (
-              hostState.settings
-                .allowZeroChameleons
-            ) {
-              if (
-                chameleonIds.length === 0
-              ) {
-                roundScores[player.id] +=
-                  scoring.noneCorrect
-              } else {
-                roundScores[player.id] +=
-                  scoring.noneIncorrect
-              }
-            } else {
-              roundScores[player.id] +=
-                scoring.abstain
-            }
-
-            return
-          }
-
-          if (
-            chameleonIds.includes(vote)
-          ) {
-            roundScores[player.id] +=
-              scoring.correctVote
-          }
-        }
-      )
-
-      // ----------------------------------------------------------
-      // DETERMINE WHO THE GROUP CAUGHT
-      //
-      // Highest vote count wins.
-      // Ties count as caught.
-      // NONE participates in the tally.
-      // ----------------------------------------------------------
-
-      const voteCounts = {}
-
-      Object.values(votes).forEach(
-        choice => {
-          voteCounts[choice] =
-            (voteCounts[choice] || 0) + 1
-        }
-      )
-
-      const highestVoteCount =
-        Math.max(
-          0,
-          ...Object.values(voteCounts)
-        )
-
-      const caughtChameleonIds =
-        chameleonIds.filter(
-          id =>
-            highestVoteCount > 0 &&
-            voteCounts[id] ===
-              highestVoteCount
-        )
-
-      // ----------------------------------------------------------
-      // CHAMELEON ESCAPE SCORES
-      // ----------------------------------------------------------
-
-      chameleonIds.forEach(id => {
-        if (
-          !caughtChameleonIds.includes(id)
-        ) {
-          roundScores[id] +=
-            scoring.chameleonEscapes
-        }
-      })
-
-      // ----------------------------------------------------------
-      // WORD-GUESS SCORES
-      //
-      // Only a caught chameleon gets the
-      // traditional chance to score from
-      // guessing the word.
-      // ----------------------------------------------------------
-
-      const correctGuessers = []
-
-      caughtChameleonIds.forEach(
-        id => {
-          if (
-            wordGuesses[id] ===
-            secretWord
-          ) {
-            correctGuessers.push(id)
-
-            roundScores[id] +=
-              scoring.chameleonGuessesWord
-          }
-        }
-      )
-
-      // Each successful chameleon guess applies
-      // the configured penalty once.
-      correctGuessers.forEach(() => {
-        hostState.players.forEach(
-          player => {
-            if (
-              !chameleonIds.includes(
-                player.id
-              )
-            ) {
-              roundScores[player.id] +=
-                scoring.playersWhenChameleonGuesses
-            }
-          }
-        )
-      })
-
-      // ----------------------------------------------------------
-      // UPDATE TOTAL SCORES
-      // ----------------------------------------------------------
-
-      hostState.players.forEach(
-        player => {
-          player.score +=
-            roundScores[player.id] || 0
-        }
-      )
-
-      hostState.phase = 'revealed'
-
-      hostState.reveal = {
-        word: secretWord,
-
-        chameleonIds:
-          [...chameleonIds],
-
-        caughtChameleonIds,
-
-        votes:
-          {...votes},
-
-        wordGuesses:
-          {...wordGuesses},
-
-        correctGuessers,
-
-        roundScores
-      }
-
-      publish()
-    }
-
-    // ------------------------------------------------------------
-    // NEW ROUND
-    //
-    // Preserve totals/settings.
-    // ------------------------------------------------------------
-
-    function newRound() {
-      startRound()
-    }
-
-    // ------------------------------------------------------------
-    // RESTART GAME
-    //
-    // Same players and settings.
-    // Reset scores.
-    // Return everyone to lobby.
-    // ------------------------------------------------------------
-
-    function restartGame() {
-      if (!isHost) return
-
-      secretWord = null
-      chameleonIds = []
-      votes = {}
-      wordGuesses = {}
-
-      hostState.phase = 'lobby'
-      hostState.round = 0
-      hostState.votedPlayerIds = []
-      hostState.reveal = null
-
-      hostState.players.forEach(
-        player => {
-          player.score = 0
-        }
-      )
-
-      setCard(null)
-      setGuessSubmitted(false)
-
-      publish()
-    }
-
-    // ------------------------------------------------------------
-    // KICK
-    // ------------------------------------------------------------
-
-    function kickPlayer(kickedId) {
-      if (
-        !isHost ||
-        hostState.phase !== 'lobby' ||
-        kickedId === playerId
-      ) {
-        return
-      }
-
-      const player =
-        hostState.players.find(
-          p => p.id === kickedId
-        )
-
-      if (!player) return
-
-      kickedIds.add(kickedId)
-
-      if (player.peerId) {
-        send(
-          {
-            type: 'KICK',
-            message:
-              'The host removed you from this game.'
-          },
-          player.peerId
-        )
-      }
-
-      hostState.players =
-        hostState.players.filter(
-          p => p.id !== kickedId
-        )
-
-      publish()
-    }
-
-    // ------------------------------------------------------------
-    // INCOMING ACTIONS
-    // ------------------------------------------------------------
-
-    action.onMessage = (
-      message,
-      {peerId}
-    ) => {
-      if (
-        !message ||
-        typeof message !== 'object'
-      ) {
-        return
-      }
-
-      // HOST RECEIVES COMMANDS
-      if (isHost) {
-        switch (message.type) {
-          case 'JOIN':
-            handleJoin(
-              message,
-              peerId
-            )
-            break
-
-          case 'REQUEST_STATE':
-            publish(peerId)
-            break
-
-          case 'VOTE':
-            handleVote(
-              message.playerId,
-              message.choice
-            )
-            break
-
-          case 'GUESS':
-            handleGuess(
-              message.playerId,
-              message.word
-            )
-            break
-
-          default:
-            break
-        }
-
-        return
-      }
-
-      // CLIENT RECEIVES HOST DATA
-      switch (message.type) {
-        case 'STATE':
-          setGame(message.state)
-
-          if (
-            message.state.phase ===
-              'lobby' ||
-            message.state.phase ===
-              'revealed'
-          ) {
-            if (
-              message.state.phase ===
-              'lobby'
-            ) {
-              setCard(null)
-            }
-          }
-
-          break
-
-        case 'CARD':
-          setCard(message.card)
-          setGuessSubmitted(
-            Boolean(
-              message.card
-                .guessSubmitted
-            )
-          )
-          break
-
-        case 'ERROR':
-          setError(
-            message.message
-          )
-          break
-
-        case 'KICK':
-          setError(
-            message.message
-          )
-
-          setGame(null)
-          setCard(null)
-          setSession(null)
-          break
-
-        default:
-          break
-      }
-    }
-
-    // ------------------------------------------------------------
-    // PEER JOIN / LEAVE
-    // ------------------------------------------------------------
-
-    function announceJoin(target) {
-      if (isHost) return
-
-      send(
-        {
-          type: 'JOIN',
-          playerId,
-          name: playerName
-        },
-        target
-      )
-    }
-
-    room.onPeerJoin = peerId => {
-      console.log('PEER JOINED', peerId)
-      console.log('CURRENT PEERS', room.getPeers())
-
-      if (isHost) {
-        publish(peerId)
-      } else {
-        announceJoin(peerId)
-      }
-    }
-
-    room.onPeerLeave = peerId => {
-      console.log('PEER LEFT', peerId)
-
-      if (!isHost) return
-
-      const player = hostState.players.find(
-        p => p.peerId === peerId
-      )
-
-      if (!player) return
-
-      player.peerId = null
-      player.connected = false
-
-      publish()
-    }
-
-    // ------------------------------------------------------------
-    // EXPOSE HOST / CLIENT METHODS TO COMPONENT
-    // ------------------------------------------------------------
 
     networkRef.current = {
-      updateSettings,
+      refresh,
 
-      startRound,
-      openVoting,
-
-      submitVote,
-      submitGuess,
-
-      revealRound,
-
-      newRound,
-      restartGame,
-
-      kickPlayer,
-
-      refresh() {
-        if (isHost) {
-          publish()
-        } else {
-          send({
-            type:
-              'REQUEST_STATE'
-          })
-
-          announceJoin()
-        }
+      updateSettings(
+        patch: any
+      ) {
+        return act(
+          "updateSettings",
+          {
+            patch,
+          }
+        );
       },
 
-      leave() {
-        room.leave()
-      }
-    }
+      startRound() {
+        const current =
+          gameRef.current;
 
-    // ------------------------------------------------------------
-    // INITIAL SYNC
-    // ------------------------------------------------------------
+        if (!current) {
+          return;
+        }
 
-    if (isHost) {
-      publish()
-    } else {
-      // Helpful if discovery happens before
-      // our callback is assigned.
-      setTimeout(
-        () => announceJoin(),
-        400
-      )
+        const topic =
+          current.settings
+            .topic;
 
-      setTimeout(
-        () => announceJoin(),
-        1200
-      )
-    }
+        const options =
+          (
+            TOPICS as Record<
+              string,
+              string[]
+            >
+          )[topic];
+
+        if (!options) {
+          setError(
+            `Unknown topic: ${topic}`
+          );
+
+          return;
+        }
+
+        return act(
+          "startRound",
+          {
+            options,
+          }
+        );
+      },
+
+      openVoting() {
+        return act(
+          "openVoting"
+        );
+      },
+
+      submitVote(
+        choice: string
+      ) {
+        return act(
+          "vote",
+          {
+            choice,
+          }
+        );
+      },
+
+      submitGuess(
+        word: string
+      ) {
+        return act(
+          "guess",
+          {
+            word,
+          }
+        );
+      },
+
+      revealRound() {
+        return act(
+          "reveal"
+        );
+      },
+
+      newRound() {
+        return act(
+          "newRound"
+        );
+      },
+
+      restartGame() {
+        return act(
+          "restart"
+        );
+      },
+
+      kickPlayer(
+        targetPlayerId: string
+      ) {
+        return act(
+          "kick",
+          {
+            playerId:
+              targetPlayerId,
+          }
+        );
+      },
+    };
+
+    refresh();
+
+    const interval =
+      window.setInterval(
+        refresh,
+        2500
+      );
 
     return () => {
-      room.leave()
-      networkRef.current = null
-    }
-  }, [
-    session,
-    playerId
-  ])
+      stopped = true;
+
+      clearInterval(
+        interval
+      );
+
+      networkRef.current =
+        null;
+    };
+  }, [session]);
 
   // ============================================================
-  // SESSION
+  // JOIN / CREATE
   // ============================================================
 
   function validateName() {
     const clean =
-      name.trim().slice(0, 30)
+      name
+        .trim()
+        .slice(0, 30);
 
     if (!clean) {
       setError(
-        'Enter your name.'
-      )
-      return null
+        "Enter your name."
+      );
+
+      return null;
     }
 
     localStorage.setItem(
-      'chameleon-name',
+      "chameleon-name",
       clean
-    )
+    );
 
-    return clean
+    return clean;
   }
 
-  function createGame() {
+  async function createGame() {
     const cleanName =
-      validateName()
+      validateName();
 
-    if (!cleanName) return
+    if (!cleanName) {
+      return;
+    }
 
-    const roomId =
-      createRoomCode()
+    try {
+      setLoading(true);
+      setError("");
 
-    setRoomInput(roomId)
+      const roomId =
+        createRoomCode();
 
-    setError('')
+      const token =
+        getRoomToken(
+          roomId
+        );
 
-    setSession({
-      roomId,
-      name: cleanName,
-      isHost: true
-    })
+      await apiPost({
+        action:
+          "create",
+
+        room:
+          roomId,
+
+        playerId,
+
+        token,
+
+        name:
+          cleanName,
+
+        settings:
+          DEFAULT_SETTINGS,
+      });
+
+      setRoomInput(
+        roomId
+      );
+
+      setSession({
+        roomId,
+        token,
+
+        name:
+          cleanName,
+
+        isHost: true,
+      });
+    } catch (
+      err: any
+    ) {
+      setError(
+        err?.message ||
+          String(err)
+      );
+    } finally {
+      setLoading(false);
+    }
   }
 
-  function joinGame() {
+  async function joinGame() {
     const cleanName =
-      validateName()
+      validateName();
 
-    if (!cleanName) return
+    if (!cleanName) {
+      return;
+    }
 
     const roomId =
       roomInput
         .trim()
         .toUpperCase()
+        .replace(
+          /[^A-Z0-9]/g,
+          ""
+        );
 
     if (!roomId) {
       setError(
-        'Enter a room code.'
-      )
-      return
+        "Enter a room code."
+      );
+
+      return;
     }
 
-    setError('')
+    try {
+      setLoading(true);
+      setError("");
 
-    setSession({
-      roomId,
-      name: cleanName,
-      isHost: false
-    })
+      const token =
+        getRoomToken(
+          roomId
+        );
+
+      await apiPost({
+        action:
+          "join",
+
+        room:
+          roomId,
+
+        playerId,
+
+        token,
+
+        name:
+          cleanName,
+      });
+
+      setSession({
+        roomId,
+        token,
+
+        name:
+          cleanName,
+
+        isHost: false,
+      });
+    } catch (
+      err: any
+    ) {
+      setError(
+        err?.message ||
+          String(err)
+      );
+    } finally {
+      setLoading(false);
+    }
   }
 
   function leaveGame() {
-    networkRef.current?.leave()
-
-    setSession(null)
-    setGame(null)
-    setCard(null)
-    setGuessSubmitted(false)
+    setSession(null);
+    setGame(null);
+    setCard(null);
+    setError("");
   }
 
   // ============================================================
-  // VIEW 1: JOIN
+  // VIEW 1 — JOIN
   // ============================================================
 
   if (!session) {
     return (
       <div className="chameleon">
         <main className="panel join-view">
-          <h1>Chameleon</h1>
+          <h1>
+            Chameleon
+          </h1>
 
           <label>
             Your name
@@ -1208,9 +670,10 @@ const room = joinRoom(
               value={name}
               placeholder="Name"
               maxLength={30}
-              onChange={event =>
+              onChange={e =>
                 setName(
-                  event.target.value
+                  e.target
+                    .value
                 )
               }
             />
@@ -1218,7 +681,10 @@ const room = joinRoom(
 
           <button
             className="primary"
-            onClick={createGame}
+            disabled={loading}
+            onClick={
+              createGame
+            }
           >
             Create game
           </button>
@@ -1231,16 +697,18 @@ const room = joinRoom(
             Room code
 
             <input
-              value={roomInput}
+              value={
+                roomInput
+              }
               placeholder="ABC123"
               maxLength={12}
-              onChange={event =>
+              onChange={e =>
                 setRoomInput(
-                  event.target.value
+                  e.target.value
                     .toUpperCase()
                     .replace(
                       /[^A-Z0-9]/g,
-                      ''
+                      ""
                     )
                 )
               }
@@ -1248,7 +716,10 @@ const room = joinRoom(
           </label>
 
           <button
-            onClick={joinGame}
+            disabled={loading}
+            onClick={
+              joinGame
+            }
           >
             Join game
           </button>
@@ -1260,23 +731,27 @@ const room = joinRoom(
           )}
         </main>
       </div>
-    )
+    );
   }
 
   // ============================================================
-  // CONNECTING
+  // WAITING FOR INITIAL STATE
   // ============================================================
 
   if (!game) {
     return (
       <div className="chameleon">
         <main className="panel">
+          <small>
+            ROOM
+          </small>
+
           <h2>
-            Room {session.roomId}
+            {session.roomId}
           </h2>
 
           <p className="muted">
-            Finding the host…
+            Loading game…
           </p>
 
           <button
@@ -1288,7 +763,9 @@ const room = joinRoom(
           </button>
 
           <button
-            onClick={leaveGame}
+            onClick={
+              leaveGame
+            }
           >
             Leave
           </button>
@@ -1300,66 +777,74 @@ const room = joinRoom(
           )}
         </main>
       </div>
-    )
+    );
   }
 
   const me =
     game.players.find(
-      player =>
-        player.id === playerId
-    )
+      (player: any) =>
+        player.id ===
+        playerId
+    );
 
   const hasVoted =
-    game.votedPlayerIds?.includes(
-      playerId
-    )
+    Boolean(
+      card?.hasVoted
+    );
 
   // ============================================================
-  // REUSABLE PIECES
+  // SHARED COMPONENT — PLAYERS
   // ============================================================
 
   function Players({
-    kickable = false
+    kickable = false,
+  }: {
+    kickable?: boolean;
   }) {
     return (
       <section>
         <div className="section-heading">
-          <h3>Players</h3>
+          <h3>
+            Players
+          </h3>
 
           <span>
             {
-              game.players.filter(
-                player =>
-                  player.connected
-              ).length
-            }{' '}
-            connected
+              game.players
+                .length
+            }{" "}
+            joined
           </span>
         </div>
 
         <div className="players">
           {game.players.map(
-            player => (
+            (
+              player: any
+            ) => (
               <div
-                className={`player ${
-                  player.connected
-                    ? ''
-                    : 'offline'
-                }`}
-                key={player.id}
+                className="player"
+                key={
+                  player.id
+                }
               >
                 <span className="dot" />
 
                 <span className="player-name">
-                  {player.name}
+                  {
+                    player.name
+                  }
 
                   {player.id ===
                     playerId &&
-                    ' (you)'}
+                    " (you)"}
                 </span>
 
                 <span className="player-score">
-                  {player.score} pts
+                  {
+                    player.score
+                  }{" "}
+                  pts
                 </span>
 
                 {player.isHost && (
@@ -1373,6 +858,9 @@ const room = joinRoom(
                   !player.isHost && (
                     <button
                       className="kick"
+                      disabled={
+                        loading
+                      }
                       onClick={() =>
                         networkRef.current?.kickPlayer(
                           player.id
@@ -1387,17 +875,26 @@ const room = joinRoom(
           )}
         </div>
       </section>
-    )
+    );
   }
+
+  // ============================================================
+  // SHARED COMPONENT — SCORING RULES
+  // ============================================================
 
   function ScoreRules() {
     return (
       <section>
-        <h3>Points</h3>
+        <h3>
+          Points
+        </h3>
 
         <div className="score-rules">
           {SCORE_FIELDS.map(
-            ([key, label]) => (
+            ([
+              key,
+              label,
+            ]) => (
               <div
                 className="score-rule"
                 key={key}
@@ -1408,8 +905,11 @@ const room = joinRoom(
 
                 <strong>
                   {scoreText(
-                    game.settings
-                      .scoring[key]
+                    game
+                      .settings
+                      .scoring[
+                      key
+                    ]
                   )}
                 </strong>
               </div>
@@ -1417,70 +917,101 @@ const room = joinRoom(
           )}
         </div>
       </section>
-    )
+    );
   }
 
   // ============================================================
-  // VIEW 2: LOBBY
+  // VIEW 2 — LOBBY
   // ============================================================
 
-  if (game.phase === 'lobby') {
+  if (
+    game.phase ===
+    "lobby"
+  ) {
     return (
       <div className="chameleon">
         <main className="panel wide">
           <header className="game-header">
             <div>
-              <small>ROOM</small>
+              <small>
+                ROOM
+              </small>
 
               <h2>
-                {game.roomId}
+                {
+                  game.roomId
+                }
               </h2>
             </div>
 
-            <button
-              onClick={leaveGame}
-            >
-              Leave
-            </button>
+            <div>
+              <button
+                onClick={() =>
+                  networkRef.current?.refresh()
+                }
+              >
+                Refresh
+              </button>
+
+              <button
+                onClick={
+                  leaveGame
+                }
+              >
+                Leave
+              </button>
+            </div>
           </header>
 
-          <Players kickable />
+          <Players
+            kickable
+          />
 
           {session.isHost ? (
             <>
               <section className="settings">
-                <h3>Game settings</h3>
+                <h3>
+                  Game settings
+                </h3>
 
                 <label>
                   Topic
 
                   <select
                     value={
-                      game.settings
+                      game
+                        .settings
                         .topic
                     }
-                    onChange={
-                      event =>
-                        networkRef.current?.updateSettings(
-                          {
-                            topic:
-                              event
-                                .target
-                                .value
-                          }
-                        )
+                    onChange={e =>
+                      networkRef.current?.updateSettings(
+                        {
+                          topic:
+                            e
+                              .target
+                              .value,
+                        }
+                      )
                     }
                   >
                     {Object.keys(
                       TOPICS
-                    ).map(topic => (
-                      <option
-                        key={topic}
-                        value={topic}
-                      >
-                        {topic}
-                      </option>
-                    ))}
+                    ).map(
+                      topic => (
+                        <option
+                          value={
+                            topic
+                          }
+                          key={
+                            topic
+                          }
+                        >
+                          {
+                            topic
+                          }
+                        </option>
+                      )
+                    )}
                   </select>
                 </label>
 
@@ -1490,28 +1021,29 @@ const room = joinRoom(
 
                   <input
                     type="number"
-                    min="1"
+                    min={1}
                     max={Math.max(
                       1,
                       game.players
-                        .length - 1
+                        .length -
+                        1
                     )}
                     value={
-                      game.settings
+                      game
+                        .settings
                         .chameleonCount
                     }
-                    onChange={
-                      event =>
-                        networkRef.current?.updateSettings(
-                          {
-                            chameleonCount:
-                              Number(
-                                event
-                                  .target
-                                  .value
-                              )
-                          }
-                        )
+                    onChange={e =>
+                      networkRef.current?.updateSettings(
+                        {
+                          chameleonCount:
+                            Number(
+                              e
+                                .target
+                                .value
+                            ),
+                        }
+                      )
                     }
                   />
                 </label>
@@ -1520,24 +1052,24 @@ const room = joinRoom(
                   <input
                     type="checkbox"
                     checked={
-                      game.settings
+                      game
+                        .settings
                         .allowZeroChameleons
                     }
-                    onChange={
-                      event =>
-                        networkRef.current?.updateSettings(
-                          {
-                            allowZeroChameleons:
-                              event
-                                .target
-                                .checked
-                          }
-                        )
+                    onChange={e =>
+                      networkRef.current?.updateSettings(
+                        {
+                          allowZeroChameleons:
+                            e
+                              .target
+                              .checked,
+                        }
+                      )
                     }
                   />
 
                   Sometimes have
-                  zero chameleons
+                  zero Chameleons
                 </label>
               </section>
 
@@ -1550,13 +1082,17 @@ const room = joinRoom(
                   {SCORE_FIELDS.map(
                     ([
                       key,
-                      label
+                      label,
                     ]) => (
                       <label
-                        key={key}
+                        key={
+                          key
+                        }
                       >
                         <span>
-                          {label}
+                          {
+                            label
+                          }
                         </span>
 
                         <input
@@ -1568,21 +1104,20 @@ const room = joinRoom(
                               key
                             ]
                           }
-                          onChange={
-                            event =>
-                              networkRef.current?.updateSettings(
-                                {
-                                  scoring:
-                                    {
-                                      [key]:
-                                        Number(
-                                          event
-                                            .target
-                                            .value
-                                        )
-                                    }
-                                }
-                              )
+                          onChange={e =>
+                            networkRef.current?.updateSettings(
+                              {
+                                scoring:
+                                  {
+                                    [key]:
+                                      Number(
+                                        e
+                                          .target
+                                          .value
+                                      ),
+                                  },
+                              }
+                            )
                           }
                         />
                       </label>
@@ -1593,6 +1128,9 @@ const room = joinRoom(
 
               <button
                 className="primary big"
+                disabled={
+                  loading
+                }
                 onClick={() =>
                   networkRef.current?.startRound()
                 }
@@ -1609,21 +1147,14 @@ const room = joinRoom(
 
                 <h1>
                   {
-                    game.settings
+                    game
+                      .settings
                       .topic
                   }
                 </h1>
               </section>
 
               <ScoreRules />
-
-              <button
-                onClick={() =>
-                  networkRef.current?.refresh()
-                }
-              >
-                Refresh state
-              </button>
             </>
           )}
 
@@ -1634,37 +1165,52 @@ const room = joinRoom(
           )}
         </main>
       </div>
-    )
+    );
   }
 
   // ============================================================
-  // VIEW 3: WORD / ROLE
+  // VIEW 3 — PLAYING
   // ============================================================
 
-  if (game.phase === 'playing') {
+  if (
+    game.phase ===
+    "playing"
+  ) {
     return (
       <div className="chameleon">
         <main className="panel wide">
           <header className="game-header">
             <div>
               <small>
-                ROUND {game.round}
+                ROUND{" "}
+                {
+                  game.round
+                }
               </small>
 
               <h2>
                 {
-                  game.settings
+                  game
+                    .settings
                     .topic
                 }
               </h2>
             </div>
+
+            <button
+              onClick={() =>
+                networkRef.current?.refresh()
+              }
+            >
+              Refresh
+            </button>
           </header>
 
           {!card ? (
             <section className="role-card">
               <h2>
-                Receiving your
-                card…
+                Loading your
+                role…
               </h2>
             </section>
           ) : card.isChameleon ? (
@@ -1679,8 +1225,10 @@ const room = joinRoom(
               </h1>
 
               <p>
-                Try to figure out
-                the secret word.
+                Figure out the
+                secret word
+                without getting
+                caught.
               </p>
             </section>
           ) : (
@@ -1701,20 +1249,32 @@ const room = joinRoom(
             </h3>
 
             <div className="options">
-              {game.options.map(
+              {(
+                TOPICS as Record<
+                  string,
+                  string[]
+                >
+              )[
+                game.settings
+                  .topic
+              ]?.map(
                 option => (
                   <div
-                    key={option}
+                    key={
+                      option
+                    }
                     className={`option ${
                       card &&
                       !card.isChameleon &&
                       card.word ===
                         option
-                        ? 'selected'
-                        : ''
+                        ? "selected"
+                        : ""
                     }`}
                   >
-                    {option}
+                    {
+                      option
+                    }
                   </div>
                 )
               )}
@@ -1724,6 +1284,9 @@ const room = joinRoom(
           {session.isHost && (
             <button
               className="primary big"
+              disabled={
+                loading
+              }
               onClick={() =>
                 networkRef.current?.openVoting()
               }
@@ -1731,23 +1294,35 @@ const room = joinRoom(
               Vote
             </button>
           )}
+
+          {error && (
+            <div className="error">
+              {error}
+            </div>
+          )}
         </main>
       </div>
-    )
+    );
   }
 
   // ============================================================
-  // VIEW 4: VOTING
+  // VIEW 4 — VOTING
   // ============================================================
 
-  if (game.phase === 'voting') {
+  if (
+    game.phase ===
+    "voting"
+  ) {
     return (
       <div className="chameleon">
         <main className="panel wide">
           <header className="game-header">
             <div>
               <small>
-                ROUND {game.round}
+                ROUND{" "}
+                {
+                  game.round
+                }
               </small>
 
               <h2>
@@ -1757,16 +1332,15 @@ const room = joinRoom(
 
             <span>
               {
-                game.votedPlayerIds
+                game
+                  .votedPlayerIds
                   .length
               }
               /
               {
-                game.players.filter(
-                  player =>
-                    player.connected
-                ).length
-              }{' '}
+                game.players
+                  .length
+              }{" "}
               voted
             </span>
           </header>
@@ -1785,16 +1359,22 @@ const room = joinRoom(
               <div className="vote-grid">
                 {game.players
                   .filter(
-                    player =>
+                    (
+                      player: any
+                    ) =>
                       player.id !==
-                        playerId &&
-                      player.connected
+                      playerId
                   )
                   .map(
-                    player => (
+                    (
+                      player: any
+                    ) => (
                       <button
                         key={
                           player.id
+                        }
+                        disabled={
+                          loading
                         }
                         onClick={() =>
                           networkRef.current?.submitVote(
@@ -1811,6 +1391,9 @@ const room = joinRoom(
 
                 <button
                   className="none"
+                  disabled={
+                    loading
+                  }
                   onClick={() =>
                     networkRef.current?.submitVote(
                       NONE
@@ -1819,8 +1402,8 @@ const room = joinRoom(
                 >
                   {game.settings
                     .allowZeroChameleons
-                    ? 'No one'
-                    : 'No one / abstain'}
+                    ? "No one"
+                    : "No one / abstain"}
                 </button>
               </div>
             )}
@@ -1834,28 +1417,43 @@ const room = joinRoom(
               </h3>
 
               <p className="muted">
-                This remains
-                private until
+                Your guess stays
+                hidden until the
                 reveal.
               </p>
 
-              {guessSubmitted ? (
+              {card.guessSubmitted ? (
                 <div className="submitted">
                   Guess submitted
                 </div>
               ) : (
                 <div className="guess-buttons">
-                  {game.options.map(
+                  {(
+                    TOPICS as Record<
+                      string,
+                      string[]
+                    >
+                  )[
+                    game.settings
+                      .topic
+                  ]?.map(
                     option => (
                       <button
-                        key={option}
+                        key={
+                          option
+                        }
+                        disabled={
+                          loading
+                        }
                         onClick={() =>
                           networkRef.current?.submitGuess(
                             option
                           )
                         }
                       >
-                        {option}
+                        {
+                          option
+                        }
                       </button>
                     )
                   )}
@@ -1869,6 +1467,9 @@ const room = joinRoom(
           {session.isHost && (
             <button
               className="primary big"
+              disabled={
+                loading
+              }
               onClick={() =>
                 networkRef.current?.revealRound()
               }
@@ -1876,244 +1477,338 @@ const room = joinRoom(
               Reveal
             </button>
           )}
+
+          {error && (
+            <div className="error">
+              {error}
+            </div>
+          )}
         </main>
       </div>
-    )
+    );
   }
 
   // ============================================================
-  // VIEW 5: REVEAL / RESULTS
+  // VIEW 5 — RESULTS
   // ============================================================
 
-  const reveal =
-    game.reveal
+  if (
+    game.phase ===
+    "revealed"
+  ) {
+    const reveal =
+      game.reveal;
 
-  const chameleons =
-    game.players.filter(
-      player =>
-        reveal.chameleonIds.includes(
-          player.id
-        )
-    )
+    const chameleons =
+      game.players.filter(
+        (
+          player: any
+        ) =>
+          reveal.chameleonIds.includes(
+            player.id
+          )
+      );
 
-  return (
-    <div className="chameleon">
-      <main className="panel wide">
-        <header className="game-header">
-          <div>
-            <small>
-              ROUND {game.round}
-            </small>
-
-            <h2>Results</h2>
-          </div>
-        </header>
-
-        <section className="result-hero">
-          {chameleons.length === 0 ? (
-            <>
+    return (
+      <div className="chameleon">
+        <main className="panel wide">
+          <header className="game-header">
+            <div>
               <small>
-                THE TWIST
+                ROUND{" "}
+                {
+                  game.round
+                }
               </small>
 
-              <h1>
-                There was no
-                Chameleon
-              </h1>
-            </>
-          ) : (
-            <>
-              <small>
-                CHAMELEON
-                {chameleons.length >
-                1
-                  ? 'S'
-                  : ''}
-              </small>
+              <h2>
+                Results
+              </h2>
+            </div>
+          </header>
 
-              <h1>
-                {chameleons
-                  .map(
-                    player =>
-                      player.name
-                  )
-                  .join(', ')}
-              </h1>
-            </>
-          )}
+          <section className="result-hero">
+            {chameleons.length ===
+            0 ? (
+              <>
+                <small>
+                  THE TWIST
+                </small>
 
-          <p>
-            The word was{' '}
-            <strong>
-              {reveal.word}
-            </strong>
-          </p>
-        </section>
+                <h1>
+                  There was no
+                  Chameleon
+                </h1>
+              </>
+            ) : (
+              <>
+                <small>
+                  CHAMELEON
+                  {chameleons.length >
+                  1
+                    ? "S"
+                    : ""}
+                </small>
 
-        <section>
-          <h3>Votes</h3>
-
-          <div className="results-list">
-            {game.players.map(
-              voter => {
-                const choice =
-                  reveal.votes[
-                    voter.id
-                  ]
-
-                const target =
-                  game.players.find(
-                    player =>
-                      player.id ===
-                      choice
-                  )
-
-                return (
-                  <div
-                    className="result-row"
-                    key={
-                      voter.id
-                    }
-                  >
-                    <span>
-                      {
-                        voter.name
-                      }
-                    </span>
-
-                    <span>
-                      →
-
-                      {' '}
-
-                      {choice ===
-                      NONE
-                        ? 'No one'
-                        : target
-                            ?.name ||
-                          'No vote'}
-                    </span>
-                  </div>
-                )
-              }
+                <h1>
+                  {chameleons
+                    .map(
+                      (
+                        player: any
+                      ) =>
+                        player.name
+                    )
+                    .join(
+                      ", "
+                    )}
+                </h1>
+              </>
             )}
-          </div>
-        </section>
 
-        {chameleons.length >
-          0 && (
+            <p>
+              The word was{" "}
+              <strong>
+                {
+                  reveal.word
+                }
+              </strong>
+            </p>
+          </section>
+
           <section>
             <h3>
-              Chameleon guesses
+              Votes
             </h3>
 
             <div className="results-list">
-              {chameleons.map(
-                player => {
-                  const guess =
-                    reveal
-                      .wordGuesses[
-                      player.id
-                    ]
+              {game.players.map(
+                (
+                  voter: any
+                ) => {
+                  const choice =
+                    reveal.votes[
+                      voter.id
+                    ];
 
-                  const correct =
-                    guess ===
-                    reveal.word
+                  const target =
+                    game.players.find(
+                      (
+                        player: any
+                      ) =>
+                        player.id ===
+                        choice
+                    );
 
                   return (
                     <div
                       className="result-row"
                       key={
-                        player.id
+                        voter.id
                       }
                     >
                       <span>
                         {
-                          player.name
+                          voter.name
                         }
                       </span>
 
-                      <strong>
-                        {guess ||
-                          'No guess'}
+                      <span>
+                        →{" "}
 
-                        {guess &&
-                          (correct
-                            ? ' ✓'
-                            : ' ✕')}
-                      </strong>
+                        {choice ===
+                        NONE
+                          ? "No one"
+                          : target?.name ||
+                            "No vote"}
+                      </span>
                     </div>
-                  )
+                  );
                 }
               )}
             </div>
           </section>
-        )}
 
-        <section>
-          <h3>Scores</h3>
+          {chameleons.length >
+            0 && (
+            <section>
+              <h3>
+                Chameleon
+                guesses
+              </h3>
 
-          <div className="scoreboard">
-            {[...game.players]
-              .sort(
-                (a, b) =>
-                  b.score -
-                  a.score
-              )
-              .map(player => (
-                <div
-                  className="scoreboard-row"
-                  key={
-                    player.id
-                  }
-                >
-                  <strong>
-                    {
-                      player.name
-                    }
-                  </strong>
-
-                  <span className="round-score">
-                    {scoreText(
+              <div className="results-list">
+                {chameleons.map(
+                  (
+                    player: any
+                  ) => {
+                    const guess =
                       reveal
-                        .roundScores[
+                        .wordGuesses[
                         player.id
-                      ] || 0
-                    )}{' '}
-                    this round
-                  </span>
+                      ];
 
-                  <span className="total-score">
-                    {player.score}{' '}
-                    total
-                  </span>
-                </div>
-              ))}
-          </div>
-        </section>
+                    const correct =
+                      guess ===
+                      reveal.word;
 
-        {session.isHost && (
-          <div className="end-controls">
-            <button
-              className="primary big"
-              onClick={() =>
-                networkRef.current?.newRound()
-              }
-            >
-              New round
-            </button>
+                    return (
+                      <div
+                        className="result-row"
+                        key={
+                          player.id
+                        }
+                      >
+                        <span>
+                          {
+                            player.name
+                          }
+                        </span>
 
-            <button
-              onClick={() =>
-                networkRef.current?.restartGame()
-              }
-            >
-              Restart game
-              (reset scores)
-            </button>
+                        <strong>
+                          {guess ||
+                            "No guess"}
+
+                          {guess &&
+                            (correct
+                              ? " ✓"
+                              : " ✕")}
+                        </strong>
+                      </div>
+                    );
+                  }
+                )}
+              </div>
+            </section>
+          )}
+
+          <section>
+            <h3>
+              Scores
+            </h3>
+
+            <div className="scoreboard">
+              {[...game.players]
+                .sort(
+                  (
+                    a: any,
+                    b: any
+                  ) =>
+                    b.score -
+                    a.score
+                )
+                .map(
+                  (
+                    player: any
+                  ) => (
+                    <div
+                      className="scoreboard-row"
+                      key={
+                        player.id
+                      }
+                    >
+                      <strong>
+                        {
+                          player.name
+                        }
+                      </strong>
+
+                      <span className="round-score">
+                        {scoreText(
+                          reveal
+                            .roundScores[
+                            player.id
+                          ] || 0
+                        )}{" "}
+                        this round
+                      </span>
+
+                      <span className="total-score">
+                        {
+                          player.score
+                        }{" "}
+                        total
+                      </span>
+                    </div>
+                  )
+                )}
+            </div>
+          </section>
+
+          {session.isHost && (
+            <div className="end-controls">
+              <button
+                className="primary big"
+                disabled={
+                  loading
+                }
+                onClick={() =>
+                  networkRef.current?.newRound()
+                }
+              >
+                New round
+              </button>
+
+              <button
+                disabled={
+                  loading
+                }
+                onClick={() =>
+                  networkRef.current?.restartGame()
+                }
+              >
+                Restart game
+                / reset scores
+              </button>
+            </div>
+          )}
+
+          {error && (
+            <div className="error">
+              {error}
+            </div>
+          )}
+        </main>
+      </div>
+    );
+  }
+
+  // ============================================================
+  // UNKNOWN STATE
+  // ============================================================
+
+  return (
+    <div className="chameleon">
+      <main className="panel">
+        <h2>
+          Unknown game state
+        </h2>
+
+        <p>
+          {game.phase}
+        </p>
+
+        <button
+          onClick={() =>
+            networkRef.current?.refresh()
+          }
+        >
+          Refresh
+        </button>
+
+        <button
+          onClick={
+            leaveGame
+          }
+        >
+          Leave
+        </button>
+
+        {error && (
+          <div className="error">
+            {error}
           </div>
         )}
       </main>
     </div>
-  )
+  );
 }

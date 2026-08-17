@@ -6,6 +6,8 @@ import styles from "./chameleon.module.scss";
 const API_URL =
   "https://script.google.com/macros/s/AKfycbxZrmDnPA3a9DLbkaOcPWsQ1vGRcZ9-zTxg1vkymUGZ9gFVTvzH0Cjk9VTSyunxysOz/exec";
 
+const REFRESH_TIME = 6000;
+
 const NONE = "__NONE__";
 
 const DEFAULT_SETTINGS = {
@@ -457,7 +459,7 @@ export default function Chameleon() {
     const interval =
       window.setInterval(
         refresh,
-        2500
+        REFRESH_TIME
       );
 
     return () => {

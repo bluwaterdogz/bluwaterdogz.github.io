@@ -1,8 +1,8 @@
 // AKfycbwStGXno5MnMpWiBItj4IpllhKhD0EQhBxL_rA4RYOwKcZNUcGqltGu-6W6DD_IKPyD
  
-import {useEffect, useRef, useState} from 'react'
-import styles from './chameleon.module.scss'
-import TOPICS from './chameleon-topics.json'
+import { useEffect, useRef, useState } from "react";
+import TOPICS from "./chameleon-topics.json";
+import styles from "./chameleon.module.scss";
 
 const API_URL =
   "https://script.google.com/macros/s/AKfycbwStGXno5MnMpWiBItj4IpllhKhD0EQhBxL_rA4RYOwKcZNUcGqltGu-6W6DD_IKPyD/exec";
@@ -123,11 +123,7 @@ async function apiPost(
     API_URL,
     {
       method: "POST",
-
-      // We don't care about reading the
-      // Apps Script POST response.
       mode: "no-cors",
-
       body,
     }
   );
@@ -182,8 +178,6 @@ function apiGet(
           room,
           token,
           callback,
-
-          // Cache busting
           _: String(
             Date.now()
           ),
@@ -260,9 +254,6 @@ export default function Chameleon() {
   const networkRef =
     useRef<any>(null);
 
-  // Lets methods inside the effect
-  // access current state without
-  // rebuilding the polling effect.
   const gameRef =
     useRef<any>(null);
 
@@ -333,13 +324,10 @@ export default function Chameleon() {
 
         await apiPost({
           action,
-
           room:
             session.roomId,
-
           token:
             session.token,
-
           ...extra,
         });
 
@@ -657,8 +645,10 @@ export default function Chameleon() {
 
   if (!session) {
     return (
-      <div className="chameleon">
-        <main className="panel join-view">
+      <div className={styles.chameleon}>
+        <main
+          className={`${styles.panel} ${styles["join-view"]}`}
+        >
           <h1>
             Chameleon
           </h1>
@@ -680,7 +670,7 @@ export default function Chameleon() {
           </label>
 
           <button
-            className="primary"
+            className={styles.primary}
             disabled={loading}
             onClick={
               createGame
@@ -689,7 +679,11 @@ export default function Chameleon() {
             Create game
           </button>
 
-          <div className="divider">
+          <div
+            className={
+              styles.divider
+            }
+          >
             or
           </div>
 
@@ -725,7 +719,11 @@ export default function Chameleon() {
           </button>
 
           {error && (
-            <div className="error">
+            <div
+              className={
+                styles.error
+              }
+            >
               {error}
             </div>
           )}
@@ -740,8 +738,8 @@ export default function Chameleon() {
 
   if (!game) {
     return (
-      <div className="chameleon">
-        <main className="panel">
+      <div className={styles.chameleon}>
+        <main className={styles.panel}>
           <small>
             ROOM
           </small>
@@ -750,7 +748,11 @@ export default function Chameleon() {
             {session.roomId}
           </h2>
 
-          <p className="muted">
+          <p
+            className={
+              styles.muted
+            }
+          >
             Loading game…
           </p>
 
@@ -771,7 +773,11 @@ export default function Chameleon() {
           </button>
 
           {error && (
-            <div className="error">
+            <div
+              className={
+                styles.error
+              }
+            >
               {error}
             </div>
           )}
@@ -796,7 +802,13 @@ export default function Chameleon() {
   }) {
     return (
       <section>
-        <div className="section-heading">
+        <div
+          className={
+            styles[
+              "section-heading"
+            ]
+          }
+        >
           <h3>
             Players
           </h3>
@@ -810,20 +822,36 @@ export default function Chameleon() {
           </span>
         </div>
 
-        <div className="players">
+        <div
+          className={
+            styles.players
+          }
+        >
           {game.players.map(
             (
               player: any
             ) => (
               <div
-                className="player"
+                className={
+                  styles.player
+                }
                 key={
                   player.id
                 }
               >
-                <span className="dot" />
+                <span
+                  className={
+                    styles.dot
+                  }
+                />
 
-                <span className="player-name">
+                <span
+                  className={
+                    styles[
+                      "player-name"
+                    ]
+                  }
+                >
                   {
                     player.name
                   }
@@ -833,7 +861,13 @@ export default function Chameleon() {
                     " (you)"}
                 </span>
 
-                <span className="player-score">
+                <span
+                  className={
+                    styles[
+                      "player-score"
+                    ]
+                  }
+                >
                   {
                     player.score
                   }{" "}
@@ -841,7 +875,11 @@ export default function Chameleon() {
                 </span>
 
                 {player.isHost && (
-                  <span className="tag">
+                  <span
+                    className={
+                      styles.tag
+                    }
+                  >
                     host
                   </span>
                 )}
@@ -850,7 +888,9 @@ export default function Chameleon() {
                   session.isHost &&
                   !player.isHost && (
                     <button
-                      className="kick"
+                      className={
+                        styles.kick
+                      }
                       disabled={
                         loading
                       }
@@ -882,14 +922,24 @@ export default function Chameleon() {
           Points
         </h3>
 
-        <div className="score-rules">
+        <div
+          className={
+            styles[
+              "score-rules"
+            ]
+          }
+        >
           {SCORE_FIELDS.map(
             ([
               key,
               label,
             ]) => (
               <div
-                className="score-rule"
+                className={
+                  styles[
+                    "score-rule"
+                  ]
+                }
                 key={key}
               >
                 <span>
@@ -922,9 +972,17 @@ export default function Chameleon() {
     "lobby"
   ) {
     return (
-      <div className="chameleon">
-        <main className="panel wide">
-          <header className="game-header">
+      <div className={styles.chameleon}>
+        <main
+          className={`${styles.panel} ${styles.wide}`}
+        >
+          <header
+            className={
+              styles[
+                "game-header"
+              ]
+            }
+          >
             <div>
               <small>
                 ROOM
@@ -962,7 +1020,11 @@ export default function Chameleon() {
 
           {session.isHost ? (
             <>
-              <section className="settings">
+              <section
+                className={
+                  styles.settings
+                }
+              >
                 <h3>
                   Game settings
                 </h3>
@@ -1041,7 +1103,11 @@ export default function Chameleon() {
                   />
                 </label>
 
-                <label className="checkbox">
+                <label
+                  className={
+                    styles.checkbox
+                  }
+                >
                   <input
                     type="checkbox"
                     checked={
@@ -1071,7 +1137,13 @@ export default function Chameleon() {
                   Scoring
                 </h3>
 
-                <div className="score-inputs">
+                <div
+                  className={
+                    styles[
+                      "score-inputs"
+                    ]
+                  }
+                >
                   {SCORE_FIELDS.map(
                     ([
                       key,
@@ -1120,7 +1192,7 @@ export default function Chameleon() {
               </section>
 
               <button
-                className="primary big"
+                className={`${styles.primary} ${styles.big}`}
                 disabled={
                   loading
                 }
@@ -1133,7 +1205,13 @@ export default function Chameleon() {
             </>
           ) : (
             <>
-              <section className="topic-box">
+              <section
+                className={
+                  styles[
+                    "topic-box"
+                  ]
+                }
+              >
                 <small>
                   CURRENT TOPIC
                 </small>
@@ -1152,7 +1230,11 @@ export default function Chameleon() {
           )}
 
           {error && (
-            <div className="error">
+            <div
+              className={
+                styles.error
+              }
+            >
               {error}
             </div>
           )}
@@ -1170,9 +1252,17 @@ export default function Chameleon() {
     "playing"
   ) {
     return (
-      <div className="chameleon">
-        <main className="panel wide">
-          <header className="game-header">
+      <div className={styles.chameleon}>
+        <main
+          className={`${styles.panel} ${styles.wide}`}
+        >
+          <header
+            className={
+              styles[
+                "game-header"
+              ]
+            }
+          >
             <div>
               <small>
                 ROUND{" "}
@@ -1200,14 +1290,22 @@ export default function Chameleon() {
           </header>
 
           {!card ? (
-            <section className="role-card">
+            <section
+              className={
+                styles[
+                  "role-card"
+                ]
+              }
+            >
               <h2>
                 Loading your
                 role…
               </h2>
             </section>
           ) : card.isChameleon ? (
-            <section className="role-card chameleon-card">
+            <section
+              className={`${styles["role-card"]} ${styles["chameleon-card"]}`}
+            >
               <small>
                 YOUR ROLE
               </small>
@@ -1225,7 +1323,9 @@ export default function Chameleon() {
               </p>
             </section>
           ) : (
-            <section className="role-card word-card">
+            <section
+              className={`${styles["role-card"]} ${styles["word-card"]}`}
+            >
               <small>
                 SECRET WORD
               </small>
@@ -1241,7 +1341,11 @@ export default function Chameleon() {
               Possible words
             </h3>
 
-            <div className="options">
+            <div
+              className={
+                styles.options
+              }
+            >
               {(
                 TOPICS as Record<
                   string,
@@ -1256,14 +1360,14 @@ export default function Chameleon() {
                     key={
                       option
                     }
-                    className={`option ${
+                    className={
                       card &&
                       !card.isChameleon &&
                       card.word ===
                         option
-                        ? "selected"
-                        : ""
-                    }`}
+                        ? `${styles.option} ${styles.selected}`
+                        : styles.option
+                    }
                   >
                     {
                       option
@@ -1276,7 +1380,7 @@ export default function Chameleon() {
 
           {session.isHost && (
             <button
-              className="primary big"
+              className={`${styles.primary} ${styles.big}`}
               disabled={
                 loading
               }
@@ -1289,7 +1393,11 @@ export default function Chameleon() {
           )}
 
           {error && (
-            <div className="error">
+            <div
+              className={
+                styles.error
+              }
+            >
               {error}
             </div>
           )}
@@ -1307,9 +1415,17 @@ export default function Chameleon() {
     "voting"
   ) {
     return (
-      <div className="chameleon">
-        <main className="panel wide">
-          <header className="game-header">
+      <div className={styles.chameleon}>
+        <main
+          className={`${styles.panel} ${styles.wide}`}
+        >
+          <header
+            className={
+              styles[
+                "game-header"
+              ]
+            }
+          >
             <div>
               <small>
                 ROUND{" "}
@@ -1345,11 +1461,21 @@ export default function Chameleon() {
             </h3>
 
             {hasVoted ? (
-              <div className="submitted">
+              <div
+                className={
+                  styles.submitted
+                }
+              >
                 Vote submitted
               </div>
             ) : (
-              <div className="vote-grid">
+              <div
+                className={
+                  styles[
+                    "vote-grid"
+                  ]
+                }
+              >
                 {game.players
                   .filter(
                     (
@@ -1383,7 +1509,9 @@ export default function Chameleon() {
                   )}
 
                 <button
-                  className="none"
+                  className={
+                    styles.none
+                  }
                   disabled={
                     loading
                   }
@@ -1403,24 +1531,44 @@ export default function Chameleon() {
           </section>
 
           {card?.isChameleon && (
-            <section className="guess-box">
+            <section
+              className={
+                styles[
+                  "guess-box"
+                ]
+              }
+            >
               <h3>
                 Guess the secret
                 word
               </h3>
 
-              <p className="muted">
+              <p
+                className={
+                  styles.muted
+                }
+              >
                 Your guess stays
                 hidden until the
                 reveal.
               </p>
 
               {card.guessSubmitted ? (
-                <div className="submitted">
+                <div
+                  className={
+                    styles.submitted
+                  }
+                >
                   Guess submitted
                 </div>
               ) : (
-                <div className="guess-buttons">
+                <div
+                  className={
+                    styles[
+                      "guess-buttons"
+                    ]
+                  }
+                >
                   {(
                     TOPICS as Record<
                       string,
@@ -1459,7 +1607,7 @@ export default function Chameleon() {
 
           {session.isHost && (
             <button
-              className="primary big"
+              className={`${styles.primary} ${styles.big}`}
               disabled={
                 loading
               }
@@ -1472,7 +1620,11 @@ export default function Chameleon() {
           )}
 
           {error && (
-            <div className="error">
+            <div
+              className={
+                styles.error
+              }
+            >
               {error}
             </div>
           )}
@@ -1503,9 +1655,17 @@ export default function Chameleon() {
       );
 
     return (
-      <div className="chameleon">
-        <main className="panel wide">
-          <header className="game-header">
+      <div className={styles.chameleon}>
+        <main
+          className={`${styles.panel} ${styles.wide}`}
+        >
+          <header
+            className={
+              styles[
+                "game-header"
+              ]
+            }
+          >
             <div>
               <small>
                 ROUND{" "}
@@ -1520,7 +1680,13 @@ export default function Chameleon() {
             </div>
           </header>
 
-          <section className="result-hero">
+          <section
+            className={
+              styles[
+                "result-hero"
+              ]
+            }
+          >
             {chameleons.length ===
             0 ? (
               <>
@@ -1573,7 +1739,13 @@ export default function Chameleon() {
               Votes
             </h3>
 
-            <div className="results-list">
+            <div
+              className={
+                styles[
+                  "results-list"
+                ]
+              }
+            >
               {game.players.map(
                 (
                   voter: any
@@ -1594,7 +1766,11 @@ export default function Chameleon() {
 
                   return (
                     <div
-                      className="result-row"
+                      className={
+                        styles[
+                          "result-row"
+                        ]
+                      }
                       key={
                         voter.id
                       }
@@ -1629,7 +1805,13 @@ export default function Chameleon() {
                 guesses
               </h3>
 
-              <div className="results-list">
+              <div
+                className={
+                  styles[
+                    "results-list"
+                  ]
+                }
+              >
                 {chameleons.map(
                   (
                     player: any
@@ -1646,7 +1828,11 @@ export default function Chameleon() {
 
                     return (
                       <div
-                        className="result-row"
+                        className={
+                          styles[
+                            "result-row"
+                          ]
+                        }
                         key={
                           player.id
                         }
@@ -1679,7 +1865,11 @@ export default function Chameleon() {
               Scores
             </h3>
 
-            <div className="scoreboard">
+            <div
+              className={
+                styles.scoreboard
+              }
+            >
               {[...game.players]
                 .sort(
                   (
@@ -1694,7 +1884,11 @@ export default function Chameleon() {
                     player: any
                   ) => (
                     <div
-                      className="scoreboard-row"
+                      className={
+                        styles[
+                          "scoreboard-row"
+                        ]
+                      }
                       key={
                         player.id
                       }
@@ -1705,7 +1899,13 @@ export default function Chameleon() {
                         }
                       </strong>
 
-                      <span className="round-score">
+                      <span
+                        className={
+                          styles[
+                            "round-score"
+                          ]
+                        }
+                      >
                         {scoreText(
                           reveal
                             .roundScores[
@@ -1715,7 +1915,13 @@ export default function Chameleon() {
                         this round
                       </span>
 
-                      <span className="total-score">
+                      <span
+                        className={
+                          styles[
+                            "total-score"
+                          ]
+                        }
+                      >
                         {
                           player.score
                         }{" "}
@@ -1728,9 +1934,15 @@ export default function Chameleon() {
           </section>
 
           {session.isHost && (
-            <div className="end-controls">
+            <div
+              className={
+                styles[
+                  "end-controls"
+                ]
+              }
+            >
               <button
-                className="primary big"
+                className={`${styles.primary} ${styles.big}`}
                 disabled={
                   loading
                 }
@@ -1756,7 +1968,11 @@ export default function Chameleon() {
           )}
 
           {error && (
-            <div className="error">
+            <div
+              className={
+                styles.error
+              }
+            >
               {error}
             </div>
           )}
@@ -1770,8 +1986,8 @@ export default function Chameleon() {
   // ============================================================
 
   return (
-    <div className="chameleon">
-      <main className="panel">
+    <div className={styles.chameleon}>
+      <main className={styles.panel}>
         <h2>
           Unknown game state
         </h2>
@@ -1797,7 +2013,11 @@ export default function Chameleon() {
         </button>
 
         {error && (
-          <div className="error">
+          <div
+            className={
+              styles.error
+            }
+          >
             {error}
           </div>
         )}

@@ -10,6 +10,7 @@ import HomeNav from "../../components/nav/home-nav";
 export const DefaultLayout = () => {
   const location = useLocation();
   const setNavOpen = useNaveStore((state) => state.setNavOpen);
+  const isMicroappsPage = location.pathname.startsWith("/microapps");
 
   useLayoutEffect(() => {
     window?.scrollTo({ top: 0, left: 0, behavior: "instant" });
@@ -18,12 +19,18 @@ export const DefaultLayout = () => {
 
   return (
     <div className={`${styles.defaultLayout}`}>
-      <NavMenuIcon className={`${styles.navIcon}`} />
-      <MobileNav className={styles.mobileNav} />
+      {!isMicroappsPage && (
+        <>
+          <NavMenuIcon className={`${styles.navIcon}`} />
+          <MobileNav className={styles.mobileNav} />
+        </>
+      )}
       <div className={styles.pageRegion}>
-        <div className={styles.sideNavRegion}>
-          <HomeNav dark={true} className={styles.sideNav} />
-        </div>
+        {!isMicroappsPage && (
+          <div className={styles.sideNavRegion}>
+            <HomeNav dark={true} className={styles.sideNav} />
+          </div>
+        )}
         <Outlet />
       </div>
       <Footer />

@@ -1637,81 +1637,82 @@ export default function Chameleon() {
             </span>
           </header>
 
-          <section>
-            <h3>
-              Who is the
-              Chameleon?
-            </h3>
+          {!card?.isChameleon && (
+            <section>
+              <h3>
+                Who is the Chameleon?
+              </h3>
 
-            {hasVoted ? (
-              <div
-                className={
-                  styles.submitted
-                }
-              >
-                Vote submitted
-              </div>
-            ) : (
-              <div
-                className={
-                  styles[
-                    "vote-grid"
-                  ]
-                }
-              >
-                {game.players
-                  .filter(
-                    (
-                      player: any
-                    ) =>
-                      player.id !==
-                      playerId
-                  )
-                  .map(
-                    (
-                      player: any
-                    ) => (
-                      <button
-                        key={
-                          player.id
-                        }
-                        disabled={
-                          loading
-                        }
-                        onClick={() =>
-                          submitVote(
-                            player.id
-                          )
-                        }
-                      >
-                        {
-                          player.name
-                        }
-                      </button>
-                    )
-                  )}
-
-                <button
+              {hasVoted ? (
+                <div
                   className={
-                    styles.none
-                  }
-                  disabled={
-                    loading
-                  }
-                  onClick={() =>
-                    submitVote(
-                      NONE
-                    )
+                    styles.submitted
                   }
                 >
-                  {game.settings
-                    .allowZeroChameleons
-                    ? "No one"
-                    : "No one / abstain"}
-                </button>
-              </div>
-            )}
-          </section>
+                  Vote submitted
+                </div>
+              ) : (
+                <div
+                  className={
+                    styles[
+                      "vote-grid"
+                    ]
+                  }
+                >
+                  {game.players
+                    .filter(
+                      (
+                        player: any
+                      ) =>
+                        player.id !==
+                        playerId
+                    )
+                    .map(
+                      (
+                        player: any
+                      ) => (
+                        <button
+                          key={
+                            player.id
+                          }
+                          disabled={
+                            loading
+                          }
+                          onClick={() =>
+                            submitVote(
+                              player.id
+                            )
+                          }
+                        >
+                          {
+                            player.name
+                          }
+                        </button>
+                      )
+                    )}
+
+                  <button
+                    className={
+                      styles.none
+                    }
+                    disabled={
+                      loading
+                    }
+                    onClick={() =>
+                      submitVote(
+                        NONE
+                      )
+                    }
+                  >
+                    {game.settings
+                      .allowZeroChameleons
+                      ? "No one"
+                      : "No one / abstain"}
+                  </button>
+                </div>
+              )}
+            </section>
+          )}
 
           {card?.isChameleon && (
             <section

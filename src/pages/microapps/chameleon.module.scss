@@ -317,6 +317,13 @@
     }
   }
 
+  .range-inputs {
+    display: grid;
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
   .score-inputs {
     display: flex;
     flex-direction: column;
@@ -529,6 +536,18 @@
     font-weight: 600;
   }
 
+  .eliminated-notice {
+    padding: 14px;
+
+    text-align: center;
+    font-weight: 600;
+
+    color: #475569;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+  }
+
   .guess-box {
     padding: 18px;
 
@@ -569,6 +588,49 @@
     p {
       margin-bottom: 0;
       color: #713f12;
+    }
+  }
+
+  .found-result {
+    background: #ecfdf5;
+    border-color: #86efac;
+
+    h1 {
+      color: #166534;
+    }
+
+    small {
+      color: #15803d;
+    }
+  }
+
+  .caught-summary {
+    padding: 13px 14px;
+
+    color: #166534;
+    font-weight: 700;
+
+    background: #ecfdf5;
+    border: 1px solid #86efac;
+    border-radius: 10px;
+  }
+
+  .ballot-result {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ballot-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+
+    color: #475569;
+
+    strong {
+      color: #0f172a;
     }
   }
 
@@ -698,6 +760,16 @@
 
     .end-controls {
       grid-template-columns: 1fr;
+    }
+
+    .range-inputs {
+      grid-template-columns: 1fr;
+    }
+
+    .ballot-heading {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 4px;
     }
   }
 }

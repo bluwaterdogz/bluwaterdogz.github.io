@@ -10,12 +10,18 @@ const NONE = "__NONE__";
 
 const DEFAULT_SETTINGS = {
   topic: "Animals",
+  chameleonCountMin: 1,
+  chameleonCountMax: 1,
+
+  // Compatibility with API versions that still expect one value.
   chameleonCount: 1,
   allowZeroChameleons: false,
+  chameleonVotesCount: true,
 
   scoring: {
     correctVote: 1,
     chameleonEscapes: 2,
+    chameleonSurvivesVote: 1,
     chameleonGuessesWord: 1,
     playersWhenChameleonGuesses: -1,
     abstain: 0,
@@ -27,6 +33,7 @@ const DEFAULT_SETTINGS = {
 const SCORE_FIELDS = [
   ["correctVote", "Player votes correctly"],
   ["chameleonEscapes", "Chameleon escapes"],
+  ["chameleonSurvivesVote", "Chameleon survives a vote"],
   ["chameleonGuessesWord", "Chameleon guesses word"],
   [
     "playersWhenChameleonGuesses",
@@ -965,6 +972,49 @@ export default function Chameleon() {
       card?.hasVoted
     );
 
+  const canGuessWord =
+    card?.canGuessWord ??
+    (game.phase === "voting" &&
+      game.voteNumber === 1 &&
+      card?.isChameleon &&
+      !card?.guessSubmitted);
+
+  const eliminatedPlayerIds =
+    Array.isArray(
+      game.eliminatedPlayerIds
+    )
+      ? game.eliminatedPlayerIds
+      : [];
+
+  const eligibleVoters =
+    game.players.filter(
+      (player: any) =>
+        !eliminatedPlayerIds.includes(
+          player.id
+        )
+    );
+
+  const eligibleVoteTargets =
+    eligibleVoters.filter(
+      (player: any) =>
+        player.id !== playerId
+    );
+
+  function playerName(
+    id: string | null
+  ) {
+    if (!id) {
+      return "No one";
+    }
+
+    return (
+      game.players.find(
+        (player: any) =>
+          player.id === id
+      )?.name || "Unknown player"
+    );
+  }
+
   // ============================================================
   // SHARED — PLAYERS
   // ============================================================
@@ -1257,35 +1307,77 @@ export default function Chameleon() {
                   </select>
                 </label>
 
-                <label>
-                  Number of
-                  chameleons
+                <div
+                  className={
+                    styles[
+                      "range-inputs"
+                    ]
+                  }
+                >
+                  <label>
+                    Minimum
+                    Chameleons
 
-                  <input
-                    type="number"
-                    min={1}
-                    max={Math.max(
-                      1,
-                      game.players
-                        .length -
+                    <input
+                      type="number"
+                      min={1}
+                      max={Math.max(
+                        1,
+                        game.players
+                          .length -
+                          1
+                      )}
+                      value={
+                        game.settings
+                          .chameleonCountMin ??
+                        game.settings
+                          .chameleonCount ??
                         1
-                    )}
-                    value={
-                      game
-                        .settings
-                        .chameleonCount
-                    }
-                    onChange={e =>
-                      updateSettings({
-                        chameleonCount:
-                          Number(
-                            e.target
-                              .value
-                          ),
-                      })
-                    }
-                  />
-                </label>
+                      }
+                      onChange={e =>
+                        updateSettings({
+                          chameleonCountMin:
+                            Number(
+                              e.target
+                                .value
+                            ),
+                        })
+                      }
+                    />
+                  </label>
+
+                  <label>
+                    Maximum
+                    Chameleons
+
+                    <input
+                      type="number"
+                      min={1}
+                      max={Math.max(
+                        1,
+                        game.players
+                          .length -
+                          1
+                      )}
+                      value={
+                        game.settings
+                          .chameleonCountMax ??
+                        game.settings
+                          .chameleonCount ??
+                        1
+                      }
+                      onChange={e =>
+                        updateSettings({
+                          chameleonCountMax:
+                            Number(
+                              e.target
+                                .value
+                            ),
+                        })
+                      }
+                    />
+                  </label>
+                </div>
 
                 <label
                   className={
@@ -1310,6 +1402,31 @@ export default function Chameleon() {
 
                   Sometimes have
                   zero Chameleons
+                </label>
+
+                <label
+                  className={
+                    styles.checkbox
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    checked={
+                      game.settings
+                        .chameleonVotesCount ??
+                      true
+                    }
+                    onChange={e =>
+                      updateSettings({
+                        chameleonVotesCount:
+                          e.target
+                            .checked,
+                      })
+                    }
+                  />
+
+                  Chameleon votes
+                  count
                 </label>
               </section>
 
@@ -1618,7 +1735,9 @@ export default function Chameleon() {
               </small>
 
               <h2>
-                Vote
+                Vote{" "}
+                {game.voteNumber ||
+                  1}
               </h2>
             </div>
 
@@ -1630,14 +1749,14 @@ export default function Chameleon() {
               }
               /
               {
-                game.players
+                eligibleVoters
                   .length
               }{" "}
               voted
             </span>
           </header>
 
-          {!card?.isChameleon && (
+          {card?.canVote ? (
             <section>
               <h3>
                 Who is the Chameleon?
@@ -1659,14 +1778,7 @@ export default function Chameleon() {
                     ]
                   }
                 >
-                  {game.players
-                    .filter(
-                      (
-                        player: any
-                      ) =>
-                        player.id !==
-                        playerId
-                    )
+                  {eligibleVoteTargets
                     .map(
                       (
                         player: any
@@ -1712,9 +1824,23 @@ export default function Chameleon() {
                 </div>
               )}
             </section>
-          )}
+          ) : card?.isEliminated ? (
+            <div
+              className={
+                styles[
+                  "eliminated-notice"
+                ]
+              }
+            >
+              You are out of the
+              remaining votes.
+            </div>
+          ) : null}
 
-          {card?.isChameleon && (
+          {card?.isChameleon &&
+            game.voteNumber === 1 &&
+            (canGuessWord ||
+              card.guessSubmitted) && (
             <section
               className={
                 styles[
@@ -1745,7 +1871,7 @@ export default function Chameleon() {
                 >
                   Guess submitted
                 </div>
-              ) : (
+              ) : canGuessWord ? (
                 <div
                   className={
                     styles[
@@ -1783,7 +1909,7 @@ export default function Chameleon() {
                     )
                   )}
                 </div>
-              )}
+              ) : null}
             </section>
           )}
 
@@ -1801,7 +1927,7 @@ export default function Chameleon() {
             >
               {game.allVotesSubmitted
                 ? "Reveal"
-                : `Waiting for votes (${game.votedPlayerIds.length}/${game.players.length})`}
+                : `Waiting for votes (${game.votedPlayerIds.length}/${eligibleVoters.length})`}
             </button>
           )}
 
@@ -1820,7 +1946,265 @@ export default function Chameleon() {
   }
 
   // ============================================================
-  // VIEW 5 — RESULTS
+  // VIEW 5 — RESULT BETWEEN VOTES
+  // ============================================================
+
+  if (
+    game.phase ===
+    "voteResult"
+  ) {
+    const voteResult =
+      game.voteResult;
+
+    const tiedNames =
+      (voteResult
+        ?.tiedChoiceIds || [])
+        .map((id: string) =>
+          id === NONE
+            ? "No one"
+            : playerName(id)
+        )
+        .join(", ");
+
+    const caughtChameleons =
+      game.players.filter(
+        (player: any) =>
+          game.caughtChameleonIds?.includes(
+            player.id
+          )
+      );
+
+    const resultVotes =
+      voteResult?.votes || {};
+
+    const resultVoters =
+      game.players.filter(
+        (player: any) =>
+          Object.prototype.hasOwnProperty.call(
+            resultVotes,
+            player.id
+          )
+      );
+
+    return (
+      <div
+        className={
+          styles.chameleon
+        }
+      >
+        <main
+          className={`${styles.panel} ${styles.wide}`}
+        >
+          <header
+            className={
+              styles[
+                "game-header"
+              ]
+            }
+          >
+            <div>
+              <small>
+                VOTE{" "}
+                {voteResult
+                  ?.voteNumber ||
+                  game.voteNumber}
+              </small>
+
+              <h2>
+                Vote result
+              </h2>
+            </div>
+
+            <button
+              onClick={refresh}
+            >
+              Refresh
+            </button>
+          </header>
+
+          <section
+            className={`${styles["result-hero"]} ${
+              voteResult
+                ?.selectedWasChameleon
+                ? styles[
+                    "found-result"
+                  ]
+                : ""
+            }`}
+          >
+            {voteResult?.tied ? (
+              <>
+                <small>
+                  TIE
+                </small>
+
+                <h1>
+                  Vote again
+                </h1>
+
+                <p>
+                  Tied: {tiedNames}
+                </p>
+              </>
+            ) : voteResult
+                ?.selectedWasChameleon ? (
+              <>
+                <small>
+                  CHAMELEON FOUND
+                </small>
+
+                <h1>
+                  {playerName(
+                    voteResult.selectedPlayerId
+                  )}
+                </h1>
+
+                <p>
+                  {voteResult.anotherChameleonExists
+                    ? "Another Chameleon is still hiding."
+                    : "There are no more Chameleons hiding."}
+                </p>
+              </>
+            ) : (
+              <>
+                <small>
+                  NOT A CHAMELEON
+                </small>
+
+                <h1>
+                  {playerName(
+                    voteResult?.selectedPlayerId ||
+                      null
+                  )}
+                </h1>
+
+                <p>
+                  Continue to the
+                  next vote.
+                </p>
+              </>
+            )}
+          </section>
+
+          <section>
+            <h3>
+              Chameleons caught so
+              far
+            </h3>
+
+            <div
+              className={
+                styles[
+                  "caught-summary"
+                ]
+              }
+            >
+              {caughtChameleons.length >
+              0
+                ? caughtChameleons
+                    .map(
+                      (
+                        player: any
+                      ) =>
+                        player.name
+                    )
+                    .join(", ")
+                : "None"}
+            </div>
+          </section>
+
+          <section>
+            <h3>
+              Who voted for whom
+            </h3>
+
+            <div
+              className={
+                styles[
+                  "results-list"
+                ]
+              }
+            >
+              {resultVoters.map(
+                (voter: any) => {
+                  const choice =
+                    resultVotes[
+                      voter.id
+                    ];
+
+                  return (
+                    <div
+                      className={
+                        styles[
+                          "result-row"
+                        ]
+                      }
+                      key={voter.id}
+                    >
+                      <span>
+                        {voter.name}
+                      </span>
+
+                      <span>
+                        →{" "}
+                        {choice === NONE
+                          ? "No one"
+                          : playerName(
+                              choice
+                            )}
+                      </span>
+                    </div>
+                  );
+                }
+              )}
+            </div>
+          </section>
+
+          <Players />
+
+          {card?.isHost &&
+            voteResult
+              ?.moreVotesRequired && (
+              <button
+                className={`${styles.primary} ${styles.big}`}
+                disabled={loading}
+                onClick={openVoting}
+              >
+                {voteResult.tied
+                  ? "Vote again"
+                  : `Start vote ${voteResult.nextVoteNumber}`}
+              </button>
+            )}
+
+          {!card?.isHost &&
+            voteResult
+              ?.moreVotesRequired && (
+              <p
+                className={
+                  styles.muted
+                }
+              >
+                Waiting for the host
+                to open the next vote…
+              </p>
+            )}
+
+          {error && (
+            <div
+              className={
+                styles.error
+              }
+            >
+              {error}
+            </div>
+          )}
+        </main>
+      </div>
+    );
+  }
+
+  // ============================================================
+  // VIEW 6 — RESULTS
   // ============================================================
 
   if (
@@ -1829,6 +2213,22 @@ export default function Chameleon() {
   ) {
     const reveal =
       game.reveal;
+
+    const voteHistory =
+      Array.isArray(
+        reveal.voteHistory
+      ) &&
+      reveal.voteHistory.length >
+        0
+        ? reveal.voteHistory
+        : [
+            {
+              voteNumber: 1,
+              votes:
+                reveal.votes ||
+                {},
+            },
+          ];
 
     const chameleons =
       game.players.filter(
@@ -1925,66 +2325,123 @@ export default function Chameleon() {
 
           <section>
             <h3>
-              Votes
+              Voting history
             </h3>
 
-            <div
-              className={
-                styles[
-                  "results-list"
-                ]
-              }
-            >
-              {game.players.map(
-                (
-                  voter: any
-                ) => {
-                  const choice =
-                    reveal.votes[
-                      voter.id
-                    ];
+            {voteHistory.map(
+              (
+                ballot: any,
+                index: number
+              ) => (
+                <div
+                  className={
+                    styles[
+                      "ballot-result"
+                    ]
+                  }
+                  key={`${ballot.voteNumber || index + 1}-${index}`}
+                >
+                  <div
+                    className={
+                      styles[
+                        "ballot-heading"
+                      ]
+                    }
+                  >
+                    <strong>
+                      Vote{" "}
+                      {ballot.voteNumber ||
+                        index + 1}
+                      {ballot.tied
+                        ? " — tie"
+                        : ""}
+                    </strong>
 
-                  const target =
-                    game.players
-                      .find(
-                        (
-                          player: any
-                        ) =>
-                          player.id ===
-                          choice
-                      );
+                    {!ballot.tied &&
+                      ballot.selectedPlayerId && (
+                        <span>
+                          {playerName(
+                            ballot.selectedPlayerId
+                          )}
+                          {ballot.selectedWasChameleon
+                            ? ballot.anotherChameleonExists
+                              ? " was a Chameleon; another is still hiding"
+                              : " was a Chameleon; no more are hiding"
+                            : " was not a Chameleon"}
+                        </span>
+                      )}
 
-                  return (
-                    <div
-                      className={
-                        styles[
-                          "result-row"
-                        ]
+                    {!ballot.tied &&
+                      !ballot.selectedPlayerId && (
+                        <span>
+                          No one selected
+                        </span>
+                      )}
+                  </div>
+
+                  <div
+                    className={
+                      styles[
+                        "results-list"
+                      ]
+                    }
+                  >
+                    {game.players.map(
+                      (
+                        voter: any
+                      ) => {
+                        const choice =
+                          ballot.votes?.[
+                            voter.id
+                          ];
+
+                        const wasCounted =
+                          !ballot.countedVotes ||
+                          Object.prototype.hasOwnProperty.call(
+                            ballot.countedVotes,
+                            voter.id
+                          );
+
+                        return (
+                          <div
+                            className={
+                              styles[
+                                "result-row"
+                              ]
+                            }
+                            key={
+                              voter.id
+                            }
+                          >
+                            <span>
+                              {
+                                voter.name
+                              }
+                            </span>
+
+                            <span>
+                              →{" "}
+
+                              {choice ===
+                              NONE
+                                ? "No one"
+                                : choice
+                                  ? playerName(
+                                      choice
+                                    )
+                                  : "No vote"}
+
+                              {!wasCounted &&
+                                " (not counted)"}
+                            </span>
+                          </div>
+                        );
                       }
-                      key={
-                        voter.id
-                      }
-                    >
-                      <span>
-                        {
-                          voter.name
-                        }
-                      </span>
-
-                      <span>
-                        →{" "}
-
-                        {choice ===
-                        NONE
-                          ? "No one"
-                          : target?.name ||
-                            "No vote"}
-                      </span>
-                    </div>
-                  );
-                }
-              )}
-            </div>
+                    )}
+                  </div>
+                </div>
+              )
+            )}
           </section>
 
           {chameleons.length >

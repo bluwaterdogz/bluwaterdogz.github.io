@@ -972,10 +972,18 @@ export default function Chameleon() {
       card?.hasVoted
     );
 
+  const voteNumber =
+    game.voteNumber ?? 1;
+
+  const canVote =
+    card?.canVote ??
+    (!card?.isChameleon &&
+      !card?.isEliminated);
+
   const canGuessWord =
     card?.canGuessWord ??
     (game.phase === "voting" &&
-      game.voteNumber === 1 &&
+      voteNumber === 1 &&
       card?.isChameleon &&
       !card?.guessSubmitted);
 
@@ -1736,8 +1744,7 @@ export default function Chameleon() {
 
               <h2>
                 Vote{" "}
-                {game.voteNumber ||
-                  1}
+                {voteNumber}
               </h2>
             </div>
 
@@ -1756,7 +1763,7 @@ export default function Chameleon() {
             </span>
           </header>
 
-          {card?.canVote ? (
+          {canVote ? (
             <section>
               <h3>
                 Who is the Chameleon?
@@ -1838,7 +1845,7 @@ export default function Chameleon() {
           ) : null}
 
           {card?.isChameleon &&
-            game.voteNumber === 1 &&
+            voteNumber === 1 &&
             (canGuessWord ||
               card.guessSubmitted) && (
             <section

@@ -99,7 +99,7 @@ function createRoomCode() {
     "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
   return Array.from(
-    { length: 6 },
+    { length: 4 },
     () =>
       alphabet[
         Math.floor(
@@ -867,8 +867,8 @@ export default function Chameleon() {
               value={
                 roomInput
               }
-              placeholder="ABC123"
-              maxLength={12}
+              placeholder="ABCD"
+              maxLength={4}
               onChange={e =>
                 setRoomInput(
                   e.target.value
@@ -975,10 +975,16 @@ export default function Chameleon() {
   const voteNumber =
     game.voteNumber ?? 1;
 
+  const chameleonVotesCount =
+    game.settings
+      .chameleonVotesCount ??
+    true;
+
   const canVote =
     card?.canVote ??
-    (!card?.isChameleon &&
-      !card?.isEliminated);
+    (!card?.isEliminated &&
+      (chameleonVotesCount ||
+        !card?.isChameleon));
 
   const canGuessWord =
     card?.canGuessWord ??

@@ -5,7 +5,7 @@
   "type": "module",
   "homepage": "https://bluwaterdogz.github.io",
   "scripts": {
-    "dev": "vite",
+    "dev": "LAUNCH_EDITOR=subl vite",
     "build": "tsc -b && vite build && cp docs/index.html docs/404.html",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -27,7 +27,6 @@
     "i18next-http-backend": "^4.0.0",
     "lodash": "^4.17.21",
     "react": "^19.0.0",
-    "react-animation-on-scroll": "^5.1.0",
     "react-bootstrap": "^2.10.9",
     "react-dom": "^19.0.0",
     "react-i18next": "^15.4.1",
@@ -70,6 +69,7 @@
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.22.0",
     "vite": "^6.1.0",
+    "vite-plugin-react-click-to-component": "^3.1.1",
     "vitest": "^3.0.8"
   },
   "eslintConfig": {

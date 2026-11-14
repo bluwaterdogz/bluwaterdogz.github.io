@@ -2,51 +2,72 @@
 @use "../../../styles/colors" as *;
 
 .hero {
-  // background-color: $hero-background-color;
+  box-shadow: inset 0 -50px 30px -50px $hero-background-color;
   height: 100svh;
-  min-height: $hero-min-height;
+  min-height: 700px;
   overflow: hidden;
   position: relative;
   width: 100%;
-
-  box-shadow: inset 0 -50px 30px -50px $hero-background-color;
 }
 
 .flippity {
-  z-index: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
   height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
 }
 
-.background {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  left: 22vw;
+.animationBlur {
+  backdrop-filter: blur(6px);
+  background: rgba(white, 0.08);
+  inset: 0;
+  pointer-events: none;
   position: absolute;
-  top: 0;
-  width: 100vw;
+  -webkit-backdrop-filter: blur(6px);
   z-index: 1;
 }
 
-.container {
-  clip: rect(auto, auto, auto, auto);
-  height: 100%;
+.portrait {
+  bottom: 0;
+  height: min(94vh, 980px);
+  max-width: 45vw;
+  object-fit: contain;
+  object-position: bottom right;
+  pointer-events: none;
   position: absolute;
+  right: 10vw;
+  width: auto;
+  z-index: 2;
+}
+
+.container {
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1440px;
+  position: relative;
   width: 100%;
   z-index: 3;
 }
 
-.content {
-  left: $space * 7;
-  max-width: $content-width-hero;
+.topBar {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  padding: $space * 3;
   position: absolute;
-  top: 10%;
+  right: 0;
+  top: 0;
+  z-index: 4;
+}
 
+.content {
+  left: clamp($space * 7, 9vw, $space * 13);
+  max-width: 680px;
+  position: absolute;
+  right: max(47vw, 490px);
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 2;
 }
 
@@ -54,91 +75,142 @@
   align-items: center;
   color: $primary-color;
   display: flex;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 0;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
   line-height: 1;
-  margin: 0 0 $space * 4;
+  margin: 0 0 $space * 3;
   text-transform: uppercase;
 
   &::after {
     background: $primary-color;
     content: "";
-    height: 2px;
-    margin-left: $space * 4;
-    width: $space * 8;
+    height: 1px;
+    margin-left: $space * 3;
+    width: $space * 6;
   }
 }
 
 .content h1 {
   color: $theme-text-color;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(68px, 6.6vw, 104px);
+  font-size: clamp(54px, 5.2vw, 76px);
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 0.95;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
   margin: 0;
-  max-width: $content-width-heading;
-}
+  max-width: 700px;
 
-.role {
-  color: $primary-color;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(50px, 5vw, 76px);
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.08;
-  margin: $space * 2 0 0;
-  max-width: $content-width-role;
-}
-
-.divider {
-  background: $primary-color;
-  height: 2px;
-  margin: $space * 7 0 $space * 4;
-  width: $space * 8;
+  em {
+    color: $primary-color;
+    font-style: normal;
+  }
 }
 
 .introduction {
-  color: $theme-text-color;
-  font-size: 17px;
+  color: $theme-subtext-color;
+  font-size: 18px;
   line-height: 1.65;
-  margin: 0;
-  max-width: $content-width-introduction;
+  margin: $space * 2.5 0 0;
+  max-width: 590px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space * 2;
+  margin-top: $space * 3;
+
+  a {
+    align-items: center;
+    border: 1px solid $theme-border-color;
+    display: inline-flex;
+    font-size: 16px;
+    font-weight: 700;
+    gap: $space * 3;
+    justify-content: space-between;
+    min-width: 190px;
+    padding: $space * 1.7 $space * 2.3;
+    text-decoration: none;
+    transition: background $transition ease, border-color $transition ease,
+      color $transition ease, transform $transition ease;
+
+    &:hover,
+    &:focus-visible {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.primaryAction {
+  background: $dark-color;
+  border-color: $dark-color !important;
+  color: white;
+
+  &:hover,
+  &:focus-visible {
+    background: $primary-color;
+    border-color: $primary-color !important;
+  }
+}
+
+.secondaryAction {
+  background: rgba(white, 0.2);
+  color: $theme-text-color;
+
+  &:hover,
+  &:focus-visible {
+    border-color: $primary-color;
+    color: $primary-color;
+  }
+}
+
+.skills {
+  margin: $space * 3 0 0;
+  max-width: 640px;
 }
 
 .languageDropdown {
-  position: absolute;
-  right: $space * 7;
-  top: $space * 5;
-
   > button {
     border-bottom: 2px solid $primary-color;
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1;
-    margin: 0;
-    padding-bottom: $space;
+    padding-bottom: $space-sm;
     text-transform: uppercase;
   }
 }
 
 @media (max-width: $medium-screen) {
-  .background {
-    left: 16vw;
-  }
-
   .content {
     left: $space * 5;
-    max-width: $content-width-tablet;
+    max-width: 620px;
+    right: 45vw;
   }
 
   .content h1 {
-    font-size: 72px;
+    font-size: clamp(52px, 6vw, 72px);
   }
 
-  .role {
-    font-size: 52px;
+  .portrait {
+    max-width: 42vw;
+    right: 0;
+  }
+
+}
+
+@media (min-width: 701px) and (max-width: $small-screen) {
+  .portrait {
+    display: none;
+  }
+
+  .content {
+    left: $space * 7;
+    max-width: calc(100% - #{$space * 14});
+    right: auto;
+  }
+
+  .content h1 {
+    max-width: 680px;
   }
 
   .languageDropdown {
@@ -146,16 +218,15 @@
   }
 }
 
-@media (max-width: $small-screen) {
+@media (max-width: 700px) {
   .hero {
     min-height: $hero-min-height-mobile;
 
     &::after {
       background: linear-gradient(
         to bottom,
-        transparent 30%,
-        rgba($dark-color, 0.08) 48%,
-        rgba($dark-color, 0.86) 100%
+        rgba($dark-color, 0.04) 18%,
+        rgba($dark-color, 0.9) 100%
       );
       content: "";
       inset: 0;
@@ -165,73 +236,93 @@
     }
   }
 
-  .background {
-    background-position: 45% top;
-    left: 0;
-    width: 100%;
+  .topBar {
+    border-color: rgba(white, 0.2);
+    padding: $space * 2 $space * 3;
+    z-index: 4;
+  }
+
+  .languageDropdown {
+    display: none;
+  }
+
+  .portrait {
+    height: 82%;
+    max-width: none;
+    right: 50%;
+    transform: translateX(50%);
   }
 
   .content {
-    bottom: $space * 4;
+    bottom: $space * 3;
     left: $space * 3;
     max-width: calc(100% - $space * 6);
+    right: auto;
     top: auto;
     transform: none;
+    z-index: 4;
   }
 
   .eyebrow {
-    font-size: 15px;
-    margin-bottom: $space * 2;
-
-    &::after {
-      margin-left: $space * 2;
-      width: $space * 5;
-    }
+    font-size: 12px;
+    margin-bottom: $space * 1.5;
   }
 
   .content h1 {
     color: white;
-    font-size: 50px;
-    line-height: 0.98;
-    max-width: $content-width-mobile;
-  }
-
-  .role {
-    font-size: 38px;
-    line-height: 1.05;
-    margin-top: $space;
-    max-width: $content-width-mobile;
-  }
-
-  .divider {
-    margin: $space * 2 0;
-    width: $space * 5;
+    font-size: clamp(39px, 10vw, 58px);
+    max-width: 620px;
   }
 
   .introduction {
-    color: white;
+    color: rgba(white, 0.9);
     font-size: 15px;
-    line-height: 1.5;
-    max-width: $content-width-mobile;
+    line-height: 1.45;
+    margin-top: $space * 2;
+    max-width: 560px;
+  }
+
+  .actions {
+    margin-top: $space * 2;
+
+    a {
+      min-width: 0;
+      padding: $space * 1.5 $space * 2;
+    }
+  }
+
+  .secondaryAction {
+    border-color: rgba(white, 0.5) !important;
+    color: white;
+  }
+
+  .skills {
+    display: none;
   }
 }
 
 @media (max-width: $mobile-screen) {
   .content {
-    bottom: $space * 3;
+    bottom: $space * 2;
     left: $space * 2;
     max-width: calc(100% - $space * 4);
   }
 
   .content h1 {
-    font-size: 42px;
-  }
-
-  .role {
-    font-size: 32px;
+    font-size: 38px;
   }
 
   .introduction {
-    font-size: 14px;
+    font-size: 13px;
   }
+
+  .actions {
+    gap: $space;
+
+    a {
+      flex: 1 1 auto;
+      font-size: 13px;
+    }
+  }
+
 }

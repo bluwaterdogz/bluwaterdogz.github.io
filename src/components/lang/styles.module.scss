@@ -1,7 +1,7 @@
 @use "../../styles/variables" as *;
 @use "../../styles/colors" as *;
 
-.languageDropdown {
+:where(.languageDropdown) {
   display: inline-block;
   overflow: visible;
   position: relative;

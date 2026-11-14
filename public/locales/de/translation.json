@@ -1,10 +1,17 @@
 {
   "home": {
     "header": "<span>Hallo<br /> Ich bin Brian Velasquez,<br /><em>Senior Full-Stack-<br />Engineer.</em></span>",
-    "heroEyebrow": "Hallo",
+    "heroEyebrow": "Full-Stack-Engineer",
+    "heroBrand": "brian velasquez",
+    "heroHeadlineStart": "Ich entwickle die Systeme",
+    "heroHeadlineAccent": "hinter",
+    "heroHeadlineEnd": "großartigen Produkten.",
+    "heroPrimaryCta": "Ausgewählte Arbeiten",
+    "heroSecondaryCta": "Kontakt aufnehmen",
+    "heroSkillsLabel": "Ausgewählte Fähigkeiten",
     "heroName": "Ich bin Brian Velasquez,",
     "heroRole": "Senior Full-Stack Engineer.",
-    "heroIntroduction": "Ich entwickle skalierbare Webanwendungen und modernisiere Systeme, die Unternehmenswachstum ermöglichen. Mein Fokus liegt auf sauberem Code, durchdachter Architektur und ausgezeichneten Nutzererlebnissen.",
+    "heroIntroduction": "Ich bin Brian. Ich entwickle intuitive Oberflächen, zuverlässige APIs und datenintensive Plattformen, vom ersten Prototyp bis zur Produktion im großen Maßstab.",
     "switchBackground": "Hero-Hintergrund wechseln",
     "backgrounds": {
       "type1": "Typ 1",
@@ -17,7 +24,7 @@
     "aboutLink": "Mehr über mich",
     "features": {
       "experience": "Jahre Erfahrung",
-      "projects": "Abgeschlossene Projekte",
+      "projects": "Bereitgestellte Projekte",
       "international": "International",
       "collaboration": "Teamzusammenarbeit",
       "focus": "Fokus",
@@ -72,6 +79,26 @@
       "stats": {
         "regions": "4 Regionen",
         "timeZones": "Mehrere Zeitzonen"
+      },
+      "approachHeading": "So arbeite ich",
+      "approachStatement": "Starke Remote-Zusammenarbeit basiert auf Klarheit, Vertrauen und verlässlicher Umsetzung.",
+      "practices": {
+        "crossFunctional": {
+          "title": "Bereichsübergreifende Führung",
+          "description": "Engineering, Produkt, Design, Daten und Infrastruktur."
+        },
+        "async": {
+          "title": "Asynchrone Zusammenarbeit",
+          "description": "Klare schriftliche Kommunikation, Verantwortung und durchdachte Übergaben."
+        },
+        "delivery": {
+          "title": "Verteilte Umsetzung",
+          "description": "Koordination über Services, Repositories und Release-Zyklen hinweg."
+        },
+        "systems": {
+          "title": "Systemdenken",
+          "description": "Architektur, Implementierung, Debugging und Ausführung in Balance."
+        }
       }
     },
     "section2Title": "Technische Führung",
@@ -189,7 +216,7 @@
     "title": "Was ich entwickelt habe",
     "introduction": "Eine Auswahl an Web-, Mobile-, Backend- und Datenprojekten. Jedes löste ein echtes Problem und brachte neue Erkenntnisse.",
     "search": "Projekte durchsuchen",
-    "github": "Code auf GitHub ansehen",
+    "github": "Mein GitHub ansehen",
     "jobs": {
       "label": "Nach Tätigkeit filtern",
       "all": "Alle Tätigkeiten",
@@ -198,6 +225,12 @@
       "independent": "Selbstständiger Auftragnehmer",
       "various": "Various Inc.",
       "launchBrigade": "Launch Brigade"
+    },
+    "skills": {
+      "label": "Nach Fähigkeit filtern",
+      "all": "Alle Fähigkeiten",
+      "clear": "Löschen",
+      "selected": "{{count}} ausgewählte Fähigkeiten"
     },
     "technologies": "Technologien für {{name}}",
     "viewProject": "{{name}} ansehen",

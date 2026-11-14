@@ -8,8 +8,7 @@ $timeline-rail-offset: $space * 3;
   display: grid;
   gap: $space * 2;
   grid-template-columns: $timeline-label-width minmax(0, 1fr);
-  min-height: $space * 15;
-  padding: $space * 3 0 $space * 4;
+  padding: $space * 2 0 $space * 2.5;
   position: relative;
 
   &::before {
@@ -45,15 +44,19 @@ $timeline-rail-offset: $space * 3;
   }
 
   ul {
-    column-gap: $space * 2;
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    justify-items: start;
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space;
     list-style: none;
     margin: 0;
     padding: 0;
-    row-gap: $space * 3;
   }
+}
+
+.skills a {
+  font-size: 12px;
+  min-height: $space * 3.5;
 }
 
 @media (max-width: $small-screen) {
@@ -73,9 +76,6 @@ $timeline-rail-offset: $space * 3;
       margin-top: $space;
     }
 
-    ul {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
   }
 }
 

@@ -51,12 +51,20 @@ export const microapps = [
     href: "/microapps/golf-stroke-counter",
     load: () => import("./golf_stroke_counter"),
   }),
-    defineMicroapp({
+  defineMicroapp({
     id: "chameleon",
     title: "Chameleon",
     description:
-      "Chameleon",
+      "Host a social deduction game with configurable topics, voting, and scoring.",
     href: "/microapps/chameleon",
     load: () => import("./chameleon"),
+  }),
+  defineMicroapp({
+    id: "shadow-20",
+    title: "Shadow / 20",
+    description:
+      "A 20-level vertical ninja platformer with sword, bow, rope, custom levels, and local replays.",
+    href: "/microapps/shadow-20",
+    load: () => import("./shadow20"),
   }),
 ] satisfies MicroappDefinition[];

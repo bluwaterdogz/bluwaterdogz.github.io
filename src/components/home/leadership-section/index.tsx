@@ -1,29 +1,33 @@
 import { useTranslation } from "react-i18next";
 import { ContentSection } from "../../content-section";
-import {
-  CollaborationRegion,
-  CollaborationRegions,
-} from "../collaboration-regions";
-import asia from "../../../assets/svgs/asia.svg";
-import europe from "../../../assets/svgs/europe.svg";
-import northAmerica from "../../../assets/svgs/north-america.svg";
-import southAmerica from "../../../assets/svgs/south-america.svg";
 import { linkedinProfileUrl } from "../../../service/consts";
 import styles from "./styles.module.scss";
 
 export const LeadershipSection = () => {
   const { t } = useTranslation();
-  const regions: CollaborationRegion[] = [
+  const practices = [
     {
-      iconUrl: northAmerica,
-      label: t("home.leadership.regions.northAmerica"),
+      icon: "fa-users",
+      title: t("home.leadership.practices.crossFunctional.title"),
+      description: t(
+        "home.leadership.practices.crossFunctional.description",
+      ),
     },
     {
-      iconUrl: southAmerica,
-      label: t("home.leadership.regions.southAmerica"),
+      icon: "fa-comments-o",
+      title: t("home.leadership.practices.async.title"),
+      description: t("home.leadership.practices.async.description"),
     },
-    { iconUrl: europe, label: t("home.leadership.regions.europe") },
-    { iconUrl: asia, label: t("home.leadership.regions.asia") },
+    {
+      icon: "fa-clone",
+      title: t("home.leadership.practices.delivery.title"),
+      description: t("home.leadership.practices.delivery.description"),
+    },
+    {
+      icon: "fa-cube",
+      title: t("home.leadership.practices.systems.title"),
+      description: t("home.leadership.practices.systems.description"),
+    },
   ];
 
   return (
@@ -50,15 +54,25 @@ export const LeadershipSection = () => {
           <span aria-hidden="true">&#8594;</span>
         </a>
       </div>
-      <CollaborationRegions
-        heading={t("home.leadership.regionsHeading")}
-        regions={regions}
-        summary={t("home.leadership.summary")}
-        stats={[
-          t("home.leadership.stats.regions"),
-          t("home.leadership.stats.timeZones"),
-        ]}
-      />
+      <div className={styles.approach}>
+        <p className={styles.approachHeading}>
+          {t("home.leadership.approachHeading")}
+        </p>
+        <p className={styles.statement}>
+          {t("home.leadership.approachStatement")}
+        </p>
+        <div className={styles.practices}>
+          {practices.map(({ description, icon, title }) => (
+            <article className={styles.practice} key={title}>
+              <span className={styles.practiceIcon}>
+                <i aria-hidden="true" className={`fa ${icon}`} />
+              </span>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
     </ContentSection>
   );
 };

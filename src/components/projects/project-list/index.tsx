@@ -15,6 +15,9 @@ import { ProjectItem } from "../project-item";
 import { TopBar } from "../top-bar";
 import styles from "./styles.module.scss";
 import { PageHeading } from "../../common/page-heading";
+import { skills } from "../../../service/skill/data";
+import { SkillFilter } from "../skill-filter";
+import { githubProfileUrl } from "../../../service/consts";
 
 export const ProjectList = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -23,6 +26,9 @@ export const ProjectList = () => {
     useState<ProjectCategory>("all");
   const [searchTerm, setSearchTerm] = useState("");
   const requestedEmployer = searchParams.get("job") as ProjectEmployer | null;
+  const activeSkills = searchParams
+    .getAll("skill")
+    .filter((skillId) => skills.some(({ id }) => id === skillId));
   const [activeEmployer, setActiveEmployer] = useState<
     ProjectEmployer | "all"
   >(requestedEmployer ?? "all");
@@ -41,6 +47,22 @@ export const ProjectList = () => {
     const nextParams = new URLSearchParams(searchParams);
     if (employer === "all") nextParams.delete("job");
     else nextParams.set("job", employer);
+    setSearchParams(nextParams, { replace: true });
+  };
+
+  const handleSkillChange = (skillId: string) => {
+    const nextParams = new URLSearchParams(searchParams);
+    const nextSkills = activeSkills.includes(skillId)
+      ? activeSkills.filter((activeSkill) => activeSkill !== skillId)
+      : [...activeSkills, skillId];
+    nextParams.delete("skill");
+    nextSkills.forEach((activeSkill) => nextParams.append("skill", activeSkill));
+    setSearchParams(nextParams, { replace: true });
+  };
+
+  const clearSkills = () => {
+    const nextParams = new URLSearchParams(searchParams);
+    nextParams.delete("skill");
     setSearchParams(nextParams, { replace: true });
   };
 
@@ -67,14 +89,26 @@ export const ProjectList = () => {
             (project) => project.employer === activeEmployer
           );
 
-    if (searchTerm.trim() === "") return employerFiltered;
+    const skillFiltered = activeSkills.length > 0
+      ? employerFiltered.filter((project) =>
+          activeSkills.every((skillId) => project.skills.includes(skillId))
+        )
+      : employerFiltered;
 
-    const fuse = new Fuse(employerFiltered, {
+    if (searchTerm.trim() === "") return skillFiltered;
+
+    const fuse = new Fuse(skillFiltered, {
       keys: [{ name: "name", weight: 2 }, "description", "content"],
     });
 
     return fuse.search(searchTerm).map((result) => result.item);
-  }, [activeCategory, activeEmployer, formattedProjects, searchTerm]);
+  }, [
+    activeCategory,
+    activeEmployer,
+    activeSkills,
+    formattedProjects,
+    searchTerm,
+  ]);
 
   return (
     <>
@@ -84,15 +118,34 @@ export const ProjectList = () => {
           description={t("projects.introduction")}
           eyebrow={t("projects.eyebrow")}
           title={t("projects.title")}
-        />
-        <TopBar
-          activeCategory={activeCategory}
-          activeEmployer={activeEmployer}
-          onCategoryChange={setActiveCategory}
-          onEmployerChange={handleEmployerChange}
-          onSearchChange={setSearchTerm}
-          searchTerm={searchTerm}
-        />
+        >
+          <a
+            className={styles.githubLink}
+            href={githubProfileUrl}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <i className="devicon-github-original" aria-hidden="true" />
+            {t("projects.github")}
+            <span aria-hidden="true">&#8594;</span>
+          </a>
+        </PageHeading>
+        <div className={styles.controls}>
+          <TopBar
+            activeCategory={activeCategory}
+            activeEmployer={activeEmployer}
+            onCategoryChange={setActiveCategory}
+            onEmployerChange={handleEmployerChange}
+            onSearchChange={setSearchTerm}
+            searchTerm={searchTerm}
+          />
+          <SkillFilter
+            activeSkillIds={activeSkills}
+            label={t("projects.skills.label")}
+            onClear={clearSkills}
+            onToggle={handleSkillChange}
+          />
+        </div>
       </div>
       <div className={styles.projectList}>
         <DynamicList<Project>

@@ -1,4 +1,5 @@
 import { Project } from "./types";
+import { mobianStories } from "./stories";
 
 export const projects: Project[] = [
   {
@@ -7,7 +8,11 @@ export const projects: Project[] = [
     img: "/images/projects/mobian/mobian1.png",
     name: "Persona & Channel Intelligence",
     quotes: [],
-    skills: ["1", "2", "3", "5", "9", "17", "24", "25", "26", "27", "28", "29", "33"],
+    story: mobianStories["9"],
+    skills: [
+      "1", "2", "3", "5", "9", "17", "24", "25", "26", "27", "28",
+      "29", "33", "38", "39", "40", "41",
+    ],
   },
   {
     employer: "mobian",
@@ -15,7 +20,11 @@ export const projects: Project[] = [
     img: "/images/projects/mobian/mobian2.png",
     name: "Context Ingestion & Brand-Safety Tooling",
     quotes: [],
-    skills: ["1", "5", "17", "26", "28", "29", "32", "35", "37"],
+    story: mobianStories["10"],
+    skills: [
+      "1", "5", "17", "26", "28", "29", "32", "35", "37", "38", "39",
+      "40", "41",
+    ],
   },
   {
     employer: "mobian",
@@ -23,7 +32,11 @@ export const projects: Project[] = [
     img: "/images/projects/mobian/mobian3.png",
     name: "Advertising Operations & Reporting Integrations",
     quotes: [],
-    skills: ["1", "2", "3", "5", "9", "17", "24", "25", "26", "28", "30", "31"],
+    story: mobianStories["11"],
+    skills: [
+      "1", "2", "3", "5", "9", "17", "24", "25", "26", "28", "30",
+      "31", "38", "39", "40", "41",
+    ],
   },
   {
     employer: "mobian",
@@ -31,7 +44,12 @@ export const projects: Project[] = [
     img: "/images/projects/mobian/mobian4.png",
     name: "Platform Engineering, Testing & Product Infrastructure",
     quotes: [],
-    skills: [ "1", "2", "3", "9", "15", "17", "20", "24", "25", "26", "27", "28", "29", "32", "33", "34", "35", "36", "37",],
+    story: mobianStories["12"],
+    skills: [
+      "1", "2", "3", "9", "15", "17", "20", "24", "25", "26", "27",
+      "28", "29", "32", "33", "34", "35", "36", "37", "38", "39", "40",
+      "41",
+    ],
   },
   {
     employer: "mobian",
@@ -39,7 +57,11 @@ export const projects: Project[] = [
     img: "/images/projects/mobian/mobian5.png",
     name: "Frontend UI & Design System",
     quotes: [],
-    skills: ["2","3","7","8","9","15","17","20","23","24","25","33","34","36",]
+    story: mobianStories["13"],
+    skills: [
+      "2", "3", "7", "8", "9", "15", "17", "20", "23", "24", "25",
+      "33", "34", "36", "38", "39", "40", "41",
+    ],
   },
   {
     employer: "faro",
@@ -62,6 +84,10 @@ export const projects: Project[] = [
       "17",
       "20",
       "23",
+      "38",
+      "39",
+      "40",
+      "41",
     ],
   },
   {
@@ -78,7 +104,7 @@ export const projects: Project[] = [
     id: "5",
     img: "/images/projects/faro/clinical-data.jpg",
     quotes: [],
-    skills: ["1", "12", "17"],
+    skills: ["1", "12", "17", "38", "39", "40", "41"],
   },
   {
     employer: "faro",
@@ -86,7 +112,7 @@ export const projects: Project[] = [
     id: "6",
     img: "/images/projects/faro/lock.jpg",
     quotes: [],
-    skills: ["19", "20"],
+    skills: ["19", "20", "38", "39", "40", "41"],
   },
   {
     employer: "independent",

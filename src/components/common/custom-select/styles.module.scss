@@ -1,0 +1,95 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/variables" as *;
+
+.field {
+  align-items: center;
+  display: grid;
+  gap: $space;
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+.label {
+  color: $theme-subtext-color;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.control {
+  position: relative;
+}
+
+.trigger {
+  align-items: center;
+  background: transparent;
+  border: 1px solid $theme-border-color;
+  color: $theme-text-color;
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  justify-content: space-between;
+  padding: $space * 1.5 $space * 2;
+  text-align: left;
+  width: 100%;
+
+  i {
+    color: $primary-color;
+    font-size: 11px;
+    margin-left: $space * 2;
+    transition: transform $transition ease;
+  }
+
+  &[aria-expanded="true"] {
+    border-color: $primary-color;
+
+    i {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.options {
+  background: $theme-surface-color;
+  border: 1px solid $theme-border-color;
+  box-shadow: $box-shadow;
+  left: 0;
+  list-style: none;
+  margin: $space-sm 0 0;
+  max-height: 320px;
+  min-width: 100%;
+  overflow-y: auto;
+  padding: $space-sm;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 20;
+
+  button {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    color: $theme-text-color;
+    cursor: pointer;
+    display: flex;
+    font: inherit;
+    justify-content: space-between;
+    padding: $space $space * 1.5;
+    text-align: left;
+    width: 100%;
+
+    &:hover,
+    &:focus-visible,
+    &.selected {
+      background: rgba($primary-color, 0.1);
+      color: $primary-color;
+      outline: 0;
+    }
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .field {
+    align-items: stretch;
+    grid-template-columns: 1fr;
+  }
+}

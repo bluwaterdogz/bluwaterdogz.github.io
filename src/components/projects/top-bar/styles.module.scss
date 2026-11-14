@@ -71,58 +71,8 @@
   }
 }
 
-.githubLink {
-  align-items: center;
-  align-self: flex-end;
-  color: $primary-color;
-  display: inline-flex;
-  gap: $space * 2;
-  text-decoration: none;
-
-  i {
-    color: $theme-text-color;
-    font-size: 22px;
-  }
-
-  span {
-    font-size: 24px;
-    transition: transform $transition ease;
-  }
-
-  &:hover span,
-  &:focus-visible span {
-    transform: translateX($space-sm);
-  }
-}
-
-.jobFilter {
-  align-items: center;
-  display: grid;
-  gap: $space;
-  grid-template-columns: auto minmax(0, 1fr);
-
-  span {
-    color: $theme-subtext-color;
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-
-  select {
-    background: transparent;
-    border: 1px solid $theme-border-color;
-    color: $theme-text-color;
-    font: inherit;
-    padding: $space * 1.5;
-  }
-}
-
 @media (max-width: $mobile-screen) {
   .categories {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .githubLink {
-    align-self: flex-start;
   }
 }

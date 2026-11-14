@@ -1,10 +1,17 @@
 {
   "home": {
     "header": "<span>Hola<br /> Soy Brian Velasquez,<br /><em>Ingeniero Full Stack <br />Senior.</em></span>",
-    "heroEyebrow": "Hola",
+    "heroEyebrow": "Ingeniero full stack",
+    "heroBrand": "brian velasquez",
+    "heroHeadlineStart": "Construyo los sistemas",
+    "heroHeadlineAccent": "detrás de",
+    "heroHeadlineEnd": "grandes productos.",
+    "heroPrimaryCta": "Explorar trabajos",
+    "heroSecondaryCta": "Contactar",
+    "heroSkillsLabel": "Habilidades destacadas",
     "heroName": "Soy Brian Velasquez,",
     "heroRole": "Ingeniero Full Stack Senior.",
-    "heroIntroduction": "Creo aplicaciones web escalables y modernizo sistemas que impulsan el crecimiento del negocio. Me apasionan el código limpio, la arquitectura bien pensada y las experiencias de usuario excepcionales.",
+    "heroIntroduction": "Soy Brian. Creo interfaces intuitivas, API fiables y plataformas de datos, desde el primer prototipo hasta producción a escala.",
     "switchBackground": "Cambiar fondo principal",
     "backgrounds": {
       "type1": "Tipo 1",
@@ -17,7 +24,7 @@
     "aboutLink": "Más sobre mí",
     "features": {
       "experience": "Años de experiencia",
-      "projects": "Proyectos completados",
+      "projects": "Proyectos desplegados",
       "international": "Internacional",
       "collaboration": "Colaboración en equipo",
       "focus": "Enfoque",
@@ -72,6 +79,26 @@
       "stats": {
         "regions": "4 regiones",
         "timeZones": "Varias zonas horarias"
+      },
+      "approachHeading": "Cómo trabajo",
+      "approachStatement": "Una colaboración remota sólida se basa en claridad, confianza y una ejecución fiable.",
+      "practices": {
+        "crossFunctional": {
+          "title": "Liderazgo multidisciplinar",
+          "description": "Ingeniería, producto, diseño, datos e infraestructura."
+        },
+        "async": {
+          "title": "Colaboración asíncrona",
+          "description": "Comunicación escrita clara, responsabilidad y entregas bien pensadas."
+        },
+        "delivery": {
+          "title": "Entrega distribuida",
+          "description": "Coordinación entre servicios, repositorios y ciclos de lanzamiento."
+        },
+        "systems": {
+          "title": "Pensamiento sistémico",
+          "description": "Equilibrio entre arquitectura, implementación, depuración y ejecución."
+        }
       }
     },
     "section2Title": "Líder técnico",
@@ -189,7 +216,7 @@
     "title": "Cosas que he creado",
     "introduction": "Una selección de proyectos de web, móvil, backend y datos. Cada uno resolvió un problema real y me enseñó algo nuevo.",
     "search": "Buscar proyectos",
-    "github": "Ver código en GitHub",
+    "github": "Visita mi GitHub",
     "jobs": {
       "label": "Filtrar por empleo",
       "all": "Todos los empleos",
@@ -198,6 +225,12 @@
       "independent": "Contratista independiente",
       "various": "Various Inc.",
       "launchBrigade": "Launch Brigade"
+    },
+    "skills": {
+      "label": "Filtrar por habilidad",
+      "all": "Todas las habilidades",
+      "clear": "Limpiar",
+      "selected": "{{count}} habilidades seleccionadas"
     },
     "technologies": "Tecnologías de {{name}}",
     "viewProject": "Ver {{name}}",

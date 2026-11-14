@@ -7,6 +7,7 @@ export const jobs: Job[] = [
     companyUrl: "www.farohealth.com",
     logoImg: "/images/projects/faro/faro-logo.svg",
     active: true,
+    skills: ["38", "39", "40", "41"],
   },
   {
     companyName: "Various Inc",

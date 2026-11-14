@@ -38,6 +38,10 @@ export const skills: Skill[] = [
   { id: "35", name: "Terraform", icon: "devicon-terraform-plain" },
   { id: "36", name: "Cypress", icon: "devicon-cypressio-plain" },
   { id: "37", name: "CloudWatch", icon: "fa fa-line-chart" },
+  { id: "38", name: "AI-Assisted Development", icon: "fa fa-magic" },
+  { id: "39", name: "GitHub Copilot", icon: "devicon-github-original" },
+  { id: "40", name: "ChatGPT", icon: "fa fa-comments" },
+  { id: "41", name: "Claude Code", icon: "fa fa-terminal" },
 ];
 
 export const skillGroupings: SkillGrouping[] = [
@@ -45,7 +49,7 @@ export const skillGroupings: SkillGrouping[] = [
   { id: "languages", i18nKey: "Languages", name: "Languages", skillIds: ["1", "2", "3", "6"] },
   { id: "backend-data", i18nKey: "BackendData", name: "Backend & Data", skillIds: ["4", "5", "26", "27", "28"] },
   { id: "frontend", i18nKey: "Frontend", name: "Frontend", skillIds: ["9", "24", "7", "8", "25"] },
-  { id: "dev-tools", i18nKey: "DevTools", name: "Dev Tools", skillIds: ["15", "16", "17", "18", "27", "28", "30", "31", "32", "33", "34", "36"] },
+  { id: "dev-tools", i18nKey: "DevTools", name: "Dev Tools", skillIds: ["15", "16", "17", "18", "27", "28", "30", "31", "32", "33", "34", "36", "38", "39", "40", "41"] },
   { id: "cloud-tools", i18nKey: "CloudTools", name: "Cloud & Tools", skillIds: ["29", "32", "17", "33", "31", "30"] },
   { id: "it", i18nKey: "IT", name: "IT", skillIds: ["19", "20", "29", "35", "37"] },
   { id: "design", i18nKey: "Design", name: "Design", skillIds: ["21", "22", "23"] },

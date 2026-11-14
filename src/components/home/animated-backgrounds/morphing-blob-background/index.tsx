@@ -11,7 +11,7 @@ type MorphingBlobBackgroundProps = PropsWithChildren<{
 export const MorphingBlobBackground = ({
   children,
   className = "",
-  colors = ["#ff72ce", "#a88cff", "#68efff", "#ddff68"],
+  colors = ["#ff9cdb", "#c2adff", "#96f4ff", "#e7ff96"],
   intensity = 1,
   speed = 1,
 }: MorphingBlobBackgroundProps) => {

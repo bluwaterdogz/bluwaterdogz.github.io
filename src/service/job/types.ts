@@ -4,4 +4,5 @@ export interface Job {
   id: string;
   active: boolean;
   logoImg: string;
+  skills?: string[];
 }

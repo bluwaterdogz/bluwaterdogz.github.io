@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 import { Project } from "../../../service/project/types";
 import { CallToAction } from "../../common/call-to-action";
 import styles from "./styles.module.scss";
 import { getSkillsForProject } from "../../../service/project/selectors";
-import { getSkillSectionId } from "../../../service/skill/data";
+import { SkillPills } from "../../common/skill-pills";
+import { ProjectStory } from "../project-story";
 
 interface ProjectContentProps {
   project: Project;
@@ -17,23 +17,26 @@ export const ProjectContent = ({ project }: ProjectContentProps) => {
   return (
     <section className={styles.projectContent}>
       <div className={styles.container}>
-        <article
-          className={styles.textContent}
-          dangerouslySetInnerHTML={{
-            __html: t(`data.projects.content.${project.id}`, ""),
-          }}
-        />
-        <aside className={styles.skills}>
-          <h2>Built with</h2>
-          <div className={styles.skillList}>
-            {projectSkills.map((skill) => (
-              <Link key={skill.id} to={`/skills?skillType=${getSkillSectionId(skill.id)}`}>
-                <i className={skill.icon} aria-hidden="true" />
-                <span>{skill.name}</span>
-              </Link>
-            ))}
-          </div>
-        </aside>
+        {project.story != null ? (
+          <ProjectStory project={project} />
+        ) : (
+          <>
+            <article
+              className={styles.textContent}
+              dangerouslySetInnerHTML={{
+                __html: t(`data.projects.content.${project.id}`, ""),
+              }}
+            />
+            <aside className={styles.skills}>
+              <h2>Built with</h2>
+              <SkillPills
+                ariaLabel={`Technologies used for ${project.name}`}
+                className={styles.skillList}
+                skills={projectSkills}
+              />
+            </aside>
+          </>
+        )}
         {project.quotes.map((quote) => (
           <blockquote className={styles.quote} key={quote.text}>
             <p>{quote.text}</p>

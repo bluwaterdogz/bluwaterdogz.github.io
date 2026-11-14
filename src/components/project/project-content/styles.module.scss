@@ -47,29 +47,11 @@
 }
 
 .skillList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: $space;
-
   a {
-    align-items: center;
-    border: 1px solid $theme-border-color;
-    color: $theme-subtext-color;
-    display: inline-flex;
-    gap: $space;
     padding: $space;
-    text-decoration: none;
-    transition: border-color $transition ease, color $transition ease;
 
     i {
-      color: $primary-color;
       font-size: 22px;
-    }
-
-    &:hover,
-    &:focus-visible {
-      border-color: $primary-color;
-      color: $primary-color;
     }
   }
 }

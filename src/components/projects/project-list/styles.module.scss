@@ -14,8 +14,41 @@
 .projectList {
   display: grid;
   gap: $collection-gap;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: $space * 7;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: $space * 2;
+  min-width: 0;
+  position: relative;
+  z-index: 5;
+}
+
+.githubLink {
+  align-items: center;
+  color: $primary-color;
+  display: inline-flex;
+  gap: $space * 2;
+  margin-top: $space * 4;
+  text-decoration: none;
+
+  i {
+    color: $theme-text-color;
+    font-size: 22px;
+  }
+
+  span {
+    font-size: 24px;
+    transition: transform $transition ease;
+  }
+
+  &:hover span,
+  &:focus-visible span {
+    transform: translateX($space-sm);
+  }
 }
 
 @media (max-width: $medium-screen) {

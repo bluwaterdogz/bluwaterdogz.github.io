@@ -20,6 +20,7 @@ export const HomePage = () => {
       <HeroSection
         blobBackground={heroBlobBackground}
         geometricBackground={heroGeometricBackground}
+        imgUrl="/images/home/portrait_small.png"
       />
       <AboutSection />
       <ExperienceSection />

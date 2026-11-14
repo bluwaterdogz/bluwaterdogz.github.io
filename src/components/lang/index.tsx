@@ -20,12 +20,14 @@ export const Lang = (props: LangProps) => {
   useOutsideClick(ref, () => setOpen(false));
   return (
     <div
-      className={`
-        ${className} 
-        ${styles.languageDropdown} 
-        ${dark ? styles.dark : ""} 
-        ${alignRight ? styles.right : ""}
-      `}
+      className={[
+        styles.languageDropdown,
+        dark ? styles.dark : "",
+        alignRight ? styles.right : "",
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
       ref={ref}
     >
       <button

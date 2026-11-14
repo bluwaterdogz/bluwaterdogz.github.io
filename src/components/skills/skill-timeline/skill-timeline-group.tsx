@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { getSkillsForGrouping } from "../../../service/skill/data";
 import { SkillGrouping } from "../../../service/skill/types";
-import { SkillTimelineItem } from "./skill-timeline-item";
+import { SkillPills } from "../../common/skill-pills";
 import styles from "./skill-timeline-group.module.scss";
 
 interface SkillTimelineGroupProps {
@@ -19,15 +19,14 @@ export const SkillTimelineGroup = ({
   return (
     <section className={`${styles.group} ${isLast ? styles.last : ""}`}>
       <h2>{t(`skills.groups.${grouping.i18nKey}`, { defaultValue: grouping.name })}</h2>
-      <ul>
-        {skills.map((skill, index) => (
-          <SkillTimelineItem
-            alignRight={index % 2 === 1}
-            key={skill.id}
-            skill={skill}
-          />
-        ))}
-      </ul>
+      <SkillPills
+        ariaLabel={t(`skills.groups.${grouping.i18nKey}`, {
+          defaultValue: grouping.name,
+        })}
+        className={styles.skills}
+        linkTo="skills"
+        skills={skills}
+      />
     </section>
   );
 };

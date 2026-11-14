@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { AnimationOnScroll } from "react-animation-on-scroll";
 
 interface ContentSectionProps {
   id: string;
@@ -16,13 +15,7 @@ export const ContentSection = ({
 }: ContentSectionProps) => {
   return (
     <section className={sectionClassName} id={id}>
-      <AnimationOnScroll
-        animateIn="animate__fadeInRight"
-        animateOnce={true}
-        duration={0.6}
-      >
-        <div className={contentClassName}>{children}</div>
-      </AnimationOnScroll>
+      <div className={contentClassName}>{children}</div>
     </section>
   );
 };

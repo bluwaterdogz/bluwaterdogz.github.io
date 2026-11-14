@@ -1,0 +1,17 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/variables" as *;
+
+:where(.badge) {
+  align-items: center;
+  background: $primary-color;
+  border-radius: 999px;
+  color: white;
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  min-height: $space * 2;
+  min-width: $space * 2;
+  padding: $space-sm;
+}

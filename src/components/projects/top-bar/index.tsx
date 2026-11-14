@@ -5,7 +5,7 @@ import {
   projectEmployers,
   ProjectCategory,
 } from "../../../service/project/selectors";
-
+import { CustomSelect } from "../../common/custom-select";
 
 interface TopBarProps {
   activeCategory: ProjectCategory;
@@ -53,31 +53,17 @@ export const TopBar = ({
           </button>
         ))}
       </div>
-      <label className={styles.jobFilter}>
-        <span>{t("projects.jobs.label")}</span>
-        <select
-          onChange={(event) =>
-            onEmployerChange(event.target.value as ProjectEmployer | "all")
-          }
-          value={activeEmployer}
-        >
-          {projectEmployers.map((employer) => (
-            <option key={employer} value={employer}>
-              {t(`projects.jobs.${employer}`)}
-            </option>
-          ))}
-        </select>
-      </label>
-      <a
-        className={styles.githubLink}
-        href="https://github.com/bluwaterdogz"
-        rel="noreferrer"
-        target="_blank"
-      >
-        <i className="devicon-github-original" aria-hidden="true" />
-        {t("projects.github")}
-        <span aria-hidden="true">&#8594;</span>
-      </a>
+      <CustomSelect
+        label={t("projects.jobs.label")}
+        onChange={(value) =>
+          onEmployerChange(value as ProjectEmployer | "all")
+        }
+        options={projectEmployers.map((employer) => ({
+          label: t(`projects.jobs.${employer}`),
+          value: employer,
+        }))}
+        value={activeEmployer}
+      />
     </div>
   );
 };

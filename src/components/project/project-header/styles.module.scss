@@ -26,6 +26,22 @@
   max-width: $readable-width;
 }
 
+.summary {
+  color: $theme-text-color;
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0 0 $space * 2;
+  max-width: $readable-width;
+}
+
+.skills {
+  margin: 0 0 $space * 3;
+
+  a {
+    font-size: 11px;
+  }
+}
+
 .backLink {
   align-items: center;
   color: $primary-color;

@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useThemeStore } from "../../stores/ThemeStore";
-import { linkedinProfileUrl } from "../../service/consts";
+import { githubProfileUrl, linkedinProfileUrl } from "../../service/consts";
 import styles from "./styles.module.scss";
 
 interface FooterProps {
@@ -33,7 +33,7 @@ export const Footer = ({
       <div className={styles.footerContent}>
         <div className={styles.linkList}>
           <div className={styles.footerLink}>
-            <a href="https://github.com/bluwaterdogz" target={"_blank"}>
+            <a href={githubProfileUrl} rel="noreferrer" target="_blank">
               <i className="devicon-github-original"></i> Github
             </a>
           </div>

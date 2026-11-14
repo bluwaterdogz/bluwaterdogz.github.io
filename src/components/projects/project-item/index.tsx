@@ -2,8 +2,8 @@ import { useTranslation } from "react-i18next";
 import { Project } from "../../../service/project/types";
 import { getSkillsForProject } from "../../../service/project/selectors";
 import styles from "./styles.module.scss";
-import { LinkedCard } from "../../common/linked-card";
-import { TagList } from "../../common/tag-list";
+import { Link } from "react-router-dom";
+import { SkillPills } from "../../common/skill-pills";
 
 interface ProjectItemProps {
   project: Project;
@@ -14,33 +14,40 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
   const projectSkills = getSkillsForProject(project).slice(0, 3);
 
   return (
-    <LinkedCard
-      ariaLabel={t("projects.viewProject", { name: project.name })}
-      className={styles.projectLink}
-      to={`/project/${project.id}`}
-    >
-      <article className={styles.project}>
-        <div className={styles.imageLink}>
+    <article className={styles.project}>
+      <Link
+        aria-label={t("projects.viewProject", { name: project.name })}
+        className={styles.imageLink}
+        to={`/project/${project.id}`}
+      >
           <img
             alt=""
             className={styles.projectImage}
             src={project.img ?? "/images/projects/faro/dark_spiral.jpg"}
           />
-        </div>
+      </Link>
         <div className={styles.projectDetails}>
-          <h2>{project.name.trim()}</h2>
+        <h2>
+          <Link className={styles.titleLink} to={`/project/${project.id}`}>
+            {project.name.trim()}
+          </Link>
+        </h2>
           <p>{t(`data.projects.description.${project.id}`)}</p>
           <div className={styles.footer}>
-            <TagList
+          <SkillPills
               ariaLabel={t("projects.technologies", { name: project.name })}
-              items={projectSkills.map(({ id, name }) => ({ id, label: name }))}
+            className={styles.skillPills}
+            skills={projectSkills}
             />
-            <span className={styles.arrow} aria-hidden="true">
+          <Link
+            aria-label={t("projects.viewProject", { name: project.name })}
+            className={styles.arrow}
+            to={`/project/${project.id}`}
+          >
               &#8594;
-            </span>
+          </Link>
           </div>
         </div>
-      </article>
-    </LinkedCard>
+    </article>
   );
 };

@@ -1,0 +1,65 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/variables" as *;
+
+:where(.pills) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  :is(a, button) {
+    align-items: center;
+    backdrop-filter: blur(8px);
+    background: rgba(white, 0.16);
+    border: 1px solid rgba($dark-color, 0.16);
+    border-radius: 999px;
+    color: $theme-text-color;
+    display: inline-flex;
+    font-size: 13px;
+    gap: $space-sm;
+    padding: $space-sm $space * 1.4;
+    text-decoration: none;
+    transition: background $transition ease, border-color $transition ease,
+      color $transition ease, transform $transition ease;
+    -webkit-backdrop-filter: blur(8px);
+
+    &[aria-pressed="true"] {
+      backdrop-filter: none;
+      background: $primary-color;
+      border-color: $primary-color;
+      color: white;
+      -webkit-backdrop-filter: none;
+
+      i {
+        color: white;
+      }
+    }
+
+    &:is(button) {
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    i {
+      color: $primary-color;
+      font-size: 15px;
+      transition: color $transition ease;
+    }
+
+    &:hover,
+    &:focus-visible {
+      backdrop-filter: none;
+      background: $primary-color;
+      border-color: $primary-color;
+      color: white;
+      transform: translateY(-2px);
+      -webkit-backdrop-filter: none;
+
+      i {
+        color: white;
+      }
+    }
+  }
+}

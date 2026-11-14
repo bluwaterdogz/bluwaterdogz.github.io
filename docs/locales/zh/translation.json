@@ -1,10 +1,17 @@
 {
   "home": {
     "header": "<span>你好<br /> 我是 Brian Velasquez，<br /><em>資深全端<br />工程師。</em></span>",
-    "heroEyebrow": "你好",
+    "heroEyebrow": "全端工程師",
+    "heroBrand": "brian velasquez",
+    "heroHeadlineStart": "構建",
+    "heroHeadlineAccent": "卓越產品背後的",
+    "heroHeadlineEnd": "系統。",
+    "heroPrimaryCta": "查看精選專案",
+    "heroSecondaryCta": "聯絡我",
+    "heroSkillsLabel": "核心技能",
     "heroName": "我是 Brian Velasquez，",
     "heroRole": "資深全端工程師。",
-    "heroIntroduction": "我打造可擴充的網路應用程式，並現代化能推動業務成長的系統。我重視乾淨的程式碼、周全的架構，以及出色的使用者體驗。",
+    "heroIntroduction": "我是 Brian。我打造直觀的介面、可靠的 API 與資料密集型平台，從第一個原型一路做到大規模正式環境。",
     "switchBackground": "切換主視覺背景",
     "backgrounds": {
       "type1": "類型 1",
@@ -17,7 +24,7 @@
     "aboutLink": "深入了解我",
     "features": {
       "experience": "年資",
-      "projects": "完成專案",
+      "projects": "已部署專案",
       "international": "國際協作",
       "collaboration": "團隊合作",
       "focus": "專注方向",
@@ -72,6 +79,26 @@
       "stats": {
         "regions": "4 個地區",
         "timeZones": "多個時區"
+      },
+      "approachHeading": "我的工作方式",
+      "approachStatement": "卓越的遠端協作建立在清晰、信任與可靠執行之上。",
+      "practices": {
+        "crossFunctional": {
+          "title": "跨職能領導",
+          "description": "工程、產品、設計、資料與基礎設施。"
+        },
+        "async": {
+          "title": "非同步協作",
+          "description": "清晰的書面溝通、責任感與周全的交接。"
+        },
+        "delivery": {
+          "title": "分散式交付",
+          "description": "協調跨服務、程式庫與發布週期的工作。"
+        },
+        "systems": {
+          "title": "系統思維",
+          "description": "平衡架構、實作、除錯與執行。"
+        }
       }
     },
     "section2Title": "技術領導",
@@ -189,7 +216,7 @@
     "title": "我打造的作品",
     "introduction": "涵蓋網路、行動、後端與資料的專案精選。每個專案都解決真實問題，也讓我學到新的事物。",
     "search": "搜尋專案",
-    "github": "在 GitHub 查看程式碼",
+    "github": "查看我的 GitHub",
     "jobs": {
       "label": "依工作篩選",
       "all": "所有工作",
@@ -198,6 +225,12 @@
       "independent": "獨立承包人",
       "various": "Various Inc.",
       "launchBrigade": "Launch Brigade"
+    },
+    "skills": {
+      "label": "依技能篩選",
+      "all": "所有技能",
+      "clear": "清除",
+      "selected": "已選取 {{count}} 項技能"
     },
     "technologies": "{{name}} 使用的技術",
     "viewProject": "查看 {{name}}",

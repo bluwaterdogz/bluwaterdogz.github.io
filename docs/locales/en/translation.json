@@ -1,10 +1,17 @@
 {
   "home": {
     "header": "<span>Hello<br /> I'm Brian Velasquez,<br /><em>Senior Full Stack <br />Engineer.</em></span>",
-    "heroEyebrow": "Hello",
+    "heroEyebrow": "Full-stack engineer",
+    "heroBrand": "brian velasquez",
+    "heroHeadlineStart": "Building the systems",
+    "heroHeadlineAccent": "behind",
+    "heroHeadlineEnd": "great products.",
+    "heroPrimaryCta": "Check out my work",
+    "heroSecondaryCta": "Get in touch",
+    "heroSkillsLabel": "Featured skills",
     "heroName": "I'm Brian Velasquez,",
     "heroRole": "Senior Full Stack Engineer.",
-    "heroIntroduction": "Senior software engineer with 10+ years of experience building full-stack applications, search and analytics systems, data pipelines, and high-traffic real-time products. I work primarily with TypeScript, React, Python, FastAPI, PostgreSQL, OpenSearch, and AWS, with a focus on reliable systems and clear, maintainable user experiences.",
+    "heroIntroduction": "I'm Brian. I build intuitive interfaces, reliable APIs, and data-intensive platforms, from the first prototype to production at scale.",
     "switchBackground": "Switch hero background",
     "backgrounds": {
       "type1": "Type 1",
@@ -17,7 +24,7 @@
     "aboutLink": "More about me",
     "features": {
       "experience": "Years of experience",
-      "projects": "Projects completed",
+      "projects": "Projects deployed",
       "international": "International",
       "collaboration": "Team collaboration",
       "focus": "Focus",
@@ -72,6 +79,26 @@
       "stats": {
         "regions": "4 regions",
         "timeZones": "Multiple time zones"
+      },
+      "approachHeading": "How I work",
+      "approachStatement": "Strong remote collaboration is about clarity, trust, and reliable execution.",
+      "practices": {
+        "crossFunctional": {
+          "title": "Cross-functional leadership",
+          "description": "Engineering, product, design, data, and infrastructure."
+        },
+        "async": {
+          "title": "Async collaboration",
+          "description": "Clear written communication, ownership, and thoughtful handoffs."
+        },
+        "delivery": {
+          "title": "Distributed delivery",
+          "description": "Coordinating work across services, repositories, and release cycles."
+        },
+        "systems": {
+          "title": "System thinking",
+          "description": "Balancing architecture, implementation, debugging, and execution."
+        }
       }
     },
     "section2Title": "Technical Leader",
@@ -95,15 +122,15 @@
       },
       "chess": {
         "title": "Chess",
-        "description": "Chess teaches patience, strategy, and seeing problems from different angles."
+        "description": "I love how chess slows me down, draws me into the moment, and gives me an endless world of ideas to explore."
       },
       "dirtbike": {
         "title": "Dirtbike",
-        "description": "Exploring new trails and riding off-road is my way to disconnect and recharge."
+        "description": "I love the freedom of finding new trails, being outdoors, and completely disconnecting from the everyday."
       },
       "muayThai": {
         "title": "Muay Thai",
-        "description": "Training Muay Thai builds discipline, resilience, and mental clarity."
+        "description": "I am passionate about the focus and energy of training, and the confidence and clarity it brings to my life."
       }
     },
     "quote": "I believe in writing code that's clean, maintainable, and built to last. I care about thoughtful user experiences and products that make a real impact.",
@@ -189,7 +216,7 @@
     "title": "Things I've Built",
     "introduction": "A selection of product and platform work focused on contribution, outcomes, and the systems behind the user experience.",
     "search": "Search projects",
-    "github": "View code on GitHub",
+    "github": "Check out my Github",
     "jobs": {
       "label": "Filter by job",
       "all": "All jobs",
@@ -198,6 +225,12 @@
       "independent": "Independent Contractor",
       "various": "Various Inc.",
       "launchBrigade": "Launch Brigade"
+    },
+    "skills": {
+      "label": "Filter by skill",
+      "all": "All skills",
+      "clear": "Clear",
+      "selected": "{{count}} selected skills"
     },
     "technologies": "{{name}} technologies",
     "viewProject": "View {{name}}",

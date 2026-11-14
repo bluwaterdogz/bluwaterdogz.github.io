@@ -1,10 +1,17 @@
 {
   "home": {
     "header": "<span>안녕하세요<br /> Brian Velasquez입니다.<br /><em>시니어 풀스택<br />엔지니어입니다.</em></span>",
-    "heroEyebrow": "안녕하세요",
+    "heroEyebrow": "풀스택 엔지니어",
+    "heroBrand": "brian velasquez",
+    "heroHeadlineStart": "훌륭한 제품",
+    "heroHeadlineAccent": "뒤의",
+    "heroHeadlineEnd": "시스템을 만듭니다.",
+    "heroPrimaryCta": "주요 작업 보기",
+    "heroSecondaryCta": "연락하기",
+    "heroSkillsLabel": "주요 기술",
     "heroName": "Brian Velasquez입니다.",
     "heroRole": "시니어 풀스택 엔지니어입니다.",
-    "heroIntroduction": "확장 가능한 웹 애플리케이션을 만들고 비즈니스 성장을 지원하는 시스템을 현대화합니다. 깔끔한 코드, 신중한 아키텍처, 뛰어난 사용자 경험을 중요하게 생각합니다.",
+    "heroIntroduction": "Brian입니다. 직관적인 인터페이스, 안정적인 API, 데이터 중심 플랫폼을 첫 프로토타입부터 대규모 운영 환경까지 구축합니다.",
     "switchBackground": "히어로 배경 전환",
     "backgrounds": {
       "type1": "유형 1",
@@ -17,7 +24,7 @@
     "aboutLink": "더 알아보기",
     "features": {
       "experience": "경력 연수",
-      "projects": "완료한 프로젝트",
+      "projects": "배포한 프로젝트",
       "international": "국제 협업",
       "collaboration": "팀 협업",
       "focus": "집중 분야",
@@ -72,6 +79,26 @@
       "stats": {
         "regions": "4개 지역",
         "timeZones": "여러 시간대"
+      },
+      "approachHeading": "업무 방식",
+      "approachStatement": "강력한 원격 협업은 명확성, 신뢰, 안정적인 실행에서 시작됩니다.",
+      "practices": {
+        "crossFunctional": {
+          "title": "크로스펑셔널 리더십",
+          "description": "엔지니어링, 제품, 디자인, 데이터, 인프라."
+        },
+        "async": {
+          "title": "비동기 협업",
+          "description": "명확한 문서 소통, 주인의식, 세심한 인수인계."
+        },
+        "delivery": {
+          "title": "분산형 전달",
+          "description": "서비스, 저장소, 릴리스 주기 전반의 작업 조율."
+        },
+        "systems": {
+          "title": "시스템 사고",
+          "description": "아키텍처, 구현, 디버깅, 실행의 균형."
+        }
       }
     },
     "section2Title": "기술 리더",
@@ -189,7 +216,7 @@
     "title": "제가 만든 것들",
     "introduction": "웹, 모바일, 백엔드, 데이터 분야의 프로젝트 모음입니다. 각 프로젝트는 실제 문제를 해결했고 새로운 것을 배우게 했습니다.",
     "search": "프로젝트 검색",
-    "github": "GitHub에서 코드 보기",
+    "github": "내 GitHub 둘러보기",
     "jobs": {
       "label": "직무별 필터",
       "all": "모든 직무",
@@ -198,6 +225,12 @@
       "independent": "독립 계약자",
       "various": "Various Inc.",
       "launchBrigade": "Launch Brigade"
+    },
+    "skills": {
+      "label": "기술별 필터",
+      "all": "모든 기술",
+      "clear": "지우기",
+      "selected": "선택한 기술 {{count}}개"
     },
     "technologies": "{{name}} 기술",
     "viewProject": "{{name}} 보기",

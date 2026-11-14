@@ -1,26 +1,26 @@
 @use "../../../styles/variables" as *;
 
-.page {
+:where(.page) {
   background: $theme-surface-color;
   min-height: 100svh;
   padding: $page-padding-block-start $page-padding-inline-desktop
     $page-padding-block-end $page-padding-inline-start;
 }
 
-.container {
+:where(.container) {
   margin: 0 auto;
   max-width: $content-width-wide;
 }
 
 @media (max-width: $medium-screen) {
-  .page {
+  :where(.page) {
     padding: $page-padding-block-start $page-padding-inline-tablet
       $page-padding-block-end;
   }
 }
 
 @media (max-width: $mobile-screen) {
-  .page {
+  :where(.page) {
     padding: $page-padding-inline-mobile $page-padding-inline-mobile
       $space * 6;
   }

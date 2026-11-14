@@ -1,7 +1,8 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
 
-.projectLink {
+.imageLink,
+.titleLink {
   color: inherit;
   display: block;
   min-width: 0;
@@ -31,7 +32,8 @@
   transition: filter $transition ease, transform $transition ease;
   width: 100%;
 
-  .project:hover & {
+  .imageLink:hover &,
+  .imageLink:focus-visible & {
     filter: saturate(1.08);
     transform: scale(1.02);
   }
@@ -62,8 +64,8 @@
   }
 }
 
-.projectLink:hover h2,
-.projectLink:focus-visible h2 {
+.titleLink:hover,
+.titleLink:focus-visible {
   color: $primary-color;
 }
 
@@ -75,21 +77,11 @@
   margin-top: auto;
   padding-top: $space * 3;
 
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: $space-sm;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+}
 
-  li {
-    border: 1px solid $theme-border-color;
-    color: $theme-subtext-color;
-    font-size: 11px;
-    padding: $space-sm $space;
-  }
+.skillPills a {
+  font-size: 11px;
+  padding: $space-sm $space;
 }
 
 .arrow {
@@ -100,8 +92,8 @@
   text-decoration: none;
   transition: transform $transition ease;
 
-  .projectLink:hover &,
-  .projectLink:focus-visible & {
+  &:hover,
+  &:focus-visible {
     transform: translateX($space-sm);
   }
 }

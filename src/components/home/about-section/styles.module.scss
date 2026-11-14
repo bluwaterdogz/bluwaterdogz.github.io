@@ -6,7 +6,9 @@
 }
 
 .content {
-  @include section.content-grid;
+  margin: 0 auto;
+  max-width: $content-width-readable;
+  width: 100%;
 }
 
 .introduction {
@@ -29,10 +31,6 @@
 
 .link {
   @include section.link;
-}
-
-.content > :last-child {
-  align-self: center;
 }
 
 @include section.responsive-layout;

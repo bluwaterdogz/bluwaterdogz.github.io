@@ -35,20 +35,47 @@
     padding: $space 0;
     position: relative;
     text-decoration: none;
-    transition: $transition;
+    transform-origin: center right;
+    transition: color $transition ease, transform $transition ease;
 
-    &[aria-current="page"]::before {
+    &::before {
       background: $primary-color;
       content: "";
       height: 2px;
       left: -$space * 5;
+      opacity: 0;
       position: absolute;
       top: 50%;
+      transform: translateY(-50%) scaleX(0);
+      transform-origin: right center;
+      transition: opacity $transition ease, transform $transition ease;
       width: $space * 3;
     }
 
-    &:hover {
+    &[aria-current="page"]::before {
+      opacity: 1;
+      transform: translateY(-50%) scaleX(1);
+    }
+
+    &:hover,
+    &:focus-visible {
       color: $primary-color;
+      transform: perspective($space * 20) rotateX(-8deg) translateX(-$space-sm);
+    }
+
+    &:hover::before,
+    &:focus-visible::before {
+      opacity: 1;
+      transform: translateY(-50%) scaleX(1);
+    }
+  }
+
+  &:has(a:hover, a:focus-visible) a[aria-current="page"]:not(:hover, :focus-visible) {
+    color: $theme-text-color !important;
+
+    &::before {
+      opacity: 0;
+      transform: translateY(-50%) scaleX(0);
     }
   }
   @for $i from 1 through 10 {
@@ -72,6 +99,10 @@
       &:hover {
         color: $primary-color;
       }
+    }
+
+    &:has(a:hover, a:focus-visible) a[aria-current="page"]:not(:hover, :focus-visible) {
+      color: white !important;
     }
   }
 }

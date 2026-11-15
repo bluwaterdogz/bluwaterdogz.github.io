@@ -15,17 +15,33 @@
   inset: 0;
   position: absolute;
   width: 100%;
+}
+
+.blobLayer {
   z-index: 0;
 }
 
 .animationBlur {
-  backdrop-filter: blur(6px);
-  background: rgba(white, 0.08);
+  //backdrop-filter: blur(1px);
+  background: rgba(0,0,255, 0.2);
   inset: 0;
   pointer-events: none;
   position: absolute;
-  -webkit-backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur($blur);
   z-index: 1;
+}
+
+.polyhedraLayer {
+  z-index: 2;
+}
+
+.polyhedraBlur {
+  backdrop-filter: blur(calc(#{$blur}  / 2));
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  -webkit-backdrop-filter: blur(calc(#{$blur} * 2 / 3));
+  z-index: 3;
 }
 
 .portrait {
@@ -38,7 +54,7 @@
   position: absolute;
   right: 10vw;
   width: auto;
-  z-index: 2;
+  z-index: 4;
 }
 
 .container {
@@ -47,18 +63,18 @@
   max-width: 1440px;
   position: relative;
   width: 100%;
-  z-index: 3;
+  z-index: 5;
 }
 
 .topBar {
   align-items: center;
   display: flex;
   justify-content: flex-end;
-  padding: $space * 3;
+  padding: $space * 3 $space * 6;
   position: absolute;
   right: 0;
   top: 0;
-  z-index: 4;
+  z-index: 6;
 }
 
 .content {
@@ -151,17 +167,21 @@
   &:focus-visible {
     background: $primary-color;
     border-color: $primary-color !important;
+    color: white !important;
   }
 }
 
 .secondaryAction {
-  background: rgba(white, 0.2);
+  backdrop-filter: $interactive-transparent-effect;
+  background: $interactive-transparent-background;
   color: $theme-text-color;
+  -webkit-backdrop-filter: $interactive-transparent-effect;
 
   &:hover,
   &:focus-visible {
+    background: $primary-color;
     border-color: $primary-color;
-    color: $primary-color;
+    color: white !important;
   }
 }
 

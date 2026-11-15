@@ -3,6 +3,7 @@ import { JobTimeline, JobTimelineItem } from "../../components/home/job-timeline
 import { SkillTimeline } from "../../components/skills/skill-timeline";
 import { skillGroupings } from "../../service/skill/data";
 import { linkedinProfileUrl } from "../../service/consts";
+import { Statement } from "../../components/common/statement";
 import styles from "./styles.module.scss";
 
 const interests = [
@@ -119,7 +120,9 @@ export const AboutPage = () => {
           <SkillTimeline groups={allSkillGroups} />
         </section>
 
-        <blockquote className={styles.quote}>{t("about.quote")}</blockquote>
+        <Statement as="blockquote" className={styles.quote}>
+          {t("about.quote")}
+        </Statement>
 
 
       </div>

@@ -9,13 +9,13 @@
   margin: 0;
   padding: 0;
 
-  :is(a, button) {
+  :is(a, button, li > span) {
     align-items: center;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur($blur);
     background: rgba(white, 0.16);
     border: 1px solid rgba($dark-color, 0.16);
     border-radius: 999px;
-    color: $theme-text-color;
+    color: $primary-color;
     display: inline-flex;
     font-size: 13px;
     gap: $space-sm;
@@ -23,7 +23,7 @@
     text-decoration: none;
     transition: background $transition ease, border-color $transition ease,
       color $transition ease, transform $transition ease;
-    -webkit-backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur($blur);
 
     &[aria-pressed="true"] {
       backdrop-filter: none;
@@ -57,7 +57,7 @@
       transform: translateY(-2px);
       -webkit-backdrop-filter: none;
 
-      i {
+      i,span {
         color: white;
       }
     }

@@ -1,6 +1,11 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
 
+$timeline-rail-left: -$space * 3;
+$timeline-line-width: 2px;
+$timeline-dot-size: $space + 2px;
+$timeline-dot-top: $space-sm - 1px;
+
 .story {
   --story-accent: #{$primary-color};
   display: grid;
@@ -136,11 +141,11 @@
     &::after {
       background: color-mix(in srgb, var(--story-accent) 72%, transparent);
       content: "";
-      height: 100%;
-      left: -$space * 3;
+      height: calc(100% - #{$timeline-dot-top + $timeline-dot-size + $space-sm});
+      left: $timeline-rail-left;
       position: absolute;
-      top: $space;
-      width: 1px;
+      top: $timeline-dot-top + $timeline-dot-size + $space-sm;
+      width: $timeline-line-width;
     }
 
     &:last-child {
@@ -182,12 +187,12 @@
   border: 2px solid var(--story-accent);
   border-radius: 50%;
   box-sizing: border-box;
-  height: $space + 2px;
-  left: -$space * 3 - 5.5px;
+  height: $timeline-dot-size;
+  left: calc(#{$timeline-rail-left} - (#{$timeline-dot-size} - #{$timeline-line-width}) / 2);
   position: absolute;
-  top: $space-sm - 1px;
+  top: $timeline-dot-top;
   transition: background $transition ease, transform $transition ease;
-  width: $space + 2px;
+  width: $timeline-dot-size;
   z-index: 1;
 }
 
@@ -273,8 +278,8 @@
       padding: $space * 2 $space 0 0;
 
       &::after {
-        height: 1px;
-        left: $space;
+        height: $timeline-line-width;
+        left: calc(#{$space} + #{$timeline-dot-size} / 2 + #{$space-sm});
         right: 0;
         top: 0;
         width: auto;
@@ -288,8 +293,8 @@
   }
 
   .dot {
-    left: $space - 6px;
-    top: -6px;
+    left: calc(#{$space} - #{$timeline-dot-size} / 2);
+    top: calc(#{$timeline-dot-size} / -2);
   }
 }
 

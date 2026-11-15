@@ -3,7 +3,7 @@ import styles from "./morphing-blob-background.module.scss";
 
 type MorphingBlobBackgroundProps = PropsWithChildren<{
   className?: string;
-  colors?: [string, string, string, string];
+  colors?: string[];
   intensity?: number;
   speed?: number;
 }>;
@@ -18,11 +18,13 @@ export const MorphingBlobBackground = ({
   const safeIntensity = Math.min(Math.max(intensity, 0), 2);
   const safeSpeed = Math.min(Math.max(speed, 0.2), 3);
   const durationMultiplier = 1 / safeSpeed;
+  const blobColors = colors.length > 0 ? colors : ["#ff9cdb"];
   const customProperties = {
-    "--blob-color-1": colors[0],
-    "--blob-color-2": colors[1],
-    "--blob-color-3": colors[2],
-    "--blob-color-4": colors[3],
+    "--blob-color-1": blobColors[0],
+    "--blob-color-2": blobColors[1] ?? blobColors[0],
+    "--blob-color-3": blobColors[2] ?? blobColors[0],
+    "--blob-color-4": blobColors[3] ?? blobColors[0],
+    "--blob-gradient": blobColors.join(", "),
     "--blob-opacity": Math.min(0.95, 0.62 * safeIntensity),
     "--blob-saturation": `${Math.round(110 * safeIntensity)}%`,
     "--blob-move-1-duration": `${18 * durationMultiplier}s`,
@@ -39,10 +41,23 @@ export const MorphingBlobBackground = ({
   return (
     <section className={`${styles.container} ${className}`} style={customProperties}>
       <div className={styles.background} aria-hidden="true">
-        <div className={`${styles.blob} ${styles.blobOne}`} />
-        <div className={`${styles.blob} ${styles.blobTwo}`} />
-        <div className={`${styles.blob} ${styles.blobThree}`} />
-        <div className={`${styles.blob} ${styles.blobFour}`} />
+        {blobColors.map((color, index) => {
+          const variant = index % 4;
+          const variantClass = [
+            styles.blobOne,
+            styles.blobTwo,
+            styles.blobThree,
+            styles.blobFour,
+          ][variant];
+
+          return (
+            <div
+              className={`${styles.blob} ${variantClass}`}
+              key={`${color}-${index}`}
+              style={{ "--blob-color": color } as CSSProperties}
+            />
+          );
+        })}
         <div className={styles.colorWash} />
         <div className={styles.noise} />
       </div>

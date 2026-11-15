@@ -1,5 +1,6 @@
 import { KeyboardEvent, useRef, useState } from "react";
 import { useOutsideClick } from "../../../hooks/useOutsideClick";
+import { InputGroup } from "../input-group";
 import styles from "./styles.module.scss";
 
 export interface SelectOption {
@@ -35,42 +36,49 @@ export const CustomSelect = ({
   };
 
   return (
-    <div className={styles.field} ref={rootRef}>
-      <span className={styles.label}>{label}</span>
-      <div className={styles.control}>
-        <button
-          aria-expanded={isOpen}
-          aria-haspopup="listbox"
-          className={styles.trigger}
-          onClick={() => setIsOpen((current) => !current)}
-          onKeyDown={handleKeyDown}
-          type="button"
-        >
-          <span>{selectedOption?.label ?? options[0]?.label}</span>
-          <i className="fa fa-chevron-down" aria-hidden="true" />
-        </button>
-        {isOpen && (
-          <ul className={styles.options} role="listbox">
-            {options.map((option) => (
-              <li key={option.value} role="option" aria-selected={option.value === value}>
-                <button
-                  className={option.value === value ? styles.selected : undefined}
-                  onClick={() => {
-                    onChange(option.value);
-                    setIsOpen(false);
-                  }}
-                  type="button"
+    <InputGroup className={styles.field} label={label}>
+      <div ref={rootRef}>
+        <div className={styles.control}>
+          <button
+            aria-expanded={isOpen}
+            aria-haspopup="listbox"
+            className={styles.trigger}
+            onClick={() => setIsOpen((current) => !current)}
+            onKeyDown={handleKeyDown}
+            type="button"
+          >
+            <span>{selectedOption?.label ?? options[0]?.label}</span>
+            <i className="fa fa-chevron-down" aria-hidden="true" />
+          </button>
+          {isOpen && (
+            <ul className={styles.options} role="listbox">
+              {options.map((option) => (
+                <li
+                  aria-selected={option.value === value}
+                  key={option.value}
+                  role="option"
                 >
-                  {option.label}
-                  {option.value === value && (
-                    <i className="fa fa-check" aria-hidden="true" />
-                  )}
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
+                  <button
+                    className={
+                      option.value === value ? styles.selected : undefined
+                    }
+                    onClick={() => {
+                      onChange(option.value);
+                      setIsOpen(false);
+                    }}
+                    type="button"
+                  >
+                    {option.label}
+                    {option.value === value && (
+                      <i className="fa fa-check" aria-hidden="true" />
+                    )}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
-    </div>
+    </InputGroup>
   );
 };

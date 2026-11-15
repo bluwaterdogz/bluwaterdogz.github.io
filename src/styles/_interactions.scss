@@ -1,0 +1,13 @@
+@use "colors" as *;
+@use "variables" as *;
+
+@mixin hover-lift {
+  box-shadow: -2px 2px $space-sm rgb(from #{$theme-text-color} r g b / 30%);
+  transition: box-shadow $transition ease, transform $transition ease;
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: -2px $space $space * 2 rgb(from #{$theme-text-color} r g b / 22%);
+    transform: translateY(-$space-sm) scale(1.01);
+  }
+}

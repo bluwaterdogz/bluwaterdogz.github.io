@@ -1,7 +1,7 @@
 {
   "home": {
-    "header": "<span>Hello<br /> I'm Brian Velasquez,<br /><em>Senior Full Stack <br />Engineer.</em></span>",
-    "heroEyebrow": "Full-stack engineer",
+    "header": "<span>Hello<br /> I'm Brian Velasquez,<br /><em>Senior Software <br />Engineer.</em></span>",
+    "heroEyebrow": "Senior software engineer",
     "heroBrand": "brian velasquez",
     "heroHeadlineStart": "Building the systems",
     "heroHeadlineAccent": "behind",
@@ -10,7 +10,7 @@
     "heroSecondaryCta": "Get in touch",
     "heroSkillsLabel": "Featured skills",
     "heroName": "I'm Brian Velasquez,",
-    "heroRole": "Senior Full Stack Engineer.",
+    "heroRole": "Senior Software Engineer.",
     "heroIntroduction": "I'm Brian. I build intuitive interfaces, reliable APIs, and data-intensive platforms, from the first prototype to production at scale.",
     "switchBackground": "Switch hero background",
     "backgrounds": {
@@ -18,7 +18,7 @@
       "type2": "Type 2"
     },
     "aboutHeader": "Who am I?",
-    "about": "Most recently, I worked as a Senior Software Engineer at Mobian, building full-stack search, analytics, reporting, data-processing, and reliability features for an audience-intelligence and advertising platform. Before that, I built clinical-study tools at Faro Health and led frontend modernization work for Cams at Various Inc.",
+    "about": "Most recently, I worked as a Senior Software Engineer at Mobian, building search, analytics, reporting, data-processing, and reliability features for an audience-intelligence and advertising platform. Before that, I built clinical-study tools at Faro Health and led frontend modernization work for Cams at Various Inc.",
     "aboutEyebrow": "About me",
     "aboutTitle": "Building solutions. Leading teams",
     "aboutLink": "More about me",
@@ -31,12 +31,12 @@
       "performance": "Performance, scalability, UX"
     },
     "section1Title": "Experienced",
-    "section1Content1": "In my most recent role as a Senior Full-Stack Developer at pharmaceutical tech startup Faro Health, I built and optimized REST and CQRS-based microservices and UI modules using TypeScript, Node.js, PostgreSQL, Jest, and React. I developed feature slices and POCs, designed and executed technical solutions, wrote unit and integration tests, optimized application performance, and built deployment pipelines with GitHub Actions.",
+    "section1Content1": "In my most recent role as a Senior Software Engineer at pharmaceutical tech startup Faro Health, I built and optimized REST and CQRS-based microservices and UI modules using TypeScript, Node.js, PostgreSQL, Jest, and React. I developed feature slices and POCs, designed and executed technical solutions, wrote unit and integration tests, optimized application performance, and built deployment pipelines with GitHub Actions.",
     "section1Content2": "Previously, I led an international remote front-end team at Various Inc., collaborating closely with designers to modernize legacy JavaScript and Perl-based video streaming apps. We migrated them to a scalable, high-performance React and TypeScript stack with Next.js, MOBX, WebSockets, and Python, backed by REST APIs and a CI/CD pipeline for seamless deployment.",
     "experience": {
       "eyebrow": "02 Experienced",
       "title": "Experienced",
-      "copy1": "Most recently, I worked as a Senior Software Engineer at Mobian, building full-stack search, analytics, reporting, data-processing, and reliability features for an audience-intelligence and advertising platform.",
+      "copy1": "Most recently, I worked as a Senior Software Engineer at Mobian, building search, analytics, reporting, data-processing, and reliability features for an audience-intelligence and advertising platform.",
       "copy2": "I built and refined search, filtering, pagination, autocomplete, CSV exports, statistics, cache behavior, ingestion tooling, and reporting workflows across Next.js, React, TypeScript, FastAPI, PostgreSQL, OpenSearch, Snowflake, Dagster, Redis, and AWS.",
       "copy3": "The work regularly crossed frontend, backend, ETL, search, and infrastructure boundaries. I also handled production fixes, test coverage, release coordination, brand reconciliation, and integrations across the frontend, Persona API, Content API, Video Brand Safety, ETL, and end-to-end testing repositories.",
       "copy4": "Before Mobian, I helped build Faro Health's clinical-study design platform, contributing frontend features, service integrations, testing, and delivery improvements.",
@@ -46,7 +46,7 @@
       "timeline": {
         "mobianPeriod": "2025 - Present",
         "mobianCompany": "Mobian",
-        "mobianSummary": "Built full-stack search, analytics, reporting, data-processing, and reliability features for audience-intelligence and advertising workflows.",
+        "mobianSummary": "Built search, analytics, reporting, data-processing, and reliability features for audience-intelligence and advertising workflows.",
         "contractorPeriod": "2024 - 2025",
         "contractorCompany": "Independent Contractor",
         "contractorSummary": "Delivered focused web application, product, and technical consulting engagements for independent clients.",
@@ -299,7 +299,7 @@
         "13": "Reusable UI, design-system, search, filtering, dashboard, and interaction improvements across an audience-intelligence platform"
       },
       "content": {
-        "1": "<div><h3>Clinical-study design platform</h3><p>I contributed to Faro Study Designer, a healthcare product used to plan, document, and evaluate clinical protocols. My work focused on shipping maintainable product features across TypeScript, React, service integrations, PostgreSQL-backed workflows, automated tests, and deployment pipelines.</p><h3>Contribution and outcomes</h3><ul><li>Built frontend and full-stack feature slices for study-design workflows</li><li>Integrated UI modules with REST and CQRS-style service boundaries</li><li>Improved reliability with unit and integration tests</li><li>Supported delivery through GitHub Actions and repeatable release practices</li></ul><p>The result was clearer product behavior, stronger test coverage, and a more maintainable path for evolving clinical-study features.</p></div>",
+        "1": "<div><h3>Clinical-study design platform</h3><p>I contributed to Faro Study Designer, a healthcare product used to plan, document, and evaluate clinical protocols. My work focused on shipping maintainable product features across TypeScript, React, service integrations, PostgreSQL-backed workflows, automated tests, and deployment pipelines.</p><h3>Contribution and outcomes</h3><ul><li>Built frontend and backend feature slices for study-design workflows</li><li>Integrated UI modules with REST and CQRS-style service boundaries</li><li>Improved reliability with unit and integration tests</li><li>Supported delivery through GitHub Actions and repeatable release practices</li></ul><p>The result was clearer product behavior, stronger test coverage, and a more maintainable path for evolving clinical-study features.</p></div>",
         "2": "<div><h3>Cams real-time product modernization</h3><p>I led frontend modernization work for Cams, a mature high-traffic platform with live discovery, video, chat, public rooms, and private interactive sessions. The work required preserving active product behavior while moving legacy JavaScript and Perl-backed experiences toward a scalable React, TypeScript, Next.js, WebSocket, and Python architecture.</p><h3>Contribution and outcomes</h3><ul><li>Coordinated an international frontend team across product, design, and engineering priorities</li><li>Improved discovery, presence, chat, and session-state interfaces</li><li>Supported real-time UI updates without disrupting long-running media experiences</li><li>Helped reduce legacy complexity by moving product surfaces into a more maintainable frontend stack</li></ul><p>The outcome was a clearer and more dependable foundation for real-time interaction-heavy workflows on an established production platform.</p></div>",
         "3": "<p>A wordpress website for the The 2025 San Anselmo General Plan Update which provides residents with comprehensive information on proposed changes to the town's infrastructure, zoning, and public spaces. It features detailed project updates, sustainability initiatives, and transportation improvements. The site also includes interactive public surveys, allowing community members to provide feedback and participate in the decision-making process.</p>",
         "4": "<p>Launch Brigade is a web design and development agency based in the San Francisco Bay Area, specializing in creating digital experiences that elevate brands and drive business growth. Their website, launchbrigade.com, reflects their commitment to delivering comprehensive digital solutions.</p>",
@@ -316,7 +316,7 @@
     },
     "jobs": {
       "title": {
-        "1": "Senior Full-Stack Developer",
+        "1": "Senior Software Engineer",
         "2": "Senior Lead Front-end Developer",
         "3": "Front-end Developer",
         "4": "Front-end Developer Intern",

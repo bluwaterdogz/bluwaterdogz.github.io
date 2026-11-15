@@ -12,6 +12,8 @@ $content-width-mobile: 360px;
 $space-large: 500px;
 $transition: 300ms;
 $blur: 6px;
+$interactive-transparent-background: rgba(white, 0.2);
+$interactive-transparent-effect: blur($blur);
 $nav-height: 80px;
 $section-nav-offset: $space * 6;
 $readable-width: 550px;

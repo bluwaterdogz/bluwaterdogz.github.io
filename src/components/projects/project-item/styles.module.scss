@@ -1,24 +1,25 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
+@use "../../../styles/interactions" as interaction;
 
-.imageLink,
-.titleLink {
+.card {
+  @include interaction.hover-lift;
+  align-items: stretch;
   color: inherit;
-  display: block;
+  display: grid;
+  gap: $space * 2;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  height: 100%;
   min-width: 0;
   text-decoration: none;
 }
 
 .project {
-  align-items: stretch;
-  display: grid;
-  gap: $space * 2;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  min-width: 0;
   height: 100%;
+  min-width: 0;
 }
 
-.imageLink {
+.imageWrapper {
   display: block;
   min-width: 0;
   overflow: hidden;
@@ -32,8 +33,8 @@
   transition: filter $transition ease, transform $transition ease;
   width: 100%;
 
-  .imageLink:hover &,
-  .imageLink:focus-visible & {
+  .card:hover &,
+  .card:focus-visible & {
     filter: saturate(1.08);
     transform: scale(1.02);
   }
@@ -43,7 +44,7 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  padding: 0 0 $space;
+  padding: $space 0 $space;
 
   h2 {
     font-family: Georgia, "Times New Roman", serif;
@@ -64,42 +65,21 @@
   }
 }
 
-.titleLink:hover,
-.titleLink:focus-visible {
-  color: $primary-color;
-}
-
 .footer {
   align-items: flex-end;
   display: flex;
   gap: $space;
-  justify-content: space-between;
   margin-top: auto;
   padding-top: $space * 3;
-
 }
 
-.skillPills a {
+.skillPills > li > span {
   font-size: 11px;
   padding: $space-sm $space;
 }
 
-.arrow {
-  color: $primary-color;
-  flex: 0 0 auto;
-  font-size: 26px;
-  line-height: 1;
-  text-decoration: none;
-  transition: transform $transition ease;
-
-  &:hover,
-  &:focus-visible {
-    transform: translateX($space-sm);
-  }
-}
-
 @media (max-width: $mobile-screen) {
-  .project {
+  .card {
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   }
 

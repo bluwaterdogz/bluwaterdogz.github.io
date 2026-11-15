@@ -1,15 +1,18 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
 
-.filter {
-  border: 1px solid $theme-border-color;
+.field {
+  width: 100%;
+}
+
+.control {
   position: relative;
 }
 
 .trigger {
   align-items: center;
   background: transparent;
-  border: 0;
+  border: 1px solid $theme-border-color;
   color: $theme-text-color;
   cursor: pointer;
   display: grid;
@@ -20,13 +23,6 @@
   text-align: left;
   width: 100%;
 
-  > span {
-    color: $theme-subtext-color;
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-
   > i {
     color: $primary-color;
     font-size: 11px;
@@ -36,6 +32,10 @@
   &[aria-expanded="true"] > i {
     transform: rotate(180deg);
   }
+
+  &[aria-expanded="true"] {
+    border-color: $primary-color;
+  }
 }
 
 .panel {
@@ -44,10 +44,11 @@
   box-shadow: $box-shadow;
   padding: $space * 2;
   position: absolute;
+  left: 0;
   right: 0;
   top: calc(100% + #{$space});
-  width: min(90vw, $space * 60);
-  z-index: 20;
+  width: 100%;
+  z-index: 120;
 }
 
 .heading {

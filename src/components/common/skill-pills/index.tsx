@@ -6,7 +6,7 @@ interface SkillPillsProps {
   activeSkillIds?: string[];
   ariaLabel: string;
   className?: string;
-  linkTo?: "projects" | "skills";
+  linkTo?: "projects" | "skills" | null;
   onToggle?: (skillId: string) => void;
   skills: Skill[];
 }
@@ -30,7 +30,15 @@ export const SkillPills = ({
     <ul aria-label={ariaLabel} className={`${styles.pills} ${className}`}>
       {skills.map((skill) => (
         <li key={skill.id}>
-          {onToggle == null ? (
+          {onToggle != null ? (
+            <button
+              aria-pressed={activeSkillIds.includes(skill.id)}
+              onClick={() => onToggle(skill.id)}
+              type="button"
+            >
+              {renderContent(skill)}
+            </button>
+          ) : linkTo != null ? (
             <Link
               to={
                 linkTo === "projects"
@@ -41,13 +49,7 @@ export const SkillPills = ({
               {renderContent(skill)}
             </Link>
           ) : (
-            <button
-              aria-pressed={activeSkillIds.includes(skill.id)}
-              onClick={() => onToggle(skill.id)}
-              type="button"
-            >
-              {renderContent(skill)}
-            </button>
+            <span>{renderContent(skill)}</span>
           )}
         </li>
       ))}

@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { ContentSection } from "../../content-section";
+import { Statement } from "../../common/statement";
 import { linkedinProfileUrl } from "../../../service/consts";
 import styles from "./styles.module.scss";
 
@@ -58,9 +59,9 @@ export const LeadershipSection = () => {
         <p className={styles.approachHeading}>
           {t("home.leadership.approachHeading")}
         </p>
-        <p className={styles.statement}>
+        <Statement className={styles.statement}>
           {t("home.leadership.approachStatement")}
-        </p>
+        </Statement>
         <div className={styles.practices}>
           {practices.map(({ description, icon, title }) => (
             <article className={styles.practice} key={title}>

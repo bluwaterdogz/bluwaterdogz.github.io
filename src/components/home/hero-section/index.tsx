@@ -12,7 +12,7 @@ import { SkillPills } from "../../common/skill-pills";
 const featuredSkillIds = ["3", "9", "1", "26", "5", "29", "38"];
 
 type BlobBackgroundConfig = {
-  colors?: [string, string, string, string];
+  colors?: string[];
   vibrance?: number;
   speed?: number;
 };
@@ -38,7 +38,12 @@ export const HeroSection = (props: HeroSectionProps) => {
   const { t } = useTranslation();
   const theme = useThemeStore((state) => state.theme);
   const {
-    colors = ["#ff9cdb", "#c2adff", "#96f4ff", "#e7ff96"],
+    colors = [
+      "#ff9cdb",
+      // "#c2adff",
+      // "#96f4ff",
+      // "#e7ff96"
+    ],
     speed = 1,
     vibrance = 1,
   } = blobBackground;
@@ -48,16 +53,18 @@ export const HeroSection = (props: HeroSectionProps) => {
     shapeCount = 10,
   } = geometricBackground;
 
+
   return (
     <section className={styles.hero}>
-      <div className={styles.flippity}>
+      <div className={`${styles.flippity} ${styles.blobLayer}`}>
         <MorphingBlobBackground
           colors={colors}
           intensity={vibrance}
           speed={speed}
         />
       </div>
-      <div className={styles.flippity}>
+      <div aria-hidden="true" className={styles.animationBlur} />
+      <div className={`${styles.flippity} ${styles.polyhedraLayer}`}>
         <PolyhedraBackground
           baseColor={
             theme === "dark"
@@ -70,7 +77,7 @@ export const HeroSection = (props: HeroSectionProps) => {
           objectCount={shapeCount}
         />
       </div>
-      <div aria-hidden="true" className={styles.animationBlur} />
+      <div aria-hidden="true" className={styles.polyhedraBlur} />
       <img alt="" className={styles.portrait} src={imgUrl} />
       <div className={styles.topBar}>
         <Lang className={styles.languageDropdown} />

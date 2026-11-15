@@ -1,0 +1,14 @@
+@use "../../../styles/colors" as *;
+@use "../../../styles/variables" as *;
+
+.inputGroup {
+  display: grid;
+  gap: $space;
+}
+
+.label {
+  color: $theme-subtext-color;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}

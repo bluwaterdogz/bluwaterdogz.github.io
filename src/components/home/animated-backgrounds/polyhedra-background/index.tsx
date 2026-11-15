@@ -414,7 +414,7 @@ import {
     private getCollisionRadius() {
       return this.size * 0.92;
     }
-  
+
     private applyMouseRepulsion(pointer: PointerState) {
       if (!pointer.active) {
         this.hoverMix = mix(
@@ -874,15 +874,55 @@ import {
       };
   
       const createObjects = () => {
-        objects = Array.from(
-          { length: config.objectCount },
-          () =>
-            new Polyhedron(
-              width,
-              height,
-              config
-            )
-        );
+        const positionedObjects: Polyhedron[] = [];
+        const candidateCount = Math.max(1, config.objectCount * 10);
+
+        for (let index = 0; index < config.objectCount; index++) {
+          let selected: Polyhedron | null = null;
+          let bestCandidate: Polyhedron | null = null;
+          let bestClearance = Number.NEGATIVE_INFINITY;
+
+          for (let attempt = 0; attempt < candidateCount; attempt++) {
+            const candidate = new Polyhedron(width, height, config);
+            const clearance = positionedObjects.reduce(
+              (minimum, existing) => {
+                const requiredDistance =
+                  (candidate.size + existing.size) * 0.92 +
+                  config.minSize * 0.35;
+                const actualDistance = distance2D(
+                  candidate.x,
+                  candidate.y,
+                  existing.x,
+                  existing.y
+                );
+
+                return Math.min(
+                  minimum,
+                  actualDistance - requiredDistance
+                );
+              },
+              Number.POSITIVE_INFINITY
+            );
+
+            if (clearance >= 0) {
+              selected = candidate;
+              break;
+            }
+
+            if (clearance > bestClearance) {
+              bestCandidate = candidate;
+              bestClearance = clearance;
+            }
+          }
+
+          positionedObjects.push(
+            selected ??
+              bestCandidate ??
+              new Polyhedron(width, height, config)
+          );
+        }
+
+        objects = positionedObjects;
       };
   
       const drawConnections = () => {
@@ -947,7 +987,7 @@ import {
   
         ctx.restore();
       };
-  
+
       const animate = () => {
         ctx.clearRect(
           0,
@@ -963,7 +1003,7 @@ import {
             height
           );
         }
-  
+
         drawConnections();
   
         for (const object of objects) {

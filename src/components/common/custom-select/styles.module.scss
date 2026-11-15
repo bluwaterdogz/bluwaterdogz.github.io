@@ -2,19 +2,8 @@
 @use "../../../styles/variables" as *;
 
 .field {
-  align-items: center;
-  display: grid;
-  gap: $space;
-  grid-template-columns: auto minmax(0, 1fr);
+  width: 100%;
 }
-
-.label {
-  color: $theme-subtext-color;
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
 .control {
   position: relative;
 }
@@ -47,7 +36,6 @@
     }
   }
 }
-
 .options {
   background: $theme-surface-color;
   border: 1px solid $theme-border-color;
@@ -84,12 +72,5 @@
       color: $primary-color;
       outline: 0;
     }
-  }
-}
-
-@media (max-width: $mobile-screen) {
-  .field {
-    align-items: stretch;
-    grid-template-columns: 1fr;
   }
 }

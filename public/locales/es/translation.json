@@ -1,7 +1,7 @@
 {
   "home": {
-    "header": "<span>Hola<br /> Soy Brian Velasquez,<br /><em>Ingeniero Full Stack <br />Senior.</em></span>",
-    "heroEyebrow": "Ingeniero full stack",
+    "header": "<span>Hola<br /> Soy Brian Velasquez,<br /><em>Ingeniero de Software <br />Senior.</em></span>",
+    "heroEyebrow": "Ingeniero de software senior",
     "heroBrand": "brian velasquez",
     "heroHeadlineStart": "Construyo los sistemas",
     "heroHeadlineAccent": "detrás de",
@@ -10,7 +10,7 @@
     "heroSecondaryCta": "Contactar",
     "heroSkillsLabel": "Habilidades destacadas",
     "heroName": "Soy Brian Velasquez,",
-    "heroRole": "Ingeniero Full Stack Senior.",
+    "heroRole": "Ingeniero de Software Senior.",
     "heroIntroduction": "Soy Brian. Creo interfaces intuitivas, API fiables y plataformas de datos, desde el primer prototipo hasta producción a escala.",
     "switchBackground": "Cambiar fondo principal",
     "backgrounds": {
@@ -18,7 +18,7 @@
       "type2": "Tipo 2"
     },
     "aboutHeader": "¿Quién soy?",
-    "about": "Desarrollador web full stack senior con experiencia en TypeScript, React, Angular, Node.js y Python. He liderado equipos internacionales, modernizado sistemas heredados, optimizado arquitecturas e implementado canalizaciones CI/CD para despliegues eficientes. Me apasiona crear soluciones escalables y centradas en el usuario que impulsen el crecimiento del negocio.",
+    "about": "Ingeniero de software senior con experiencia en TypeScript, React, Angular, Node.js y Python. He liderado equipos internacionales, modernizado sistemas heredados, optimizado arquitecturas e implementado canalizaciones CI/CD para despliegues eficientes. Me apasiona crear soluciones escalables y centradas en el usuario que impulsen el crecimiento del negocio.",
     "aboutEyebrow": "Sobre mí",
     "aboutTitle": "Creando soluciones. Liderando equipos",
     "aboutLink": "Más sobre mí",
@@ -31,7 +31,7 @@
       "performance": "Rendimiento, escalabilidad, UX"
     },
     "section1Title": "Experiencia",
-    "section1Content1": "En mi puesto más reciente como desarrollador full stack senior en la startup farmacéutica Faro Health, construí y optimicé microservicios REST y CQRS, además de módulos de interfaz, con TypeScript, Node.js, PostgreSQL, Jest y React. Desarrollé funcionalidades verticales y pruebas de concepto, diseñé y ejecuté soluciones técnicas, escribí pruebas unitarias y de integración, optimicé el rendimiento y construí canalizaciones de despliegue con GitHub Actions.",
+    "section1Content1": "En mi puesto más reciente como ingeniero de software senior en la startup farmacéutica Faro Health, construí y optimicé microservicios REST y CQRS, además de módulos de interfaz, con TypeScript, Node.js, PostgreSQL, Jest y React. Desarrollé funcionalidades verticales y pruebas de concepto, diseñé y ejecuté soluciones técnicas, escribí pruebas unitarias y de integración, optimicé el rendimiento y construí canalizaciones de despliegue con GitHub Actions.",
     "section1Content2": "Anteriormente dirigí un equipo frontend remoto e internacional en Various Inc., colaborando estrechamente con diseñadores para modernizar aplicaciones heredadas de streaming de video basadas en JavaScript y Perl. Las migramos a una plataforma escalable y de alto rendimiento con React, TypeScript, Next.js, MobX, WebSockets y Python, respaldada por APIs REST y una canalización CI/CD.",
     "experience": {
       "eyebrow": "02 Experiencia",
@@ -46,7 +46,7 @@
       "timeline": {
         "mobianPeriod": "2025 - Actualidad",
         "mobianCompany": "Mobian",
-        "mobianSummary": "Ingeniero full stack en una plataforma multi-repositorio para controles de campañas, búsqueda, analítica, seguridad de marca y canalizaciones de datos.",
+        "mobianSummary": "Ingeniero de software senior en una plataforma multi-repositorio para controles de campañas, búsqueda, analítica, seguridad de marca y canalizaciones de datos.",
         "contractorPeriod": "2024 - 2025",
         "contractorCompany": "Contratista independiente",
         "contractorSummary": "Realicé proyectos específicos de aplicaciones web, producto y consultoría técnica para clientes independientes.",
@@ -292,7 +292,7 @@
         "6": "Implementación de inicio de sesión único independiente del proveedor de identidad para la aplicación de diseño de estudios",
         "7": "Sitio web para una aplicación de vehículos usados impulsada por IA",
         "8": "Frontend de una aplicación de demostración geométrica para combinar estructuras reticulares",
-        "9": "Búsqueda full stack, analítica, filtrado y exportación para una plataforma de inteligencia de audiencias",
+        "9": "Búsqueda, analítica, filtrado y exportación para una plataforma de inteligencia de audiencias",
         "10": "Funciones de calidad de datos, metadatos, recuperación y consulta para sistemas contextuales de alto rendimiento",
         "11": "Búsqueda de entidades, datos de informes, control de campañas y exportaciones entre sistemas publicitarios",
         "12": "Mejoras transversales de frontend, pruebas, nube, observabilidad, seguridad y lanzamientos",
@@ -316,7 +316,7 @@
     },
     "jobs": {
       "title": {
-        "1": "Desarrollador full stack senior",
+        "1": "Ingeniero de Software Senior",
         "2": "Desarrollador frontend principal senior",
         "3": "Desarrollador frontend",
         "4": "Practicante de desarrollo frontend",

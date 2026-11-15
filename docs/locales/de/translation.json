@@ -1,7 +1,7 @@
 {
   "home": {
-    "header": "<span>Hallo<br /> Ich bin Brian Velasquez,<br /><em>Senior Full-Stack-<br />Engineer.</em></span>",
-    "heroEyebrow": "Full-Stack-Engineer",
+    "header": "<span>Hallo<br /> Ich bin Brian Velasquez,<br /><em>Senior Software <br />Engineer.</em></span>",
+    "heroEyebrow": "Senior Software Engineer",
     "heroBrand": "brian velasquez",
     "heroHeadlineStart": "Ich entwickle die Systeme",
     "heroHeadlineAccent": "hinter",
@@ -10,7 +10,7 @@
     "heroSecondaryCta": "Kontakt aufnehmen",
     "heroSkillsLabel": "Ausgewählte Fähigkeiten",
     "heroName": "Ich bin Brian Velasquez,",
-    "heroRole": "Senior Full-Stack Engineer.",
+    "heroRole": "Senior Software Engineer.",
     "heroIntroduction": "Ich bin Brian. Ich entwickle intuitive Oberflächen, zuverlässige APIs und datenintensive Plattformen, vom ersten Prototyp bis zur Produktion im großen Maßstab.",
     "switchBackground": "Hero-Hintergrund wechseln",
     "backgrounds": {
@@ -18,7 +18,7 @@
       "type2": "Typ 2"
     },
     "aboutHeader": "Wer bin ich?",
-    "about": "Senior Full-Stack-Webentwickler mit Erfahrung in TypeScript, React, Angular, Node.js und Python. Erfahren in der Führung internationaler Teams, der Modernisierung von Altsystemen, der Optimierung von Architekturen und dem Aufbau effizienter CI/CD-Pipelines. Ich entwickle gern skalierbare, nutzerorientierte Lösungen mit messbarem Geschäftswert.",
+    "about": "Senior Software Engineer mit Erfahrung in TypeScript, React, Angular, Node.js und Python. Erfahren in der Führung internationaler Teams, der Modernisierung von Altsystemen, der Optimierung von Architekturen und dem Aufbau effizienter CI/CD-Pipelines. Ich entwickle gern skalierbare, nutzerorientierte Lösungen mit messbarem Geschäftswert.",
     "aboutEyebrow": "Über mich",
     "aboutTitle": "Lösungen entwickeln. Teams führen",
     "aboutLink": "Mehr über mich",
@@ -31,7 +31,7 @@
       "performance": "Performance, Skalierbarkeit, UX"
     },
     "section1Title": "Erfahren",
-    "section1Content1": "In meiner letzten Position als Senior Full-Stack Developer beim Pharma-Tech-Startup Faro Health entwickelte und optimierte ich REST- und CQRS-basierte Microservices sowie UI-Module mit TypeScript, Node.js, PostgreSQL, Jest und React. Ich setzte Feature-Slices und Proofs of Concept um, entwarf technische Lösungen, schrieb Unit- und Integrationstests, verbesserte die Performance und baute Deployment-Pipelines mit GitHub Actions.",
+    "section1Content1": "In meiner letzten Position als Senior Software Engineer beim Pharma-Tech-Startup Faro Health entwickelte und optimierte ich REST- und CQRS-basierte Microservices sowie UI-Module mit TypeScript, Node.js, PostgreSQL, Jest und React. Ich setzte Feature-Slices und Proofs of Concept um, entwarf technische Lösungen, schrieb Unit- und Integrationstests, verbesserte die Performance und baute Deployment-Pipelines mit GitHub Actions.",
     "section1Content2": "Zuvor leitete ich bei Various Inc. ein internationales Remote-Frontend-Team. Gemeinsam mit Designern modernisierten wir ältere JavaScript- und Perl-basierte Video-Streaming-Anwendungen und migrierten sie auf eine skalierbare Plattform mit React, TypeScript, Next.js, MobX, WebSockets, Python, REST-APIs und CI/CD.",
     "experience": {
       "eyebrow": "02 Erfahrung",
@@ -46,7 +46,7 @@
       "timeline": {
         "mobianPeriod": "2025 - Heute",
         "mobianCompany": "Mobian",
-        "mobianSummary": "Full-Stack Engineer auf einer Multi-Repo-Plattform für Kampagnensteuerung, Suche, Analytics, Brand Safety und Datenpipelines.",
+        "mobianSummary": "Senior Software Engineer auf einer Multi-Repo-Plattform für Kampagnensteuerung, Suche, Analytics, Brand Safety und Datenpipelines.",
         "contractorPeriod": "2024 - 2025",
         "contractorCompany": "Selbstständiger Auftragnehmer",
         "contractorSummary": "Gezielte Web-, Produkt- und technische Beratungsprojekte für unabhängige Kunden.",
@@ -292,7 +292,7 @@
         "6": "IDP-unabhängige Single-Sign-On-Implementierung für die Study-Designer-Anwendung",
         "7": "Website für eine KI-gestützte Gebrauchtwagenanwendung",
         "8": "Frontend einer Demo-Anwendung zum Kombinieren geometrischer Gitterstrukturen",
-        "9": "Full-Stack-Suche, Analytics, Filterung und Exporte für eine Audience-Intelligence-Plattform",
+        "9": "Suche, Analytics, Filterung und Exporte für eine Audience-Intelligence-Plattform",
         "10": "Datenqualität, Metadaten, Wiederherstellung und Lookup-Funktionen für hochvolumige Kontextsysteme",
         "11": "Entitätssuche, Reporting-Daten, Kampagnensteuerung und Exporte über Werbesysteme hinweg",
         "12": "Übergreifende Verbesserungen an Frontend, Tests, Cloud, Observability, Sicherheit und Releases",
@@ -316,7 +316,7 @@
     },
     "jobs": {
       "title": {
-        "1": "Senior Full-Stack Developer",
+        "1": "Senior Software Engineer",
         "2": "Senior Lead Frontend Developer",
         "3": "Frontend Developer",
         "4": "Frontend-Entwicklungspraktikant",

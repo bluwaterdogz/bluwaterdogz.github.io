@@ -17,37 +17,29 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
     <article className={styles.project}>
       <Link
         aria-label={t("projects.viewProject", { name: project.name })}
-        className={styles.imageLink}
+        className={styles.card}
         to={`/project/${project.id}`}
       >
+        <div className={styles.imageWrapper}>
           <img
             alt=""
             className={styles.projectImage}
             src={project.img ?? "/images/projects/faro/dark_spiral.jpg"}
           />
-      </Link>
+        </div>
         <div className={styles.projectDetails}>
-        <h2>
-          <Link className={styles.titleLink} to={`/project/${project.id}`}>
-            {project.name.trim()}
-          </Link>
-        </h2>
+          <h2>{project.name.trim()}</h2>
           <p>{t(`data.projects.description.${project.id}`)}</p>
           <div className={styles.footer}>
-          <SkillPills
+            <SkillPills
               ariaLabel={t("projects.technologies", { name: project.name })}
-            className={styles.skillPills}
-            skills={projectSkills}
+              className={styles.skillPills}
+              linkTo={null}
+              skills={projectSkills}
             />
-          <Link
-            aria-label={t("projects.viewProject", { name: project.name })}
-            className={styles.arrow}
-            to={`/project/${project.id}`}
-          >
-              &#8594;
-          </Link>
           </div>
         </div>
+      </Link>
     </article>
   );
 };

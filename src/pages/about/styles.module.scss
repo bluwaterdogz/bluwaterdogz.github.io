@@ -169,13 +169,7 @@
 }
 
 .quote {
-  background: rgba($primary-color, 0.04);
-  border-left: 1px solid rgba($primary-color, 0.35);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 25px;
-  line-height: 1.5;
   margin: $space * 8 0 0;
-  padding: $space * 4 $space * 6;
 }
 
 .buildWith {

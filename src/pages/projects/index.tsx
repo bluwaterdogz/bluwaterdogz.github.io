@@ -4,7 +4,10 @@ import { PageShell } from "../../components/common/page-shell";
 
 export const ProjectsPage = () => {
   return (
-    <PageShell className={styles.projectsPage}>
+    <PageShell
+      className={styles.projectsPage}
+      contentClassName={styles.pageContainer}
+    >
       <ProjectList />
     </PageShell>
   );

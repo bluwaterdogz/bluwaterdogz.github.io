@@ -1,5 +1,6 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/colors" as *;
+@use "../../../styles/type" as *;
 @keyframes fadeInUp {
   0% {
     transform: translateY(100%);
@@ -53,14 +54,11 @@
     color: $theme-text-color;
   }
   a {
+    @include section-title;
     color: $theme-text-color;
     display: block;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(38px, 12vw, 58px);
-    line-height: 1.05;
     padding: $space 0;
     text-decoration: none;
-    font-size: 50px;
     transition: $transition;
     &:hover {
       color: $primary-color;

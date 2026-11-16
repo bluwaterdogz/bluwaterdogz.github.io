@@ -4,6 +4,8 @@ import { SkillTimeline } from "../../components/skills/skill-timeline";
 import { skillGroupings } from "../../service/skill/data";
 import { linkedinProfileUrl } from "../../service/consts";
 import { Statement } from "../../components/common/statement";
+import { PageHeading } from "../../components/common/page-heading";
+import { PageShell } from "../../components/common/page-shell";
 import styles from "./styles.module.scss";
 
 const interests = [
@@ -57,15 +59,17 @@ export const AboutPage = () => {
   ];
 
   return (
-    <main className={styles.aboutPage}>
-      <div className={styles.container}>
-        <p className={styles.eyebrow}>{t("about.eyebrow")}</p>
+    <PageShell
+      className={styles.aboutPage}
+      contentClassName={styles.pageContainer}
+    >
         <section className={styles.introduction}>
-          <div className={styles.portrait}>
-            <img alt={t("about.portraitAlt")} src="/images/about/prof3.png" />
-          </div>
-          <div className={styles.copy}>
-            <h1>{t("about.title")}</h1>
+          <PageHeading
+            className={styles.copy}
+            contentClassName={styles.headingContent}
+            eyebrow={t("about.eyebrow")}
+            title={t("about.title")}
+          >
             <p className={styles.role}>{t("about.role")}</p>
             <div className={styles.divider} />
             <p>{t("about.section1")}</p>
@@ -82,6 +86,9 @@ export const AboutPage = () => {
             >
               {t("about.cta")} <span aria-hidden="true">&#8594;</span>
             </a>
+          </PageHeading>
+          <div className={styles.portrait}>
+            <img alt={t("about.portraitAlt")} src="/images/about/prof3.png" />
           </div>
         </section>
 
@@ -91,10 +98,10 @@ export const AboutPage = () => {
             <h2>{t("about.process.title")}</h2>
             <div className={styles.divider} />
             <p>{t("about.process.description")}</p>
-            <div className={styles.aiNote}>
-              <h3>{t("about.process.aiTitle")}</h3>
-              <p>{t("about.process.aiDescription")}</p>
+            <div className={styles.processNote}>
+              <h3>{t("about.process.generativeTitle")}</h3>
             </div>
+            <p>{t("about.process.generativeDescription")}</p>
           </div>
           <JobTimeline
             className={styles.processTimeline}
@@ -123,9 +130,6 @@ export const AboutPage = () => {
         <Statement as="blockquote" className={styles.quote}>
           {t("about.quote")}
         </Statement>
-
-
-      </div>
-    </main>
+    </PageShell>
   );
 };

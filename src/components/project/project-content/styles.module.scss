@@ -1,29 +1,31 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
+@use "../../../styles/type" as *;
 
 .projectContent {
-  background: $theme-surface-color;
-  padding: $space * 6 $page-padding-inline-desktop $page-padding-block-end
-    $page-padding-inline-start;
+  min-width: 0;
 }
 
 .container {
-  margin: 0 auto;
-  max-width: $content-width-readable;
-  
+  min-width: 0;
 }
 
 .textContent {
-  color: $theme-subtext-color;
-  font-size: 16px;
-  line-height: 1.7;
+  @include text;
   max-width: none;
 
-  h2,
+  h2 {
+    @include section-title;
+    margin: $space * 5 0 $space * 2;
+  }
+
   h3 {
-    color: $theme-text-color;
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: 400;
+    @include subtitle-text;
+    margin: $space * 3 0 $space;
+  }
+
+  p {
+    margin: 0 0 $space * 2;
   }
 
   li {
@@ -38,10 +40,7 @@
   padding: $space * 3 0;
 
   h2 {
-    color: $theme-text-color;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 28px;
-    font-weight: 400;
+    @include subtitle-text;
     margin: 0 0 $space * 2;
   }
 }
@@ -63,9 +62,8 @@
   padding: 0 0 0 $space * 3;
 
   p {
+    @include subtitle-text;
     color: $primary-color;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 24px;
     font-style: italic;
   }
 
@@ -86,16 +84,4 @@
   display: block;
   max-width: none;
   width: 100%;
-}
-
-@media (max-width: $medium-screen) {
-  .projectContent {
-    padding: $space * 5 $page-padding-inline-tablet $page-padding-block-end;
-  }
-}
-
-@media (max-width: $mobile-screen) {
-  .projectContent {
-    padding: $space * 4 $page-padding-inline-mobile $space * 6;
-  }
 }

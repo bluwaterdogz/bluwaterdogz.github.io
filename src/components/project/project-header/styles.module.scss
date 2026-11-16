@@ -1,48 +1,40 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
+@use "../../../styles/type" as *;
 
 .hero {
-  background: $theme-surface-color;
-  padding: $page-padding-block-start $page-padding-inline-desktop $space * 6
-    $page-padding-inline-start;
+  padding-bottom: $space * 8;
 }
 
 .container {
   display: grid;
   gap: clamp($space * 3, 5vw, $space * 6);
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  margin: 0 auto;
-  max-width: $content-width-readable;
 }
 
 .copy {
   align-self: center;
-  
 }
 
 .description {
-  font-size: 17px !important;
-  margin: $space * 3 0 !important;
+  @include text;
+  margin: $space * 3 0;
   max-width: $readable-width;
 }
 
 .summary {
+  @include text;
   color: $theme-text-color;
-  font-size: 16px;
-  line-height: 1.65;
   margin: 0 0 $space * 2;
   max-width: $readable-width;
 }
 
 .skills {
-  margin: 0 0 $space * 3;
-
-  a {
-    font-size: 11px;
-  }
+  margin: $space * 3 0;
 }
 
 .backLink {
+  @include link-text;
   align-items: center;
   color: $primary-color;
   display: inline-flex;
@@ -58,23 +50,14 @@
   width: 100%;
 }
 
-@media (max-width: $medium-screen) {
-  .hero {
-    padding: $page-padding-block-start $page-padding-inline-tablet $space * 6;
-  }
-}
-
 @media (max-width: $small-screen) {
   .container {
     grid-template-columns: 1fr;
   }
-
 }
 
 @media (max-width: $mobile-screen) {
   .hero {
-    padding: $page-padding-inline-mobile $page-padding-inline-mobile
-      $space * 5;
+    padding-bottom: $space * 6;
   }
-
 }

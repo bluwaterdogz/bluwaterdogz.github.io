@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { PolyhedraBackground } from "../animated-backgrounds/polyhedra-background";
 import { useThemeStore } from "../../../stores/ThemeStore";
 import { MorphingBlobBackground } from "../animated-backgrounds/morphing-blob-background";
+import { lightBlobColors } from "../animated-backgrounds/morphing-blob-background/colors";
 import { Link } from "react-router-dom";
 import { linkedinProfileUrl } from "../../../service/consts";
 import { skills } from "../../../service/skill/data";
@@ -38,12 +39,9 @@ export const HeroSection = (props: HeroSectionProps) => {
   const { t } = useTranslation();
   const theme = useThemeStore((state) => state.theme);
   const {
-    colors = [
-      "#ff9cdb",
-      // "#c2adff",
-      // "#96f4ff",
-      // "#e7ff96"
-    ],
+    colors = theme === "dark"
+      ? ["#171B36", "#291D35", "#112735", "#171B36", "#291D35", "#112735"]
+      : lightBlobColors,
     speed = 1,
     vibrance = 1,
   } = blobBackground;
@@ -84,7 +82,6 @@ export const HeroSection = (props: HeroSectionProps) => {
       </div>
       <div className={styles.container}>
         <div className={styles.content}>
-          <p className={styles.eyebrow}>{t("home.heroEyebrow")}</p>
           <h1>
             {t("home.heroHeadlineStart")} {" "}
             <em>{t("home.heroHeadlineAccent")}</em>{" "}

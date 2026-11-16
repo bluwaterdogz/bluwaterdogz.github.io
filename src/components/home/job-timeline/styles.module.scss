@@ -1,17 +1,12 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/colors" as *;
+@use "../../../styles/type" as *;
+@use "../../../styles/timeline" as *;
+
+$timeline-rail-left: -$space * 3;
 
 .timeline {
   max-width: $content-width-introduction;
-
-  h3 {
-    color: $theme-text-color;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin: 0 0 $space * 4;
-    text-transform: uppercase;
-  }
 
   ol {
     list-style: none;
@@ -29,13 +24,7 @@
     position: relative;
 
     &::after {
-      background: rgba($primary-color, 0.72);
-      content: "";
-      height: 100%;
-      left: -$space * 3;
-      position: absolute;
-      top: $space;
-      width: 1px;
+      @include vertical-connector($timeline-rail-left);
     }
 
     &:last-child {
@@ -59,33 +48,9 @@
   }
 }
 
-.light {
-  max-width: none;
-
-  h3,
-  .entryContent h4 {
-    color: $dark-color;
-  }
-
-  .marker {
-    background: white;
-  }
-
-  .summary {
-    color: $neutral-color;
-  }
-}
-
 .marker {
-  background: $theme-surface-color;
-  border: 2px solid $primary-color;
-  border-radius: 50%;
-  height: $space;
-  left: -$space * 3.5;
-  position: absolute;
-  top: $space-sm;
+  @include dot($timeline-rail-left);
   transition: background $transition ease, transform $transition ease;
-  width: $space;
 }
 
 .entryContent {
@@ -117,28 +82,21 @@
 }
 
 .period {
+  @include small-text;
   color: $primary-color;
-  font-size: 14px;
   font-weight: 600;
-  line-height: 1.2;
   margin: 0 0 $space;
 }
 
 .timeline h4 {
-  color: $theme-text-color;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 1.1;
+  @include subtitle-text;
   margin: 0 0 $space-sm;
   padding: 0;
   overflow-wrap: anywhere;
 }
 
 .summary {
-  color: $theme-subtext-color;
-  font-size: 14px;
-  line-height: 1.4;
+  @include small-text;
   margin: 0;
   overflow-wrap: anywhere;
 }

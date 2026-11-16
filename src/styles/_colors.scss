@@ -16,7 +16,9 @@
 // $light-color: #e0d9d2ff;
 // $dark-color: #282b22ff;
 
-$primary-color: #a53860;
+$primary-color-light: #a53860;
+$primary-color-dark: #167d87;
+$primary-color: var(--highlight);
 $secondary-color: #bdbfd2;
 $neutral-color: #555;
 $light-color: #e0d9d2ff;

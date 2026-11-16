@@ -1,5 +1,6 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
+@use "../../../styles/type" as *;
 
 .topBar {
   display: flex;
@@ -19,10 +20,10 @@
   }
 
   input {
+    @include text;
     background: transparent;
     border: 0;
     color: $theme-text-color;
-    font: inherit;
     outline: 0;
     padding: $space * 2 0;
     width: 100%;
@@ -52,11 +53,11 @@
   grid-template-columns: repeat(5, minmax(0, 1fr));
 
   button {
+    @include button-text;
     background: transparent;
     border: 1px solid $theme-border-color;
     color: $theme-text-color;
     cursor: pointer;
-    font: inherit;
     padding: $space * 1.5 $space;
     transition: background $transition ease, border-color $transition ease,
       color $transition ease;

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Project, ProjectStorySection } from "../../../service/project/types";
+import { Statement } from "../../common/statement";
 import styles from "./styles.module.scss";
 
 interface ProjectStoryProps {
@@ -10,16 +11,14 @@ type TimelineSection = Extract<ProjectStorySection, { type: "timeline" }>;
 
 const InteractiveTimeline = ({ section }: { section: TimelineSection }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const activeStep = section.steps[activeIndex];
-
   return (
     <section className={styles.timelineSection}>
       <h2>{section.title}</h2>
       <div className={styles.timelineLayout}>
         <div className={styles.timelineCopy} aria-live="polite">
-          <p>{activeStep.label}</p>
-          <h3>{activeStep.title}</h3>
-          <p>{activeStep.content}</p>
+          <p>{section.steps[activeIndex].label}</p>
+          <h3>{section.steps[activeIndex].title}</h3>
+          <p>{section.steps[activeIndex].content}</p>
         </div>
         <ol className={styles.timeline}>
           {section.steps.map((step, index) => (
@@ -58,6 +57,14 @@ const StorySection = ({ section }: { section: ProjectStorySection }) => {
     );
   }
 
+  if (section.type === "outcome") {
+    return (
+      <Statement as="blockquote" className={styles.outcome}>
+        {section.content}
+      </Statement>
+    );
+  }
+
   return (
     <section className={`${styles.copySection} ${styles[section.type]}`}>
       {section.eyebrow != null && <p className={styles.eyebrow}>{section.eyebrow}</p>}
@@ -71,7 +78,7 @@ export const ProjectStory = ({ project }: ProjectStoryProps) => {
   if (project.story == null) return null;
 
   return (
-    <div className={`${styles.story} ${styles[project.story.accent]}`}>
+    <div className={styles.story}>
       {project.story.sections.map((section, index) => (
         <StorySection key={`${section.type}-${index}`} section={section} />
       ))}

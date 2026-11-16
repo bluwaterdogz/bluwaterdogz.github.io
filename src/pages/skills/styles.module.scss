@@ -1,18 +1,31 @@
 @use "../../styles/colors" as *;
 @use "../../styles/variables" as *;
+@use "../../styles/type" as *;
 
 .skillsPage {
   padding-bottom: $space * 10;
 }
 
+.pageContainer {
+  max-width: $content-width-readable;
+}
+
 .layout {
+  align-items: center;
   display: grid;
   gap: clamp($space * 3, 5vw, $space * 6);
   grid-template-columns: minmax($space * 32, $space * 36) minmax(0, 1fr);
+  min-height: calc(100svh - #{$page-padding-block-start + $page-padding-block-end});
 }
 
 .introduction {
+  display: flex;
+  flex-direction: column;
   min-width: 0;
+}
+
+.headingContent {
+  margin: auto 0;
 }
 
 .introduction h1 {
@@ -21,9 +34,8 @@
 }
 
 .copy {
-  margin: $space * 4 0 !important;
+  margin: $space * 3 0;
   max-width: $space * 24;
-  min-height: $space * 15;
 }
 
 .viewSwitcher {
@@ -53,19 +65,17 @@
   }
 
   span {
-    color: $theme-subtext-color;
-    font-size: 13px;
+    @include small-text;
     min-width: $space * 4;
     text-align: center;
   }
 }
 
 .link {
+  @include link-text;
   align-items: center;
   color: $primary-color;
   display: inline-flex;
-  font-size: 15px;
-  font-weight: 600;
   text-decoration: none;
 
   span {
@@ -89,15 +99,14 @@
     gap: $space * 4;
     grid-template-columns: $space * 28 minmax(0, 1fr);
 
-    .introduction h1 {
-      font-size: 46px;
-    }
   }
 }
 
 @media (max-width: $small-screen) {
   .layout {
+    align-items: start;
     grid-template-columns: 1fr;
+    min-height: 0;
   }
 
   .introduction {
@@ -106,19 +115,16 @@
     width: 100%;
   }
 
+  .headingContent {
+    margin: 0;
+  }
+
   .introduction h1 {
     white-space: normal;
   }
 
   .copy {
     max-width: none;
-    min-height: 0;
-  }
-
-  .copy {
     margin: $space * 3 0;
   }
-}
-
-@media (max-width: $mobile-screen) {
 }

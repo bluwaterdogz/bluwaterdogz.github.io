@@ -19,7 +19,7 @@
     },
     "aboutHeader": "ผมคือใคร?",
     "about": "นักพัฒนาเว็บฟูลสแตกอาวุโสที่มีประสบการณ์ด้าน TypeScript, React, Angular, Node.js และ Python เคยนำทีมต่างประเทศ ปรับปรุงระบบเก่า เพิ่มประสิทธิภาพสถาปัตยกรรม และสร้าง CI/CD เพื่อการดีพลอยที่มีประสิทธิภาพ ผมชอบสร้างโซลูชันที่ขยายได้และเน้นผู้ใช้เป็นศูนย์กลาง",
-    "aboutEyebrow": "เกี่ยวกับผม",
+    "aboutEyebrow": "01 เกี่ยวกับผม",
     "aboutTitle": "สร้างโซลูชัน นำทีม",
     "aboutLink": "รู้จักผมเพิ่มเติม",
     "features": {
@@ -42,7 +42,6 @@
       "copy4": "ก่อนหน้านี้ที่ Faro Health ผมสร้างและปรับปรุงแอป TypeScript และ React ที่รองรับด้วย REST และ CQRS microservices, PostgreSQL, automated testing และ GitHub Actions deployment pipelines",
       "copy5": "ที่ Various Inc. ผมนำทีมฟรอนต์เอนด์นานาชาติในการปรับปรุงแอป JavaScript และ Perl เดิมให้เป็นแพลตฟอร์ม React, TypeScript, Next.js, WebSocket และ Python ที่ขยายได้",
       "link": "ดูประสบการณ์ของผม",
-      "timelineHeading": "ไฮไลต์เส้นทางอาชีพ",
       "timeline": {
         "mobianPeriod": "2025 - ปัจจุบัน",
         "mobianCompany": "Mobian",
@@ -80,7 +79,6 @@
         "regions": "4 ภูมิภาค",
         "timeZones": "หลายเขตเวลา"
       },
-      "approachHeading": "วิธีการทำงานของผม",
       "approachStatement": "การทำงานร่วมกันทางไกลที่แข็งแกร่งเกิดจากความชัดเจน ความไว้วางใจ และการดำเนินงานที่เชื่อถือได้",
       "practices": {
         "crossFunctional": {
@@ -138,8 +136,8 @@
       "eyebrow": "กระบวนการของผม",
       "title": "จากปัญหาสู่โปรดักชัน",
       "description": "แนวทางแบบร่วมมือและทำซ้ำที่ทำให้เป้าหมาย การตัดสินใจทางเทคนิค และคุณภาพชัดเจนตั้งแต่การค้นพบจนถึงการรีลีส",
-      "aiTitle": "Generative engineering ที่มีความรับผิดชอบและประสบการณ์",
-      "aiDescription": "ผมใช้ AI เพื่อเร่งการวิจัย การวางแผน การรีวิว การทดสอบ และเอกสาร พร้อมตรวจสอบทุกผลลัพธ์เทียบกับโค้ดเบสและพฤติกรรมจริงของระบบ",
+      "generativeTitle": "Generative engineering ที่มีความรับผิดชอบและประสบการณ์",
+      "generativeDescription": "ผมใช้ AI เพื่อเร่งการวิจัย การวางแผน การรีวิว การทดสอบ และเอกสาร พร้อมตรวจสอบทุกผลลัพธ์เทียบกับโค้ดเบสและพฤติกรรมจริงของระบบ",
       "steps": {
         "align": {
           "title": "Align",

@@ -1,5 +1,6 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
+@use "../../../styles/type" as *;
 
 :where(.pills) {
   display: flex;
@@ -10,6 +11,7 @@
   padding: 0;
 
   :is(a, button, li > span) {
+    @include pill-text;
     align-items: center;
     backdrop-filter: blur($blur);
     background: rgba(white, 0.16);
@@ -17,7 +19,6 @@
     border-radius: 999px;
     color: $primary-color;
     display: inline-flex;
-    font-size: 13px;
     gap: $space-sm;
     padding: $space-sm $space * 1.4;
     text-decoration: none;
@@ -39,7 +40,6 @@
 
     &:is(button) {
       cursor: pointer;
-      font-family: inherit;
     }
 
     i {

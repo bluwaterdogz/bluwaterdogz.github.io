@@ -1,5 +1,6 @@
 @use "../../styles/variables" as *;
 @use "../../styles/colors" as *;
+@use "../../styles/type" as *;
 
 :where(.languageDropdown) {
   display: inline-block;
@@ -10,6 +11,7 @@
 
 .trigger,
 .language {
+  @include link-text;
   background: transparent;
   border: 0;
   color: $primary-color;
@@ -43,7 +45,6 @@
 
 .language {
   color: $theme-text-color;
-  font-size: 17px;
   padding: $space;
   text-align: inherit;
   transition: color $transition ease;
@@ -71,6 +72,6 @@
   }
 
   .language {
-    font-size: 28px;
+    @include subtitle-text;
   }
 }

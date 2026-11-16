@@ -1,18 +1,16 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
+@use "../../../styles/type" as *;
 
 .statement {
+  @include subtitle-text;
   background: linear-gradient(
     90deg,
-    rgba($primary-color, 0.1),
-    rgba($primary-color, 0.025) 72%,
+    color-mix(in srgb, #{$primary-color} 10%, transparent),
+    color-mix(in srgb, #{$primary-color} 2.5%, transparent) 72%,
     transparent
   );
   border-left: 2px solid $primary-color;
-  color: $theme-text-color;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(12px, 1.05vw, 17px);
-  line-height: 1.25;
   margin: 0;
   padding: $space * 3 $space * 4;
 }
@@ -20,11 +18,5 @@
 @media (max-width: $medium-screen) {
   .statement {
     padding: $space * 3;
-  }
-}
-
-@media (max-width: $mobile-screen) {
-  .statement {
-    font-size: 12px;
   }
 }

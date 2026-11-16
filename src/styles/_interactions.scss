@@ -1,7 +1,7 @@
 @use "colors" as *;
 @use "variables" as *;
 
-@mixin hover-lift {
+@mixin card-elevated {
   box-shadow: -2px 2px $space-sm rgb(from #{$theme-text-color} r g b / 30%);
   transition: box-shadow $transition ease, transform $transition ease;
 
@@ -10,4 +10,19 @@
     box-shadow: -2px $space $space * 2 rgb(from #{$theme-text-color} r g b / 22%);
     transform: translateY(-$space-sm) scale(1.01);
   }
+}
+
+@mixin card-outline {
+  border: 1px solid $theme-border-color;
+  transition: border-color $transition ease, transform $transition ease;
+
+  &:hover,
+  &:focus-within {
+    border-color: $primary-color;
+    transform: translateY(-$space-sm);
+  }
+}
+
+@mixin hover-lift {
+  @include card-elevated;
 }

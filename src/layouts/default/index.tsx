@@ -28,7 +28,7 @@ export const DefaultLayout = () => {
       <div className={styles.pageRegion}>
         {!isMicroappsPage && (
           <div className={styles.sideNavRegion}>
-            <HomeNav dark={true} className={styles.sideNav} />
+            <HomeNav className={styles.sideNav} />
           </div>
         )}
         <Outlet />

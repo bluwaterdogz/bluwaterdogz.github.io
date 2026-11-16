@@ -56,9 +56,6 @@ export const LeadershipSection = () => {
         </a>
       </div>
       <div className={styles.approach}>
-        <p className={styles.approachHeading}>
-          {t("home.leadership.approachHeading")}
-        </p>
         <Statement className={styles.statement}>
           {t("home.leadership.approachStatement")}
         </Statement>

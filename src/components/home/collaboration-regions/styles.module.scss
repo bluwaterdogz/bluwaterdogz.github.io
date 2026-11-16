@@ -1,16 +1,12 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/colors" as *;
+@use "../../../styles/type" as *;
 
 .regions {
   max-width: $content-width-copy;
 
   h3 {
-    color: $theme-text-color;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin: 0;
-    text-transform: uppercase;
+    @include eyebrow;
   }
 }
 
@@ -60,9 +56,8 @@
   }
 
   span {
+    @include small-text;
     color: $theme-text-color;
-    font-size: 14px;
-    line-height: 1.25;
     text-align: center;
   }
 }
@@ -111,18 +106,16 @@
   }
 
   p {
-    color: $theme-subtext-color;
-    font-size: 16px;
-    line-height: 1.45;
+    @include text;
     margin: 0;
   }
 }
 
 .stats {
+  @include link-text;
   color: $theme-text-color;
   display: flex;
   flex-wrap: wrap;
-  font-size: 15px;
   gap: $space * 2;
   margin-top: $space * 3;
 

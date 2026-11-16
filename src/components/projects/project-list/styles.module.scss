@@ -15,7 +15,7 @@
   display: grid;
   gap: $collection-gap;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: $space * 7;
+  margin-top: $space * 6;
 }
 
 .controls {

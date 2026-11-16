@@ -1,41 +1,21 @@
-@use "variables" as *;
+@use "type" as *;
 @use "colors" as *;
 h1 {
-  margin: 0;
-  font-size: 65px;
-  font-weight: 100;
-  color: $theme-text-color;
+  @include page-title;
 }
 h2 {
-  transition: $transition;
-  font-size: 60px;
-  font-weight: 300;
-  color: $theme-text-color;
+  @include section-title;
 }
 h3 {
-  font-size: 40px;
-  font-weight: 300;
-  color: $theme-text-color;
+  @include subtitle-text;
 }
 h4 {
-  color: $theme-text-color;
-  padding: $space * 2;
-  font-weight: 300;
-  margin: 0;
-  font-size: 20px;
-}
-
-li {
-  text-align: left;
-  padding-bottom: $space;
+  @include subtitle-text;
 }
 
 p,
 li {
-  font-size: 1.3rem;
-  line-height: 1.7;
-  color: $theme-subtext-color;
-  font-weight: 300;
+  @include text;
 }
 a,
 button {

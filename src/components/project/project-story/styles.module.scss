@@ -1,17 +1,14 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
+@use "../../../styles/type" as *;
+@use "../../../styles/timeline" as *;
+@use "../../../styles/interactions" as *;
 
 $timeline-rail-left: -$space * 3;
-$timeline-line-width: 2px;
-$timeline-dot-size: $space + 2px;
-$timeline-dot-top: $space-sm - 1px;
 
 .story {
-  --story-accent: #{$primary-color};
   display: grid;
-  gap: clamp($space * 5, 7vw, $space * 8);
-  margin: 0 auto;
-  max-width: $content-width-readable;
+  gap: clamp($space * 6, 7vw, $space * 8);
   min-width: 0;
   width: 100%;
 
@@ -22,62 +19,27 @@ $timeline-dot-top: $space-sm - 1px;
   }
 }
 
-.throughput {
-  --story-accent: #167d87;
-}
-
-.integration {
-  --story-accent: #7c4aa8;
-}
-
-.platform {
-  --story-accent: #b15b2a;
-}
-
-.product {
-  --story-accent: #236ea0;
-}
-
 .copySection {
-  max-width: $content-width-copy;
   min-width: 0;
 
   h2 {
-    color: $theme-text-color;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(30px, 4vw, 48px);
-    font-weight: 400;
-    line-height: 1.12;
+    @include section-title;
+    margin-bottom: $space * 2;
   }
 
   > p:last-child {
-    color: $theme-subtext-color;
-    font-size: 18px;
-    line-height: 1.75;
+    @include text;
   }
 }
 
 .eyebrow {
-  color: var(--story-accent);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  @include eyebrow;
 }
 
 .outcome {
-  background: color-mix(in srgb, var(--story-accent) 6%, transparent);
   justify-self: stretch;
   max-width: none;
-  padding: clamp($space * 3, 5vw, $space * 5);
-  text-align: center;
   width: 100%;
-
-  > p:last-child {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: $content-width-copy;
-  }
 }
 
 .architectureSection,
@@ -85,10 +47,7 @@ $timeline-dot-top: $space-sm - 1px;
   min-width: 0;
 
   h2 {
-    color: $theme-text-color;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(30px, 4vw, 46px);
-    font-weight: 400;
+    @include section-title;
   }
 }
 
@@ -102,30 +61,22 @@ $timeline-dot-top: $space-sm - 1px;
 
 .timelineCopy {
   align-self: center;
-  min-height: 230px;
+  min-height: $space * 18;
   min-width: 0;
 
   > p:first-child {
-    color: var(--story-accent);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    @include eyebrow-text;
+    margin-bottom:$space;
   }
 
   h3 {
-    color: $theme-text-color;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(28px, 4vw, 40px);
-    font-weight: 400;
-    line-height: 1.1;
+    @include subtitle-text;
     overflow-wrap: anywhere;
+    margin-bottom:$space;
   }
 
   > p:last-child {
-    color: $theme-subtext-color;
-    font-size: 16px;
-    line-height: 1.7;
+    @include text;
   }
 }
 
@@ -139,13 +90,7 @@ $timeline-dot-top: $space-sm - 1px;
     position: relative;
 
     &::after {
-      background: color-mix(in srgb, var(--story-accent) 72%, transparent);
-      content: "";
-      height: calc(100% - #{$timeline-dot-top + $timeline-dot-size + $space-sm});
-      left: $timeline-rail-left;
-      position: absolute;
-      top: $timeline-dot-top + $timeline-dot-size + $space-sm;
-      width: $timeline-line-width;
+      @include vertical-connector($timeline-rail-left);
     }
 
     &:last-child {
@@ -158,21 +103,20 @@ $timeline-dot-top: $space-sm - 1px;
   }
 
   button {
+    @include small-text;
     align-items: center;
     background: transparent;
     border: 0;
     color: $theme-subtext-color;
     cursor: pointer;
     display: flex;
-    font: inherit;
-    font-size: 14px;
     padding: 0;
     text-align: left;
     transition: color $transition ease;
 
     &:hover,
     &:focus-visible {
-      color: var(--story-accent);
+      color: $primary-color;
     }
 
     &:hover .dot,
@@ -183,52 +127,33 @@ $timeline-dot-top: $space-sm - 1px;
 }
 
 .dot {
-  background: $theme-surface-color;
-  border: 2px solid var(--story-accent);
-  border-radius: 50%;
-  box-sizing: border-box;
-  height: $timeline-dot-size;
-  left: calc(#{$timeline-rail-left} - (#{$timeline-dot-size} - #{$timeline-line-width}) / 2);
-  position: absolute;
-  top: $timeline-dot-top;
+  @include dot($timeline-rail-left);
   transition: background $transition ease, transform $transition ease;
-  width: $timeline-dot-size;
-  z-index: 1;
 }
 
 .activeStep {
   button {
-    color: var(--story-accent);
+    color: $primary-color;
     font-weight: 700;
   }
 
   .dot {
-    background: var(--story-accent);
+    background: $primary-color;
     transform: scale(1.18);
   }
 }
 
 .architecture {
   display: grid;
-  gap: $space * 2;
+  gap: $space * 3;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: $space * 3;
 
   article {
-    border: 1px solid $theme-border-color;
-    min-height: 190px;
+    @include card-outline;
     min-width: 0;
-    padding: $space * 2.5;
+    padding: $space * 3;
     position: relative;
-
-    &::after {
-      color: var(--story-accent);
-      content: "→";
-      font-size: 24px;
-      position: absolute;
-      right: -$space * 2;
-      top: 50%;
-      z-index: 2;
-    }
 
     &:nth-child(even)::after,
     &:last-child::after {
@@ -236,24 +161,19 @@ $timeline-dot-top: $space-sm - 1px;
     }
 
     > span {
-      color: var(--story-accent);
-      font-size: 12px;
-      font-weight: 700;
+      @include pill-text;
+      color: $primary-color;
+      padding: 0;
     }
   }
 
   h3 {
-    color: $theme-text-color;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 23px;
-    font-weight: 400;
+    @include subtitle-text;
     margin: $space * 3 0 $space;
   }
 
   p {
-    color: $theme-subtext-color;
-    font-size: 14px;
-    line-height: 1.5;
+    @include small-text;
   }
 }
 
@@ -278,23 +198,20 @@ $timeline-dot-top: $space-sm - 1px;
       padding: $space * 2 $space 0 0;
 
       &::after {
-        height: $timeline-line-width;
-        left: calc(#{$space} + #{$timeline-dot-size} / 2 + #{$space-sm});
+        bottom: auto;
+        height: $rail-width;
+        left: calc(#{$space} + #{$dot-size} / 2 + #{$space-sm});
         right: 0;
         top: 0;
         width: auto;
       }
     }
 
-    button {
-      font-size: 12px;
-      line-height: 1.2;
-    }
   }
 
   .dot {
-    left: calc(#{$space} - #{$timeline-dot-size} / 2);
-    top: calc(#{$timeline-dot-size} / -2);
+    left: calc(#{$space} - #{$dot-size} / 2);
+    top: calc(#{$dot-size} / -2);
   }
 }
 
@@ -310,5 +227,4 @@ $timeline-dot-top: $space-sm - 1px;
       transform: rotate(90deg);
     }
   }
-
 }

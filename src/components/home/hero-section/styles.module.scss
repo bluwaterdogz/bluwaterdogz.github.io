@@ -1,5 +1,6 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/colors" as *;
+@use "../../../styles/type" as *;
 
 .hero {
   box-shadow: inset 0 -50px 30px -50px $hero-background-color;
@@ -87,34 +88,8 @@
   z-index: 2;
 }
 
-.eyebrow {
-  align-items: center;
-  color: $primary-color;
-  display: flex;
-  font-size: 15px;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  line-height: 1;
-  margin: 0 0 $space * 3;
-  text-transform: uppercase;
-
-  &::after {
-    background: $primary-color;
-    content: "";
-    height: 1px;
-    margin-left: $space * 3;
-    width: $space * 6;
-  }
-}
-
 .content h1 {
-  color: $theme-text-color;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(54px, 5.2vw, 76px);
-  font-weight: 400;
-  letter-spacing: -0.035em;
-  line-height: 0.98;
-  margin: 0;
+  @include display-text;
   max-width: 700px;
 
   em {
@@ -124,9 +99,7 @@
 }
 
 .introduction {
-  color: $theme-subtext-color;
-  font-size: 18px;
-  line-height: 1.65;
+  @include text;
   margin: $space * 2.5 0 0;
   max-width: 590px;
 }
@@ -138,11 +111,10 @@
   margin-top: $space * 3;
 
   a {
+    @include button-text;
     align-items: center;
     border: 1px solid $theme-border-color;
     display: inline-flex;
-    font-size: 16px;
-    font-weight: 700;
     gap: $space * 3;
     justify-content: space-between;
     min-width: 190px;
@@ -193,8 +165,6 @@
 .languageDropdown {
   > button {
     border-bottom: 2px solid $primary-color;
-    font-size: 15px;
-    line-height: 1;
     padding-bottom: $space-sm;
     text-transform: uppercase;
   }
@@ -205,10 +175,6 @@
     left: $space * 5;
     max-width: 620px;
     right: 45vw;
-  }
-
-  .content h1 {
-    font-size: clamp(52px, 6vw, 72px);
   }
 
   .portrait {
@@ -283,21 +249,13 @@
     z-index: 4;
   }
 
-  .eyebrow {
-    font-size: 12px;
-    margin-bottom: $space * 1.5;
-  }
-
   .content h1 {
     color: white;
-    font-size: clamp(39px, 10vw, 58px);
     max-width: 620px;
   }
 
   .introduction {
     color: rgba(white, 0.9);
-    font-size: 15px;
-    line-height: 1.45;
     margin-top: $space * 2;
     max-width: 560px;
   }
@@ -328,20 +286,11 @@
     max-width: calc(100% - $space * 4);
   }
 
-  .content h1 {
-    font-size: 38px;
-  }
-
-  .introduction {
-    font-size: 13px;
-  }
-
   .actions {
     gap: $space;
 
     a {
       flex: 1 1 auto;
-      font-size: 13px;
     }
   }
 

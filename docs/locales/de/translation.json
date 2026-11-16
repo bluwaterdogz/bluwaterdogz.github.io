@@ -19,7 +19,7 @@
     },
     "aboutHeader": "Wer bin ich?",
     "about": "Senior Software Engineer mit Erfahrung in TypeScript, React, Angular, Node.js und Python. Erfahren in der Führung internationaler Teams, der Modernisierung von Altsystemen, der Optimierung von Architekturen und dem Aufbau effizienter CI/CD-Pipelines. Ich entwickle gern skalierbare, nutzerorientierte Lösungen mit messbarem Geschäftswert.",
-    "aboutEyebrow": "Über mich",
+    "aboutEyebrow": "01 Über mich",
     "aboutTitle": "Lösungen entwickeln. Teams führen",
     "aboutLink": "Mehr über mich",
     "features": {
@@ -42,7 +42,6 @@
       "copy4": "Bei Faro Health entwickelte und optimierte ich TypeScript- und React-Anwendungen mit REST- und CQRS-Microservices, PostgreSQL, automatisierten Tests und GitHub-Actions-Deployments.",
       "copy5": "Bei Various Inc. leitete ich ein internationales Frontend-Team bei der Modernisierung älterer JavaScript- und Perl-Anwendungen zu einer skalierbaren React-, TypeScript-, Next.js-, WebSocket- und Python-Plattform.",
       "link": "Meine Erfahrung ansehen",
-      "timelineHeading": "Karriere-Highlights",
       "timeline": {
         "mobianPeriod": "2025 - Heute",
         "mobianCompany": "Mobian",
@@ -80,7 +79,6 @@
         "regions": "4 Regionen",
         "timeZones": "Mehrere Zeitzonen"
       },
-      "approachHeading": "So arbeite ich",
       "approachStatement": "Starke Remote-Zusammenarbeit basiert auf Klarheit, Vertrauen und verlässlicher Umsetzung.",
       "practices": {
         "crossFunctional": {
@@ -138,8 +136,8 @@
       "eyebrow": "Mein Prozess",
       "title": "Vom Problem bis zur Produktion",
       "description": "Ein kollaborativer, iterativer Ansatz, der Ziele, technische Entscheidungen und Qualität von der Analyse bis zum Release transparent hält.",
-      "aiTitle": "Generatives Engineering mit Verantwortung und Erfahrung",
-      "aiDescription": "Ich nutze KI, um Recherche, Planung, Reviews, Tests und Dokumentation zu beschleunigen, und prüfe jedes Ergebnis am Code und am tatsächlichen Systemverhalten.",
+      "generativeTitle": "Generatives Engineering mit Verantwortung und Erfahrung",
+      "generativeDescription": "Ich nutze KI, um Recherche, Planung, Reviews, Tests und Dokumentation zu beschleunigen, und prüfe jedes Ergebnis am Code und am tatsächlichen Systemverhalten.",
       "steps": {
         "align": {
           "title": "Ausrichten",

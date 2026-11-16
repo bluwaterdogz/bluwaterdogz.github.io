@@ -1,3 +1,5 @@
+@use "../../styles/variables" as *;
+
 .chameleon {
   min-height: 100vh;
   padding: 24px;
@@ -138,8 +140,8 @@
     outline: none;
 
     transition:
-      border-color 120ms ease,
-      box-shadow 120ms ease;
+      border-color $transition ease,
+      box-shadow $transition ease;
 
     &:focus {
       border-color: #64748b;
@@ -165,9 +167,9 @@
     cursor: pointer;
 
     transition:
-      background 120ms ease,
-      border-color 120ms ease,
-      transform 80ms ease;
+      background $transition ease,
+      border-color $transition ease,
+      transform $transition ease;
 
     &:hover:not(:disabled) {
       background: #eef2f7;

@@ -3,6 +3,8 @@ import { ProjectHeader } from "./project-header";
 import { useProjectStore } from "../../service/project/ProjectStore";
 import { useEffect } from "react";
 import { Loader } from "../common/loader";
+import { PageShell } from "../common/page-shell";
+import styles from "./styles.module.scss";
 
 interface ProjectProps {
   id: string;
@@ -14,16 +16,21 @@ export const Project = ({ id }: ProjectProps) => {
     fetchProject(id);
   }, [fetchProject, id]);
 
-  return (
-    <main>
-      {loading || project == null ? (
+  if (loading || project == null) {
+    return (
+      <main>
         <Loader />
-      ) : (
-        <>
-          <ProjectHeader project={project} />
-          <ProjectContent project={project} />
-        </>
-      )}
-    </main>
+      </main>
+    );
+  }
+
+  return (
+    <PageShell
+      className={styles.projectPage}
+      contentClassName={styles.pageContainer}
+    >
+      <ProjectHeader project={project} />
+      <ProjectContent project={project} />
+    </PageShell>
   );
 };

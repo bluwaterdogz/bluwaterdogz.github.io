@@ -11,7 +11,6 @@ export interface Project {
 }
 
 export interface ProjectStory {
-  accent: "data" | "integration" | "platform" | "product" | "throughput";
   kicker: string;
   sections: ProjectStorySection[];
   summary: string;

@@ -19,7 +19,7 @@
     },
     "aboutHeader": "¿Quién soy?",
     "about": "Ingeniero de software senior con experiencia en TypeScript, React, Angular, Node.js y Python. He liderado equipos internacionales, modernizado sistemas heredados, optimizado arquitecturas e implementado canalizaciones CI/CD para despliegues eficientes. Me apasiona crear soluciones escalables y centradas en el usuario que impulsen el crecimiento del negocio.",
-    "aboutEyebrow": "Sobre mí",
+    "aboutEyebrow": "01 Sobre mí",
     "aboutTitle": "Creando soluciones. Liderando equipos",
     "aboutLink": "Más sobre mí",
     "features": {
@@ -42,7 +42,6 @@
       "copy4": "Anteriormente, en Faro Health, construí y optimicé aplicaciones TypeScript y React respaldadas por microservicios REST y CQRS, PostgreSQL, pruebas automatizadas y canalizaciones de despliegue con GitHub Actions.",
       "copy5": "Antes, en Various Inc., dirigí un equipo frontend internacional modernizando aplicaciones heredadas de JavaScript y Perl hacia una plataforma escalable con React, TypeScript, Next.js, WebSockets y Python.",
       "link": "Ver mi experiencia",
-      "timelineHeading": "Trayectoria profesional",
       "timeline": {
         "mobianPeriod": "2025 - Actualidad",
         "mobianCompany": "Mobian",
@@ -80,7 +79,6 @@
         "regions": "4 regiones",
         "timeZones": "Varias zonas horarias"
       },
-      "approachHeading": "Cómo trabajo",
       "approachStatement": "Una colaboración remota sólida se basa en claridad, confianza y una ejecución fiable.",
       "practices": {
         "crossFunctional": {
@@ -138,8 +136,8 @@
       "eyebrow": "Mi proceso",
       "title": "Del problema a producción",
       "description": "Un enfoque colaborativo e iterativo que mantiene claros los objetivos, las decisiones técnicas y la calidad desde el descubrimiento hasta el lanzamiento.",
-      "aiTitle": "Ingeniería generativa, con responsabilidad y experiencia",
-      "aiDescription": "Uso IA para acelerar la investigación, planificación, revisión, pruebas y documentación, verificando cada resultado contra el código y el comportamiento real del sistema.",
+      "generativeTitle": "Ingeniería generativa, con responsabilidad y experiencia",
+      "generativeDescription": "Uso IA para acelerar la investigación, planificación, revisión, pruebas y documentación, verificando cada resultado contra el código y el comportamiento real del sistema.",
       "steps": {
         "align": {
           "title": "Alinear",

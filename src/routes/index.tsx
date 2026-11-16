@@ -55,10 +55,10 @@ export const router = createBrowserRouter([
         element: <ProjectPage />,
       },
 
-      {
-        path: "*",
-        element: <NotFoundPage />,
-      },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFoundPage />,
   },
 ]);

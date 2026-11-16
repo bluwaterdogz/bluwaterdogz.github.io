@@ -1,4 +1,5 @@
 import type { CSSProperties, PropsWithChildren } from "react";
+import { lightBlobColors } from "./colors";
 import styles from "./morphing-blob-background.module.scss";
 
 type MorphingBlobBackgroundProps = PropsWithChildren<{
@@ -11,7 +12,7 @@ type MorphingBlobBackgroundProps = PropsWithChildren<{
 export const MorphingBlobBackground = ({
   children,
   className = "",
-  colors = ["#ff9cdb", "#c2adff", "#96f4ff", "#e7ff96"],
+  colors = lightBlobColors,
   intensity = 1,
   speed = 1,
 }: MorphingBlobBackgroundProps) => {

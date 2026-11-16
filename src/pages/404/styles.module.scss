@@ -1,0 +1,45 @@
+@use "../../styles/colors" as *;
+@use "../../styles/type" as *;
+@use "../../styles/variables" as *;
+
+.page {
+  height: 100svh;
+  overflow: hidden;
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: $space * 4;
+  justify-content: center;
+  min-height: 100svh;
+  padding: $page-padding-inline-mobile;
+  text-align: center;
+
+  h1 {
+    @include display-text;
+    font-size: clamp($page-title-size, 18vw, $space * 18);
+  }
+
+  a {
+    @include link-text;
+    align-items: center;
+    backdrop-filter: $interactive-transparent-effect;
+    background: $interactive-transparent-background;
+    border: 1px solid $theme-border-color;
+    display: inline-flex;
+    gap: $space;
+    padding: $space * 1.5 $space * 2;
+    text-decoration: none;
+    transition: background $transition ease, border-color $transition ease,
+      color $transition ease;
+
+    &:hover,
+    &:focus-visible {
+      background: $primary-color;
+      border-color: $primary-color;
+      color: white;
+    }
+  }
+}

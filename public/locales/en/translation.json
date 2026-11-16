@@ -19,7 +19,7 @@
     },
     "aboutHeader": "Who am I?",
     "about": "Most recently, I worked as a Senior Software Engineer at Mobian, building search, analytics, reporting, data-processing, and reliability features for an audience-intelligence and advertising platform. Before that, I built clinical-study tools at Faro Health and led frontend modernization work for Cams at Various Inc.",
-    "aboutEyebrow": "About me",
+    "aboutEyebrow": "01 About me",
     "aboutTitle": "Building solutions. Leading teams",
     "aboutLink": "More about me",
     "features": {
@@ -42,7 +42,6 @@
       "copy4": "Before Mobian, I helped build Faro Health's clinical-study design platform, contributing frontend features, service integrations, testing, and delivery improvements.",
       "copy5": "Earlier at Various Inc., I led frontend modernization work for Cams, moving high-traffic real-time video and chat experiences toward a more scalable React, TypeScript, Next.js, WebSocket, and Python platform.",
       "link": "View my experience",
-      "timelineHeading": "Career highlights",
       "timeline": {
         "mobianPeriod": "2025 - Present",
         "mobianCompany": "Mobian",
@@ -80,7 +79,6 @@
         "regions": "4 regions",
         "timeZones": "Multiple time zones"
       },
-      "approachHeading": "How I work",
       "approachStatement": "Strong remote collaboration is about clarity, trust, and reliable execution.",
       "practices": {
         "crossFunctional": {
@@ -138,8 +136,8 @@
       "eyebrow": "My process",
       "title": "From problem to production",
       "description": "A collaborative, iterative approach that keeps goals, technical decisions, and quality clear from discovery through release.",
-      "aiTitle": "Generative engineering, with accountability and experience",
-      "aiDescription": "I use AI to accelerate research, planning, review, testing, and documentation, while verifying every output against the codebase and real system behavior.",
+      "generativeTitle": "Generative engineering, with accountability and experience",
+      "generativeDescription": "I use AI to accelerate research, planning, review, testing, and documentation, while verifying every output against the codebase and real system behavior.",
       "steps": {
         "align": {
           "title": "Align",

@@ -1,8 +1,13 @@
+@use "sass:math";
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
+@use "../../../styles/timeline" as *;
+@use "../../../styles/type" as *;
 
 $timeline-label-width: $space * 12;
 $timeline-rail-offset: $space * 3;
+$timeline-label-line-height: $link-text-size * $link-text-line-height;
+$group-dot-top: $space * 3 + math.div($timeline-label-line-height - $dot-size, 2);
 
 .group {
   display: grid;
@@ -12,33 +17,16 @@ $timeline-rail-offset: $space * 3;
   position: relative;
 
   &::before {
-    background: $primary-color;
-    border-radius: 50%;
-    box-shadow: 0 0 0 $space-sm $theme-surface-color;
+    @include dot(-$timeline-rail-offset, $group-dot-top);
     content: "";
-    height: $space-sm * 2;
-    left: -$timeline-rail-offset - $space-sm;
-    position: absolute;
-    top: $space * 3;
-    width: $space-sm * 2;
-    z-index: 1;
   }
 
   &:not(.last)::after {
-    background: $theme-border-color;
-    bottom: 0;
-    content: "";
-    height: 1px;
-    left: -$timeline-rail-offset;
-    position: absolute;
-    right: 0;
+    @include vertical-connector(-$timeline-rail-offset, $group-dot-top);
   }
 
   h2 {
-    color: $primary-color;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 1.3;
+    @include link-text;
     margin: $space 0 0;
     white-space: nowrap;
   }
@@ -55,7 +43,6 @@ $timeline-rail-offset: $space * 3;
 }
 
 .skills a {
-  font-size: 12px;
   min-height: $space * 3.5;
 }
 
@@ -63,14 +50,6 @@ $timeline-rail-offset: $space * 3;
   .group {
     grid-template-columns: 1fr;
     padding-left: $space;
-
-    &::before {
-      left: -$space * 2 - $space-sm;
-    }
-
-    &:not(.last)::after {
-      left: -$space * 2;
-    }
 
     h2 {
       margin-top: $space;

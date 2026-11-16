@@ -1,6 +1,8 @@
 @use "../../../styles/home-sections" as section;
 @use "../../../styles/variables" as *;
 @use "../../../styles/colors" as *;
+@use "../../../styles/type" as *;
+@use "../../../styles/interactions" as *;
 
 .leadershipSection {
   @include section.shell;
@@ -17,7 +19,7 @@
 }
 
 .eyebrow {
-  @include section.eyebrow;
+  @include eyebrow;
 }
 
 .introduction h2 {
@@ -36,24 +38,6 @@
   min-width: 0;
 }
 
-.approachHeading {
-  color: $theme-text-color;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  margin: 0 0 $space * 3;
-  text-transform: uppercase;
-
-  &::after {
-    background: $primary-color;
-    content: "";
-    display: block;
-    height: 2px;
-    margin-top: $space * 2;
-    width: $space * 5;
-  }
-}
-
 .statement {
   margin: 0 0 $space * 4;
 }
@@ -65,14 +49,14 @@
 }
 
 .practice {
-  border: 1px solid $theme-border-color;
+  @include card-outline;
   min-height: 190px;
   padding: $space * 1.5;
 }
 
 .practiceIcon {
   align-items: center;
-  background: rgba($primary-color, 0.08);
+  background: color-mix(in srgb, #{$primary-color} 8%, transparent);
   color: $primary-color;
   display: inline-flex;
   font-size: 24px;
@@ -83,16 +67,12 @@
 }
 
 .practice h3 {
-  color: $theme-text-color;
-  font-size: 18px;
-  line-height: 1.1;
+  @include subtitle-text;
   margin: 0 0 $space;
 }
 
 .practice p {
-  color: $theme-subtext-color;
-  font-size: 15px;
-  line-height: 1.45;
+  @include small-text;
   margin: 0;
 }
 
@@ -107,7 +87,6 @@
   .practices {
     grid-template-columns: 1fr;
   }
-
 }
 
 @include section.responsive-layout;

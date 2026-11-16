@@ -2,7 +2,6 @@ import { ProjectStory } from "./types";
 
 export const mobianStories: Record<string, ProjectStory> = {
   "9": {
-    accent: "data",
     kicker: "Making audience intelligence searchable",
     summary:
       "A connected search experience spanning interactive interfaces, APIs, indexes, caches, and exports.",
@@ -64,7 +63,6 @@ export const mobianStories: Record<string, ProjectStory> = {
     ],
   },
   "10": {
-    accent: "throughput",
     kicker: "Keeping high-volume contextual data reliable",
     summary:
       "A recovery-aware ingestion system for normalizing, classifying, and diagnosing contextual data at production scale.",
@@ -107,7 +105,6 @@ export const mobianStories: Record<string, ProjectStory> = {
     ],
   },
   "11": {
-    accent: "integration",
     kicker: "Connecting fragmented advertising data",
     summary:
       "Entity reconciliation and reporting workflows that made different ad platforms behave like one product.",
@@ -148,7 +145,6 @@ export const mobianStories: Record<string, ProjectStory> = {
     ],
   },
   "12": {
-    accent: "platform",
     kicker: "Making a multi-service platform more reliable",
     summary:
       "Cross-repository infrastructure, testing, observability, and release work for a production advertising platform.",
@@ -182,7 +178,6 @@ export const mobianStories: Record<string, ProjectStory> = {
     ],
   },
   "13": {
-    accent: "product",
     kicker: "Building consistent interfaces across a complex product",
     summary:
       "Reusable components and semantic design foundations that connected complex backend behavior to clear product interactions.",

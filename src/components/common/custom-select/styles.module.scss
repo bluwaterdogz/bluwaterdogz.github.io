@@ -1,5 +1,6 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
+@use "../../../styles/type" as *;
 
 .field {
   width: 100%;
@@ -9,13 +10,13 @@
 }
 
 .trigger {
+  @include button-text;
   align-items: center;
   background: transparent;
   border: 1px solid $theme-border-color;
   color: $theme-text-color;
   cursor: pointer;
   display: flex;
-  font: inherit;
   justify-content: space-between;
   padding: $space * 1.5 $space * 2;
   text-align: left;
@@ -53,13 +54,13 @@
   z-index: 20;
 
   button {
+    @include button-text;
     align-items: center;
     background: transparent;
     border: 0;
     color: $theme-text-color;
     cursor: pointer;
     display: flex;
-    font: inherit;
     justify-content: space-between;
     padding: $space $space * 1.5;
     text-align: left;
@@ -68,7 +69,7 @@
     &:hover,
     &:focus-visible,
     &.selected {
-      background: rgba($primary-color, 0.1);
+      background: color-mix(in srgb, #{$primary-color} 10%, transparent);
       color: $primary-color;
       outline: 0;
     }

@@ -5,6 +5,10 @@
   padding-bottom: $space * 8;
 }
 
+.pageContainer {
+  max-width: $content-width-readable;
+}
+
 @media (max-width: $medium-screen) {
   .projectsPage {
     padding-bottom: $space * 8;

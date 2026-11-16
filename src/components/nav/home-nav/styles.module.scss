@@ -1,5 +1,6 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/colors" as *;
+@use "../../../styles/type" as *;
 @keyframes fadeInUp {
   0% {
     transform: translateY(100%);
@@ -29,9 +30,9 @@
     margin-left: auto;
   }
   a {
+    @include link-text;
     color: $theme-text-color;
     display: block;
-    font-size: 18px;
     padding: $space 0;
     position: relative;
     text-decoration: none;
@@ -86,23 +87,6 @@
         animation-delay: #{$i * 0.2}s;
         animation-fill-mode: forwards;
       }
-    }
-  }
-  &.dark {
-    a {
-      color: $theme-text-color;
-    }
-  }
-  &.light {
-    a {
-      color: white;
-      &:hover {
-        color: $primary-color;
-      }
-    }
-
-    &:has(a:hover, a:focus-visible) a[aria-current="page"]:not(:hover, :focus-visible) {
-      color: white !important;
     }
   }
 }

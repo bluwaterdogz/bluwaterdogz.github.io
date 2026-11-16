@@ -1,0 +1,46 @@
+@use "colors" as *;
+@use "variables" as *;
+
+$rail-width: 2px;
+$dot-size: $space + 2px;
+$dot-top: $space-sm - 1px;
+$segment-gap: $space-sm;
+
+@mixin dot($rail-left, $top: $dot-top) {
+  background: $theme-surface-color;
+  border: 2px solid $primary-color;
+  border-radius: 50%;
+  box-sizing: border-box;
+  height: $dot-size;
+  left: calc(#{$rail-left} - (#{$dot-size} - #{$rail-width}) / 2);
+  position: absolute;
+  top: $top;
+  width: $dot-size;
+  z-index: 1;
+}
+
+@mixin vertical-segment($rail-left, $top: $dot-top) {
+  background: color-mix(in srgb, #{$primary-color} 72%, transparent);
+  content: "";
+  height: calc(100% - #{$top + $dot-size + $segment-gap});
+  left: $rail-left;
+  position: absolute;
+  top: $top + $dot-size + $segment-gap;
+  width: $rail-width;
+}
+
+@mixin vertical-connector($rail-left, $top: $dot-top) {
+  @include vertical-segment($rail-left, $top);
+  bottom: -($top - $segment-gap);
+  height: auto;
+}
+
+@mixin horizontal-segment($dot-center) {
+  background: color-mix(in srgb, #{$primary-color} 72%, transparent);
+  content: "";
+  height: $rail-width;
+  left: calc(#{$dot-center} + #{$dot-size} / 2 + #{$segment-gap});
+  position: absolute;
+  right: 0;
+  top: 0;
+}

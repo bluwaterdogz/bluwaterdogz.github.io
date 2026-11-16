@@ -1,0 +1,9 @@
+@use "../../styles/variables" as *;
+
+.projectPage {
+  color: $theme-text-color;
+}
+
+.pageContainer {
+  max-width: $content-width-readable;
+}

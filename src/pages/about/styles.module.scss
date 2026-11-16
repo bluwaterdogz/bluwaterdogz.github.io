@@ -1,35 +1,18 @@
 @use "../../styles/variables" as *;
 @use "../../styles/colors" as *;
+@use "../../styles/interactions" as *;
+@use "../../styles/type" as *;
 
 .aboutPage {
-  background: $theme-surface-color;
   color: $theme-text-color;
-  min-height: 100svh;
-  padding: $space * 8 $space * 16 $space * 10 $space * 7;
 }
 
-.container {
-  margin: 0 auto;
+.pageContainer {
   max-width: $content-width-readable;
 }
 
 .eyebrow {
-  align-items: center;
-  color: $primary-color;
-  display: flex;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin: 0 0 $space * 4;
-  text-transform: uppercase;
-
-  &::after {
-    background: $primary-color;
-    content: "";
-    height: 1px;
-    margin-left: $space * 2;
-    width: $space * 4;
-  }
+  @include eyebrow;
 }
 
 .introduction {
@@ -37,12 +20,13 @@
   display: grid;
   gap: clamp($space * 4, 5vw, $space * 6);
   grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  min-height: calc(100svh - #{$page-padding-block-start});
 }
 
 .portrait {
   aspect-ratio: 2 / 3;
   background: $hero-background-color;
-  max-height: $space * 72;
+  max-height: calc(100svh - #{$page-padding-block-start + $space * 3});
   overflow: hidden;
 
   img {
@@ -55,34 +39,23 @@
 }
 
 .copy {
+  display: flex;
+  flex-direction: column;
   max-width: $content-width-readable;
+  min-height: calc(100svh - #{$page-padding-block-start});
+}
 
-  h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 64px;
-    font-weight: 400;
-    line-height: 1;
-    margin: 0;
-
-    &::after {
-      color: $primary-color;
-      content: ".";
-    }
-  }
+.headingContent {
+  margin: auto 0;
 
   > p:not(.role, .location) {
-    color: $theme-subtext-color;
-    font-size: 17px;
-    line-height: 1.8;
+    @include text;
     margin: 0 0 $space * 3;
   }
 }
 
 .role {
-  color: $primary-color;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 1px;
+  @include eyebrow-text;
   margin: $space * 3 0;
   text-transform: uppercase;
 }
@@ -98,7 +71,7 @@
   align-items: center;
   display: flex;
   gap: $space * 2;
-  margin: $space * 6 0;
+  margin: $space * 4 0;
 
   i {
     color: $primary-color;
@@ -124,21 +97,19 @@
 }
 
 .interests {
-  margin-top: $space * 9;
+  margin-top: $space * 8;
 }
 
 .interestGrid {
   display: grid;
+  gap: $space * 2;
   grid-template-columns: repeat(4, minmax(0, 1fr));
 
   article {
+    @include card-outline;
     min-width: 0;
     padding: $space * 3;
     text-align: center;
-
-    &:not(:first-child) {
-      border-left: 1px solid $theme-border-color;
-    }
   }
 
   i {
@@ -152,19 +123,13 @@
   }
 
   h2 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 28px;
-    font-weight: 400;
+    @include subtitle-text;
     margin: $space * 2 0;
     overflow-wrap: anywhere;
   }
 
   p {
-    color: $theme-subtext-color;
-    line-height: 1.7;
-    margin: 0 auto;
-    max-width: $space * 22;
-    overflow-wrap: anywhere;
+    @include small-text;
   }
 }
 
@@ -173,7 +138,7 @@
 }
 
 .buildWith {
-  margin-top: $space * 9;
+  margin-top: $space * 8;
 
   > :last-child {
     max-width: none;
@@ -183,10 +148,10 @@
 .process {
   color: $theme-text-color;
   display: grid;
-  gap: clamp($space * 5, 8vw, $space * 12);
+  gap: clamp($space * 4, 6vw, $space * 8);
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
-  margin-top: $space * 10;
-  padding: $space * 6 0;
+  margin-top: $space * 8;
+  padding: 0;
 }
 
 .processIntroduction {
@@ -195,36 +160,35 @@
 
   h2,
   h3 {
-    color: $theme-text-color;
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: 400;
     margin: 0;
   }
 
   h2 {
-    font-size: 54px;
-    line-height: 1;
+    @include section-title;
   }
 
   h3 {
-    font-size: 26px;
-    line-height: 1.25;
+    @include subtitle-text;
   }
 
   > p,
-  .aiNote p {
-    color: $theme-subtext-color;
-    font-size: 16px;
-    line-height: 1.65;
+  .processNote p {
+    @include text;
     margin: 0;
     overflow-wrap: anywhere;
   }
 }
 
-.aiNote {
-  border-top: 1px solid $theme-border-color;
+.processNote {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, #{$primary-color} 10%, transparent),
+    color-mix(in srgb, #{$primary-color} 2.5%, transparent) 72%,
+    transparent
+  );
+  border-left: 2px solid $primary-color;
   margin-top: $space * 5;
-  padding-top: $space * 4;
+  padding: $space * 3 $space * 4;
 
   p {
     margin-top: $space * 2;
@@ -239,30 +203,28 @@
 @media (max-width: $small-screen) {
   .process {
     grid-template-columns: 1fr;
-    padding: $space * 4;
   }
 }
 
 @media (max-width: $mobile-screen) {
   .process {
-    margin-top: $space * 7;
-    padding: $space * 3;
+    margin-top: $space * 6;
   }
 
-  .processIntroduction h2 {
-    font-size: 42px;
-  }
-}
-
-@media (max-width: $medium-screen) {
-  .aboutPage {
-    padding: $space * 6 $space * 4 $space * 8;
-  }
 }
 
 @media (max-width: $small-screen) {
   .introduction {
     grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .copy {
+    min-height: 0;
+  }
+
+  .headingContent {
+    margin: 0;
   }
 
   .portrait {
@@ -272,33 +234,15 @@
 
   .interestGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    article:nth-child(3) {
-      border-left: 0;
-    }
   }
 }
 
 @media (max-width: $mobile-screen) {
-  .aboutPage {
-    padding: $space * 4 $space * 3 $space * 6;
-  }
-
-  .copy h1 {
-    font-size: 46px;
-  }
-
   .interestGrid {
     grid-template-columns: 1fr;
-
-    article:not(:first-child) {
-      border-left: 0;
-      border-top: 1px solid $theme-border-color;
-    }
   }
 
   .quote {
-    font-size: 21px;
     padding: $space * 3;
   }
 }

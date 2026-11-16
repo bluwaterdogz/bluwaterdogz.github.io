@@ -65,7 +65,7 @@ export const ExperienceSection = () => {
           <span aria-hidden="true">&#8594;</span>
         </a>
       </div>
-      <JobTimeline heading={t("home.experience.timelineHeading")} items={jobs} />
+      <JobTimeline items={jobs} />
     </ContentSection>
   );
 };

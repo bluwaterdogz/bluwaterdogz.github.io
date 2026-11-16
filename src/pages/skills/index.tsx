@@ -26,46 +26,50 @@ export const SkillsPage = () => {
     skillSections[(activeViewIndex + 1) % skillSections.length];
 
   return (
-    <PageShell className={styles.skillsPage}>
-        <div className={styles.layout}>
-          <PageHeading
-            className={styles.introduction}
-            description={t(`skills.views.${activeView.i18nKey}.description`)}
-            descriptionClassName={styles.copy}
-            eyebrow={t("skills.eyebrow")}
-            title={t(`skills.views.${activeView.i18nKey}.title`)}
-          >
-            <div className={styles.viewSwitcher}>
-              <Link
-                aria-label={t("skills.previous")}
-                title={t("skills.previous")}
-                to={`/skills?skillType=${previousView.id}`}
-              >
-                <i className="fa fa-arrow-left" aria-hidden="true" />
-              </Link>
-              <span>
-                {activeViewIndex + 1} / {skillSections.length}
-              </span>
-              <Link
-                aria-label={t("skills.next")}
-                title={t("skills.next")}
-                to={`/skills?skillType=${nextView.id}`}
-              >
-                <i className="fa fa-arrow-right" aria-hidden="true" />
-              </Link>
-            </div>
-            <a
-              className={styles.link}
-              href={linkedinProfileUrl}
-              rel="noreferrer"
-              target="_blank"
+    <PageShell
+      className={styles.skillsPage}
+      contentClassName={styles.pageContainer}
+    >
+      <div className={styles.layout}>
+        <PageHeading
+          className={styles.introduction}
+          contentClassName={styles.headingContent}
+          description={t(`skills.views.${activeView.i18nKey}.description`)}
+          descriptionClassName={styles.copy}
+          eyebrow={t("skills.eyebrow")}
+          title={t(`skills.views.${activeView.i18nKey}.title`)}
+        >
+          <div className={styles.viewSwitcher}>
+            <Link
+              aria-label={t("skills.previous")}
+              title={t("skills.previous")}
+              to={`/skills?skillType=${previousView.id}`}
             >
-              {t("skills.projectsLink")}
-              <span aria-hidden="true">&#8594;</span>
-            </a>
-          </PageHeading>
-          <SkillTimeline groups={getSkillGroupingsForSection(activeView)} />
-        </div>
+              <i className="fa fa-arrow-left" aria-hidden="true" />
+            </Link>
+            <span>
+              {activeViewIndex + 1} / {skillSections.length}
+            </span>
+            <Link
+              aria-label={t("skills.next")}
+              title={t("skills.next")}
+              to={`/skills?skillType=${nextView.id}`}
+            >
+              <i className="fa fa-arrow-right" aria-hidden="true" />
+            </Link>
+          </div>
+          <a
+            className={styles.link}
+            href={linkedinProfileUrl}
+            rel="noreferrer"
+            target="_blank"
+          >
+            {t("skills.projectsLink")}
+            <span aria-hidden="true">&#8594;</span>
+          </a>
+        </PageHeading>
+        <SkillTimeline groups={getSkillGroupingsForSection(activeView)} />
+      </div>
     </PageShell>
   );
 };

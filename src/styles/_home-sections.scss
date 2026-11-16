@@ -1,22 +1,23 @@
 @use "variables" as *;
 @use "colors" as *;
+@use "type" as *;
 
 @mixin shell {
   background: $theme-surface-color;
   overflow-x: clip;
-  padding: $space * 10;
+  padding: $space * 8;
   position: relative;
 
   @media (max-width: $medium-screen) {
-    padding: $space * 8 $space * 6;
+    padding: $space * 7 $space * 6;
   }
 
   @media (max-width: $small-screen) {
-    padding: $space * 7 $space * 4;
+    padding: $space * 6 $space * 4;
   }
 
   @media (max-width: $mobile-screen) {
-    padding: $space * 6 $space * 3;
+    padding: $space * 5 $space * 3;
   }
 }
 
@@ -42,33 +43,8 @@
   }
 }
 
-@mixin eyebrow {
-  align-items: center;
-  color: $primary-color;
-  display: flex;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  line-height: 1;
-  margin: 0 0 $space * 3;
-  text-transform: uppercase;
-
-  &::after {
-    background: $primary-color;
-    content: "";
-    height: 2px;
-    margin-left: $space * 2;
-    width: $space * 4;
-  }
-}
-
 @mixin heading {
-  color: $theme-text-color;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 64px;
-  font-weight: 400;
-  line-height: 0.95;
-  margin: 0;
+  @include section-title;
 
   &::after {
     color: $primary-color;
@@ -81,19 +57,15 @@
   max-width: $content-width-readable;
 
   p {
-    color: $theme-subtext-color;
-    font-size: 16px;
-    line-height: 1.6;
+    @include text;
     margin: 0 0 $space * 3;
   }
 }
 
 @mixin link {
+  @include link-text;
   align-items: center;
-  color: $primary-color;
   display: inline-flex;
-  font-size: 15px;
-  font-weight: 600;
   letter-spacing: 1px;
   text-decoration: none;
 
@@ -115,9 +87,6 @@
       display: none;
     }
 
-    .introduction h2 {
-      font-size: 54px;
-    }
   }
 
   @media (max-width: $small-screen) {
@@ -125,18 +94,8 @@
       grid-template-columns: 1fr;
     }
 
-    .introduction h2 {
-      font-size: 46px;
-    }
   }
 
   @media (max-width: $mobile-screen) {
-    .introduction h2 {
-      font-size: 40px;
-    }
-
-    .copy p {
-      font-size: 15px;
-    }
   }
 }

@@ -19,7 +19,7 @@
     },
     "aboutHeader": "我是誰？",
     "about": "具備 TypeScript、React、Angular、Node.js 與 Python 經驗的資深全端網路開發者。曾帶領國際團隊、現代化舊有系統、優化架構，並導入 CI/CD 流程以提升部署效率。我熱衷於打造可擴充、以使用者為核心並能推動業務成長的解決方案。",
-    "aboutEyebrow": "關於我",
+    "aboutEyebrow": "01 關於我",
     "aboutTitle": "打造解決方案。帶領團隊",
     "aboutLink": "深入了解我",
     "features": {
@@ -42,7 +42,6 @@
       "copy4": "此前在 Faro Health，我建置並優化以 REST 與 CQRS 微服務、PostgreSQL、自動化測試及 GitHub Actions 部署流程支援的 TypeScript 與 React 應用程式。",
       "copy5": "更早在 Various Inc.，我帶領國際前端團隊，將舊有 JavaScript 與 Perl 應用程式現代化為可擴充的 React、TypeScript、Next.js、WebSocket 與 Python 平台。",
       "link": "查看我的經歷",
-      "timelineHeading": "職涯重點",
       "timeline": {
         "mobianPeriod": "2025 - 至今",
         "mobianCompany": "Mobian",
@@ -80,7 +79,6 @@
         "regions": "4 個地區",
         "timeZones": "多個時區"
       },
-      "approachHeading": "我的工作方式",
       "approachStatement": "卓越的遠端協作建立在清晰、信任與可靠執行之上。",
       "practices": {
         "crossFunctional": {
@@ -138,8 +136,8 @@
       "eyebrow": "我的流程",
       "title": "從問題走向正式環境",
       "description": "以協作與迭代的方式，從探索到發布都讓目標、技術決策與品質保持清晰。",
-      "aiTitle": "以責任與經驗為基礎的生成式工程",
-      "aiDescription": "我使用 AI 加速研究、規劃、審查、測試與文件撰寫，同時以程式碼庫與真實系統行為驗證每項輸出。",
+      "generativeTitle": "以責任與經驗為基礎的生成式工程",
+      "generativeDescription": "我使用 AI 加速研究、規劃、審查、測試與文件撰寫，同時以程式碼庫與真實系統行為驗證每項輸出。",
       "steps": {
         "align": {
           "title": "對齊",

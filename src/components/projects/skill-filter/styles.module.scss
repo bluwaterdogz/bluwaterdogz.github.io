@@ -1,5 +1,6 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
+@use "../../../styles/type" as *;
 
 .field {
   width: 100%;
@@ -10,13 +11,13 @@
 }
 
 .trigger {
+  @include button-text;
   align-items: center;
   background: transparent;
   border: 1px solid $theme-border-color;
   color: $theme-text-color;
   cursor: pointer;
   display: grid;
-  font: inherit;
   gap: $space;
   grid-template-columns: 1fr auto auto;
   padding: $space * 1.5 $space * 2;
@@ -58,18 +59,16 @@
   margin-bottom: $space * 1.5;
 
   p {
-    color: $theme-subtext-color;
-    font-size: 12px;
+    @include small-text;
     margin: 0;
   }
 
   button {
+    @include small-text;
     background: transparent;
     border: 0;
     color: $primary-color;
     cursor: pointer;
-    font: inherit;
-    font-size: 12px;
   }
 }
 
@@ -79,7 +78,6 @@
   overflow-y: auto;
 
   button {
-    font-size: 12px;
     padding: $space-sm $space;
   }
 }

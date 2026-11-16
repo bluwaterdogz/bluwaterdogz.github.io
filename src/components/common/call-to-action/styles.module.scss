@@ -1,5 +1,6 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
+@use "../../../styles/type" as *;
 
 .callToAction {
   align-items: center;
@@ -13,7 +14,7 @@
 
 .icon {
   align-items: center;
-  border: 1px solid rgba($primary-color, 0.35);
+  border: 1px solid color-mix(in srgb, #{$primary-color} 35%, transparent);
   border-radius: 50%;
   color: $primary-color;
   display: flex;
@@ -25,25 +26,20 @@
 
 .copy {
   h2 {
-    color: $theme-text-color;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 28px;
-    font-weight: 400;
+    @include subtitle-text;
     margin: 0 0 $space-sm;
   }
 
   p {
-    color: $theme-subtext-color;
-    font-size: 14px;
+    @include small-text;
     margin: 0;
   }
 }
 
 .link {
+  @include link-text;
   align-items: center;
-  color: $primary-color;
   display: inline-flex;
-  font-size: 15px;
   gap: $space * 2;
   text-decoration: none;
 

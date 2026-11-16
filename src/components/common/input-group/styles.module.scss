@@ -1,5 +1,6 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
+@use "../../../styles/type" as *;
 
 .inputGroup {
   display: grid;
@@ -7,8 +8,6 @@
 }
 
 .label {
+  @include eyebrow-text;
   color: $theme-subtext-color;
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
 }

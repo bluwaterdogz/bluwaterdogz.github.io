@@ -1,5 +1,6 @@
 @use "../../../styles/home-sections" as section;
 @use "../../../styles/variables" as *;
+@use "../../../styles/type" as *;
 
 .experienceSection {
   @include section.shell;
@@ -16,7 +17,7 @@
 }
 
 .eyebrow {
-  @include section.eyebrow;
+  @include eyebrow;
 }
 
 .introduction h2 {

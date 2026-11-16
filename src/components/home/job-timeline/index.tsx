@@ -38,26 +38,17 @@ const TimelineEntry = ({ item }: TimelineEntryProps) => {
 
 interface JobTimelineProps {
   className?: string;
-  heading?: string;
   items: JobTimelineItem[];
-  variant?: "default" | "light";
 }
 
 export const JobTimeline = ({
   className = "",
-  heading,
   items,
-  variant = "default",
 }: JobTimelineProps) => {
   const hasNumbers = items.some((item) => item.number != null);
 
   return (
-    <aside
-      className={`${styles.timeline} ${
-        variant === "light" ? styles.light : ""
-      } ${className}`}
-    >
-      {heading != null && <h3>{heading}</h3>}
+    <aside className={`${styles.timeline} ${className}`}>
       <ol className={hasNumbers ? styles.numbered : undefined}>
         {items.map((item) => (
           <li key={`${item.period ?? item.number}-${item.company}`}>

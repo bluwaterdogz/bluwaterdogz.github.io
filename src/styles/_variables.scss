@@ -10,7 +10,7 @@ $content-width-introduction: 450px;
 $content-width-tablet: 500px;
 $content-width-mobile: 360px;
 $space-large: 500px;
-$transition: 300ms;
+$transition: 600ms;
 $blur: 6px;
 $interactive-transparent-background: rgba(white, 0.2);
 $interactive-transparent-effect: blur($blur);
@@ -32,7 +32,7 @@ $page-title-size-tablet: 52px;
 $page-title-size-mobile: 44px;
 $control-height: $space * 5;
 $icon-size-control: $space * 2.2;
-$collection-gap: $space * 6;
+$collection-gap: $space * 4;
 $popover-width: $space * 22;
 
 $mobile-screen: 480px;

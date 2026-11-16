@@ -16,7 +16,7 @@ export const ProjectHeader = ({ project }: ProjectHeaderProps) => {
   const projectName = t(project.nameKey);
 
   return (
-    <header className={`${styles.hero} ${styles[project.story.heroLayout]}`}>
+    <header className={styles.hero}>
       <div className={styles.container}>
         <PageHeading
           className={styles.copy}
@@ -31,7 +31,7 @@ export const ProjectHeader = ({ project }: ProjectHeaderProps) => {
           <SkillPills
             ariaLabel={t("projects.technologies", { name: projectName })}
             className={styles.skills}
-            skills={projectSkills.slice(0, 5)}
+            skills={projectSkills}
           />
           <Link className={styles.backLink} to="/projects">
             <span aria-hidden="true">&#8592;</span>

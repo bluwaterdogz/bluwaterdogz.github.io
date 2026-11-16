@@ -8,7 +8,7 @@
 
 .container {
   display: grid;
-  gap: clamp($space * 3, 5vw, $space * 5);
+  gap: clamp($space * 3, 5vw, $space * 6);
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
 }
 
@@ -31,11 +31,6 @@
 
 .skills {
   margin: $space * 3 0;
-
-  :is(a, button, li > span) {
-    background: color-mix(in srgb, #{$theme-surface-color} 82%, transparent);
-    padding: $space-sm $space;
-  }
 }
 
 .backLink {
@@ -50,38 +45,14 @@
 .image {
   aspect-ratio: 16 / 11;
   display: block;
-  height: min(100%, $space * 54);
-  max-height: $space * 54;
+  height: 100%;
   object-fit: cover;
   width: 100%;
-}
-
-.stacked {
-  .container {
-    grid-template-columns: 1fr;
-  }
-
-  .copy {
-    max-width: $content-width-copy;
-  }
-
-  .image {
-    aspect-ratio: 16 / 7;
-    height: min(42vw, $space * 52);
-    max-height: $space * 52;
-  }
 }
 
 @media (max-width: $small-screen) {
   .container {
     grid-template-columns: 1fr;
-  }
-
-  .image,
-  .stacked .image {
-    aspect-ratio: 16 / 9;
-    height: auto;
-    max-height: $space * 48;
   }
 }
 

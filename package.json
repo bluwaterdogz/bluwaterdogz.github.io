@@ -5,7 +5,7 @@
   "type": "module",
   "homepage": "https://bluwaterdogz.github.io",
   "scripts": {
-    "dev": "LAUNCH_EDITOR=subl vite",
+    "dev": "LAUNCH_EDITOR=cursor vite",
     "build": "tsc -b && vite build && cp docs/index.html docs/404.html",
     "lint": "eslint .",
     "preview": "vite preview",

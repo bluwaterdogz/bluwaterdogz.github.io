@@ -5,19 +5,19 @@
 @mixin shell {
   background: $theme-surface-color;
   overflow-x: clip;
-  padding: $space-8 max($space-3, calc((100vw - #{$content-width-wide}) / 2));
+  padding: $space * 8;
   position: relative;
 
   @media (max-width: $medium-screen) {
-    padding: $space-8 $space-5;
+    padding: $space * 7 $space * 6;
   }
 
   @media (max-width: $small-screen) {
-    padding: $space-5 $space-3;
+    padding: $space * 6 $space * 4;
   }
 
   @media (max-width: $mobile-screen) {
-    padding: $space-5 $space-2;
+    padding: $space * 5 $space * 3;
   }
 }
 
@@ -32,10 +32,10 @@
 @mixin content-grid {
   align-items: start;
   display: grid;
-  gap: clamp($space-5, 6vw, $space-8);
+  gap: clamp($space * 4, 6vw, $space * 8);
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin: 0 auto;
-  max-width: $content-width-wide;
+  max-width: $content-width-readable;
   width: 100%;
 
   > * {
@@ -53,8 +53,8 @@
 }
 
 @mixin copy {
-  margin: $space-3 0;
-  max-width: $content-width-copy;
+  margin: $space * 4 auto;
+  max-width: $content-width-readable;
 
   p {
     @include text;

@@ -22,7 +22,6 @@ export const SkillTimelineGroup = ({
       <SkillPills
         ariaLabel={t(`skills.groups.${grouping.i18nKey}`)}
         className={styles.skills}
-        linkTo="skills"
         skills={skills}
       />
     </section>

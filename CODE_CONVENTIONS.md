@@ -30,6 +30,7 @@ This project is a React 19 + TypeScript portfolio site built with Vite. It uses 
 - Define prop shapes with local `interface` declarations named after the component, such as `ProjectItemProps`.
 - Accept optional `className?: string` when a reusable component needs parent layout control.
 - Keep route pages thin. Compose reusable components from `src/components` rather than embedding large UI sections directly in `src/pages`.
+- Do not define local `renderSomething` functions that return JSX as a substitute for normal component composition. Inline simple markup, or extract a small named component when the same UI is reused across branches.
 - Use `useMemo` and `useCallback` around derived lists and callback-heavy logic when the component already does non-trivial filtering, searching, or rendering.
 - Keep effects focused. Fetch list/detail data in `useEffect`; reset layout state and scroll position in layout/page-level effects.
 - Avoid adding new `any` usage unless matching an existing generic boundary or interop limitation.

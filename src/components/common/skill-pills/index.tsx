@@ -12,6 +12,21 @@ interface SkillPillsProps {
   skills: Skill[];
 }
 
+interface SkillPillLabelProps {
+  skill: Skill;
+}
+
+const SkillPillLabel = ({ skill }: SkillPillLabelProps) => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <i className={skill.icon} aria-hidden="true" />
+      <span>{t(`skills.names.${skill.id}`)}</span>
+    </>
+  );
+};
+
 export const SkillPills = ({
   activeSkillIds = [],
   ariaLabel,
@@ -20,15 +35,6 @@ export const SkillPills = ({
   onToggle,
   skills,
 }: SkillPillsProps) => {
-  const { t } = useTranslation();
-
-  const renderContent = (skill: Skill) => (
-    <>
-      <i className={skill.icon} aria-hidden="true" />
-      <span>{t(`skills.names.${skill.id}`)}</span>
-    </>
-  );
-
   return (
     <ul aria-label={ariaLabel} className={`${styles.pills} ${className}`}>
       {skills.map((skill) => (
@@ -39,7 +45,7 @@ export const SkillPills = ({
               onClick={() => onToggle(skill.id)}
               type="button"
             >
-              {renderContent(skill)}
+              <SkillPillLabel skill={skill} />
             </button>
           ) : linkTo != null ? (
             <Link
@@ -49,10 +55,12 @@ export const SkillPills = ({
                   : `/skills?skill=${skill.id}`
               }
             >
-              {renderContent(skill)}
+              <SkillPillLabel skill={skill} />
             </Link>
           ) : (
-            <span>{renderContent(skill)}</span>
+            <span>
+              <SkillPillLabel skill={skill} />
+            </span>
           )}
         </li>
       ))}

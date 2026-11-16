@@ -2,8 +2,6 @@ import { ProjectStory } from "./types";
 
 export const projectStories: Record<string, ProjectStory> = {
   "1": {
-    bodyLayout: "cards",
-    heroLayout: "split",
     sections: [
       { id: "overview", type: "text" },
       {
@@ -15,8 +13,6 @@ export const projectStories: Record<string, ProjectStory> = {
     ],
   },
   "2": {
-    bodyLayout: "cards",
-    heroLayout: "split",
     sections: [
       { id: "overview", type: "text" },
       {
@@ -28,38 +24,24 @@ export const projectStories: Record<string, ProjectStory> = {
     ],
   },
   "3": {
-    bodyLayout: "concise",
-    heroLayout: "split",
     sections: [{ id: "overview", type: "text" }],
   },
   "4": {
-    bodyLayout: "concise",
-    heroLayout: "split",
     sections: [{ id: "overview", type: "text" }],
   },
   "5": {
-    bodyLayout: "concise",
-    heroLayout: "split",
     sections: [{ id: "overview", type: "text" }],
   },
   "6": {
-    bodyLayout: "concise",
-    heroLayout: "split",
     sections: [{ id: "overview", type: "text" }],
   },
   "7": {
-    bodyLayout: "concise",
-    heroLayout: "split",
     sections: [{ id: "overview", type: "text" }],
   },
   "8": {
-    bodyLayout: "concise",
-    heroLayout: "split",
     sections: [{ id: "overview", type: "text" }],
   },
   "9": {
-    bodyLayout: "cards",
-    heroLayout: "split",
     sections: [
       { id: "challenge", type: "challenge" },
       {
@@ -76,8 +58,6 @@ export const projectStories: Record<string, ProjectStory> = {
     ],
   },
   "10": {
-    bodyLayout: "timeline",
-    heroLayout: "stacked",
     sections: [
       { id: "challenge", type: "challenge" },
       {
@@ -101,8 +81,6 @@ export const projectStories: Record<string, ProjectStory> = {
     ],
   },
   "11": {
-    bodyLayout: "timeline",
-    heroLayout: "stacked",
     sections: [
       { id: "challenge", type: "challenge" },
       {
@@ -119,8 +97,6 @@ export const projectStories: Record<string, ProjectStory> = {
     ],
   },
   "12": {
-    bodyLayout: "cards",
-    heroLayout: "stacked",
     sections: [
       {
         id: "architecture",
@@ -136,8 +112,6 @@ export const projectStories: Record<string, ProjectStory> = {
     ],
   },
   "13": {
-    bodyLayout: "cards",
-    heroLayout: "stacked",
     sections: [
       { id: "challenge", type: "challenge" },
       {

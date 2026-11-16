@@ -10,8 +10,6 @@ export interface Project {
 }
 
 export interface ProjectStory {
-  bodyLayout: "cards" | "concise" | "timeline";
-  heroLayout: "split" | "stacked";
   sections: ProjectStorySection[];
 }
 

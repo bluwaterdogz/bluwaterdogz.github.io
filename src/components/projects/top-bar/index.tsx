@@ -6,6 +6,7 @@ import {
   ProjectCategory,
 } from "../../../service/project/selectors";
 import { CustomSelect } from "../../common/custom-select";
+import { SkillFilter } from "../skill-filter";
 
 interface TopBarProps {
   activeCategory: ProjectCategory;
@@ -14,9 +15,18 @@ interface TopBarProps {
   onEmployerChange: (employer: ProjectEmployer | "all") => void;
   onSearchChange: (value: string) => void;
   searchTerm: string;
+  activeSkills: string[];
+  clearSkills: () => void;
+  handleSkillChange: (skillId: string) => void;
 }
 
-const categories: ProjectCategory[] = ["all", "web", "mobile", "backend", "data"];
+const categories: ProjectCategory[] = [
+  "all", 
+  "web", 
+  // "mobile", 
+  "backend", 
+  "data"
+];
 export const TopBar = ({
   activeCategory,
   activeEmployer,
@@ -24,11 +34,14 @@ export const TopBar = ({
   onEmployerChange,
   onSearchChange,
   searchTerm,
+  activeSkills,
+  clearSkills,
+  handleSkillChange,
 }: TopBarProps) => {
   const { t } = useTranslation();
   return (
     <div className={styles.topBar}>
-      <label className={styles.search}>
+      <div className={styles.search}>
         <i className="fa fa-search" aria-hidden="true" />
         <span className={styles.srOnly}>{t("projects.search")}</span>
         <input
@@ -37,7 +50,7 @@ export const TopBar = ({
           type="search"
           value={searchTerm}
         />
-      </label>
+      </div>
       <div className={styles.categories} aria-label={t("projects.categories.label")}>
         {categories.map((category) => (
           <button
@@ -53,17 +66,25 @@ export const TopBar = ({
           </button>
         ))}
       </div>
-      <CustomSelect
-        label={t("projects.jobs.label")}
-        onChange={(value) =>
-          onEmployerChange(value as ProjectEmployer | "all")
-        }
-        options={projectEmployers.map((employer) => ({
-          label: t(`projects.jobs.${employer}`),
-          value: employer,
-        }))}
-        value={activeEmployer}
-      />
+      <div className={styles.filters}>
+        <CustomSelect
+          label={t("projects.jobs.label")}
+          onChange={(value) =>
+            onEmployerChange(value as ProjectEmployer | "all")
+          }
+          options={projectEmployers.map((employer) => ({
+            label: t(`projects.jobs.${employer}`),
+            value: employer,
+          }))}
+          value={activeEmployer}
+        />
+        <SkillFilter
+          activeSkillIds={activeSkills}
+          label={t("projects.skills.label")}
+          onClear={clearSkills}
+          onToggle={handleSkillChange}
+        />
+      </div>
     </div>
   );
 };

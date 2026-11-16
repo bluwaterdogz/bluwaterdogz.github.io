@@ -19,8 +19,6 @@
 }
 
 .controls {
-  background: color-mix(in srgb, #{$theme-surface-color} 94%, #{$primary-color});
-  border: 1px solid $theme-border-color;
   display: flex;
   flex-direction: column;
   gap: $space * 2;

@@ -103,14 +103,8 @@ const StorySection = ({ projectId, section }: StorySectionProps) => {
 };
 
 export const ProjectStory = ({ project }: ProjectStoryProps) => {
-  const layoutClass = {
-    cards: styles.layoutCards,
-    concise: styles.layoutConcise,
-    timeline: styles.layoutTimeline,
-  }[project.story.bodyLayout];
-
   return (
-    <div className={`${styles.story} ${layoutClass}`}>
+    <div className={styles.story}>
       {project.story.sections.map((section) => (
         <StorySection
           key={`${section.type}-${section.id}`}

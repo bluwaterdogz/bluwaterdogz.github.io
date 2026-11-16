@@ -139,12 +139,9 @@ export const ProjectList = () => {
             onEmployerChange={handleEmployerChange}
             onSearchChange={setSearchTerm}
             searchTerm={searchTerm}
-          />
-          <SkillFilter
-            activeSkillIds={activeSkills}
-            label={t("projects.skills.label")}
-            onClear={clearSkills}
-            onToggle={handleSkillChange}
+            activeSkills={activeSkills}
+            clearSkills={clearSkills}
+            handleSkillChange={handleSkillChange}
           />
         </div>
       </div>

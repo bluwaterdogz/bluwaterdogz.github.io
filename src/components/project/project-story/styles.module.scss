@@ -8,7 +8,7 @@ $timeline-rail-left: -$space * 3;
 
 .story {
   display: grid;
-  gap: clamp($space * 5, 7vw, $space * 8);
+  gap: clamp($space * 6, 7vw, $space * 8);
   min-width: 0;
   width: 100%;
 
@@ -20,7 +20,6 @@ $timeline-rail-left: -$space * 3;
 }
 
 .copySection {
-  max-width: $content-width-copy;
   min-width: 0;
 
   h2 {
@@ -41,28 +40,6 @@ $timeline-rail-left: -$space * 3;
   justify-self: stretch;
   max-width: none;
   width: 100%;
-}
-
-.layoutCards {
-  min-width: 0;
-}
-
-.layoutConcise {
-  gap: $space * 5;
-  max-width: $content-width-copy;
-}
-
-.layoutTimeline {
-  .timelineSection {
-    background: color-mix(in srgb, #{$primary-color} 4%, #{$theme-surface-color});
-    border-block: 1px solid $theme-border-color;
-    padding: $space * 5;
-  }
-
-  .architecture article {
-    border-inline: 0;
-    border-top: 2px solid color-mix(in srgb, #{$primary-color} 35%, transparent);
-  }
 }
 
 .architectureSection,
@@ -86,7 +63,6 @@ $timeline-rail-left: -$space * 3;
   align-self: center;
   min-height: $space * 18;
   min-width: 0;
-  padding: $space * 2 0;
 
   > p:first-child {
     @include eyebrow-text;
@@ -137,7 +113,6 @@ $timeline-rail-left: -$space * 3;
     padding: 0;
     text-align: left;
     transition: color $transition ease;
-    width: 100%;
 
     &:hover,
     &:focus-visible {
@@ -160,12 +135,6 @@ $timeline-rail-left: -$space * 3;
   button {
     color: $primary-color;
     font-weight: 700;
-  }
-
-  button::after {
-    color: $primary-color;
-    content: "›";
-    margin-left: auto;
   }
 
   .dot {
@@ -209,10 +178,6 @@ $timeline-rail-left: -$space * 3;
 }
 
 @media (max-width: $small-screen) {
-  .layoutTimeline .timelineSection {
-    padding: $space * 3;
-  }
-
   .timelineLayout {
     display: flex;
     flex-direction: column-reverse;
@@ -220,7 +185,7 @@ $timeline-rail-left: -$space * 3;
   }
 
   .timelineCopy {
-    min-height: $space * 16;
+    min-height: 200px;
   }
 
   .timeline {
@@ -251,10 +216,6 @@ $timeline-rail-left: -$space * 3;
 }
 
 @media (max-width: $mobile-screen) {
-  .layoutTimeline .timelineSection {
-    margin-inline: -$space * 2;
-    padding: $space * 3 $space * 2;
-  }
   .architecture {
     grid-template-columns: 1fr;
 

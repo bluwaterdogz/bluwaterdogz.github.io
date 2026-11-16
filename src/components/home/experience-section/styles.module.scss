@@ -8,10 +8,6 @@
 
 .content {
   @include section.content-grid;
-
-  & {
-    grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
-  }
 }
 
 .introduction {

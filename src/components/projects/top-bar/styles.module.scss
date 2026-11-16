@@ -3,13 +3,14 @@
 @use "../../../styles/typography" as *;
 
 .topBar {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: $space * 2;
-  grid-template-columns: minmax(0, 1fr) minmax($space * 20, 0.65fr);
 }
 
 .search {
   align-items: center;
+  width: 100%;
   border: 1px solid $theme-border-color;
   display: flex;
   gap: $space;
@@ -38,6 +39,11 @@
   }
 }
 
+.filters{
+  display: flex;
+  gap: $space;
+
+}
 .srOnly {
   height: 1px;
   margin: -1px;
@@ -48,12 +54,11 @@
 }
 
 .categories {
-  display: grid;
+  display: flex;
   gap: $space;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  grid-column: 1 / -1;
 
   button {
+    flex:1;
     @include button-text;
     background: transparent;
     border: 1px solid $theme-border-color;

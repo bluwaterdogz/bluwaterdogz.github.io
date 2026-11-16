@@ -1,6 +1,4 @@
 @use "../../../styles/variables" as *;
-@use "../../../styles/colors" as *;
-@use "../../../styles/typography" as *;
 
 .projectContent {
   min-width: 0;
@@ -8,26 +6,6 @@
 
 .container {
   min-width: 0;
-}
-
-.additionalSkills {
-  border-top: 1px solid $theme-border-color;
-  margin-top: $space * 8;
-  padding-top: $space * 3;
-
-  > p {
-    @include eyebrow-text;
-    color: $theme-subtext-color;
-    margin-bottom: $space * 2;
-  }
-}
-
-.skillList {
-  opacity: 0.82;
-
-  :is(a, button, li > span) {
-    padding: $space-sm $space;
-  }
 }
 
 .previews {

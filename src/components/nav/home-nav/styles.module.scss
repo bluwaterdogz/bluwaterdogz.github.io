@@ -1,29 +1,21 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/colors" as *;
-@use "../../../styles/type" as *;
-@keyframes fadeInUp {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
-
+@use "../../../styles/typography" as *;
 .homeNav {
   align-items: flex-end;
   bottom: auto;
   display: flex;
   flex-direction: column;
   height: auto;
-  padding: 0;
+  backdrop-filter: blur($blur);
+  background: color-mix(in srgb, #{$theme-surface-color} 78%, transparent);
+  border: 1px solid $theme-border-color;
+  padding: $space $space * 2;
   position: fixed;
-  right: $section-nav-offset;
+  right: $space * 3;
   text-align: right;
   top: 50%;
-  transform: translateY(-20%);
+  transform: translateY(-50%);
   z-index: 3;
 
   .navChildren {
@@ -71,22 +63,14 @@
     }
   }
 
+  -webkit-backdrop-filter: blur($blur);
+
   &:has(a:hover, a:focus-visible) a[aria-current="page"]:not(:hover, :focus-visible) {
     color: $theme-text-color !important;
 
     &::before {
       opacity: 0;
       transform: translateY(-50%) scaleX(0);
-    }
-  }
-  @for $i from 1 through 10 {
-    a {
-      &:nth-child(#{$i}) {
-        opacity: 0;
-        animation: 1.5s fadeInUp;
-        animation-delay: #{$i * 0.2}s;
-        animation-fill-mode: forwards;
-      }
     }
   }
 }

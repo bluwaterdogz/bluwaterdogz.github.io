@@ -3,8 +3,8 @@
 
 .header {
   display: grid;
-  gap: clamp($space * 5, 8vw, $space * 12);
-  grid-template-columns: minmax(0, 1fr) minmax($space * 38, 0.9fr);
+  gap: clamp($space * 5, 7vw, $space * 8);
+  grid-template-columns: minmax(0, 0.9fr) minmax($space * 42, 1.1fr);
 }
 
 .introduction {
@@ -19,10 +19,13 @@
 }
 
 .controls {
+  background: color-mix(in srgb, #{$theme-surface-color} 94%, #{$primary-color});
+  border: 1px solid $theme-border-color;
   display: flex;
   flex-direction: column;
   gap: $space * 2;
   min-width: 0;
+  padding: $space * 3;
   position: relative;
   z-index: 110;
 }
@@ -64,6 +67,10 @@
 
   .projectList {
     grid-template-columns: 1fr;
+  }
+
+  .controls {
+    padding: $space * 2;
   }
 
 }

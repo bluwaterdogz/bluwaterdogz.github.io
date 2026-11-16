@@ -2,10 +2,26 @@
 @use "typography" as *;
 
 body {
+  font-family: helvetica;
   margin: 0;
   overflow: auto;
-  font-family: helvetica;
 }
 * {
   box-sizing: border-box;
+}
+
+:focus-visible {
+  outline: 2px solid var(--highlight);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
 }

@@ -4,12 +4,16 @@ import { useEffect, RefObject } from "react";
  * https://stackoverflow.com/questions/32553158/detect-click-outside-react-component
  */
 export function useOutsideClick(
-  ref: RefObject<any>,
-  callback: (...args: any) => void
+  ref: RefObject<HTMLElement | null>,
+  callback: (event: MouseEvent) => void
 ) {
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (ref.current && !ref.current.contains(event.target)) {
+      if (
+        ref.current != null &&
+        event.target instanceof Node &&
+        !ref.current.contains(event.target)
+      ) {
         callback(event);
       }
     }
@@ -19,5 +23,5 @@ export function useOutsideClick(
       // Unbind the event listener on clean up
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [ref]);
+  }, [callback, ref]);
 }

@@ -1,6 +1,6 @@
 @use "../../../styles/home-sections" as section;
 @use "../../../styles/variables" as *;
-@use "../../../styles/type" as *;
+@use "../../../styles/typography" as *;
 
 .experienceSection {
   @include section.shell;
@@ -8,6 +8,10 @@
 
 .content {
   @include section.content-grid;
+
+  & {
+    grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+  }
 }
 
 .introduction {

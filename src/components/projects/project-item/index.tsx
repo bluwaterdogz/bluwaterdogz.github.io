@@ -1,12 +1,12 @@
 import { useTranslation } from "react-i18next";
-import { Project } from "../../../service/project/types";
+import { LocalizedProject } from "../../../service/project/types";
 import { getSkillsForProject } from "../../../service/project/selectors";
 import styles from "./styles.module.scss";
 import { Link } from "react-router-dom";
 import { SkillPills } from "../../common/skill-pills";
 
 interface ProjectItemProps {
-  project: Project;
+  project: LocalizedProject;
 }
 
 export const ProjectItem = ({ project }: ProjectItemProps) => {

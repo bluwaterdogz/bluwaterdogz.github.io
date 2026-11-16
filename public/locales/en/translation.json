@@ -1,4 +1,10 @@
 {
+  "common": {
+    "noneFound": "None found"
+  },
+  "placeholder": {
+    "comingSoon": "Coming Soon..."
+  },
   "home": {
     "header": "<span>Hello<br /> I'm Brian Velasquez,<br /><em>Senior Software <br />Engineer.</em></span>",
     "heroEyebrow": "Senior software engineer",
@@ -36,6 +42,8 @@
     "experience": {
       "eyebrow": "02 Experienced",
       "title": "Experienced",
+      "summary": "I build and improve production software across product interfaces, APIs, data systems, search, and cloud infrastructure. My recent work at Mobian connected those layers across audience-intelligence and advertising workflows.",
+      "scope": "Earlier roles included clinical-study tools at Faro Health and frontend modernization for Cams at Various Inc. The timeline highlights how that work has evolved across products, teams, and technical boundaries.",
       "copy1": "Most recently, I worked as a Senior Software Engineer at Mobian, building search, analytics, reporting, data-processing, and reliability features for an audience-intelligence and advertising platform.",
       "copy2": "I built and refined search, filtering, pagination, autocomplete, CSV exports, statistics, cache behavior, ingestion tooling, and reporting workflows across Next.js, React, TypeScript, FastAPI, PostgreSQL, OpenSearch, Snowflake, Dagster, Redis, and AWS.",
       "copy3": "The work regularly crossed frontend, backend, ETL, search, and infrastructure boundaries. I also handled production fixes, test coverage, release coordination, brand reconciliation, and integrations across the frontend, Persona API, Content API, Video Brand Safety, ETL, and end-to-end testing repositories.",
@@ -116,19 +124,19 @@
     "interests": {
       "climbing": {
         "title": "Climbing",
-        "description": "I love the challenge and focus that climbing brings. It keeps me grounded and always learning."
+        "description": "Challenge, focus, and a constant reason to keep learning."
       },
       "chess": {
         "title": "Chess",
-        "description": "I love how chess slows me down, draws me into the moment, and gives me an endless world of ideas to explore."
+        "description": "A slower rhythm and an endless space for ideas."
       },
       "dirtbike": {
         "title": "Dirtbike",
-        "description": "I love the freedom of finding new trails, being outdoors, and completely disconnecting from the everyday."
+        "description": "Freedom, new trails, and time completely outdoors."
       },
       "muayThai": {
         "title": "Muay Thai",
-        "description": "I am passionate about the focus and energy of training, and the confidence and clarity it brings to my life."
+        "description": "Focused training that brings energy, clarity, and confidence."
       }
     },
     "quote": "I believe in writing code that's clean, maintainable, and built to last. I care about thoughtful user experiences and products that make a real impact.",
@@ -172,6 +180,49 @@
     "next": "Next skill type",
     "projectsLink": "View projects",
     "projectsMenu": "Projects",
+    "names": {
+      "1": "Python",
+      "2": "JavaScript",
+      "3": "TypeScript",
+      "4": "Node.js",
+      "5": "PostgreSQL",
+      "6": "PHP",
+      "7": "HTML5",
+      "8": "CSS/SCSS",
+      "9": "React",
+      "10": "Angular",
+      "11": "Express",
+      "12": "Flask",
+      "13": "RxJS",
+      "14": "Vue",
+      "15": "Storybook",
+      "16": "Vite",
+      "17": "Git",
+      "18": "Webpack",
+      "19": "Azure",
+      "20": "GitHub Actions",
+      "21": "Photoshop",
+      "22": "Bootstrap",
+      "23": "Figma",
+      "24": "Next.js",
+      "25": "Material UI",
+      "26": "FastAPI",
+      "27": "OpenSearch",
+      "28": "Redis",
+      "29": "AWS",
+      "30": "Snowflake",
+      "31": "Dagster",
+      "32": "Docker",
+      "33": "Jest",
+      "34": "Playwright",
+      "35": "Terraform",
+      "36": "Cypress",
+      "37": "CloudWatch",
+      "38": "AI-Assisted Development",
+      "39": "GitHub Copilot",
+      "40": "ChatGPT",
+      "41": "Claude Code"
+    },
     "groups": {
       "Languages": "Languages",
       "BackendData": "Backend & Data",
@@ -234,7 +285,8 @@
     "viewProject": "View {{name}}",
     "detail": {
       "eyebrow": "Project",
-      "back": "All projects"
+      "back": "All projects",
+      "additionalTechnologies": "Additional technologies"
     },
     "categories": {
       "label": "Project categories",
@@ -268,19 +320,290 @@
     "projects": "Projects",
     "microapps": "Microapps",
     "about": "About",
-    "jobs": "Jobs"
-  },
-  "jobs": {
-    "content": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": ""
-    }
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "data": {
     "projects": {
+      "name": {
+        "1": "Faro Study Designer",
+        "2": "Various Inc Viewer",
+        "3": "San Anselmo City Plan Website",
+        "4": "Launch Brigade Website",
+        "5": "Faro Data Analytics Dashboard POC",
+        "6": "Faro B2C SSO Implementation",
+        "7": "LotLinx Website",
+        "8": "Metafold 3D MVP",
+        "9": "Persona & Channel Intelligence",
+        "10": "Context Ingestion & Brand-Safety Tooling",
+        "11": "Advertising Operations & Reporting Integrations",
+        "12": "Platform Engineering, Testing & Product Infrastructure",
+        "13": "Frontend UI & Design System"
+      },
+      "stories": {
+        "1": {
+          "kicker": "Clinical-study product engineering",
+          "summary": "Product features, service integrations, testing, and delivery improvements for a clinical-study design platform.",
+          "sections": {
+            "overview": {
+              "title": "Clinical-study design platform",
+              "content": "I contributed to Faro Study Designer, a healthcare product used to plan, document, and evaluate clinical protocols. My work focused on shipping maintainable product features across TypeScript, React, service integrations, PostgreSQL-backed workflows, automated tests, and deployment pipelines."
+            },
+            "contributions": {
+              "title": "Contribution and outcomes",
+              "nodes": {
+                "features": { "label": "Product features", "detail": "Built frontend and backend feature slices for study-design workflows" },
+                "integrations": { "label": "Service integration", "detail": "Integrated UI modules with REST and CQRS-style service boundaries" },
+                "testing": { "label": "Reliability", "detail": "Improved reliability with unit and integration tests" },
+                "delivery": { "label": "Delivery", "detail": "Supported delivery through GitHub Actions and repeatable release practices" }
+              }
+            },
+            "outcome": {
+              "content": "The result was clearer product behavior, stronger test coverage, and a more maintainable path for evolving clinical-study features."
+            }
+          }
+        },
+        "2": {
+          "kicker": "Modernizing a real-time product",
+          "summary": "Frontend modernization for live discovery, video, chat, and interactive session workflows.",
+          "sections": {
+            "overview": {
+              "title": "Cams real-time product modernization",
+              "content": "I led frontend modernization work for Cams, a mature high-traffic platform with live discovery, video, chat, public rooms, and private interactive sessions. The work required preserving active product behavior while moving legacy JavaScript and Perl-backed experiences toward a scalable React, TypeScript, Next.js, WebSocket, and Python architecture."
+            },
+            "contributions": {
+              "title": "Contribution and outcomes",
+              "nodes": {
+                "leadership": { "label": "Team leadership", "detail": "Coordinated an international frontend team across product, design, and engineering priorities" },
+                "discovery": { "label": "Product workflows", "detail": "Improved discovery, presence, chat, and session-state interfaces" },
+                "realtime": { "label": "Real-time behavior", "detail": "Supported real-time UI updates without disrupting long-running media experiences" },
+                "modernization": { "label": "Modernization", "detail": "Moved product surfaces into a more maintainable frontend stack" }
+              }
+            },
+            "outcome": {
+              "content": "The outcome was a clearer and more dependable foundation for real-time interaction-heavy workflows on an established production platform."
+            }
+          }
+        },
+        "3": {
+          "kicker": "Public-information and survey experience",
+          "summary": "A civic website helping residents understand proposed planning changes and participate in the process.",
+          "sections": {
+            "overview": {
+              "title": "San Anselmo city planning website",
+              "content": "A WordPress website for the 2025 San Anselmo General Plan Update that provides residents with information on proposed changes to the town's infrastructure, zoning, and public spaces. It includes project updates, sustainability initiatives, transportation improvements, and public surveys for community feedback."
+            }
+          }
+        },
+        "4": {
+          "kicker": "Responsive agency website delivery",
+          "summary": "A maintainable marketing site for a San Francisco Bay Area design and development agency.",
+          "sections": {
+            "overview": {
+              "title": "Launch Brigade website",
+              "content": "Launch Brigade is a web design and development agency based in the San Francisco Bay Area. I contributed to a responsive digital presence focused on clear content structure, maintainable presentation, and communicating the agency's work."
+            }
+          }
+        },
+        "5": {
+          "kicker": "Exploring clinical-study analytics",
+          "summary": "A proof of concept that transformed study-design data into flexible reporting views.",
+          "sections": {
+            "overview": {
+              "title": "Data analytics dashboard proof of concept",
+              "content": "The Data Analytics Dashboard was a Pandas-based proof of concept that used Study Designer data stored in a star schema to create an analytics microservice and frontend. It allowed users to explore study data across the dimensions most relevant to their work."
+            }
+          }
+        },
+        "6": {
+          "kicker": "Organization-specific authentication",
+          "summary": "Identity-provider-agnostic SSO for organizations using their own authentication services.",
+          "sections": {
+            "overview": {
+              "title": "Faro B2C SSO implementation",
+              "content": "An identity-provider-agnostic single sign-on implementation for Study Designer. It allowed organizations to use their own SAML and OAuth identity providers to issue tokens for interacting with the application API."
+            }
+          }
+        },
+        "7": {
+          "kicker": "Automotive inventory product marketing",
+          "summary": "A product website explaining how data and machine learning support dealership inventory decisions.",
+          "sections": {
+            "overview": {
+              "title": "LotLinx website",
+              "content": "LotLinx is an AI-driven automotive inventory management platform that uses machine learning and data analytics to help dealerships optimize inventory turnover and profitability. The site communicates real-time insights into market demand, pricing strategies, and consumer behavior."
+            }
+          }
+        },
+        "8": {
+          "kicker": "Complex geometry in the browser",
+          "summary": "Frontend prototype work for a cloud platform focused on intricate additive-manufacturing models.",
+          "sections": {
+            "overview": {
+              "title": "Metafold 3D MVP",
+              "content": "Metafold 3D is a cloud platform for designing and engineering complex models optimized for additive manufacturing. I contributed frontend prototype work for visualizing and working with intricate geometries such as lightweight lattice structures."
+            }
+          }
+        },
+        "9": {
+          "kicker": "Making audience intelligence searchable",
+          "summary": "A connected search experience spanning interactive interfaces, APIs, indexes, caches, and exports.",
+          "sections": {
+            "challenge": {
+              "eyebrow": "The challenge",
+              "title": "Complex audience data needed to feel immediate",
+              "content": "Advertisers needed to discover, analyze, and act on dense audience and channel data without understanding the systems behind it. Search behavior had to remain consistent across filtering, pagination, historical reporting, and exports."
+            },
+            "architecture": {
+              "title": "One search contract across the stack",
+              "nodes": {
+                "interface": { "label": "React + Next.js", "detail": "Autocomplete, infinite scroll, date filters" },
+                "api": { "label": "FastAPI", "detail": "Pagination and query contracts" },
+                "search": { "label": "PostgreSQL + OpenSearch", "detail": "Historical data and indexed discovery" },
+                "exports": { "label": "Redis + streaming exports", "detail": "Fast reads and filter-aware CSV output" }
+              }
+            },
+            "progression": {
+              "title": "Engineering progression",
+              "steps": {
+                "discover": { "label": "Discover", "title": "Define the audience workflow", "content": "I translated advertiser discovery needs into consistent requirements for search, filtering, pagination, historical reporting, and exports." },
+                "connect": { "label": "Connect", "title": "Join APIs, indexes, and data stores", "content": "I coordinated FastAPI services, PostgreSQL queries, OpenSearch indexes, and Redis caching behind a shared search contract." },
+                "interact": { "label": "Interact", "title": "Make discovery feel immediate", "content": "I built server-side autocomplete, infinite scrolling, date filtering, channel statistics, and responsive result states in React and Next.js." },
+                "export": { "label": "Export", "title": "Carry user context into exports", "content": "Streaming CSV exports preserved the active search and filter parameters instead of becoming a disconnected workflow." },
+                "validate": { "label": "Validate", "title": "Test the full experience", "content": "I verified behavior across the interface, API boundaries, search infrastructure, and data services so each path produced consistent results." }
+              }
+            },
+            "outcome": {
+              "content": "The result connected discovery, analysis, and export into one coherent experience, with the same active search context preserved from the interface through backend processing."
+            }
+          }
+        },
+        "10": {
+          "kicker": "Keeping high-volume contextual data reliable",
+          "summary": "A recovery-aware ingestion system for normalizing, classifying, and diagnosing contextual data at production scale.",
+          "sections": {
+            "challenge": {
+              "eyebrow": "The reliability problem",
+              "title": "Messy URLs become expensive at scale",
+              "content": "Duplicate URLs, incomplete metadata, asynchronous jobs, and inconsistent classifications compound quickly. The work focused on making every stage observable and recoverable rather than treating ingestion as a single request."
+            },
+            "pipeline": {
+              "title": "The context pipeline",
+              "steps": {
+                "ingest": { "label": "Ingest", "title": "Receive contextual inputs", "content": "I developed tooling that accepted webpage, video, and channel inputs across asynchronous processing paths." },
+                "normalize": { "label": "Normalize", "title": "Create stable URL identities", "content": "URL parsing, normalization, aliases, and fallbacks turned inconsistent inputs into comparable records." },
+                "dedupe": { "label": "Dedupe", "title": "Reconcile repeated work", "content": "Deduplication and alias reconciliation reduced redundant processing while preserving the correct canonical relationships." },
+                "classify": { "label": "Classify", "title": "Apply consistent context", "content": "Batch processing and downstream integrations carried normalized metadata into classification workflows." },
+                "persist": { "label": "Persist", "title": "Save durable metadata", "content": "I improved metadata persistence and checkpoints so completed work could be reused across services." },
+                "recover": { "label": "Recover", "title": "Make failures diagnosable", "content": "Retry behavior, checkpoints, and CloudWatch diagnostics made serverless failures easier to resume and investigate." }
+              }
+            },
+            "architecture": {
+              "title": "Reliability built into every handoff",
+              "nodes": {
+                "urls": { "label": "URL intelligence", "detail": "Normalization, aliases, parsing, fallbacks" },
+                "services": { "label": "Python services", "detail": "Batch processing and metadata persistence" },
+                "serverless": { "label": "AWS serverless", "detail": "Lambda and SQS orchestration" },
+                "diagnostics": { "label": "CloudWatch diagnostics", "detail": "Checkpoints, retries, and failure investigation" }
+              }
+            },
+            "outcome": {
+              "content": "The tooling made high-volume processing easier to resume, diagnose, and reconcile across multiple Python services, serverless functions, storage systems, and downstream consumers."
+            }
+          }
+        },
+        "11": {
+          "kicker": "Connecting fragmented advertising data",
+          "summary": "Entity reconciliation and reporting workflows that made different ad platforms behave like one product.",
+          "sections": {
+            "challenge": {
+              "eyebrow": "The integration gap",
+              "title": "Different platforms described the same business differently",
+              "content": "FreeWheel and Google Ad Manager used different identifiers, reporting structures, and naming conventions. Users still needed one predictable way to find advertisers, distinguish duplicates, map placements, and retrieve reporting data."
+            },
+            "architecture": {
+              "title": "Reconcile before presenting",
+              "nodes": {
+                "platforms": { "label": "External platforms", "detail": "FreeWheel and Google Ad Manager" },
+                "resolution": { "label": "Entity resolution", "detail": "Source-qualified selections and duplicate disambiguation" },
+                "pipelines": { "label": "Data pipelines", "detail": "Snowflake, Dagster, PostgreSQL, and reporting caches" },
+                "workflows": { "label": "Product workflows", "detail": "Search, galleries, mappings, and CSV exports" }
+              }
+            },
+            "progression": {
+              "title": "Integration progression",
+              "steps": {
+                "connect": { "label": "Connect", "title": "Integrate external ad systems", "content": "I built advertiser and reporting-entity search across FreeWheel and Google Ad Manager data." },
+                "reconcile": { "label": "Reconcile", "title": "Resolve entity differences", "content": "Source-qualified selections and duplicate-name disambiguation preserved identity across platforms." },
+                "sync": { "label": "Sync", "title": "Coordinate reporting data", "content": "I improved reporting caches and the transformations connecting Snowflake, Dagster, and PostgreSQL workflows." },
+                "present": { "label": "Present", "title": "Build predictable product workflows", "content": "Search, galleries, mappings, and exports gave users one consistent surface over fragmented sources." }
+              }
+            },
+            "outcome": {
+              "content": "The resulting tools made advertising entities easier to navigate and targeting information easier to select while keeping source identity and reporting relationships explicit."
+            }
+          }
+        },
+        "12": {
+          "kicker": "Making a multi-service platform more reliable",
+          "summary": "Cross-repository infrastructure, testing, observability, and release work for a production advertising platform.",
+          "sections": {
+            "architecture": {
+              "title": "Reliability across service boundaries",
+              "nodes": {
+                "frontend": { "label": "Frontend", "detail": "Authenticated Cypress and initial Playwright coverage" },
+                "apis": { "label": "Application APIs", "detail": "Authentication, contracts, and configuration fixes" },
+                "pipelines": { "label": "ETL + Persona", "detail": "Reporting-cache synchronization and Python pipelines" },
+                "infrastructure": { "label": "AWS infrastructure", "detail": "Scheduled Lambda jobs, ingestion, and CloudWatch diagnostics" }
+              }
+            },
+            "progression": {
+              "title": "Operational progression",
+              "steps": {
+                "identify": { "label": "Identify", "title": "Trace issues across services", "content": "I investigated failures across frontend, APIs, ETL, Persona, and AWS infrastructure rather than treating symptoms in isolation." },
+                "improve": { "label": "Improve", "title": "Strengthen tests and infrastructure", "content": "Authenticated Cypress coverage, initial Playwright tests, scheduled Lambda jobs, and configuration fixes reduced release risk." },
+                "release": { "label": "Release", "title": "Coordinate cross-repository delivery", "content": "I aligned dependent changes and framework security updates across repositories and service boundaries." },
+                "monitor": { "label": "Monitor", "title": "Close the production feedback loop", "content": "CloudWatch diagnostics and release follow-through made operational behavior visible after deployment." }
+              }
+            },
+            "outcome": {
+              "content": "The work connected test coverage, serverless processing, framework security, service configuration, ETL synchronization, and coordinated releases across frontend and backend systems."
+            }
+          }
+        },
+        "13": {
+          "kicker": "Building consistent interfaces across a complex product",
+          "summary": "Reusable components and semantic design foundations that connected complex backend behavior to clear product interactions.",
+          "sections": {
+            "challenge": {
+              "eyebrow": "The product challenge",
+              "title": "A growing analytics product needed a shared interface language",
+              "content": "Dashboards, tables, galleries, and search tools were evolving alongside new datasets and workflows. The interface needed reusable patterns that could absorb that complexity without making every feature feel different."
+            },
+            "architecture": {
+              "title": "A system of reusable decisions",
+              "nodes": {
+                "tokens": { "label": "Semantic tokens", "detail": "Shared visual language and Material UI variants" },
+                "patterns": { "label": "Interaction patterns", "detail": "Autocomplete, filters, pagination, and loading states" },
+                "integration": { "label": "Data integration", "detail": "Frontend API behavior translated into clear state" },
+                "coverage": { "label": "Regression coverage", "detail": "Jest, Cypress, and Playwright validation" }
+              }
+            },
+            "progression": {
+              "title": "Design-system progression",
+              "steps": {
+                "audit": { "label": "Audit", "title": "Find repeated UX problems", "content": "I identified inconsistencies across dashboards, tables, galleries, search, filters, and loading states." },
+                "systemize": { "label": "Systemize", "title": "Build reusable interface patterns", "content": "Semantic tokens, Material UI variants, and shared React components replaced one-off decisions." },
+                "integrate": { "label": "Integrate", "title": "Connect patterns to real data", "content": "The components translated complex API behavior, pagination, autocomplete, and exports into clear state." },
+                "validate": { "label": "Validate", "title": "Protect the product workflows", "content": "Jest, Cypress, and Playwright coverage verified authenticated paths and reduced regressions." }
+              }
+            },
+            "outcome": {
+              "content": "Reusable React components and shared patterns reduced one-off interface decisions while making complex search, export, and reporting workflows easier to understand and test."
+            }
+          }
+        }
+      },
       "description": {
         "1": "Clinical-study design features, collaboration workflows, service integrations, and delivery improvements for a healthcare product",
         "2": "Frontend modernization and real-time product work for Cams video, chat, discovery, and session workflows",
@@ -295,30 +618,6 @@
         "11": "Reporting, entity search, campaign-control, and export workflows that connected advertising operations data",
         "12": "Testing, infrastructure, observability, security, and release improvements that reduced platform risk",
         "13": "Reusable UI, design-system, search, filtering, dashboard, and interaction improvements across an audience-intelligence platform"
-      },
-      "content": {
-        "1": "<div><h3>Clinical-study design platform</h3><p>I contributed to Faro Study Designer, a healthcare product used to plan, document, and evaluate clinical protocols. My work focused on shipping maintainable product features across TypeScript, React, service integrations, PostgreSQL-backed workflows, automated tests, and deployment pipelines.</p><h3>Contribution and outcomes</h3><ul><li>Built frontend and backend feature slices for study-design workflows</li><li>Integrated UI modules with REST and CQRS-style service boundaries</li><li>Improved reliability with unit and integration tests</li><li>Supported delivery through GitHub Actions and repeatable release practices</li></ul><p>The result was clearer product behavior, stronger test coverage, and a more maintainable path for evolving clinical-study features.</p></div>",
-        "2": "<div><h3>Cams real-time product modernization</h3><p>I led frontend modernization work for Cams, a mature high-traffic platform with live discovery, video, chat, public rooms, and private interactive sessions. The work required preserving active product behavior while moving legacy JavaScript and Perl-backed experiences toward a scalable React, TypeScript, Next.js, WebSocket, and Python architecture.</p><h3>Contribution and outcomes</h3><ul><li>Coordinated an international frontend team across product, design, and engineering priorities</li><li>Improved discovery, presence, chat, and session-state interfaces</li><li>Supported real-time UI updates without disrupting long-running media experiences</li><li>Helped reduce legacy complexity by moving product surfaces into a more maintainable frontend stack</li></ul><p>The outcome was a clearer and more dependable foundation for real-time interaction-heavy workflows on an established production platform.</p></div>",
-        "3": "<p>A wordpress website for the The 2025 San Anselmo General Plan Update which provides residents with comprehensive information on proposed changes to the town's infrastructure, zoning, and public spaces. It features detailed project updates, sustainability initiatives, and transportation improvements. The site also includes interactive public surveys, allowing community members to provide feedback and participate in the decision-making process.</p>",
-        "4": "<p>Launch Brigade is a web design and development agency based in the San Francisco Bay Area, specializing in creating digital experiences that elevate brands and drive business growth. Their website, launchbrigade.com, reflects their commitment to delivering comprehensive digital solutions.</p>",
-        "5": "<p>The Data Analytics Dashboard was a proof of concept application built in Pandas which utilized Study Design data stored in a star schema to create a data analytics microservice and frontend. This app allowed users to slice and dice their study data according to whatever data dimensions they chose.</p>",
-        "6": "<p>An IDP agnostic Single Sign On implementation for the study designer application. Built to allow interchangeable organizations to use their own SAML and Oauth identity provider services to provide tokens for interacting with our api.<p>",
-        "7": "<p>Lotlinx is an AI-driven automotive inventory management platform that leverages machine learning and extensive data analytics to help dealerships optimize inventory turnover and profitability. By providing real-time insights into market demand, pricing strategies, and consumer behavior, Lotlinx enables use car dealers to make data-driven decisions, reduce holding costs, and enhance overall operational efficiency.</p>",
-        "8": "<p>​Metafold 3D is a cloud-based platform that enables the design and engineering of highly complex 3D models, specifically optimized for additive manufacturing. Founded in 2020 by experts in mathematics, geometry, and architecture, Metafold addresses the challenges traditional CAD tools face when handling intricate geometries, such as lattice structures, which are essential for lightweight and efficient designs​Metafold 3D is a cloud-based platform that enables the design and engineering of highly complex 3D models, specifically optimized for additive manufacturing. Metafold addresses the challenges traditional CAD tools face when handling merging intricate geometries, such as lattice structures.</p>",
-        "9": "<div><h3>Persona & Channel Intelligence</h3><p>At Mobian, I built search, filtering, analytics, and export features for an audience-intelligence platform used to discover personas, evaluate content channels, and review performance data.</p><h3>Contribution and outcomes</h3><ul><li>Implemented persona and channel search with server-side autocomplete, pagination, and infinite scrolling</li><li>Added date-range filtering, channel statistics, history views, and reliable loading states</li><li>Built frontend proxy routes, search limits, logging, and streamed CSV exports that preserved active filters</li><li>Traced behavior across React, Next.js, FastAPI, PostgreSQL, OpenSearch, Redis, caches, and scheduled processing</li></ul><p>These changes made discovery and export workflows faster, more reliable, and easier to operate across large search and aggregation workloads.</p></div>",
-        "10": "<div><h3>Context Ingestion & Brand-Safety Tooling</h3><p>I built data-processing and reliability improvements for contextual-intelligence and brand-safety systems handling webpage, URL, video, channel, and classification metadata.</p><h3>Contribution and outcomes</h3><ul><li>Added full-context schema fields and metadata persistence</li><li>Built bounded cleanup, URL-prefix, alias, and batch-processing tools</li><li>Improved checkpoint and retry behavior while preserving promoted aliases</li><li>Strengthened channel discovery with URL parsing, ID scanning, HTML fallback, caching, and pruning</li><li>Added structured AWS diagnostics for lookup and processing failures</li></ul><p>The work improved data quality, recovery paths, and operational visibility across high-throughput metadata pipelines.</p></div>",
-        "11": "<div><h3>Advertising Operations & Reporting Integrations</h3><p>I connected advertiser, audience-segment, targeting, reporting, and export workflows across Mobian's advertising analytics systems.</p><h3>Contribution and outcomes</h3><ul><li>Added advertiser and reporting-entity support across multiple advertising platforms</li><li>Improved server-side search, sorting, duplicate-name disambiguation, and source-qualified labels</li><li>Built placement-to-line-item mapping and reporting-cache improvements</li><li>Delivered segment and advertiser-gallery CSV exports that preserved active filters and pagination</li><li>Fixed frontend behavior across advertiser, campaign-control, and segment workflows</li></ul><p>These changes made reporting data easier to find, export, reconcile, and use across operational workflows.</p></div>",
-        "12": "<div><h3>Platform Engineering, Testing & Product Infrastructure</h3><p>I worked on cross-cutting reliability and delivery improvements spanning product areas, services, cloud infrastructure, and developer workflows.</p><h3>Contribution and outcomes</h3><ul><li>Created semantic design tokens, Material UI variants, palette bridging, and migration examples</li><li>Modernized Cypress configuration, authenticated smoke tests, Playwright coverage, and reusable fixtures</li><li>Improved scheduled serverless jobs, cloud diagnostics, observability, containers, and infrastructure configuration</li><li>Supported framework security updates, authentication handling, release coordination, and technical documentation</li></ul><p>The result was safer delivery, stronger test coverage, clearer UI foundations, and lower operational risk across frontend, backend, ETL, search, and deployment systems.</p></div>",
-        "13": "<div><h3>Frontend UI & Design System</h3><p>I built and refined reusable frontend experiences across Mobian's audience-intelligence and advertising analytics platform, focusing on clarity, consistency, responsiveness, and reliable interaction behavior.</p><h3>Contribution and outcomes</h3><ul><li>Improved search, autocomplete, filtering, pagination, infinite scrolling, loading states, and empty-state behavior</li><li>Built reusable Material UI components, semantic design tokens, palette bridging, variants, and migration patterns</li><li>Delivered responsive dashboard, gallery, table, drawer, dropdown, and export interfaces</li><li>Improved frontend API proxying, URL-state synchronization, query handling, and error states</li><li>Added coverage with Jest, Cypress, Playwright, authenticated fixtures, and smoke tests</li></ul><p>These changes made complex data workflows easier to scan, operate, test, and maintain across the full product experience.</p></div>"
-      }
-    },
-    "jobs": {
-      "title": {
-        "1": "Senior Software Engineer",
-        "2": "Senior Lead Front-end Developer",
-        "3": "Front-end Developer",
-        "4": "Front-end Developer Intern",
-        "5": "Designer Intern"
       }
     }
   }

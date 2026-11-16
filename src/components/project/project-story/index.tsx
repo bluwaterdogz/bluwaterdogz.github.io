@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Project, ProjectStorySection } from "../../../service/project/types";
 import { Statement } from "../../common/statement";
 import styles from "./styles.module.scss";
@@ -7,25 +8,47 @@ interface ProjectStoryProps {
   project: Project;
 }
 
+interface StorySectionProps {
+  projectId: string;
+  section: ProjectStorySection;
+}
+
 type TimelineSection = Extract<ProjectStorySection, { type: "timeline" }>;
 
-const InteractiveTimeline = ({ section }: { section: TimelineSection }) => {
+const InteractiveTimeline = ({
+  projectId,
+  section,
+}: {
+  projectId: string;
+  section: TimelineSection;
+}) => {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
+  const sectionKey = `data.projects.stories.${projectId}.sections.${section.id}`;
+  const activeStepKey = `${sectionKey}.steps.${section.steps[activeIndex]}`;
+
   return (
     <section className={styles.timelineSection}>
-      <h2>{section.title}</h2>
+      <h2>{t(`${sectionKey}.title`)}</h2>
       <div className={styles.timelineLayout}>
         <div className={styles.timelineCopy} aria-live="polite">
-          <p>{section.steps[activeIndex].label}</p>
-          <h3>{section.steps[activeIndex].title}</h3>
-          <p>{section.steps[activeIndex].content}</p>
+          <p>{t(`${activeStepKey}.label`)}</p>
+          <h3>{t(`${activeStepKey}.title`)}</h3>
+          <p>{t(`${activeStepKey}.content`)}</p>
         </div>
         <ol className={styles.timeline}>
-          {section.steps.map((step, index) => (
-            <li className={index === activeIndex ? styles.activeStep : undefined} key={step.label}>
-              <button onClick={() => setActiveIndex(index)} type="button">
+          {section.steps.map((stepId, index) => (
+            <li
+              className={index === activeIndex ? styles.activeStep : undefined}
+              key={stepId}
+            >
+              <button
+                aria-current={index === activeIndex ? "step" : undefined}
+                onClick={() => setActiveIndex(index)}
+                type="button"
+              >
                 <span className={styles.dot} aria-hidden="true" />
-                <span>{step.label}</span>
+                <span>{t(`${sectionKey}.steps.${stepId}.label`)}</span>
               </button>
             </li>
           ))}
@@ -35,21 +58,24 @@ const InteractiveTimeline = ({ section }: { section: TimelineSection }) => {
   );
 };
 
-const StorySection = ({ section }: { section: ProjectStorySection }) => {
+const StorySection = ({ projectId, section }: StorySectionProps) => {
+  const { t } = useTranslation();
+  const sectionKey = `data.projects.stories.${projectId}.sections.${section.id}`;
+
   if (section.type === "timeline") {
-    return <InteractiveTimeline section={section} />;
+    return <InteractiveTimeline projectId={projectId} section={section} />;
   }
 
   if (section.type === "architecture") {
     return (
       <section className={styles.architectureSection}>
-        <h2>{section.title}</h2>
+        <h2>{t(`${sectionKey}.title`)}</h2>
         <div className={styles.architecture}>
-          {section.nodes.map((node, index) => (
-            <article key={node.label}>
+          {section.nodes.map((nodeId, index) => (
+            <article key={nodeId}>
               <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-              <h3>{node.label}</h3>
-              <p>{node.detail}</p>
+              <h3>{t(`${sectionKey}.nodes.${nodeId}.label`)}</h3>
+              <p>{t(`${sectionKey}.nodes.${nodeId}.detail`)}</p>
             </article>
           ))}
         </div>
@@ -60,27 +86,37 @@ const StorySection = ({ section }: { section: ProjectStorySection }) => {
   if (section.type === "outcome") {
     return (
       <Statement as="blockquote" className={styles.outcome}>
-        {section.content}
+        {t(`${sectionKey}.content`)}
       </Statement>
     );
   }
 
+  const eyebrow = t(`${sectionKey}.eyebrow`, { defaultValue: "" });
+
   return (
     <section className={`${styles.copySection} ${styles[section.type]}`}>
-      {section.eyebrow != null && <p className={styles.eyebrow}>{section.eyebrow}</p>}
-      <h2>{section.title}</h2>
-      <p>{section.content}</p>
+      {eyebrow !== "" && <p className={styles.eyebrow}>{eyebrow}</p>}
+      <h2>{t(`${sectionKey}.title`)}</h2>
+      <p>{t(`${sectionKey}.content`)}</p>
     </section>
   );
 };
 
 export const ProjectStory = ({ project }: ProjectStoryProps) => {
-  if (project.story == null) return null;
+  const layoutClass = {
+    cards: styles.layoutCards,
+    concise: styles.layoutConcise,
+    timeline: styles.layoutTimeline,
+  }[project.story.bodyLayout];
 
   return (
-    <div className={styles.story}>
-      {project.story.sections.map((section, index) => (
-        <StorySection key={`${section.type}-${index}`} section={section} />
+    <div className={`${styles.story} ${layoutClass}`}>
+      {project.story.sections.map((section) => (
+        <StorySection
+          key={`${section.type}-${section.id}`}
+          projectId={project.id}
+          section={section}
+        />
       ))}
     </div>
   );

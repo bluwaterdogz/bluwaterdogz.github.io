@@ -1,6 +1,6 @@
 @use "../../../styles/home-sections" as section;
 @use "../../../styles/variables" as *;
-@use "../../../styles/type" as *;
+@use "../../../styles/typography" as *;
 
 .aboutSection {
   @include section.shell;

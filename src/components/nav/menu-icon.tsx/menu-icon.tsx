@@ -1,6 +1,7 @@
 import { HTMLProps } from "react";
 import { useControllableState } from "../../../hooks/useControllableState";
 import styles from "./styles.module.scss";
+import { useTranslation } from "react-i18next";
 
 interface MenuIconProps extends HTMLProps<HTMLButtonElement> {
   open?: boolean;
@@ -8,6 +9,7 @@ interface MenuIconProps extends HTMLProps<HTMLButtonElement> {
 }
 
 export const MenuIcon = (props: MenuIconProps) => {
+  const { t } = useTranslation();
   const { open, setOpen, className } = props;
   const [menuOpen, setMenuOpen] = useControllableState<boolean>({
     state: open,
@@ -16,7 +18,7 @@ export const MenuIcon = (props: MenuIconProps) => {
   });
   return (
     <button
-      aria-label={menuOpen ? "Close menu" : "Open menu"}
+      aria-label={t(menuOpen ? "nav.closeMenu" : "nav.openMenu")}
       className={`${styles.icon} ${menuOpen ? styles.opened : ""} ${className}`}
       onClick={() => {
         setMenuOpen(!menuOpen);

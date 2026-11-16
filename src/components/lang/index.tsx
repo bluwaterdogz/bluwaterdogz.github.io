@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import styles from "./styles.module.scss";
-import { useMemo, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
 import { langMap } from "./consts";
 import { DynamicList } from "../common/dynamic-list";
@@ -16,7 +16,7 @@ export const Lang = (props: LangProps) => {
   const [open, setOpen] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
   const { t, i18n } = useTranslation();
-  const langList = useMemo(() => Object.keys(langMap), [langMap]);
+  const langList = Object.keys(langMap) as (keyof typeof langMap)[];
   useOutsideClick(ref, () => setOpen(false));
   return (
     <div
@@ -39,28 +39,28 @@ export const Lang = (props: LangProps) => {
         {i18n.language}
       </button>
       <ul className={`${styles.languageList} ${open ? styles.open : ""}`}>
-        <DynamicList<string>
+        <DynamicList<keyof typeof langMap>
           data={langList}
           loading={false}
           renderListItem={(code) => {
-          const language = (langMap as any)[code];
-          return (
-            <li key={code}>
-              <button
-                className={`${styles.language} ${
-                  code === i18n.language ? styles.active : ""
-                }`}
-                onClick={() => {
-                  i18n.changeLanguage(code);
-                  setOpen(false);
-                }}
-                type="button"
-              >
-                {t(`lang.${language}`)}
-              </button>
-            </li>
-          );
-        }}
+            const language = langMap[code];
+            return (
+              <li key={code}>
+                <button
+                  className={`${styles.language} ${
+                    code === i18n.language ? styles.active : ""
+                  }`}
+                  onClick={() => {
+                    i18n.changeLanguage(code);
+                    setOpen(false);
+                  }}
+                  type="button"
+                >
+                  {t(`lang.${language}`)}
+                </button>
+              </li>
+            );
+          }}
         />
       </ul>
     </div>

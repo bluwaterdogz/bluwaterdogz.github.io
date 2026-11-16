@@ -1,6 +1,6 @@
-@use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
-@use "../../../styles/type" as *;
+@use "../../../styles/colors" as *;
+@use "../../../styles/typography" as *;
 
 .projectContent {
   min-width: 0;
@@ -10,65 +10,23 @@
   min-width: 0;
 }
 
-.textContent {
-  @include text;
-  max-width: none;
-
-  h2 {
-    @include section-title;
-    margin: $space * 5 0 $space * 2;
-  }
-
-  h3 {
-    @include subtitle-text;
-    margin: $space * 3 0 $space;
-  }
-
-  p {
-    margin: 0 0 $space * 2;
-  }
-
-  li {
-    margin-bottom: $space;
-  }
-}
-
-.skills {
-  border-bottom: 1px solid $theme-border-color;
+.additionalSkills {
   border-top: 1px solid $theme-border-color;
-  margin: $space * 5 0;
-  padding: $space * 3 0;
+  margin-top: $space * 8;
+  padding-top: $space * 3;
 
-  h2 {
-    @include subtitle-text;
-    margin: 0 0 $space * 2;
+  > p {
+    @include eyebrow-text;
+    color: $theme-subtext-color;
+    margin-bottom: $space * 2;
   }
 }
 
 .skillList {
-  a {
-    padding: $space;
+  opacity: 0.82;
 
-    i {
-      font-size: 22px;
-    }
-  }
-}
-
-.quote {
-  border-left: 2px solid $primary-color;
-  margin: $space * 5 0;
-  max-width: none;
-  padding: 0 0 0 $space * 3;
-
-  p {
-    @include subtitle-text;
-    color: $primary-color;
-    font-style: italic;
-  }
-
-  cite {
-    color: $theme-subtext-color;
+  :is(a, button, li > span) {
+    padding: $space-sm $space;
   }
 }
 

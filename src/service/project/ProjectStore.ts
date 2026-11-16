@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { Project, ProjectFilters } from "./types";
+import { Project } from "./types";
 import projectService from "./ProjectService";
 
 interface ProjectState {
@@ -7,14 +7,10 @@ interface ProjectState {
   project?: Project;
   loading: boolean;
   loadingList: boolean;
-  filters: ProjectFilters;
   error?: string;
   errorList?: string;
-  searchTerm?: string;
-  fetchProjectList: () => {};
-  fetchProject: (id: string) => {};
-  setSearchTerm: (searchTerm: string) => void;
-  setFilters: (filters: ProjectFilters) => void;
+  fetchProjectList: () => Promise<void>;
+  fetchProject: (id: string) => Promise<void>;
 }
 
 export const useProjectStore = create<ProjectState>((set) => ({
@@ -23,18 +19,16 @@ export const useProjectStore = create<ProjectState>((set) => ({
   loading: false,
   loadingList: false,
   error: undefined,
-  searchTerm: undefined,
-  filters: {
-    skills: [],
-  },
   fetchProjectList: async () => {
     set({ loadingList: true });
     try {
       const projects = await projectService.list();
       set({ projects, loadingList: false });
-    } catch (e: any) {
-      console.log("wat");
-      set({ errorList: e, loadingList: false });
+    } catch (error: unknown) {
+      set({
+        errorList: error instanceof Error ? error.message : String(error),
+        loadingList: false,
+      });
     }
   },
   fetchProject: async (id: string) => {
@@ -42,14 +36,11 @@ export const useProjectStore = create<ProjectState>((set) => ({
     try {
       const project = await projectService.get(id);
       set({ project, loading: false });
-    } catch (e: any) {
-      set({ error: e, loading: false });
+    } catch (error: unknown) {
+      set({
+        error: error instanceof Error ? error.message : String(error),
+        loading: false,
+      });
     }
-  },
-  setSearchTerm: (searchTerm: string) => {
-    set({ searchTerm });
-  },
-  setFilters: (filters: ProjectFilters) => {
-    set({ filters });
   },
 }));

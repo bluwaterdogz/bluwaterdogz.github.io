@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Skill } from "../../../service/skill/types";
 import styles from "./styles.module.scss";
 
@@ -19,10 +20,12 @@ export const SkillPills = ({
   onToggle,
   skills,
 }: SkillPillsProps) => {
+  const { t } = useTranslation();
+
   const renderContent = (skill: Skill) => (
     <>
       <i className={skill.icon} aria-hidden="true" />
-      <span>{skill.name}</span>
+      <span>{t(`skills.names.${skill.id}`)}</span>
     </>
   );
 

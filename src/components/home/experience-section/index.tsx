@@ -49,11 +49,8 @@ export const ExperienceSection = () => {
         <p className={styles.eyebrow}>{t("home.experience.eyebrow")}</p>
         <h2>{t("home.experience.title")}</h2>
         <div className={styles.copy}>
-          <p>{t("home.experience.copy1")}</p>
-          <p>{t("home.experience.copy2")}</p>
-          <p>{t("home.experience.copy3")}</p>
-          <p>{t("home.experience.copy4")}</p>
-          <p>{t("home.experience.copy5")}</p>
+          <p>{t("home.experience.summary")}</p>
+          <p>{t("home.experience.scope")}</p>
         </div>
         <a
           className={styles.link}

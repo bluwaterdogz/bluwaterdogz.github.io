@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 import { Loader } from "../loader";
 
 interface DynamisListProps<Entity> {
@@ -8,13 +9,14 @@ interface DynamisListProps<Entity> {
 }
 
 const DynamicList = <Entity,>(props: DynamisListProps<Entity>) => {
+  const { t } = useTranslation();
   const { loading, data, renderListItem } = props;
   return (
     <>
       {loading ? (
         <Loader />
       ) : data.length === 0 ? (
-        <h2>None found</h2>
+        <h2>{t("common.noneFound")}</h2>
       ) : (
         data.map(renderListItem)
       )}

@@ -1,42 +1,39 @@
 export interface Project {
   employer: ProjectEmployer;
-  name: string;
   id: string;
   img?: string;
-  quotes: Quote[];
+  nameKey: string;
   skills: string[];
   previewImgs?: string[];
   previewVideos?: string[];
-  story?: ProjectStory;
+  story: ProjectStory;
 }
 
 export interface ProjectStory {
-  kicker: string;
+  bodyLayout: "cards" | "concise" | "timeline";
+  heroLayout: "split" | "stacked";
   sections: ProjectStorySection[];
-  summary: string;
 }
 
 export type ProjectStorySection =
   | {
-      content: string;
-      eyebrow?: string;
-      title: string;
+      id: string;
       type: "challenge" | "outcome" | "text";
     }
   | {
-      steps: Array<{
-        content: string;
-        label: string;
-        title: string;
-      }>;
-      title: string;
+      id: string;
+      steps: string[];
       type: "timeline";
     }
   | {
-      nodes: Array<{ label: string; detail: string }>;
-      title: string;
+      id: string;
+      nodes: string[];
       type: "architecture";
     };
+
+export interface LocalizedProject extends Project {
+  name: string;
+}
 
 export type ProjectEmployer =
   | "faro"
@@ -44,19 +41,3 @@ export type ProjectEmployer =
   | "launchBrigade"
   | "mobian"
   | "various";
-export interface Quote {
-  text: string;
-  author?: string;
-}
-
-export interface SkillOption {
-  readonly value: string;
-  readonly label: string;
-  readonly color: string;
-  readonly isFixed?: boolean;
-  readonly isDisabled?: boolean;
-}
-
-export interface ProjectFilters {
-  skills: SkillOption[];
-}

@@ -1,8 +1,7 @@
 @use "../../../styles/home-sections" as section;
 @use "../../../styles/variables" as *;
 @use "../../../styles/colors" as *;
-@use "../../../styles/type" as *;
-@use "../../../styles/interactions" as *;
+@use "../../../styles/typography" as *;
 
 .leadershipSection {
   @include section.shell;
@@ -44,14 +43,21 @@
 
 .practices {
   display: grid;
-  gap: $space * 2;
+  column-gap: $space * 3;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  row-gap: 0;
 }
 
 .practice {
-  @include card-outline;
-  min-height: 190px;
-  padding: $space * 1.5;
+  border-top: 1px solid $theme-border-color;
+  min-height: 0;
+  padding: $space * 2 0 $space * 3;
+  transition: border-color $transition ease, transform $transition ease;
+
+  &:hover {
+    border-color: $primary-color;
+    transform: translateY(-$space-sm);
+  }
 }
 
 .practiceIcon {
@@ -59,11 +65,11 @@
   background: color-mix(in srgb, #{$primary-color} 8%, transparent);
   color: $primary-color;
   display: inline-flex;
-  font-size: 24px;
-  height: $space * 6;
+  font-size: 20px;
+  height: $space * 4;
   justify-content: center;
   margin-bottom: $space * 2;
-  width: $space * 6;
+  width: $space * 4;
 }
 
 .practice h3 {
@@ -79,7 +85,7 @@
 @media (max-width: $medium-screen) {
   .practice {
     min-height: 0;
-    padding: $space * 1.25;
+    padding: $space * 2 0 $space * 3;
   }
 }
 

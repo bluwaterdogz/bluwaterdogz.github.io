@@ -2,11 +2,12 @@ import Fuse from "fuse.js";
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { CallToAction } from "../../common/call-to-action";
 import { DynamicList } from "../../common/dynamic-list";
 import { useProjectStore } from "../../../service/project/ProjectStore";
-import { Project } from "../../../service/project/types";
-import { ProjectEmployer } from "../../../service/project/types";
+import {
+  LocalizedProject,
+  ProjectEmployer,
+} from "../../../service/project/types";
 import {
   filterProjectsByCategory,
   ProjectCategory,
@@ -70,8 +71,8 @@ export const ProjectList = () => {
     () =>
       projects.map((project) => ({
         ...project,
-        content: t(`data.projects.content.${project.id}`),
         description: t(`data.projects.description.${project.id}`),
+        name: t(project.nameKey),
       })),
     [projects, t]
   );
@@ -98,7 +99,7 @@ export const ProjectList = () => {
     if (searchTerm.trim() === "") return skillFiltered;
 
     const fuse = new Fuse(skillFiltered, {
-      keys: [{ name: "name", weight: 2 }, "description", "content"],
+      keys: [{ name: "name", weight: 2 }, "description"],
     });
 
     return fuse.search(searchTerm).map((result) => result.item);
@@ -148,7 +149,7 @@ export const ProjectList = () => {
         </div>
       </div>
       <div className={styles.projectList}>
-        <DynamicList<Project>
+        <DynamicList<LocalizedProject>
           data={filteredProjects}
           loading={loadingList}
           renderListItem={(project) => (
@@ -156,11 +157,6 @@ export const ProjectList = () => {
           )}
         />
       </div>
-      <CallToAction
-        description={t("projects.cta.description")}
-        label={t("projects.cta.label")}
-        title={t("projects.cta.title")}
-      />
     </>
   );
 };

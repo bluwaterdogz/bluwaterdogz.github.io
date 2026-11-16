@@ -1,11 +1,11 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
-@use "../../../styles/type" as *;
+@use "../../../styles/typography" as *;
 
 .topBar {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: $space * 2;
+  grid-template-columns: minmax(0, 1fr) minmax($space * 20, 0.65fr);
 }
 
 .search {
@@ -51,6 +51,7 @@
   display: grid;
   gap: $space;
   grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-column: 1 / -1;
 
   button {
     @include button-text;
@@ -69,6 +70,16 @@
       border-color: $primary-color;
       color: white;
     }
+  }
+}
+
+@media (max-width: $small-screen) {
+  .topBar {
+    grid-template-columns: 1fr;
+  }
+
+  .categories {
+    grid-column: auto;
   }
 }
 

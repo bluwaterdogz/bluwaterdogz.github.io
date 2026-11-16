@@ -1,32 +1,26 @@
 import { BackgroundAnimation } from "../../components/common/background-animation";
+import { useTranslation } from "react-i18next";
 import styles from "./styles.module.scss";
 
-interface PlaceholderProps {}
-export const PlaceholderPage: React.FunctionComponent<PlaceholderProps> = (
-  _props
-) => {
+export const PlaceholderPage = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.content}>
       <BackgroundAnimation />
       <div className={styles.titleContainer}>
         <div className={styles.title}>
-          <p>
-            <span className={styles.letter}>C</span>
-            <span className={styles.letter}>o</span>
-            <span className={styles.letter}>m</span>
-            <span className={styles.letter}>i</span>
-            <span className={styles.letter}>n</span>
-            <span className={styles.letter}>g</span>
-          </p>
-          <p>
-            <span className={styles.letter}>S</span>
-            <span className={styles.letter}>o</span>
-            <span className={styles.letter}>o</span>
-            <span className={styles.letter}>n</span>
-            <span className={styles.letter}>.</span>
-            <span className={styles.letter}>.</span>
-            <span className={styles.letter}>.</span>
-          </p>
+          {t("placeholder.comingSoon")
+            .split(" ")
+            .map((word) => (
+              <p key={word}>
+                {[...word].map((letter, index) => (
+                  <span className={styles.letter} key={`${letter}-${index}`}>
+                    {letter}
+                  </span>
+                ))}
+              </p>
+            ))}
         </div>
       </div>
     </div>

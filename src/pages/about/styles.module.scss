@@ -1,7 +1,6 @@
 @use "../../styles/variables" as *;
 @use "../../styles/colors" as *;
-@use "../../styles/interactions" as *;
-@use "../../styles/type" as *;
+@use "../../styles/typography" as *;
 
 .aboutPage {
   color: $theme-text-color;
@@ -20,13 +19,13 @@
   display: grid;
   gap: clamp($space * 4, 5vw, $space * 6);
   grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
-  min-height: calc(100svh - #{$page-padding-block-start});
+  min-height: min(760px, calc(100svh - #{$page-padding-block-start}));
 }
 
 .portrait {
   aspect-ratio: 2 / 3;
   background: $hero-background-color;
-  max-height: calc(100svh - #{$page-padding-block-start + $space * 3});
+  max-height: min(680px, calc(100svh - #{$page-padding-block-start + $space * 3}));
   overflow: hidden;
 
   img {
@@ -42,7 +41,7 @@
   display: flex;
   flex-direction: column;
   max-width: $content-width-readable;
-  min-height: calc(100svh - #{$page-padding-block-start});
+  min-height: min(760px, calc(100svh - #{$page-padding-block-start}));
 }
 
 .headingContent {
@@ -106,15 +105,21 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
 
   article {
-    @include card-outline;
+    border-top: 1px solid $theme-border-color;
     min-width: 0;
-    padding: $space * 3;
-    text-align: center;
+    padding: $space * 2 0;
+    text-align: left;
+    transition: border-color $transition ease, transform $transition ease;
+
+    &:hover {
+      border-color: $primary-color;
+      transform: translateY(-$space-sm);
+    }
   }
 
   i {
     color: $primary-color;
-    font-size: 50px;
+    font-size: 30px;
     transition: transform $transition ease;
   }
 
@@ -124,7 +129,7 @@
 
   h2 {
     @include subtitle-text;
-    margin: $space * 2 0;
+    margin: $space * 2 0 $space;
     overflow-wrap: anywhere;
   }
 
@@ -134,7 +139,7 @@
 }
 
 .quote {
-  margin: $space * 8 0 0;
+  margin: $space * 5 0 0;
 }
 
 .buildWith {
@@ -187,8 +192,8 @@
     transparent
   );
   border-left: 2px solid $primary-color;
-  margin-top: $space * 5;
-  padding: $space * 3 $space * 4;
+  margin-top: $space * 3;
+  padding: $space * 2 $space * 3;
 
   p {
     margin-top: $space * 2;

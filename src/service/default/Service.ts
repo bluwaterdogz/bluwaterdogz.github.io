@@ -1,8 +1,8 @@
 import Client from "./Client";
-import { DefaultParameters } from "./types";
+import { DefaultParameters, Identifiable } from "./types";
 
 export default class Service<
-  Entity,
+  Entity extends Identifiable,
   ClientI extends Client<Entity>,
   Parameters extends DefaultParameters = DefaultParameters
 > {

@@ -1,6 +1,6 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/colors" as *;
-@use "../../../styles/type" as *;
+@use "../../../styles/typography" as *;
 @keyframes fadeInUp {
   0% {
     transform: translateY(100%);
@@ -19,13 +19,14 @@
   display: flex;
   flex-direction: column;
   height: 100svh;
-  left: -100%;
+  left: 0;
   overflow-y: auto;
   padding: $space * 10 $space * 4 $space * 5;
   position: fixed;
   text-align: left;
   top: 0;
-  transition: left $transition ease;
+  transition: box-shadow $transition ease, transform $transition ease;
+  transform: translateX(-100%);
   width: min(100vw, $space * 48);
   z-index: 10;
   .outsideIcon {
@@ -65,7 +66,7 @@
     }
   }
   &.open {
-    left: 0;
+    transform: translateX(0);
   }
   @for $i from 1 through 10 {
     a {

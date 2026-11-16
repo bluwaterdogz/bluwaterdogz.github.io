@@ -1,6 +1,5 @@
 import { skills } from "../skill/data";
 import { Skill } from "../skill/types";
-import { projects } from "./data";
 import { Project, ProjectEmployer } from "./types";
 
 export type ProjectCategory = "all" | "backend" | "data" | "mobile" | "web";
@@ -21,20 +20,15 @@ const categoryProjectIds: Record<Exclude<ProjectCategory, "all">, string[]> = {
   web: ["1", "2", "3", "4", "7", "8", "9", "11", "12"],
 };
 
-export const filterProjectsByCategory = (
-  items: Project[],
+export const filterProjectsByCategory = <T extends Project>(
+  items: T[],
   category: ProjectCategory
-) =>
+): T[] =>
   category === "all"
     ? items
     : items.filter((project) =>
         categoryProjectIds[category].includes(project.id)
       );
-
-export const getProjectsForSkill = (skillId: string) =>
-  projects
-    .filter((project) => project.skills.includes(skillId))
-    .map(({ id, name }) => ({ id, name: name.trim() }));
 
 export const getSkillsForProject = (project: Project): Skill[] =>
   skills.filter((skill) => project.skills.includes(skill.id));

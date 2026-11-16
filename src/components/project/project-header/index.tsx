@@ -13,27 +13,26 @@ interface ProjectHeaderProps {
 export const ProjectHeader = ({ project }: ProjectHeaderProps) => {
   const { t } = useTranslation();
   const projectSkills = getSkillsForProject(project);
+  const projectName = t(project.nameKey);
 
   return (
-    <header className={styles.hero}>
+    <header className={`${styles.hero} ${styles[project.story.heroLayout]}`}>
       <div className={styles.container}>
         <PageHeading
           className={styles.copy}
-          description={project.story?.kicker ?? t(`data.projects.description.${project.id}`)}
+          description={t(`data.projects.stories.${project.id}.kicker`)}
           descriptionClassName={styles.description}
           eyebrow={t("projects.detail.eyebrow")}
-          title={project.name.trim()}
+          title={projectName}
         >
-          {project.story != null && (
-            <>
-              <p className={styles.summary}>{project.story.summary}</p>
-              <SkillPills
-                ariaLabel={`Technologies used for ${project.name}`}
-                className={styles.skills}
-                skills={projectSkills}
-              />
-            </>
-          )}
+          <p className={styles.summary}>
+            {t(`data.projects.stories.${project.id}.summary`)}
+          </p>
+          <SkillPills
+            ariaLabel={t("projects.technologies", { name: projectName })}
+            className={styles.skills}
+            skills={projectSkills.slice(0, 5)}
+          />
           <Link className={styles.backLink} to="/projects">
             <span aria-hidden="true">&#8592;</span>
             {t("projects.detail.back")}

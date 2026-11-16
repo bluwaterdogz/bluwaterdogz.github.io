@@ -1,16 +1,17 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
 @use "../../../styles/interactions" as *;
-@use "../../../styles/type" as *;
+@use "../../../styles/typography" as *;
 
 .card {
   @include card-outline;
   align-items: stretch;
+  background: $theme-surface-color;
   color: inherit;
   display: grid;
-  gap: $space * 2;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
   height: 100%;
+  min-height: $space * 30;
   min-width: 0;
   text-decoration: none;
 }
@@ -21,6 +22,7 @@
 }
 
 .imageWrapper {
+  background: color-mix(in srgb, #{$primary-color} 7%, #{$theme-surface-color});
   display: block;
   min-width: 0;
   overflow: hidden;
@@ -45,18 +47,25 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  padding: $space $space-sm $space 0;
+  padding: $space * 3;
 
   h2 {
     @include subtitle-text;
+    hyphens: auto;
+    line-height: 1.1;
     margin: 0 0 $space * 2;
+    overflow-wrap: anywhere;
 
     transition: color $transition ease;
   }
 
   > p {
     @include small-text;
+    display: -webkit-box;
     margin: 0;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
   }
 }
 
@@ -74,7 +83,13 @@
 
 @media (max-width: $mobile-screen) {
   .card {
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .projectImage {
+    aspect-ratio: 16 / 9;
+    height: auto;
   }
 
   .footer li:nth-child(n + 3) {

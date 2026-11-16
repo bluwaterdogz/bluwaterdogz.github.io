@@ -18,11 +18,9 @@ export const SkillTimelineGroup = ({
 
   return (
     <section className={`${styles.group} ${isLast ? styles.last : ""}`}>
-      <h2>{t(`skills.groups.${grouping.i18nKey}`, { defaultValue: grouping.name })}</h2>
+      <h2>{t(`skills.groups.${grouping.i18nKey}`)}</h2>
       <SkillPills
-        ariaLabel={t(`skills.groups.${grouping.i18nKey}`, {
-          defaultValue: grouping.name,
-        })}
+        ariaLabel={t(`skills.groups.${grouping.i18nKey}`)}
         className={styles.skills}
         linkTo="skills"
         skills={skills}

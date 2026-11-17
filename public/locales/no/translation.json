@@ -1,0 +1,805 @@
+{
+  "common": {
+    "noneFound": "Ingen funnet"
+  },
+  "placeholder": {
+    "comingSoon": "Kommer snart..."
+  },
+  "home": {
+    "header": "<span>Hei<br /> jeg heter Brian Velasquez,<br /><em>senior programvare-<br />utvikler.</em></span>",
+    "heroEyebrow": "Senior programvareingeniør",
+    "heroBrand": "brian velasquez",
+    "heroHeadlineStart": "Jeg bygger systemene",
+    "heroHeadlineAccent": "bak",
+    "heroHeadlineEnd": "gode produkter.",
+    "heroPrimaryCta": "Sjekk ut arbeidet mitt",
+    "heroSecondaryCta": "Ta kontakt",
+    "heroSkillsLabel": "Utvalgte ferdigheter",
+    "heroName": "I'm Brian Velasquez,",
+    "heroRole": "Senior programvareingeniør.",
+    "heroIntroduction": "Jeg heter Brian. Jeg bygger intuitive grensesnitt, pålitelige APIs og dataintensive plattformer, fra den første prototypen til storskala produksjon.",
+    "switchBackground": "Bakgrunn for byttehelt",
+    "backgrounds": {
+      "type1": "Type 1",
+      "type2": "Type 2"
+    },
+    "aboutHeader": "Hvem er jeg?",
+    "about": "Jeg er en fullstack-utvikler med solid kompetanse innen frontend-utvikling og erfaring med å bygge systemene bak komplekse produkter. Arbeidet mitt omfatter søk, analyse, databehandling, API-er og brukergrensesnitt innen annonseteknologi, helse og forbrukerrettede plattformer. Jeg har også ledet modernisering av frontend-løsninger og samarbeidet på tvers av team for å forbedre arkitekturen, løse krevende tekniske problemer og levere pålitelig, skalerbar og brukervennlig programvare.",
+    "aboutEyebrow": "01 Om meg",
+    "aboutTitle": "Programvareutvikling og teknisk lederskap",
+    "aboutLink": "Mer om meg",
+    "features": {
+      "experience": "Årelang erfaring",
+      "projects": "Prosjekter distribuert",
+      "international": "Internasjonale prosjekter",
+      "collaboration": "Samarbeidet",
+      "focus": "Fokus",
+      "performance": "Ytelse, skalerbarhet, brukeropplevelse"
+    },
+    "section1Title": "Erfaren",
+    "section1Content1": "I min rolle som senior programvareingeniør hos farmasøytisk teknologi-oppstartsbedriften Faro Health, bygde og optimaliserte jeg REST og CQRS-baserte mikrotjenester og brukergrensesnittmoduler ved hjelp av TypeScript, Node.js, PostgreSQL, Jest og React. Jeg designet og utviklet funksjonsslisser og POC-er, skrev enhets- og integrasjonstester, optimaliserte applikasjonsytelsen og bygde distribusjonsrørledninger med GitHub Actions.",
+    "section1Content2": "Tidligere ledet jeg et internasjonalt eksternt front-end-team hos Various Inc., der jeg samarbeidet tett med designere for å modernisere eldre JavaScript og Perl-baserte videostrømmeapper. Vi migrerte dem til en skalerbar, høytytende React og TypeScript stabel med Next.js, MOBX, WebSockets og Python, støttet av REST APIs og en CI/CD pipeline for sømløs utrulling.",
+    "experience": {
+      "eyebrow": "02 Erfaren",
+      "title": "Erfaren",
+      "summary": "Jeg bygger og forbedrer produksjonsprogramvare på tvers av produktgrensesnitt, APIs, datasystemer, søk og skyinfrastruktur. Mitt nylige arbeid har koblet disse lagene på tvers av arbeidsflyter for publikumsintelligens og annonsering.",
+      "scope": "Tidligere roller inkluderte verktøy for kliniske studier hos Faro Health og videostrømming for Cams hos Various Inc.",
+      "copy1": "Jeg er en full-stack programvareingeniør med et sterkt grunnlag innen frontend-utvikling og erfaring med å utvikle frontend-applikasjoner, APIs, søkefunksjonalitet og databehandlingssystemer. Arbeidet mitt spenner over søk, analyse, databehandling, APIs og brukergrensesnitt på tvers av reklameteknologi, helsevesen og forbrukerplattformer. Jeg har også ledet arbeidet med modernisering av frontend, og jobbet på tvers av team for å forbedre arkitektur, løse utfordrende tekniske problemer og levere programvare som er pålitelig, skalerbar og intuitiv å bruke.",
+      "copy2": "Jeg bygde og forbedret søk, filtrering, paginering, autofullføring, CSV-eksport, statistikk, hurtigbufferatferd, inntaksverktøy og rapporteringsarbeidsflyter på tvers av Next.js, React, TypeScript, FastAPI, PostgreSQL, OpenSearch, Snowflake, Dagster, Redis og AWS.",
+      "copy3": "Arbeidet krysset jevnlig grenser for frontend, backend, ETL, søk og infrastruktur. Jeg fikset også produksjonsproblemer, utvidet testdekning, koordinerte utgivelser, merkevareavstemming og integrasjoner på tvers av frontend, Persona API, innhold API, Video Brand Safety, ETL og ende-til-ende testlagre.",
+      "copy4": "Før Mobian hjalp jeg til med å bygge Faro Healths plattform for kliniske studier, og bidro med frontend-funksjoner, tjenesteintegrasjoner, testing og forbedringer av levering.",
+      "copy5": "Tidligere hos Various Inc. ledet jeg moderniseringsarbeidet for frontend for Cams, der jeg flyttet sanntidsvideo- og chatapplikasjoner med høy trafikk mot en mer skalerbar React, TypeScript, Next.js, WebSocket og Python plattform.",
+      "link": "Se min erfaring",
+      "timeline": {
+        "mobianPeriod": "2025 - Nåtid",
+        "mobianCompany": "Mobian",
+        "mobianSummary": "Bygget søke-, analyse-, rapporterings-, databehandlings- og pålitelighetsfunksjoner for arbeidsflyter for målgruppeintelligens og annonsering.",
+        "contractorPeriod": "2024 - 2025",
+        "contractorCompany": "Independent Contractor",
+        "contractorSummary": "Leverte oppdrag innen webapplikasjoner, produkter og teknisk rådgivning for uavhengige kunder.",
+        "faroPeriod": "2022 - 2024",
+        "faroCompany": "Faro Health",
+        "faroSummary": "Bidro til produktfunksjoner, tjenesteintegrasjoner, tester og forbedringer av implementering i kliniske studier for en programvareplattform for helsetjenester.",
+        "variousPeriod": "2018 - 2021",
+        "variousCompany": "Various Inc.",
+        "variousSummary": "Ledet modernisering for videostrømmingsapplikasjoner, som involverte uavbrutte arbeidsflyter for video, chat og betaling i sanntid på en moden plattform med høy trafikk.",
+        "launchPeriod": "2015 - 2018",
+        "launchCompany": "Launch Brigade",
+        "launchSummary": "Bygget og vedlikeholdt responsive kundenettsteder og digitale produkter for et design- og utviklingsbyrå i San Francisco Bay Area."
+      }
+    },
+    "leadership": {
+      "eyebrow": "03 Teknisk leder",
+      "title": "Teknisk leder",
+      "copy1": "Jeg har ledet og samarbeidet med distribuerte team over hele USA, Europa, Taiwan og China, og jobbet på tvers av produkt, design, ingeniørfag, data og infrastruktur.",
+      "copy2": "Min tilnærming er enkel: etablere tydelig teknisk retning, planlegge og forutse risikoer tidlig, koordinere på riktig måte og opprettholde fokus på å levere pålitelig arbeid. I tidligere stillinger har det betydd å koordinere endringer på tvers av flere tjenester og databaser, samtidig som jeg opprettholder stabiliteten til API og forbedrer brukeropplevelsen.",
+      "copy3": "Jeg er komfortabel med å bevege meg mellom arkitektur og implementering, designe systemer, gjennomgå og evaluere avveininger, forbedre utviklingsarbeidsflyter og hjelpe team med å gjøre brede krav om til konkrete, skalerbare løsninger.",
+      "link": "Les om min tilnærming",
+      "regionsHeading": "Hvor jeg samarbeider",
+      "regions": {
+        "northAmerica": "Nord-Amerika",
+        "southAmerica": "Sør-Amerika",
+        "europe": "Europa",
+        "asia": "Asia"
+      },
+      "summary": "Tverrfaglig lederskap på tvers av produkt, design, ingeniørarbeid, data og infrastruktur.",
+      "stats": {
+        "regions": "4 regioner",
+        "timeZones": "Flere tidssoner"
+      },
+      "approachStatement": "Tillit til systemer starter på teamnivå",
+      "practices": {
+        "crossFunctional": {
+          "title": "Tverrfaglig lederskap",
+          "description": "Ingeniørfag, produkt, design, data og infrastruktur."
+        },
+        "async": {
+          "title": "Asynkront samarbeid",
+          "description": "Tydelig skriftlig kommunikasjon, eierskap og detaljerte overleveringer."
+        },
+        "delivery": {
+          "title": "Koordinering på tvers av team",
+          "description": "Koordinere arbeid på tvers av tjenester, repositorier og utgivelsessykluser."
+        },
+        "systems": {
+          "title": "Systemtenkning",
+          "description": "Balansering av skalerbarhet, utvikling, stabilitet og forretningskrav gjennom effektiv planlegging"
+        }
+      }
+    },
+    "section2Title": "Teknisk leder",
+    "section2Content1": "Etter å ha ledet et stort internasjonalt team i USA, Europa, Taiwan og China, har jeg dyp ekspertise innen TypeScript, Node.js, PostgreSQL, Jest og React for å drive innovasjon. Utover teknisk design og utvikling, sørger mine lederegenskaper for at teamene holder seg samkjørte, fokuserer og jobber mot viktige milepæler og selskapets mål."
+  },
+  "about": {
+    "eyebrow": "Om meg",
+    "portraitAlt": "Brian Velasquez",
+    "title": "Hei, jeg er Brian",
+    "role": "Senior programvareingeniør",
+    "section1": "Jeg er en erfaren senior programvareingeniør med en lidenskap for elegant, skalerbar kode og minimalistisk, intuitiv brukeropplevelse.",
+    "section2": "På fritiden elsker jeg å klatre, spille sjakk, utforske med motorsykkel og trene Muay Thai.",
+    "location": "For tiden basert i Chiang Mai, Thailand",
+    "cta": "Ta kontakt",
+    "outsideCode": "Utenfor koden",
+    "buildWith": "Jeg bygger med",
+    "interests": {
+      "climbing": {
+        "title": "Klatring",
+        "description": "Å bryte ned komplekse problemer, eksperimentere med ulike tilnærminger og lære av hvert forsøk."
+      },
+      "chess": {
+        "title": "Sjakk",
+        "description": "Strategisk planlegging, problemløsning innenfor begrensninger og tilpasning når omstendighetene endrer seg."
+      },
+      "dirtbike": {
+        "title": "Terrengsykkel",
+        "description": "Uendelig nysgjerrighet, utforskning av ukjente steder og friheten til å oppdage hva som venter rundt neste hjørne."
+      },
+      "muayThai": {
+        "title": "Muay Thai",
+        "description": "Mental klarhet, å holde fokus under press og disiplinen til å fortsette å forbedre seg."
+      }
+    },
+    "quote": "Jeg tror på å skrive kode som er ren, skalerbar og bygget for å vare. Jeg bryr meg om gjennomtenkte brukeropplevelser og produkter som gjør en reell forskjell.",
+    "process": {
+      "eyebrow": "Min prosess",
+      "title": "Fra problem til produksjon",
+      "description": "En samarbeidende, iterativ tilnærming som holder mål, tekniske beslutninger og krav klare fra oppdagelse til lansering.",
+      "generativeTitle": "AI-assistert programvareutvikling, med erfaren menneskelig tilsyn",
+      "generativeDescription": "Jeg bruker AI for å akselerere forskning, planlegging, gjennomgang, testing og dokumentasjon, samtidig som jeg verifiserer alle resultater mot kodebasen og reell systematferd.",
+      "steps": {
+        "align": {
+          "title": "Juster",
+          "description": "Avklar problemet, begrensninger, avhengigheter og definisjonen av suksess."
+        },
+        "map": {
+          "title": "Kart",
+          "description": "Spor relevant brukergrensesnitt, tjenester, dataflyter og driftsrisikoer."
+        },
+        "shape": {
+          "title": "Form",
+          "description": "Sammenlign tilnærminger, lag prototyper av usikre ideer og del arbeidet opp i fokuserte trinn."
+        },
+        "build": {
+          "title": "Bygge",
+          "description": "Implementer funksjoner på tvers av stakken ved hjelp av tydelige, gjenbrukbare TØRR, men skalerbare mønstre."
+        },
+        "verify": {
+          "title": "Verifisere",
+          "description": "Test kontinuerlig med enhets-, integrasjons-, ende-til-ende- og manuell validering."
+        },
+        "improve": {
+          "title": "Forbedre",
+          "description": "Bekreft utgivelser, gjennomgå produksjonsatferd og finjuster basert på data og tilbakemeldinger."
+        }
+      }
+    }
+  },
+  "skills": {
+    "eyebrow": "Ferdigheter",
+    "previous": "Tidligere ferdighetstype",
+    "next": "Neste ferdighetstype",
+    "projectsLink": "Se prosjekter",
+    "projectsMenu": "Prosjekter",
+    "names": {
+      "1": "Python",
+      "2": "JavaScript",
+      "3": "TypeScript",
+      "4": "Node.js",
+      "5": "PostgreSQL",
+      "6": "PHP",
+      "7": "HTML5",
+      "8": "CSS/SCSS",
+      "9": "React",
+      "10": "Angular",
+      "11": "Express",
+      "12": "Flask",
+      "13": "RxJS",
+      "14": "Vue",
+      "15": "Storybook",
+      "16": "Vite",
+      "17": "Git",
+      "18": "Webpack",
+      "19": "Azure",
+      "20": "GitHub Actions",
+      "21": "Photoshop",
+      "22": "Bootstrap",
+      "23": "Figma",
+      "24": "Next.js",
+      "25": "Material UI",
+      "26": "FastAPI",
+      "27": "OpenSearch",
+      "28": "Redis",
+      "29": "AWS",
+      "30": "Snowflake",
+      "31": "Dagster",
+      "32": "Docker",
+      "33": "Jest",
+      "34": "Playwright",
+      "35": "Terraform",
+      "36": "Cypress",
+      "37": "CloudWatch",
+      "38": "AI-assistert utvikling",
+      "39": "GitHub Copilot",
+      "40": "ChatGPT",
+      "41": "Claude Code"
+    },
+    "groups": {
+      "Languages": "Språk",
+      "BackendData": "Backend og data",
+      "Frontend": "Grensesnitt",
+      "CloudTools": "Sky og verktøy",
+      "Frameworks": "Rammeverk",
+      "DevTools": "Utviklerverktøy",
+      "IT": "DEN",
+      "Design": "Design"
+    },
+    "views": {
+      "development": {
+        "title": "Utvikling",
+        "description": "Teknologier og verktøy jeg bruker til å bygge, sende og skalere pålitelige produkter."
+      },
+      "infrastructure": {
+        "title": "Infrastruktur",
+        "description": "Utviklingsverktøy, skyplattformer, leveringssystemer og driftspraksiser jeg bruker for å kjøre pålitelig programvare."
+      },
+      "frameworks": {
+        "title": "Rammeverk",
+        "description": "Applikasjonsrammeverk jeg bruker for å gjøre produktideer om til vedlikeholdbare grensesnitt og tjenester."
+      },
+      "devTools": {
+        "title": "Utviklerverktøy",
+        "description": "Verktøy jeg bruker til å utvikle, teste, dokumentere og levere pålitelig programvare."
+      },
+      "it": {
+        "title": "DEN",
+        "description": "Skytjenester, distribusjonsplattformer og systemadministrasjonsverktøy jeg bruker."
+      },
+      "design": {
+        "title": "Design",
+        "description": "Verktøy jeg bruker til grensesnittdesign, prototyping og ressurser."
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "Prosjekter",
+    "title": "Ting jeg har bygget",
+    "introduction": "Utvalgte prosjekter som dekker frontend-utvikling, backend-tjenester, databehandling og infrastruktur.",
+    "search": "Søk i prosjekter",
+    "github": "Sjekk ut min Github",
+    "jobs": {
+      "label": "Filtrer etter jobb",
+      "all": "Alle jobber",
+      "mobian": "Mobian",
+      "faro": "Faro Health",
+      "independent": "Uavhengig entreprenør",
+      "various": "Various Inc.",
+      "launchBrigade": "Launch Brigade"
+    },
+    "skills": {
+      "label": "Filtrer etter ferdighet",
+      "all": "Alle ferdigheter",
+      "clear": "Klar",
+      "selected": "{{count}} valgte ferdigheter"
+    },
+    "technologies": "{{name}} teknologier",
+    "viewProject": "Vis {{name}}",
+    "detail": {
+      "eyebrow": "Prosjekt",
+      "back": "Alle prosjekter",
+      "additionalTechnologies": "Ytterligere teknologier"
+    },
+    "categories": {
+      "label": "Prosjektkategorier",
+      "all": "Alle",
+      "web": "Nett",
+      "mobile": "Mobil",
+      "backend": "Bakenden",
+      "data": "Data"
+    },
+    "cta": {
+      "title": "Har du en idé i tankene?",
+      "description": "Jeg er alltid åpen for interessante prosjekter og samarbeid.",
+      "label": "La oss bygge noe"
+    }
+  },
+  "theme": {
+    "dark": "Mørkt tema",
+    "light": "Lyst tema"
+  },
+  "lang": {
+    "english": "Engelsk",
+    "chinese": "Kinesisk",
+    "espanol": "Spansk",
+    "thai": "Thai",
+    "german": "Tysk",
+    "korean": "Koreansk",
+    "estonian": "Estisk",
+    "swedish": "Svensk",
+    "japanese": "Japansk",
+    "portuguese": "Portugisisk",
+    "norwegian": "Norsk"
+  },
+  "nav": {
+    "home": "Hjem",
+    "skills": "Ferdigheter",
+    "projects": "Prosjekter",
+    "microapps": "Mikroapper",
+    "about": "Om",
+    "openMenu": "Åpne menyen",
+    "closeMenu": "Lukk menyen"
+  },
+  "data": {
+    "projects": {
+      "name": {
+        "1": "Faro Study Designer",
+        "2": "Various Inc Viewer",
+        "3": "San Anselmo City Plan Website",
+        "4": "Launch Brigade Website",
+        "5": "Faro Data Analytics Dashboard POC",
+        "6": "Faro B2C SSO Implementation",
+        "7": "LotLinx Website",
+        "8": "Metafold 3D MVP",
+        "9": "Persona & Channel Intelligence",
+        "10": "Context Ingestion & Brand-Safety Tooling",
+        "11": "Advertising Operations & Reporting Integrations",
+        "12": "Platform Engineering, Infrastructure and Releases",
+        "13": "UI Components & Design System"
+      },
+      "stories": {
+        "1": {
+          "kicker": "Produktutvikling i kliniske studier",
+          "summary": "Funksjoner for design av kliniske studier, backend-integrasjoner, automatisert testing og distribusjonsrørledninger.",
+          "sections": {
+            "overview": {
+              "title": "Klinisk studiedesignplattform",
+              "content": "Jeg bidro til Faro Study Designer, et helseprodukt som brukes til å planlegge, dokumentere og evaluere kliniske protokoller. Jeg utviklet funksjoner for kliniske studier ved hjelp av React og TypeScript, integrerte backend-tjenester og bidro med automatiserte tester og distribusjonsprosesser."
+            },
+            "contributions": {
+              "title": "Bidrag og resultater",
+              "nodes": {
+                "features": {
+                  "label": "Produktfunksjoner",
+                  "detail": "Bygget frontend- og backend-funksjonsseksjoner for arbeidsflyter for studiedesign"
+                },
+                "integrations": {
+                  "label": "Tjenesteintegrasjon",
+                  "detail": "Integrerte brukergrensesnittmoduler med tjenestegrenser i REST og CQRS>-stil"
+                },
+                "testing": {
+                  "label": "Pålitelighet",
+                  "detail": "Forbedret pålitelighet med enhets- og integrasjonstester"
+                },
+                "delivery": {
+                  "label": "Leveranse",
+                  "detail": "Brukte GitHub Actions til å støtte automatisert testing, bygg og distribusjoner"
+                }
+              }
+            },
+            "outcome": {
+              "content": "Arbeidet utvidet funksjonaliteten i kliniske studier, automatisert testdekning og støtte for kontinuerlig utvikling."
+            }
+          }
+        },
+        "2": {
+          "kicker": "Modernisering av et sanntidsprodukt",
+          "summary": "Frontend-modernisering for arbeidsflyter for live discovery, video, chat og interaktive økter.",
+          "sections": {
+            "overview": {
+              "title": "Cams produktmodernisering i sanntid",
+              "content": "Jeg ledet moderniseringsarbeidet for frontend for Cams, en moden plattform med høy trafikk med live discovery, video, chat, offentlige rom og private interaktive økter. Arbeidet krevde å bevare aktiv produktatferd samtidig som man migrerte eldre JavaScript og Perl-støttet applikasjonsfunksjonalitet til React, TypeScript og Next.js, integrert med WebSocket og Python tjenester."
+            },
+            "contributions": {
+              "title": "Bidrag og resultater",
+              "nodes": {
+                "leadership": {
+                  "label": "Teamledelse",
+                  "detail": "Koordinerte et internasjonalt frontend-team på tvers av produkt-, design- og ingeniørprioriteringer"
+                },
+                "discovery": {
+                  "label": "Produktarbeidsflyter",
+                  "detail": "Forbedrede grensesnitt for oppdagelse, tilstedeværelse, chat og øktstatus"
+                },
+                "realtime": {
+                  "label": "Oppførsel i sanntid",
+                  "detail": "Støttet sanntidsoppdateringer av brukergrensesnittet uten å forstyrre aktive videostrømmer og chatteøkter"
+                },
+                "modernization": {
+                  "label": "Modernisering",
+                  "detail": "Migrerte eldre grensesnitt og funksjonalitet til React og TypeScript"
+                }
+              }
+            },
+            "outcome": {
+              "content": "Moderniseringen oppdaterte frontend-arkitekturen for live discovery, video, chat og private økter, samtidig som eksisterende funksjonalitet ble bevart."
+            }
+          }
+        },
+        "3": {
+          "kicker": "Offentlig informasjon og spørreundersøkelser",
+          "summary": "En offentlig nettside som hjelper innbyggere med å forstå foreslåtte planendringer og delta i prosessen.",
+          "sections": {
+            "overview": {
+              "title": "San Anselmo nettsted for byplanlegging",
+              "content": "Et WordPress-nettsted for 2025 San Anselmo Generalplanoppdatering som gir innbyggerne informasjon om foreslåtte endringer i byens infrastruktur, reguleringsplaner og offentlige rom. Det inkluderer prosjektoppdateringer, bærekraftsinitiativer, forbedringer av transport og offentlige undersøkelser for tilbakemeldinger fra lokalsamfunnet."
+            }
+          }
+        },
+        "4": {
+          "kicker": "Utvikling av byråets nettsted",
+          "summary": "Et vedlikeholdbart markedsføringsnettsted for et San Francisco Bay Area design- og utviklingsbyrå.",
+          "sections": {
+            "overview": {
+              "title": "Launch Brigade nettsted",
+              "content": "Launch Brigade er et webdesign- og utviklingsbyrå basert i San Francisco Bay Area. Jeg bidro til utviklingen av byråets responsive nettsted, inkludert sideoppsett, innholdspresentasjon og frontend-implementering."
+            }
+          }
+        },
+        "5": {
+          "kicker": "Utforsking av kliniske studier",
+          "summary": "En Pandas-basert analyseprototype for å spørre etter og visualisere data fra kliniske studier.",
+          "sections": {
+            "overview": {
+              "title": "Konseptbevis for dataanalysedashbord",
+              "content": "Data Analytics Dashboard var et Pandas-basert konseptbevis som brukte Study Designer-data lagret i et stjerneskjema for å lage en analysemikrotjeneste og et frontend. Det tillot brukere å filtrere og analysere Study Designer-data gjennom et frontend koblet til analysetjenesten."
+            }
+          }
+        },
+        "6": {
+          "kicker": "Organisasjonsspesifikk autentisering",
+          "summary": "Identitetsleverandør-agnostisk SSO for organisasjoner som bruker sine egne autentiseringstjenester.",
+          "sections": {
+            "overview": {
+              "title": "Faro B2C SSO implementering",
+              "content": "En identitetsleverandør-agnostisk implementering av enkeltpålogging for Study Designer. Den tillot organisasjoner å autentisere brukere gjennom sine eksisterende identitetsleverandører ved hjelp av SAML eller OAuth baserte integrasjoner, med autentisert tilgang til applikasjonen API."
+            }
+          }
+        },
+        "7": {
+          "kicker": "Nettsted for plattform for bilinventar",
+          "summary": "En produktnettside som forklarer hvordan data og maskinlæring støtter forhandlernes lagerbeslutninger.",
+          "sections": {
+            "overview": {
+              "title": "LotLinx nettsted",
+              "content": "LotLinx er en AI-drevet plattform for lagerstyring i bilindustrien som bruker maskinlæring og dataanalyse for å hjelpe forhandlere med å optimalisere lageromløpshastighet og lønnsomhet. Nettstedet forklarer hvordan plattformen bruker markedsetterspørsel, prising og forbrukerdata for å støtte lagerbeslutninger."
+            }
+          }
+        },
+        "8": {
+          "kicker": "Kompleks geometri i nettleseren",
+          "summary": "Frontend-prototypearbeid for en skyplattform fokusert på intrikate additiv produksjonsmodeller.",
+          "sections": {
+            "overview": {
+              "title": "Metafold 3D MVP",
+              "content": "Metafold 3D er en skyplattform for design av komplekse 3D-modeller optimalisert for additiv produksjon. Jeg bidro med frontend-prototypearbeid for visualisering og arbeid med intrikate geometrier som lette gitterstrukturer."
+            }
+          }
+        },
+        "9": {
+          "kicker": "Gjøre publikumsintelligens søkbar",
+          "summary": "Søke- og rapporteringsfunksjonalitet som holdt spørringer og filtre konsistente på tvers av brukergrensesnittet, backend-tjenester og CSV-eksporter.",
+          "sections": {
+            "challenge": {
+              "eyebrow": "Utfordringen",
+              "title": "Brukerne trengte raske, konsistente og likhetsbaserte søk på tvers av målgruppe- og kanaldata.",
+              "content": "Annonsører måtte søke i målgruppe- og kanalregistreringer, bruke filtre, gjennomgå historiske data og eksportere resultater. Søkeatferden måtte forbli konsistent på tvers av filtrering, paginering, historisk rapportering og eksport."
+            },
+            "architecture": {
+              "title": "Én søkekontrakt på tvers av stabelen",
+              "nodes": {
+                "interface": {
+                  "label": "React + Next.js",
+                  "detail": "Autofullfør, uendelig rulling, datofiltre"
+                },
+                "api": {
+                  "label": "FastAPI",
+                  "detail": "Paginering og spørrekontrakter"
+                },
+                "search": {
+                  "label": "PostgreSQL + OpenSearch",
+                  "detail": "Historiske data og indeksert oppdagelse"
+                },
+                "exports": {
+                  "label": "Redis + strømmeeksport",
+                  "detail": "Rask lesing og filterbevisst CSV-utdata"
+                }
+              }
+            },
+            "progression": {
+              "title": "Ingeniørprogresjon",
+              "steps": {
+                "discover": {
+                  "label": "Oppdage",
+                  "title": "Definer arbeidsflyten for publikum",
+                  "content": "Jeg definerte krav til søk, filtrering, paginering, historisk rapportering og eksport for annonsørundersøkelser."
+                },
+                "connect": {
+                  "label": "Koble til",
+                  "title": "Bli med i APIs, indekser og datalagre",
+                  "content": "Jeg integrerte FastAPI-tjenester, PostgreSQL-spørringer, OpenSearch-indekser og Redis-hurtigbufring bak en delt søkekontrakt."
+                },
+                "interact": {
+                  "label": "Samhandle",
+                  "title": "Implementer interaktivt søk",
+                  "content": "Jeg bygde autofullføring på serversiden, uendelig rulling, datofiltrering og kanalstatistikk i React og Next.js."
+                },
+                "export": {
+                  "label": "Eksport",
+                  "title": "Bevar søkefiltre i fileksporter",
+                  "content": "Strømming av CSV-eksporter brukte de aktive søke- og filterparameterne fra grensesnittet."
+                },
+                "validate": {
+                  "label": "Valider",
+                  "title": "Testsøk, filtrering og eksport",
+                  "content": "Jeg verifiserte atferd på tvers av grensesnittet, API-grensene, søkeinfrastrukturen og datatjenestene, slik at hver bane ga konsistente resultater."
+                }
+              }
+            },
+            "outcome": {
+              "content": "Brukere kunne søke og analysere målgruppedata, og deretter eksportere resultater ved hjelp av de samme aktive søke- og filterparameterne."
+            }
+          }
+        },
+        "10": {
+          "kicker": "Holde kontekstuelle data i store mengder pålitelige",
+          "summary": "Et inntakssystem for URL-normalisering, metadataklassifisering og gjenoppretting fra behandlingsfeil.",
+          "sections": {
+            "challenge": {
+              "eyebrow": "Pålitelighetsproblemet",
+              "title": "Inkonsekvente URL-er gjør det vanskelig å matche og kombinere data",
+              "content": "Dupliserte URL-er og inkonsistente metadata gjorde det vanskelig å matche poster. Asynkron behandling krevde også pålitelig jobbsporing og gjenoppretting."
+            },
+            "pipeline": {
+              "title": "Kontekstrørledningen",
+              "steps": {
+                "ingest": {
+                  "label": "Inntak",
+                  "title": "Innhent nettside-, video- og kanaldata",
+                  "content": "Jeg hjalp til med å utvikle verktøy for å innhente nettside-, video- og kanaldata for asynkron behandling."
+                },
+                "normalize": {
+                  "label": "Normaliser",
+                  "title": "Normaliser URL-er for konsistent samsvar",
+                  "content": "Standardiserte URL-formater og aliaser slik at poster som refererer til den samme ressursen kan matches."
+                },
+                "dedupe": {
+                  "label": "Deduplisering",
+                  "title": "Identifiser duplikater og reduser gjentatt behandling",
+                  "content": "Deduplikasjon og aliasavstemming reduserte overflødig behandling samtidig som tilknytningene mellom alternative URL-er og deres kanoniske poster ble opprettholdt."
+                },
+                "classify": {
+                  "label": "Klassifisere",
+                  "title": "Klassifiser normalisert innhold",
+                  "content": "Batchbehandling sendte normaliserte metadata til nedstrøms klassifiseringstjenester."
+                },
+                "persist": {
+                  "label": "Fortsette",
+                  "title": "Bevar metadata og behandlingsstatus",
+                  "content": "Jeg forbedret lagring og gjenbruk av metadata på tvers av tjenester og vedlikeholdt kontrollpunkter for å spore behandlingsfremdriften."
+                },
+                "recover": {
+                  "label": "Komme seg",
+                  "title": "Gjør feil diagnostiserbare",
+                  "content": "Nye forsøk og kontrollpunkter støttet gjenoppretting fra mislykkede jobber, mens CloudWatch-logger hjalp med å undersøke feil."
+                }
+              }
+            },
+            "architecture": {
+              "title": "Komponenter for prosessering, persistens og gjenoppretting",
+              "nodes": {
+                "urls": {
+                  "label": "URL-normalisering",
+                  "detail": "Normalisering, aliaser, parsing, reserveprogrammer"
+                },
+                "services": {
+                  "label": "Python tjenester",
+                  "detail": "Batchbehandling og metadatapersistens"
+                },
+                "serverless": {
+                  "label": "AWS serverløs",
+                  "detail": "Lambda og SQS-orkestrering"
+                },
+                "diagnostics": {
+                  "label": "CloudWatch diagnostikk",
+                  "detail": "Logging, overvåking og feilundersøkelse"
+                }
+              }
+            },
+            "outcome": {
+              "content": "Verktøyene støttet identifisering og håndtering av dupliserte poster, gjenbruk av behandlede metadata og gjenoppretting fra mislykkede inntaksjobber."
+            }
+          }
+        },
+        "11": {
+          "kicker": "Kobler sammen fragmenterte annonsedata",
+          "summary": "Annonsørsøk, enhetsmatching, rapporteringskartlegginger og eksport på tvers av FreeWheel og Google Ad Manager.",
+          "sections": {
+            "challenge": {
+              "eyebrow": "Integrasjonsgapet",
+              "title": "Ulike plattformer beskrev den samme virksomheten forskjellig",
+              "content": "FreeWheel og Google Ad Manager brukte forskjellige identifikatorer, rapporteringsstrukturer og navnekonvensjoner. Brukerne trengte fortsatt én forutsigbar måte å finne annonsører, skille mellom duplikater, kartlegge plasseringer og hente rapporteringsdata."
+            },
+            "architecture": {
+              "title": "Avstem før presentasjon",
+              "nodes": {
+                "platforms": {
+                  "label": "Eksterne plattformer",
+                  "detail": "FreeWheel og Google Ad Manager"
+                },
+                "resolution": {
+                  "label": "Enhetsoppløsning",
+                  "detail": "Kildekvalifiserte valg og flertydighetskontroll av duplikat"
+                },
+                "pipelines": {
+                  "label": "Datapipeliner",
+                  "detail": "Snowflake, Dagster, PostgreSQL og rapporteringsbuffere"
+                },
+                "workflows": {
+                  "label": "Produktarbeidsflyter",
+                  "detail": "Søk, gallerier, kartlegginger og CSV-eksport"
+                }
+              }
+            },
+            "progression": {
+              "title": "Integrering",
+              "steps": {
+                "connect": {
+                  "label": "Koble til",
+                  "title": "Integrer eksterne annonsesystemer",
+                  "content": "Jeg bygde søk etter annonsører og rapporteringsenheter på tvers av FreeWheel og Google Ad Manager data."
+                },
+                "reconcile": {
+                  "label": "Avstemme",
+                  "title": "Løs enhetsforskjeller",
+                  "content": "Beholdt annonsøridentifikatorer knyttet til kildeplattformene deres, samtidig som poster med identiske navn ble skilt fra hverandre."
+                },
+                "sync": {
+                  "label": "Synkroniser",
+                  "title": "Koordinatrapporteringsdata",
+                  "content": "Jeg forbedret rapporteringsbuffere og Dagster-styrte datatransformasjoner som involverer Snowflake og PostgreSQL."
+                },
+                "present": {
+                  "label": "Nåværende",
+                  "title": "Bygg søke-, kartleggings- og eksportgrensesnitt",
+                  "content": "Søkeresultater, gallerier, kartlegginger og eksporter ga et felles grensesnitt for data fra begge plattformene."
+                }
+              }
+            },
+            "outcome": {
+              "content": "De resulterende verktøyene gjorde det enklere å navigere i annonseringsenheter og velge målrettingsinformasjon, samtidig som de opprinnelige plattformidentifikatorene og tilhørende rapporteringsdata ble bevart."
+            }
+          }
+        },
+        "12": {
+          "kicker": "Gjør en flertjenesteplattform mer pålitelig",
+          "summary": "Arbeid med kryssrepositoriinfrastruktur, testing, observerbarhet og utgivelse for en produksjonsannonseringsplattform.",
+          "sections": {
+            "architecture": {
+              "title": "Pålitelighet på tvers av tjenestegrenser",
+              "nodes": {
+                "frontend": {
+                  "label": "Grensesnitt",
+                  "detail": "Autentisert Cypress og initial Playwright dekning"
+                },
+                "apis": {
+                  "label": "Søknad APIs",
+                  "detail": "Autentisering, kontrakter og konfigurasjonsrettinger"
+                },
+                "pipelines": {
+                  "label": "ETL + Persona",
+                  "detail": "Synkronisering av rapporteringsbuffer og Python-pipeliner"
+                },
+                "infrastructure": {
+                  "label": "AWS infrastruktur",
+                  "detail": "Planlagte Lambda-jobber, inntak og CloudWatch-diagnostikk"
+                }
+              }
+            },
+            "progression": {
+              "title": "Driftsbidrag",
+              "steps": {
+                "identify": {
+                  "label": "Identifisere",
+                  "title": "Spor problemer på tvers av tjenester",
+                  "content": "Jeg undersøkte produksjonsfeil på tvers av frontend-applikasjoner, APIs, ETL, Persona tjenester og AWS infrastruktur."
+                },
+                "improve": {
+                  "label": "Forbedre",
+                  "title": "Styrke tester og infrastruktur",
+                  "content": "Autentisert Cypress-dekning, innledende Playwright-tester, planlagte Lambda-jobber og konfigurasjonsrettinger reduserte utgivelsesrisikoen."
+                },
+                "release": {
+                  "label": "Utgivelse",
+                  "title": "Koordinere levering på tvers av databaser",
+                  "content": "Jeg koordinerte relaterte kodeendringer, sikkerhetsoppdateringer for rammeverket og utgivelser på tvers av flere repositorier."
+                },
+                "monitor": {
+                  "label": "Følge",
+                  "title": "Overvåke produksjonen og undersøke feil",
+                  "content": "Jeg brukte CloudWatch-logger og kontroller etter utgivelse for å overvåke planlagte jobber og undersøke produksjonsfeil."
+                }
+              }
+            },
+            "outcome": {
+              "content": "Arbeidet inkluderte utvidet testdekning, forbedringer av serverløs prosessering, sikkerhetsoppdateringer for rammeverket, rettelser til tjenestekonfigurasjon, ETL-synkronisering og koordinerte utgivelser."
+            }
+          }
+        },
+        "13": {
+          "kicker": "Bygge konsistente grensesnitt på tvers av et komplekst produkt",
+          "summary": "Delte React-komponenter, semantiske designtokener og konsekvent håndtering av API-drevet brukergrensesnittatferd.",
+          "sections": {
+            "challenge": {
+              "eyebrow": "Produktutfordringen",
+              "title": "Analysefunksjoner trengte konsistente brukergrensesnittkomponenter og -oppførsel",
+              "content": "Dashbord, tabeller, gallerier og søkeverktøy utviklet seg i takt med nye datasett og arbeidsflyter. Grensesnittet trengte gjenbrukbare komponenter som standardiserte oppførselen på tvers av ulike funksjoner."
+            },
+            "architecture": {
+              "title": "Delte komponenter og designtokener",
+              "nodes": {
+                "tokens": {
+                  "label": "Semantiske tokens",
+                  "detail": "Delt visuelt språk og Material UI-varianter"
+                },
+                "patterns": {
+                  "label": "Interaksjonsmønstre",
+                  "detail": "Autofullføring, filtre, paginering og lastetilstander"
+                },
+                "integration": {
+                  "label": "Dataintegrasjon",
+                  "detail": "API svar, paginering og administrasjon av frontend-tilstand"
+                },
+                "coverage": {
+                  "label": "Regresjonsdekning",
+                  "detail": "Validering av Jest, Cypress og Playwright"
+                }
+              }
+            },
+            "progression": {
+              "title": "Design-systemprogresjon",
+              "steps": {
+                "audit": {
+                  "label": "Revidere",
+                  "title": "Finn gjentatte UX-problemer",
+                  "content": "Jeg identifiserte inkonsekvenser på tvers av dashbord, tabeller, gallerier, søk, filtre og lastetilstander."
+                },
+                "systemize": {
+                  "label": "Systemiser",
+                  "title": "Bygg gjenbrukbare grensesnittmønstre",
+                  "content": "Semantiske tokener, Material UI-varianter og delte React-komponenter erstattet inkonsistente implementeringer."
+                },
+                "integrate": {
+                  "label": "Integrere",
+                  "title": "Integrer forbrukere med applikasjon APIs",
+                  "content": "Jeg implementerte håndtering av komponenttilstand for API-svar, paginering, autofullføring og eksportfunksjonalitet."
+                },
+                "validate": {
+                  "label": "Valider",
+                  "title": "Test UI-funksjonalitet",
+                  "content": "Jest, Cypress og Playwright dekning bekreftet autentiserte stier og reduserte regresjoner."
+                }
+              }
+            },
+            "outcome": {
+              "content": "Delte React-komponenter og brukergrensesnittmønstre reduserte dupliserte implementeringer og standardiserte søke-, filtrerings- og rapporteringsgrensesnitt."
+            }
+          }
+        }
+      },
+      "description": {
+        "1": "Funksjoner for klinisk studiedesign, samarbeidsflyter, tjenesteintegrasjoner og leveringsforbedringer for et helseprodukt",
+        "2": "Frontend-modernisering og produktarbeid i sanntid for Cams video-, chat-, oppdagelses- og øktarbeidsflyter",
+        "3": "Utvikling av et nettsted for byplanlegging med offentlig informasjon og innbyggerundersøkelser",
+        "4": "Responsiv nettsideutvikling, layoutdesign og innholdsorganisering for et designbyrå Bay Area",
+        "5": "Analysekonseptbevis som skapte filtrerbare rapporter ved hjelp av studiedesigndata",
+        "6": "Identitetsleverandør-agnostisk SSO-arbeid som støttet organisasjonsspesifikke autentiseringskrav",
+        "7": "Implementering av markedsføringssted for et AI-basert billagerprodukt",
+        "8": "Frontend-prototypearbeid for et geometrisk modelleringsprodukt fokusert på visualisering av kompleks gitterstruktur",
+        "9": "Forbedringer i søk, filtrering, analyse og eksport som gjorde det raskere og mer pålitelig å oppdage publikum og kanaler",
+        "10": "URL-normalisering, metadatabehandling, duplikatdeteksjon og gjenopprettingsverktøy for asynkrone inntaksjobber",
+        "11": "Rapportering, enhetssøk, kampanjekontroll og eksportarbeidsflyter som koblet sammen data om annonseringsoperasjoner",
+        "12": "Forbedringer av testing, infrastruktur, observerbarhet, sikkerhet og utgivelser som reduserte plattformrisikoen",
+        "13": "Gjenbrukbare React-komponenter, designsystemoppdateringer og forbedringer av søk, filtrering, dashbord og brukergrensesnittinteraksjoner"
+      }
+    }
+  }
+}

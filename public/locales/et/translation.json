@@ -1,0 +1,805 @@
+{
+  "common": {
+    "noneFound": "Ei leitud ühtegi"
+  },
+  "placeholder": {
+    "comingSoon": "Varsti tulekul..."
+  },
+  "home": {
+    "header": "<span>Tere<br /> mina olen Brian Velasquez,<br /><em>vanemtarkvara-<br />insener.</em></span>",
+    "heroEyebrow": "Vanem tarkvaraarendaja",
+    "heroBrand": "brian velasquez",
+    "heroHeadlineStart": "Loon süsteeme,",
+    "heroHeadlineAccent": "mis toetavad",
+    "heroHeadlineEnd": "suurepäraseid tooteid.",
+    "heroPrimaryCta": "Vaadake minu töid",
+    "heroSecondaryCta": "Võtke ühendust",
+    "heroSkillsLabel": "Soovitatud oskused",
+    "heroName": "I'm Brian Velasquez,",
+    "heroRole": "Vanem tarkvarainsener.",
+    "heroIntroduction": "Mina olen Brian. Ma loon intuitiivseid liideseid, usaldusväärseid APIs ja andmemahukaid platvorme alates esimesest prototüübist kuni suuremahulise tootmiseni.",
+    "switchBackground": "Kangelase tausta vahetamine",
+    "backgrounds": {
+      "type1": "Tüüp 1",
+      "type2": "Tüüp 2"
+    },
+    "aboutHeader": "Kes ma olen?",
+    "about": "Olen täispinu tarkvarainsener, kellel on tugev taust kasutajaliidese arenduses ja kogemus keerukate toodete aluseks olevate süsteemide loomisel. Minu töö hõlmab otsingut, analüütikat, andmetöötlust, API-sid ja kasutajaliideseid reklaamitehnoloogia, tervishoiu ning tarbijatele suunatud platvormide valdkonnas. Olen juhtinud ka kasutajaliideste moderniseerimist, tehes koostööd eri meeskondadega, et parandada arhitektuuri, lahendada keerulisi tehnilisi probleeme ning arendada töökindlat, skaleeritavat ja intuitiivselt kasutatavat tarkvara.",
+    "aboutEyebrow": "01 Minust",
+    "aboutTitle": "Tarkvaratehnika ja tehniline juhtimine",
+    "aboutLink": "Rohkem minu kohta",
+    "features": {
+      "experience": "Aastatepikkune kogemus",
+      "projects": "Kasutusele võetud projektid",
+      "international": "Rahvusvahelised projektid",
+      "collaboration": "Koostöö",
+      "focus": "Fookus",
+      "performance": "Jõudlus, skaleeritavus, kasutajakogemus"
+    },
+    "section1Title": "Kogenud",
+    "section1Content1": "Vanemtarkvarainsenerina farmaatsiatehnoloogia idufirmas Faro Health ehitasin ja optimeerisin REST ja CQRS-põhiseid mikroteenuseid ja kasutajaliidese mooduleid, kasutades TypeScript, Node.js, PostgreSQL, Jest ja React. Kujundasin ja arendasin funktsioonilõike ja POC-e, kirjutasin ühik- ja integratsiooniteste, optimeerisin rakenduste jõudlust ja ehitasin juurutamistorustikke GitHub Actions abil.",
+    "section1Content2": "Varem juhtisin Various Inc.-s rahvusvahelist kaugtööjõu meeskonda, tehes disaineritega tihedat koostööd, et kaasajastada vanemaid JavaScript ja Perli-põhiseid video voogedastusrakendusi. Migreerisime need skaleeritavale, suure jõudlusega React ja TypeScript platvormile, mis sisaldasid Next.js, MOBX, WebSockets ja Python, mida toetasid REST APIs ja CI/CD konveier sujuva juurutamise tagamiseks.",
+    "experience": {
+      "eyebrow": "02 Kogenud",
+      "title": "Kogenud",
+      "summary": "Ma ehitan ja täiustan tootmistarkvara tooteliideste, APIs, andmesüsteemide, otsingu ja pilveinfrastruktuuri vahel. Minu hiljutine töö on ühendanud need kihid sihtrühma analüüsi ja reklaami töövoogude vahel.",
+      "scope": "Varasemad rollid hõlmasid kliiniliste uuringute tööriistu ettevõttes Faro Health ja video voogedastust ettevõttes Cams ettevõttes Various Inc.",
+      "copy1": "Olen täisfunktsionaalne tarkvaraarendaja, kellel on tugevad teadmised esiotsa arenduses ning kogemusi esiotsa rakenduste, APIs, otsingufunktsioonide ja andmetöötlussüsteemide arendamisel. Minu töö hõlmab otsingut, analüütikat, andmetöötlust APIs ja kasutajaliideseid reklaamitehnoloogia, tervishoiu ja tarbijaplatvormide valdkonnas. Olen juhtinud ka esiotsa moderniseerimise jõupingutusi, töötades meeskondade vahel arhitektuuri täiustamise, keeruliste tehniliste probleemide lahendamise ning usaldusväärse, skaleeritava ja intuitiivselt kasutatava tarkvara loomise nimel.",
+      "copy2": "Ma ehitasin ja täiustasin otsingu, filtreerimise, lehekülgimise, automaatse täitmise, CSV-eksportide, statistika, vahemälu käitumise, sisestamise tööriistade ja aruandluse töövooge platvormidel Next.js, React, TypeScript, FastAPI, PostgreSQL, OpenSearch, Snowflake, Dagster, Redis ja AWS.",
+      "copy3": "Töö ületas regulaarselt esiotsa, tagaotsa, ETL, otsingu ja infrastruktuuri piire. Samuti lahendasin tootmisprobleeme, laiendasin testimise ulatust, koordineerisin väljalaseid, brändide vastavusse viimist ja integratsioone esiotsa, Persona API, sisu API, Video Brand Safety, ETL ja otsast lõpuni testimise repositooriumide vahel.",
+      "copy4": "Enne Mobian aitasin luua Faro Health kliiniliste uuringute disainiplatvormi, panustades esiotsa funktsioonidesse, teenuste integratsiooni, testimisse ja edastustööde täiustustesse.",
+      "copy5": "Varem ettevõttes Various Inc. juhtisin Cams esiotsa moderniseerimistööd, viies suure liiklusega reaalajas video- ja vestlusrakendusi skaleeritavamale React, TypeScript, Next.js, WebSocket ja Python platvormile.",
+      "link": "Vaata minu kogemust",
+      "timeline": {
+        "mobianPeriod": "2025 - Praegune aeg",
+        "mobianCompany": "Mobian",
+        "mobianSummary": "Loodud otsingu-, analüüsi-, aruandlus-, andmetöötlus- ja usaldusväärsusfunktsioonid sihtrühma teabe ja reklaami töövoogude jaoks.",
+        "contractorPeriod": "2024 - 2025",
+        "contractorCompany": "Independent Contractor",
+        "contractorSummary": "Pakkusin sõltumatutele klientidele veebirakenduste, toodete ja tehniliste konsultatsioonide teenuseid.",
+        "faroPeriod": "2022 - 2024",
+        "faroCompany": "Faro Health",
+        "faroSummary": "Panustas kliiniliste uuringute tootefunktsioonide, teenuste integratsioonide, testide ja tervishoiu tarkvaraplatvormi juurutamise täiustuste väljatöötamisse.",
+        "variousPeriod": "2018 - 2021",
+        "variousCompany": "Various Inc.",
+        "variousSummary": "Video voogedastusrakenduste moderniseerimine, mis hõlmab katkematut reaalajas video-, vestlus- ja maksevoogu küpsel suure liiklusega platvormil.",
+        "launchPeriod": "2015 - 2018",
+        "launchCompany": "Launch Brigade",
+        "launchSummary": "Loonud ja haldanud Bay Area disaini- ja arendusagentuurile responsiivseid kliendiveebisaite ja digitaalseid tooteid."
+      }
+    },
+    "leadership": {
+      "eyebrow": "03 Tehniline juht",
+      "title": "Tehniline juht",
+      "copy1": "Olen juhtinud ja teinud koostööd hajutatud meeskondadega üle USA, Euroopa, Taiwan ja China, töötades toote, disaini, inseneriteaduse, andmete ja infrastruktuuri valdkonnas.",
+      "copy2": "Minu lähenemine on lihtne: määran selge tehnilise suuna, planeerin ja tuvastan riskid varakult, koordineerin tööd ning keskendun usaldusväärse tarkvara tarnimisele. Varasemates rollides olen koordineerinud muudatusi mitmes teenuses ja repositooriumis, säilitades API stabiilsuse ja parandades kasutajakogemust.",
+      "copy3": "Tunnen end mugavalt arhitektuuri ja implementatsiooni vahel liikudes, süsteeme disainides, kompromisse üle vaadates ja hinnates, arendustöövooge täiustades ning meeskondade abistamisel laiaulatuslike nõuete muutmisel konkreetseteks ja skaleeritavateks lahendusteks.",
+      "link": "Loe minu lähenemisviisi kohta",
+      "regionsHeading": "Kus ma koostööd teen",
+      "regions": {
+        "northAmerica": "Põhja-Ameerika",
+        "southAmerica": "Lõuna-Ameerika",
+        "europe": "Euroopa",
+        "asia": "Aasia"
+      },
+      "summary": "Funktsionaalne juhtimine toote, disaini, inseneriteaduse, andmete ja infrastruktuuri valdkonnas.",
+      "stats": {
+        "regions": "4 piirkonda",
+        "timeZones": "Mitu ajavööndit"
+      },
+      "approachStatement": "Süsteemide usaldus algab meeskonna tasandil",
+      "practices": {
+        "crossFunctional": {
+          "title": "Funktsionaalne juhtimine",
+          "description": "Inseneriteadus, toode, disain, andmed ja infrastruktuur."
+        },
+        "async": {
+          "title": "Asünkroonne koostöö",
+          "description": "Selge kirjalik suhtlus, omandiõigus ja detailsed üleandmised."
+        },
+        "delivery": {
+          "title": "Meeskondadevaheline koordineerimine",
+          "description": "Töö koordineerimine teenuste, repositooriumide ja väljalasketsüklite vahel."
+        },
+        "systems": {
+          "title": "Süsteemne mõtlemine",
+          "description": "Skaleeritavuse, arenduse, stabiilsuse ja ärivajaduste tasakaalustamine tõhusa planeerimise abil"
+        }
+      }
+    },
+    "section2Title": "Tehniline juht",
+    "section2Content1": "Olles juhtinud suurt rahvusvahelist meeskonda USA-s, Euroopas, Taiwan ja China, panen innovatsiooni edendamiseks kaasa sügavad teadmised TypeScript, Node.js, PostgreSQL, Jest ja React valdkondades. Lisaks tehnilisele disainile ja arendusele tagavad minu juhtimisoskused meeskondade ühtsuse, keskendumise ja töö oluliste verstapostide ja ettevõtte eesmärkide poole."
+  },
+  "about": {
+    "eyebrow": "Minust",
+    "portraitAlt": "Brian Velasquez",
+    "title": "Tere, mina olen Brian",
+    "role": "Vanem tarkvarainsener",
+    "section1": "Olen kogenud vanemtarkvarainsener, kelle kirg on elegantne ja skaleeritav kood ning minimalistlik ja intuitiivne kasutajakogemus.",
+    "section2": "Vabal ajal meeldib mulle ronida, malet mängida, mootorrattaga ringi vaadata ja Muay Thaid harrastada.",
+    "location": "Praegu asub Chiang Mai, Thailand",
+    "cta": "Võtke ühendust",
+    "outsideCode": "Väljaspool koodi",
+    "buildWith": "Ma ehitan koos",
+    "interests": {
+      "climbing": {
+        "title": "Ronimine",
+        "description": "Keeruliste probleemide lahtiharutamine, erinevate lähenemisviisidega katsetamine ja igast katsest õppimine."
+      },
+      "chess": {
+        "title": "Male",
+        "description": "Strateegiline planeerimine, probleemide lahendamine piirangute raames ja kohanemine muutuvate oludega."
+      },
+      "dirtbike": {
+        "title": "Krossiratas",
+        "description": "Lõputu uudishimu, tundmatute paikade avastamine ja vabadus avastada, mis järgmise nurga taga peitub."
+      },
+      "muayThai": {
+        "title": "Muay Thai",
+        "description": "Vaimne selgus, keskendumisvõime säilitamine surve all ja distsipliin pidevaks arenemiseks."
+      }
+    },
+    "quote": "Usun puhta, skaleeritava ja kestva koodi kirjutamisse. Mind huvitavad läbimõeldud kasutajakogemused ja tooted, millel on reaalne mõju.",
+    "process": {
+      "eyebrow": "Minu protsess",
+      "title": "Probleemist tootmiseni",
+      "description": "Koostööl põhinev iteratiivne lähenemine, mis hoiab eesmärgid, tehnilised otsused ja nõuded selged alates avastamisest kuni avaldamiseni.",
+      "generativeTitle": "Tehisintellekti abil teostatav tarkvaratehnika kogenud inimese järelevalve all",
+      "generativeDescription": "Ma kasutan tehisintellekti uurimistöö, planeerimise, ülevaatamise, testimise ja dokumenteerimise kiirendamiseks, kontrollides samal ajal iga väljundit koodibaasi ja reaalse süsteemi käitumise suhtes.",
+      "steps": {
+        "align": {
+          "title": "Joonda",
+          "description": "Selgitage probleemi, piiranguid, sõltuvusi ja edu definitsiooni."
+        },
+        "map": {
+          "title": "Kaart",
+          "description": "Jälgige asjakohast kasutajaliidest, teenuseid, andmevooge ja operatsiooniriske."
+        },
+        "shape": {
+          "title": "Kuju",
+          "description": "Võrdle lähenemisviise, prototüübi ebakindlaid ideid ja jaga töö sihipärasteks osadeks."
+        },
+        "build": {
+          "title": "Ehitamine",
+          "description": "Rakenda funktsioone kogu pinus, kasutades selgeid, korduvkasutatavaid DRY, kuid samas skaleeritavaid mustreid."
+        },
+        "verify": {
+          "title": "Kinnita",
+          "description": "Testi pidevalt ühiku, integratsiooni, otsast lõpuni ja käsitsi valideerimise abil."
+        },
+        "improve": {
+          "title": "Parandada",
+          "description": "Kontrolli väljaandeid, vaata üle tootmiskäitumine ning täpsusta andmete ja tagasiside põhjal."
+        }
+      }
+    }
+  },
+  "skills": {
+    "eyebrow": "Oskused",
+    "previous": "Eelmine oskuse tüüp",
+    "next": "Järgmine oskuse tüüp",
+    "projectsLink": "Vaata projekte",
+    "projectsMenu": "Projektid",
+    "names": {
+      "1": "Python",
+      "2": "JavaScript",
+      "3": "TypeScript",
+      "4": "Node.js",
+      "5": "PostgreSQL",
+      "6": "PHP",
+      "7": "HTML5",
+      "8": "CSS/SCSS",
+      "9": "React",
+      "10": "Angular",
+      "11": "Express",
+      "12": "Flask",
+      "13": "RxJS",
+      "14": "Vue",
+      "15": "Storybook",
+      "16": "Vite",
+      "17": "Git",
+      "18": "Webpack",
+      "19": "Azure",
+      "20": "GitHub Actions",
+      "21": "Photoshop",
+      "22": "Bootstrap",
+      "23": "Figma",
+      "24": "Next.js",
+      "25": "Material UI",
+      "26": "FastAPI",
+      "27": "OpenSearch",
+      "28": "Redis",
+      "29": "AWS",
+      "30": "Snowflake",
+      "31": "Dagster",
+      "32": "Docker",
+      "33": "Jest",
+      "34": "Playwright",
+      "35": "Terraform",
+      "36": "Cypress",
+      "37": "CloudWatch",
+      "38": "Tehisintellekti abil arendamine",
+      "39": "GitHub Copilot",
+      "40": "ChatGPT",
+      "41": "Claude Code"
+    },
+    "groups": {
+      "Languages": "Keeled",
+      "BackendData": "Tagaserver ja andmed",
+      "Frontend": "Esiosa",
+      "CloudTools": "Pilv ja tööriistad",
+      "Frameworks": "Raamistikud",
+      "DevTools": "Arendustööriistad",
+      "IT": "IT",
+      "Design": "Disain"
+    },
+    "views": {
+      "development": {
+        "title": "Areng",
+        "description": "Tehnoloogiad ja tööriistad, mida ma kasutan usaldusväärsete toodete loomiseks, tarnimiseks ja skaleerimiseks."
+      },
+      "infrastructure": {
+        "title": "Taristu",
+        "description": "Arendustööriistad, pilveplatvormid, edastussüsteemid ja tegevuspraktikad, mida ma usaldusväärse tarkvara käitamiseks kasutan."
+      },
+      "frameworks": {
+        "title": "Raamistikud",
+        "description": "Rakendusraamistikud, mida ma kasutan tooteideede muutmiseks hooldatavateks liidesteks ja teenusteks."
+      },
+      "devTools": {
+        "title": "Arendustööriistad",
+        "description": "Tööriistad, mida kasutan usaldusväärse tarkvara arendamiseks, testimiseks, dokumenteerimiseks ja tarnimiseks."
+      },
+      "it": {
+        "title": "IT",
+        "description": "Pilveteenused, juurutusplatvormid ja süsteemiadministreerimise tööriistad, mida ma kasutan."
+      },
+      "design": {
+        "title": "Disain",
+        "description": "Tööriistad, mida kasutan liidese kujundamiseks, prototüüpimiseks ja ressursside loomiseks."
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "Projektid",
+    "title": "Asjad, mida olen ehitanud",
+    "introduction": "Valitud projektid, mis hõlmavad esiotsa arendust, tagaotsa teenuseid, andmetöötlust ja infrastruktuuri.",
+    "search": "Otsi projekte",
+    "github": "Vaadake minu Github",
+    "jobs": {
+      "label": "Filtreeri töökoha järgi",
+      "all": "Kõik töökohad",
+      "mobian": "Mobian",
+      "faro": "Faro Health",
+      "independent": "Sõltumatu töövõtja",
+      "various": "Various Inc.",
+      "launchBrigade": "Launch Brigade"
+    },
+    "skills": {
+      "label": "Filtreeri oskuse järgi",
+      "all": "Kõik oskused",
+      "clear": "Selge",
+      "selected": "{{count}} valitud oskused"
+    },
+    "technologies": "{{name}} tehnoloogiad",
+    "viewProject": "Vaade {{name}}",
+    "detail": {
+      "eyebrow": "Projekt",
+      "back": "Kõik projektid",
+      "additionalTechnologies": "Lisatehnoloogiad"
+    },
+    "categories": {
+      "label": "Projekti kategooriad",
+      "all": "Kõik",
+      "web": "Veeb",
+      "mobile": "Mobiil",
+      "backend": "Tagaserver",
+      "data": "Andmed"
+    },
+    "cta": {
+      "title": "Kas sul on idee peas?",
+      "description": "Olen alati avatud huvitavatele projektidele ja koostööle.",
+      "label": "Ehitame midagi"
+    }
+  },
+  "theme": {
+    "dark": "Tume teema",
+    "light": "Hele teema"
+  },
+  "lang": {
+    "english": "Inglise keel",
+    "chinese": "Hiina keel",
+    "espanol": "Hispaania keel",
+    "thai": "Tai keel",
+    "german": "Saksa keel",
+    "korean": "Korea keel",
+    "estonian": "Eesti keel",
+    "swedish": "Rootsi keel",
+    "japanese": "Jaapani keel",
+    "portuguese": "Portugali keel",
+    "norwegian": "Norra keel"
+  },
+  "nav": {
+    "home": "Avaleht",
+    "skills": "Oskused",
+    "projects": "Projektid",
+    "microapps": "Mikrorakendused",
+    "about": "Teave",
+    "openMenu": "Ava menüü",
+    "closeMenu": "Sule menüü"
+  },
+  "data": {
+    "projects": {
+      "name": {
+        "1": "Faro Study Designer",
+        "2": "Various Inc Viewer",
+        "3": "San Anselmo City Plan Website",
+        "4": "Launch Brigade’i veebileht",
+        "5": "Faro Data Analytics Dashboard POC",
+        "6": "Faro B2C SSO Implementation",
+        "7": "LotLinxi veebileht",
+        "8": "Metafold 3D MVP",
+        "9": "Persona & Channel Intelligence",
+        "10": "Context Ingestion & Brand-Safety Tooling",
+        "11": "Advertising Operations & Reporting Integrations",
+        "12": "Platform Engineering, Infrastructure and Releases",
+        "13": "UI Components & Design System"
+      },
+      "stories": {
+        "1": {
+          "kicker": "Kliiniliste uuringute tootearendus",
+          "summary": "Kliiniliste uuringute disainifunktsioonid, taustsüsteemide integratsioonid, automatiseeritud testimine ja juurutamisprotsessid.",
+          "sections": {
+            "overview": {
+              "title": "Kliiniliste uuringute disainiplatvorm",
+              "content": "Panustasin Faro Study Designer arendamisse, mis on tervishoiutoode kliiniliste protokollide planeerimiseks, dokumenteerimiseks ja hindamiseks. Arendasin kliiniliste uuringute funktsioone, kasutades React ja TypeScript, integreeritud taustteenuseid ning panustasin automatiseeritud testide ja juurutamistorustikesse."
+            },
+            "contributions": {
+              "title": "Panus ja tulemused",
+              "nodes": {
+                "features": {
+                  "label": "Toote omadused",
+                  "detail": "Uuringute ja disaini töövoogude jaoks loodud esiotsa ja tagaotsa funktsioonilõigud"
+                },
+                "integrations": {
+                  "label": "Teenuste integratsioon",
+                  "detail": "Integreeritud kasutajaliidese moodulid REST ja CQRS stiilis teenusepiiridega"
+                },
+                "testing": {
+                  "label": "Usaldusväärsus",
+                  "detail": "Suurem töökindlus ühik- ja integratsioonitestide abil"
+                },
+                "delivery": {
+                  "label": "Kohaletoimetamine",
+                  "detail": "Kasutatakse GitHub Actions automaatse testimise, järkude ja juurutuste toetamiseks"
+                }
+              }
+            },
+            "outcome": {
+              "content": "Töö laiendas kliiniliste uuringute funktsionaalsust, automatiseeritud testide ulatust ja tuge pidevale arendustegevusele."
+            }
+          }
+        },
+        "2": {
+          "kicker": "Reaalajas toote kaasajastamine",
+          "summary": "Otseülekannete avastamise, video, vestluse ja interaktiivsete seansside töövoogude esiotsa kaasajastamine.",
+          "sections": {
+            "overview": {
+              "title": "Cams reaalajas toote moderniseerimine",
+              "content": "Juhtisin Cams esiotsa moderniseerimistööd. Tegemist on küpse ja suure liiklusega platvormiga, mis pakub reaalajas avastamist, videot, vestlust, avalikke ruume ja privaatseid interaktiivseid seansse. Töö nõudis toote aktiivse käitumise säilitamist, migreerides samal ajal pärand-JavaScript ja Perli-toega rakenduste funktsionaalsust React, TypeScript ja Next.js platvormidele, mis on integreeritud WebSocket ja Python teenustega."
+            },
+            "contributions": {
+              "title": "Panus ja tulemused",
+              "nodes": {
+                "leadership": {
+                  "label": "Meeskonna juhtimine",
+                  "detail": "Koordineeris rahvusvahelist kliendipoolsete projektide meeskonda toote, disaini ja inseneritöö prioriteetide alal"
+                },
+                "discovery": {
+                  "label": "Toote töövood",
+                  "detail": "Täiustatud avastamise, kohaloleku, vestluse ja seansi oleku liidesed"
+                },
+                "realtime": {
+                  "label": "Reaalajas käitumine",
+                  "detail": "Toetatud reaalajas kasutajaliidese värskendused aktiivseid videovooge ja vestlusseansse katkestamata"
+                },
+                "modernization": {
+                  "label": "Moderniseerimine",
+                  "detail": "Vananenud liidesed ja funktsionaalsus migreeriti React ja TypeScript keskkondadesse"
+                }
+              }
+            },
+            "outcome": {
+              "content": "Moderniseerimine uuendas reaalajas avastamise, video, vestluse ja privaatseanside esiotsa arhitektuuri, säilitades samal ajal olemasoleva funktsionaalsuse."
+            }
+          }
+        },
+        "3": {
+          "kicker": "Avalik teave ja uuringud",
+          "summary": "Kodanikuveebisait, mis aitab elanikel mõista kavandatavaid planeeringumuudatusi ja protsessis osaleda.",
+          "sections": {
+            "overview": {
+              "title": "San Anselmo linnaplaneerimise veebisait",
+              "content": "WordPressi veebisait 2025. aasta San Anselmo üldplaneeringu uuenduse jaoks, mis pakub elanikele teavet linna infrastruktuuri, tsoneerimise ja avaliku ruumi kavandatavate muudatuste kohta. See sisaldab projekti uuendusi, jätkusuutlikkuse algatusi, transpordi täiustusi ja avalikke küsitlusi kogukonna tagasiside saamiseks."
+            }
+          }
+        },
+        "4": {
+          "kicker": "Agentuuri veebilehe arendus",
+          "summary": "San Francisco Bay Area disaini- ja arendusagentuuri hooldatav turundusleht.",
+          "sections": {
+            "overview": {
+              "title": "Launch Brigade veebisait",
+              "content": "Launch Brigade on veebidisaini ja -arenduse agentuur, mis asub San Francisco Bay Area piirkonnas. Panustasin agentuuri responsiivse veebisaidi arendamisse, sealhulgas lehepaigutuse, sisu esitluse ja front-end juurutuse loomisesse."
+            }
+          }
+        },
+        "5": {
+          "kicker": "Kliiniliste uuringute analüütika uurimine",
+          "summary": "Pandas-põhine analüütiline prototüüp kliiniliste uuringute andmete päringute tegemiseks ja visualiseerimiseks.",
+          "sections": {
+            "overview": {
+              "title": "Andmeanalüüsi armatuurlaua kontseptsiooni tõestus",
+              "content": "Andmeanalüüsi armatuurlaud oli Pandas-põhine kontseptsiooni tõestus, mis kasutas tähtskeemis talletatud Study Designer andmeid analüütika mikroteenuse ja esiotsa loomiseks. See võimaldas kasutajatel filtreerida ja analüüsida Study Designer andmeid analüütika teenusega ühendatud esiotsa kaudu."
+            }
+          }
+        },
+        "6": {
+          "kicker": "Organisatsioonispetsiifiline autentimine",
+          "summary": "Identiteedipakkujast sõltumatu SSO organisatsioonidele, mis kasutavad oma autentimisteenuseid.",
+          "sections": {
+            "overview": {
+              "title": "Faro B2C SSO juurutamine",
+              "content": "Identiteedipakkujast sõltumatu ühekordse sisselogimise implementatsioon Study Designer jaoks. See võimaldas organisatsioonidel autentida kasutajaid oma olemasolevate identiteedipakkujate kaudu, kasutades SAML või OAuth-põhiseid integratsioone, autentitud juurdepääsuga rakendusele API."
+            }
+          }
+        },
+        "7": {
+          "kicker": "Autotööstuse inventuuri platvormi veebisait",
+          "summary": "Toote veebisait, mis selgitab, kuidas andmed ja masinõpe toetavad edasimüüja laoseisu puudutavaid otsuseid.",
+          "sections": {
+            "overview": {
+              "title": "LotLinx veebisait",
+              "content": "LotLinx on tehisintellektil põhinev autotööstuse varude haldamise platvorm, mis kasutab masinõpet ja andmeanalüütikat, et aidata edasimüüjatel optimeerida varude käivet ja kasumlikkust. Veebisait selgitab, kuidas platvorm kasutab turunõudlust, hinnakujundust ja tarbijaandmeid varude haldamise otsuste toetamiseks."
+            }
+          }
+        },
+        "8": {
+          "kicker": "Keerukas geomeetria brauseris",
+          "summary": "Pilveplatvormi esiotsa prototüübi töö, mis keskendub keerukatele lisandite tootmise mudelitele.",
+          "sections": {
+            "overview": {
+              "title": "Metafold 3D MVP",
+              "content": "Metafold 3D on pilveplatvorm keerukate 3D-mudelite disainimiseks, mis on optimeeritud lisandite tootmiseks. Panustasin esiotsa prototüüpide loomisesse keerukate geomeetriate, näiteks kergete võrestruktuuride, visualiseerimiseks ja nendega töötamiseks."
+            }
+          }
+        },
+        "9": {
+          "kicker": "Sihtrühma teabe otsitavaks muutmine",
+          "summary": "Otsingu- ja aruandlusfunktsioon, mis hoidis päringud ja filtrid ühtsena kogu kasutajaliideses, taustteenustes ja CSV-eksportides.",
+          "sections": {
+            "challenge": {
+              "eyebrow": "Väljakutse",
+              "title": "Kasutajad vajasid kiireid, järjepidevaid ja sarnasusel põhinevaid otsinguid sihtrühma ja kanali andmete hulgast.",
+              "content": "Reklaamijad pidid otsima publiku ja kanali andmeid, rakendama filtreid, vaatama ajaloolisi andmeid ja eksportima tulemusi. Otsingukäitumine pidi jääma järjepidevaks filtreerimise, lehekülgimise, ajaloolise aruandluse ja ekspordi puhul."
+            },
+            "architecture": {
+              "title": "Üks otsinguleping kogu pinus",
+              "nodes": {
+                "interface": {
+                  "label": "React + Next.js",
+                  "detail": "Automaatne täitmine, lõpmatu kerimine, kuupäevafiltrid"
+                },
+                "api": {
+                  "label": "FastAPI",
+                  "detail": "Lehekülgede ja päringulepingute"
+                },
+                "search": {
+                  "label": "PostgreSQL + OpenSearch",
+                  "detail": "Ajaloolised andmed ja indekseeritud avastused"
+                },
+                "exports": {
+                  "label": "Redis + voogedastuseksport",
+                  "detail": "Kiire lugemine ja filtriteadlik CSV-väljund"
+                }
+              }
+            },
+            "progression": {
+              "title": "Inseneriteaduse areng",
+              "steps": {
+                "discover": {
+                  "label": "Avasta",
+                  "title": "Määrake sihtrühma töövoog",
+                  "content": "Ma määratlesin reklaamijate uuringute otsingu, filtreerimise, lehekülgimise, ajaloolise aruandluse ja ekspordi nõuded."
+                },
+                "connect": {
+                  "label": "Ühenda",
+                  "title": "Liitu APIs, indeksite ja andmehoidlatega",
+                  "content": "Integreerisin jagatud otsingulepingu taha FastAPI teenused, PostgreSQL päringud, OpenSearch indeksid ja Redis vahemällu salvestamise."
+                },
+                "interact": {
+                  "label": "Suhtle",
+                  "title": "Rakenda interaktiivset otsingut",
+                  "content": "Ma ehitasin serveripoolse automaatse täitmise, lõpmatu kerimise, kuupäeva filtreerimise ja kanali statistika React ja Next.js keskkondadesse."
+                },
+                "export": {
+                  "label": "Eksport",
+                  "title": "Säilita otsingufiltrid failide eksportimisel",
+                  "content": "CSV-failide voogedastusfailide eksportimisel kasutati liidese aktiivse otsingu ja filtreerimise parameetreid."
+                },
+                "validate": {
+                  "label": "Valideeri",
+                  "title": "Testige otsingut, filtreerimist ja eksporti",
+                  "content": "Kontrollisin käitumist kogu liidese, API piiride, otsinguinfrastruktuuri ja andmeteenuste ulatuses, et iga tee annaks ühtseid tulemusi."
+                }
+              }
+            },
+            "outcome": {
+              "content": "Kasutajad said otsida ja analüüsida publiku andmeid ning seejärel eksportida tulemusi samade aktiivsete otsingu- ja filtriparameetreid kasutades."
+            }
+          }
+        },
+        "10": {
+          "kicker": "Suuremahuliste kontekstuaalsete andmete usaldusväärsuse tagamine",
+          "summary": "URL-ide normaliseerimise, metaandmete klassifitseerimise ja töötlemisvigade järgse taastamise süsteem.",
+          "sections": {
+            "challenge": {
+              "eyebrow": "Usaldusväärsuse probleem",
+              "title": "Vastuolulised URL-id raskendavad andmete sobitamist ja kombineerimist",
+              "content": "Topelt-URL-id ja vastuolulised metaandmed raskendasid kirjete vastavusse viimist. Asünkroonne töötlemine nõudis ka usaldusväärset tööde jälgimist ja taastamist."
+            },
+            "pipeline": {
+              "title": "Kontekstitorustik",
+              "steps": {
+                "ingest": {
+                  "label": "Sissevõtmine",
+                  "title": "Veebilehe, video ja kanali andmete sisestamine",
+                  "content": "Aitasin arendada tööriistu veebilehtede, videote ja kanalite andmete sisestamiseks asünkroonseks töötlemiseks."
+                },
+                "normalize": {
+                  "label": "Normaliseeri",
+                  "title": "URL-ide normaliseerimine järjepideva vaste saamiseks",
+                  "content": "Standardiseeritud URL-i vormingud ja varjunimed, et sama ressursiga seotud kirjeid saaks sobitada."
+                },
+                "dedupe": {
+                  "label": "Dedupe",
+                  "title": "Tuvastage duplikaadid ja vähendage korduvat töötlemist",
+                  "content": "Duplikaatide eemaldamine ja aliaste ühildamine vähendasid üleliigset töötlemist, säilitades samal ajal seosed alternatiivsete URL-ide ja nende kanooniliste kirjete vahel."
+                },
+                "classify": {
+                  "label": "Liigita",
+                  "title": "Normaliseeritud sisu klassifitseerimine",
+                  "content": "Pakktöötlus edastas normaliseeritud metaandmed allavoolu klassifitseerimisteenustele."
+                },
+                "persist": {
+                  "label": "Püsi",
+                  "title": "Säilita metaandmed ja töötlemise olek",
+                  "content": "Parandasin metaandmete salvestamist ja taaskasutamist teenuste vahel ning haldasin kontrollpunkte töötlemise edenemise jälgimiseks."
+                },
+                "recover": {
+                  "label": "Taastumine",
+                  "title": "Tee vead diagnoositavaks",
+                  "content": "Uuesti proovimised ja kontrollpunktid toetasid ebaõnnestunud töödest taastumist, samas kui CloudWatch logid aitasid uurida tõrkeid."
+                }
+              }
+            },
+            "architecture": {
+              "title": "Töötlemise, püsivuse ja taastamise komponendid",
+              "nodes": {
+                "urls": {
+                  "label": "URL-i normaliseerimine",
+                  "detail": "Normaliseerimine, aliased, parsimine, varuvariandid"
+                },
+                "services": {
+                  "label": "Python teenused",
+                  "detail": "Pakktöötlus ja metaandmete säilitamine"
+                },
+                "serverless": {
+                  "label": "AWS serverita",
+                  "detail": "Lambda ja SQS orkestreerimine"
+                },
+                "diagnostics": {
+                  "label": "CloudWatch diagnostika",
+                  "detail": "Logimine, jälgimine ja rikete uurimine"
+                }
+              }
+            },
+            "outcome": {
+              "content": "Tööriistad toetasid duplikaatkirjete tuvastamist ja käsitlemist, töödeldud metaandmete taaskasutamist ning ebaõnnestunud andmetöötlustöödest taastumist."
+            }
+          }
+        },
+        "11": {
+          "kicker": "Fragmenteeritud reklaamiandmete ühendamine",
+          "summary": "Reklaamija otsing, üksuste sobitamine, aruandluse kaardistused ja eksportimine FreeWheel ja Google Ad Manager vahel.",
+          "sections": {
+            "challenge": {
+              "eyebrow": "Integratsioonilõhe",
+              "title": "Erinevad platvormid kirjeldasid sama ettevõtet erinevalt",
+              "content": "FreeWheel ja Google Ad Manager kasutasid erinevaid identifikaatoreid, aruandlusstruktuure ja nimetamiskonventsioone. Kasutajad vajasid endiselt ühte etteaimatavat viisi reklaamijate leidmiseks, duplikaatide eristamiseks, paigutuste kaardistamiseks ja aruandlusandmete hankimiseks."
+            },
+            "architecture": {
+              "title": "Enne esitamist leppige kokku",
+              "nodes": {
+                "platforms": {
+                  "label": "Välised platvormid",
+                  "detail": "FreeWheel ja Google Ad Manager"
+                },
+                "resolution": {
+                  "label": "Üksuse lahendus",
+                  "detail": "Allikapõhised valikud ja duplikaatide ühestuse eristamine"
+                },
+                "pipelines": {
+                  "label": "Andmekanalid",
+                  "detail": "Snowflake, Dagster, PostgreSQL ja aruandlusvahemälud"
+                },
+                "workflows": {
+                  "label": "Toote töövood",
+                  "detail": "Otsing, galeriid, kaardistused ja CSV-ekspordid"
+                }
+              }
+            },
+            "progression": {
+              "title": "Integratsioon",
+              "steps": {
+                "connect": {
+                  "label": "Ühenda",
+                  "title": "Integreerige väliseid reklaamisüsteeme",
+                  "content": "Ma lõin reklaamija ja aruandlusüksuse otsingu FreeWheel ja Google Ad Manager andmete põhjal."
+                },
+                "reconcile": {
+                  "label": "Lepita kokku",
+                  "title": "Lahenda üksuste erinevused",
+                  "content": "Hoidis reklaamijate identifikaatorid seotud nende allikplatvormidega, eristades samal ajal identsete nimedega kirjeid."
+                },
+                "sync": {
+                  "label": "Sünkroonimine",
+                  "title": "Koordinaatide aruandlusandmed",
+                  "content": "Parandasin aruandluse vahemälusid ja Dagster-hallatud andmetransformatsioone, mis hõlmasid Snowflake ja PostgreSQL."
+                },
+                "present": {
+                  "label": "Olevik",
+                  "title": "Loo otsingu-, kaardistamis- ja ekspordiliidesed",
+                  "content": "Otsingutulemused, galeriid, kaardistused ja ekspordid pakkusid mõlema platvormi andmete jaoks ühist liidest."
+                }
+              }
+            },
+            "outcome": {
+              "content": "Saadud tööriistad muutsid reklaamiüksuste navigeerimise ja sihtimisteabe valimise lihtsamaks, säilitades samal ajal algsed platvormi identifikaatorid ja nendega seotud aruandlusandmed."
+            }
+          }
+        },
+        "12": {
+          "kicker": "Mitme teenusega platvormi usaldusväärsemaks muutmine",
+          "summary": "Reklaamiplatvormi risthoidlate infrastruktuur, testimine, jälgitavus ja avaldamistööd.",
+          "sections": {
+            "architecture": {
+              "title": "Usaldusväärsus teenuste piiride üleselt",
+              "nodes": {
+                "frontend": {
+                  "label": "Esiosa",
+                  "detail": "Autentitud Cypress ja esialgne Playwright katvus"
+                },
+                "apis": {
+                  "label": "Rakendus APIs",
+                  "detail": "Autentimine, lepingud ja konfiguratsiooniparandused"
+                },
+                "pipelines": {
+                  "label": "ETL + Persona",
+                  "detail": "Aruandluse vahemälu sünkroniseerimine ja Python torujuhtmed"
+                },
+                "infrastructure": {
+                  "label": "AWS infrastruktuur",
+                  "detail": "Ajastatud Lambda tööd, sisestamine ja CloudWatch diagnostika"
+                }
+              }
+            },
+            "progression": {
+              "title": "Operatiivpanused",
+              "steps": {
+                "identify": {
+                  "label": "Tuvastage",
+                  "title": "Jälgimisprobleemid teenustes",
+                  "content": "Uurisin tootmistõrkeid esiotsa rakendustes, APIs, ETL, Persona teenustes ja AWS infrastruktuuris."
+                },
+                "improve": {
+                  "label": "Parandada",
+                  "title": "Tugevdada teste ja infrastruktuuri",
+                  "content": "Autentitud Cypress katvus, esialgsed Playwright testid, ajastatud Lambda tööd ja konfiguratsiooniparandused vähendasid väljalaskeriski."
+                },
+                "release": {
+                  "label": "Väljalase",
+                  "title": "Koordineeri risthoidlate edastamist",
+                  "content": "Koordineerisin seotud koodimuudatusi, raamistiku turvavärskendusi ja väljalaseid mitmes repositooriumis."
+                },
+                "monitor": {
+                  "label": "Monitor",
+                  "title": "Jälgige tootmist ja uurige rikkeid",
+                  "content": "Kasutasin ajastatud tööde jälgimiseks ja tootmistõrgete uurimiseks CloudWatch logisid ja väljalaskejärgseid kontrolle."
+                }
+              }
+            },
+            "outcome": {
+              "content": "Töö hõlmas laiendatud testimist, serverita töötlemise täiustusi, raamistiku turvavärskendusi, teenuse konfiguratsiooni parandusi, ETL sünkroonimist ja koordineeritud väljalaseid."
+            }
+          }
+        },
+        "13": {
+          "kicker": "Ühtsete liideste loomine keeruka toote ulatuses",
+          "summary": "Jagatud React komponendid, semantilise disaini märgid ja API-põhise kasutajaliidese käitumise järjepidev käsitlemine.",
+          "sections": {
+            "challenge": {
+              "eyebrow": "Toote väljakutse",
+              "title": "Analüütikafunktsioonid vajasid ühtseid kasutajaliidese komponente ja käitumist",
+              "content": "Armatuurlauad, tabelid, galeriid ja otsingutööriistad arenesid koos uute andmekogumite ja töövoogudega. Liides vajas korduvkasutatavaid komponente, mis standardiseerisid eri funktsioonide käitumist."
+            },
+            "architecture": {
+              "title": "Jagatud komponendid ja kujundusmärgid",
+              "nodes": {
+                "tokens": {
+                  "label": "Semantilised märgid",
+                  "detail": "Jagatud visuaalne keel ja Material UI variandid"
+                },
+                "patterns": {
+                  "label": "Interaktsioonimustrid",
+                  "detail": "Automaatne täitmine, filtrid, lehekülgede ja laadimisolekud"
+                },
+                "integration": {
+                  "label": "Andmete integreerimine",
+                  "detail": "API vastused, lehekülgede jagamine ja esiotsa oleku haldamine"
+                },
+                "coverage": {
+                  "label": "Regressiooni katvus",
+                  "detail": "Jest, Cypress ja Playwright valideerimine"
+                }
+              }
+            },
+            "progression": {
+              "title": "Disainisüsteemi edasiminek",
+              "steps": {
+                "audit": {
+                  "label": "Audit",
+                  "title": "Leidke korduvaid UX-probleeme",
+                  "content": "Tuvastasin ebakõlasid armatuurlaudade, tabelite, galeriide, otsingu, filtrite ja laadimisolekute vahel."
+                },
+                "systemize": {
+                  "label": "Süsteemistama",
+                  "title": "Loo korduvkasutatavad liidesemustrid",
+                  "content": "Semantilised märgid, Material UI variandid ja jagatud React komponendid asendasid ebajärjekindlaid implementatsioone."
+                },
+                "integrate": {
+                  "label": "Integreeri",
+                  "title": "Tarbijate integreerimine rakendusega APIs",
+                  "content": "Rakendasin komponentide oleku käsitlemise API vastuste, lehekülgjaotuse, automaatse täitmise ja ekspordi funktsionaalsuse jaoks."
+                },
+                "validate": {
+                  "label": "Valideeri",
+                  "title": "Testi kasutajaliidese funktsionaalsus",
+                  "content": "Jest, Cypress ja Playwright katvus kontrollis autentitud teid ja vähendas regressioone."
+                }
+              }
+            },
+            "outcome": {
+              "content": "Jagatud React komponendid ja kasutajaliidese mustrid vähendasid dubleeritud rakendusi ning standardiseerisid otsingu-, filtreerimis- ja aruandlusliideseid."
+            }
+          }
+        }
+      },
+      "description": {
+        "1": "Kliiniliste uuringute kavandamise funktsioonid, koostöö töövood, teenuste integratsioonid ja tervishoiutoodete osutamise täiustused",
+        "2": "Esiosa moderniseerimine ja reaalajas tootearendus Cams video-, vestlus-, avastamis- ja seansi töövoogude jaoks",
+        "3": "Linnaplaneerimise veebisaidi arendamine avaliku teabe ja elanike küsitlustega",
+        "4": "Responsiivse veebilehe arendus, küljendus ja sisu korraldamine disainiagentuurile Bay Area",
+        "5": "Analüütika kontseptsiooni tõestus, mis lõi uuringu kavandamise andmete põhjal filtreeritavaid aruandeid",
+        "6": "Identiteedipakkujast sõltumatu SSO töö, mis toetas organisatsioonispetsiifilisi autentimisnõudeid",
+        "7": "Turundusveebisaidi juurutamine tehisintellektil põhinevale autotööstuse inventari tootele",
+        "8": "Geomeetrilise modelleerimise toote esiotsa prototüübi töö, mis keskendub keeruka võrestruktuuri visualiseerimisele",
+        "9": "Otsingu, filtreerimise, analüüsi ja ekspordi täiustused, mis muutsid publiku ja kanalite avastamise kiiremaks ja usaldusväärsemaks",
+        "10": "URL-i normaliseerimine, metaandmete töötlemine, duplikaatide tuvastamine ja taastamistööriistad asünkroonsete sisestamistööde jaoks",
+        "11": "Reklaamitoimingute andmeid ühendavad aruandluse, üksuste otsingu, kampaaniate juhtimise ja ekspordi töövood",
+        "12": "Testimise, infrastruktuuri, jälgitavuse, turvalisuse ja väljalaske täiustused, mis vähendasid platvormi riski",
+        "13": "Korduvkasutatavad React komponendid, disainisüsteemi uuendused ning otsingu, filtreerimise, armatuurlaudade ja kasutajaliidese interaktsioonide täiustused"
+      }
+    }
+  }
+}

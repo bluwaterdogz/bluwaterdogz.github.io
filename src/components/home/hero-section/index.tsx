@@ -13,6 +13,8 @@ import { SkillPills } from "../../common/skill-pills";
 const featuredSkillIds = ["3", "9", "1", "26", "5", "29", "38"];
 
 type BlobBackgroundConfig = {
+  backgroundColor?: string;
+  blendMode?: "multiply" | "screen";
   colors?: string[];
   vibrance?: number;
   speed?: number;
@@ -39,16 +41,18 @@ export const HeroSection = (props: HeroSectionProps) => {
   const { t } = useTranslation();
   const theme = useThemeStore((state) => state.theme);
   const {
+    backgroundColor = theme === "dark" ? "#10141f" : "rgba(0, 0, 255, 0.3)",
+    blendMode = theme === "dark" ? "screen" : "multiply",
     colors = theme === "dark"
-      ? ["#171B36", "#291D35", "#112735"]
+      ? ["#123e48", "#1b3150", "#3e274d", "rgba(22, 125, 135, 0.45)"]
       : lightBlobColors,
     speed = 1,
     vibrance = 1,
   } = blobBackground;
   const {
-    maxShapeSize = 120,
+    maxShapeSize = 320,
     minShapeSize = 70,
-    shapeCount = 10,
+    shapeCount = 7,
   } = geometricBackground;
 
 
@@ -56,12 +60,13 @@ export const HeroSection = (props: HeroSectionProps) => {
     <section className={styles.hero}>
       <div className={`${styles.flippity} ${styles.blobLayer}`}>
         <MorphingBlobBackground
+          backgroundColor={backgroundColor}
+          blendMode={blendMode}
           colors={colors}
           intensity={vibrance}
           speed={speed}
         />
       </div>
-      <div aria-hidden="true" className={styles.animationBlur} />
       <div className={`${styles.flippity} ${styles.polyhedraLayer}`}>
         <PolyhedraBackground
           baseColor={
@@ -75,12 +80,11 @@ export const HeroSection = (props: HeroSectionProps) => {
           objectCount={shapeCount}
         />
       </div>
-      <div aria-hidden="true" className={styles.polyhedraBlur} />
-      <img alt="" className={styles.portrait} src={imgUrl} />
       <div className={styles.topBar}>
         <Lang className={styles.languageDropdown} />
       </div>
       <div className={styles.container}>
+        <img alt="" className={styles.portrait} src={imgUrl} />
         <div className={styles.content}>
           <h1>
             {t("home.heroHeadlineStart")} {" "}

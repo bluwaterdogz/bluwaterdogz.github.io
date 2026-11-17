@@ -1,72 +1,80 @@
 {
+  "common": {
+    "noneFound": "검색 결과가 없습니다"
+  },
+  "placeholder": {
+    "comingSoon": "곧 공개됩니다..."
+  },
   "home": {
-    "header": "<span>안녕하세요<br /> Brian Velasquez입니다.<br /><em>시니어 풀스택<br />엔지니어입니다.</em></span>",
-    "heroEyebrow": "풀스택 엔지니어",
+    "header": "<span>안녕하세요<br /> 저는 Brian Velasquez입니다.<br /><em>시니어 소프트웨어 <br />엔지니어입니다.</em></span>",
+    "heroEyebrow": "시니어 소프트웨어 엔지니어",
     "heroBrand": "brian velasquez",
-    "heroHeadlineStart": "훌륭한 제품",
-    "heroHeadlineAccent": "뒤의",
+    "heroHeadlineStart": "훌륭한 제품의",
+    "heroHeadlineAccent": "기반이 되는",
     "heroHeadlineEnd": "시스템을 만듭니다.",
-    "heroPrimaryCta": "주요 작업 보기",
-    "heroSecondaryCta": "연락하기",
+    "heroPrimaryCta": "프로젝트 보기",
+    "heroSecondaryCta": "문의하기",
     "heroSkillsLabel": "주요 기술",
-    "heroName": "Brian Velasquez입니다.",
-    "heroRole": "시니어 풀스택 엔지니어입니다.",
-    "heroIntroduction": "Brian입니다. 직관적인 인터페이스, 안정적인 API, 데이터 중심 플랫폼을 첫 프로토타입부터 대규모 운영 환경까지 구축합니다.",
-    "switchBackground": "히어로 배경 전환",
+    "heroName": "I'm Brian Velasquez,",
+    "heroRole": "시니어 소프트웨어 엔지니어.",
+    "heroIntroduction": "안녕하세요, Brian입니다. 첫 프로토타입부터 대규모 운영 환경까지 직관적인 인터페이스, 안정적인 API, 데이터 집약적 플랫폼을 개발합니다.",
+    "switchBackground": "메인 배경 변경",
     "backgrounds": {
       "type1": "유형 1",
       "type2": "유형 2"
     },
     "aboutHeader": "저는 누구일까요?",
-    "about": "TypeScript, React, Angular, Node.js, Python에 강점을 가진 시니어 풀스택 웹 개발자입니다. 국제 팀을 이끌고, 레거시 시스템을 현대화하며, 아키텍처를 최적화하고, 효율적인 배포를 위한 CI/CD 파이프라인을 구축해 왔습니다. 확장 가능하고 사용자 중심적인 솔루션을 만드는 일을 좋아합니다.",
+    "about": "저는 프론트엔드 개발에 탄탄한 기반을 갖추고 복잡한 제품을 뒷받침하는 시스템을 구축해 온 풀스택 소프트웨어 엔지니어입니다. 광고 기술, 헬스케어, 소비자 대상 플랫폼 분야에서 검색, 분석, 데이터 처리, API, 사용자 인터페이스를 개발해 왔습니다. 또한 프론트엔드 현대화 작업을 이끌며 여러 팀과 협력해 아키텍처를 개선하고 어려운 기술 문제를 해결하며 안정적이고 확장 가능하며 직관적인 소프트웨어를 제공해 왔습니다.",
     "aboutEyebrow": "01 소개",
-    "aboutTitle": "솔루션을 만들고 팀을 이끕니다",
+    "aboutTitle": "소프트웨어 엔지니어링과 기술 리더십",
     "aboutLink": "더 알아보기",
     "features": {
       "experience": "경력 연수",
       "projects": "배포한 프로젝트",
-      "international": "국제 협업",
-      "collaboration": "팀 협업",
-      "focus": "집중 분야",
+      "international": "국제 프로젝트",
+      "collaboration": "협업",
+      "focus": "전문 분야",
       "performance": "성능, 확장성, UX"
     },
-    "section1Title": "경험",
-    "section1Content1": "Faro Health의 시니어 풀스택 개발자로 근무하며 TypeScript, Node.js, PostgreSQL, Jest, React를 사용해 REST 및 CQRS 기반 마이크로서비스와 UI 모듈을 구축하고 최적화했습니다. 기능 단위 개발, POC, 기술 설계, 단위 및 통합 테스트, 성능 개선, GitHub Actions 배포 파이프라인을 담당했습니다.",
-    "section1Content2": "이전에는 Various Inc.에서 국제 원격 프런트엔드 팀을 이끌며 디자이너와 협업해 JavaScript 및 Perl 기반의 레거시 비디오 스트리밍 앱을 현대화했습니다. React, TypeScript, Next.js, MobX, WebSockets, Python, REST API, CI/CD를 기반으로 확장 가능한 플랫폼으로 전환했습니다.",
+    "section1Title": "경력",
+    "section1Content1": "제약 기술 스타트업 Faro Health의 시니어 소프트웨어 엔지니어로서 TypeScript, Node.js, PostgreSQL, Jest, React를 사용해 REST 및 CQRS 기반 마이크로서비스와 UI 모듈을 개발하고 최적화했습니다. 기능과 개념 증명을 설계·구현하고 단위 및 통합 테스트를 작성했으며, 애플리케이션 성능을 개선하고 GitHub Actions로 배포 파이프라인을 구축했습니다.",
+    "section1Content2": "그전에는 Various Inc.에서 국제 원격 프런트엔드 팀을 이끌며 디자이너들과 협업하여 기존 JavaScript 및 Perl 기반 비디오 스트리밍 앱을 현대화했습니다. React, TypeScript, Next.js, MobX, WebSockets, Python과 REST API, CI/CD 파이프라인을 기반으로 확장성과 성능을 갖춘 플랫폼으로 이전했습니다.",
     "experience": {
       "eyebrow": "02 경력",
       "title": "경력",
-      "copy1": "최근 Mobian에서 캠페인 제어, 광고주 및 세그먼트 갤러리, 페르소나 검색, 채널 인텔리전스, 브랜드 안전 메타데이터, 리포팅 통합, 데이터 파이프라인을 포함하는 대규모 멀티 리포지토리 플랫폼을 개발했습니다.",
-      "copy2": "Next.js, React, TypeScript, FastAPI, PostgreSQL, OpenSearch, Snowflake, Dagster, Redis, AWS를 사용해 검색, 필터링, 페이지네이션, 자동완성, CSV 내보내기, 통계, 캐시 동작, 수집 도구, 리포팅 워크플로를 구축하고 개선했습니다.",
-      "copy3": "업무는 프런트엔드, 백엔드, ETL, 검색, 인프라 전반을 아우르며, 프로덕션 수정, 테스트 커버리지, 릴리스 조율, 브랜드 데이터 정합성, 프런트엔드와 Persona API, Content API, Video Brand Safety, ETL, E2E 테스트 저장소 간 통합도 담당했습니다.",
-      "copy4": "Faro Health에서는 REST 및 CQRS 마이크로서비스, PostgreSQL, 자동화 테스트, GitHub Actions 배포 파이프라인을 기반으로 TypeScript와 React 애플리케이션을 구축하고 최적화했습니다.",
-      "copy5": "Various Inc.에서는 국제 프런트엔드 팀을 이끌며 기존 JavaScript 및 Perl 애플리케이션을 React, TypeScript, Next.js, WebSocket, Python 기반의 확장 가능한 플랫폼으로 현대화했습니다.",
-      "link": "경력 보기",
+      "summary": "저는 제품 인터페이스, API, 데이터 시스템, 검색 및 클라우드 인프라 전반의 운영 소프트웨어를 개발하고 개선합니다. 최근에는 오디언스 인텔리전스와 광고 업무에서 이 구성 요소들을 통합했습니다.",
+      "scope": "이전에는 Faro Health의 임상시험 도구와 Various Inc.의 Cams 비디오 스트리밍 서비스를 개발했습니다.",
+      "copy1": "저는 프런트엔드 개발에 강점을 가진 풀스택 소프트웨어 엔지니어로, 웹 애플리케이션, API, 검색 기능 및 데이터 처리 시스템을 개발해 왔습니다. 광고 기술, 헬스케어 및 소비자 플랫폼에서 검색, 분석, 데이터 처리와 사용자 인터페이스를 다뤘습니다. 프런트엔드 현대화를 주도하고 여러 팀과 협업하여 아키텍처를 개선하고 복잡한 기술 문제를 해결하며 안정적이고 확장 가능한 소프트웨어를 제공했습니다.",
+      "copy2": "Next.js, React, TypeScript, FastAPI, PostgreSQL, OpenSearch, Snowflake, Dagster, Redis, AWS를 사용해 검색, 필터링, 페이지네이션, 자동완성, CSV 내보내기, 통계, 캐시 동작, 데이터 수집 도구 및 보고 기능을 개발하고 개선했습니다.",
+      "copy3": "업무는 프런트엔드, 백엔드, ETL, 검색 및 인프라에 걸쳐 있었습니다. 운영 오류를 수정하고 테스트 범위를 확대했으며 릴리스를 조율하고 프런트엔드, Persona API, Content API, Video Brand Safety, ETL, E2E 테스트 저장소 간 브랜드 데이터 조정과 통합을 수행했습니다.",
+      "copy4": "Mobian 이전에는 Faro Health의 임상시험 설계 플랫폼 개발에 참여하여 프런트엔드 기능, 서비스 통합, 테스트 및 배포 개선을 담당했습니다.",
+      "copy5": "Various Inc.에서는 Cams의 프런트엔드 현대화를 이끌어 트래픽이 많은 실시간 비디오 및 채팅 앱을 React, TypeScript, Next.js, WebSocket, Python 기반의 확장 가능한 플랫폼으로 이전했습니다.",
+      "link": "경력 자세히 보기",
       "timeline": {
-        "mobianPeriod": "2025 - 현재",
+        "mobianPeriod": "2025년 - 현재",
         "mobianCompany": "Mobian",
-        "mobianSummary": "캠페인 제어, 검색, 분석, 브랜드 안전, 데이터 파이프라인을 지원하는 멀티 리포 플랫폼의 풀스택 엔지니어.",
+        "mobianSummary": "오디언스 인텔리전스와 광고 업무를 위한 검색, 분석, 보고, 데이터 처리 및 안정성 기능을 개발했습니다.",
         "contractorPeriod": "2024 - 2025",
-        "contractorCompany": "독립 계약자",
-        "contractorSummary": "독립 고객을 대상으로 웹 애플리케이션, 제품, 기술 자문 프로젝트를 수행했습니다.",
+        "contractorCompany": "Independent Contractor",
+        "contractorSummary": "독립 고객을 위한 웹 애플리케이션 개발과 제품·기술 컨설팅을 제공했습니다.",
         "faroPeriod": "2022 - 2024",
         "faroCompany": "Faro Health",
-        "faroSummary": "마이크로서비스, PostgreSQL, 자동화 테스트, GitHub Actions를 기반으로 TypeScript 및 React 애플리케이션을 개발했습니다.",
+        "faroSummary": "헬스케어 플랫폼의 임상시험 설계 기능, 서비스 통합, 테스트 및 배포 개선에 기여했습니다.",
         "variousPeriod": "2018 - 2021",
         "variousCompany": "Various Inc.",
-        "variousSummary": "국제 프런트엔드 팀을 이끌며 레거시 플랫폼을 React, TypeScript, Next.js 기반으로 현대화했습니다.",
+        "variousSummary": "기존 대규모 플랫폼에서 실시간 비디오, 채팅 및 결제 기능을 유지하며 비디오 스트리밍 앱의 현대화를 이끌었습니다.",
         "launchPeriod": "2015 - 2018",
         "launchCompany": "Launch Brigade",
-        "launchSummary": "샌프란시스코 베이 지역의 디자인 및 개발 에이전시에서 반응형 웹사이트와 디지털 제품을 구축하고 유지했습니다."
+        "launchSummary": "샌프란시스코 베이 지역 디자인·개발 에이전시를 위해 반응형 웹사이트와 디지털 제품을 개발하고 유지보수했습니다."
       }
     },
     "leadership": {
       "eyebrow": "03 기술 리더",
       "title": "기술 리더",
-      "copy1": "미국, 유럽, 대만, 중국에 분산된 팀을 이끌고 협업하며 제품, 디자인, 엔지니어링, 데이터, 인프라 전반을 연결해 왔습니다.",
-      "copy2": "저의 접근 방식은 실용적입니다. 명확한 기술 방향을 세우고, 불필요한 복잡성을 줄이며, 위험을 조기에 드러내고, 팀이 안정적으로 결과를 내도록 돕습니다. Mobian에서는 여러 서비스와 저장소의 변경을 조율하면서 데이터 계약, 검색 동작, 릴리스 안정성, 사용자 경험을 유지해야 했습니다.",
-      "copy3": "아키텍처와 구현 사이를 유연하게 오가며 시스템을 설계하고, 프로덕션 문제를 디버깅하고, 기술적 선택을 검토하고, 개발 워크플로를 개선하며, 넓은 요구사항을 구체적이고 유지보수 가능한 솔루션으로 전환합니다.",
-      "link": "업무 방식 보기",
+      "copy1": "미국, 유럽, 대만, 중국에 분산된 팀을 이끌거나 협업했으며 제품, 디자인, 엔지니어링, 데이터 및 인프라 분야에서 일했습니다.",
+      "copy2": "저의 접근 방식은 명확합니다. 기술 방향을 설정하고, 위험을 미리 파악하고, 적절히 조율하며, 안정적인 결과물을 제공하는 데 집중합니다. 이전 직무에서는 API 안정성을 유지하고 사용자 경험을 개선하면서 여러 서비스와 저장소의 변경 사항을 조율했습니다.",
+      "copy3": "아키텍처 설계와 구현을 모두 수행하며 시스템을 설계하고 기술적 선택지를 검토하며 개발 과정을 개선하고 팀이 넓은 요구사항을 구체적이고 확장 가능한 솔루션으로 바꾸도록 돕습니다.",
+      "link": "협업 방식 알아보기",
       "regionsHeading": "협업 지역",
       "regions": {
         "northAmerica": "북아메리카",
@@ -74,94 +82,94 @@
         "europe": "유럽",
         "asia": "아시아"
       },
-      "summary": "제품, 디자인, 엔지니어링, 데이터, 인프라를 아우르는 크로스펑셔널 리더십.",
+      "summary": "제품, 디자인, 엔지니어링, 데이터 및 인프라를 아우르는 협업 리더십.",
       "stats": {
         "regions": "4개 지역",
         "timeZones": "여러 시간대"
       },
-      "approachStatement": "강력한 원격 협업은 명확성, 신뢰, 안정적인 실행에서 시작됩니다.",
+      "approachStatement": "시스템에 대한 신뢰는 팀에서 시작됩니다",
       "practices": {
         "crossFunctional": {
-          "title": "크로스펑셔널 리더십",
-          "description": "엔지니어링, 제품, 디자인, 데이터, 인프라."
+          "title": "부서 간 리더십",
+          "description": "엔지니어링, 제품, 디자인, 데이터 및 인프라."
         },
         "async": {
           "title": "비동기 협업",
-          "description": "명확한 문서 소통, 주인의식, 세심한 인수인계."
+          "description": "명확한 문서 소통, 책임 분담, 자세한 인수인계."
         },
         "delivery": {
-          "title": "분산형 전달",
-          "description": "서비스, 저장소, 릴리스 주기 전반의 작업 조율."
+          "title": "팀 간 조율",
+          "description": "서비스, 저장소 및 릴리스 주기에 걸친 업무 조율."
         },
         "systems": {
           "title": "시스템 사고",
-          "description": "아키텍처, 구현, 디버깅, 실행의 균형."
+          "description": "효과적인 계획을 통해 확장성, 개발, 안정성 및 비즈니스 요구사항의 균형을 맞춥니다."
         }
       }
     },
     "section2Title": "기술 리더",
-    "section2Content1": "미국, 유럽, 대만, 중국의 대규모 국제 팀을 이끌며 TypeScript, Node.js, PostgreSQL, Jest, React에 대한 깊은 경험과 실용적인 리더십을 바탕으로 팀의 정렬과 안정적인 전달을 지원했습니다."
+    "section2Content1": "미국, 유럽, 대만, 중국에 걸친 대규모 국제 팀을 이끌었으며 TypeScript, Node.js, PostgreSQL, Jest, React에 대한 깊은 전문성을 갖추고 있습니다. 기술 설계와 개발뿐 아니라 팀이 주요 일정과 회사 목표에 집중할 수 있도록 돕습니다."
   },
   "about": {
     "eyebrow": "소개",
     "portraitAlt": "Brian Velasquez",
     "title": "안녕하세요, Brian입니다",
     "role": "시니어 소프트웨어 엔지니어",
-    "section1": "Brian은 우아하고 확장 가능한 코드와 단순하고 직관적인 UX를 추구하는 시니어 소프트웨어 엔지니어입니다.",
-    "section2": "여가 시간에는 클라이밍, 체스, 오프로드 바이크, 무에타이를 즐깁니다.",
+    "section1": "저는 우아하고 확장 가능한 코드와 미니멀하고 직관적인 UX를 중요하게 생각하는 시니어 소프트웨어 엔지니어입니다.",
+    "section2": "여가 시간에는 클라이밍, 체스, 오토바이 여행, 무에타이를 즐깁니다.",
     "location": "현재 태국 치앙마이에 거주 중",
-    "cta": "함께 멋진 것을 만들어 봅시다",
-    "outsideCode": "코드 밖의 삶",
-    "buildWith": "사용 기술",
+    "cta": "문의하기",
+    "outsideCode": "코딩 외의 활동",
+    "buildWith": "사용하는 기술",
     "interests": {
       "climbing": {
         "title": "클라이밍",
-        "description": "클라이밍의 도전과 집중을 좋아합니다. 현실감을 유지하고 계속 배우게 해 줍니다."
+        "description": "복잡한 문제를 나누고, 다양한 방법을 시도하며, 매번 새로운 것을 배웁니다."
       },
       "chess": {
         "title": "체스",
-        "description": "체스는 인내, 전략, 그리고 문제를 여러 관점에서 보는 법을 가르쳐 줍니다."
+        "description": "전략적으로 계획하고, 제약 속에서 문제를 해결하고, 변화에 적응합니다."
       },
       "dirtbike": {
-        "title": "오프로드 바이크",
-        "description": "새로운 길을 달리고 오프로드를 탐험하며 머리를 식히고 재충전합니다."
+        "title": "오토바이 여행",
+        "description": "끝없는 호기심으로 낯선 곳을 탐험하고 다음 모퉁이에 무엇이 있을지 발견하는 자유를 즐깁니다."
       },
       "muayThai": {
         "title": "무에타이",
-        "description": "무에타이 훈련은 절제력, 회복력, 정신적 명료함을 길러 줍니다."
+        "description": "마음을 맑게 하고 압박 속에서도 집중하며 꾸준히 실력을 높이는 훈련입니다."
       }
     },
-    "quote": "깔끔하고 유지보수 가능하며 오래가는 코드를 쓰는 것이 중요하다고 믿습니다. 세심한 사용자 경험과 실제 가치를 만드는 제품을 중요하게 생각합니다.",
+    "quote": "깨끗하고 확장 가능하며 오래 사용할 수 있는 코드를 작성해야 한다고 믿습니다. 세심하게 설계된 사용자 경험과 실질적인 가치를 주는 제품을 중요하게 생각합니다.",
     "process": {
-      "eyebrow": "나의 프로세스",
-      "title": "문제에서 프로덕션까지",
-      "description": "발견 단계부터 릴리스까지 목표, 기술적 결정, 품질을 명확하게 유지하는 협업적이고 반복적인 접근 방식입니다.",
-      "generativeTitle": "책임과 경험을 바탕으로 한 생성형 엔지니어링",
-      "generativeDescription": "AI를 활용해 조사, 계획, 리뷰, 테스트, 문서화를 빠르게 진행하되, 모든 결과를 코드베이스와 실제 시스템 동작에 맞춰 검증합니다.",
+      "eyebrow": "개발 과정",
+      "title": "문제 정의부터 운영까지",
+      "description": "초기 조사부터 출시까지 목표, 기술적 결정 및 요구사항을 명확히 유지하는 협업 중심의 반복적인 접근 방식입니다.",
+      "generativeTitle": "경험 있는 사람의 검토를 바탕으로 한 AI 지원 소프트웨어 엔지니어링",
+      "generativeDescription": "AI로 조사, 계획, 검토, 테스트 및 문서화를 빠르게 진행하되 모든 결과를 코드베이스와 실제 시스템 동작에 비추어 검증합니다.",
       "steps": {
         "align": {
           "title": "정렬",
-          "description": "문제, 제약, 의존성, 성공 기준을 명확히 합니다."
+          "description": "문제, 제약조건, 의존성 및 성공 기준을 명확히 합니다."
         },
         "map": {
-          "title": "매핑",
-          "description": "관련 UI, 서비스, 데이터 흐름, 운영 위험을 추적합니다."
+          "title": "구조 파악",
+          "description": "관련 UI, 서비스, 데이터 흐름 및 운영 위험을 추적합니다."
         },
         "shape": {
-          "title": "구체화",
-          "description": "접근 방식을 비교하고 불확실한 아이디어를 프로토타이핑하며 작업을 집중된 단위로 나눕니다."
+          "title": "방향 설계",
+          "description": "접근 방식을 비교하고 불확실한 아이디어를 시제품으로 검증하며 업무를 작은 단위로 나눕니다."
         },
         "build": {
-          "title": "구축",
-          "description": "필요한 계층 전반에서 협업하며 명확하고 재사용 가능한 패턴으로 구현합니다."
+          "title": "구현",
+          "description": "명확하고 재사용 가능하며 DRY와 확장성을 고려한 패턴으로 스택 전반의 기능을 구현합니다."
         },
         "verify": {
           "title": "검증",
-          "description": "단위, 통합, E2E, 수동 검증을 지속적으로 수행합니다."
+          "description": "단위, 통합, E2E 및 수동 테스트로 지속적으로 검증합니다."
         },
         "improve": {
           "title": "개선",
-          "description": "신중하게 릴리스하고 프로덕션 동작을 검토하며 데이터와 피드백에 따라 개선합니다."
+          "description": "릴리스를 검증하고 운영 환경 동작을 확인하며 데이터와 피드백을 바탕으로 개선합니다."
         }
       }
     }
@@ -172,6 +180,49 @@
     "next": "다음 기술 유형",
     "projectsLink": "프로젝트 보기",
     "projectsMenu": "프로젝트",
+    "names": {
+      "1": "Python",
+      "2": "JavaScript",
+      "3": "TypeScript",
+      "4": "Node.js",
+      "5": "PostgreSQL",
+      "6": "PHP",
+      "7": "HTML5",
+      "8": "CSS/SCSS",
+      "9": "React",
+      "10": "Angular",
+      "11": "Express",
+      "12": "Flask",
+      "13": "RxJS",
+      "14": "Vue",
+      "15": "Storybook",
+      "16": "Vite",
+      "17": "Git",
+      "18": "Webpack",
+      "19": "Azure",
+      "20": "GitHub Actions",
+      "21": "Photoshop",
+      "22": "Bootstrap",
+      "23": "Figma",
+      "24": "Next.js",
+      "25": "Material UI",
+      "26": "FastAPI",
+      "27": "OpenSearch",
+      "28": "Redis",
+      "29": "AWS",
+      "30": "Snowflake",
+      "31": "Dagster",
+      "32": "Docker",
+      "33": "Jest",
+      "34": "Playwright",
+      "35": "Terraform",
+      "36": "Cypress",
+      "37": "CloudWatch",
+      "38": "AI 지원 개발",
+      "39": "GitHub Copilot",
+      "40": "ChatGPT",
+      "41": "Claude Code"
+    },
     "groups": {
       "Languages": "언어",
       "BackendData": "백엔드 및 데이터",
@@ -185,39 +236,39 @@
     "views": {
       "development": {
         "title": "개발",
-        "description": "안정적인 제품을 만들고 배포하고 확장하는 데 사용하는 기술과 도구입니다."
+        "description": "안정적인 제품을 개발, 배포 및 확장하는 데 사용하는 기술과 도구입니다."
       },
       "infrastructure": {
         "title": "인프라",
-        "description": "안정적인 소프트웨어 운영을 위한 개발 도구, 클라우드 플랫폼, 배포 시스템, 운영 방식입니다."
+        "description": "안정적인 소프트웨어 운영에 사용하는 개발 도구, 클라우드 플랫폼, 배포 시스템 및 운영 방식입니다."
       },
       "frameworks": {
         "title": "프레임워크",
-        "description": "제품 아이디어를 유지보수 가능한 인터페이스와 서비스로 구현하는 데 사용하는 프레임워크입니다."
+        "description": "제품 아이디어를 유지보수하기 쉬운 인터페이스와 서비스로 구현할 때 사용하는 프레임워크입니다."
       },
       "devTools": {
         "title": "개발 도구",
-        "description": "안정적인 소프트웨어를 개발, 테스트, 문서화, 배포하는 데 사용하는 도구입니다."
+        "description": "소프트웨어 개발, 테스트, 문서화 및 배포에 사용하는 도구입니다."
       },
       "it": {
         "title": "IT",
-        "description": "애플리케이션을 안전하게 운영하기 위한 클라우드 및 배포 플랫폼입니다."
+        "description": "사용하는 클라우드 서비스, 배포 플랫폼 및 시스템 관리 도구입니다."
       },
       "design": {
         "title": "디자인",
-        "description": "명확하고 세심한 경험을 만들기 위해 사용하는 디자인 도구와 시스템입니다."
+        "description": "인터페이스 디자인, 프로토타이핑 및 에셋 제작에 사용하는 도구입니다."
       }
     }
   },
   "projects": {
     "eyebrow": "프로젝트",
     "title": "제가 만든 것들",
-    "introduction": "웹, 모바일, 백엔드, 데이터 분야의 프로젝트 모음입니다. 각 프로젝트는 실제 문제를 해결했고 새로운 것을 배우게 했습니다.",
+    "introduction": "프런트엔드 개발, 백엔드 서비스, 데이터 처리 및 인프라 프로젝트 모음입니다.",
     "search": "프로젝트 검색",
-    "github": "내 GitHub 둘러보기",
+    "github": "GitHub 보기",
     "jobs": {
-      "label": "직무별 필터",
-      "all": "모든 직무",
+      "label": "직장별 필터",
+      "all": "모든 직장",
       "mobian": "Mobian",
       "faro": "Faro Health",
       "independent": "독립 계약자",
@@ -227,17 +278,18 @@
     "skills": {
       "label": "기술별 필터",
       "all": "모든 기술",
-      "clear": "지우기",
-      "selected": "선택한 기술 {{count}}개"
+      "clear": "초기화",
+      "selected": "선택된 기술 {{count}}개"
     },
     "technologies": "{{name}} 기술",
     "viewProject": "{{name}} 보기",
     "detail": {
       "eyebrow": "프로젝트",
-      "back": "모든 프로젝트"
+      "back": "모든 프로젝트",
+      "additionalTechnologies": "추가 기술"
     },
     "categories": {
-      "label": "프로젝트 카테고리",
+      "label": "프로젝트 분류",
       "all": "전체",
       "web": "웹",
       "mobile": "모바일",
@@ -246,7 +298,7 @@
     },
     "cta": {
       "title": "아이디어가 있으신가요?",
-      "description": "흥미로운 프로젝트와 협업 기회를 언제나 환영합니다.",
+      "description": "흥미로운 프로젝트와 협업 제안을 언제든 환영합니다.",
       "label": "함께 만들어 봅시다"
     }
   },
@@ -260,65 +312,493 @@
     "espanol": "스페인어",
     "thai": "태국어",
     "german": "독일어",
-    "korean": "한국어"
+    "korean": "한국어",
+    "estonian": "에스토니아어",
+    "swedish": "스웨덴어",
+    "japanese": "일본어",
+    "portuguese": "포르투갈어",
+    "norwegian": "노르웨이어"
   },
   "nav": {
     "home": "홈",
     "skills": "기술",
     "projects": "프로젝트",
-    "microapps": "마이크로앱",
+    "microapps": "마이크로 앱",
     "about": "소개",
-    "jobs": "경력"
-  },
-  "jobs": {
-    "content": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": ""
-    }
+    "openMenu": "메뉴 열기",
+    "closeMenu": "메뉴 닫기"
   },
   "data": {
     "projects": {
-      "description": {
-        "1": "실시간 분석을 기반으로 임상 연구를 계획, 설계, 최적화하는 소프트웨어 도구",
-        "2": "라이브 탐색, 상태 표시, 공개 방송, 개인 인터랙티브 세션을 제공하는 고트래픽 실시간 비디오 및 채팅 플랫폼",
-        "3": "San Anselmo 도시 계획 변경 사항을 안내하고 설문을 제공하는 웹사이트",
-        "4": "웹 디자인 및 개발 에이전시 웹사이트",
-        "5": "Python과 Pandas로 만든 데이터 분석 마이크로서비스 POC",
-        "6": "Study Designer용 IDP 독립형 SSO 구현",
-        "7": "AI 기반 중고차 애플리케이션 웹사이트",
-        "8": "격자 구조 결합을 보여 주는 기하학 애플리케이션의 프런트엔드",
-        "9": "오디언스 인텔리전스 플랫폼을 위한 풀스택 검색, 분석, 필터링, 내보내기 기능",
-        "10": "고처리량 컨텍스트 처리 시스템을 위한 데이터 품질, 메타데이터, 복구, 조회 기능",
-        "11": "광고 시스템 전반의 엔터티 검색, 리포팅 데이터, 캠페인 제어, 내보내기 워크플로",
-        "12": "프런트엔드, 테스트, 클라우드, 관측성, 보안, 릴리스 전반의 개선",
-        "13": "오디언스 인텔리전스 플랫폼의 프런트엔드 UI, 디자인 시스템, 검색, 필터링, 대시보드, 인터랙션 개선"
+      "name": {
+        "1": "Faro Study Designer",
+        "2": "Various Inc Viewer",
+        "3": "San Anselmo City Plan Website",
+        "4": "Launch Brigade Website",
+        "5": "Faro Data Analytics Dashboard POC",
+        "6": "Faro B2C SSO Implementation",
+        "7": "LotLinx Website",
+        "8": "Metafold 3D MVP",
+        "9": "Persona & Channel Intelligence",
+        "10": "Context Ingestion & Brand-Safety Tooling",
+        "11": "Advertising Operations & Reporting Integrations",
+        "12": "Platform Engineering, Infrastructure and Releases",
+        "13": "UI Components & Design System"
       },
-      "content": {
-        "1": "<div><h3>AI를 활용한 임상 연구 개발.</h3><p>Faro Study Designer는 임상 프로토콜의 효율성과 환자 친화성을 높이기 위한 제품입니다.</p><p>Faro Health는 총 3,830만 달러의 투자를 유치했으며 최근 라운드는 약 2,000만 달러였습니다.</p><p>주요 기능:</p><ul><li>정확하고 효율적인 실시간 협업</li><li>설계 결정의 성공 가능성을 평가하는 타당성 분석</li><li>과거 데이터 및 설계 변형과의 벤치마킹</li></ul></div>",
-        "2": "<div><h3>실시간 비디오, 채팅, 라이브 탐색</h3><p>The Viewer는 현재 온라인인 방송자를 찾고, 공개 방에 참여하고, 실시간 메시지를 주고받고, 개인 비디오 세션으로 전환할 수 있는 인터랙티브 라이브 스트리밍 플랫폼입니다. 지속적인 비디오 및 오디오 전송과 함께 상태, 가용성, 프로필, 세션 데이터를 빠르게 처리합니다.</p><h3>지금 온라인인 사용자</h3><p>활성 방송자 목록이 지속적으로 갱신되며, 프로필 탐색, 검색, 필터링, 실시간 상태 확인, 공개 또는 개인 세션 진입을 지원합니다.</p><h3>제품 기능</h3><ul><li>공개 및 개인 세션의 실시간 비디오와 오디오</li><li>라이브 채팅, 상태 표시, 가용성 변경</li><li>검색, 필터링, 분류, 반응형 탐색</li><li>미디어 재생을 방해하지 않는 고빈도 UI 업데이트</li><li>기존 API, 계정, 메시징, 레거시 워크플로 통합</li></ul><h3>엔지니어링</h3><p>국제 프런트엔드 팀에서 기존 JavaScript 및 Perl 애플리케이션을 React, TypeScript, Next.js, WebSocket 기반의 확장 가능한 플랫폼으로 현대화했습니다.</p><h3>추정 프로덕션 규모</h3><p>플랫폼의 역사와 공개 규모를 바탕으로 월 100만~500만 방문, 일 3만~17만 방문, 수백 개의 동시 라이브 방, 피크 시간대 수천 명의 연결 사용자를 지원했을 것으로 추정합니다. 이는 내부 통계가 아닌 방향성 추정치입니다.</p><div class='project-stats'><div><strong>1–5M</strong><span>추정 월간 방문</span></div><div><strong>30K–170K</strong><span>추정 일간 방문</span></div><div><strong>100s</strong><span>동시 라이브 방</span></div><div><strong>1K–10K</strong><span>추정 피크 연결 사용자</span></div><div><strong>수백만</strong><span>일일 실시간 이벤트</span></div><div><strong>수 TB</strong><span>추정 월간 미디어 전송량</span></div></div></div>",
-        "3": "<p>San Anselmo 2025 General Plan Update를 위한 WordPress 사이트로, 인프라, 용도 지역, 공공 공간, 지속 가능성, 교통 개선 정보를 제공하고 주민 참여형 설문을 포함합니다.</p>",
-        "4": "<p>Launch Brigade는 샌프란시스코 베이 지역의 웹 디자인 및 개발 에이전시로, 브랜드 성장과 비즈니스 성과를 돕는 디지털 경험을 만듭니다.</p>",
-        "5": "<p>Data Analytics Dashboard는 스타 스키마의 Study Design 데이터를 활용한 Pandas 기반 POC였습니다. 분석 마이크로서비스와 프런트엔드를 통해 사용자가 원하는 차원으로 데이터를 탐색할 수 있었습니다.</p>",
-        "6": "<p>Study Designer용 IDP 독립형 SSO 구현으로, 각 조직이 자체 SAML 및 OAuth 제공자를 사용해 API 토큰을 발급할 수 있도록 했습니다.</p>",
-        "7": "<p>LotLinx는 머신러닝과 대규모 데이터 분석을 활용해 자동차 딜러의 재고 회전, 가격 전략, 수익성을 최적화하는 AI 기반 재고 관리 플랫폼입니다.</p>",
-        "8": "<p>Metafold 3D는 적층 제조를 위한 복잡한 3D 모델을 설계하는 클라우드 플랫폼으로, 기존 CAD가 처리하기 어려운 격자 구조와 복합 기하학을 다룹니다.</p>",
-        "9": "<div><h3>페르소나 및 채널 인텔리전스</h3><p>페르소나 탐색, 콘텐츠 채널 평가, 성능 데이터 검토, 필터 결과 내보내기를 지원하는 오디언스 인텔리전스 플랫폼에 기여했습니다.</p><h3>구축한 기능</h3><ul><li>서버 자동완성, 페이지네이션, 무한 스크롤 검색</li><li>날짜 필터, 채널 통계, 이력</li><li>프런트엔드 프록시, 검색 제한, 로깅, 안정적인 로딩 상태</li><li>필터를 유지하는 스트리밍 CSV 다운로드</li></ul><p>React, Next.js, FastAPI, PostgreSQL, OpenSearch, Redis, 캐시, 스케줄 처리 전반을 다뤘습니다.</p></div>",
-        "10": "<div><h3>컨텍스트 수집 및 브랜드 안전 도구</h3><p>웹페이지, URL, 비디오, 채널, 분류 메타데이터를 처리하는 시스템의 운영 도구와 수집 기능을 개선했습니다.</p><h3>구축한 기능</h3><ul><li>전체 컨텍스트 필드와 메타데이터 저장</li><li>범위가 제한된 정리, URL 접두사, 별칭, 배치 도구</li><li>체크포인트 안정화와 안전한 재시도</li><li>URL 분석, ID 스캔, HTML 대체 경로, 캐시 기반 채널 탐색</li><li>구조화된 클라우드 진단</li></ul><p>Python, FastAPI, PostgreSQL, Redis, AWS Lambda, CloudWatch, SAM, CloudFormation, Terraform을 사용했습니다.</p></div>",
-        "11": "<div><h3>광고 운영 및 리포팅 통합</h3><p>광고 분석 플랫폼의 광고주, 세그먼트, 타게팅, 리포팅, 내보내기 워크플로를 연결했습니다.</p><h3>구축한 기능</h3><ul><li>다수 광고 플랫폼의 광고주 및 리포팅 엔터티 지원</li><li>서버 검색, 정렬, 중복 이름 구분, 소스 라벨</li><li>배치-라인아이템 매핑 및 리포팅 캐시 개선</li><li>필터와 페이지네이션을 유지하는 CSV 내보내기</li><li>광고주, 캠페인, 세그먼트 프런트엔드 수정</li></ul><p>Next.js, React, TypeScript, Material UI, FastAPI, Python, Snowflake, Dagster, PostgreSQL을 사용했습니다.</p></div>",
-        "12": "<div><h3>플랫폼 엔지니어링, 테스트, 제품 인프라</h3><p>제품, 서비스, 클라우드 인프라, 개발 워크플로 전반에서 재사용 가능한 기반과 릴리스 안전장치를 구축했습니다.</p><h3>개선한 내용</h3><ul><li>시맨틱 디자인 토큰과 Material UI 변형</li><li>Cypress, Playwright, 인증된 스모크 테스트</li><li>스케줄 서버리스 작업, 클라우드 진단, 관측성, 인프라</li><li>보안 업데이트, 인증, 릴리스 조율, 기술 문서</li></ul><p>React, Next.js, TypeScript, Python, AWS, Terraform, OpenSearch, ETL, 배포 시스템 간 변경을 조율했습니다.</p></div>",
-        "13": "<div><h3>프런트엔드 UI 및 디자인 시스템</h3><p>오디언스 인텔리전스 및 광고 분석 플랫폼 전반에서 명확성, 일관성, 반응성, 안정적인 인터랙션을 중심으로 재사용 가능한 프런트엔드 경험을 구축했습니다.</p><h3>구축한 기능</h3><ul><li>검색, 자동완성, 필터링, 페이지네이션, 무한 스크롤, 상태 처리</li><li>재사용 가능한 Material UI 컴포넌트, 디자인 토큰, 변형, 마이그레이션 패턴</li><li>반응형 대시보드, 갤러리, 테이블, 드로어, 내보내기</li><li>프런트엔드 API 프록시, URL 상태, 쿼리 및 오류 처리</li><li>Jest, Cypress, Playwright 자동화 테스트</li></ul><p>React, Next.js, TypeScript, JavaScript, HTML5, CSS/SCSS, Material UI, Storybook, GitHub Actions를 사용했습니다.</p></div>"
-      }
-    },
-    "jobs": {
-      "title": {
-        "1": "시니어 풀스택 개발자",
-        "2": "시니어 리드 프런트엔드 개발자",
-        "3": "프런트엔드 개발자",
-        "4": "프런트엔드 개발 인턴",
-        "5": "디자인 인턴"
+      "stories": {
+        "1": {
+          "kicker": "임상시험 제품 엔지니어링",
+          "summary": "임상시험 설계 기능, 백엔드 통합, 자동화 테스트 및 배포 파이프라인.",
+          "sections": {
+            "overview": {
+              "title": "임상시험 설계 플랫폼",
+              "content": "임상시험 프로토콜의 계획, 문서화 및 평가에 사용하는 의료 제품 Faro Study Designer 개발에 참여했습니다. React와 TypeScript로 임상시험 기능을 개발하고 백엔드 서비스를 통합했으며 자동화 테스트 및 배포 파이프라인에 기여했습니다."
+            },
+            "contributions": {
+              "title": "기여 및 결과",
+              "nodes": {
+                "features": {
+                  "label": "제품 기능",
+                  "detail": "임상시험 설계 작업을 위한 프런트엔드 및 백엔드 기능을 개발했습니다."
+                },
+                "integrations": {
+                  "label": "서비스 통합",
+                  "detail": "UI 모듈을 REST API 및 CQRS 방식의 서비스와 통합했습니다."
+                },
+                "testing": {
+                  "label": "안정성",
+                  "detail": "단위 및 통합 테스트로 안정성을 개선했습니다."
+                },
+                "delivery": {
+                  "label": "배포",
+                  "detail": "GitHub Actions로 자동화된 테스트, 빌드 및 배포를 지원했습니다."
+                }
+              }
+            },
+            "outcome": {
+              "content": "이 작업으로 임상시험 기능과 자동화 테스트 범위를 확장하고 지속적인 개발을 지원했습니다."
+            }
+          }
+        },
+        "2": {
+          "kicker": "실시간 제품 현대화",
+          "summary": "실시간 검색, 비디오, 채팅 및 대화형 세션 기능을 위한 프런트엔드 현대화.",
+          "sections": {
+            "overview": {
+              "title": "Cams 실시간 제품 현대화",
+              "content": "실시간 검색, 비디오, 채팅, 공개방 및 비공개 대화형 세션을 제공하는 대규모 플랫폼 Cams의 프런트엔드 현대화를 이끌었습니다. 기존 기능을 유지하면서 JavaScript 및 Perl 기반 애플리케이션을 WebSocket 및 Python 서비스와 연동되는 React, TypeScript, Next.js로 이전했습니다."
+            },
+            "contributions": {
+              "title": "기여 및 결과",
+              "nodes": {
+                "leadership": {
+                  "label": "팀 리더십",
+                  "detail": "제품, 디자인 및 엔지니어링 우선순위에 따라 국제 프런트엔드 팀을 조율했습니다."
+                },
+                "discovery": {
+                  "label": "제품 기능",
+                  "detail": "검색, 접속 상태, 채팅 및 세션 상태 인터페이스를 개선했습니다."
+                },
+                "realtime": {
+                  "label": "실시간 동작",
+                  "detail": "진행 중인 비디오 스트림과 채팅 세션을 중단하지 않고 실시간 UI 업데이트를 지원했습니다."
+                },
+                "modernization": {
+                  "label": "현대화",
+                  "detail": "기존 인터페이스와 기능을 React 및 TypeScript로 이전했습니다."
+                }
+              }
+            },
+            "outcome": {
+              "content": "기존 기능을 보존하면서 실시간 검색, 비디오, 채팅 및 비공개 세션의 프런트엔드 아키텍처를 현대화했습니다."
+            }
+          }
+        },
+        "3": {
+          "kicker": "공공 정보 및 설문조사",
+          "summary": "주민들이 제안된 도시 계획 변경 사항을 이해하고 의견을 낼 수 있도록 돕는 시민 웹사이트입니다.",
+          "sections": {
+            "overview": {
+              "title": "샌앤셀모 도시 계획 웹사이트",
+              "content": "2025년 샌앤셀모 종합계획 업데이트를 위한 WordPress 웹사이트입니다. 기반시설, 용도지역 및 공공공간 변경 제안을 안내하고 프로젝트 소식, 지속 가능성 계획, 교통 개선 및 주민 의견 수렴 설문조사를 제공합니다."
+            }
+          }
+        },
+        "4": {
+          "kicker": "에이전시 웹사이트 개발",
+          "summary": "샌프란시스코 베이 지역 디자인·개발 에이전시를 위한 유지보수 가능한 마케팅 웹사이트입니다.",
+          "sections": {
+            "overview": {
+              "title": "Launch Brigade 웹사이트",
+              "content": "Launch Brigade는 샌프란시스코 베이 지역의 웹 디자인 및 개발 에이전시입니다. 페이지 레이아웃, 콘텐츠 구성 및 프런트엔드 구현을 포함한 반응형 웹사이트 개발에 참여했습니다."
+            }
+          }
+        },
+        "5": {
+          "kicker": "임상시험 분석 탐색",
+          "summary": "임상시험 데이터를 조회하고 시각화하기 위한 Pandas 기반 분석 프로토타입입니다.",
+          "sections": {
+            "overview": {
+              "title": "데이터 분석 대시보드 개념 증명",
+              "content": "데이터 분석 대시보드는 스타 스키마에 저장된 Study Designer 데이터를 활용해 분석 마이크로서비스와 프런트엔드를 구성한 Pandas 기반 개념 증명이었습니다. 사용자는 분석 서비스에 연결된 인터페이스에서 데이터를 필터링하고 분석할 수 있었습니다."
+            }
+          }
+        },
+        "6": {
+          "kicker": "조직별 인증",
+          "summary": "자체 인증 서비스를 사용하는 조직을 위한 특정 ID 공급업체에 종속되지 않는 SSO입니다.",
+          "sections": {
+            "overview": {
+              "title": "Faro B2C SSO 구현",
+              "content": "Study Designer를 위한 공급업체 독립적인 싱글 사인온 구현입니다. 조직은 기존 ID 공급업체와 SAML 또는 OAuth 기반 통합을 이용해 사용자를 인증하고 애플리케이션 API에 접근할 수 있었습니다."
+            }
+          }
+        },
+        "7": {
+          "kicker": "자동차 재고 플랫폼 웹사이트",
+          "summary": "데이터와 머신러닝이 자동차 딜러의 재고 결정에 어떻게 도움이 되는지 설명하는 제품 웹사이트입니다.",
+          "sections": {
+            "overview": {
+              "title": "LotLinx 웹사이트",
+              "content": "LotLinx는 머신러닝과 데이터 분석을 활용해 자동차 딜러의 재고 회전율과 수익성을 최적화하는 AI 기반 재고 관리 플랫폼입니다. 웹사이트는 시장 수요, 가격 및 소비자 데이터를 이용해 재고 결정을 지원하는 방식을 설명합니다."
+            }
+          }
+        },
+        "8": {
+          "kicker": "브라우저에서 복잡한 기하학 표현",
+          "summary": "적층 제조용 복잡한 모델을 다루는 클라우드 플랫폼의 프런트엔드 프로토타입입니다.",
+          "sections": {
+            "overview": {
+              "title": "Metafold 3D MVP",
+              "content": "Metafold 3D는 적층 제조에 최적화된 복잡한 3D 모델을 설계하는 클라우드 플랫폼입니다. 경량 격자 구조 등 복잡한 형상을 시각화하고 조작하는 프런트엔드 프로토타입에 기여했습니다."
+            }
+          }
+        },
+        "9": {
+          "kicker": "오디언스 인텔리전스 검색 구현",
+          "summary": "UI, 백엔드 서비스 및 CSV 내보내기에서 검색어와 필터를 일관되게 유지하는 검색 및 보고 기능입니다.",
+          "sections": {
+            "challenge": {
+              "eyebrow": "과제",
+              "title": "사용자는 오디언스와 채널 데이터에서 빠르고 일관된 유사도 검색이 필요했습니다.",
+              "content": "광고주는 오디언스 및 채널 레코드를 검색하고, 필터를 적용하고, 이전 데이터를 검토하고, 결과를 내보내야 했습니다. 검색 동작은 필터링, 페이지네이션, 과거 보고 및 내보내기에서도 일관되어야 했습니다."
+            },
+            "architecture": {
+              "title": "전체 스택에 걸친 단일 검색 계약",
+              "nodes": {
+                "interface": {
+                  "label": "React + Next.js",
+                  "detail": "자동완성, 무한 스크롤, 날짜 필터"
+                },
+                "api": {
+                  "label": "FastAPI",
+                  "detail": "페이지네이션 및 쿼리 계약"
+                },
+                "search": {
+                  "label": "PostgreSQL + OpenSearch",
+                  "detail": "과거 데이터 및 인덱스 기반 검색"
+                },
+                "exports": {
+                  "label": "Redis + 스트리밍 내보내기",
+                  "detail": "빠른 읽기와 필터 적용 CSV 출력"
+                }
+              }
+            },
+            "progression": {
+              "title": "개발 단계",
+              "steps": {
+                "discover": {
+                  "label": "조사",
+                  "title": "오디언스 검색 과정 정의",
+                  "content": "광고주 조사에 필요한 검색, 필터링, 페이지네이션, 과거 보고 및 내보내기 요구사항을 정의했습니다."
+                },
+                "connect": {
+                  "label": "연결",
+                  "title": "API, 인덱스 및 데이터 저장소 연결",
+                  "content": "공통 검색 계약을 중심으로 FastAPI 서비스, PostgreSQL 쿼리, OpenSearch 인덱스 및 Redis 캐시를 통합했습니다."
+                },
+                "interact": {
+                  "label": "상호작용",
+                  "title": "대화형 검색 구현",
+                  "content": "React와 Next.js에서 서버 측 자동완성, 무한 스크롤, 날짜 필터 및 채널 통계를 구현했습니다."
+                },
+                "export": {
+                  "label": "내보내기",
+                  "title": "파일 내보내기에 검색 필터 유지",
+                  "content": "스트리밍 CSV 내보내기는 인터페이스의 활성 검색 및 필터 매개변수를 사용했습니다."
+                },
+                "validate": {
+                  "label": "검증",
+                  "title": "검색, 필터링 및 내보내기 테스트",
+                  "content": "UI, API 경계, 검색 인프라 및 데이터 서비스의 동작을 검증해 각 경로에서 일관된 결과가 나오도록 했습니다."
+                }
+              }
+            },
+            "outcome": {
+              "content": "사용자는 오디언스 데이터를 검색하고 분석한 다음 동일한 활성 검색 및 필터 매개변수로 결과를 내보낼 수 있었습니다."
+            }
+          }
+        },
+        "10": {
+          "kicker": "대용량 문맥 데이터 안정적으로 처리하기",
+          "summary": "URL 정규화, 메타데이터 분류 및 처리 실패 복구를 위한 수집 시스템입니다.",
+          "sections": {
+            "challenge": {
+              "eyebrow": "안정성 문제",
+              "title": "일관되지 않은 URL은 데이터 매칭과 결합을 어렵게 합니다",
+              "content": "중복 URL과 일관되지 않은 메타데이터는 레코드 매칭을 어렵게 했습니다. 비동기 처리에는 안정적인 작업 추적과 복구도 필요했습니다."
+            },
+            "pipeline": {
+              "title": "문맥 데이터 파이프라인",
+              "steps": {
+                "ingest": {
+                  "label": "수집",
+                  "title": "웹페이지, 비디오 및 채널 데이터 수집",
+                  "content": "비동기 처리를 위해 웹페이지, 비디오 및 채널 데이터를 수집하는 도구 개발에 참여했습니다."
+                },
+                "normalize": {
+                  "label": "정규화",
+                  "title": "일관된 매칭을 위해 URL 정규화",
+                  "content": "동일한 리소스를 가리키는 레코드를 매칭할 수 있도록 URL 형식과 별칭을 표준화했습니다."
+                },
+                "dedupe": {
+                  "label": "중복 제거",
+                  "title": "중복을 식별하고 반복 처리 줄이기",
+                  "content": "중복 제거와 별칭 조정을 통해 불필요한 처리를 줄이면서 대체 URL과 표준 레코드의 연결을 유지했습니다."
+                },
+                "classify": {
+                  "label": "분류",
+                  "title": "정규화된 콘텐츠 분류",
+                  "content": "배치 처리는 정규화된 메타데이터를 후속 분류 서비스로 전달했습니다."
+                },
+                "persist": {
+                  "label": "저장",
+                  "title": "메타데이터와 처리 상태 저장",
+                  "content": "서비스 간 메타데이터 저장 및 재사용을 개선하고 처리 진행 상황을 추적할 체크포인트를 유지했습니다."
+                },
+                "recover": {
+                  "label": "복구",
+                  "title": "오류 진단 가능하게 만들기",
+                  "content": "재시도와 체크포인트는 실패한 작업의 복구를 지원했고, CloudWatch 로그는 오류 조사에 도움이 되었습니다."
+                }
+              }
+            },
+            "architecture": {
+              "title": "처리, 영속성 및 복구 구성 요소",
+              "nodes": {
+                "urls": {
+                  "label": "URL 정규화",
+                  "detail": "정규화, 별칭, 파싱, 대체 처리"
+                },
+                "services": {
+                  "label": "Python 서비스",
+                  "detail": "배치 처리 및 메타데이터 저장"
+                },
+                "serverless": {
+                  "label": "AWS 서버리스",
+                  "detail": "Lambda 및 SQS 오케스트레이션"
+                },
+                "diagnostics": {
+                  "label": "CloudWatch 진단",
+                  "detail": "로깅, 모니터링 및 오류 조사"
+                }
+              }
+            },
+            "outcome": {
+              "content": "이 도구는 중복 레코드 식별과 처리, 메타데이터 재사용 및 실패한 수집 작업의 복구를 지원했습니다."
+            }
+          }
+        },
+        "11": {
+          "kicker": "분산된 광고 데이터 통합",
+          "summary": "FreeWheel과 Google Ad Manager 전반의 광고주 검색, 엔터티 매칭, 보고 매핑 및 내보내기 기능입니다.",
+          "sections": {
+            "challenge": {
+              "eyebrow": "통합상의 차이",
+              "title": "플랫폼마다 동일한 기업을 다르게 표현했습니다",
+              "content": "FreeWheel과 Google Ad Manager는 서로 다른 식별자, 보고 구조 및 명명 규칙을 사용했습니다. 사용자는 광고주를 찾고 중복을 구분하고 게재 위치를 매핑하고 보고 데이터를 조회할 일관된 방법이 필요했습니다."
+            },
+            "architecture": {
+              "title": "표시 전에 데이터 조정",
+              "nodes": {
+                "platforms": {
+                  "label": "외부 플랫폼",
+                  "detail": "FreeWheel 및 Google Ad Manager"
+                },
+                "resolution": {
+                  "label": "엔터티 확인",
+                  "detail": "출처별 선택과 중복 이름 구별"
+                },
+                "pipelines": {
+                  "label": "데이터 파이프라인",
+                  "detail": "Snowflake, Dagster, PostgreSQL 및 보고 캐시"
+                },
+                "workflows": {
+                  "label": "제품 기능",
+                  "detail": "검색, 갤러리, 매핑 및 CSV 내보내기"
+                }
+              }
+            },
+            "progression": {
+              "title": "통합",
+              "steps": {
+                "connect": {
+                  "label": "연결",
+                  "title": "외부 광고 시스템 통합",
+                  "content": "FreeWheel과 Google Ad Manager 데이터를 바탕으로 광고주 및 보고 엔터티 검색을 구현했습니다."
+                },
+                "reconcile": {
+                  "label": "조정",
+                  "title": "엔터티 차이 해결",
+                  "content": "광고주 식별자를 출처 플랫폼과 연결하고 동일한 이름을 가진 레코드를 구별했습니다."
+                },
+                "sync": {
+                  "label": "동기화",
+                  "title": "보고 데이터 조정",
+                  "content": "Snowflake와 PostgreSQL을 사용하는 Dagster 기반 데이터 변환과 보고 캐시를 개선했습니다."
+                },
+                "present": {
+                  "label": "표시",
+                  "title": "검색, 매핑 및 내보내기 인터페이스 개발",
+                  "content": "검색 결과, 갤러리, 매핑 및 내보내기는 두 플랫폼의 데이터를 공통 인터페이스로 제공했습니다."
+                }
+              }
+            },
+            "outcome": {
+              "content": "이 도구는 기존 플랫폼 식별자와 관련 보고 데이터를 유지하면서 광고주를 더 쉽게 찾고 타기팅 정보를 선택할 수 있게 했습니다."
+            }
+          }
+        },
+        "12": {
+          "kicker": "다중 서비스 플랫폼의 안정성 개선",
+          "summary": "운영 중인 광고 플랫폼의 여러 저장소에 걸친 인프라, 테스트, 관측성 및 릴리스 작업입니다.",
+          "sections": {
+            "architecture": {
+              "title": "서비스 간 안정성",
+              "nodes": {
+                "frontend": {
+                  "label": "프런트엔드",
+                  "detail": "인증이 포함된 Cypress 테스트와 초기 Playwright 테스트 범위"
+                },
+                "apis": {
+                  "label": "애플리케이션 API",
+                  "detail": "인증, 계약 및 설정 수정"
+                },
+                "pipelines": {
+                  "label": "ETL + Persona",
+                  "detail": "보고 캐시 동기화 및 Python 파이프라인"
+                },
+                "infrastructure": {
+                  "label": "AWS 인프라",
+                  "detail": "예약 Lambda 작업, 데이터 수집 및 CloudWatch 진단"
+                }
+              }
+            },
+            "progression": {
+              "title": "운영 기여",
+              "steps": {
+                "identify": {
+                  "label": "식별",
+                  "title": "서비스 전반의 문제 추적",
+                  "content": "프런트엔드, API, ETL, Persona 서비스 및 AWS 인프라에서 발생한 운영 장애를 조사했습니다."
+                },
+                "improve": {
+                  "label": "개선",
+                  "title": "테스트 및 인프라 강화",
+                  "content": "인증 Cypress 테스트, 초기 Playwright 테스트, 예약 Lambda 작업 및 설정 수정으로 릴리스 위험을 줄였습니다."
+                },
+                "release": {
+                  "label": "릴리스",
+                  "title": "저장소 간 배포 조율",
+                  "content": "여러 저장소의 연관 코드 변경, 프레임워크 보안 업데이트 및 릴리스를 조율했습니다."
+                },
+                "monitor": {
+                  "label": "모니터링",
+                  "title": "운영 환경 모니터링 및 장애 조사",
+                  "content": "CloudWatch 로그와 릴리스 후 점검을 사용해 예약 작업을 모니터링하고 운영 장애를 조사했습니다."
+                }
+              }
+            },
+            "outcome": {
+              "content": "테스트 범위 확대, 서버리스 처리 개선, 프레임워크 보안 업데이트, 서비스 설정 수정, ETL 동기화 및 릴리스 조율을 수행했습니다."
+            }
+          }
+        },
+        "13": {
+          "kicker": "복잡한 제품의 일관된 인터페이스 구축",
+          "summary": "공유 React 컴포넌트, 시맨틱 디자인 토큰 및 API 기반 UI 동작의 일관된 처리.",
+          "sections": {
+            "challenge": {
+              "eyebrow": "제품 과제",
+              "title": "분석 기능에는 일관된 UI 컴포넌트와 동작이 필요했습니다",
+              "content": "대시보드, 표, 갤러리 및 검색 도구는 새로운 데이터와 작업 흐름에 따라 발전했습니다. 여러 기능에서 동작을 표준화할 재사용 가능한 컴포넌트가 필요했습니다."
+            },
+            "architecture": {
+              "title": "공유 컴포넌트 및 디자인 토큰",
+              "nodes": {
+                "tokens": {
+                  "label": "시맨틱 토큰",
+                  "detail": "공통 시각 언어 및 Material UI 변형"
+                },
+                "patterns": {
+                  "label": "상호작용 패턴",
+                  "detail": "자동완성, 필터, 페이지네이션 및 로딩 상태"
+                },
+                "integration": {
+                  "label": "데이터 통합",
+                  "detail": "API 응답, 페이지네이션 및 프런트엔드 상태 관리"
+                },
+                "coverage": {
+                  "label": "회귀 테스트 범위",
+                  "detail": "Jest, Cypress 및 Playwright 검증"
+                }
+              }
+            },
+            "progression": {
+              "title": "디자인 시스템 개발 단계",
+              "steps": {
+                "audit": {
+                  "label": "검토",
+                  "title": "반복되는 UX 문제 찾기",
+                  "content": "대시보드, 표, 갤러리, 검색, 필터 및 로딩 상태의 불일치를 파악했습니다."
+                },
+                "systemize": {
+                  "label": "체계화",
+                  "title": "재사용 가능한 인터페이스 패턴 개발",
+                  "content": "시맨틱 토큰, Material UI 변형 및 공유 React 컴포넌트로 일관되지 않은 구현을 대체했습니다."
+                },
+                "integrate": {
+                  "label": "통합",
+                  "title": "애플리케이션 API와 소비자 컴포넌트 통합",
+                  "content": "API 응답, 페이지네이션, 자동완성 및 내보내기를 위한 컴포넌트 상태 관리를 구현했습니다."
+                },
+                "validate": {
+                  "label": "검증",
+                  "title": "UI 기능 테스트",
+                  "content": "Jest, Cypress 및 Playwright 테스트로 인증 경로를 확인하고 회귀 문제를 줄였습니다."
+                }
+              }
+            },
+            "outcome": {
+              "content": "공유 React 컴포넌트와 UI 패턴은 중복 구현을 줄이고 검색, 필터링 및 보고 인터페이스를 표준화했습니다."
+            }
+          }
+        }
+      },
+      "description": {
+        "1": "헬스케어 제품의 임상시험 설계 기능, 협업 과정, 서비스 통합 및 배포 개선",
+        "2": "Cams 비디오, 채팅, 검색 및 세션을 위한 프런트엔드 현대화와 실시간 기능 개발",
+        "3": "공공 정보와 주민 설문조사를 제공하는 도시 계획 웹사이트 개발",
+        "4": "베이 지역 디자인 에이전시를 위한 반응형 웹 개발, 레이아웃 디자인 및 콘텐츠 구성",
+        "5": "임상시험 데이터로 필터링 가능한 보고서를 생성한 분석 개념 증명",
+        "6": "조직별 인증 요구사항을 지원하는 공급업체 독립적인 SSO 구현",
+        "7": "AI 기반 자동차 재고 제품을 위한 마케팅 웹사이트 구현",
+        "8": "복잡한 격자 구조 시각화를 위한 기하학 모델링 제품의 프런트엔드 프로토타입",
+        "9": "오디언스 및 채널 검색 속도와 안정성을 높이는 검색, 필터링, 분석 및 내보내기 개선",
+        "10": "URL 정규화, 메타데이터 처리, 중복 감지 및 비동기 수집 작업 복구 도구",
+        "11": "광고 운영 데이터를 통합하는 보고, 엔터티 검색, 캠페인 제어 및 내보내기 기능",
+        "12": "플랫폼 위험을 줄이기 위한 테스트, 인프라, 모니터링, 보안 및 릴리스 개선",
+        "13": "재사용 가능한 React 컴포넌트, 디자인 시스템 업데이트, 검색, 필터링, 대시보드 및 UI 상호작용 개선"
       }
     }
   }

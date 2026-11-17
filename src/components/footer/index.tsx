@@ -4,13 +4,7 @@ import { useThemeStore } from "../../stores/ThemeStore";
 import { githubProfileUrl, linkedinProfileUrl } from "../../service/consts";
 import styles from "./styles.module.scss";
 
-interface FooterProps {
-  backgroundImageUrl?: string;
-}
-
-export const Footer = ({
-  backgroundImageUrl = "/images/home/theme1.jpg",
-}: FooterProps) => {
+export const Footer = () => {
   const { t } = useTranslation();
   const { theme, toggleTheme } = useThemeStore();
   const year = useMemo(() => {
@@ -22,14 +16,7 @@ export const Footer = ({
     document.documentElement.classList.add(`theme-${theme}`);
   }, [theme]);
   return (
-    <section
-      className={styles.footer}
-      style={
-        backgroundImageUrl
-          ? { backgroundImage: `url(${backgroundImageUrl})` }
-          : undefined
-      }
-    >
+    <footer className={styles.footer}>
       <div className={styles.footerContent}>
         <div className={styles.linkList}>
           <div className={styles.footerLink}>
@@ -60,6 +47,6 @@ export const Footer = ({
         </button>
         <div className={styles.trademark}>© {year}</div>
       </div>
-    </section>
+    </footer>
   );
 };

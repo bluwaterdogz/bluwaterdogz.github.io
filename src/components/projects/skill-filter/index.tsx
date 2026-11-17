@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { skills } from "../../../service/skill/data";
 import { useOutsideClick } from "../../../hooks/useOutsideClick";
 import { Badge } from "../../common/badge";

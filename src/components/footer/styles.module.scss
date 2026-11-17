@@ -1,96 +1,67 @@
 @use "../../styles/variables" as *;
 @use "../../styles/colors" as *;
 @use "../../styles/typography" as *;
-.footer {
-  background-color: $dark-color;
-  background-position: center;
-  background-size: cover;
-  min-height: $space * 18;
-  padding: $space * 3;
-  position: relative;
 
-  &::before {
-    background: linear-gradient(
-      rgba($raisin-black, 0.82),
-      rgba($raisin-black, 0.9)
-    );
-    content: "";
-    inset: 0;
-    position: absolute;
-  }
+.footer {
+  background: color-mix(in srgb, #{$theme-surface-color} 92%, #{$theme-text-color});
+  border-top: 1px solid $theme-border-color;
+  padding: $space * 4 $space * 3;
 }
 
 .footerContent {
   align-items: center;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  gap: $space * 2;
-  justify-content: center;
+  display: grid;
+  gap: $space * 3;
+  grid-template-columns: 1fr auto auto;
   margin: 0 auto;
   max-width: $content-width-wide;
-  padding: $space;
-  position: relative;
-  z-index: 1;
+}
 
-  .trademark {
-    @include text;
-    display: inline-flex;
-    align-items: center;
-    color: white;
-    text-shadow: 0 2px $space-sm rgba($raisin-black, 0.8);
-  }
+.linkList {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space * 3;
+}
 
-  .linkList {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: $space * 2;
-    overflow: visible;
-    .footerLink {
-      display: inline-block;
-    }
-    a {
-      @include link-text;
-      text-decoration: none;
-      color: white;
-      text-shadow: 0 2px $space-sm rgba($raisin-black, 0.8);
-      transition: $transition;
-      &:hover {
-        color: $primary-color;
-      }
-    }
-  }
+.footerLink a {
+  @include link-text;
+  color: $theme-text-color;
+  text-decoration: none;
+  transition: color $transition ease;
+
+  &:hover,
+  &:focus-visible { color: $primary-color; }
 }
 
 .themeToggle {
+  @include link-text;
   align-items: center;
   background: transparent;
-  border: 1px solid rgba(white, 0.45);
-  color: white;
+  border: 1px solid $theme-border-color;
+  color: $theme-text-color;
   cursor: pointer;
   display: inline-flex;
-  font: inherit;
   gap: $space;
   padding: $space $space * 2;
   transition: border-color $transition ease, color $transition ease;
 
   &:hover,
   &:focus-visible {
-    border-color: $primary-color;
+    border-color: $primary-color !important;
     color: $primary-color;
   }
 }
 
-@media (max-width: $small-screen) {
-  .footer {
-    min-height: $space * 16;
-    padding: $space * 2;
-  }
+.trademark { @include small-text; color: $theme-subtext-color; }
 
-  .footerContent {
-    align-items: center;
-  }
+@media (max-width: $small-screen) {
+  .footerContent { grid-template-columns: 1fr auto; }
+  .trademark { grid-column: 1 / -1; }
+}
+
+@media (max-width: $mobile-screen) {
+  .footer { padding: $space * 3 $space * 2; }
+  .footerContent { align-items: flex-start; display: flex; flex-direction: column; }
+  .linkList { align-items: flex-start; flex-direction: column; gap: $space * 2; }
 }

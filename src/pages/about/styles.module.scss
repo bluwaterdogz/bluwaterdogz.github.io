@@ -1,6 +1,7 @@
 @use "../../styles/variables" as *;
 @use "../../styles/colors" as *;
 @use "../../styles/typography" as *;
+@use "../../styles/interactions" as *;
 
 .aboutPage {
   color: $theme-text-color;
@@ -95,19 +96,21 @@
   }
 }
 
+
 .interests {
+
   margin-top: $space * 8;
 }
 
 .interestGrid {
   display: grid;
   gap: $space * 2;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
   article {
-    border-top: 1px solid $theme-border-color;
+    @include card-outline;
     min-width: 0;
-    padding: $space * 2 0;
+    padding: $space * 3;
     text-align: left;
     transition: border-color $transition ease, transform $transition ease;
 
@@ -192,7 +195,7 @@
     transparent
   );
   border-left: 2px solid $primary-color;
-  margin-top: $space * 3;
+  margin: $space * 3 0;
   padding: $space * 2 $space * 3;
 
   p {

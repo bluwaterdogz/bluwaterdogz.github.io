@@ -9,10 +9,12 @@ import { router } from "./routes/index.tsx";
 import { initReactI18next } from "react-i18next";
 import i18n from "i18next";
 import HttpBackend from "i18next-http-backend";
+import { supportedLanguages } from "./components/lang/consts.ts";
 
 i18n.use(HttpBackend).use(initReactI18next).init({
   lng: "en",
   fallbackLng: "en",
+  supportedLngs: supportedLanguages,
   backend: {
     loadPath: "/locales/{{lng}}/{{ns}}.json",
   },

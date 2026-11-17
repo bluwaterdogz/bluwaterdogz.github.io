@@ -1,324 +1,804 @@
 {
+  "common": {
+    "noneFound": "未找到"
+  },
+  "placeholder": {
+    "comingSoon": "即将推出..."
+  },
   "home": {
-    "header": "<span>你好<br /> 我是 Brian Velasquez，<br /><em>資深全端<br />工程師。</em></span>",
-    "heroEyebrow": "全端工程師",
+    "header": "<span>你好<br />我是Brian Velasquez，<br /><em>高级软件<br />工程师。</em></span>",
+    "heroEyebrow": "高级软件工程师",
     "heroBrand": "brian velasquez",
-    "heroHeadlineStart": "構建",
-    "heroHeadlineAccent": "卓越產品背後的",
-    "heroHeadlineEnd": "系統。",
-    "heroPrimaryCta": "查看精選專案",
-    "heroSecondaryCta": "聯絡我",
-    "heroSkillsLabel": "核心技能",
-    "heroName": "我是 Brian Velasquez，",
-    "heroRole": "資深全端工程師。",
-    "heroIntroduction": "我是 Brian。我打造直觀的介面、可靠的 API 與資料密集型平台，從第一個原型一路做到大規模正式環境。",
-    "switchBackground": "切換主視覺背景",
+    "heroHeadlineStart": "构建",
+    "heroHeadlineAccent": "支撑",
+    "heroHeadlineEnd": "优秀产品的系统。",
+    "heroPrimaryCta": "看看我的作品",
+    "heroSecondaryCta": "联系我们",
+    "heroSkillsLabel": "特色技能",
+    "heroName": "I'm Brian Velasquez,",
+    "heroRole": "高级软件工程师。",
+    "heroIntroduction": "我是 Brian。我构建直观的界面、可靠的 APIs 和数据密集型平台，从第一个原型到大规模生产。",
+    "switchBackground": "切换英雄背景",
     "backgrounds": {
-      "type1": "類型 1",
-      "type2": "類型 2"
+      "type1": "1型",
+      "type2": "类型 2"
     },
-    "aboutHeader": "我是誰？",
-    "about": "具備 TypeScript、React、Angular、Node.js 與 Python 經驗的資深全端網路開發者。曾帶領國際團隊、現代化舊有系統、優化架構，並導入 CI/CD 流程以提升部署效率。我熱衷於打造可擴充、以使用者為核心並能推動業務成長的解決方案。",
-    "aboutEyebrow": "01 關於我",
-    "aboutTitle": "打造解決方案。帶領團隊",
-    "aboutLink": "深入了解我",
+    "aboutHeader": "我是谁？",
+    "about": "最近，我曾在Mobian担任高级软件工程师，负责构建受众智能和广告平台的搜索、分析、报告、数据处理和全栈功能。在此之前，我曾在Faro Health构建临床研究工具，并在Various Inc.领导Cams的前端现代化改造工作。",
+    "aboutEyebrow": "01 关于我",
+    "aboutTitle": "软件工程和技术领导力",
+    "aboutLink": "关于我的更多信息",
     "features": {
-      "experience": "年資",
-      "projects": "已部署專案",
-      "international": "國際協作",
-      "collaboration": "團隊合作",
-      "focus": "專注方向",
-      "performance": "效能、可擴充性、使用者體驗"
+      "experience": "多年经验",
+      "projects": "项目已部署",
+      "international": "国际项目",
+      "collaboration": "合作",
+      "focus": "重点",
+      "performance": "性能、可扩展性、用户体验"
     },
-    "section1Title": "經驗豐富",
-    "section1Content1": "在最近擔任 Faro Health 資深全端開發者期間，我使用 TypeScript、Node.js、PostgreSQL、Jest 與 React 建置並優化 REST 與 CQRS 微服務及介面模組。我開發功能切片與概念驗證、設計技術方案、撰寫單元與整合測試、改善效能，並以 GitHub Actions 建立部署流程。",
-    "section1Content2": "此前我在 Various Inc. 帶領國際遠端前端團隊，與設計師密切合作，將既有的 JavaScript 與 Perl 影音串流應用程式現代化，遷移至使用 React、TypeScript、Next.js、MobX、WebSockets 與 Python 的高效能可擴充平台，並搭配 REST API 與 CI/CD。",
+    "section1Title": "经验丰富",
+    "section1Content1": "作为制药科技初创公司Faro Health的高级软件工程师，我使用TypeScript、Node.js、PostgreSQL、Jest和React构建并优化了基于REST和CQRS的微服务和UI模块。我设计和开发了功能切片和概念验证，编写了单元测试和集成测试，优化了应用程序性能，并使用GitHub Actions构建了部署管道。",
+    "section1Content2": "此前，我曾在 Various Inc. 领导一支国际化的远程前端团队，与设计师紧密合作，对传统的 JavaScript 和基于 Perl 的视频流媒体应用程序进行现代化改造。我们将其迁移到可扩展、高性能的 React 和 TypeScript 技术栈，并结合 Next.js、MOBX、WebSockets 和 Python，以及 REST、APIs 和 CI/CD 流水线，实现了无缝部署。",
     "experience": {
-      "eyebrow": "02 經歷",
-      "title": "經歷",
-      "copy1": "最近在 Mobian，我參與大型多儲存庫平台，涵蓋活動控制、廣告主與受眾區隔圖庫、人物搜尋、頻道情報、品牌安全中繼資料、報表整合與資料管線。",
-      "copy2": "我使用 Next.js、React、TypeScript、FastAPI、PostgreSQL、OpenSearch、Snowflake、Dagster、Redis 與 AWS，建置並改善搜尋、篩選、分頁、自動完成、CSV 匯出、統計、快取行為、資料匯入工具與報表流程。",
-      "copy3": "工作經常跨越前端、後端、ETL、搜尋與基礎設施。我也處理正式環境修正、測試覆蓋率、版本協調、品牌資料對應，以及前端、Persona API、Content API、Video Brand Safety、ETL 與端對端測試儲存庫之間的整合。",
-      "copy4": "此前在 Faro Health，我建置並優化以 REST 與 CQRS 微服務、PostgreSQL、自動化測試及 GitHub Actions 部署流程支援的 TypeScript 與 React 應用程式。",
-      "copy5": "更早在 Various Inc.，我帶領國際前端團隊，將舊有 JavaScript 與 Perl 應用程式現代化為可擴充的 React、TypeScript、Next.js、WebSocket 與 Python 平台。",
-      "link": "查看我的經歷",
+      "eyebrow": "02 有经验",
+      "title": "经验丰富",
+      "summary": "我开发和改进涵盖产品界面、API、数据系统、搜索和云基础设施的生产软件。最近的工作将这些部分应用于受众分析与广告业务。",
+      "scope": "早期的工作经历包括：在Faro Health公司负责临床研究工具，以及在Various Inc.公司负责Cams的视频流媒体服务。",
+      "copy1": "我是一名全栈软件工程师，拥有扎实的前端开发基础，并具备开发前端应用、API、搜索功能和数据处理系统的经验。我的工作涵盖广告技术、医疗保健和消费者平台中的搜索、分析、数据处理、API 和用户界面。我也领导过前端现代化工作，与不同团队合作改进架构、解决技术难题，交付可靠、可扩展且易于使用的软件。",
+      "copy2": "我构建并改进了 Next.js、React、TypeScript、FastAPI、PostgreSQL、OpenSearch、Snowflake、Dagster、Redis 和 AWS 的搜索、筛选、分页、自动完成、CSV 导出、统计、缓存行为、导入工具和报告工作流程。",
+      "copy3": "这项工作经常跨越前端、后端、ETL、搜索和基础设施等多个领域。我还负责修复生产问题、扩展测试覆盖范围、协调版本发布、品牌协调以及前端、Persona、API、内容API、Video Brand Safety、ETL和端到端测试库之间的集成。",
+      "copy4": "在加入 Mobian 之前，我曾帮助构建 Faro Health 的临床研究设计平台，贡献了前端功能、服务集成、测试和交付改进。",
+      "copy5": "之前在 Various Inc.，我领导了 Cams 的前端现代化工作，将高流量的实时视频和聊天应用程序迁移到更具可扩展性的 React、TypeScript、Next.js、WebSocket 和 Python 平台。",
+      "link": "查看我的体验",
       "timeline": {
-        "mobianPeriod": "2025 - 至今",
+        "mobianPeriod": "2025年至今",
         "mobianCompany": "Mobian",
-        "mobianSummary": "在多儲存庫平台上負責全端工程，支援活動控制、搜尋、分析、品牌安全與資料管線。",
+        "mobianSummary": "为受众智能和广告工作流程构建了搜索、分析、报告、数据处理和可靠性功能。",
         "contractorPeriod": "2024 - 2025",
-        "contractorCompany": "獨立承包人",
-        "contractorSummary": "為獨立客戶提供聚焦的網路應用、產品與技術顧問服務。",
+        "contractorCompany": "Independent Contractor",
+        "contractorSummary": "为独立客户提供网络应用程序、产品和技术咨询服务。",
         "faroPeriod": "2022 - 2024",
         "faroCompany": "Faro Health",
-        "faroSummary": "以微服務、PostgreSQL、自動化測試與 GitHub Actions 建置並優化 TypeScript 與 React 應用程式。",
+        "faroSummary": "为医疗保健软件平台的临床研究设计产品功能、服务集成、测试和部署改进做出了贡献。",
         "variousPeriod": "2018 - 2021",
         "variousCompany": "Various Inc.",
-        "variousSummary": "帶領國際前端團隊，將舊有平台遷移至可擴充的 React、TypeScript 與 Next.js 架構。",
+        "variousSummary": "领导视频流媒体应用程序的现代化改造，在成熟的高流量平台上实现不间断的实时视频、聊天和支付工作流程。",
         "launchPeriod": "2015 - 2018",
         "launchCompany": "Launch Brigade",
-        "launchSummary": "為舊金山灣區設計與開發公司建置並維護響應式網站及數位產品。"
+        "launchSummary": "为一家 Bay Area 设计和开发机构构建和维护响应式客户网站和数字产品。"
       }
     },
     "leadership": {
-      "eyebrow": "03 技術領導",
-      "title": "技術領導",
-      "copy1": "我曾帶領並與分布於美國、歐洲、台灣與中國的團隊合作，橫跨產品、設計、工程、資料與基礎設施。",
-      "copy2": "我的做法務實：建立清楚的技術方向、減少不必要的複雜度、及早揭露風險，並讓團隊專注於可靠交付。在 Mobian，這通常代表協調多個服務與儲存庫的變更，同時維持資料契約、搜尋行為、版本穩定性與使用者體驗。",
-      "copy3": "我能自在地在架構與實作之間切換，設計系統、除錯正式環境問題、評估取捨、改善開發流程，並協助團隊將廣泛需求轉化為具體且可維護的方案。",
-      "link": "了解我的工作方式",
-      "regionsHeading": "協作地區",
+      "eyebrow": "03 技术负责人",
+      "title": "技术负责人",
+      "copy1": "我曾领导并与遍布美国、欧洲、Taiwan和China的分布式团队合作，涉及产品、设计、工程、数据和基础设施等领域。",
+      "copy2": "我的工作方式很直接：明确技术方向，提前规划并识别风险，协调工作，并专注于交付可靠的软件。在之前的岗位上，我协调过多个服务和代码库的变更，同时保持 API 稳定并改善用户体验。",
+      "copy3": "我能够轻松地在架构和实现之间切换，设计系统，审查和评估权衡取舍，改进开发工作流程，并帮助团队将广泛的需求转化为具体的、可扩展的解决方案。",
+      "link": "阅读我的方法",
+      "regionsHeading": "我与他人合作的地方",
       "regions": {
-        "northAmerica": "北美洲",
+        "northAmerica": "北美",
         "southAmerica": "南美洲",
-        "europe": "歐洲",
-        "asia": "亞洲"
+        "europe": "欧洲",
+        "asia": "亚洲"
       },
-      "summary": "橫跨產品、設計、工程、資料與基礎設施的跨職能領導。",
+      "summary": "跨产品、设计、工程、数据和基础设施的跨职能领导力。",
       "stats": {
-        "regions": "4 個地區",
-        "timeZones": "多個時區"
+        "regions": "4个区域",
+        "timeZones": "多个时区"
       },
-      "approachStatement": "卓越的遠端協作建立在清晰、信任與可靠執行之上。",
+      "approachStatement": "对系统的信任始于团队层面。",
       "practices": {
         "crossFunctional": {
-          "title": "跨職能領導",
-          "description": "工程、產品、設計、資料與基礎設施。"
+          "title": "跨职能领导力",
+          "description": "工程、产品、设计、数据和基础设施。"
         },
         "async": {
-          "title": "非同步協作",
-          "description": "清晰的書面溝通、責任感與周全的交接。"
+          "title": "异步协作",
+          "description": "清晰的书面沟通、责任归属和详细的交接。"
         },
         "delivery": {
-          "title": "分散式交付",
-          "description": "協調跨服務、程式庫與發布週期的工作。"
+          "title": "跨团队协调",
+          "description": "协调跨服务、存储库和发布周期的工作。"
         },
         "systems": {
-          "title": "系統思維",
-          "description": "平衡架構、實作、除錯與執行。"
+          "title": "系统思维",
+          "description": "通过有效的规划，平衡可扩展性、开发、稳定性和业务需求。"
         }
       }
     },
-    "section2Title": "技術領導",
-    "section2Content1": "我曾帶領分布於美國、歐洲、台灣與中國的大型國際團隊，並以 TypeScript、Node.js、PostgreSQL、Jest 與 React 的深厚經驗推動創新。除了技術設計與開發，我也能讓團隊保持一致、聚焦並朝關鍵里程碑前進。"
+    "section2Title": "技术负责人",
+    "section2Content1": "我曾领导分布在美国、欧洲、台湾和中国的大型国际团队，熟悉 TypeScript、Node.js、PostgreSQL、Jest 和 React。除了技术设计和开发，我还帮助团队保持协作，专注于关键里程碑和公司目标。"
   },
   "about": {
-    "eyebrow": "關於我",
+    "eyebrow": "关于我",
     "portraitAlt": "Brian Velasquez",
-    "title": "嗨，我是 Brian",
-    "role": "資深軟體工程師",
-    "section1": "Brian 是一位資深軟體工程師，熱衷於優雅、可擴充的程式碼，以及簡潔直覺的使用者體驗。",
-    "section2": "閒暇時他喜歡攀岩、下棋、騎越野機車探索，並練習泰拳。",
-    "location": "目前居住於泰國清邁",
-    "cta": "一起打造出色的產品",
-    "outsideCode": "程式之外",
-    "buildWith": "我使用的技術",
+    "title": "嗨，我是布莱恩",
+    "role": "高级软件工程师",
+    "section1": "我是一位经验丰富的资深软件工程师，热衷于编写优雅、可扩展的代码和打造简洁、直观的用户体验。",
+    "section2": "闲暇时我喜欢攀岩、下棋、骑摩托车探险和练习泰拳。",
+    "location": "目前位于 Chiang Mai，Thailand",
+    "cta": "联系我们",
+    "outsideCode": "代码之外",
+    "buildWith": "我用",
     "interests": {
       "climbing": {
-        "title": "攀岩",
-        "description": "我喜歡攀岩帶來的挑戰與專注。它讓我保持踏實，也持續學習。"
+        "title": "攀登",
+        "description": "将复杂问题分解，尝试不同的方法，并从每一次尝试中学习。"
       },
       "chess": {
-        "title": "西洋棋",
-        "description": "西洋棋教會我耐心、策略，以及從不同角度看待問題。"
+        "title": "棋",
+        "description": "战略规划、在限制条件下解决问题以及在情况变化时进行调整。"
       },
       "dirtbike": {
-        "title": "越野機車",
-        "description": "探索新路線與越野騎乘，是我放鬆並重新充電的方式。"
+        "title": "越野摩托车",
+        "description": "无尽的好奇心，探索陌生的地方，以及发现下一个转角处有什么的自由。"
       },
       "muayThai": {
         "title": "泰拳",
-        "description": "泰拳訓練培養紀律、韌性與思緒清晰。"
+        "description": "思维清晰，能在压力下保持专注，并且有不断进步的自律精神。"
       }
     },
-    "quote": "我相信程式碼應該乾淨、易維護並經得起時間考驗。我重視周全的使用者體驗，以及能產生真正影響的產品。",
+    "quote": "我坚信应该编写简洁、可扩展且经久耐用的代码。我重视用户体验和能够真正产生影响的产品。",
     "process": {
-      "eyebrow": "我的流程",
-      "title": "從問題走向正式環境",
-      "description": "以協作與迭代的方式，從探索到發布都讓目標、技術決策與品質保持清晰。",
-      "generativeTitle": "以責任與經驗為基礎的生成式工程",
-      "generativeDescription": "我使用 AI 加速研究、規劃、審查、測試與文件撰寫，同時以程式碼庫與真實系統行為驗證每項輸出。",
+      "eyebrow": "我的过程",
+      "title": "从问题到生产",
+      "description": "从探索到发布，始终保持目标、技术决策和需求清晰的协作式迭代方法。",
+      "generativeTitle": "人工智能辅助软件工程，辅以经验丰富的人工监督",
+      "generativeDescription": "我利用人工智能加速研究、规划、审查、测试和文档编写，同时对照代码库和实际系统行为验证每个输出结果。",
       "steps": {
         "align": {
-          "title": "對齊",
-          "description": "釐清問題、限制、相依關係與成功定義。"
+          "title": "对齐",
+          "description": "明确问题、限制条件、依赖关系以及成功的定义。"
         },
         "map": {
-          "title": "梳理",
-          "description": "追蹤相關介面、服務、資料流與營運風險。"
+          "title": "地图",
+          "description": "追踪相关的用户界面、服务、数据流和运营风险。"
         },
         "shape": {
-          "title": "成形",
-          "description": "比較方案、為不確定的想法製作原型，並將工作拆分為聚焦的增量。"
+          "title": "形状",
+          "description": "比较不同方法，对不确定的想法进行原型设计，并将工作分解成重点突出的小步骤。"
         },
         "build": {
-          "title": "建置",
-          "description": "在必要層級中協作實作，使用清楚且可重用的模式。"
+          "title": "建造",
+          "description": "使用清晰、可重用、DRY（Don't Repeat Yourself，避免重复）且可扩展的模式，在整个技术栈中实现功能。"
         },
         "verify": {
-          "title": "驗證",
-          "description": "持續進行單元、整合、端對端與人工驗證。"
+          "title": "核实",
+          "description": "通过单元测试、集成测试、端到端测试和手动验证进行持续测试。"
         },
         "improve": {
-          "title": "改善",
-          "description": "謹慎發布、檢視正式環境行為，並依資料與回饋持續優化。"
+          "title": "提升",
+          "description": "验证版本发布，审查生产环境运行情况，并根据数据和反馈进行改进。"
         }
       }
     }
   },
   "skills": {
     "eyebrow": "技能",
-    "previous": "上一個技能類別",
-    "next": "下一個技能類別",
-    "projectsLink": "查看專案",
-    "projectsMenu": "專案",
+    "previous": "先前的技能类型",
+    "next": "下一个技能类型",
+    "projectsLink": "查看项目",
+    "projectsMenu": "项目",
+    "names": {
+      "1": "Python",
+      "2": "JavaScript",
+      "3": "TypeScript",
+      "4": "Node.js",
+      "5": "PostgreSQL",
+      "6": "PHP",
+      "7": "HTML5",
+      "8": "CSS/SCSS",
+      "9": "React",
+      "10": "Angular",
+      "11": "Express",
+      "12": "Flask",
+      "13": "RxJS",
+      "14": "Vue",
+      "15": "Storybook",
+      "16": "Vite",
+      "17": "Git",
+      "18": "Webpack",
+      "19": "Azure",
+      "20": "GitHub Actions",
+      "21": "Photoshop",
+      "22": "Bootstrap",
+      "23": "Figma",
+      "24": "Next.js",
+      "25": "Material UI",
+      "26": "FastAPI",
+      "27": "OpenSearch",
+      "28": "Redis",
+      "29": "AWS",
+      "30": "Snowflake",
+      "31": "Dagster",
+      "32": "Docker",
+      "33": "Jest",
+      "34": "Playwright",
+      "35": "Terraform",
+      "36": "Cypress",
+      "37": "CloudWatch",
+      "38": "人工智能辅助开发",
+      "39": "GitHub Copilot",
+      "40": "ChatGPT",
+      "41": "Claude Code"
+    },
     "groups": {
-      "Languages": "程式語言",
-      "BackendData": "後端與資料",
+      "Languages": "语言",
+      "BackendData": "后端和数据",
       "Frontend": "前端",
-      "CloudTools": "雲端與工具",
+      "CloudTools": "云和工具",
       "Frameworks": "框架",
-      "DevTools": "開發工具",
-      "IT": "資訊技術",
-      "Design": "設計"
+      "DevTools": "开发工具",
+      "IT": "它",
+      "Design": "设计"
     },
     "views": {
       "development": {
-        "title": "開發",
-        "description": "我用來建置、交付與擴充可靠產品的技術與工具。"
+        "title": "发展",
+        "description": "我用来构建、交付和扩展可靠产品的技术和工具。"
       },
       "infrastructure": {
-        "title": "基礎設施",
-        "description": "用來維運可靠軟體的開發工具、雲端平台、交付系統與營運實務。"
+        "title": "基础设施",
+        "description": "我使用开发工具、云平台、交付系统和运维实践来运行可靠的软件。"
       },
       "frameworks": {
         "title": "框架",
-        "description": "我用來將產品想法轉化為可維護介面與服務的應用框架。"
+        "description": "我使用的应用程序框架可以将产品理念转化为可维护的接口和服务。"
       },
       "devTools": {
-        "title": "開發工具",
-        "description": "我用來開發、測試、撰寫文件與交付可靠軟體的工具。"
+        "title": "开发工具",
+        "description": "我用来开发、测试、编写文档和发布可靠软件的工具。"
       },
       "it": {
-        "title": "資訊技術",
-        "description": "我用來安全維運應用程式的雲端與交付平台。"
+        "title": "它",
+        "description": "我使用的云服务、部署平台和系统管理工具。"
       },
       "design": {
-        "title": "設計",
-        "description": "我用來打造清晰、經過思考的體驗之設計工具與系統。"
+        "title": "设计",
+        "description": "我用于界面设计、原型制作和素材制作的工具。"
       }
     }
   },
   "projects": {
-    "eyebrow": "專案",
-    "title": "我打造的作品",
-    "introduction": "涵蓋網路、行動、後端與資料的專案精選。每個專案都解決真實問題，也讓我學到新的事物。",
-    "search": "搜尋專案",
-    "github": "查看我的 GitHub",
+    "eyebrow": "项目",
+    "title": "我建造过的东西",
+    "introduction": "精选项目涵盖前端开发、后端服务、数据处理和基础设施。",
+    "search": "搜索项目",
+    "github": "看看我的Github",
     "jobs": {
-      "label": "依工作篩選",
-      "all": "所有工作",
+      "label": "按职位筛选",
+      "all": "所有职位",
       "mobian": "Mobian",
       "faro": "Faro Health",
-      "independent": "獨立承包人",
+      "independent": "独立承包商",
       "various": "Various Inc.",
       "launchBrigade": "Launch Brigade"
     },
     "skills": {
-      "label": "依技能篩選",
+      "label": "按技能筛选",
       "all": "所有技能",
       "clear": "清除",
-      "selected": "已選取 {{count}} 項技能"
+      "selected": "{{count}} 选定技能"
     },
-    "technologies": "{{name}} 使用的技術",
+    "technologies": "{{name}} 技术",
     "viewProject": "查看 {{name}}",
     "detail": {
-      "eyebrow": "專案",
-      "back": "所有專案"
+      "eyebrow": "项目",
+      "back": "所有项目",
+      "additionalTechnologies": "其他技术"
     },
     "categories": {
-      "label": "專案分類",
+      "label": "项目类别",
       "all": "全部",
-      "web": "網路",
-      "mobile": "行動",
-      "backend": "後端",
-      "data": "資料"
+      "web": "网站",
+      "mobile": "移动的",
+      "backend": "后端",
+      "data": "数据"
     },
     "cta": {
-      "title": "有想法嗎？",
-      "description": "我一直樂於參與有趣的專案與合作。",
-      "label": "一起打造"
+      "title": "心中有想法了吗？",
+      "description": "我一直对有趣的项目和合作持开放态度。",
+      "label": "我们来建造一些东西吧。"
     }
   },
   "theme": {
-    "dark": "深色主題",
-    "light": "淺色主題"
+    "dark": "深色主题",
+    "light": "浅色主题"
   },
   "lang": {
-    "english": "英文",
+    "english": "英语",
     "chinese": "中文",
-    "espanol": "西班牙文",
-    "thai": "泰文",
-    "german": "德文",
-    "korean": "韓文"
+    "espanol": "西班牙语",
+    "thai": "泰语",
+    "german": "德语",
+    "korean": "韩语",
+    "estonian": "爱沙尼亚语",
+    "swedish": "瑞典语",
+    "japanese": "日语",
+    "portuguese": "葡萄牙语",
+    "norwegian": "挪威语"
   },
   "nav": {
-    "home": "首頁",
+    "home": "家",
     "skills": "技能",
-    "projects": "專案",
-    "microapps": "微型應用",
-    "about": "關於",
-    "jobs": "工作"
-  },
-  "jobs": {
-    "content": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": ""
-    }
+    "projects": "项目",
+    "microapps": "微应用",
+    "about": "关于",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单"
   },
   "data": {
     "projects": {
-      "description": {
-        "1": "用於規劃、設計與最佳化臨床研究，並提供即時分析的軟體工具",
-        "2": "高流量即時影音與聊天平台，具備線上探索、狀態顯示、公開直播與私人互動工作階段",
-        "3": "介紹 San Anselmo 城市即將變更內容並提供問卷的資訊網站",
-        "4": "網頁設計與開發公司的網站",
-        "5": "以 Python 與 Pandas 建立的資料分析微服務概念驗證應用",
-        "6": "供 Study Designer 使用、與身分提供者無關的單一登入實作",
-        "7": "人工智慧二手車應用程式的網站",
-        "8": "展示幾何晶格結構合併功能的應用程式前端",
-        "9": "為受眾情報平台提供全端搜尋、分析、篩選與匯出能力",
-        "10": "為高吞吐量情境處理系統提供資料品質、中繼資料、復原與查詢功能",
-        "11": "跨廣告系統的實體搜尋、報表資料、活動控制與匯出流程",
-        "12": "橫跨前端、測試、雲端、可觀測性、安全性與發布的改善",
-        "13": "為受眾情報平台改善前端介面、設計系統、搜尋、篩選、儀表板與互動"
+      "name": {
+        "1": "Faro Study Designer",
+        "2": "Various Inc Viewer",
+        "3": "San Anselmo City Plan Website",
+        "4": "Launch Brigade Website",
+        "5": "Faro Data Analytics Dashboard POC",
+        "6": "Faro B2C SSO Implementation",
+        "7": "LotLinx Website",
+        "8": "Metafold 3D MVP",
+        "9": "Persona & Channel Intelligence",
+        "10": "Context Ingestion & Brand-Safety Tooling",
+        "11": "Advertising Operations & Reporting Integrations",
+        "12": "Platform Engineering, Infrastructure and Releases",
+        "13": "UI Components & Design System"
       },
-      "content": {
-        "1": "<div><h3>使用 AI 推動臨床研究開發。</h3><p>Faro Study Designer 旨在提升臨床方案的效率與病患友善程度。</p><p>Faro Health 累計募得 3,830 萬美元，其中最近一輪約為 2,000 萬美元。</p><p>主要功能：</p><ul><li>即時協作：提升文件流程的準確性與效率</li><li>可行性分析：評估設計決策對研究成功率的影響</li><li>基準比較：將方案與歷史資料及設計變體比較</li></ul></div>",
-        "2": "<div><h3>即時影音、聊天與線上探索</h3><p>The Viewer 是互動式直播平台，使用者可探索目前上線的直播者、進入公開房間、即時傳訊，並切換至私人視訊工作階段。平台同時處理持續影音傳輸，以及快速變動的上線狀態、可用性、個人資料與工作階段資料。</p><h3>現在誰在線上</h3><p>此頁面持續更新目前活躍的直播者，並提供個人資料瀏覽、搜尋、篩選、即時狀態與直接進入公開或私人工作階段的流程。</p><h3>產品能力</h3><ul><li>公開與私人工作階段的即時影音串流</li><li>即時文字聊天、上線指示與狀態變更</li><li>搜尋、篩選、分類與響應式探索</li><li>不中斷媒體播放的高頻介面更新</li><li>與既有 API、帳戶、訊息服務及舊有流程整合</li></ul><h3>工程工作</h3><p>我在國際前端團隊中，將既有 JavaScript 與 Perl 應用程式現代化為使用 React、TypeScript、Next.js 與 WebSockets 的可擴充平台。</p><h3>估計正式環境規模</h3><p>依平台的歷史、產品廣度與公開能見度推估，每月約 100 萬至 500 萬次造訪、每日 3 萬至 17 萬次造訪、數百個同時直播房間，以及尖峰時段數千名連線使用者。這些為方向性估算，並非公司內部數據。</p><div class='project-stats'><div><strong>1–5M</strong><span>估計每月造訪</span></div><div><strong>30K–170K</strong><span>估計每日造訪</span></div><div><strong>100s</strong><span>同時直播房間</span></div><div><strong>1K–10K</strong><span>估計尖峰連線使用者</span></div><div><strong>數百萬</strong><span>每日即時事件</span></div><div><strong>數 TB</strong><span>估計每月媒體傳輸量</span></div></div></div>",
-        "3": "<p>為 San Anselmo 2025 年總體規劃更新建立的 WordPress 網站，提供基礎設施、分區、公共空間、永續發展與交通改善資訊，並透過互動問卷讓居民參與決策。</p>",
-        "4": "<p>Launch Brigade 是舊金山灣區的網頁設計與開發公司，專注於打造能提升品牌與推動業務成長的數位體驗。</p>",
-        "5": "<p>Data Analytics Dashboard 是以 Pandas 建立的概念驗證應用，使用星狀結構中的 Study Design 資料建立分析微服務與前端，讓使用者依任意資料維度切分與探索研究資料。</p>",
-        "6": "<p>Study Designer 的身分提供者無關單一登入實作，讓不同組織可使用自己的 SAML 與 OAuth 身分服務取得與 API 互動所需的權杖。</p>",
-        "7": "<p>LotLinx 是以 AI 驅動的汽車庫存管理平台，透過機器學習與大量資料分析協助經銷商改善庫存週轉、定價與獲利能力。</p>",
-        "8": "<p>Metafold 3D 是用於設計複雜 3D 模型與積層製造的雲端平台，能處理傳統 CAD 工具難以應付的晶格等複雜幾何。</p>",
-        "9": "<div><h3>人物與頻道情報</h3><p>參與既有受眾情報平台，用於探索人物、評估內容頻道、檢視效能資料並匯出篩選結果。</p><h3>我的工作</h3><ul><li>伺服器端自動完成、分頁與無限捲動搜尋</li><li>日期篩選、頻道統計與歷史記錄</li><li>前端代理路由、搜尋限制、記錄與可靠載入狀態</li><li>保留篩選條件的串流 CSV 下載</li></ul><p>工作橫跨 React、Next.js、FastAPI、PostgreSQL、OpenSearch、Redis、快取與排程處理。</p></div>",
-        "10": "<div><h3>情境資料匯入與品牌安全工具</h3><p>為處理網頁、URL、影片、頻道與分類中繼資料的情境情報與品牌安全系統打造營運工具與匯入改善。</p><h3>我的工作</h3><ul><li>完整情境欄位與中繼資料持久化</li><li>具範圍限制的清理、URL 前綴、別名與批次工具</li><li>檢查點穩定化與保留別名的重試邏輯</li><li>透過 URL、ID 掃描、HTML 備援與快取探索頻道</li><li>結構化雲端診斷</li></ul><p>使用 Python、FastAPI、PostgreSQL、Redis、AWS Lambda、CloudWatch、SAM、CloudFormation、Terraform 與非同步工作程序。</p></div>",
-        "11": "<div><h3>廣告營運與報表整合</h3><p>串接既有廣告分析平台中的廣告主、受眾區隔、定向、報表與匯出流程。</p><h3>我的工作</h3><ul><li>支援多個廣告平台的廣告主與報表實體</li><li>伺服器端搜尋、排序、重複名稱區分與來源標籤</li><li>版位與廣告項目對應及報表快取改善</li><li>保留篩選與分頁的 CSV 匯出</li><li>修正廣告主、活動控制與區隔流程的前端問題</li></ul><p>使用 Next.js、React、TypeScript、Material UI、FastAPI、Python、Snowflake、Dagster 與 PostgreSQL。</p></div>",
-        "12": "<div><h3>平台工程、測試與產品基礎設施</h3><p>建立跨產品、服務、雲端基礎設施與開發流程的可重用基礎與發布保障。</p><h3>改善內容</h3><ul><li>語意設計權杖、Material UI 變體與調色盤整合</li><li>Cypress、Playwright、登入 smoke tests 與可重用 fixtures</li><li>排程式 serverless 工作、雲端診斷、可觀測性與基礎設施</li><li>框架安全更新、驗證、發布協調與技術文件</li></ul><p>協調 React、Next.js、TypeScript、Python、AWS、Terraform、OpenSearch、ETL 與部署系統間的相容變更。</p></div>",
-        "13": "<div><h3>前端介面與設計系統</h3><p>在既有受眾情報與廣告分析平台上建立並改善可重用前端體驗，著重清晰度、一致性、響應式設計與可靠互動。</p><h3>我的工作</h3><ul><li>搜尋、自動完成、篩選、分頁、無限捲動與各種狀態</li><li>可重用 Material UI 元件、語意權杖、變體與遷移模式</li><li>響應式儀表板、圖庫、表格、抽屜與匯出介面</li><li>前端 API 代理、URL 狀態、查詢與錯誤處理</li><li>以 Jest、Cypress 與 Playwright 建立自動化測試</li></ul><p>主要使用 React、Next.js、TypeScript、JavaScript、HTML5、CSS/SCSS、Material UI、Storybook 與 GitHub Actions。</p></div>"
-      }
-    },
-    "jobs": {
-      "title": {
-        "1": "資深全端開發者",
-        "2": "資深前端技術主管",
-        "3": "前端開發者",
-        "4": "前端開發實習生",
-        "5": "設計實習生"
+      "stories": {
+        "1": {
+          "kicker": "临床研究产品工程",
+          "summary": "临床研究设计功能、后端集成、自动化测试和部署管道。",
+          "sections": {
+            "overview": {
+              "title": "临床研究设计平台",
+              "content": "我参与开发了医疗保健产品 Faro Study Designer，该产品用于规划、记录和评估临床方案。我使用 React 和 TypeScript 开发了临床研究功能，集成了后端服务，并贡献了自动化测试和部署流程。"
+            },
+            "contributions": {
+              "title": "贡献与成果",
+              "nodes": {
+                "features": {
+                  "label": "产品特性",
+                  "detail": "为研究设计工作流程构建前端和后端功能切片"
+                },
+                "integrations": {
+                  "label": "服务集成",
+                  "detail": "集成了具有 REST 和 CQRS 样式服务边界的 UI 模块"
+                },
+                "testing": {
+                  "label": "可靠性",
+                  "detail": "通过单元测试和集成测试提高可靠性"
+                },
+                "delivery": {
+                  "label": "送货",
+                  "detail": "使用 GitHub Actions 支持自动化测试、构建和部署"
+                }
+              }
+            },
+            "outcome": {
+              "content": "这项工作扩展了临床研究功能、自动化测试覆盖范围以及对持续开发的支持。"
+            }
+          }
+        },
+        "2": {
+          "kicker": "实时产品现代化",
+          "summary": "前端现代化改造，用于实时发现、视频、聊天和互动会话工作流程。",
+          "sections": {
+            "overview": {
+              "title": "Cams 实时产品现代化",
+              "content": "我主导了 Cams 的前端现代化工作。该平台拥有大量流量，提供实时发现、视频、聊天、公共房间和私人互动会话。我们在保留现有功能的同时，将旧版 JavaScript 和 Perl 应用迁移至 React、TypeScript 和 Next.js，并集成 WebSocket 和 Python 服务。"
+            },
+            "contributions": {
+              "title": "贡献与成果",
+              "nodes": {
+                "leadership": {
+                  "label": "团队领导力",
+                  "detail": "协调国际前端团队，统筹产品、设计和工程方面的优先事项。"
+                },
+                "discovery": {
+                  "label": "产品工作流程",
+                  "detail": "改进了发现、在线状态、聊天和会话状态界面"
+                },
+                "realtime": {
+                  "label": "实时行为",
+                  "detail": "支持实时 UI 更新，不会中断正在进行的视频流和聊天会话。"
+                },
+                "modernization": {
+                  "label": "现代化",
+                  "detail": "将原有接口和功能迁移到 React 和 TypeScript"
+                }
+              }
+            },
+            "outcome": {
+              "content": "此次现代化改造更新了实时发现、视频、聊天和私人会话的前端架构，同时保留了现有功能。"
+            }
+          }
+        },
+        "3": {
+          "kicker": "公共信息和调查",
+          "summary": "一个市民网站，帮助居民了解拟议的规划变更并参与其中。",
+          "sections": {
+            "overview": {
+              "title": "圣安塞尔莫城市规划网站",
+              "content": "这是一个用于 2025 年圣安塞尔莫总体规划更新的 WordPress 网站，为居民介绍该镇基础设施、分区规划和公共空间的拟议变更。网站包括项目进展、可持续发展举措、交通改进和社区意见调查。"
+            }
+          }
+        },
+        "4": {
+          "kicker": "代理机构网站开发",
+          "summary": "为一家 San Francisco Bay Area 设计和开发机构打造一个可维护的营销网站。",
+          "sections": {
+            "overview": {
+              "title": "Launch Brigade 网站",
+              "content": "Launch Brigade 是一家位于 San Francisco Bay Area 的网页设计和开发机构。我参与了该机构响应式网站的开发，包括页面布局、内容呈现和前端实现。"
+            }
+          }
+        },
+        "5": {
+          "kicker": "探索临床研究分析",
+          "summary": "基于 Pandas 的分析原型，用于查询和可视化临床研究数据。",
+          "sections": {
+            "overview": {
+              "title": "数据分析仪表板概念验证",
+              "content": "数据分析仪表盘是一个基于 Pandas 的概念验证，它使用存储在星型模式中的 Study Designer 数据来创建分析微服务和前端。它允许用户通过连接到分析服务的前端来筛选和分析 Study Designer 数据。"
+            }
+          }
+        },
+        "6": {
+          "kicker": "组织特定身份验证",
+          "summary": "与身份提供商无关的 SSO，适用于使用自有身份验证服务的组织。",
+          "sections": {
+            "overview": {
+              "title": "Faro B2C SSO 实现",
+              "content": "为 Study Designer 提供了一种与身份提供商无关的单点登录实现。它允许组织通过其现有的身份提供商，使用基于 SAML 或 OAuth 的集成来验证用户身份，从而获得对应用程序 API 的已验证访问权限。"
+            }
+          }
+        },
+        "7": {
+          "kicker": "汽车库存平台网站",
+          "summary": "一个产品网站，解释数据和机器学习如何支持经销商的库存决策。",
+          "sections": {
+            "overview": {
+              "title": "LotLinx 网站",
+              "content": "LotLinx 是一个由人工智能驱动的汽车库存管理平台，利用机器学习和数据分析帮助经销商优化库存周转率与盈利能力。该网站介绍平台如何利用市场需求、定价和消费者数据支持库存决策。"
+            }
+          }
+        },
+        "8": {
+          "kicker": "浏览器中的复杂几何图形",
+          "summary": "为专注于复杂增材制造模型的云平台进行前端原型设计工作。",
+          "sections": {
+            "overview": {
+              "title": "Metafold 3D MVP",
+              "content": "Metafold 3D 是一个用于设计复杂增材制造 3D 模型的云平台。我参与了前端原型开发，用于可视化和操作轻量化晶格结构等复杂几何形状。"
+            }
+          }
+        },
+        "9": {
+          "kicker": "让受众情报可搜索",
+          "summary": "搜索和报告功能，使查询和筛选条件在用户界面、后端服务和 CSV 导出中保持一致。",
+          "sections": {
+            "challenge": {
+              "eyebrow": "挑战",
+              "title": "用户需要快速、一致且基于相似性的跨受众和渠道数据的搜索。",
+              "content": "广告主需要搜索受众和渠道记录、应用筛选条件、查看历史数据并导出结果。搜索行为在筛选、分页、历史报告和导出过程中必须保持一致。"
+            },
+            "architecture": {
+              "title": "整个堆栈的单一搜索合约",
+              "nodes": {
+                "interface": {
+                  "label": "React + Next.js",
+                  "detail": "自动完成、无限滚动、日期筛选"
+                },
+                "api": {
+                  "label": "FastAPI",
+                  "detail": "分页和查询合同"
+                },
+                "search": {
+                  "label": "PostgreSQL + OpenSearch",
+                  "detail": "历史数据和索引发现"
+                },
+                "exports": {
+                  "label": "Redis + 流式导出",
+                  "detail": "快速读取和支持过滤器的 CSV 输出"
+                }
+              }
+            },
+            "progression": {
+              "title": "工程进展",
+              "steps": {
+                "discover": {
+                  "label": "发现",
+                  "title": "定义受众工作流程",
+                  "content": "我为广告商研究定义了搜索、筛选、分页、历史报告和导出要求。"
+                },
+                "connect": {
+                  "label": "连接",
+                  "title": "连接 APIs、索引和数据存储",
+                  "content": "我将 FastAPI 服务、PostgreSQL 查询、OpenSearch 索引和 Redis 缓存集成到共享搜索契约之后。"
+                },
+                "interact": {
+                  "label": "相互影响",
+                  "title": "实现交互式搜索",
+                  "content": "我在 React 和 Next.js 中构建了服务器端自动完成、无限滚动、日期筛选和频道统计功能。"
+                },
+                "export": {
+                  "label": "出口",
+                  "title": "在文件导出中保留搜索筛选条件",
+                  "content": "流式 CSV 导出使用界面中的活动搜索和筛选参数。"
+                },
+                "validate": {
+                  "label": "证实",
+                  "title": "测试搜索、筛选和导出功能",
+                  "content": "我验证了界面、API 边界、搜索基础架构和数据服务的行为，确保每条路径都能产生一致的结果。"
+                }
+              }
+            },
+            "outcome": {
+              "content": "用户可以搜索和分析受众数据，然后使用相同的搜索和筛选参数导出结果。"
+            }
+          }
+        },
+        "10": {
+          "kicker": "保持海量上下文数据的可靠性",
+          "summary": "用于 URL 规范化、元数据分类和处理故障恢复的数据摄取系统。",
+          "sections": {
+            "challenge": {
+              "eyebrow": "可靠性问题",
+              "title": "不一致的URL使得数据匹配和合并变得困难。",
+              "content": "重复的URL和不一致的元数据导致记录匹配困难。异步处理也需要可靠的作业跟踪和恢复机制。"
+            },
+            "pipeline": {
+              "title": "上下文管道",
+              "steps": {
+                "ingest": {
+                  "label": "摄入",
+                  "title": "摄取网页、视频和频道数据",
+                  "content": "我协助开发了用于摄取网页、视频和频道数据以进行异步处理的工具。"
+                },
+                "normalize": {
+                  "label": "标准化",
+                  "title": "对 URL 进行规范化，以实现一致的匹配",
+                  "content": "标准化 URL 格式和别名，以便匹配指向同一资源的记录。"
+                },
+                "dedupe": {
+                  "label": "去重",
+                  "title": "识别重复项并减少重复处理",
+                  "content": "去重和别名协调减少了冗余处理，同时保持了备用 URL 与其规范记录之间的关联。"
+                },
+                "classify": {
+                  "label": "分类",
+                  "title": "对规范化内容进行分类",
+                  "content": "批量处理将规范化的元数据传递给下游分类服务。"
+                },
+                "persist": {
+                  "label": "坚持",
+                  "title": "持久化元数据和处理状态",
+                  "content": "我改进了跨服务的元数据存储和重用，并维护了检查点以跟踪处理进度。"
+                },
+                "recover": {
+                  "label": "恢复",
+                  "title": "使故障可诊断",
+                  "content": "重试和检查点支持从失败的作业中恢复，而 CloudWatch 日志有助于调查故障。"
+                }
+              }
+            },
+            "architecture": {
+              "title": "处理、持久化和恢复组件",
+              "nodes": {
+                "urls": {
+                  "label": "URL规范化",
+                  "detail": "规范化、别名、解析、回退"
+                },
+                "services": {
+                  "label": "Python 服务",
+                  "detail": "批量处理和元数​​据持久化"
+                },
+                "serverless": {
+                  "label": "AWS 无服务器",
+                  "detail": "Lambda 和 SQS 编排"
+                },
+                "diagnostics": {
+                  "label": "CloudWatch 诊断",
+                  "detail": "日志记录、监控和故障调查"
+                }
+              }
+            },
+            "outcome": {
+              "content": "该工具支持识别和处理重复记录、重用已处理的元数据以及从失败的摄取作业中恢复。"
+            }
+          }
+        },
+        "11": {
+          "kicker": "连接分散的广告数据",
+          "summary": "广告商搜索、实体匹配、报告映射以及跨 FreeWheel 和 Google Ad Manager 的导出。",
+          "sections": {
+            "challenge": {
+              "eyebrow": "整合差距",
+              "title": "不同的平台对同一业务的描述各不相同。",
+              "content": "FreeWheel 和 Google Ad Manager 使用了不同的标识符、报告结构和命名规则。用户仍然需要一种可预测的方法来查找广告商、区分重复项、绘制广告位分布图以及检索报告数据。"
+            },
+            "architecture": {
+              "title": "提交前请核对清楚",
+              "nodes": {
+                "platforms": {
+                  "label": "外部平台",
+                  "detail": "FreeWheel 和 Google Ad Manager"
+                },
+                "resolution": {
+                  "label": "实体解析",
+                  "detail": "来源限定选择和重复项消除"
+                },
+                "pipelines": {
+                  "label": "数据管道",
+                  "detail": "Snowflake、Dagster、PostgreSQL 和报告缓存"
+                },
+                "workflows": {
+                  "label": "产品工作流程",
+                  "detail": "搜索、图库、地图和 CSV 导出"
+                }
+              }
+            },
+            "progression": {
+              "title": "一体化",
+              "steps": {
+                "connect": {
+                  "label": "连接",
+                  "title": "整合外部广告系统",
+                  "content": "我构建了跨 FreeWheel 和 Google Ad Manager 数据的广告商和报告实体搜索。"
+                },
+                "reconcile": {
+                  "label": "调和",
+                  "title": "解决实体差异",
+                  "content": "保留与广告主来源平台关联的广告主标识符，同时区分名称相同的记录。"
+                },
+                "sync": {
+                  "label": "同步",
+                  "title": "协调报告数据",
+                  "content": "我改进了报表缓存和 Dagster 管理的数据转换，涉及 Snowflake 和 PostgreSQL。"
+                },
+                "present": {
+                  "label": "展示",
+                  "title": "构建搜索、地图和导出接口",
+                  "content": "搜索结果、图库、地图和导出功能为来自两个平台的数据提供了一个通用界面。"
+                }
+              }
+            },
+            "outcome": {
+              "content": "由此产生的工具使广告实体更容易浏览，目标信息更容易选择，同时保留了原始平台标识符及其相关的报告数据。"
+            }
+          }
+        },
+        "12": {
+          "kicker": "提高多服务平台的可靠性",
+          "summary": "为生产广告平台构建跨存储库基础设施、测试、可观测性和发布工作。",
+          "sections": {
+            "architecture": {
+              "title": "跨服务边界的可靠性",
+              "nodes": {
+                "frontend": {
+                  "label": "前端",
+                  "detail": "已验证的 Cypress 和初始 Playwright 覆盖范围"
+                },
+                "apis": {
+                  "label": "应用程序 APIs",
+                  "detail": "身份验证、合约和配置修复"
+                },
+                "pipelines": {
+                  "label": "ETL + Persona",
+                  "detail": "报告缓存同步和 Python 管道"
+                },
+                "infrastructure": {
+                  "label": "AWS 基础设施",
+                  "detail": "计划的 Lambda 作业、数据摄取和 CloudWatch 诊断"
+                }
+              }
+            },
+            "progression": {
+              "title": "运营贡献",
+              "steps": {
+                "identify": {
+                  "label": "确认",
+                  "title": "跨服务追踪问题",
+                  "content": "我调查了前端应用程序、APIs、ETL、Persona 服务和 AWS 基础设施的生产故障。"
+                },
+                "improve": {
+                  "label": "提升",
+                  "title": "加强检测和基础设施建设",
+                  "content": "经过身份验证的 Cypress 覆盖率、初始 Playwright 测试、计划的 Lambda 作业和配置修复降低了发布风险。"
+                },
+                "release": {
+                  "label": "发布",
+                  "title": "协调跨存储库交付",
+                  "content": "我协调了多个代码库中的相关代码更改、框架安全更新和版本发布。"
+                },
+                "monitor": {
+                  "label": "监视器",
+                  "title": "监控生产过程并调查故障",
+                  "content": "我使用 CloudWatch 日志和发布后检查来监控计划作业并调查生产故障。"
+                }
+              }
+            },
+            "outcome": {
+              "content": "这项工作包括扩大测试覆盖范围、改进无服务器处理、更新框架安全、修复服务配置、ETL 同步和协调发布。"
+            }
+          }
+        },
+        "13": {
+          "kicker": "在复杂的产品中构建一致的界面",
+          "summary": "共享 React 组件、语义设计标记以及对 API 驱动的 UI 行为的一致处理。",
+          "sections": {
+            "challenge": {
+              "eyebrow": "产品挑战",
+              "title": "分析功能需要一致的 UI 组件和行为",
+              "content": "随着新的数据集和工作流程的出现，仪表盘、表格、图库和搜索工具也在不断发展。界面需要可重用的组件，以确保不同功能之间的行为标准化。"
+            },
+            "architecture": {
+              "title": "共享组件和设计令牌",
+              "nodes": {
+                "tokens": {
+                  "label": "语义标记",
+                  "detail": "共享视觉语言和Material UI变体"
+                },
+                "patterns": {
+                  "label": "交互模式",
+                  "detail": "自动完成、筛选、分页和加载状态"
+                },
+                "integration": {
+                  "label": "数据集成",
+                  "detail": "API 响应、分页和前端状态管理"
+                },
+                "coverage": {
+                  "label": "回归覆盖率",
+                  "detail": "Jest、Cypress 和 Playwright 验证"
+                }
+              }
+            },
+            "progression": {
+              "title": "设计系统演进",
+              "steps": {
+                "audit": {
+                  "label": "审计",
+                  "title": "找出反复出现的用户体验问题",
+                  "content": "我发现仪表盘、表格、图库、搜索、筛选器和加载状态存在不一致之处。"
+                },
+                "systemize": {
+                  "label": "系统化",
+                  "title": "构建可重用的接口模式",
+                  "content": "语义标记、Material UI 变体和共享的 React 组件取代了不一致的实现。"
+                },
+                "integrate": {
+                  "label": "整合",
+                  "title": "将消费者与应用程序 APIs 集成",
+                  "content": "我实现了 API 响应、分页、自动完成和导出功能的组件状态处理。"
+                },
+                "validate": {
+                  "label": "证实",
+                  "title": "测试用户界面功能",
+                  "content": "Jest、Cypress 和 Playwright 覆盖率验证了认证路径并减少了回归。"
+                }
+              }
+            },
+            "outcome": {
+              "content": "共享的 React 组件和 UI 模式减少了重复的实现，并标准化了搜索、筛选和报告界面。"
+            }
+          }
+        }
+      },
+      "description": {
+        "1": "医疗保健产品的临床研究设计特性、协作工作流程、服务集成和交付改进",
+        "2": "针对Cams视频、聊天、发现和会话工作流程的前端现代化和实时产品开发",
+        "3": "开发包含公共信息和居民调查的城市规划网站",
+        "4": "为一家Bay Area设计机构提供响应式网站开发、布局设计和内容组织服务",
+        "5": "利用研究设计数据创建可筛选报告的分析概念验证",
+        "6": "支持组织特定身份验证要求的身份提供商无关的 SSO 工作",
+        "7": "人工智能汽车库存产品的营销网站实施",
+        "8": "为一款专注于复杂晶格结构可视化的几何建模产品开发前端原型。",
+        "9": "搜索、筛选、分析和导出功能的改进，使受众和渠道的发现速度更快、更可靠。",
+        "10": "异步摄取作业的 URL 规范化、元数据处理、重复检测和恢复工具",
+        "11": "报告、实体搜索、广告系列控制和导出工作流程连接了广告运营数据",
+        "12": "测试、基础设施、可观测性、安全性和发布方面的改进降低了平台风险",
+        "13": "可重用的 React 组件、设计系统更新以及对搜索、筛选、仪表板和 UI 交互的改进"
       }
     }
   }

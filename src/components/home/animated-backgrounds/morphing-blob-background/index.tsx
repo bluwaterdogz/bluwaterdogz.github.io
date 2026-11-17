@@ -3,6 +3,8 @@ import { lightBlobColors } from "./colors";
 import styles from "./morphing-blob-background.module.scss";
 
 type MorphingBlobBackgroundProps = PropsWithChildren<{
+  backgroundColor?: string;
+  blendMode?: "multiply" | "screen";
   className?: string;
   colors?: string[];
   intensity?: number;
@@ -10,6 +12,8 @@ type MorphingBlobBackgroundProps = PropsWithChildren<{
 }>;
 
 export const MorphingBlobBackground = ({
+  backgroundColor = "transparent",
+  blendMode = "multiply",
   children,
   className = "",
   colors = lightBlobColors,
@@ -21,6 +25,8 @@ export const MorphingBlobBackground = ({
   const durationMultiplier = 1 / safeSpeed;
   const blobColors = colors.length > 0 ? colors : ["#ff9cdb"];
   const customProperties = {
+    "--blob-background": backgroundColor,
+    "--blob-blend-mode": blendMode,
     "--blob-color-1": blobColors[0],
     "--blob-color-2": blobColors[1] ?? blobColors[0],
     "--blob-color-3": blobColors[2] ?? blobColors[0],

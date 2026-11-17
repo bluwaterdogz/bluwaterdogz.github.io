@@ -23,12 +23,12 @@
 }
 
 .animationBlur {
-  //backdrop-filter: blur(1px);
-  background: rgba(0,0,255, 0.2);
+  background: rgba(0,0,255, 0.3);
   inset: 0;
   pointer-events: none;
   position: absolute;
   -webkit-backdrop-filter: blur($blur);
+  backdrop-filter: blur($blur);
   z-index: 1;
 }
 
@@ -37,11 +37,12 @@
 }
 
 .polyhedraBlur {
-  backdrop-filter: blur(calc(#{$blur}  / 2));
+  
   inset: 0;
   pointer-events: none;
   position: absolute;
-  -webkit-backdrop-filter: blur(calc(#{$blur} * 2 / 3));
+  // -webkit-backdrop-filter: blur(calc(#{$blur} * 2 / 3));
+  // backdrop-filter: blur(calc(#{$blur}  / 2));
   z-index: 3;
 }
 

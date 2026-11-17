@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { skills } from "../../../service/skill/data";
 import { useOutsideClick } from "../../../hooks/useOutsideClick";
 import { Badge } from "../../common/badge";
@@ -71,7 +71,6 @@ export const SkillFilter = ({
   const [isExpanded, setIsExpanded] = useState(activeSkillIds.length > 0);
   const rootRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
-
   useOutsideClick(rootRef, () => setIsExpanded(false));
 
   return (
@@ -90,8 +89,12 @@ export const SkillFilter = ({
                 ariaLabel={t("projects.skills.selected", {
                   count: activeSkillIds.length,
                 })}
+                onClick={e=>{e.stopPropagation(); onClear()}}
               >
-                {activeSkillIds.length}
+                <span className={styles.skillsBadge}>
+                  <span className={styles.count}>{activeSkillIds.length}</span>
+                  <i className={`fa fa-times ${styles.close}`} aria-hidden="true" />
+                </span>
               </Badge>
             )}
             <i className="fa fa-chevron-down" aria-hidden="true" />

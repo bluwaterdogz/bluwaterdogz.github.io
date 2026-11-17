@@ -17,7 +17,6 @@ import { TopBar } from "../top-bar";
 import styles from "./styles.module.scss";
 import { PageHeading } from "../../common/page-heading";
 import { skills } from "../../../service/skill/data";
-import { SkillFilter } from "../skill-filter";
 import { githubProfileUrl } from "../../../service/consts";
 
 export const ProjectList = () => {

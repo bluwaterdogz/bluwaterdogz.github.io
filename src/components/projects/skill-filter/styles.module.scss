@@ -39,6 +39,25 @@
   }
 }
 
+.skillsBadge {
+  position: relative;
+  cursor: pointer;
+
+  .close {
+    display: none;
+  }
+
+  &:hover {
+    .count {
+      display: none;
+    }
+
+    .close {
+      display: inline;
+    }
+  }
+}
+
 .panel {
   background: $theme-surface-color;
   border: 1px solid $theme-border-color;

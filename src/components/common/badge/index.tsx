@@ -1,9 +1,7 @@
-import { ReactNode } from "react";
 import styles from "./styles.module.scss";
 
-interface BadgeProps {
+interface BadgeProps  extends React.HTMLAttributes<HTMLSpanElement> {
   ariaLabel?: string;
-  children: ReactNode;
   className?: string;
 }
 
@@ -11,9 +9,11 @@ export const Badge = ({
   ariaLabel,
   children,
   className = "",
+  ...props
 }: BadgeProps) => (
   <span
     aria-label={ariaLabel}
+    onClick={props.onClick}
     className={`${styles.badge} ${className}`}
   >
     {children}

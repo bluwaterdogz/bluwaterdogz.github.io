@@ -40,7 +40,7 @@ export const HeroSection = (props: HeroSectionProps) => {
   const theme = useThemeStore((state) => state.theme);
   const {
     colors = theme === "dark"
-      ? ["#171B36", "#291D35", "#112735", "#171B36", "#291D35", "#112735"]
+      ? ["#171B36", "#291D35", "#112735"]
       : lightBlobColors,
     speed = 1,
     vibrance = 1,

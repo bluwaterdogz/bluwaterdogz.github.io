@@ -144,42 +144,58 @@
 @media (max-width: $small-screen) {
   .hero { height: auto; min-height: 100vh; }
 
-  .hero::after {
-    background: linear-gradient(to bottom, transparent 45%, color-mix(in srgb, #{$theme-surface-color} 82%, transparent) 100%);
-    content: "";
-    inset: 0;
-    pointer-events: none;
-    position: absolute;
-    z-index: 1;
-  }
-
   .container {
     display: block;
     min-height: 100vh;
     overflow: hidden;
     padding: $space * 9 $space * 3 $space * 3;
+
+    &::after {
+      background: linear-gradient(
+        to bottom,
+        transparent 48%,
+        color-mix(in srgb, #{$theme-surface-color} 78%, transparent) 78%,
+        $theme-surface-color 100%
+      );
+      content: "";
+      inset: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: 1;
+    }
   }
 
   .portrait {
-    float: right;
-    height: auto;
-    margin: $space * 3 (-$space * 5) 0 $space;
+    bottom: 0;
+    height: 96vh;
+    margin: 0;
     max-height: none;
-    shape-margin: $space;
-    shape-outside: polygon(38% 0, 100% 0, 100% 100%, 0 100%, 11% 58%);
-    width: min(54vw, 390px);
+    max-width: none;
+    position: absolute;
+    right: -12%;
+    width: auto;
+    z-index: 0;
   }
 
-  .content { max-width: none; padding: 0; }
+  .content {
+    bottom: $space * 3;
+    left: $space * 3;
+    max-width: none;
+    padding: 0;
+    position: absolute;
+    right: $space * 3;
+    z-index: 2;
+  }
   .content h1 { max-width: none; }
   .introduction { margin-top: $space * 2; max-width: none; }
-  .actions { clear: both; margin-top: $space * 3; }
+  .actions { margin-top: $space * 3; }
   .skills, .languageDropdown { display: none; }
 }
 
 @media (max-width: $mobile-screen) {
   .container { padding: $space * 8 $space * 2 $space * 2; }
-  .portrait { margin-right: -$space * 4; width: 56vw; }
+  .portrait { right: -45%; }
+  .content { bottom: $space * 2; left: $space * 2; right: $space * 2; }
 
   .actions {
     gap: $space;

@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useThemeStore } from "../../stores/ThemeStore";
 import { githubProfileUrl, linkedinProfileUrl } from "../../service/consts";
@@ -11,10 +11,6 @@ export const Footer = () => {
     return new Date().getFullYear();
   }, []);
 
-  useEffect(() => {
-    document.documentElement.classList.remove("theme-light", "theme-dark");
-    document.documentElement.classList.add(`theme-${theme}`);
-  }, [theme]);
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>

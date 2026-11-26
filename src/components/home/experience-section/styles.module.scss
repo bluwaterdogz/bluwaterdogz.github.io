@@ -11,8 +11,7 @@
 }
 
 .introduction {
-  margin: 0 auto;
-  max-width: $content-width-readable;
+  max-width: $content-width-compact;
   width: 100%;
 }
 
@@ -30,6 +29,14 @@
 
 .link {
   @include section.link;
+}
+
+.timeline {
+  max-width: $content-width-compact;
+
+  a {
+    padding-right: 0;
+  }
 }
 
 @include section.responsive-layout;

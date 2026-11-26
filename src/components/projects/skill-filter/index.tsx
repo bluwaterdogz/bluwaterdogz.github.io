@@ -89,7 +89,10 @@ export const SkillFilter = ({
                 ariaLabel={t("projects.skills.selected", {
                   count: activeSkillIds.length,
                 })}
-                onClick={e=>{e.stopPropagation(); onClear()}}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  onClear();
+                }}
               >
                 <span className={styles.skillsBadge}>
                   <span className={styles.count}>{activeSkillIds.length}</span>

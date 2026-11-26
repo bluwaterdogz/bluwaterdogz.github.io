@@ -1,5 +1,5 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/colors" as *;
 .active {
-  color: $primary-color !important;
+  color: $primary-color;
 }

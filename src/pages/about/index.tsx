@@ -1,62 +1,18 @@
 import { useTranslation } from "react-i18next";
-import { JobTimeline, JobTimelineItem } from "../../components/home/job-timeline";
 import { SkillTimeline } from "../../components/skills/skill-timeline";
 import { skillGroupings } from "../../service/skill/data";
 import { linkedinProfileUrl } from "../../service/consts";
 import { Statement } from "../../components/common/statement";
 import { PageHeading } from "../../components/common/page-heading";
 import { PageShell } from "../../components/common/page-shell";
+import { InterestList } from "./interest-list";
+import { ProcessTimeline } from "./process-timeline";
 import styles from "./styles.module.scss";
-
-const interests = [
-  { icon: "fa fa-picture-o", key: "climbing" },
-  { icon: "fa fa-gamepad", key: "chess" },
-  { icon: "fa fa-motorcycle", key: "dirtbike" },
-  { icon: "fa fa-hand-rock-o", key: "muayThai" },
-];
 
 const allSkillGroups = skillGroupings;
 
 export const AboutPage = () => {
   const { t } = useTranslation();
-  const processSteps: JobTimelineItem[] = [
-    {
-      company: t("about.process.steps.align.title"),
-      icon: "fa fa-crosshairs",
-      number: "01",
-      summary: t("about.process.steps.align.description"),
-    },
-    {
-      company: t("about.process.steps.map.title"),
-      icon: "fa fa-sitemap",
-      number: "02",
-      summary: t("about.process.steps.map.description"),
-    },
-    {
-      company: t("about.process.steps.shape.title"),
-      icon: "fa fa-lightbulb-o",
-      number: "03",
-      summary: t("about.process.steps.shape.description"),
-    },
-    {
-      company: t("about.process.steps.build.title"),
-      icon: "fa fa-code",
-      number: "04",
-      summary: t("about.process.steps.build.description"),
-    },
-    {
-      company: t("about.process.steps.verify.title"),
-      icon: "fa fa-shield",
-      number: "05",
-      summary: t("about.process.steps.verify.description"),
-    },
-    {
-      company: t("about.process.steps.improve.title"),
-      icon: "fa fa-line-chart",
-      number: "06",
-      summary: t("about.process.steps.improve.description"),
-    },
-  ];
 
   return (
     <PageShell
@@ -103,23 +59,12 @@ export const AboutPage = () => {
             </div>
             <p>{t("about.process.generativeDescription")}</p>
           </div>
-          <JobTimeline
-            className={styles.processTimeline}
-            items={processSteps}
-          />
+          <ProcessTimeline className={styles.processTimeline} />
         </section>
 
         <section className={styles.interests}>
           <p className={styles.eyebrow}>{t("about.outsideCode")}</p>
-          <div className={styles.interestGrid}>
-            {interests.map((interest) => (
-              <article key={interest.key}>
-                <i className={interest.icon} aria-hidden="true" />
-                <h2>{t(`about.interests.${interest.key}.title`)}</h2>
-                <p>{t(`about.interests.${interest.key}.description`)}</p>
-              </article>
-            ))}
-          </div>
+          <InterestList />
         </section>
 
         <section className={styles.buildWith}>

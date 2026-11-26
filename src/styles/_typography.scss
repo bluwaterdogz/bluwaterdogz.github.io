@@ -63,6 +63,14 @@ $pill-text-size: 13px;
   padding: 0;
 }
 
+@mixin lead-text {
+  @include text;
+  color: $theme-text-color;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
 @mixin small-text {
   @include text;
   font-size: $small-text-size;
@@ -141,7 +149,6 @@ $pill-text-size: 13px;
   margin: 0;
   padding: $space-sm $space * 1.5;
 }
-
 h1 {
   @include page-title;
 }
@@ -158,12 +165,4 @@ h4 {
 p,
 li {
   @include text;
-}
-
-a,
-button {
-  &:hover,
-  &.active {
-    color: $primary-color;
-  }
 }

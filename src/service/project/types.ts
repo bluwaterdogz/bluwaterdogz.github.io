@@ -16,7 +16,15 @@ export interface ProjectStory {
 export type ProjectStorySection =
   | {
       id: string;
-      type: "challenge" | "outcome" | "text";
+      type: "challenge";
+    }
+  | {
+      id: string;
+      type: "outcome";
+    }
+  | {
+      id: string;
+      type: "text";
     }
   | {
       id: string;

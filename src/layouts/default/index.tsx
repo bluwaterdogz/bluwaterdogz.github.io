@@ -2,14 +2,14 @@ import { Outlet, useLocation } from "react-router";
 import styles from "./styles.module.scss";
 import { useLayoutEffect } from "react";
 import { MobileNav } from "../../components/nav/mobile-nav";
-import { useNaveStore } from "../../stores/NavStore";
+import { useNavStore } from "../../stores/NavStore";
 import { NavMenuIcon } from "../../components/nav/nav-menu-icon";
 import { Footer } from "../../components/footer";
 import HomeNav from "../../components/nav/home-nav";
 
 export const DefaultLayout = () => {
   const location = useLocation();
-  const setNavOpen = useNaveStore((state) => state.setNavOpen);
+  const setNavOpen = useNavStore((state) => state.setNavOpen);
   const isMicroappsPage = location.pathname.startsWith("/microapps");
 
   useLayoutEffect(() => {

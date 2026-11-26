@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss";
 
-interface BadgeProps  extends React.HTMLAttributes<HTMLSpanElement> {
+interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   ariaLabel?: string;
   className?: string;
 }
@@ -13,8 +13,8 @@ export const Badge = ({
 }: BadgeProps) => (
   <span
     aria-label={ariaLabel}
-    onClick={props.onClick}
     className={`${styles.badge} ${className}`}
+    {...props}
   >
     {children}
   </span>

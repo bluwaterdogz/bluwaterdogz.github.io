@@ -5,7 +5,7 @@ interface NavState {
   setNavOpen: (value: boolean) => void;
 }
 
-export const useNaveStore = create<NavState>((set) => ({
+export const useNavStore = create<NavState>((set) => ({
   navOpen: false,
   setNavOpen: (value: boolean) => {
     set({ navOpen: value });

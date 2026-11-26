@@ -1,15 +1,17 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
 @use "../../../styles/typography" as *;
+@use "../../../styles/layout" as layout;
 
 .hero {
   padding-bottom: $space * 8;
 }
 
 .container {
-  display: grid;
-  gap: clamp($space * 3, 5vw, $space * 6);
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  @include layout.two-column(
+    minmax(0, 0.9fr) minmax(0, 1.1fr),
+    clamp($space * 3, 5vw, $space * 6)
+  );
 }
 
 .copy {
@@ -48,12 +50,6 @@
   height: 100%;
   object-fit: cover;
   width: 100%;
-}
-
-@media (max-width: $small-screen) {
-  .container {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: $mobile-screen) {

@@ -10,11 +10,11 @@
 
 .search {
   align-items: center;
-  width: 100%;
   border: 1px solid $theme-border-color;
   display: flex;
   gap: $space;
   padding: 0 $space * 2;
+  width: 100%;
 
   i {
     color: $theme-text-color;
@@ -39,11 +39,11 @@
   }
 }
 
-.filters{
+.filters {
   display: flex;
   gap: $space;
-
 }
+
 .srOnly {
   height: 1px;
   margin: -1px;
@@ -58,12 +58,12 @@
   gap: $space;
 
   button {
-    flex:1;
     @include button-text;
     background: transparent;
     border: 1px solid $theme-border-color;
     color: $theme-text-color;
     cursor: pointer;
+    flex: 1;
     padding: $space * 1.5 $space;
     transition: background $transition ease, border-color $transition ease,
       color $transition ease;
@@ -78,18 +78,12 @@
   }
 }
 
-@media (max-width: $small-screen) {
-  .topBar {
-    grid-template-columns: 1fr;
-  }
-
-  .categories {
-    grid-column: auto;
-  }
-}
-
 @media (max-width: $mobile-screen) {
   .categories {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    flex-wrap: wrap;
+
+    button {
+      flex-basis: 40%;
+    }
   }
 }

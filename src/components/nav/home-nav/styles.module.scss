@@ -63,7 +63,7 @@
   -webkit-backdrop-filter: blur($blur);
 
   &:has(a:hover, a:focus-visible) a[aria-current="page"]:not(:hover, :focus-visible) {
-    color: $theme-text-color !important;
+    color: $theme-text-color;
 
     &::before {
       opacity: 0;

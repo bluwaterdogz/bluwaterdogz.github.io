@@ -35,7 +35,6 @@
   min-width: 0;
   order: 1;
   padding: $space * 9 $space * 2 $space * 5;
-  // backdrop-filter: blur(6px);
   position: relative;
   z-index: 2;
 }
@@ -103,13 +102,13 @@
 
 .primaryAction {
   background: $dark-color;
-  border-color: $dark-color !important;
+  border-color: $dark-color;
   color: white;
 
   &:hover, &:focus-visible {
     background: $primary-color;
-    border-color: $primary-color !important;
-    color: white !important;
+    border-color: $primary-color;
+    color: white;
   }
 }
 
@@ -122,7 +121,7 @@
   &:hover, &:focus-visible {
     background: $primary-color;
     border-color: $primary-color;
-    color: white !important;
+    color: white;
   }
 }
 

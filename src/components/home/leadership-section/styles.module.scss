@@ -13,8 +13,7 @@
 }
 
 .introduction {
-  margin: 0 auto;
-  max-width: $content-width-readable;
+  max-width: $content-width-compact;
   width: 100%;
 }
 
@@ -51,7 +50,7 @@
 .practice {
   @include card-outline;
   min-height: 190px;
-  padding: $space * 1.5;
+  padding: $space * 2;
 }
 
 .practiceIcon {
@@ -76,10 +75,13 @@
   margin: 0;
 }
 
-@media (max-width: $medium-screen) {
+@media (min-width: ($small-screen + 1px)) and (max-width: $medium-screen) {
+  .practices {
+    grid-template-columns: 1fr;
+  }
+
   .practice {
     min-height: 0;
-    padding: $space * 1.25;
   }
 }
 

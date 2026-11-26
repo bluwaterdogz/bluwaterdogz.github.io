@@ -49,6 +49,7 @@ export const ExperienceSection = () => {
         <p className={styles.eyebrow}>{t("home.experience.eyebrow")}</p>
         <h2>{t("home.experience.title")}</h2>
         <div className={styles.copy}>
+          <p>{t("home.experience.lead")}</p>
           <p>{t("home.experience.summary")}</p>
           <p>{t("home.experience.scope")}</p>
         </div>
@@ -62,7 +63,7 @@ export const ExperienceSection = () => {
           <span aria-hidden="true">&#8594;</span>
         </a>
       </div>
-      <JobTimeline items={jobs} />
+      <JobTimeline className={styles.timeline} items={jobs} />
     </ContentSection>
   );
 };

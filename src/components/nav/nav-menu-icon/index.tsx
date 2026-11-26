@@ -1,6 +1,6 @@
 import { useLayoutEffect } from "react";
-import { useNaveStore } from "../../../stores/NavStore";
-import { MenuIcon } from "../menu-icon.tsx/menu-icon";
+import { useNavStore } from "../../../stores/NavStore";
+import { MenuIcon } from "../menu-icon";
 import styles from "./styles.module.scss";
 import { useLocation } from "react-router-dom";
 
@@ -10,7 +10,7 @@ interface NavMenuIconProps {
 
 export const NavMenuIcon = (props: NavMenuIconProps) => {
   const { className = "" } = props;
-  const { navOpen, setNavOpen } = useNaveStore();
+  const { navOpen, setNavOpen } = useNavStore();
   const location = useLocation();
 
   useLayoutEffect(() => {

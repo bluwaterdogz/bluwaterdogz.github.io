@@ -1,70 +1,19 @@
 import Fuse from "fuse.js";
-import { useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { DynamicList } from "../../common/dynamic-list";
-import { useProjectStore } from "../../../service/project/ProjectStore";
-import {
-  LocalizedProject,
-  ProjectEmployer,
-} from "../../../service/project/types";
-import {
-  filterProjectsByCategory,
-  ProjectCategory,
-} from "../../../service/project/selectors";
-import { ProjectItem } from "../project-item";
+import { projects } from "../../../service/project/data";
+import { filterProjects } from "../../../service/project/selectors";
 import { TopBar } from "../top-bar";
 import styles from "./styles.module.scss";
 import { PageHeading } from "../../common/page-heading";
-import { skills } from "../../../service/skill/data";
 import { githubProfileUrl } from "../../../service/consts";
+import { ProjectCollection } from "./project-collection";
+import { useProjectFilters } from "./use-project-filters";
 
 export const ProjectList = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const { projects, fetchProjectList, loadingList } = useProjectStore();
-  const [activeCategory, setActiveCategory] =
-    useState<ProjectCategory>("all");
-  const [searchTerm, setSearchTerm] = useState("");
-  const requestedEmployer = searchParams.get("job") as ProjectEmployer | null;
-  const activeSkills = searchParams
-    .getAll("skill")
-    .filter((skillId) => skills.some(({ id }) => id === skillId));
-  const [activeEmployer, setActiveEmployer] = useState<
-    ProjectEmployer | "all"
-  >(requestedEmployer ?? "all");
+  const { filters, setCategory, setEmployer, setSearchTerm, toggleSkill, clearSkills } =
+    useProjectFilters();
   const { t } = useTranslation();
-
-  useEffect(() => {
-    fetchProjectList();
-  }, [fetchProjectList]);
-
-  useEffect(() => {
-    setActiveEmployer(requestedEmployer ?? "all");
-  }, [requestedEmployer]);
-
-  const handleEmployerChange = (employer: ProjectEmployer | "all") => {
-    setActiveEmployer(employer);
-    const nextParams = new URLSearchParams(searchParams);
-    if (employer === "all") nextParams.delete("job");
-    else nextParams.set("job", employer);
-    setSearchParams(nextParams, { replace: true });
-  };
-
-  const handleSkillChange = (skillId: string) => {
-    const nextParams = new URLSearchParams(searchParams);
-    const nextSkills = activeSkills.includes(skillId)
-      ? activeSkills.filter((activeSkill) => activeSkill !== skillId)
-      : [...activeSkills, skillId];
-    nextParams.delete("skill");
-    nextSkills.forEach((activeSkill) => nextParams.append("skill", activeSkill));
-    setSearchParams(nextParams, { replace: true });
-  };
-
-  const clearSkills = () => {
-    const nextParams = new URLSearchParams(searchParams);
-    nextParams.delete("skill");
-    setSearchParams(nextParams, { replace: true });
-  };
 
   const formattedProjects = useMemo(
     () =>
@@ -73,42 +22,19 @@ export const ProjectList = () => {
         description: t(`data.projects.description.${project.id}`),
         name: t(project.nameKey),
       })),
-    [projects, t]
+    [t]
   );
 
   const filteredProjects = useMemo(() => {
-    const categoryFiltered = filterProjectsByCategory(
-      formattedProjects,
-      activeCategory
-    );
+    const matchingProjects = filterProjects(formattedProjects, filters);
+    if (filters.searchTerm.trim() === "") return matchingProjects;
 
-    const employerFiltered =
-      activeEmployer === "all"
-        ? categoryFiltered
-        : categoryFiltered.filter(
-            (project) => project.employer === activeEmployer
-          );
-
-    const skillFiltered = activeSkills.length > 0
-      ? employerFiltered.filter((project) =>
-          activeSkills.every((skillId) => project.skills.includes(skillId))
-        )
-      : employerFiltered;
-
-    if (searchTerm.trim() === "") return skillFiltered;
-
-    const fuse = new Fuse(skillFiltered, {
+    const fuse = new Fuse(matchingProjects, {
       keys: [{ name: "name", weight: 2 }, "description"],
     });
 
-    return fuse.search(searchTerm).map((result) => result.item);
-  }, [
-    activeCategory,
-    activeEmployer,
-    activeSkills,
-    formattedProjects,
-    searchTerm,
-  ]);
+    return fuse.search(filters.searchTerm).map((result) => result.item);
+  }, [filters, formattedProjects]);
 
   return (
     <>
@@ -132,26 +58,20 @@ export const ProjectList = () => {
         </PageHeading>
         <div className={styles.controls}>
           <TopBar
-            activeCategory={activeCategory}
-            activeEmployer={activeEmployer}
-            onCategoryChange={setActiveCategory}
-            onEmployerChange={handleEmployerChange}
+            activeCategory={filters.category}
+            activeEmployer={filters.employer}
+            onCategoryChange={setCategory}
+            onEmployerChange={setEmployer}
             onSearchChange={setSearchTerm}
-            searchTerm={searchTerm}
-            activeSkills={activeSkills}
+            searchTerm={filters.searchTerm}
+            activeSkills={filters.skillIds}
             clearSkills={clearSkills}
-            handleSkillChange={handleSkillChange}
+            handleSkillChange={toggleSkill}
           />
         </div>
       </div>
       <div className={styles.projectList}>
-        <DynamicList<LocalizedProject>
-          data={filteredProjects}
-          loading={loadingList}
-          renderListItem={(project) => (
-            <ProjectItem key={project.id} project={project} />
-          )}
-        />
+        <ProjectCollection projects={filteredProjects} />
       </div>
     </>
   );

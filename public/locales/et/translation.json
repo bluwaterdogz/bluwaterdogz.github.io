@@ -24,7 +24,8 @@
       "type2": "Tüüp 2"
     },
     "aboutHeader": "Kes ma olen?",
-    "about": "Olen täispinu tarkvarainsener, kellel on tugev taust kasutajaliidese arenduses ja kogemus keerukate toodete aluseks olevate süsteemide loomisel. Minu töö hõlmab otsingut, analüütikat, andmetöötlust, API-sid ja kasutajaliideseid reklaamitehnoloogia, tervishoiu ning tarbijatele suunatud platvormide valdkonnas. Olen juhtinud ka kasutajaliideste moderniseerimist, tehes koostööd eri meeskondadega, et parandada arhitektuuri, lahendada keerulisi tehnilisi probleeme ning arendada töökindlat, skaleeritavat ja intuitiivselt kasutatavat tarkvara.",
+    "aboutLead": "Olen täispinu tarkvarainsener, kellel on tugev taust kasutajaliidese arenduses ja kogemus keerukate toodete aluseks olevate süsteemide loomisel.",
+    "about": "Minu töö hõlmab otsingut, analüütikat, andmetöötlust, API-sid ja kasutajaliideseid reklaamitehnoloogia, tervishoiu ning tarbijatele suunatud platvormide valdkonnas. Olen juhtinud ka kasutajaliideste moderniseerimist, tehes koostööd eri meeskondadega, et parandada arhitektuuri, lahendada keerulisi tehnilisi probleeme ning arendada töökindlat, skaleeritavat ja intuitiivselt kasutatavat tarkvara.",
     "aboutEyebrow": "01 Minust",
     "aboutTitle": "Tarkvaratehnika ja tehniline juhtimine",
     "aboutLink": "Rohkem minu kohta",
@@ -42,7 +43,8 @@
     "experience": {
       "eyebrow": "02 Kogenud",
       "title": "Kogenud",
-      "summary": "Ma ehitan ja täiustan tootmistarkvara tooteliideste, APIs, andmesüsteemide, otsingu ja pilveinfrastruktuuri vahel. Minu hiljutine töö on ühendanud need kihid sihtrühma analüüsi ja reklaami töövoogude vahel.",
+      "lead": "Ma ehitan ja täiustan tootmistarkvara tooteliideste, APIs, andmesüsteemide, otsingu ja pilveinfrastruktuuri vahel.",
+      "summary": "Minu hiljutine töö on ühendanud need kihid sihtrühma analüüsi ja reklaami töövoogude vahel.",
       "scope": "Varasemad rollid hõlmasid kliiniliste uuringute tööriistu ettevõttes Faro Health ja video voogedastust ettevõttes Cams ettevõttes Various Inc.",
       "copy1": "Olen täisfunktsionaalne tarkvaraarendaja, kellel on tugevad teadmised esiotsa arenduses ning kogemusi esiotsa rakenduste, APIs, otsingufunktsioonide ja andmetöötlussüsteemide arendamisel. Minu töö hõlmab otsingut, analüütikat, andmetöötlust APIs ja kasutajaliideseid reklaamitehnoloogia, tervishoiu ja tarbijaplatvormide valdkonnas. Olen juhtinud ka esiotsa moderniseerimise jõupingutusi, töötades meeskondade vahel arhitektuuri täiustamise, keeruliste tehniliste probleemide lahendamise ning usaldusväärse, skaleeritava ja intuitiivselt kasutatava tarkvara loomise nimel.",
       "copy2": "Ma ehitasin ja täiustasin otsingu, filtreerimise, lehekülgimise, automaatse täitmise, CSV-eksportide, statistika, vahemälu käitumise, sisestamise tööriistade ja aruandluse töövooge platvormidel Next.js, React, TypeScript, FastAPI, PostgreSQL, OpenSearch, Snowflake, Dagster, Redis ja AWS.",

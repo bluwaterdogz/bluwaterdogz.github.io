@@ -4,7 +4,7 @@ import { navItems } from "../consts";
 import { useOutsideClick } from "../../../hooks/useOutsideClick";
 import { NavList } from "../nav-list";
 import { Lang } from "../../lang";
-import { useNaveStore } from "../../../stores/NavStore";
+import { useNavStore } from "../../../stores/NavStore";
 import { NavMenuIcon } from "../nav-menu-icon";
 
 interface MobileNavProps extends HTMLProps<HTMLDivElement> {
@@ -15,7 +15,7 @@ interface MobileNavProps extends HTMLProps<HTMLDivElement> {
 export const MobileNav = (props: MobileNavProps) => {
   const { className } = props;
   const ref = useRef(null);
-  const { navOpen, setNavOpen } = useNaveStore();
+  const { navOpen, setNavOpen } = useNavStore();
 
   useOutsideClick(ref, () => {
     setNavOpen(false);

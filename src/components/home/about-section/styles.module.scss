@@ -8,13 +8,11 @@
 
 .content {
   margin: 0 auto;
-  max-width: $content-width-readable;
+  max-width: $content-width-standard;
   width: 100%;
 }
 
 .introduction {
-  margin: 0 auto;
-  max-width: $content-width-readable;
   width: 100%;
 }
 
@@ -28,6 +26,7 @@
 
 .copy {
   @include section.copy;
+  max-width: none;
 }
 
 .link {

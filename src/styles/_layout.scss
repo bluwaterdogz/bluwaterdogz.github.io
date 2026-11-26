@@ -1,0 +1,29 @@
+@use "variables" as *;
+
+@mixin two-column($columns: repeat(2, minmax(0, 1fr)), $gap: $space * 6) {
+  display: grid;
+  gap: $gap;
+  grid-template-columns: $columns;
+
+  > * {
+    min-width: 0;
+  }
+
+  @media (max-width: $small-screen) {
+    grid-template-columns: 1fr;
+  }
+}
+
+@mixin collection(
+  $columns: 2,
+  $gap: $collection-gap,
+  $stack-at: $small-screen
+) {
+  display: grid;
+  gap: $gap;
+  grid-template-columns: repeat($columns, minmax(0, 1fr));
+
+  @media (max-width: $stack-at) {
+    grid-template-columns: 1fr;
+  }
+}

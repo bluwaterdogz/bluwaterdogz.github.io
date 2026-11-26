@@ -12,12 +12,21 @@ const initialTheme = (): Theme => {
   return savedTheme === "dark" ? "dark" : "light";
 };
 
+const applyTheme = (theme: Theme) => {
+  document.documentElement.classList.remove("theme-light", "theme-dark");
+  document.documentElement.classList.add(`theme-${theme}`);
+};
+
+const savedTheme = initialTheme();
+applyTheme(savedTheme);
+
 export const useThemeStore = create<ThemeState>((set) => ({
-  theme: initialTheme(),
+  theme: savedTheme,
   toggleTheme: () =>
     set(({ theme }) => {
       const nextTheme = theme === "light" ? "dark" : "light";
       window.localStorage.setItem("theme", nextTheme);
+      applyTheme(nextTheme);
       return { theme: nextTheme };
     }),
 }));

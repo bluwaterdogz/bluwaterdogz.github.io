@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import { HomePage } from "../pages/home";
 import { SkillsPage } from "../pages/skills";
@@ -10,13 +9,7 @@ import { AboutPage } from "../pages/about";
 import { MicroappsPage } from "../pages/microapps";
 import { microapps } from "../pages/microapps/registry";
 import { PlaceholderPage } from "../pages/placeholder";
-import { Loader } from "../components/common/loader";
-
-const renderLazyMicroapp = (Component: (typeof microapps)[number]["Component"]) => (
-  <Suspense fallback={<Loader />}>
-    <Component />
-  </Suspense>
-);
+import { LazyMicroapp } from "./lazy-microapp";
 
 export const router = createBrowserRouter([
   {
@@ -44,7 +37,7 @@ export const router = createBrowserRouter([
       },
       ...microapps.map((app) => ({
         path: app.href,
-        element: renderLazyMicroapp(app.Component),
+        element: <LazyMicroapp component={app.Component} />,
       })),
       {
         path: "/background-animation",

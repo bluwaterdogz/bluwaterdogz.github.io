@@ -1,6 +1,7 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
 @use "../../../styles/typography" as *;
+@use "../../../styles/interactions" as *;
 
 .field {
   width: 100%;
@@ -12,17 +13,10 @@
 
 .trigger {
   @include button-text;
-  align-items: center;
-  background: transparent;
-  border: 1px solid $theme-border-color;
-  color: $theme-text-color;
-  cursor: pointer;
+  @include control-trigger;
   display: grid;
   gap: $space;
   grid-template-columns: 1fr auto auto;
-  padding: $space * 1.5 $space * 2;
-  text-align: left;
-  width: 100%;
 
   > i {
     color: $primary-color;
@@ -59,13 +53,8 @@
 }
 
 .panel {
-  background: $theme-surface-color;
-  border: 1px solid $theme-border-color;
-  box-shadow: $box-shadow;
+  @include floating-panel;
   padding: $space * 2;
-  position: absolute;
-  left: 0;
-  right: 0;
   top: calc(100% + #{$space});
   width: 100%;
   z-index: 120;

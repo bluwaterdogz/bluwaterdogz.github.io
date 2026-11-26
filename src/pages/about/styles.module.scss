@@ -2,6 +2,7 @@
 @use "../../styles/colors" as *;
 @use "../../styles/typography" as *;
 @use "../../styles/interactions" as *;
+@use "../../styles/layout" as layout;
 
 .aboutPage {
   color: $theme-text-color;
@@ -17,10 +18,11 @@
 
 .introduction {
   align-items: center;
-  display: grid;
-  gap: clamp($space * 4, 5vw, $space * 6);
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
   min-height: min(760px, calc(100svh - #{$page-padding-block-start}));
+  @include layout.two-column(
+    minmax(0, 1fr) minmax(0, 0.9fr),
+    clamp($space * 4, 5vw, $space * 6)
+  );
 }
 
 .portrait {
@@ -103,9 +105,7 @@
 }
 
 .interestGrid {
-  display: grid;
-  gap: $space * 2;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  @include layout.collection(2, $space * 2, $mobile-screen);
 
   article {
     @include card-outline;
@@ -155,11 +155,12 @@
 
 .process {
   color: $theme-text-color;
-  display: grid;
-  gap: clamp($space * 4, 6vw, $space * 8);
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
   margin-top: $space * 8;
   padding: 0;
+  @include layout.two-column(
+    minmax(0, 0.9fr) minmax(0, 1fr),
+    clamp($space * 4, 6vw, $space * 8)
+  );
 }
 
 .processIntroduction {
@@ -209,19 +210,6 @@
 }
 
 @media (max-width: $small-screen) {
-  .process {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: $mobile-screen) {
-  .process {
-    margin-top: $space * 6;
-  }
-
-}
-
-@media (max-width: $small-screen) {
   .introduction {
     grid-template-columns: 1fr;
     min-height: 0;
@@ -239,15 +227,11 @@
     aspect-ratio: 4 / 5;
     max-height: $space * 65;
   }
-
-  .interestGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: $mobile-screen) {
-  .interestGrid {
-    grid-template-columns: 1fr;
+  .process {
+    margin-top: $space * 6;
   }
 
   .quote {

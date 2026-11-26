@@ -33,9 +33,9 @@
   align-items: start;
   display: grid;
   gap: clamp($space * 4, 6vw, $space * 8);
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   margin: 0 auto;
-  max-width: $content-width-readable;
+  max-width: $content-width-standard;
   width: 100%;
 
   > * {
@@ -53,12 +53,22 @@
 }
 
 @mixin copy {
-  margin: $space * 4 auto;
-  max-width: $content-width-readable;
+  margin: $space * 2 0;
+  max-width: $content-width-copy;
 
   p {
     @include text;
-    margin: 0 0 $space * 3;
+    margin: 0 0 $space * 2;
+
+    &:first-child {
+      @include lead-text;
+      margin-bottom: $space * 2;
+      max-width: $content-width-lead;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -78,24 +88,14 @@
 
 @mixin responsive-layout {
   @media (max-width: $medium-screen) {
-    .content {
-      gap: $space * 6;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
     .nav {
       display: none;
     }
-
   }
 
   @media (max-width: $small-screen) {
     .content {
       grid-template-columns: 1fr;
     }
-
-  }
-
-  @media (max-width: $mobile-screen) {
   }
 }

@@ -16,6 +16,7 @@ export const AboutSection = () => {
         <p className={styles.eyebrow}>{t("home.aboutEyebrow")}</p>
         <h2>{t("home.aboutTitle")}</h2>
         <div className={styles.copy}>
+          <p>{t("home.aboutLead")}</p>
           <p>{t("home.about")}</p>
         </div>
         <a

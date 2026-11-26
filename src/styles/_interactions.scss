@@ -26,3 +26,25 @@
 @mixin hover-lift {
   @include card-elevated;
 }
+
+@mixin control-trigger {
+  align-items: center;
+  background: transparent;
+  border: 1px solid $theme-border-color;
+  color: $theme-text-color;
+  cursor: pointer;
+  padding: $space * 1.5 $space * 2;
+  text-align: left;
+  width: 100%;
+}
+
+@mixin floating-panel {
+  background: $theme-surface-color;
+  border: 1px solid $theme-border-color;
+  box-shadow: $box-shadow;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: calc(100% + #{$space-sm});
+  z-index: 20;
+}

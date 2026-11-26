@@ -24,7 +24,8 @@
       "type2": "Typ 2"
     },
     "aboutHeader": "Vem är jag?",
-    "about": "Jag är fullstackutvecklare med en stark grund inom frontendutveckling och erfarenhet av att bygga systemen bakom komplexa produkter. Jag har arbetat med sökfunktioner, analys, databehandling, API:er och användargränssnitt inom annonsteknik, hälso- och sjukvård och konsumentinriktade plattformar. Jag har också lett modernisering av frontendapplikationer och samarbetat mellan team för att förbättra arkitekturen, lösa komplexa tekniska problem och leverera tillförlitlig, skalbar och intuitiv programvara.",
+    "aboutLead": "Jag är fullstackutvecklare med en stark grund inom frontendutveckling och erfarenhet av att bygga systemen bakom komplexa produkter.",
+    "about": "Jag har arbetat med sökfunktioner, analys, databehandling, API:er och användargränssnitt inom annonsteknik, hälso- och sjukvård och konsumentinriktade plattformar. Jag har också lett modernisering av frontendapplikationer och samarbetat mellan team för att förbättra arkitekturen, lösa komplexa tekniska problem och leverera tillförlitlig, skalbar och intuitiv programvara.",
     "aboutEyebrow": "01 Om mig",
     "aboutTitle": "Programvaruutveckling och tekniskt ledarskap",
     "aboutLink": "Mer om mig",
@@ -42,7 +43,8 @@
     "experience": {
       "eyebrow": "02 Erfaren",
       "title": "Erfaren",
-      "summary": "Jag bygger och förbättrar produktionsprogramvara för produktgränssnitt, APIs, datasystem, sök och molninfrastruktur. Mitt senaste arbete har kopplat samman dessa lager över arbetsflöden för publikinformation och annonsering.",
+      "lead": "Jag bygger och förbättrar produktionsprogramvara för produktgränssnitt, APIs, datasystem, sök och molninfrastruktur.",
+      "summary": "Mitt senaste arbete har kopplat samman dessa lager över arbetsflöden för publikinformation och annonsering.",
       "scope": "Tidigare roller inkluderade kliniska studieverktyg på Faro Health och videostreaming för Cams på Various Inc.",
       "copy1": "Jag är en fullstack-programvaruingenjör med en stark grund inom frontend-utveckling och erfarenhet av att utveckla frontend-applikationer, APIs, sökfunktioner och databehandlingssystem. Mitt arbete omfattar sökning, analys, databehandling, APIs och användargränssnitt inom reklamteknik, hälso- och sjukvård och konsumentplattformar. Jag har också lett moderniseringsarbete inom frontend och arbetat i team för att förbättra arkitekturen, lösa utmanande tekniska problem och leverera programvara som är tillförlitlig, skalbar och intuitiv att använda.",
       "copy2": "Jag byggde och förfinade sök, filtrering, paginering, autokomplettering, CSV-export, statistik, cachebeteende, inmatningsverktyg och rapporteringsarbetsflöden över Next.js, React, TypeScript, FastAPI, PostgreSQL, OpenSearch, Snowflake, Dagster, Redis och AWS.",

@@ -24,7 +24,8 @@
       "type2": "Typ 2"
     },
     "aboutHeader": "Wer bin ich?",
-    "about": "Ich bin Full-Stack-Softwareentwickler mit fundierten Kenntnissen in der Frontend-Entwicklung und Erfahrung im Aufbau der Systeme hinter komplexen Produkten. Meine Arbeit umfasst Suche, Analytik, Datenverarbeitung, APIs und Benutzeroberflächen in den Bereichen Werbetechnologie, Gesundheitswesen und Verbraucherplattformen. Außerdem habe ich die Modernisierung von Frontends geleitet und teamübergreifend daran gearbeitet, Architekturen zu verbessern, anspruchsvolle technische Probleme zu lösen und zuverlässige, skalierbare und intuitiv bedienbare Software bereitzustellen.",
+    "aboutLead": "Ich bin Full-Stack-Softwareentwickler mit fundierten Kenntnissen in der Frontend-Entwicklung und Erfahrung im Aufbau der Systeme hinter komplexen Produkten.",
+    "about": "Meine Arbeit umfasst Suche, Analytik, Datenverarbeitung, APIs und Benutzeroberflächen in den Bereichen Werbetechnologie, Gesundheitswesen und Verbraucherplattformen. Außerdem habe ich die Modernisierung von Frontends geleitet und teamübergreifend daran gearbeitet, Architekturen zu verbessern, anspruchsvolle technische Probleme zu lösen und zuverlässige, skalierbare und intuitiv bedienbare Software bereitzustellen.",
     "aboutEyebrow": "01 Über mich",
     "aboutTitle": "Softwareentwicklung und technische Führung",
     "aboutLink": "Mehr über mich",
@@ -42,7 +43,8 @@
     "experience": {
       "eyebrow": "02 Erfahrung",
       "title": "Erfahrung",
-      "summary": "Ich entwickle und verbessere Produktivsoftware in den Bereichen Benutzeroberflächen, APIs, Datensysteme, Suche und Cloud-Infrastruktur. Meine jüngste Arbeit verband diese Bereiche in Abläufen für Zielgruppenanalysen und Werbung.",
+      "lead": "Ich entwickle und verbessere Produktivsoftware in den Bereichen Benutzeroberflächen, APIs, Datensysteme, Suche und Cloud-Infrastruktur.",
+      "summary": "Meine jüngste Arbeit verband diese Bereiche in Abläufen für Zielgruppenanalysen und Werbung.",
       "scope": "Frühere Tätigkeiten umfassten Tools für klinische Studien bei Faro Health und Video-Streaming für Cams bei Various Inc.",
       "copy1": "Ich bin Full-Stack-Softwareentwickler mit einem starken Frontend-Hintergrund und Erfahrung in der Entwicklung von Webanwendungen, APIs, Suchfunktionen und Datenverarbeitungssystemen. Meine Arbeit umfasst Suche, Analytik, Datenverarbeitung, APIs und Benutzeroberflächen in Werbetechnologie, Gesundheitswesen und Verbraucherplattformen. Zudem leitete ich Frontend-Modernisierungen und arbeitete teamübergreifend daran, Architekturen zu verbessern, komplexe technische Probleme zu lösen und zuverlässige, skalierbare und intuitive Software bereitzustellen.",
       "copy2": "Ich entwickelte und verbesserte Suche, Filter, Paginierung, Autovervollständigung, CSV-Exporte, Statistiken, Cache-Verhalten, Ingestion-Tools und Reporting-Abläufe mit Next.js, React, TypeScript, FastAPI, PostgreSQL, OpenSearch, Snowflake, Dagster, Redis und AWS.",

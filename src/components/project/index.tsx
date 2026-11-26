@@ -1,27 +1,18 @@
 import { ProjectContent } from "./project-content";
 import { ProjectHeader } from "./project-header";
-import { useProjectStore } from "../../service/project/ProjectStore";
-import { useEffect } from "react";
-import { Loader } from "../common/loader";
 import { PageShell } from "../common/page-shell";
+import { projects } from "../../service/project/data";
+import { Navigate } from "react-router-dom";
 import styles from "./styles.module.scss";
 
 interface ProjectProps {
   id: string;
 }
 export const Project = ({ id }: ProjectProps) => {
-  const { project, fetchProject, loading } = useProjectStore();
+  const project = projects.find((item) => item.id === id);
 
-  useEffect(() => {
-    fetchProject(id);
-  }, [fetchProject, id]);
-
-  if (loading || project == null) {
-    return (
-      <main>
-        <Loader />
-      </main>
-    );
+  if (project == null) {
+    return <Navigate replace to="/404" />;
   }
 
   return (

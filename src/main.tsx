@@ -23,7 +23,6 @@ i18n.use(HttpBackend).use(initReactI18next).init({
   },
 }).then(() => {
   const root = document.getElementById("root");
-  document.querySelector("html")!.classList.add("theme-light");
 
   ReactDOM.createRoot(root!).render(<RouterProvider router={router} />);
 });

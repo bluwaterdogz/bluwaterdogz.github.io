@@ -20,13 +20,7 @@ interface TopBarProps {
   handleSkillChange: (skillId: string) => void;
 }
 
-const categories: ProjectCategory[] = [
-  "all", 
-  "web", 
-  // "mobile", 
-  "backend", 
-  "data"
-];
+const categories: ProjectCategory[] = ["all", "web", "backend", "data"];
 export const TopBar = ({
   activeCategory,
   activeEmployer,

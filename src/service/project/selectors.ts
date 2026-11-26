@@ -4,6 +4,13 @@ import { Project, ProjectEmployer } from "./types";
 
 export type ProjectCategory = "all" | "backend" | "data" | "mobile" | "web";
 
+export interface ProjectFilters {
+  category: ProjectCategory;
+  employer: ProjectEmployer | "all";
+  searchTerm: string;
+  skillIds: string[];
+}
+
 export const projectEmployers: Array<ProjectEmployer | "all"> = [
   "all",
   "mobian",
@@ -32,3 +39,18 @@ export const filterProjectsByCategory = <T extends Project>(
 
 export const getSkillsForProject = (project: Project): Skill[] =>
   skills.filter((skill) => project.skills.includes(skill.id));
+
+export const filterProjects = <T extends Project>(
+  items: T[],
+  filters: ProjectFilters
+): T[] => {
+  const categoryMatches = filterProjectsByCategory(items, filters.category);
+  return categoryMatches.filter((project) => {
+    const matchesEmployer =
+      filters.employer === "all" || project.employer === filters.employer;
+    const matchesSkills = filters.skillIds.every((skillId) =>
+      project.skills.includes(skillId)
+    );
+    return matchesEmployer && matchesSkills;
+  });
+};

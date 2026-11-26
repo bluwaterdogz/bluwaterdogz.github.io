@@ -24,7 +24,8 @@
       "type2": "Tipo 2"
     },
     "aboutHeader": "¿Quién soy?",
-    "about": "Soy ingeniero de software full stack, con una sólida base en desarrollo frontend y experiencia construyendo los sistemas que sustentan productos complejos. Mi trabajo abarca búsqueda, analítica, procesamiento de datos, API e interfaces de usuario en los sectores de tecnología publicitaria, salud y plataformas de consumo. También he liderado iniciativas de modernización del frontend, colaborando con distintos equipos para mejorar la arquitectura, resolver problemas técnicos complejos y entregar software fiable, escalable e intuitivo.",
+    "aboutLead": "Soy ingeniero de software full stack, con una sólida base en desarrollo frontend y experiencia construyendo los sistemas que sustentan productos complejos.",
+    "about": "Mi trabajo abarca búsqueda, analítica, procesamiento de datos, API e interfaces de usuario en los sectores de tecnología publicitaria, salud y plataformas de consumo. También he liderado iniciativas de modernización del frontend, colaborando con distintos equipos para mejorar la arquitectura, resolver problemas técnicos complejos y entregar software fiable, escalable e intuitivo.",
     "aboutEyebrow": "01 Sobre mí",
     "aboutTitle": "Ingeniería de software y liderazgo técnico",
     "aboutLink": "Más sobre mí",
@@ -42,7 +43,8 @@
     "experience": {
       "eyebrow": "02 Experiencia",
       "title": "Experiencia",
-      "summary": "Desarrollo y mejoro software de producción, desde interfaces y API hasta sistemas de datos, búsqueda e infraestructura en la nube. Mi trabajo reciente conectó estos componentes en procesos de inteligencia de audiencias y publicidad.",
+      "lead": "Desarrollo y mejoro software de producción, desde interfaces y API hasta sistemas de datos, búsqueda e infraestructura en la nube.",
+      "summary": "Mi trabajo reciente conectó estos componentes en procesos de inteligencia de audiencias y publicidad.",
       "scope": "Antes trabajé en herramientas para estudios clínicos en Faro Health y en aplicaciones de vídeo en streaming para Cams en Various Inc.",
       "copy1": "Soy ingeniero de software full stack con una sólida base en frontend y experiencia desarrollando aplicaciones web, API, funciones de búsqueda y sistemas de procesamiento de datos. He trabajado en búsqueda, análisis, procesamiento de datos, API e interfaces para plataformas publicitarias, sanitarias y de consumo. También he dirigido iniciativas de modernización del frontend y colaborado con distintos equipos para mejorar la arquitectura, resolver problemas técnicos complejos y entregar software fiable, escalable e intuitivo.",
       "copy2": "Desarrollé y mejoré funciones de búsqueda, filtrado, paginación, autocompletado, exportación CSV, estadísticas, caché, herramientas de ingesta e informes usando Next.js, React, TypeScript, FastAPI, PostgreSQL, OpenSearch, Snowflake, Dagster, Redis y AWS.",

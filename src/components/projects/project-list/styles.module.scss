@@ -1,10 +1,12 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
+@use "../../../styles/layout" as layout;
 
 .header {
-  display: grid;
-  gap: clamp($space * 5, 7vw, $space * 8);
-  grid-template-columns: minmax(0, 0.9fr) minmax($space * 42, 1.1fr);
+  @include layout.two-column(
+    minmax(0, 0.9fr) minmax($space * 42, 1.1fr),
+    clamp($space * 5, 7vw, $space * 8)
+  );
 }
 
 .introduction {
@@ -12,10 +14,8 @@
 }
 
 .projectList {
-  display: grid;
-  gap: $collection-gap;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: $space * 6;
+  @include layout.collection;
 }
 
 .controls {
@@ -52,21 +52,7 @@
   }
 }
 
-@media (max-width: $medium-screen) {
-  .projectList {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
 @media (max-width: $small-screen) {
-  .header {
-    grid-template-columns: 1fr;
-  }
-
-  .projectList {
-    grid-template-columns: 1fr;
-  }
-
   .controls {
     padding: $space * 2;
   }

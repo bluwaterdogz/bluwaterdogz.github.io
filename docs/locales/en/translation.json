@@ -24,7 +24,8 @@
       "type2": "Type 2"
     },
     "aboutHeader": "Who am I?",
-    "about": "I'm a full-stack software engineer with a strong foundation in frontend development and experience building the systems behind complex products. My work spans search, analytics, data processing, APIs, and user interfaces across advertising technology, healthcare, and consumer platforms. I've also led frontend modernization efforts, working across teams to improve architecture, solve challenging technical problems, and deliver software that's reliable, scalable, and intuitive to use.",
+    "aboutLead": "I'm a full-stack software engineer with a strong foundation in frontend development and experience building the systems behind complex products.",
+    "about": "My work spans search, analytics, data processing, APIs, and user interfaces across advertising technology, healthcare, and consumer platforms. I've also led frontend modernization efforts, working across teams to improve architecture, solve challenging technical problems, and deliver software that's reliable, scalable, and intuitive to use.",
     "aboutEyebrow": "01 About me",
     "aboutTitle": "Software Engineering and Technical Leadership",
     "aboutLink": "More about me",
@@ -42,7 +43,8 @@
     "experience": {
       "eyebrow": "02 Experienced",
       "title": "Experienced",
-      "summary": "I build and improve production software across product interfaces, APIs, data systems, search, and cloud infrastructure. My recent work has connected those layers across audience-intelligence and advertising workflows.",
+      "lead": "I build and improve production software across product interfaces, APIs, data systems, search, and cloud infrastructure.",
+      "summary": "My recent work has connected those layers across audience-intelligence and advertising workflows.",
       "scope": "Earlier roles included clinical-study tools at Faro Health and video streaming for Cams at Various Inc. ",
       "copy1": "I'm a full-stack software engineer with a strong foundation in frontend development and experience developing frontend applications, APIs, search functionality, and data-processing systems. My work spans search, analytics, data processing, APIs, and user interfaces across advertising technology, healthcare, and consumer platforms. I've also led frontend modernization efforts, working across teams to improve architecture, solve challenging technical problems, and deliver software that's reliable, scalable, and intuitive to use.",
       "copy2": "I built and refined search, filtering, pagination, autocomplete, CSV exports, statistics, cache behavior, ingestion tooling, and reporting workflows across Next.js, React, TypeScript, FastAPI, PostgreSQL, OpenSearch, Snowflake, Dagster, Redis, and AWS.",

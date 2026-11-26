@@ -376,7 +376,7 @@ class DepthBlurRenderer {
   private readonly textureHeight = 256;
   private readonly halfWidth = 12;
 
-  private texture(base: RGBColor, hover: RGBColor, hoverMix: number, rim?: RGBColor, glowIntensity = 0, accent?: RGBColor) {
+  private texture(base: RGBColor, hover: RGBColor, hoverMix: number, rim?: RGBColor, _glowIntensity = 0, accent?: RGBColor) {
     const step = Math.round(clamp(hoverMix, 0, 1) * 32);
     const existing = accent ? this.accentCache.get(accent) : this.cache.get(step);
     if (existing) return existing;

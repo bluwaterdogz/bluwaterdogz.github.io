@@ -48,11 +48,9 @@ export const ExperienceSection = () => {
       <div className={styles.introduction}>
         <p className={styles.eyebrow}>{t("home.experience.eyebrow")}</p>
         <h2>{t("home.experience.title")}</h2>
-        <div className={styles.copy}>
-          <p>{t("home.experience.lead")}</p>
-          <p>{t("home.experience.summary")}</p>
-          <p>{t("home.experience.scope")}</p>
-        </div>
+        <p className={styles.lead}>{t("home.experience.lead")}</p>
+        <p className={styles.text}>{t("home.experience.summary")}</p>
+        <p className={styles.text}>{t("home.experience.scope")}</p>
         <a
           className={styles.link}
           href={linkedinProfileUrl}

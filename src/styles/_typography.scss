@@ -63,7 +63,7 @@ $pill-text-size: 13px;
   padding: 0;
 }
 
-@mixin lead-text {
+@mixin lead {
   @include text;
   color: $theme-text-color;
   font-size: 20px;

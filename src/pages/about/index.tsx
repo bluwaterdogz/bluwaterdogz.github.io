@@ -30,10 +30,10 @@ export const AboutPage = () => {
             <div className={styles.divider} />
             <p>{t("about.section1")}</p>
             <p>{t("about.section2")}</p>
-            <p className={styles.location}>
+            {/* <p className={styles.location}>
               <i className="fa fa-map-marker" aria-hidden="true" />
               {t("about.location")}
-            </p>
+            </p> */}
             <a
               className={styles.link}
               href={linkedinProfileUrl}

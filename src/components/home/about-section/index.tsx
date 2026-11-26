@@ -15,10 +15,8 @@ export const AboutSection = () => {
       <div className={styles.introduction}>
         <p className={styles.eyebrow}>{t("home.aboutEyebrow")}</p>
         <h2>{t("home.aboutTitle")}</h2>
-        <div className={styles.copy}>
-          <p>{t("home.aboutLead")}</p>
-          <p>{t("home.about")}</p>
-        </div>
+        <p className={styles.lead}>{t("home.aboutLead")}</p>
+        <p className={styles.text}>{t("home.about")}</p>
         <a
           className={styles.link}
           href={linkedinProfileUrl}

@@ -73,7 +73,8 @@
 }
 
 .introduction {
-  @include text;
+  // Lead-size trial: change this include to text to restore the previous size.
+  @include lead;
   margin: $space * 2.5 0 0;
   max-width: $content-width-hero;
 }

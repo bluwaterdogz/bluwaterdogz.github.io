@@ -5,6 +5,9 @@ import { reactClickToComponent } from "vite-plugin-react-click-to-component";
 // https://vite.dev/config/
 
 export default defineConfig(({ command }) => ({
+  css: {
+    devSourcemap: true,
+  },
   plugins: [
     react({
       babel: {

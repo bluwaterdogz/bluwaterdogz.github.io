@@ -40,11 +40,9 @@ export const LeadershipSection = () => {
       <div className={styles.introduction}>
         <p className={styles.eyebrow}>{t("home.leadership.eyebrow")}</p>
         <h2>{t("home.leadership.title")}</h2>
-        <div className={styles.copy}>
-          <p>{t("home.leadership.copy1")}</p>
-          <p>{t("home.leadership.copy2")}</p>
-          <p>{t("home.leadership.copy3")}</p>
-        </div>
+        <p className={styles.lead}>{t("home.leadership.copy1")}</p>
+        <p className={styles.text}>{t("home.leadership.copy2")}</p>
+        <p className={styles.text}>{t("home.leadership.copy3")}</p>
         <a
           className={styles.link}
           href={linkedinProfileUrl}

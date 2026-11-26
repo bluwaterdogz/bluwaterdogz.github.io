@@ -11,6 +11,9 @@
 
 .introduction {
   max-width: none;
+  h1 {
+    padding-bottom: $space * 2;
+  }
 }
 
 .projectList {

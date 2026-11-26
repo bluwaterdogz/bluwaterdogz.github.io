@@ -1,13 +1,36 @@
-@use "../../../styles/home-sections" as section;
+@use "../../../styles/layout" as layout;
 @use "../../../styles/variables" as *;
+@use "../../../styles/colors" as *;
 @use "../../../styles/typography" as *;
 
 .experienceSection {
-  @include section.shell;
+  background: $theme-surface-color;
+  overflow-x: clip;
+  padding: $space * 8;
+  position: relative;
+
+  @media (max-width: $medium-screen) {
+    padding: $space * 7 $space * 6;
+  }
+
+  @media (max-width: $small-screen) {
+    padding: $space * 6 $space * 4;
+  }
+
+  @media (max-width: $mobile-screen) {
+    padding: $space * 5 $space * 3;
+  }
 }
 
 .content {
-  @include section.content-grid;
+  align-items: start;
+  margin: 0 auto;
+  max-width: $content-width-standard;
+  width: 100%;
+  @include layout.two-column(
+    minmax(0, 0.9fr) minmax(0, 1.1fr),
+    clamp($space * 4, 6vw, $space * 8)
+  );
 }
 
 .introduction {
@@ -20,15 +43,37 @@
 }
 
 .introduction h2 {
-  @include section.heading;
+  @include section-title;
+
+  &::after {
+    color: $primary-color;
+    content: ".";
+  }
 }
 
-.copy {
-  @include section.copy;
+.lead {
+  @include lead;
+  margin: $space * 2 0;
+  max-width: $content-width-lead;
+}
+
+.text {
+  @include text;
+  margin-bottom: $space * 2;
 }
 
 .link {
-  @include section.link;
+  @include link-text;
+  align-items: center;
+  display: inline-flex;
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  span {
+    font-size: 28px;
+    line-height: 0.5;
+    margin-left: $space * 2;
+  }
 }
 
 .timeline {
@@ -38,5 +83,3 @@
     padding-right: 0;
   }
 }
-
-@include section.responsive-layout;

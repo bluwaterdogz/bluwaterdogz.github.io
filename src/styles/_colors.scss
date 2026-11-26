@@ -1,9 +1,28 @@
-$primary-color-light: #a53860;
-$primary-color-dark: #167d87;
+$primary-color-light: #5154ad;
+$primary-color-dark: #7bd9fa;
 $primary-color: var(--highlight);
-$neutral-color: #555;
-$light-color: #e0d9d2;
-$dark-color: #30323a;
-$surface-color: #fbfaf8;
-$hero-background-color: #b3b4c4;
-$raisin-black: #1b1d26;
+$on-primary-color: var(--on-highlight);
+$neutral-color: #55647a;
+$light-color: #e1e7f2;
+$dark-color: #1b273c;
+$surface-color: #f7fafb;
+$surface-muted-color: #c6d0e5;
+$surface-inverse-color: #192237;
+
+$surface-deep-color: #101522;
+$accent-bright-color: #73e9f5;
+$accent-deep-color: #4267bc;
+$border-soft-color: #849fc6;
+
+$accent-secondary-color: #a58af6;
+$accent-tertiary-color: #668bf2;
+
+$text-inverse-color: #f3f5fc;
+$text-muted-inverse-color: #b6c1d6;
+
+$ambient-primary-color: #164f78;
+$ambient-secondary-color: #263c70;
+$ambient-tertiary-color: #503477;
+
+$action-gradient: linear-gradient(110deg, $accent-bright-color, $accent-deep-color 50%, $accent-secondary-color);
+$highlight-gradient: linear-gradient(110deg, $accent-secondary-color, $primary-color-dark);

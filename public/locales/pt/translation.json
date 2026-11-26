@@ -12,6 +12,8 @@
     "heroHeadlineStart": "Construo os sistemas",
     "heroHeadlineAccent": "por trás de",
     "heroHeadlineEnd": "grandes produtos.",
+    "heroHeadlineCompact": "<start>Construo os sistemas</start><end>por trás de <accent>grandes</accent> produtos.</end>",
+    "heroHeadlineDark": "<start>Construo os sistemas</start><phrase><accent>por trás de</accent></phrase><end>grandes produtos<dot>.</dot></end>",
     "heroPrimaryCta": "Confira meu trabalho",
     "heroSecondaryCta": "Entre em contato",
     "heroSkillsLabel": "Habilidades em destaque",

@@ -1,10 +1,10 @@
 .container {
   --blob-background: transparent;
   --blob-blend-mode: multiply;
-  --blob-color-1: #ff72ce;
-  --blob-color-2: #a88cff;
-  --blob-color-3: #68efff;
-  --blob-color-4: #ddff68;
+  --blob-color-1: var(--blob-palette-1);
+  --blob-color-2: var(--blob-palette-2);
+  --blob-color-3: var(--blob-palette-3);
+  --blob-color-4: var(--blob-palette-4);
   --blob-opacity: 0.62;
   --blob-saturation: 110%;
   --blob-move-1-duration: 18s;

@@ -19,7 +19,7 @@
     margin-left: auto;
   }
   a {
-    @include link-text;
+    @include link;
     color: $theme-text-color;
     display: block;
     padding: $space 0;

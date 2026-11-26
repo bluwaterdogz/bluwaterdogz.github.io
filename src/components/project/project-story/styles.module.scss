@@ -23,7 +23,7 @@ $timeline-rail-left: -$space * 3;
   min-width: 0;
 
   h2 {
-    @include section-title;
+    @include heading;
     margin-bottom: $space * 2;
   }
 
@@ -47,7 +47,7 @@ $timeline-rail-left: -$space * 3;
   min-width: 0;
 
   h2 {
-    @include section-title;
+    @include heading;
   }
 }
 
@@ -65,12 +65,12 @@ $timeline-rail-left: -$space * 3;
   min-width: 0;
 
   > p:first-child {
-    @include eyebrow-text;
+    @include label;
     margin-bottom:$space;
   }
 
   h3 {
-    @include subtitle-text;
+    @include subheading;
     overflow-wrap: anywhere;
     margin-bottom:$space;
   }
@@ -103,7 +103,7 @@ $timeline-rail-left: -$space * 3;
   }
 
   button {
-    @include small-text;
+    @include small;
     align-items: center;
     background: transparent;
     border: 0;
@@ -161,19 +161,19 @@ $timeline-rail-left: -$space * 3;
     }
 
     > span {
-      @include pill-text;
+      @include pill;
       color: $primary-color;
       padding: 0;
     }
   }
 
   h3 {
-    @include subtitle-text;
+    @include subheading;
     margin: $space * 3 0 $space;
   }
 
   p {
-    @include small-text;
+    @include small;
   }
 }
 

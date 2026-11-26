@@ -12,6 +12,8 @@
     "heroHeadlineStart": "สร้างระบบที่อยู่",
     "heroHeadlineAccent": "เบื้องหลัง",
     "heroHeadlineEnd": "ผลิตภัณฑ์ที่ยอดเยี่ยม",
+    "heroHeadlineCompact": "<start>สร้างระบบที่อยู่เบื้องหลัง</start><end>ผลิตภัณฑ์ที่<accent>ยอดเยี่ยม</accent></end>",
+    "heroHeadlineDark": "<start>สร้างระบบที่อยู่</start><phrase><accent>เบื้องหลัง</accent></phrase><end>ผลิตภัณฑ์ที่ยอดเยี่ยม</end>",
     "heroPrimaryCta": "ดูผลงานของผม",
     "heroSecondaryCta": "ติดต่อผม",
     "heroSkillsLabel": "ทักษะเด่น",

@@ -26,7 +26,7 @@ $group-dot-top: $space * 3 + math.div($timeline-label-line-height - $dot-size, 2
   }
 
   h2 {
-    @include link-text;
+    @include link;
     margin: $space 0 0;
     white-space: nowrap;
   }

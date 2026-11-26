@@ -1,5 +1,5 @@
 import type { CSSProperties, PropsWithChildren } from "react";
-import { lightBlobColors } from "./colors";
+import { blobColors } from "./colors";
 import styles from "./morphing-blob-background.module.scss";
 
 type MorphingBlobBackgroundProps = PropsWithChildren<{
@@ -16,22 +16,22 @@ export const MorphingBlobBackground = ({
   blendMode = "multiply",
   children,
   className = "",
-  colors = lightBlobColors,
+  colors = blobColors,
   intensity = 1,
   speed = 1,
 }: MorphingBlobBackgroundProps) => {
   const safeIntensity = Math.min(Math.max(intensity, 0), 2);
   const safeSpeed = Math.min(Math.max(speed, 0.2), 3);
   const durationMultiplier = 1 / safeSpeed;
-  const blobColors = colors.length > 0 ? colors : ["#ff9cdb"];
+  const palette = colors.length > 0 ? colors : blobColors;
   const customProperties = {
     "--blob-background": backgroundColor,
     "--blob-blend-mode": blendMode,
-    "--blob-color-1": blobColors[0],
-    "--blob-color-2": blobColors[1] ?? blobColors[0],
-    "--blob-color-3": blobColors[2] ?? blobColors[0],
-    "--blob-color-4": blobColors[3] ?? blobColors[0],
-    "--blob-gradient": blobColors.join(", "),
+    "--blob-color-1": palette[0],
+    "--blob-color-2": palette[1] ?? palette[0],
+    "--blob-color-3": palette[2] ?? palette[0],
+    "--blob-color-4": palette[3] ?? palette[0],
+    "--blob-gradient": palette.join(", "),
     "--blob-opacity": Math.min(0.95, 0.62 * safeIntensity),
     "--blob-saturation": `${Math.round(110 * safeIntensity)}%`,
     "--blob-move-1-duration": `${18 * durationMultiplier}s`,
@@ -48,7 +48,7 @@ export const MorphingBlobBackground = ({
   return (
     <section className={`${styles.container} ${className}`} style={customProperties}>
       <div className={styles.background} aria-hidden="true">
-        {blobColors.map((color, index) => {
+        {palette.map((color, index) => {
           const variant = index % 4;
           const variantClass = [
             styles.blobOne,

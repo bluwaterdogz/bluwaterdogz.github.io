@@ -12,6 +12,8 @@
     "heroHeadlineStart": "훌륭한 제품의",
     "heroHeadlineAccent": "기반이 되는",
     "heroHeadlineEnd": "시스템을 만듭니다.",
+    "heroHeadlineCompact": "<start><accent>훌륭한</accent> 제품의</start><end>기반이 되는 시스템을 만듭니다.</end>",
+    "heroHeadlineDark": "<start>훌륭한 제품의</start><phrase><accent>기반이 되는</accent></phrase><end>시스템을 만듭니다<dot>.</dot></end>",
     "heroPrimaryCta": "프로젝트 보기",
     "heroSecondaryCta": "문의하기",
     "heroSkillsLabel": "주요 기술",

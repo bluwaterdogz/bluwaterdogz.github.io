@@ -26,7 +26,7 @@
     margin-left: auto;
   }
   a {
-    @include subtitle-text;
+    @include subheading;
     color: $theme-text-color;
     display: inline-block;
     padding-right: $space-sm * 4;

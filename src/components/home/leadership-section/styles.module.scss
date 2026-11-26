@@ -44,7 +44,7 @@
 }
 
 .introduction h2 {
-  @include section-title;
+  @include heading;
 
   &::after {
     color: $primary-color;
@@ -64,7 +64,7 @@
 }
 
 .link {
-  @include link-text;
+  @include link;
   align-items: center;
   display: inline-flex;
   letter-spacing: 1px;
@@ -110,12 +110,12 @@
 }
 
 .practice h3 {
-  @include subtitle-text;
+  @include subheading;
   margin: 0 0 $space;
 }
 
 .practice p {
-  @include small-text;
+  @include small;
   margin: 0;
 }
 

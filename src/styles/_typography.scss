@@ -12,7 +12,7 @@ $link-text-size: 15px;
 $link-text-line-height: 1.3;
 $pill-text-size: 13px;
 
-@mixin display-text {
+@mixin display {
   color: $theme-text-color;
   font-family: $font-display;
   font-size: clamp(38px, 5.2vw, 76px);
@@ -23,17 +23,17 @@ $pill-text-size: 13px;
   padding: 0;
 }
 
-@mixin page-title {
+@mixin title($size: clamp($title-size-small, 5vw, $title-size)) {
   color: $theme-text-color;
   font-family: $font-display;
-  font-size: clamp($page-title-size-mobile, 5vw, $page-title-size);
+  font-size: $size;
   font-weight: 400;
   line-height: 1;
   margin: 0;
   padding: 0;
 }
 
-@mixin section-title {
+@mixin heading {
   color: $theme-text-color;
   font-family: $font-display;
   font-size: clamp(36px, 4vw, 48px);
@@ -43,7 +43,7 @@ $pill-text-size: 13px;
   padding: 0;
 }
 
-@mixin subtitle-text {
+@mixin subheading {
   color: $theme-text-color;
   font-family: $font-display;
   font-size: clamp(20px, 2vw, 23px);
@@ -71,13 +71,13 @@ $pill-text-size: 13px;
   line-height: 1.45;
 }
 
-@mixin small-text {
+@mixin small {
   @include text;
   font-size: $small-text-size;
   line-height: $small-text-line-height;
 }
 
-@mixin eyebrow-text {
+@mixin label {
   color: $primary-color;
   font-family: $font-body;
   font-size: $eyebrow-size;
@@ -90,7 +90,7 @@ $pill-text-size: 13px;
 }
 
 @mixin eyebrow {
-  @include eyebrow-text;
+  @include label;
   align-items: center;
   display: flex;
   margin: 0 0 $space * 4;
@@ -104,8 +104,8 @@ $pill-text-size: 13px;
   }
 }
 
-@mixin page-eyebrow {
-  @include eyebrow-text;
+@mixin muted-eyebrow {
+  @include label;
   align-items: center;
   color: $theme-subtext-color;
   display: flex;
@@ -121,7 +121,7 @@ $pill-text-size: 13px;
   }
 }
 
-@mixin button-text {
+@mixin button {
   font-family: $font-body;
   font-size: 16px;
   font-weight: 700;
@@ -130,7 +130,7 @@ $pill-text-size: 13px;
   padding: $space * 1.5 $space * 2;
 }
 
-@mixin link-text {
+@mixin link {
   color: $primary-color;
   font-family: $font-body;
   font-size: $link-text-size;
@@ -140,7 +140,7 @@ $pill-text-size: 13px;
   padding: 0;
 }
 
-@mixin pill-text {
+@mixin pill {
   color: $primary-color;
   font-family: $font-body;
   font-size: $pill-text-size;
@@ -150,16 +150,16 @@ $pill-text-size: 13px;
   padding: $space-sm $space * 1.5;
 }
 h1 {
-  @include page-title;
+  @include title;
 }
 
 h2 {
-  @include section-title;
+  @include heading;
 }
 
 h3,
 h4 {
-  @include subtitle-text;
+  @include subheading;
 }
 
 p,

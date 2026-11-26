@@ -18,12 +18,12 @@
   text-align: center;
 
   h1 {
-    @include display-text;
-    font-size: clamp($page-title-size, 18vw, $space * 18);
+    @include display;
+    font-size: clamp($title-size, 18vw, $space * 18);
   }
 
   a {
-    @include link-text;
+    @include link;
     align-items: center;
     backdrop-filter: $interactive-transparent-effect;
     background: $interactive-transparent-background;
@@ -39,7 +39,7 @@
     &:focus-visible {
       background: $primary-color;
       border-color: $primary-color;
-      color: white;
+      color: $on-primary-color;
     }
   }
 }

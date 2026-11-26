@@ -12,6 +12,8 @@
     "heroHeadlineStart": "優れた製品を",
     "heroHeadlineAccent": "支える",
     "heroHeadlineEnd": "システムを開発。",
+    "heroHeadlineCompact": "<start><accent>優れた</accent>製品を</start><end>支えるシステムを開発。</end>",
+    "heroHeadlineDark": "<start>優れた製品を</start><phrase><accent>支える</accent></phrase><end>システムを開発<dot>。</dot></end>",
     "heroPrimaryCta": "私の作品をご覧ください",
     "heroSecondaryCta": "お問い合わせください",
     "heroSkillsLabel": "注目のスキル",

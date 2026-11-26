@@ -50,7 +50,7 @@
   padding: $space * 3;
 
   h2 {
-    @include subtitle-text;
+    @include subheading;
     hyphens: auto;
     line-height: 1.1;
     margin: 0 0 $space * 2;
@@ -60,7 +60,7 @@
   }
 
   > p {
-    @include small-text;
+    @include small;
     display: -webkit-box;
     margin: 0;
     overflow: hidden;

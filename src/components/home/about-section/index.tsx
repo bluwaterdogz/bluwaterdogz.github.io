@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { ContentSection } from "../../content-section";
 import { linkedinProfileUrl } from "../../../service/consts";
 import styles from "./styles.module.scss";
+import { InteractivePolyhedron } from "./polyhedron";
 
 export const AboutSection = () => {
   const { t } = useTranslation();
@@ -26,6 +27,12 @@ export const AboutSection = () => {
           {t("home.aboutLink")}
           <span aria-hidden="true">&#8594;</span>
         </a>
+      </div>
+      <div>
+        <InteractivePolyhedron 
+          initialSpinSpeed={.3}
+          inertia={true}
+        />
       </div>
     </ContentSection>
   );

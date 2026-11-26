@@ -1,0 +1,138 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/colors" as *;
+@use "../../../styles/typography" as *;
+
+$image-offset: clamp($space * 3, 6vw, $space * 9);
+
+@mixin responsive {
+  @media (max-width: $small-screen), (hover: none) and (pointer: coarse) {
+
+    .polyhedraLayer {
+      --polyhedra-edge-scale: 1;
+      --polyhedra-opacity-scale: 1.8;
+      --polyhedra-vertex-radius: 1;
+    }
+
+    .topBar {
+      display: none;
+    }
+
+    .hero {
+      background: $theme-surface-color;
+      box-shadow: none;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      height: auto;
+      min-height: 0;
+      padding: $space * 2 $space * 2 $space * 5;
+    }
+
+    .backgroundLayer {
+      align-self: stretch;
+      contain: size;
+      overflow: hidden;
+      grid-area: 1 / 1;
+      height: auto;
+      inset: auto;
+      justify-self: end;
+      margin-right: -$space * 2;
+      margin-top: $space * 2;
+      position: relative;
+      width: 80vw;
+    }
+
+    .container {
+      display: contents;
+    }
+
+    .content {
+      display: contents;
+    }
+
+    .portrait {
+      align-self: end;
+      grid-area: 1 / 1;
+      height: calc(clamp(#{$space * 40}, 120vw, #{$panel-min-height}) + #{$image-offset});
+      margin-top: calc(-1 * #{$image-offset});
+      justify-self: end;
+      margin-right: -$space * 2;
+      max-height: none;
+      max-width: none;
+      object-fit: cover;
+      object-position: top center;
+      width: 80vw;
+    }
+
+    .content h1 {
+      @include title(clamp($title-size-small, 13vw, $title-size));
+      align-self: end;
+      background: linear-gradient(
+        to right,
+        $theme-text-color calc(20vw - #{$space * 2}),
+        $surface-color calc(20vw - #{$space * 2})
+      );
+      background-clip: text;
+      color: transparent;
+      grid-area: 1 / 1;
+      margin-top: clamp($space * 20, 58vw, $space * 40);
+      max-width: none;
+      padding-bottom: $space;
+      position: relative;
+      z-index: 2;
+    }
+
+    .desktopHeadline {
+      display: none;
+    }
+
+    .mobileHeadline {
+      display: inline;
+    }
+
+    .headlinePhrase {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .headlineStart {
+      display: block;
+      max-width: 12ch;
+      text-wrap: balance;
+    }
+
+    .headlineEnd {
+      display: block;
+      max-width: none;
+    }
+
+    .introduction,
+    .actions {
+      position: relative;
+      z-index: 2;
+    }
+
+    .introduction {
+      @include text;
+      margin: $space * 3 0 0;
+      max-width: $content-width-lead;
+    }
+
+    .actions {
+      align-items: stretch;
+      flex-direction: column;
+      gap: $space * 2;
+      margin-top: $space * 4;
+
+      a {
+        justify-content: center;
+        min-width: 0;
+        padding: $space * 2;
+        width: 100%;
+      }
+    }
+
+    .skills {
+      display: none;
+    }
+  }
+}

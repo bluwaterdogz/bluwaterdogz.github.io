@@ -27,7 +27,7 @@
 
 .portrait {
   aspect-ratio: 2 / 3;
-  background: $hero-background-color;
+  background: $surface-muted-color;
   max-height: min(680px, calc(100svh - #{$page-padding-block-start + $space * 3}));
   overflow: hidden;
 
@@ -48,7 +48,7 @@
 }
 
 .headingContent {
-  margin: auto 0;
+  
 
   > p:not(.role, .location) {
     @include text;
@@ -57,7 +57,7 @@
 }
 
 .role {
-  @include eyebrow-text;
+  @include label;
   margin: $space * 3 0;
   text-transform: uppercase;
 }
@@ -131,13 +131,13 @@
   }
 
   h2 {
-    @include subtitle-text;
+    @include subheading;
     margin: $space * 2 0 $space;
     overflow-wrap: anywhere;
   }
 
   p {
-    @include small-text;
+    @include small;
   }
 }
 
@@ -173,11 +173,11 @@
   }
 
   h2 {
-    @include section-title;
+    @include heading;
   }
 
   h3 {
-    @include subtitle-text;
+    @include subheading;
   }
 
   > p,

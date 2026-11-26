@@ -11,11 +11,11 @@
   padding: 0;
 
   :is(a, button, li > span) {
-    @include pill-text;
+    @include pill;
     align-items: center;
     backdrop-filter: blur($blur);
     background: rgba(white, 0.16);
-    border: 1px solid rgba($dark-color, 0.16);
+    border: 1px solid $theme-border-color;
     border-radius: 999px;
     color: $primary-color;
     display: inline-flex;
@@ -30,11 +30,11 @@
       backdrop-filter: none;
       background: $primary-color;
       border-color: $primary-color;
-      color: white;
+      color: $on-primary-color;
       -webkit-backdrop-filter: none;
 
       i {
-        color: white;
+        color: $on-primary-color;
       }
     }
 
@@ -53,12 +53,12 @@
       backdrop-filter: none;
       background: $primary-color;
       border-color: $primary-color;
-      color: white;
+      color: $on-primary-color;
       transform: translateY(-2px);
       -webkit-backdrop-filter: none;
 
       i,span {
-        color: white;
+        color: $on-primary-color;
       }
     }
   }

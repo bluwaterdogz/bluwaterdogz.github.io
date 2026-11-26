@@ -12,6 +12,8 @@
     "heroHeadlineStart": "Building the systems",
     "heroHeadlineAccent": "behind",
     "heroHeadlineEnd": "great products.",
+    "heroHeadlineCompact": "<start>Building the systems</start><phrase>behind <accent>great</accent></phrase><end>products.</end>",
+    "heroHeadlineDark": "<start>Building the systems</start><phrase><accent>behind</accent></phrase><end>great products<dot>.</dot></end>",
     "heroPrimaryCta": "Check out my work",
     "heroSecondaryCta": "Get in touch",
     "heroSkillsLabel": "Featured skills",

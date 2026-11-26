@@ -1,21 +1,38 @@
 @use "./colors" as *;
 @use "./variables" as *;
+
 $themes: (
   light: (
     "text": $dark-color,
     "subtext": $neutral-color,
     "highlight": $primary-color-light,
+    "on-highlight": white,
+    "action-fill": $dark-color,
+    "action-outline": $dark-color,
     "background": $surface-color,
-    "border": rgba($dark-color, 0.16),
-    "interactive-surface": rgba(white, 0.2)
+    "border": rgba($dark-color, 0.18),
+    "interactive-surface": rgba(white, 0.35),
+    "blob-palette-1": $accent-bright-color,
+    "blob-palette-2": $accent-secondary-color,
+    "blob-palette-3": $accent-tertiary-color,
+    "blob-palette-4": $primary-color-light,
+    "ambient-opacity": 0.7
   ),
   dark: (
-    "text": #f6f2ed,
-    "subtext": #c7c2bd,
+    "text": $text-inverse-color,
+    "subtext": $text-muted-inverse-color,
     "highlight": $primary-color-dark,
-    "background": $raisin-black,
-    "border": rgba(white, 0.22),
-    "interactive-surface": rgba(white, 0.08)
+    "on-highlight": $surface-deep-color,
+    "action-fill": $action-gradient,
+    "action-outline": $action-gradient,
+    "background": $surface-deep-color,
+    "border": rgba($border-soft-color, 0.4),
+    "interactive-surface": rgba($border-soft-color, 0.12),
+    "blob-palette-1": $ambient-primary-color,
+    "blob-palette-2": $ambient-secondary-color,
+    "blob-palette-3": $ambient-tertiary-color,
+    "blob-palette-4": rgba($accent-bright-color, 0.5),
+    "ambient-opacity": 0.6
   ),
 );
 

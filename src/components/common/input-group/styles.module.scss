@@ -8,6 +8,6 @@
 }
 
 .label {
-  @include eyebrow-text;
+  @include label;
   color: $theme-subtext-color;
 }

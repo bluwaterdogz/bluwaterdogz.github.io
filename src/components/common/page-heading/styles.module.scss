@@ -6,7 +6,7 @@
   min-width: 0;
 
   h1 {
-    @include page-title;
+    @include title;
 
     &::after {
       color: $primary-color;

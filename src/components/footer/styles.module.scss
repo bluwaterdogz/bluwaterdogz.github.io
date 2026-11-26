@@ -25,7 +25,7 @@
 }
 
 .footerLink a {
-  @include link-text;
+  @include link;
   color: $theme-text-color;
   text-decoration: none;
   transition: color $transition ease;
@@ -35,7 +35,7 @@
 }
 
 .themeToggle {
-  @include link-text;
+  @include link;
   align-items: center;
   background: transparent;
   border: 1px solid $theme-border-color;
@@ -53,7 +53,7 @@
   }
 }
 
-.trademark { @include small-text; color: $theme-subtext-color; }
+.trademark { @include small; color: $theme-subtext-color; }
 
 @media (max-width: $small-screen) {
   .footerContent { grid-template-columns: 1fr auto; }

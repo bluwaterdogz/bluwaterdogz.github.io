@@ -10,14 +10,18 @@
 }
 
 .defaultLayout .navIcon {
-  color: $primary-color;
+  color: $theme-text-color;
   display: none;
-  filter: drop-shadow(-$space-sm $space-sm $space-sm rgba($raisin-black, 0.8));
   position: fixed;
   right: 0;
   top: 0;
   transition: $transition;
   z-index: 100;
+
+  svg {
+    height: $control-height;
+    width: $control-height;
+  }
 }
 
 .pageRegion {
@@ -40,7 +44,7 @@
   }
 }
 
-@media (max-width: $medium-screen) {
+@media (max-width: $medium-screen), (hover: none) and (pointer: coarse) {
   .defaultLayout .navIcon {
     display: flex;
   }

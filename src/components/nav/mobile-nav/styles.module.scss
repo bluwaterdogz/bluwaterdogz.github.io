@@ -55,7 +55,7 @@
     color: $theme-text-color;
   }
   a {
-    @include section-title;
+    @include heading;
     color: $theme-text-color;
     display: block;
     padding: $space 0;

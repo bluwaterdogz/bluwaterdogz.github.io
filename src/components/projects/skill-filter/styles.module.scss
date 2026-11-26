@@ -12,7 +12,7 @@
 }
 
 .trigger {
-  @include button-text;
+  @include button;
   @include control-trigger;
   display: grid;
   gap: $space;
@@ -67,12 +67,12 @@
   margin-bottom: $space * 1.5;
 
   p {
-    @include small-text;
+    @include small;
     margin: 0;
   }
 
   button {
-    @include small-text;
+    @include small;
     background: transparent;
     border: 0;
     color: $primary-color;

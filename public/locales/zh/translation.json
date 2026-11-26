@@ -12,6 +12,8 @@
     "heroHeadlineStart": "构建",
     "heroHeadlineAccent": "支撑",
     "heroHeadlineEnd": "优秀产品的系统。",
+    "heroHeadlineCompact": "<start>构建支撑</start><end><accent>优秀</accent>产品的系统。</end>",
+    "heroHeadlineDark": "<start>构建</start><phrase><accent>支撑</accent></phrase><end>优秀产品的系统<dot>。</dot></end>",
     "heroPrimaryCta": "看看我的作品",
     "heroSecondaryCta": "联系我们",
     "heroSkillsLabel": "特色技能",

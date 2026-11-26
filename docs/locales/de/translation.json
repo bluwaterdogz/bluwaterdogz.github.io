@@ -12,6 +12,8 @@
     "heroHeadlineStart": "Ich entwickle die Systeme",
     "heroHeadlineAccent": "hinter",
     "heroHeadlineEnd": "großartigen Produkten.",
+    "heroHeadlineCompact": "<start>Ich entwickle die Systeme</start><end>hinter <accent>großartigen</accent> Produkten.</end>",
+    "heroHeadlineDark": "<start>Ich entwickle die Systeme</start><phrase><accent>hinter</accent></phrase><end>großartigen Produkten<dot>.</dot></end>",
     "heroPrimaryCta": "Meine Projekte ansehen",
     "heroSecondaryCta": "Kontakt aufnehmen",
     "heroSkillsLabel": "Ausgewählte Kompetenzen",

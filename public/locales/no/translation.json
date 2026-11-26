@@ -12,6 +12,8 @@
     "heroHeadlineStart": "Jeg bygger systemene",
     "heroHeadlineAccent": "bak",
     "heroHeadlineEnd": "gode produkter.",
+    "heroHeadlineCompact": "<start>Jeg bygger systemene</start><end>bak <accent>gode</accent> produkter.</end>",
+    "heroHeadlineDark": "<start>Jeg bygger systemene</start><phrase><accent>bak</accent></phrase><end>gode produkter<dot>.</dot></end>",
     "heroPrimaryCta": "Sjekk ut arbeidet mitt",
     "heroSecondaryCta": "Ta kontakt",
     "heroSkillsLabel": "Utvalgte ferdigheter",

@@ -36,7 +36,7 @@
 }
 
 .backLink {
-  @include link-text;
+  @include link;
   align-items: center;
   color: $primary-color;
   display: inline-flex;

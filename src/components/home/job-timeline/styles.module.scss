@@ -6,7 +6,7 @@
 $timeline-rail-left: -$space * 3;
 
 .timeline {
-  max-width: $content-width-introduction;
+  max-width: $content-width-small;
 
   ol {
     list-style: none;
@@ -82,21 +82,21 @@ $timeline-rail-left: -$space * 3;
 }
 
 .period {
-  @include small-text;
+  @include small;
   color: $primary-color;
   font-weight: 600;
   margin: 0 0 $space;
 }
 
 .timeline h4 {
-  @include subtitle-text;
+  @include subheading;
   margin: 0 0 $space-sm;
   padding: 0;
   overflow-wrap: anywhere;
 }
 
 .summary {
-  @include small-text;
+  @include small;
   margin: 0;
   overflow-wrap: anywhere;
 }

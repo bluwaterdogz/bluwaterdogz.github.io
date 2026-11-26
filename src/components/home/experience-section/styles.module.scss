@@ -43,7 +43,7 @@
 }
 
 .introduction h2 {
-  @include section-title;
+  @include heading;
 
   &::after {
     color: $primary-color;
@@ -63,7 +63,7 @@
 }
 
 .link {
-  @include link-text;
+  @include link;
   align-items: center;
   display: inline-flex;
   letter-spacing: 1px;

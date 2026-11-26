@@ -58,7 +58,7 @@
   gap: $space;
 
   button {
-    @include button-text;
+    @include button;
     background: transparent;
     border: 1px solid $theme-border-color;
     color: $theme-text-color;
@@ -73,7 +73,7 @@
     &.active {
       background: $primary-color;
       border-color: $primary-color;
-      color: white;
+      color: $on-primary-color;
     }
   }
 }

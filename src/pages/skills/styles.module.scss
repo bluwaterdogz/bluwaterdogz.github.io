@@ -60,19 +60,19 @@
     &:hover,
     &:focus-visible {
       background: $primary-color;
-      color: white;
+      color: $on-primary-color;
     }
   }
 
   span {
-    @include small-text;
+    @include small;
     min-width: $space * 4;
     text-align: center;
   }
 }
 
 .link {
-  @include link-text;
+  @include link;
   align-items: center;
   color: $primary-color;
   display: inline-flex;

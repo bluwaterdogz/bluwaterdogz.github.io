@@ -11,12 +11,11 @@
 
 .trigger,
 .language {
-  @include link-text;
+  @include link;
   background: transparent;
   border: 0;
   color: $primary-color;
   cursor: pointer;
-  font: inherit;
   padding: 0;
 }
 
@@ -27,33 +26,37 @@
   display: none;
   list-style: none;
   margin: $space 0 0;
-  min-width: $space * 16;
-  padding: $space;
+  max-height: min($space * 48, calc(100svh - #{$space * 12}));
+  min-width: $popover-width;
+  overflow-y: auto;
+  padding: $space-sm;
   position: absolute;
   right: 0;
-  text-align: right;
+  text-align: left;
   top: 100%;
 
   &.open {
     display: block;
   }
-
-  li + li {
-    border-top: 1px solid $theme-border-color;
-  }
 }
 
 .language {
+  @include text;
   color: $theme-text-color;
-  padding: $space;
+  padding: $space $space * 1.5;
   text-align: inherit;
-  transition: color $transition ease;
+  transition: background $transition ease, color $transition ease;
   width: 100%;
 
   &:hover,
   &:focus-visible,
   &.active {
+    background: color-mix(in srgb, #{$primary-color} 8%, transparent);
     color: $primary-color;
+  }
+
+  &.active {
+    font-weight: 600;
   }
 }
 
@@ -61,17 +64,15 @@
   display: block;
 
   .trigger {
-    font-size: 42px;
+    @include lead;
+    color: $primary-color;
   }
 
   .languageList {
     box-shadow: none;
     margin-top: $space * 2;
+    max-height: none;
     position: static;
     text-align: left;
-  }
-
-  .language {
-    @include subtitle-text;
   }
 }

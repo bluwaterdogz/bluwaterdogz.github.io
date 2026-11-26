@@ -12,6 +12,8 @@
     "heroHeadlineStart": "Desarrollo los sistemas",
     "heroHeadlineAccent": "detrás de",
     "heroHeadlineEnd": "grandes productos.",
+    "heroHeadlineCompact": "<start>Desarrollo los sistemas</start><end>detrás de <accent>grandes</accent> productos.</end>",
+    "heroHeadlineDark": "<start>Desarrollo los sistemas</start><phrase><accent>detrás de</accent></phrase><end>grandes productos<dot>.</dot></end>",
     "heroPrimaryCta": "Ver mis proyectos",
     "heroSecondaryCta": "Contactar",
     "heroSkillsLabel": "Tecnologías destacadas",

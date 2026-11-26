@@ -12,6 +12,8 @@
     "heroHeadlineStart": "Loon süsteeme,",
     "heroHeadlineAccent": "mis toetavad",
     "heroHeadlineEnd": "suurepäraseid tooteid.",
+    "heroHeadlineCompact": "<start>Loon süsteeme,</start><end>mis toetavad <accent>suurepäraseid</accent> tooteid.</end>",
+    "heroHeadlineDark": "<start>Loon süsteeme,</start><phrase><accent>mis toetavad</accent></phrase><end>suurepäraseid tooteid<dot>.</dot></end>",
     "heroPrimaryCta": "Vaadake minu töid",
     "heroSecondaryCta": "Võtke ühendust",
     "heroSkillsLabel": "Soovitatud oskused",

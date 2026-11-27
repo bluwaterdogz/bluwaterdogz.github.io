@@ -1,5 +1,5 @@
 import {
-    CSSProperties,
+    type CSSProperties,
     useEffect,
     useRef,
   } from "react";
@@ -240,7 +240,7 @@ import {
     private readonly textureHeight = 256;
     private readonly halfWidth = 12;
 
-    private texture(base: RGBColor, hover: RGBColor, hoverMix: number, rim?: RGBColor, _glowIntensity = 0, accent?: RGBColor) {
+    private texture(base: RGBColor, hover: RGBColor, hoverMix: number, rim?: RGBColor, accent?: RGBColor) {
       const step = Math.round(clamp(hoverMix, 0, 1) * 32);
       const existing = accent ? this.accentCache.get(accent) : this.cache.get(step);
       if (existing) return existing;
@@ -284,7 +284,7 @@ import {
 
     draw(ctx: CanvasRenderingContext2D, start: Point2D, end: Point2D,
       depthLimit: number, centerZ: number, depthContrast: number, alpha: number, base: RGBColor, hover: RGBColor,
-      hoverMix: number, rim?: RGBColor, glowStart?: RGBColor, glowEnd?: RGBColor, glowIntensity = 0, softAccent?: PaletteSample) {
+      hoverMix: number, rim?: RGBColor, glowStart?: RGBColor, glowEnd?: RGBColor, softAccent?: PaletteSample) {
       // Always map the source from near to far, reversing the edge as needed.
       if (start.z > end.z) { [start, end] = [end, start]; [glowStart, glowEnd] = [glowEnd, glowStart]; }
       const dx = end.x - start.x, dy = end.y - start.y;
@@ -295,9 +295,9 @@ import {
       const near = contrastDepth(start.z, centerZ, depthLimit, depthContrast);
       const far = contrastDepth(end.z, centerZ, depthLimit, depthContrast);
       // Draw the softer layer only where it contributes. No Canvas filters.
-      const texture = far > 0.10 ? this.texture(base, hover, hoverMix, rim, glowIntensity, softAccent?.a) : null;
+      const texture = far > 0.10 ? this.texture(base, hover, hoverMix, rim, softAccent?.a) : null;
       const secondTexture = texture && softAccent && softAccent.a !== softAccent.b && softAccent.t > 0.001
-        ? this.texture(base, hover, hoverMix, rim, glowIntensity, softAccent.b) : null;
+        ? this.texture(base, hover, hoverMix, rim, softAccent.b) : null;
       const span = Math.max(1, (far - near) * (this.textureWidth - 1));
       const center = 0.5 + (near + far) * 0.5 * (this.textureWidth - 1);
       const sourceX = clamp(center - span / 2, 0, this.textureWidth - span);
@@ -436,7 +436,6 @@ export type InteractivePolyhedronProps = {
 };
 
 type Quaternion = { x: number; y: number; z: number; w: number };
-// const identity = (): Quaternion => ({ x: 0, y: 0, z: 0, w: 1 });
 const unit = (v: Point3D): Point3D => {
   const n = Math.hypot(v.x, v.y, v.z) || 1;
   return { x: v.x/n, y: v.y/n, z: v.z/n };
@@ -534,7 +533,11 @@ export function InteractivePolyhedron({
     let frame=0,lastFrame=0;
     let dragId: number | null = null;
     let previous: Point3D | null = null;
-    let lastMove = 0;
+    const flickWindowMs = 50;
+    const maxDragSpin = 12; // radians/s, guard against implausible event spikes
+    let previousTime = 0;
+    let lastMotion = -Infinity;
+    let motion: { from: number; to: number; axis: Point3D; angle: number }[] = [];
     const spin = spinRef.current;
 
     function shapeRadius() {
@@ -572,7 +575,7 @@ export function InteractivePolyhedron({
       }
       ctx!.restore();
       const edges=geometry.edges.slice().sort(([a,b],[c,d])=>vertices[c].z+vertices[d].z-vertices[a].z-vertices[b].z);
-      for(const [a,b] of edges) blur.draw(ctx!,vertices[a],vertices[b],depthLimit,0,contrast,opacity,baseColor,hoverColor,0,rimLightColor,samples[a]?.color,samples[b]?.color,glow.intensity,glow.sample((phases[a]+phases[b])/2));
+      for(const [a,b] of edges) blur.draw(ctx!,vertices[a],vertices[b],depthLimit,0,contrast,opacity,baseColor,hoverColor,0,rimLightColor,samples[a]?.color,samples[b]?.color,glow.sample((phases[a]+phases[b])/2));
       ctx!.save();
       for (const i of used) {
         const s=samples[i]; if(s && glow.intensity>0) glow.drawCore(ctx!,vertices[i],contrastDepth(vertices[i].z,0,depthLimit,contrast),s.color,opacity);
@@ -623,32 +626,86 @@ export function InteractivePolyhedron({
       const w=Math.max(1,Math.floor(width*dpr)),h=Math.max(1,Math.floor(height*dpr));
       if(canvas!.width!==w)canvas!.width=w;if(canvas!.height!==h)canvas!.height=h;
       ctx!.setTransform(w/width,0,0,h/height,0,0);ctx!.imageSmoothingEnabled=true;
-      previous=null;lastFrame=0;redraw();
+      previous=null;motion=[];lastMotion=-Infinity;lastFrame=0;redraw();
     }
     function down(e: PointerEvent){
       if(dragId!==null||e.button!==0||!drawable)return;
-      dragId=e.pointerId;previous=trackball(e);lastMove=performance.now();spin.speed=0;
-      canvas!.setPointerCapture(e.pointerId);canvas!.style.cursor='grabbing';e.preventDefault();
+      dragId=e.pointerId;previous=trackball(e);previousTime=e.timeStamp;
+      motion=[];lastMotion=-Infinity;spin.speed=0;
+      try { canvas!.setPointerCapture(e.pointerId); } catch { /* window listeners still track drag */ }
+      canvas!.style.cursor='grabbing';e.preventDefault();
+    }
+    function sampleMotion(e: PointerEvent){
+      const next=trackball(e),now=Math.max(previousTime,e.timeStamp);
+      if(previous){
+        const axis=cross(previous,next),length=Math.hypot(axis.x,axis.y,axis.z);
+        if(length>1e-7){
+          const angle=Math.atan2(length,clamp(dot(previous,next),-1,1))*safe(settings.current.rotationSensitivity,1,0.2,3);
+          const direction=unit(axis);
+          turn(direction,angle);
+          motion.push({from:Math.min(previousTime,now-1),to:now,axis:direction,angle});
+          lastMotion=now;
+        }
+      }
+      previous=next;previousTime=now;
+      motion=motion.filter(m=>m.to>=lastMotion-flickWindowMs);
+    }
+    function releaseMomentum(now: number){
+      const resting=restingSpeedRef.current ?? 0;
+      if(!settings.current.inertia||reduced.matches||now-lastMotion>flickWindowMs){spin.speed=resting;return;}
+      // Use the latest 50ms of actual angular movement, not the time of
+      // pointerup or stationary duplicate events. Average angular vectors
+      // to retain both the drag speed and its three-dimensional direction.
+      const cutoff=lastMotion-flickWindowMs;
+      let x=0,y=0,z=0,total=0;
+      for(const m of motion){
+        const duration=Math.max(1,m.to-m.from);
+        const overlap=Math.max(0,m.to-Math.max(m.from,cutoff));
+        if(!overlap)continue;
+        const weight=overlap/duration;
+        x+=m.axis.x*m.angle*weight;y+=m.axis.y*m.angle*weight;z+=m.axis.z*m.angle*weight;
+        total+=overlap;
+      }
+      const magnitude=Math.hypot(x,y,z);
+      if(magnitude>1e-7&&total>0){
+        spin.axis=unit({x,y,z});
+        spin.speed=clamp(magnitude/(total/1000),resting,maxDragSpin);
+      }else spin.speed=resting;
+    }
+    function finish(e: PointerEvent, preserve: boolean){
+      if(e.pointerId!==dragId)return;
+      if(preserve)releaseMomentum(e.timeStamp);
+      else spin.speed=restingSpeedRef.current ?? 0;
+      dragId=null;previous=null;motion=[];lastMotion=-Infinity;
+      if(canvas!.hasPointerCapture(e.pointerId))canvas!.releasePointerCapture(e.pointerId);
+      canvas!.style.cursor='grab';lastFrame=0;redraw();
+    }
+    function outside(e: PointerEvent){
+      const r=canvas!.getBoundingClientRect();
+      return e.clientX<r.left||e.clientX>=r.right||e.clientY<r.top||e.clientY>=r.bottom;
     }
     function move(e: PointerEvent){
       if(e.pointerId!==dragId)return;
-      const next=trackball(e),now=performance.now();
-      if(previous){
-        const axis=cross(previous,next),length=Math.hypot(axis.x,axis.y,axis.z);
-        const angle=Math.atan2(length,clamp(dot(previous,next),-1,1))*safe(settings.current.rotationSensitivity,1,0.2,3);
-        if(length>1e-7){turn(axis,angle);spin.axis=unit(axis);spin.speed=clamp(angle/Math.max(0.008,(now-lastMove)/1000),0,5);}
-        else spin.speed=0;
-      }
-      previous=next;lastMove=now;redraw();
+      const samples=e.getCoalescedEvents?.() ?? [];
+      for(const sample of samples)sampleMotion(sample);
+      sampleMotion(e);
+      // Pointer capture delivers this move even beyond the canvas. Treat
+      // leaving with a mouse/pen as a flick, even if still held down.
+      if(e.pointerType!=='touch'&&outside(e)){finish(e,true);return;}
+      if(e.pointerType==='mouse'&&e.buttons===0){finish(e,true);return;}
+      redraw();
     }
     function end(e: PointerEvent){
       if(e.pointerId!==dragId)return;
-      dragId=null;previous=null;
-      if(e.type!=='pointerup'||performance.now()-lastMove>90||!settings.current.inertia||reduced.matches)spin.speed=0;
-      if(canvas!.hasPointerCapture(e.pointerId))canvas!.releasePointerCapture(e.pointerId);
-      canvas!.style.cursor='grab';redraw();
+      if(e.type==='pointerup')sampleMotion(e);
+      finish(e,e.type==='pointerup'||e.type==='lostpointercapture');
     }
-    function cancel(){if(dragId!==null){const id=dragId;dragId=null;previous=null;if(canvas!.hasPointerCapture(id))canvas!.releasePointerCapture(id);canvas!.style.cursor='grab';spin.speed=0;}lastFrame=0;redraw();}
+    function leave(e: PointerEvent){
+      if(e.pointerId===dragId&&e.pointerType!=='touch'&&outside(e)){
+        sampleMotion(e);finish(e,true);
+      }
+    }
+    function cancel(){if(dragId!==null){const id=dragId;dragId=null;previous=null;motion=[];lastMotion=-Infinity;if(canvas!.hasPointerCapture(id))canvas!.releasePointerCapture(id);canvas!.style.cursor='grab';spin.speed=restingSpeedRef.current ?? 0;}lastFrame=0;redraw();}
     function keyboard(e: KeyboardEvent){
       const turns: Record<string,[Point3D,number]>={ArrowLeft:[{x:0,y:1,z:0},-0.16],ArrowRight:[{x:0,y:1,z:0},0.16],ArrowUp:[{x:1,y:0,z:0},-0.16],ArrowDown:[{x:1,y:0,z:0},0.16],q:[{x:0,y:0,z:1},-0.16],e:[{x:0,y:0,z:1},0.16]};
       if(e.key==='Home'){orientationRef.current=initialOrientation();}else if(turns[e.key])turn(...turns[e.key]);else return;
@@ -657,8 +714,8 @@ export function InteractivePolyhedron({
     function visibility(){lastFrame=0;if(!document.hidden)redraw();else cancel();}
     const ro=new ResizeObserver(resize);ro.observe(canvas);
     const io=typeof IntersectionObserver!=='undefined'?new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;lastFrame=0;if(visible)redraw();}):null;io?.observe(canvas);
-    canvas.addEventListener('pointerdown',down);canvas.addEventListener('pointermove',move);
-    canvas.addEventListener('pointerup',end);canvas.addEventListener('pointercancel',end);canvas.addEventListener('lostpointercapture',end);
+    canvas.addEventListener('pointerdown',down);window.addEventListener('pointermove',move);
+    window.addEventListener('pointerup',end);window.addEventListener('pointercancel',end);canvas.addEventListener('lostpointercapture',end);canvas.addEventListener('pointerleave',leave);
     canvas.addEventListener('keydown',keyboard);window.addEventListener('blur',cancel);
     document.addEventListener('visibilitychange',visibility);reduced.addEventListener('change',redraw);
     resize();

@@ -1,3 +1,4 @@
+@use "../../styles/interactions" as interaction;
 .page {
   min-height: 100dvh;
   padding: 12px;
@@ -25,18 +26,9 @@
   }
 
   button {
-    border: 1px solid #8d8995;
-    border-radius: 4px;
     padding: 8px 12px;
-    background: #eeecf1;
-    color: inherit;
     font: 700 0.75rem ui-monospace, "SFMono-Regular", Consolas, monospace;
     cursor: pointer;
-
-    &:hover,
-    &:focus-visible {
-      background: #c8d7da;
-    }
   }
 }
 
@@ -93,4 +85,8 @@
     height: calc(100dvh - 70px);
     min-height: 480px;
   }
+}
+
+.page button {
+  @include interaction.blur-button(inherit);
 }

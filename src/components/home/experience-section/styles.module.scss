@@ -1,4 +1,3 @@
-@use "../../../styles/layout" as layout;
 @use "../../../styles/variables" as *;
 @use "../../../styles/colors" as *;
 @use "../../../styles/typography" as *;
@@ -23,18 +22,19 @@
 }
 
 .content {
-  align-items: start;
+  align-items: flex-start;
+  display: flex;
+  gap: clamp($space * 4, 6vw, $space * 8);
   margin: 0 auto;
   max-width: $content-width-standard;
   width: 100%;
-  @include layout.two-column(
-    minmax(0, 0.9fr) minmax(0, 1.1fr),
-    clamp($space * 4, 6vw, $space * 8)
-  );
+
 }
 
 .introduction {
-  max-width: $content-width-compact;
+  flex: 0.9;
+  min-width: 0;
+  max-width: none;
   width: 100%;
 }
 
@@ -77,9 +77,22 @@
 }
 
 .timeline {
-  max-width: $content-width-compact;
+  flex: 1.1;
+  min-width: 0;
+  max-width: none;
 
   a {
     padding-right: 0;
+  }
+}
+
+@media (max-width: $small-screen) {
+  .content {
+    flex-direction: column;
+  }
+
+  .content > * {
+    flex: none;
+    width: 100%;
   }
 }

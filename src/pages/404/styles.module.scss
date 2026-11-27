@@ -1,3 +1,4 @@
+@use "../../styles/interactions" as interaction;
 @use "../../styles/colors" as *;
 @use "../../styles/typography" as *;
 @use "../../styles/variables" as *;
@@ -27,7 +28,6 @@
     align-items: center;
     backdrop-filter: $interactive-transparent-effect;
     background: $interactive-transparent-background;
-    border: 1px solid $theme-border-color;
     display: inline-flex;
     gap: $space;
     padding: $space * 1.5 $space * 2;
@@ -35,11 +35,6 @@
     transition: background $transition ease, border-color $transition ease,
       color $transition ease;
 
-    &:hover,
-    &:focus-visible {
-      background: $primary-color;
-      border-color: $primary-color;
-      color: $on-primary-color;
-    }
+    @include interaction.blur-button;
   }
 }

@@ -28,9 +28,9 @@ export const AboutSection = () => {
           <span aria-hidden="true">&#8594;</span>
         </a>
       </div>
-      <div>
-        <InteractivePolyhedron 
-          initialSpinSpeed={.3}
+      <div className={styles.visual}>
+        <InteractivePolyhedron
+          initialSpinSpeed={0.3}
           inertia={true}
         />
       </div>

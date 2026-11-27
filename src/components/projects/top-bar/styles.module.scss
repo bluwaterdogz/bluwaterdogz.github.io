@@ -1,6 +1,7 @@
 @use "../../../styles/colors" as *;
 @use "../../../styles/variables" as *;
 @use "../../../styles/typography" as *;
+@use "../../../styles/interactions" as interaction;
 
 .topBar {
   display: flex;
@@ -10,11 +11,11 @@
 
 .search {
   align-items: center;
-  border: 1px solid $theme-border-color;
   display: flex;
   gap: $space;
   padding: 0 $space * 2;
   width: 100%;
+  @include interaction.gradient-outline;
 
   i {
     color: $theme-text-color;
@@ -34,9 +35,6 @@
     }
   }
 
-  &:focus-within {
-    border-color: $primary-color;
-  }
 }
 
 .filters {
@@ -59,21 +57,12 @@
 
   button {
     @include button;
-    background: transparent;
-    border: 1px solid $theme-border-color;
-    color: $theme-text-color;
-    cursor: pointer;
     flex: 1;
     padding: $space * 1.5 $space;
-    transition: background $transition ease, border-color $transition ease,
-      color $transition ease;
+    @include interaction.blur-button;
 
-    &:hover,
-    &:focus-visible,
     &.active {
-      background: $primary-color;
-      border-color: $primary-color;
-      color: $on-primary-color;
+      @include interaction.gradient-button;
     }
   }
 }

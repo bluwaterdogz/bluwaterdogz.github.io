@@ -1,6 +1,7 @@
 @use "../../styles/variables" as *;
 @use "../../styles/colors" as *;
 @use "../../styles/typography" as *;
+@use "../../styles/interactions" as interaction;
 
 .footer {
   background: color-mix(in srgb, #{$theme-surface-color} 92%, #{$theme-text-color});
@@ -35,22 +36,12 @@
 }
 
 .themeToggle {
-  @include link;
+  @include button;
   align-items: center;
-  background: transparent;
-  border: 1px solid $theme-border-color;
-  color: $theme-text-color;
-  cursor: pointer;
   display: inline-flex;
   gap: $space;
   padding: $space $space * 2;
-  transition: border-color $transition ease, color $transition ease;
-
-  &:hover,
-  &:focus-visible {
-    border-color: $primary-color;
-    color: $primary-color;
-  }
+  @include interaction.blur-button;
 }
 
 .trademark { @include small; color: $theme-subtext-color; }

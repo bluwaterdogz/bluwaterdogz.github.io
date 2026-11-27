@@ -1,3 +1,4 @@
+@use "../../styles/interactions" as interaction;
 @use "../../styles/variables" as *;
 
 .chameleon {
@@ -155,12 +156,6 @@
   button {
     padding: 11px 15px;
 
-    border: 1px solid #cbd5e1;
-    border-radius: 10px;
-
-    background: #f8fafc;
-    color: #1e293b;
-
     font: inherit;
     font-weight: 600;
 
@@ -171,11 +166,6 @@
       border-color $transition ease,
       transform $transition ease;
 
-    &:hover:not(:disabled) {
-      background: #eef2f7;
-      border-color: #94a3b8;
-    }
-
     &:active:not(:disabled) {
       transform: translateY(1px);
     }
@@ -183,16 +173,6 @@
     &:disabled {
       cursor: not-allowed;
       opacity: 0.55;
-    }
-
-    &.primary {
-      background: #1e293b;
-      color: #ffffff;
-      border-color: #1e293b;
-
-      &:hover:not(:disabled) {
-        background: #334155;
-      }
     }
 
     &.big {
@@ -512,11 +492,6 @@
 
   .vote-grid {
     button {
-      background: #ffffff;
-
-      &:hover:not(:disabled) {
-        background: #f1f5f9;
-      }
     }
 
     .none {
@@ -774,4 +749,13 @@
       gap: 4px;
     }
   }
+}
+
+.chameleon button:not(.primary),
+.chameleon .vote-grid button.none {
+  @include interaction.blur-button(inherit);
+}
+
+.chameleon button.primary {
+  @include interaction.gradient-button;
 }

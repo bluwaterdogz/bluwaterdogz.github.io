@@ -30,12 +30,12 @@
 @mixin control-trigger {
   align-items: center;
   background: transparent;
-  border: 1px solid $theme-border-color;
   color: $theme-text-color;
   cursor: pointer;
   padding: $space * 1.5 $space * 2;
   text-align: left;
   width: 100%;
+  @include gradient-outline;
 }
 
 @mixin floating-panel {
@@ -47,4 +47,77 @@
   right: 0;
   top: calc(100% + #{$space-sm});
   z-index: 20;
+}
+
+@mixin button-base {
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  transition: background $transition ease, color $transition ease, transform $transition ease;
+}
+
+@mixin gradient-button($background: $action-gradient) {
+  @include button-base;
+  backdrop-filter: none;
+  background: $background;
+  color: $text-inverse-color;
+  -webkit-backdrop-filter: none;
+
+  i {
+    color: inherit;
+  }
+
+  &::before {
+    display: none;
+  }
+
+  &:hover:not(:disabled),
+  &:focus-visible {
+    background: $action-gradient;
+    color: $text-inverse-color;
+  }
+}
+
+@mixin blur-button($text-color: $theme-text-color) {
+  @include button-base;
+  backdrop-filter: $interactive-transparent-effect;
+  background: $interactive-transparent-background;
+  color: $text-color;
+  -webkit-backdrop-filter: $interactive-transparent-effect;
+
+  @include gradient-outline;
+
+  &:hover:not(:disabled),
+  &:focus-visible {
+    background: $action-gradient;
+    color: $text-inverse-color;
+
+    i {
+      color: inherit;
+    }
+
+    &::before {
+      background: $action-gradient;
+    }
+  }
+}
+
+@mixin gradient-outline {
+  border: 0;
+  position: relative;
+
+  &::before {
+    background: var(--action-outline);
+    content: "";
+    inset: 0;
+    padding: 1px;
+    pointer-events: none;
+    position: absolute;
+    -webkit-mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+    mask-composite: exclude;
+  }
 }

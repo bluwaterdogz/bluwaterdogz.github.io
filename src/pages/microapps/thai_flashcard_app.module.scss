@@ -1,3 +1,4 @@
+@use "../../styles/interactions" as interaction;
 @use "../../styles/colors" as *;
 @use "../../styles/variables" as *;
 
@@ -70,10 +71,6 @@
 
 .tabButton {
   flex: 1;
-  border: 0;
-  border-radius: 10px;
-  background: white;
-  color: #334155;
   font-size: 0.9rem;
   padding: 8px 12px;
   font-weight: 600;
@@ -81,8 +78,6 @@
 }
 
 .tabButtonActive {
-  background: $dark-color;
-  color: white;
 }
 
 .panel {
@@ -106,18 +101,12 @@
 }
 
 .groupButton {
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
-  background: white;
   padding: 8px 12px;
   font-size: 0.85rem;
   cursor: pointer;
 }
 
 .groupButtonActive {
-  background: $dark-color;
-  color: white;
-  border-color: $dark-color;
 }
 
 .controlsGrid {
@@ -128,10 +117,6 @@
 }
 
 .controlButton {
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
-  background: white;
-  color: #0f172a;
   padding: 8px 12px;
   font-size: 0.85rem;
   font-weight: 600;
@@ -146,19 +131,12 @@
 }
 
 .controlButtonActive {
-  background: $dark-color;
-  color: white;
-  border-color: $dark-color;
 }
 
 .warningButton {
-  background: #fffbeb;
-  border-color: #fde68a;
 }
 
 .dangerButton {
-  background: #fff1f2;
-  border-color: #fecdd3;
 }
 
 .studyLayout {
@@ -279,9 +257,6 @@
 }
 
 .actionButton {
-  border-radius: 12px;
-  border: 1px solid #cbd5e1;
-  background: white;
   padding: 10px 12px;
   font-size: 0.85rem;
   font-weight: 700;
@@ -289,15 +264,9 @@
 }
 
 .requeueButton {
-  background: #dc2626;
-  border-color: #dc2626;
-  color: white;
 }
 
 .memorizeButton {
-  background: #059669;
-  border-color: #059669;
-  color: white;
 }
 
 .tipsPanel {
@@ -438,4 +407,23 @@
   .statsGrid {
     gap: 8px;
   }
+}
+
+.tabButton,
+.groupButton,
+.controlButton,
+.warningButton,
+.dangerButton,
+.actionButton,
+.requeueButton,
+.memorizeButton,
+.customSpeakButton {
+  @include interaction.blur-button(inherit);
+}
+
+.tabButtonActive,
+.groupButtonActive,
+.controlButtonActive,
+.memorizeButton {
+  @include interaction.gradient-button;
 }

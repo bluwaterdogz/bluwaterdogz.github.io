@@ -12,9 +12,9 @@
 
 .trigger {
   @include button;
-  @include control-trigger;
   display: flex;
   justify-content: space-between;
+  @include control-trigger;
 
   i {
     color: $primary-color;

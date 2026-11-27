@@ -22,13 +22,17 @@
 }
 
 .content {
+  align-items: flex-start;
+  display: flex;
+  gap: clamp($space * 4, 6vw, $space * 8);
   margin: 0 auto;
   max-width: $content-width-standard;
   width: 100%;
 }
 
 .introduction {
-  width: 100%;
+  flex: 1.1;
+  min-width: 0;
 }
 
 .eyebrow {
@@ -65,5 +69,24 @@
     font-size: 28px;
     line-height: 0.5;
     margin-left: $space * 2;
+  }
+}
+
+.visual {
+  align-self: center;
+  aspect-ratio: 1;
+  flex: 0.9;
+  max-width: $content-width-tablet;
+  min-width: 0;
+}
+
+@media (max-width: $small-screen) {
+  .content {
+    flex-direction: column;
+  }
+
+  .content > * {
+    flex: none;
+    width: 100%;
   }
 }

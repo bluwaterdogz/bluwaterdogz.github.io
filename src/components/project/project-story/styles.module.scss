@@ -105,19 +105,11 @@ $timeline-rail-left: -$space * 3;
   button {
     @include small;
     align-items: center;
-    background: transparent;
-    border: 0;
-    color: $theme-subtext-color;
     cursor: pointer;
     display: flex;
-    padding: 0;
+    padding: $space-sm $space;
     text-align: left;
-    transition: color $transition ease;
-
-    &:hover,
-    &:focus-visible {
-      color: $primary-color;
-    }
+    @include blur-button;
 
     &:hover .dot,
     &:focus-visible .dot {
@@ -133,8 +125,8 @@ $timeline-rail-left: -$space * 3;
 
 .activeStep {
   button {
-    color: $primary-color;
     font-weight: 700;
+    @include gradient-button;
   }
 
   .dot {

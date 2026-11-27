@@ -13,10 +13,10 @@
 
 .trigger {
   @include button;
-  @include control-trigger;
   display: grid;
   gap: $space;
   grid-template-columns: 1fr auto auto;
+  @include control-trigger;
 
   > i {
     color: $primary-color;
@@ -73,10 +73,8 @@
 
   button {
     @include small;
-    background: transparent;
-    border: 0;
-    color: $primary-color;
-    cursor: pointer;
+    padding: $space-sm $space;
+    @include blur-button;
   }
 }
 

@@ -42,6 +42,10 @@
       width: $space * 3;
     }
 
+    &[aria-current="page"] {
+      color: $primary-color;
+    }
+
     &[aria-current="page"]::before {
       opacity: 1;
       transform: translateY(-50%) scaleX(1);

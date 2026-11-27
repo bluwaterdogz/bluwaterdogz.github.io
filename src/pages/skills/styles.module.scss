@@ -1,3 +1,4 @@
+@use "../../styles/interactions" as interaction;
 @use "../../styles/colors" as *;
 @use "../../styles/variables" as *;
 @use "../../styles/typography" as *;
@@ -46,22 +47,11 @@
 
   a {
     align-items: center;
-    background: transparent;
-    border: 1px solid $theme-border-color;
-    color: $primary-color;
-    cursor: pointer;
     display: inline-flex;
-    height: $space * 4;
     justify-content: center;
-    text-decoration: none;
-    transition: background $transition ease, color $transition ease;
+    height: $space * 4;
     width: $space * 4;
-
-    &:hover,
-    &:focus-visible {
-      background: $primary-color;
-      color: $on-primary-color;
-    }
+    @include interaction.blur-button;
   }
 
   span {

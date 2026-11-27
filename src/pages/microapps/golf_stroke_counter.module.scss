@@ -1,3 +1,4 @@
+@use "../../styles/interactions" as interaction;
 @use "../../styles/colors" as *;
 @use "../../styles/variables" as *;
 
@@ -59,9 +60,6 @@
   gap: 8px;
 
   button {
-    border-radius: 10px;
-    border: 1px solid #cbd5e1;
-    background: white;
     padding: 8px 14px;
     font-weight: 600;
     cursor: pointer;
@@ -69,9 +67,7 @@
 }
 
 .primary {
-  background: $dark-color !important;
-  border-color: $dark-color !important;
-  color: white;
+  @include interaction.gradient-button;
 }
 
 .results {
@@ -96,5 +92,13 @@
 @media (max-width: $small-screen) {
   .scorePanel {
     grid-template-columns: 1fr;
+  }
+}
+
+.actionRow button {
+  @include interaction.blur-button(inherit);
+
+  &.primary {
+    @include interaction.gradient-button;
   }
 }

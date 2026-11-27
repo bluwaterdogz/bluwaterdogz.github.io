@@ -5,7 +5,7 @@ export const projects: Project[] = [
   {
     employer: "mobian",
     id: "9",
-    img: "/images/projects/mobian/mobian1.png",
+    img: "/images/projects/09-persona-channel-intelligence.png",
     nameKey: "data.projects.name.9",
     story: projectStories["9"],
     skills: [
@@ -16,7 +16,7 @@ export const projects: Project[] = [
   {
     employer: "mobian",
     id: "10",
-    img: "/images/projects/mobian/mobian2.png",
+    img: "/images/projects/10-context-ingestion-brand-safety.png",
     nameKey: "data.projects.name.10",
     story: projectStories["10"],
     skills: [
@@ -27,7 +27,7 @@ export const projects: Project[] = [
   {
     employer: "mobian",
     id: "11",
-    img: "/images/projects/mobian/mobian3.png",
+    img: "/images/projects/11-advertising-operations-reporting.png",
     nameKey: "data.projects.name.11",
     story: projectStories["11"],
     skills: [
@@ -38,7 +38,7 @@ export const projects: Project[] = [
   {
     employer: "mobian",
     id: "12",
-    img: "/images/projects/mobian/mobian4.png",
+    img: "/images/projects/12-platform-engineering-infrastructure.png",
     nameKey: "data.projects.name.12",
     story: projectStories["12"],
     skills: [
@@ -50,7 +50,7 @@ export const projects: Project[] = [
   {
     employer: "mobian",
     id: "13",
-    img: "/images/projects/mobian/mobian5.png",
+    img: "/images/projects/13-ui-components-design-system.png",
     nameKey: "data.projects.name.13",
     story: projectStories["13"],
     skills: [
@@ -62,7 +62,7 @@ export const projects: Project[] = [
     employer: "faro",
     nameKey: "data.projects.name.1",
     id: "1",
-    img: "/images/projects/faro/dark_spiral.jpg",
+    img: "/images/projects/01-faro-study-designer.png",
     story: projectStories["1"],
     skills: [
       "2",
@@ -89,7 +89,7 @@ export const projects: Project[] = [
     employer: "various",
     nameKey: "data.projects.name.2",
     id: "2",
-    img: "/images/projects/various/streamer.jpg",
+    img: "/images/projects/02-various-inc-viewer.png",
     story: projectStories["2"],
     skills: ["2", "3", "7", "8", "9", "10", "13", "17", "18", "21"],
   },
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     employer: "faro",
     nameKey: "data.projects.name.5",
     id: "5",
-    img: "/images/projects/faro/clinical-data.jpg",
+    img: "/images/projects/05-faro-data-analytics.png",
     story: projectStories["5"],
     skills: ["1", "12", "17", "38", "39", "40", "41"],
   },
@@ -105,7 +105,7 @@ export const projects: Project[] = [
     employer: "faro",
     nameKey: "data.projects.name.6",
     id: "6",
-    img: "/images/projects/faro/lock.jpg",
+    img: "/images/projects/06-faro-b2c-sso.png",
     story: projectStories["6"],
     skills: ["19", "20", "38", "39", "40", "41"],
   },
@@ -114,7 +114,7 @@ export const projects: Project[] = [
     nameKey: "data.projects.name.3",
     previewImgs: ["/images/projects/independent/san_anselmo_preview.png"],
     id: "3",
-    img: "/images/projects/independent/downtown.jpg",
+    img: "/images/projects/03-san-anselmo-city-plan.png",
     story: projectStories["3"],
     skills: ["6", "7", "8", "17", "18", "23"],
   },
@@ -122,7 +122,7 @@ export const projects: Project[] = [
     employer: "launchBrigade",
     nameKey: "data.projects.name.4",
     id: "4",
-    img: "/images/projects/launch-brigade/rocket.jpg",
+    img: "/images/projects/04-launch-brigade.png",
     story: projectStories["4"],
     skills: ["6", "7", "8", "17", "18", "21", "22", "23"],
   },
@@ -130,7 +130,7 @@ export const projects: Project[] = [
     employer: "independent",
     nameKey: "data.projects.name.7",
     id: "7",
-    img: "/images/projects/independent/car.jpg",
+    img: "/images/projects/07-lotlinx.png",
     story: projectStories["7"],
     previewVideos: [
       "/videos/lotlinx_preview.mov",
@@ -142,7 +142,7 @@ export const projects: Project[] = [
     employer: "independent",
     nameKey: "data.projects.name.8",
     id: "8",
-    img: "/images/projects/independent/3dshapes.jpg",
+    img: "/images/projects/08-metafold-3d.png",
     story: projectStories["8"],
     skills: ["3", "7", "8", "9"],
   },

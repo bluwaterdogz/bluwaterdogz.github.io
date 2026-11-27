@@ -1,3 +1,4 @@
+@use "../../styles/interactions" as interaction;
 @use "../../styles/colors" as *;
 @use "../../styles/variables" as *;
 
@@ -96,10 +97,6 @@
 }
 
 .primaryButton {
-  border: 1px solid $dark-color;
-  background: $dark-color;
-  color: white;
-  border-radius: 10px;
   padding: 8px 14px;
   font-size: 0.85rem;
   font-weight: 600;
@@ -107,27 +104,13 @@
 }
 
 .secondaryButton {
-  border: 1px solid #cbd5e1;
-  background: white;
-  color: #0f172a;
-  border-radius: 10px;
   padding: 8px 12px;
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
-
-  &:hover {
-    background: #f8fafc;
-  }
 }
 
 .dangerButton {
-  border-color: #fecdd3;
-  color: #be123c;
-
-  &:hover {
-    background: #fff1f2;
-  }
 }
 
 .countRow {
@@ -257,8 +240,6 @@
 
 .expandButton {
   width: 100%;
-  border: 0;
-  background: none;
   padding: 0;
   text-align: left;
   cursor: pointer;
@@ -296,26 +277,12 @@
 }
 
 .tinyButton {
-  border: 1px solid #cbd5e1;
-  background: white;
-  color: #0f172a;
-  border-radius: 8px;
   padding: 4px 8px;
   font-size: 0.75rem;
   cursor: pointer;
-
-  &:hover {
-    background: #f8fafc;
-  }
 }
 
 .tinyDangerButton {
-  border-color: #fecdd3;
-  color: #be123c;
-
-  &:hover {
-    background: #fff1f2;
-  }
 }
 
 .subtasksPanel {
@@ -371,4 +338,16 @@
   .quickAddRow {
     flex-direction: column;
   }
+}
+
+.secondaryButton,
+.dangerButton,
+.expandButton,
+.tinyButton,
+.tinyDangerButton {
+  @include interaction.blur-button(inherit);
+}
+
+.primaryButton {
+  @include interaction.gradient-button;
 }
